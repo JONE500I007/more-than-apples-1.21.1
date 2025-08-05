@@ -2,6 +2,14 @@ package net.more.apples;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
+import net.minecraft.potion.Potions;
+import net.more.apples.block.ModBlocks;
+import net.more.apples.effect.ModEffects;
+import net.more.apples.item.ModItemGroups;
+import net.more.apples.item.ModItems;
+import net.more.apples.potion.ModPotions;
+import net.more.apples.util.ModLootTableModifiers3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +23,26 @@ public class MoreThanApples implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItems.registerModItem();
+		ModBlocks.registerModBlocks();
+		ModItemGroups.registerItemGroups();
+
+		ModLootTableModifiers3.modifyLootTables2();
+
+		ModEffects.registerEffects();
+
+		ModPotions.registerPotions();
+		/*
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(Potions.AWKWARD,ModItems.DIAMOND_CARROT, ModPotions.DARKNESS_IMMUNE_POTION);
+		});
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(Potions.AWKWARD,ModItems.DIAMOND_APPLE, ModPotions.FREEZING_RESOSTANCE_POTION);
+		});
+		 */
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(Potions.AWKWARD,ModItems.DIAMOND_CARROT, ModPotions.NIGHT_VISION_POTION_V1);
+		});
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.

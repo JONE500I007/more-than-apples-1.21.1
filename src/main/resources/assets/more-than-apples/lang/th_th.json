@@ -1,0 +1,18 @@
+{
+  "item.more-than-apples.diamond_apple": "แอปเปิ้ลเพชร",
+  "item.more-than-apples.enchanted_diamond_apple": "เอ็นชานเท็ด แอปเปิ้ลเพชร",
+  "item.more-than-apples.diamond_carrot": "แครอทเพชร",
+
+  "block.more-than-apples.diamond_apple_block": "บล็อกแอ๊ปเปิ้ลเพชร",
+
+  "itemgroup.more-than-apples.diamond_apple_icon": "มากกว่าแอปเปิ้ลนั้น (:",
+
+  "effect.more-than-apples.darkness_immune": "ภูมิคุ้มกันความมืด",
+  "effect.more-than-apples.freezing_resostance": "ต้านทานการแช่แข็ง",
+
+  "item.minecraft.potion.effect.darkness_immune_potion": "น้ำยา ภูมิคุ้มกันความมืด",
+  "item.minecraft.potion.effect.darkness_immune_potion_l": "น้ำยา ภูมิคุ้มกันความมืด",
+  "item.minecraft.potion.effect.freezing_resostance_potion": "น้ำยา ต้านทานการแช่แข็ง",
+  "item.minecraft.potion.effect.freezing_resostance_potion_l": "น้ำยา ต้านทานการแช่แข็ง",
+  "item.minecraft.potion.effect.night_vision_potion_v1": "น้ำยา มองเห็นกลางคืน"
+}

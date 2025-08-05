@@ -1,0 +1,31 @@
+{
+  "item.more-than-apples.diamond_nugget": "Diamond Nugget",
+  "item.more-than-apples.diamond_apple": "Diamond Apple",
+  "item.more-than-apples.enchanted_diamond_apple": "Enchanted Diamond Apple",
+  "item.more-than-apples.diamond_carrot": "Diamond Carrot",
+
+  "block.more-than-apples.diamond_apple_block": "Diamond Apple Block",
+
+  "itemgroup.more-than-apples.diamond_apple_icon": "More Than Apples",
+
+  "effect.more-than-apples.darkness_immune": "Darkness Immune",
+  "effect.more-than-apples.freezing_resistance": "Freezing Resostance",
+
+  "item.minecraft.potion.effect.darkness_immune_potion": "Potion of Darkness Immunity",
+  "item.minecraft.potion.effect.darkness_immune_potion_l": "Potion of Darkness Immunity",
+  "item.minecraft.splash_potion.effect.darkness_immune_potion": "Splash Potion of Darkness Immunity",
+  "item.minecraft.splash_potion.effect.darkness_immune_potion_l": "Splash Potion of Darkness Immunity",
+  "item.minecraft.lingering_potion.effect.darkness_immune_potion": "Lingering Potion of Darkness Immunity",
+  "item.minecraft.lingering_potion.effect.darkness_immune_potion_l": "Lingering Potion of Darkness Immunity",
+
+  "item.minecraft.potion.effect.freezing_resistance_potion": "Potion of Freezing Resistance",
+  "item.minecraft.potion.effect.freezing_resistance_potion_l": "Potion of Freezing Resistance",
+  "item.minecraft.splash_potion.effect.freezing_resistance_potion": "Splash Potion of Freezing Resistance",
+  "item.minecraft.splash_potion.effect.freezing_resistance_potion_l": "Splash Potion of Freezing Resistance",
+  "item.minecraft.lingering_potion.effect.freezing_resistance_potion": "Lingering Potion of Freezing Resistance",
+  "item.minecraft.lingering_potion.effect.freezing_resistance_potion_l": "Lingering Potion of Freezing Resistance",
+
+  "item.minecraft.potion.effect.night_vision_potion_v1": "Potion of Night Vision",
+  "item.minecraft.splash_potion.effect.night_vision_potion_v1": "Splash Potion of Night Vision",
+  "item.minecraft.lingering_potion.effect.night_vision_potion_v1": "Lingering Potion of Night Vision"
+}
