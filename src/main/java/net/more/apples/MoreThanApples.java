@@ -9,6 +9,7 @@ import net.more.apples.effect.ModEffects;
 import net.more.apples.item.ModItemGroups;
 import net.more.apples.item.ModItems;
 import net.more.apples.potion.ModPotions;
+import net.more.apples.util.ModLootConditions;
 import net.more.apples.util.ModLootTableModifiers3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +33,8 @@ public class MoreThanApples implements ModInitializer {
 		ModEffects.registerEffects();
 
 		ModPotions.registerPotions();
+
+		ModLootConditions.init();
 		/*
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD,ModItems.DIAMOND_CARROT, ModPotions.DARKNESS_IMMUNE_POTION);
