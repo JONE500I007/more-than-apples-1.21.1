@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.more.apples.MoreThanApples;
 import net.more.apples.item.custom.CustomEnchApple;
+import net.more.apples.item.custom.HorseFeedingAppleItem;
 import net.more.apples.potion.ModPotions;
 
 public class ModItems {
@@ -23,11 +24,13 @@ public class ModItems {
             .food(ModFoodComponents.DIAMOND_CARROT_EFFECT)));
 
     public static final Item NETHERITE_APPLE = registerItem("netherite_apple", new Item(new Item.Settings()
-            .food(ModFoodComponents.DIAMOND_APPLE_EFFECT)
+            .food(ModFoodComponents.NETHERITE_APPLE_EFFECT)
             .rarity(Rarity.RARE)));
     public static final Item ENCHANTED_NETHERITE_APPLE = registerItem("enchanted_netherite_apple", new CustomEnchApple(new Item.Settings()
-            .food(ModFoodComponents.ENCHANTED_DIAMOND_APPLE_EFFECT)
+            .food(ModFoodComponents.ENCHANTED_NETHERITE_APPLE_EFFECT)
             .rarity(Rarity.EPIC)));
+
+
 
 
     public static final Item DIAMOND_NUGGET = registerItem("diamond_nugget", new Item(new Item.Settings()));

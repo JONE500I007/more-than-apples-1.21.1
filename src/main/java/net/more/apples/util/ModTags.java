@@ -17,7 +17,8 @@ public class ModTags {
     }
 
     public static class Items {
-        public static final TagKey<Item> MOD_APPLE_ITEMS = createTag("mod_apple_items");
+        public static final TagKey<Item> HORSE_FOOD = createTag("horse_food");
+        public static final TagKey<Item> HORSE_TEMPT_ITEMS = createTag("horse_tempt_items");
 
         public static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, name));

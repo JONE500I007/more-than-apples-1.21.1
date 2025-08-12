@@ -34,7 +34,7 @@ public class ModLootTableModifiers_DiaCarrot {
 
 
 
-    public static void modifyLootTables2() {
+    public static void modifyLootTables1() {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ANCIENT_CITY_ICE_BOX_CHEST_KEY.equals(key)) {
                 tableBuilder.modifyPools(poolBuilder -> poolBuilder

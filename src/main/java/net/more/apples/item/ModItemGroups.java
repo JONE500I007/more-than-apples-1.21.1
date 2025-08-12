@@ -31,6 +31,8 @@ public class ModItemGroups {
 
                         entries.add(ModItems.NETHERITE_APPLE);
                         entries.add(ModItems.ENCHANTED_NETHERITE_APPLE);
+
+
                     }))
                     .build());
 
