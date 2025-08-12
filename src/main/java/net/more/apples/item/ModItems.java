@@ -22,6 +22,14 @@ public class ModItems {
     public static final Item DIAMOND_CARROT = registerItem("diamond_carrot", new Item(new Item.Settings()
             .food(ModFoodComponents.DIAMOND_CARROT_EFFECT)));
 
+    public static final Item NETHERITE_APPLE = registerItem("netherite_apple", new Item(new Item.Settings()
+            .food(ModFoodComponents.DIAMOND_APPLE_EFFECT)
+            .rarity(Rarity.RARE)));
+    public static final Item ENCHANTED_NETHERITE_APPLE = registerItem("enchanted_netherite_apple", new CustomEnchApple(new Item.Settings()
+            .food(ModFoodComponents.ENCHANTED_DIAMOND_APPLE_EFFECT)
+            .rarity(Rarity.EPIC)));
+
+
     public static final Item DIAMOND_NUGGET = registerItem("diamond_nugget", new Item(new Item.Settings()));
 
 //    public static final Item DARKNESS_IMMUNE_POTION = registerItem("darkness_immune_potion", new PotionItem(new Item.Settings()
@@ -39,6 +47,9 @@ public class ModItems {
             entrise.add(DIAMOND_APPLE);
             entrise.add(ENCHANTED_DIAMOND_APPLE);
             entrise.add(DIAMOND_CARROT);
+
+            entrise.add(NETHERITE_APPLE);
+            entrise.add(ENCHANTED_NETHERITE_APPLE);
 
             /*
             ItemStack darknessPotion = new ItemStack(Items.POTION);

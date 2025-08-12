@@ -7,10 +7,13 @@ import net.minecraft.potion.Potions;
 import net.more.apples.block.ModBlocks;
 import net.more.apples.effect.ModEffects;
 import net.more.apples.item.ModItemGroups;
+import net.more.apples.item.ModItemGroups2;
 import net.more.apples.item.ModItems;
 import net.more.apples.potion.ModPotions;
+import net.more.apples.util.ModCustomTrades;
 import net.more.apples.util.ModLootConditions;
-import net.more.apples.util.ModLootTableModifiers3;
+import net.more.apples.util.ModLootTableModifiers_DiaApple;
+import net.more.apples.util.ModLootTableModifiers_DiaCarrot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,14 +30,18 @@ public class MoreThanApples implements ModInitializer {
 		ModItems.registerModItem();
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
+		ModItemGroups2.registerItemGroups2();
 
-		ModLootTableModifiers3.modifyLootTables2();
+		ModLootTableModifiers_DiaApple.modifyLootTables2();
+		ModLootTableModifiers_DiaCarrot.modifyLootTables2();
 
 		ModEffects.registerEffects();
 
 		ModPotions.registerPotions();
 
 		ModLootConditions.init();
+
+		ModCustomTrades.registerCustomTrades();
 		/*
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD,ModItems.DIAMOND_CARROT, ModPotions.DARKNESS_IMMUNE_POTION);

@@ -3,12 +3,17 @@
   "item.more-than-apples.diamond_apple": "Diamond Apple",
   "item.more-than-apples.enchanted_diamond_apple": "Enchanted Diamond Apple",
   "item.more-than-apples.diamond_carrot": "Diamond Carrot",
+  "item.more-than-apples.netherite_apple": "Netherite Apple",
+  "item.more-than-apples.enchanted_netherite_apple": "Enchanted Netherite Apple",
 
   "block.more-than-apples.diamond_apple_block": "Diamond Apple Block",
 
   "itemgroup.more-than-apples.diamond_apple_icon": "More Than Apples",
+  "itemgroup.more-than-apples.zpotion_icon": "More Than Apples Potion",
 
   "effect.more-than-apples.darkness_immune": "Darkness Immune",
+  "effect.more-than-apples.slowness_immune": "Slowness Immune",
+  "effect.more-than-apples.mining_fatigue_immune": "Mining Fatigue Immune",
   "effect.more-than-apples.freezing_resistance": "Freezing Resostance",
 
   "item.minecraft.potion.effect.darkness_immune_potion": "Potion of Darkness Immunity",
@@ -17,6 +22,20 @@
   "item.minecraft.splash_potion.effect.darkness_immune_potion_l": "Splash Potion of Darkness Immunity",
   "item.minecraft.lingering_potion.effect.darkness_immune_potion": "Lingering Potion of Darkness Immunity",
   "item.minecraft.lingering_potion.effect.darkness_immune_potion_l": "Lingering Potion of Darkness Immunity",
+
+  "item.minecraft.potion.effect.slowness_immune_potion": "Potion of Slowness Immunity",
+  "item.minecraft.potion.effect.slowness_immune_potion_l": "Potion of Slowness Immunity",
+  "item.minecraft.splash_potion.effect.slowness_immune_potion": "Splash Potion of Slowness Immunity",
+  "item.minecraft.splash_potion.effect.slowness_immune_potion_l": "Splash Potion of Slowness Immunity",
+  "item.minecraft.lingering_potion.effect.slowness_immune_potion": "Lingering Potion of Slowness Immunity",
+  "item.minecraft.lingering_potion.effect.slowness_immune_potion_l": "Lingering Potion of Slowness Immunity",
+
+  "item.minecraft.potion.effect.mining_fatigue_immune_potion": "Potion of Mining Fatigue Immunity",
+  "item.minecraft.potion.effect.mining_fatigue_immune_potion_l": "Potion of Mining Fatigue Immunity",
+  "item.minecraft.splash_potion.effect.mining_fatigue_immune_potion": "Splash Potion of Mining Fatigue Immunity",
+  "item.minecraft.splash_potion.effect.mining_fatigue_immune_potion_l": "Splash Potion of Mining Fatigue Immunity",
+  "item.minecraft.lingering_potion.effect.mining_fatigue_immune_potion": "Lingering Potion of Mining Fatigue Immunity",
+  "item.minecraft.lingering_potion.effect.mining_fatigue_immune_potion_l": "Lingering Potion of Mining Fatigue Immunity",
 
   "item.minecraft.potion.effect.freezing_resistance_potion": "Potion of Freezing Resistance",
   "item.minecraft.potion.effect.freezing_resistance_potion_l": "Potion of Freezing Resistance",
@@ -27,5 +46,15 @@
 
   "item.minecraft.potion.effect.night_vision_potion_v1": "Potion of Night Vision",
   "item.minecraft.splash_potion.effect.night_vision_potion_v1": "Splash Potion of Night Vision",
-  "item.minecraft.lingering_potion.effect.night_vision_potion_v1": "Lingering Potion of Night Vision"
+  "item.minecraft.lingering_potion.effect.night_vision_potion_v1": "Lingering Potion of Night Vision",
+
+  "item.minecraft.tipped_arrow.effect.darkness_immune_potion": "Arrow of Darkness Immunity",
+  "item.minecraft.tipped_arrow.effect.darkness_immune_potion_l": "Arrow of Darkness Immunity",
+  "item.minecraft.tipped_arrow.effect.slowness_immune_potion": "Arrow of Slowness Immune",
+  "item.minecraft.tipped_arrow.effect.slowness_immune_potion_l": "Arrow of Slowness Immune",
+  "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion": "Arrow of Mining Fatigue",
+  "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion_l": "Arrow of Mining Fatigue",
+  "item.minecraft.tipped_arrow.effect.freezing_resistance_potion": "Arrow of Freezing Resistance",
+  "item.minecraft.tipped_arrow.effect.freezing_resistance_potion_l": "Arrow of Freezing Resistance",
+  "item.minecraft.tipped_arrow.effect.night_vision_potion_v1": "Potion of Night Vision"
 }

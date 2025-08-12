@@ -10,9 +10,13 @@ import net.more.apples.MoreThanApples;
 
 public class ModEffects {
     public static final RegistryEntry<StatusEffect> DARKNESS_IMMUNE = registerStatusEffect("darkness_immune",
-            new DarknessImmuneEffect(StatusEffectCategory.NEUTRAL, 0xF5C827));
+            new DarknessImmuneEffect(StatusEffectCategory.BENEFICIAL, 0xF5C827));
+    public static final RegistryEntry<StatusEffect> SLOWNESS_IMMUNE = registerStatusEffect("slowness_immune",
+            new SlownessImmuneEffect(StatusEffectCategory.BENEFICIAL, 0x647570));
+    public static final RegistryEntry<StatusEffect> MINING_FATIGUE_IMMUNE = registerStatusEffect("mining_fatigue_immune",
+            new MiningFatigueImmuneEffect(StatusEffectCategory.BENEFICIAL, 0x91B399));
     public static final RegistryEntry<StatusEffect> FREEZING_RESISTANCE = registerStatusEffect("freezing_resistance",
-            new FreezingResistanceEffect(StatusEffectCategory.NEUTRAL, 0xA3EAFF));
+            new FreezingResistanceEffect(StatusEffectCategory.BENEFICIAL, 0xA3EAFF));
 
     private static RegistryEntry<StatusEffect> registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(MoreThanApples.MOD_ID, name), statusEffect);
