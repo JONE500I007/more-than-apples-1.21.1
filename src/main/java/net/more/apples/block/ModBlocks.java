@@ -33,7 +33,7 @@ public class ModBlocks {
         MoreThanApples.LOGGER.info("Registering Mod Blocks " + MoreThanApples.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entrise -> {
-            entrise.add(DIAMOND_APPLE_BLOCK);
+            //entrise.add(DIAMOND_APPLE_BLOCK);
         });
     }
 }

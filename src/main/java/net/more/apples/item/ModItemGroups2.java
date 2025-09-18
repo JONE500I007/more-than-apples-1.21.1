@@ -116,29 +116,29 @@ public class ModItemGroups2 {
 
                         ItemStack freezingPotion = new ItemStack(Items.POTION);
                         freezingPotion.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESOSTANCE_POTION));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION));
                         entries.add(freezingPotion);
                         ItemStack freezing_lPotion = new ItemStack(Items.POTION);
                         freezing_lPotion.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESOSTANCE_POTION_l));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_l));
                         entries.add(freezing_lPotion);
 
                         ItemStack freezingPotionSP = new ItemStack(Items.SPLASH_POTION);
                         freezingPotionSP.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESOSTANCE_POTION));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION));
                         entries.add(freezingPotionSP);
                         ItemStack freezing_lPotionSP = new ItemStack(Items.SPLASH_POTION);
                         freezing_lPotionSP.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESOSTANCE_POTION_l));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_l));
                         entries.add(freezing_lPotionSP);
 
                         ItemStack freezingPotionLI = new ItemStack(Items.LINGERING_POTION);
                         freezingPotionLI.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESOSTANCE_POTION));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION));
                         entries.add(freezingPotionLI);
                         ItemStack freezing_lPotionLI = new ItemStack(Items.LINGERING_POTION);
                         freezing_lPotionLI.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESOSTANCE_POTION_l));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_l));
                         entries.add(freezing_lPotionLI);
 
 
@@ -185,11 +185,11 @@ public class ModItemGroups2 {
 
                         ItemStack freezingArrow = new ItemStack(Items.TIPPED_ARROW);
                         freezingArrow.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESOSTANCE_POTION));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION));
                         entries.add(freezingArrow);
                         ItemStack freezing_lArrow = new ItemStack(Items.TIPPED_ARROW);
                         freezing_lArrow.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESOSTANCE_POTION_l));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_l));
                         entries.add(freezing_lArrow);
 
                         ItemStack night_visionArrow = new ItemStack(Items.TIPPED_ARROW);

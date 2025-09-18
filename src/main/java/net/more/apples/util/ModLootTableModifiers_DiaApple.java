@@ -25,8 +25,8 @@ public class ModLootTableModifiers_DiaApple {
     private static final RegistryKey<LootTable> DESERT_PYRAMID_CHEST_KEY =
             LootTables.DESERT_PYRAMID_CHEST;
 
-    private static final RegistryKey<LootTable> IGLOO_CHEST_CHEST_KEY =
-            LootTables.IGLOO_CHEST_CHEST;
+//    private static final RegistryKey<LootTable> IGLOO_CHEST_CHEST_KEY =
+//            LootTables.IGLOO_CHEST_CHEST;
 
     private static final RegistryKey<LootTable> RUINED_PORTAL_CHEST_KEY =
             LootTables.RUINED_PORTAL_CHEST;
@@ -82,13 +82,14 @@ public class ModLootTableModifiers_DiaApple {
                         .conditionally(RandomChanceLootCondition.builder(0.222f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
             }
-
+            /*
             if (IGLOO_CHEST_CHEST_KEY.equals(key)) {
                 tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(1f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
             }
+             */
 
             if (RUINED_PORTAL_CHEST_KEY.equals(key)) {
                 tableBuilder.modifyPools(poolBuilder -> poolBuilder

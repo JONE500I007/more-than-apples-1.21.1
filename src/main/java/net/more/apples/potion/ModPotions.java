@@ -26,9 +26,9 @@ public class ModPotions {
     public static final RegistryEntry<Potion> MINING_FATIGUE_IMMUNE_POTION_L = registerPotion1("mining_fatigue_immune_potion_l",
             new Potion(new StatusEffectInstance(ModEffects.MINING_FATIGUE_IMMUNE, 9600, 0)));
 
-    public static final RegistryEntry<Potion> FREEZING_RESOSTANCE_POTION = registerPotion1("freezing_resistance_potion",
+    public static final RegistryEntry<Potion> FREEZING_RESISTANCE_POTION = registerPotion1("freezing_resistance_potion",
             new Potion(new StatusEffectInstance(ModEffects.FREEZING_RESISTANCE, 3600, 0)));
-    public static final RegistryEntry<Potion> FREEZING_RESOSTANCE_POTION_l = registerPotion1("freezing_resistance_potion_l",
+    public static final RegistryEntry<Potion> FREEZING_RESISTANCE_POTION_l = registerPotion1("freezing_resistance_potion_l",
             new Potion(new StatusEffectInstance(ModEffects.FREEZING_RESISTANCE, 9600, 0)));
 
     public static final RegistryEntry<Potion> NIGHT_VISION_POTION_V1 = registerPotion1("night_vision_potion_v1",
