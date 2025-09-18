@@ -3,7 +3,6 @@ package net.more.apples.effect;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.effect.StatusEffects;
 
 public class FreezingResistanceEffect extends StatusEffect {
     public FreezingResistanceEffect(StatusEffectCategory category, int color) {

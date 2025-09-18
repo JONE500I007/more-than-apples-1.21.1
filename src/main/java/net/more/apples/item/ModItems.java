@@ -1,8 +1,6 @@
 package net.more.apples.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -10,8 +8,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.more.apples.MoreThanApples;
 import net.more.apples.item.custom.CustomEnchApple;
-import net.more.apples.item.custom.HorseFeedingAppleItem;
-import net.more.apples.potion.ModPotions;
 
 public class ModItems {
     public static final Item DIAMOND_APPLE = registerItem("diamond_apple", new Item(new Item.Settings()

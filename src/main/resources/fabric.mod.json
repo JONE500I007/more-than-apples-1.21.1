@@ -3,13 +3,13 @@
 	"id": "more-than-apples",
 	"version": "${version}",
 	"name": "More Than Apples",
-	"description": "This mod add item item for eat it is that apple",
+	"description": "This mod add new apples and effects",
 	"authors": [
 		"JONE 500"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "discord: jone 500",
+		"sources": "https://github.com/JONE500I007/more-than-apples-1.21.1"
 	},
 	"license": "MIT",
 	"icon": "assets/more-than-apples/icon.png",
