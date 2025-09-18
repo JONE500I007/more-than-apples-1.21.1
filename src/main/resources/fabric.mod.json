@@ -8,7 +8,8 @@
 		"JONE 500"
 	],
 	"contact": {
-		"homepage": "discord: jone 500",
+		"discord": "jone 500",
+		"issues": "https://github.com/JONE500I007/more-than-apples-1.21.1/issues",
 		"sources": "https://github.com/JONE500I007/more-than-apples-1.21.1"
 	},
 	"license": "MIT",
