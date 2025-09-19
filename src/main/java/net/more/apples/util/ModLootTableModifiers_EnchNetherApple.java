@@ -12,7 +12,7 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.registry.RegistryKey;
 import net.more.apples.item.ModItems;
 
-public class ModLootTableModifiers_EnchDiaApple {
+public class ModLootTableModifiers_EnchNetherApple {
     private static final RegistryKey<LootTable> SIMPLE_DUNGEON_CHEST_KEY =
             LootTables.SIMPLE_DUNGEON_CHEST;
 
@@ -37,63 +37,65 @@ public class ModLootTableModifiers_EnchDiaApple {
     private static final RegistryKey<LootTable> WOODLAND_MANSION_CHEST_KEY =
             LootTables.WOODLAND_MANSION_CHEST;
 
+    private static final float JUST_DROP_RATE = 0.85f;
+
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SIMPLE_DUNGEON_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.028f))
-                        .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
+                        .conditionally(RandomChanceLootCondition.builder(0.028f * JUST_DROP_RATE))
+                        .with(ItemEntry.builder(ModItems.ENCHANTED_NETHERITE_APPLE)));
             }
 
             if (ABANDONED_MINESHAFT_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.014f))
-                        .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
+                        .conditionally(RandomChanceLootCondition.builder(0.014f * JUST_DROP_RATE))
+                        .with(ItemEntry.builder(ModItems.ENCHANTED_NETHERITE_APPLE)));
             }
 
             if (ANCIENT_CITY_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.084f))
-                        .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)))
+                        .conditionally(RandomChanceLootCondition.builder(0.084f * JUST_DROP_RATE))
+                        .with(ItemEntry.builder(ModItems.ENCHANTED_NETHERITE_APPLE)))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
             }
 
             if (BASTION_TREASURE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.builder()
                                 .rolls(ConstantLootNumberProvider.create(1))
-                                .conditionally(RandomChanceLootCondition.builder(0.059f))
-                                .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
+                                .conditionally(RandomChanceLootCondition.builder(0.059f * JUST_DROP_RATE))
+                                .with(ItemEntry.builder(ModItems.ENCHANTED_NETHERITE_APPLE)));
             }
 
             if (DESERT_PYRAMID_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.024f))
-                        .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
+                        .conditionally(RandomChanceLootCondition.builder(0.024f * JUST_DROP_RATE))
+                        .with(ItemEntry.builder(ModItems.ENCHANTED_NETHERITE_APPLE)));
             }
 
             if (RUINED_PORTAL_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.015f))
-                        .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
+                        .conditionally(RandomChanceLootCondition.builder(0.015f * JUST_DROP_RATE))
+                        .with(ItemEntry.builder(ModItems.ENCHANTED_NETHERITE_APPLE)));
             }
 
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.225f))
-                        .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
+                        .conditionally(RandomChanceLootCondition.builder(0.225f * JUST_DROP_RATE))
+                        .with(ItemEntry.builder(ModItems.ENCHANTED_NETHERITE_APPLE)));
             }
 
             if (WOODLAND_MANSION_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.031f))
-                        .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
+                        .conditionally(RandomChanceLootCondition.builder(0.031f * JUST_DROP_RATE))
+                        .with(ItemEntry.builder(ModItems.ENCHANTED_NETHERITE_APPLE)));
             }
         });
     }

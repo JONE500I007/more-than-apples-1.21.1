@@ -1,18 +1,60 @@
 {
+  "item.more-than-apples.diamond_nugget": "เศษเพชร",
   "item.more-than-apples.diamond_apple": "แอปเปิ้ลเพชร",
-  "item.more-than-apples.enchanted_diamond_apple": "เอ็นชานเท็ด แอปเปิ้ลเพชร",
+  "item.more-than-apples.enchanted_diamond_apple": "แอปเปิ้ลเพชรร่ายมนตร์",
   "item.more-than-apples.diamond_carrot": "แครอทเพชร",
+  "item.more-than-apples.netherite_apple": "แอปเปิ้ลเนเธอไรต์",
+  "item.more-than-apples.enchanted_netherite_apple": "แอปเปิ้ลเนเธอไรต์ร่ายมนตร์",
 
   "block.more-than-apples.diamond_apple_block": "บล็อกแอ๊ปเปิ้ลเพชร",
 
   "itemgroup.more-than-apples.diamond_apple_icon": "มากกว่าแอปเปิ้ลนั้น (:",
+  "itemgroup.more-than-apples.zpotion_icon": "น้ำยามากกว่าแอปเปิ้ลนั้น :)",
 
-  "effect.more-than-apples.darkness_immune": "ภูมิคุ้มกันความมืด",
-  "effect.more-than-apples.freezing_resostance": "ต้านทานการแช่แข็ง",
+  "effect.more-than-apples.darkness_immune": "ภูมิคุ้มกันมืดมิด",
+  "effect.more-than-apples.slowness_immune": "ภูมิคุ้มกันวิ่งช้า",
+  "effect.more-than-apples.mining_fatigue_immune": "ภูมิคุ้มกันขุดช้า",
+  "effect.more-than-apples.freezing_resistance": "ต้านทานการแช่แข็ง",
 
-  "item.minecraft.potion.effect.darkness_immune_potion": "น้ำยา ภูมิคุ้มกันความมืด",
-  "item.minecraft.potion.effect.darkness_immune_potion_l": "น้ำยา ภูมิคุ้มกันความมืด",
-  "item.minecraft.potion.effect.freezing_resostance_potion": "น้ำยา ต้านทานการแช่แข็ง",
-  "item.minecraft.potion.effect.freezing_resostance_potion_l": "น้ำยา ต้านทานการแช่แข็ง",
-  "item.minecraft.potion.effect.night_vision_potion_v1": "น้ำยา มองเห็นกลางคืน"
+  "item.minecraft.potion.effect.darkness_immune_potion": "น้ำยาภูมิคุ้มกันความมืด",
+  "item.minecraft.potion.effect.darkness_immune_potion_l": "น้ำยาภูมิคุ้มกันความมืด",
+  "item.minecraft.splash_potion.effect.darkness_immune_potion": "น้ำยาภูมิคุ้มกันความมืดแบบปา",
+  "item.minecraft.splash_potion.effect.darkness_immune_potion_l": "น้ำยาภูมิคุ้มกันความมืดแบบปา",
+  "item.minecraft.lingering_potion.effect.darkness_immune_potion": "น้ำยาภูมิคุ้มกันความมืดแบบระเหย",
+  "item.minecraft.lingering_potion.effect.darkness_immune_potion_l": "น้ำยาภูมิคุ้มกันความมืดแบบระเหย",
+
+  "item.minecraft.potion.effect.slowness_immune_potion": "น้ำยาภูมิคุ้มกันวิ่งช้า",
+  "item.minecraft.potion.effect.slowness_immune_potion_l": "น้ำยาภูมิคุ้มกันวิ่งช้า",
+  "item.minecraft.splash_potion.effect.slowness_immune_potion": "น้ำยาภูมิคุ้มกันวิ่งช้าแบบปา",
+  "item.minecraft.splash_potion.effect.slowness_immune_potion_l": "น้ำยาภูมิคุ้มกันวิ่งช้าแบบปา",
+  "item.minecraft.lingering_potion.effect.slowness_immune_potion": "น้ำยาภูมิคุ้มกันวิ่งช้าแบบระเหย",
+  "item.minecraft.lingering_potion.effect.slowness_immune_potion_l": "น้ำยาภูมิคุ้มกันวิ่งช้าแบบระเหย",
+
+  "item.minecraft.potion.effect.mining_fatigue_immune_potion": "น้ำยาภูมิคุ้มกันขุดช้า",
+  "item.minecraft.potion.effect.mining_fatigue_immune_potion_l": "น้ำยาภูมิคุ้มกันขุดช้า",
+  "item.minecraft.splash_potion.effect.mining_fatigue_immune_potion": "น้ำยาภูมิคุ้มกันขุดช้าแบบปา",
+  "item.minecraft.splash_potion.effect.mining_fatigue_immune_potion_l": "น้ำยาภูมิคุ้มกันขุดช้าแบบปา",
+  "item.minecraft.lingering_potion.effect.mining_fatigue_immune_potion": "น้ำยาภูมิคุ้มกันขุดช้าแบบระเหย",
+  "item.minecraft.lingering_potion.effect.mining_fatigue_immune_potion_l": "น้ำยาภูมิคุ้มกันขุดช้าแบบระเหย",
+
+  "item.minecraft.potion.effect.freezing_resistance_potion": "น้ำยาต้านทานการแช่แข็ง",
+  "item.minecraft.potion.effect.freezing_resistance_potion_l": "น้ำยาต้านทานการแช่แข็ง",
+  "item.minecraft.splash_potion.effect.freezing_resistance_potion": "น้ำยาต้านทานการแช่แข็งแบบปา",
+  "item.minecraft.splash_potion.effect.freezing_resistance_potion_l": "น้ำยาต้านทานการแช่แข็งแบบปา",
+  "item.minecraft.lingering_potion.effect.freezing_resistance_potion": "น้ำยาต้านทานการแช่แข็งแบบระเหย",
+  "item.minecraft.lingering_potion.effect.freezing_resistance_potion_l": "น้ำยาต้านทานการแช่แข็งแบบระเหย",
+
+  "item.minecraft.potion.effect.night_vision_potion_v1": "น้ำยามองกลางคืน",
+  "item.minecraft.splash_potion.effect.night_vision_potion_v1": "น้ำยามองกลางคืนแบบปา",
+  "item.minecraft.lingering_potion.effect.night_vision_potion_v1": "น้ำยามองกลางคืนแบบระเหย",
+
+  "item.minecraft.tipped_arrow.effect.darkness_immune_potion": "ลูกธนูอาบยาภูมิคุ้มกันมืดมิด",
+  "item.minecraft.tipped_arrow.effect.darkness_immune_potion_l": "ลูกธนูอาบยาภูมิคุ้มกันมืดมิด",
+  "item.minecraft.tipped_arrow.effect.slowness_immune_potion": "ลูกธนูอาบยาภูมิคุ้มกันวิ่งช้า",
+  "item.minecraft.tipped_arrow.effect.slowness_immune_potion_l": "ลูกธนูอาบยาภูมิคุ้มกันวิ่งช้า",
+  "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion": "ลูกธนูอาบยาภูมิคุ้มกันขุดช้า",
+  "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion_l": "ลูกธนูอาบยาภูมิคุ้มกันขุดช้า",
+  "item.minecraft.tipped_arrow.effect.freezing_resistance_potion": "ลูกธนูอาบยาต้านทานการแช่แข็ง",
+  "item.minecraft.tipped_arrow.effect.freezing_resistance_potion_l": "ลูกธนูอาบยาต้านทานการแช่แข็ง",
+  "item.minecraft.tipped_arrow.effect.night_vision_potion_v1": "ลูกธนูอาบยามองกลางคืน"
 }

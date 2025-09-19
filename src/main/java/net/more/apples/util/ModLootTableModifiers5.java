@@ -1,7 +1,6 @@
 package net.more.apples.util;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
@@ -12,7 +11,7 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.registry.RegistryKey;
 import net.more.apples.item.ModItems;
 
-public class ModLootTableModifiers_EnchDiaApple {
+public class ModLootTableModifiers5 {
     private static final RegistryKey<LootTable> SIMPLE_DUNGEON_CHEST_KEY =
             LootTables.SIMPLE_DUNGEON_CHEST;
 
@@ -37,24 +36,24 @@ public class ModLootTableModifiers_EnchDiaApple {
     private static final RegistryKey<LootTable> WOODLAND_MANSION_CHEST_KEY =
             LootTables.WOODLAND_MANSION_CHEST;
 
-    public static void modifyLootTables() {
+    public static void modifyLootTables3() {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SIMPLE_DUNGEON_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.028f))
                         .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
             }
 
             if (ABANDONED_MINESHAFT_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.014f))
                         .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
             }
 
             if (ANCIENT_CITY_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.084f))
                         .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)))
@@ -62,35 +61,35 @@ public class ModLootTableModifiers_EnchDiaApple {
             }
 
             if (BASTION_TREASURE_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                                 .rolls(ConstantLootNumberProvider.create(1))
                                 .conditionally(RandomChanceLootCondition.builder(0.059f))
                                 .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
             }
 
             if (DESERT_PYRAMID_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.024f))
                         .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
             }
 
             if (RUINED_PORTAL_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.015f))
                         .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
             }
 
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.225f))
                         .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));
             }
 
             if (WOODLAND_MANSION_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.031f))
                         .with(ItemEntry.builder(ModItems.ENCHANTED_DIAMOND_APPLE)));

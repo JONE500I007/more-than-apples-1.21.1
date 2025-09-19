@@ -1,7 +1,6 @@
 package net.more.apples.util;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
@@ -10,7 +9,7 @@ import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.registry.RegistryKey;
 import net.more.apples.item.ModItems;
 
-public class ModLootTableModifiers_DiaApple {
+public class ModLootTableModifiers3 {
     private static final RegistryKey<LootTable> SIMPLE_DUNGEON_CHEST_KEY =
             LootTables.SIMPLE_DUNGEON_CHEST;
     private static final RegistryKey<LootTable> ABANDONED_MINESHAFT_CHEST_KEY =
@@ -47,36 +46,36 @@ public class ModLootTableModifiers_DiaApple {
 
 
 
-    public static void modifyLootTables() {
+    public static void modifyLootTables2() {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SIMPLE_DUNGEON_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.19f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
             }
             if (ABANDONED_MINESHAFT_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.282f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
             }
 
             if (BASTION_OTHER_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.101f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
             }
             if (BASTION_HOGLIN_STABLE_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.10f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
             }
 
             if (DESERT_PYRAMID_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.222f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
@@ -91,41 +90,41 @@ public class ModLootTableModifiers_DiaApple {
              */
 
             if (RUINED_PORTAL_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.205f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
             }
 
             if (STRONGHOLD_CORRIDOR_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.025f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
             }
 
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.083f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
             }
             if (TRIAL_CHAMBERS_REWARD_UNIQUE_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.083f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
             }
 
             if (UNDERWATER_RUIN_BIG_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.043f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));
             }
 
             if (WOODLAND_MANSION_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.218f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_APPLE)));

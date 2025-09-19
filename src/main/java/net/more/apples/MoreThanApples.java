@@ -31,9 +31,11 @@ public class MoreThanApples implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItemGroups2.registerItemGroups2();
 
-		ModLootTableModifiers_DiaApple.modifyLootTables2();
-		ModLootTableModifiers_DiaCarrot.modifyLootTables1();
-		ModLootTableModifiers_EnchDiaApple.modifyLootTables3();
+		ModLootTableModifiers_DiaApple.modifyLootTables();
+		ModLootTableModifiers_DiaCarrot.modifyLootTables();
+		ModLootTableModifiers_EnchDiaApple.modifyLootTables();
+		ModLootTableModifiers_NetherApple.modifyLootTables();
+		ModLootTableModifiers_EnchNetherApple.modifyLootTables();
 
 		ModEffects.registerEffects();
 

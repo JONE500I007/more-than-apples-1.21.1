@@ -1,7 +1,6 @@
 package net.more.apples.util;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.LootTables;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
@@ -12,7 +11,7 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.registry.RegistryKey;
 import net.more.apples.item.ModItems;
 
-public class ModLootTableModifiers_DiaCarrot {
+public class ModLootTableModifiers4 {
 //    private static final Identifier JUNGLE_TEMPLE_ID =
 //            Identifier.of("minecraft", "chests/jungle_temple");
 //    private static final Identifier CREEPER_ID =
@@ -35,25 +34,25 @@ public class ModLootTableModifiers_DiaCarrot {
 
 
 
-    public static void modifyLootTables() {
+    public static void modifyLootTables1() {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ANCIENT_CITY_ICE_BOX_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.549f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f))));
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 5.0f))));
             }
 
             if (BASTION_HOGLIN_STABLE_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.10f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(8.0f, 17.0f))));
             }
             if (BASTION_OTHER_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.135f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
@@ -61,7 +60,7 @@ public class ModLootTableModifiers_DiaCarrot {
             }
 
             if (RUINED_PORTAL_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.073f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
@@ -69,14 +68,14 @@ public class ModLootTableModifiers_DiaCarrot {
             }
 
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.14f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f))));
             }
             if (TRIAL_CHAMBERS_REWARD_RARE_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
+                tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.07f))
                         .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
