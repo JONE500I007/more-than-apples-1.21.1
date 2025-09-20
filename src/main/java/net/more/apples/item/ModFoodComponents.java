@@ -87,6 +87,7 @@ public class ModFoodComponents {
                             new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 30000, 1),
                             new StatusEffectInstance(StatusEffects.RESISTANCE, 30000, 1),
                             new StatusEffectInstance(ModEffects.FREEZING_RESISTANCE, 30000, 0),
+                            new StatusEffectInstance(ModEffects.SLOWNESS_IMMUNE, 30000, 0),
                             new StatusEffectInstance(ModEffects.MINING_FATIGUE_IMMUNE, 30000, 0),
                             new StatusEffectInstance(ModEffects.DARKNESS_IMMUNE, 30000, 0),
                             new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 12000, 3),
