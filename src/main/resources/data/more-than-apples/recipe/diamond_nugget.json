@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "more-than-apples:diamond_nugget"
-    }
+    "#": "more-than-apples:diamond_nugget"
   },
   "pattern": [
     "###",

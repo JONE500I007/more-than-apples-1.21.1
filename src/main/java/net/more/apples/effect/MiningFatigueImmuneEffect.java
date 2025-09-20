@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.server.world.ServerWorld;
 
 public class MiningFatigueImmuneEffect extends StatusEffect {
     public MiningFatigueImmuneEffect(StatusEffectCategory category, int color) {
@@ -16,7 +17,7 @@ public class MiningFatigueImmuneEffect extends StatusEffect {
     }
 
     @Override
-    public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
+    public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
         if (entity.hasStatusEffect(StatusEffects.MINING_FATIGUE)) {
             entity.removeStatusEffect(StatusEffects.MINING_FATIGUE);
         }

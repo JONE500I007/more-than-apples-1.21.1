@@ -4,6 +4,8 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.more.apples.MoreThanApples;
@@ -11,25 +13,31 @@ import net.more.apples.item.custom.CustomEnchApple;
 
 public class ModItems {
     public static final Item DIAMOND_APPLE = registerItem("diamond_apple", new Item(new Item.Settings()
-            .food(ModFoodComponents.DIAMOND_APPLE_EFFECT)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "diamond_apple")))
+            .food(ModFoodComponents.DIAMOND_APPLE_FOOD, ModFoodComponents.DIAMOND_APPLE_EFFECT)
             .rarity(Rarity.RARE)));
     public static final Item ENCHANTED_DIAMOND_APPLE = registerItem("enchanted_diamond_apple", new CustomEnchApple(new Item.Settings()
-            .food(ModFoodComponents.ENCHANTED_DIAMOND_APPLE_EFFECT)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "enchanted_diamond_apple")))
+            .food(ModFoodComponents.ENCHANTED_DIAMOND_APPLE_FOOD, ModFoodComponents.ENCHANTED_DIAMOND_APPLE_EFFECT)
             .rarity(Rarity.EPIC)));
     public static final Item DIAMOND_CARROT = registerItem("diamond_carrot", new Item(new Item.Settings()
-            .food(ModFoodComponents.DIAMOND_CARROT_EFFECT)));
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "diamond_carrot")))
+            .food(ModFoodComponents.DIAMOND_CARROT_FOOD, ModFoodComponents.DIAMOND_CARROT_EFFECT)));
 
     public static final Item NETHERITE_APPLE = registerItem("netherite_apple", new Item(new Item.Settings()
-            .food(ModFoodComponents.NETHERITE_APPLE_EFFECT)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "netherite_apple")))
+            .food(ModFoodComponents.NETHERITE_APPLE_FOOD, ModFoodComponents.NETHERITE_APPLE_EFFECT)
             .rarity(Rarity.RARE)));
     public static final Item ENCHANTED_NETHERITE_APPLE = registerItem("enchanted_netherite_apple", new CustomEnchApple(new Item.Settings()
-            .food(ModFoodComponents.ENCHANTED_NETHERITE_APPLE_EFFECT)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "enchanted_netherite_apple")))
+            .food(ModFoodComponents.ENCHANTED_NETHERITE_APPLE_FOOD, ModFoodComponents.ENCHANTED_NETHERITE_APPLE_EFFECT)
             .rarity(Rarity.EPIC)));
 
 
 
 
-    public static final Item DIAMOND_NUGGET = registerItem("diamond_nugget", new Item(new Item.Settings()));
+    public static final Item DIAMOND_NUGGET = registerItem("diamond_nugget", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "diamond_nugget")))));
 
 //    public static final Item DARKNESS_IMMUNE_POTION = registerItem("darkness_immune_potion", new PotionItem(new Item.Settings()
 //            .maxCount(1)));

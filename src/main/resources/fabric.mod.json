@@ -3,7 +3,7 @@
 	"id": "more-than-apples",
 	"version": "${version}",
 	"name": "More Than Apples",
-	"description": "This mod add new apples and effects",
+	"description": "TThis mod adds new apples and carrot and some unique effects that grant stronger buffs than normal golden foods",
 	"authors": [
 		"JONE 500"
 	],
@@ -30,8 +30,8 @@
 		"more-than-apples.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.14",
-		"minecraft": "~1.21.1",
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.2",
 		"java": ">=21",
 		"fabric-api": "*"
 	},

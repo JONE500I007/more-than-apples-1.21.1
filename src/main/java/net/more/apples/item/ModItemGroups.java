@@ -21,7 +21,8 @@ public class ModItemGroups {
 
     public static final ItemGroup DIAMOND_APPLE_ICON = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(MoreThanApples.MOD_ID, "diamond_apple_icon"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.DIAMOND_APPLE))
+            FabricItemGroup.builder()
+                    .icon(() -> new ItemStack(ModItems.DIAMOND_APPLE))
                     .displayName(Text.translatable("itemgroup.more-than-apples.diamond_apple_icon"))
                     .entries(((displayContext, entries) -> {
                         entries.add(ModItems.DIAMOND_NUGGET);
