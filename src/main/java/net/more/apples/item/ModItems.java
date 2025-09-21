@@ -26,10 +26,12 @@ public class ModItems {
 
     public static final Item NETHERITE_APPLE = registerItem("netherite_apple", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "netherite_apple")))
+            .fireproof()
             .food(ModFoodComponents.NETHERITE_APPLE_FOOD, ModFoodComponents.NETHERITE_APPLE_EFFECT)
             .rarity(Rarity.RARE)));
     public static final Item ENCHANTED_NETHERITE_APPLE = registerItem("enchanted_netherite_apple", new CustomEnchApple(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "enchanted_netherite_apple")))
+            .fireproof()
             .food(ModFoodComponents.ENCHANTED_NETHERITE_APPLE_FOOD, ModFoodComponents.ENCHANTED_NETHERITE_APPLE_EFFECT)
             .rarity(Rarity.EPIC)));
 

@@ -56,5 +56,22 @@
   "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion_l": "Arrow of Mining Fatigue",
   "item.minecraft.tipped_arrow.effect.freezing_resistance_potion": "Arrow of Freezing Resistance",
   "item.minecraft.tipped_arrow.effect.freezing_resistance_potion_l": "Arrow of Freezing Resistance",
-  "item.minecraft.tipped_arrow.effect.night_vision_potion_v1": "Potion of Night Vision"
+  "item.minecraft.tipped_arrow.effect.night_vision_potion_v1": "Potion of Night Vision",
+
+
+  "advancements.more-than-apples.story.obtain_diamond_apple.title": "Shiny Diamond Apple!",
+  "advancements.more-than-apples.story.obtain_diamond_apple.description": "This is still harder than gold?",
+
+  "advancements.more-than-apples.story.obtain_diamond_carrot.title": "Brilliant Diamond Carrot!",
+  "advancements.more-than-apples.story.obtain_diamond_carrot.description": "You found that diamonds are harder than gold",
+
+  "advancements.more-than-apples.story.obtain_netherite_apple.title": "Cover Me With Apple",
+  "advancements.more-than-apples.story.obtain_netherite_apple.description": "I think maybe Steve can still eat this",
+
+  "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.title": "APPLE!!",
+  "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.description": "htjgodgjgedogkeodpg",
+
+  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.title": "I FEAR NO ONE!",
+  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.description": "I think if you eat this, you're not going to die"
+
 }
