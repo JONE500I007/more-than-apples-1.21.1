@@ -54,6 +54,11 @@ public class ModCustomTrades {
         TradeOfferHelper.registerWanderingTraderOffers(factories -> {
             factories.addOffersToPool(TradeOfferHelper.WanderingTraderOffersBuilder.BUY_ITEMS_POOL,
                     (entity, random) -> new TradeOffer(
+                            new TradedItem(Items.EMERALD_BLOCK, 3),
+                            new ItemStack(Items.GOLDEN_APPLE, 1),
+                            13, 100, 0.2f
+                    ),
+                    (entity, random) -> new TradeOffer(
                             new TradedItem(Items.EMERALD_BLOCK, 7),
                             new ItemStack(ModItems.DIAMOND_APPLE, 1),
                             10, 200, 0.2f
@@ -77,6 +82,11 @@ public class ModCustomTrades {
                     )
             );
             factories.addOffersToPool(TradeOfferHelper.WanderingTraderOffersBuilder.SELL_SPECIAL_ITEMS_POOL,
+                    (entity, random) -> new TradeOffer(
+                            new TradedItem(Items.EMERALD_BLOCK, 17),
+                            new ItemStack(Items.ENCHANTED_GOLDEN_APPLE, 1),
+                            2, 350, 0.2f
+                    ),
                     (entity, random) -> new TradeOffer(
                             new TradedItem(Items.EMERALD_BLOCK, 20),
                             new ItemStack(ModItems.ENCHANTED_DIAMOND_APPLE, 1),
