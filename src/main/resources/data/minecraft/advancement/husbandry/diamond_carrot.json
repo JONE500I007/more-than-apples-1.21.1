@@ -22,7 +22,10 @@
     "title": {
       "translate": "advancements.more-than-apples.story.obtain_diamond_carrot.title"
     },
-    "frame": "task"
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
   },
   "requirements": [
     [
