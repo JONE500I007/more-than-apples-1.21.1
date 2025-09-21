@@ -61,7 +61,7 @@ public class MoreThanApples implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-W		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Hello Fabric world!");
 
 	}
 }
