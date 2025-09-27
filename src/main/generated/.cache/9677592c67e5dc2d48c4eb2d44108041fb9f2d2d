@@ -1,0 +1,5 @@
+// 1.21.1	2025-09-28T01:22:44.3850953	More Than Apples/MoreThanApples Registry Data Generator
+a47e3b46f8668b74332a50b76cb88abc3cef30c2 data\more-than-apples\worldgen\placed_feature\apple_ore_placed.json
+951e1cc16850081058c9c14167093dbcd5b66923 data\more-than-apples\worldgen\configured_feature\apple_ore.json
+abf98d30e34294a8f6b346f33348667469ff343d data\more-than-apples\worldgen\configured_feature\apple_tree_key.json
+f18c812d651dbb4e9b998c9fd62b271e18479ab4 data\more-than-apples\worldgen\placed_feature\apple_tree_placed.json
