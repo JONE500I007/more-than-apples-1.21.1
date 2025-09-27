@@ -44,6 +44,7 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks2.FRUIT_APPLE_LEAVES);
                         entries.add(ModBlocks2.APPLE_LEAVES);
+                        entries.add(ModBlocks2.APPLE_SAPLING);
 
 
                     }))

@@ -78,6 +78,7 @@ public class MoreThanApples implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.STRIPPED_APPLE_WOOD, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.APPLE_PLANKS, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.APPLE_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FRUIT_APPLE_LEAVES, 30, 60);
 
 		LOGGER.info("Hello Fabric world!");
 	}

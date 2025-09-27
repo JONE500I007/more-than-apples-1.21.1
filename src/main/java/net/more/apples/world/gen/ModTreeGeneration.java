@@ -10,5 +10,8 @@ public class ModTreeGeneration {
     public static void generaTrees(){
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.MEADOW),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLE_TREE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.MEADOW),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.LARGE_APPLE_TREE_PLACED_KEY);
     }
 }

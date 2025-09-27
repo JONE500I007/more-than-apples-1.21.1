@@ -1,10 +1,13 @@
 package net.more.apples.world;
 
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
@@ -18,6 +21,7 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> APPLE_ORE_PLACED_KEY = registryKey("apple_ore_placed");
 
     public static final RegistryKey<PlacedFeature> APPLE_TREE_PLACED_KEY = registryKey("apple_tree_placed");
+    public static final RegistryKey<PlacedFeature> LARGE_APPLE_TREE_PLACED_KEY = registryKey("large_apple_tree_placed");
 
     public static void boostrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -31,10 +35,18 @@ public class ModPlacedFeatures {
                 ModOrePlacement.modifiersWithCount(14, HeightRangePlacementModifier.trapezoid(YOffset.fixed(-80), YOffset.fixed(80)))
         );
          */
-
+        //count = minimum number to spawn every chunk
+        //extraChance = Random chance 0.0 – 1.0 (maybe) to spawn an additional extraCount
+        //extraCount = the number to spawn increases if extraChance is randomly cast
         register(context, APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.APPLE_TREE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         PlacedFeatures.createCountExtraModifier(2, 0.1f, 2), ModBlocks2.APPLE_SAPLING));
+        register(context, LARGE_APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_APPLE_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        PlacedFeatures.createCountExtraModifier(0, 0.05f, 1), ModBlocks2.APPLE_SAPLING));
+
+
+
     }
 
 

@@ -11,7 +11,6 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.more.apples.MoreThanApples;
-import net.more.apples.item.ModFoodComponents;
 import net.more.apples.world.tree.ModSaplingGenerators;
 
 public class ModBlocks2 {
@@ -73,6 +72,7 @@ public class ModBlocks2 {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entrise -> {
             entrise.add(APPLE_LEAVES);
             entrise.add(FRUIT_APPLE_LEAVES);
+            entrise.add(APPLE_SAPLING);
         });
     }
 }
