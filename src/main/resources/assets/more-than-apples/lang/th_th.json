@@ -56,5 +56,20 @@
   "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion_l": "ลูกธนูอาบยาภูมิคุ้มกันขุดช้า",
   "item.minecraft.tipped_arrow.effect.freezing_resistance_potion": "ลูกธนูอาบยาต้านทานการแช่แข็ง",
   "item.minecraft.tipped_arrow.effect.freezing_resistance_potion_l": "ลูกธนูอาบยาต้านทานการแช่แข็ง",
-  "item.minecraft.tipped_arrow.effect.night_vision_potion_v1": "ลูกธนูอาบยามองกลางคืน"
+  "item.minecraft.tipped_arrow.effect.night_vision_potion_v1": "ลูกธนูอาบยามองกลางคืน",
+
+  "advancements.more-than-apples.story.obtain_diamond_apple.title": "แอปเปิ้ลเพชรแวววาว!",
+  "advancements.more-than-apples.story.obtain_diamond_apple.description": "นี่มันยังแข็งกว่าทองอีกเหรอ?",
+
+  "advancements.more-than-apples.story.obtain_diamond_carrot.title": "แครอทเพชรสุดเจิดจ้า!",
+  "advancements.more-than-apples.story.obtain_diamond_carrot.description": "คุณค้นพบแล้วว่าเพชรแข็งกว่าทอง",
+
+  "advancements.more-than-apples.story.obtain_netherite_apple.title": "ห่อฉันด้วยแอปเปิ้ล",
+  "advancements.more-than-apples.story.obtain_netherite_apple.description": "ฉันว่าบางทีสตีฟก็น่าจะกินเจ้านี่ได้นะ",
+
+  "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.title": "แอปเปิ้ล!!",
+  "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.description": "เ่าหฟนกาเ่ำนำนววหเาเนำ",
+
+  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.title": "ข้าไม่กลัวใครทั้งนั้น!",
+  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.description": "ฉันคิดว่าถ้าคุณกินนี่ คุณคงไม่ตายแน่ๆ"
 }

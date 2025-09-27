@@ -15,6 +15,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.ModBlocks;
+import net.more.apples.block.ModBlocks2;
 import net.more.apples.potion.ModPotions;
 
 public class ModItemGroups {
@@ -31,6 +32,18 @@ public class ModItemGroups {
 
                         entries.add(ModItems.NETHERITE_APPLE);
                         entries.add(ModItems.ENCHANTED_NETHERITE_APPLE);
+
+                        entries.add(ModBlocks2.APPLE_ORE);
+                        entries.add(ModBlocks2.DEEPSLATE_APPLE_ORE);
+
+                        entries.add(ModBlocks2.APPLE_LOG);
+                        entries.add(ModBlocks2.APPLE_WOOD);
+                        entries.add(ModBlocks2.STRIPPED_APPLE_LOG);
+                        entries.add(ModBlocks2.STRIPPED_APPLE_WOOD);
+                        entries.add(ModBlocks2.APPLE_PLANKS);
+
+                        entries.add(ModBlocks2.FRUIT_APPLE_LEAVES);
+                        entries.add(ModBlocks2.APPLE_LEAVES);
 
 
                     }))

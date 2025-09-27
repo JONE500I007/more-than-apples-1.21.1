@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:husbandry/balanced_diet",
+  "criteria": {
+    "obtain_diamond_apple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "more-than-apples:diamond_apple"
+          ]
+        }
+      }
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.more-than-apples.story.obtain_diamond_apple.description"
+    },
+    "icon": {
+      "id": "more-than-apples:diamond_apple"
+    },
+    "title": {
+      "translate": "advancements.more-than-apples.story.obtain_diamond_apple.title"
+    },
+    "frame": "task"
+  },
+  "requirements": [
+    [
+      "obtain_diamond_apple"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
