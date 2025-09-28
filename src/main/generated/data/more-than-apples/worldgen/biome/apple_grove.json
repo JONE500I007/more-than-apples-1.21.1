@@ -8,9 +8,9 @@
   },
   "downfall": 0.04,
   "effects": {
-    "fog_color": 2269670,
-    "foliage_color": 13763580,
-    "grass_color": 8324092,
+    "fog_color": 16176813,
+    "foliage_color": 14791018,
+    "grass_color": 14262374,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -23,9 +23,9 @@
       "replace_current_music": false,
       "sound": "minecraft:music.overworld.meadow"
     },
-    "sky_color": 3197208,
-    "water_color": 15216187,
-    "water_fog_color": 12524326
+    "sky_color": 15909771,
+    "water_color": 15116651,
+    "water_fog_color": 13205340
   },
   "features": [
     [],
@@ -75,7 +75,8 @@
     [],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_plains",
+      "more-than-apples:apple_tree_placed",
+      "minecraft:patch_tall_grass_2",
       "minecraft:forest_flowers",
       "minecraft:patch_large_fern",
       "minecraft:brown_mushroom_normal",

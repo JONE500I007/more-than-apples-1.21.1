@@ -37,11 +37,11 @@ public class ModOverworldRegion extends Region {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 
         new ParameterPointListBuilder()
-                .temperature(Temperature.span(Temperature.NEUTRAL, Temperature.HOT))
-                .humidity(Humidity.span(Humidity.ARID, Humidity.DRY))
+                .temperature(Temperature.span(Temperature.NEUTRAL, Temperature.COOL))
+                .humidity(Humidity.span(Humidity.NEUTRAL, Humidity.WET))
                 .continentalness(Continentalness.INLAND)
                 .erosion(Erosion.EROSION_0, Erosion.EROSION_1)
-                .depth(Depth.SURFACE, Depth.FLOOR)
+                .depth(Depth.SURFACE)
                 .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, APPLE_GROVE));
 

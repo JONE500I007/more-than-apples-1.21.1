@@ -17,6 +17,7 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.more.apples.MoreThanApples;
+import net.more.apples.world.ModPlacedFeatures;
 
 public class ModBiomes {
     public static final RegistryKey<Biome> APPLE_GROVE = RegistryKey.of(RegistryKeys.BIOME,
@@ -42,6 +43,7 @@ public class ModBiomes {
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
+        // world gen maybe biome
         GenerationSettings.LookupBackedBuilder biomeBuilder =
                 new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
@@ -51,12 +53,18 @@ public class ModBiomes {
         DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
         DefaultBiomeFeatures.addExtraGoldOre(biomeBuilder);
 
-        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
+        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.APPLE_TREE_PLACED_KEY);
+
+        DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
         DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
         DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
-
         DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
+
+//        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
+//        DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
 
         return new Biome.Builder()
                 .precipitation(true)
@@ -65,12 +73,12 @@ public class ModBiomes {
                 .generationSettings(biomeBuilder.build())
                 .spawnSettings(spawnBuilder.build())
                 .effects((new BiomeEffects.Builder())
-                        .waterColor(0xe82e3b)
-                        .waterFogColor(0xbf1b26)
-                        .skyColor(0x30c918)
-                        .grassColor(0x7f03fc)
-                        .foliageColor(0xd203fc)
-                        .fogColor(0x22a1e6)
+                        .waterColor(0xE6A96B)
+                        .waterFogColor(0xC97F5C)
+                        .skyColor(0xF2C38B)
+                        .grassColor(0xD9A066)
+                        .foliageColor(0xE1B16A)
+                        .fogColor(0xF6D6AD)
                         .moodSound(BiomeMoodSound.CAVE)
                         //.music(MusicType.createIngameMusic(RegistryEntry.of(ModSounds.APPLE_LAND)))
                         .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW))

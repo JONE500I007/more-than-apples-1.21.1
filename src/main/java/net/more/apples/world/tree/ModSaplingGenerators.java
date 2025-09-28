@@ -9,7 +9,7 @@ import java.util.Optional;
 public class ModSaplingGenerators {
     public static final SaplingGenerator APPLE = new SaplingGenerator(
             MoreThanApples.MOD_ID + "apple",
-            0.1F,
+            0.2F,
             Optional.empty(),
             Optional.empty(),
             Optional.of(ModConfiguredFeatures.APPLE_TREE_KEY), // small tree
