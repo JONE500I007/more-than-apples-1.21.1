@@ -10,8 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
-import net.minecraft.world.gen.placementmodifier.PlacementModifier;
+import net.minecraft.world.gen.placementmodifier.*;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.ModBlocks2;
 
@@ -22,6 +21,9 @@ public class ModPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> APPLE_TREE_PLACED_KEY = registryKey("apple_tree_placed");
     public static final RegistryKey<PlacedFeature> LARGE_APPLE_TREE_PLACED_KEY = registryKey("large_apple_tree_placed");
+
+    public static final RegistryKey<PlacedFeature> EXTRA_FLOWERS_PLACED_KEY = registryKey("extra_flowers_placed");
+
 
     public static void boostrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -45,7 +47,35 @@ public class ModPlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         PlacedFeatures.createCountExtraModifier(0, 0.05f, 1), ModBlocks2.APPLE_SAPLING));
 
-
+        /*
+        context.register(EXTRA_FLOWERS_PLACED_KEY,
+                new PlacedFeature(
+                        configuredFeatures.getOrThrow(VegetationConfiguredFeatures.FLOWER_MEADOW),
+                        List.of(
+                                PlacedFeatures.createCountExtraModifier(8, 0.2f, 2),
+                                SquarePlacementModifier.of(),
+                                BiomePlacementModifier.of()
+                        )
+                )
+        );
+         */
+        /*
+        register(context, EXTRA_FLOWERS_PLACED_KEY,
+                configuredFeatures.getOrThrow(VegetationConfiguredFeatures.FLOWER_MEADOW),
+                PlacedFeatures.createCountExtraModifier(8, 0.2f, 2),
+                SquarePlacementModifier.of(),
+                BiomePlacementModifier.of()
+        );
+         */
+        /*
+        register(context, EXTRA_FLOWERS_PLACED_KEY,
+                configuredFeatures.getOrThrow(VegetationConfiguredFeatures.FLOWER_MEADOW),
+                PlacedFeatures.createCountExtraModifier(8, 0.1f, 2),
+                SquarePlacementModifier.of(),
+                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
+                BiomePlacementModifier.of()
+        );
+         */
 
     }
 

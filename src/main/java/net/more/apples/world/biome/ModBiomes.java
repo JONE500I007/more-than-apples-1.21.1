@@ -56,12 +56,19 @@ public class ModBiomes {
         //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.APPLE_TREE_PLACED_KEY);
+        /*
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.EXTRA_FLOWERS_PLACED_KEY);
 
-        DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
-        DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
-        DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
-        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-        DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
+         */
+
+        //DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
+        //DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
+        //DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
+        //DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
+        //DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
+        DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
+
 
 //        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
 //        DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);

@@ -76,13 +76,9 @@
     [
       "minecraft:glow_lichen",
       "more-than-apples:apple_tree_placed",
-      "minecraft:patch_tall_grass_2",
-      "minecraft:forest_flowers",
-      "minecraft:patch_large_fern",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_grass_plain",
+      "minecraft:flower_meadow",
+      "minecraft:trees_meadow"
     ],
     [
       "minecraft:freeze_top_layer"
