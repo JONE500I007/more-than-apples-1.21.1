@@ -4,10 +4,10 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
-import net.more.apples.datagen.ModLootTableGen;
 import net.more.apples.datagen.ModRegistryDataGenerator;
 import net.more.apples.world.ModConfiguredFeatures;
 import net.more.apples.world.ModPlacedFeatures;
+import net.more.apples.world.biome.ModBiomes;
 
 public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -21,5 +21,6 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::boostrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::boostrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::boostrap);
 	}
 }

@@ -24,6 +24,9 @@
 		],
 		"client": [
 			"net.more.apples.MoreThanApplesClinet"
+		],
+		"terrablender": [
+			"net.more.apples.world.biome.ModTerraBlenderAPI"
 		]
 	},
 	"mixins": [
