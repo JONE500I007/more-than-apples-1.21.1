@@ -6,7 +6,7 @@ import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 import net.more.apples.block.ModBlocks;
 import net.more.apples.block.ModBlocks2;
-import net.more.apples.world.biome.ModBiomes;
+import net.more.apples.world.biome.ModBiomesAppleGrove;
 
 public class ModMaterialRules {
     private static final MaterialRules.MaterialRule DIRT = makeStateRule(Blocks.DIRT);
@@ -24,16 +24,29 @@ public class ModMaterialRules {
         MaterialRules.MaterialRule grassSurface = MaterialRules.sequence(MaterialRules.condition(isAtOrAboveWaterLeave, GRASS_BLOCK), DIRT);
 
         return MaterialRules.sequence(
+                MaterialRules.condition(
+                        MaterialRules.biome(ModBiomesAppleGrove.APPLE_GROVE),
+                        MaterialRules.sequence(
+                                grassSurface,
+                                MaterialRules.condition(MaterialRules.aboveY(YOffset.fixed(60), 0), DIRT),
+                                MaterialRules.condition(
+                                        MaterialRules.aboveY(YOffset.fixed(0), 0), STONE), DEEPSLATE)));
+
+        /*
+        return MaterialRules.sequence(
                 // Default to a grass and dirt surface
                 MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, grassSurface)
         );
+         */
+
         /*
         return MaterialRules.sequence(
-                MaterialRules.condition(MaterialRules.biome(ModBiomes.APPLE_GROVE),
+                MaterialRules.condition(MaterialRules.biome(ModBiomesAppleGrove.APPLE_GROVE),
                         MaterialRules.sequence(
                                 MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, GRASS_BLOCK),
                                 MaterialRules.condition(MaterialRules.aboveY(YOffset.fixed(60), 0), DIRT),STONE)));
          */
+
 
         //return grassSurface;
         /*

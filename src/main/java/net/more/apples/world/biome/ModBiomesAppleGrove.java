@@ -15,11 +15,10 @@ import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
-import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.more.apples.MoreThanApples;
 import net.more.apples.world.ModPlacedFeatures;
 
-public class ModBiomes {
+public class ModBiomesAppleGrove {
     public static final RegistryKey<Biome> APPLE_GROVE = RegistryKey.of(RegistryKeys.BIOME,
             Identifier.of(MoreThanApples.MOD_ID, "apple_grove"));
 
@@ -87,6 +86,7 @@ public class ModBiomes {
                         .foliageColor(0xE1B16A)
                         .fogColor(0xF6D6AD)
                         .moodSound(BiomeMoodSound.CAVE)
+                        .grassColorModifier(BiomeEffects.GrassColorModifier.NONE)
                         //.music(MusicType.createIngameMusic(RegistryEntry.of(ModSounds.APPLE_LAND)))
                         .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW))
                 .build())

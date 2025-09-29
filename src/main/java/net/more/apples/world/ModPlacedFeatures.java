@@ -43,9 +43,20 @@ public class ModPlacedFeatures {
         register(context, APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.APPLE_TREE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         PlacedFeatures.createCountExtraModifier(2, 0.1f, 2), ModBlocks2.APPLE_SAPLING));
-        register(context, LARGE_APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_APPLE_KEY),
+
+//        register(context, LARGE_APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_APPLE_KEY),
+//                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+//                        PlacedFeatures.createCountExtraModifier(0, 0.5f, 1), ModBlocks2.APPLE_SAPLING));
+
+        // 1 in 6 chunk for your num
+        // 1 in 4 chunk
+        register(context, LARGE_APPLE_TREE_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_APPLE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
-                        PlacedFeatures.createCountExtraModifier(0, 0.05f, 1), ModBlocks2.APPLE_SAPLING));
+                        RarityFilterPlacementModifier.of(4),
+                        ModBlocks2.APPLE_SAPLING
+                )
+        );
 
         /*
         context.register(EXTRA_FLOWERS_PLACED_KEY,

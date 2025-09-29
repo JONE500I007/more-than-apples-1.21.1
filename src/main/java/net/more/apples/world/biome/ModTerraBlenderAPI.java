@@ -10,7 +10,7 @@ import terrablender.api.TerraBlenderApi;
 public class ModTerraBlenderAPI implements TerraBlenderApi {
     @Override
     public void onTerraBlenderInitialized() {
-        Regions.register(new ModOverworldRegion(Identifier.of(MoreThanApples.MOD_ID, "overworld"), 5));
+        Regions.register(new ModOverworldRegion(Identifier.of(MoreThanApples.MOD_ID, "overworld"), 6));
 
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModMaterialRules.makeRule());
     }
