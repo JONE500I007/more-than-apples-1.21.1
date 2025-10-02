@@ -95,7 +95,6 @@ public final class ModEntityUseHandler {
                             6, 0.3, 0.3, 0.3, 0.02
                     );
                 }
-                // ม้าโตที่ heal เฉย ๆ จะไม่มี particle
 
                 player.swingHand(hand, true);
                 return ActionResult.SUCCESS;
