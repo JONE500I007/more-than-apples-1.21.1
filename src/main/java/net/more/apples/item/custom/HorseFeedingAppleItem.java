@@ -23,8 +23,8 @@ public class HorseFeedingAppleItem extends Item {
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
         if (!(entity instanceof AbstractHorseEntity horse)) return ActionResult.PASS;
-        World world = user.getWorld();
-        if (world.isClient) return ActionResult.SUCCESS;
+        World world = user.getEntityWorld();
+        if (world.isClient()) return ActionResult.SUCCESS;
 
         boolean didFeed = false;
 

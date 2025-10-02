@@ -45,8 +45,8 @@ public class MoreThanApples implements ModInitializer {
 
 		ModCustomTrades.registerCustomTrades();
 
-		//ModEntityUseHandler.register();
-		ModEntityUseHandler2.register();
+		ModEntityUseHandler.register();
+		//ModEntityUseHandler2.register();
 		/*
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD,ModItems.DIAMOND_CARROT, ModPotions.DARKNESS_IMMUNE_POTION);
