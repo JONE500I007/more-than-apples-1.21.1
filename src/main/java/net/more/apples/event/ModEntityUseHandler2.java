@@ -88,6 +88,13 @@ public final class ModEntityUseHandler2 {
 
                 player.swingHand(hand, true);
                 return ActionResult.SUCCESS;
+//                if (acted) {
+//
+//                    return ActionResult.SUCCESS;
+//                } else {
+//
+//                    return ActionResult.FAIL;
+//                }
             }
 
             return ActionResult.PASS;
