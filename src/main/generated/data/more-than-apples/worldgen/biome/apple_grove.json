@@ -6,11 +6,11 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.04,
+  "downfall": 0.4,
   "effects": {
-    "fog_color": 16176813,
-    "foliage_color": 14791018,
-    "grass_color": 14262374,
+    "fog_color": 12638463,
+    "foliage_color": 7842607,
+    "grass_color": 9551193,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -23,9 +23,9 @@
       "replace_current_music": false,
       "sound": "minecraft:music.overworld.meadow"
     },
-    "sky_color": 15909771,
-    "water_color": 15116651,
-    "water_fog_color": 13205340
+    "sky_color": 7907327,
+    "water_color": 4159204,
+    "water_fog_color": 329011
   },
   "features": [
     [],
@@ -97,12 +97,6 @@
     ],
     "axolotls": [],
     "creature": [
-      {
-        "type": "minecraft:wolf",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 5
-      },
       {
         "type": "minecraft:sheep",
         "maxCount": 4,

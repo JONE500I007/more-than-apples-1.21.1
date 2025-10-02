@@ -81,7 +81,7 @@ public class ModConfiguredFeatures {
 
         WeightedBlockStateProvider twoLeavesProvider = new WeightedBlockStateProvider(
                 DataPool.<BlockState>builder()
-                        .add(ModBlocks2.APPLE_LEAVES.getDefaultState(), 4)
+                        .add(ModBlocks2.APPLE_LEAVES.getDefaultState(), 5)
                         .add(ModBlocks2.FRUIT_APPLE_LEAVES.getDefaultState(), 1)
                         .build()
         );

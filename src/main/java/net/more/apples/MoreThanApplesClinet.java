@@ -27,5 +27,6 @@ public class MoreThanApplesClinet implements ClientModInitializer {
 
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.APPLE_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.FRUIT_APPLE_LEAVES, RenderLayer.getCutout());
     }
 }

@@ -1,7 +1,6 @@
 {
-  "variants": {
-    "": {
-      "model": "more-than-apples:block/fruit_apple_leaves"
-    }
-  }
+  "multipart": [
+    { "apply": { "model": "more-than-apples:block/fruit_apple_leaves" } },
+    { "apply": { "model": "more-than-apples:block/fruit_apple_leaves_overlay" } }
+  ]
 }

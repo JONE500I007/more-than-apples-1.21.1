@@ -7,6 +7,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.ModBlocksForText;
 import net.more.apples.item.custom.CustomEnchApple;
 
 public class ModItems {
@@ -26,8 +27,8 @@ public class ModItems {
             .food(ModFoodComponents.ENCHANTED_NETHERITE_APPLE_EFFECT)
             .rarity(Rarity.EPIC)));
 
-
-
+//    public static final Item CUSTOM_SIGN_ITEM = registerItem("custom_sign_item",
+//            new SignItem(new Item.Settings().maxCount(16), CUSTOM_SIGN, CUSTOM_WALL_SIGN));
 
     public static final Item DIAMOND_NUGGET = registerItem("diamond_nugget", new Item(new Item.Settings()));
 
