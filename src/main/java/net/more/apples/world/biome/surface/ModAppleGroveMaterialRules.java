@@ -19,7 +19,7 @@ public class ModAppleGroveMaterialRules {
 
 
     public static MaterialRules.MaterialRule makeRule() {
-        //MaterialRules.MaterialCondition isAtOrAboveWaterLeave = MaterialRules.water(-1, 0);
+        MaterialRules.MaterialCondition isAtOrAboveWaterLevel = MaterialRules.water(-1, 0);
 
         //MaterialRules.MaterialRule grassSurface = MaterialRules.sequence(MaterialRules.condition(isAtOrAboveWaterLeave, GRASS_BLOCK), DIRT);
 
@@ -29,7 +29,8 @@ public class ModAppleGroveMaterialRules {
                 // Grass surface
                 MaterialRules.condition(
                         MaterialRules.surface(),
-                        MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, GRASS_BLOCK)),
+                        MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR,
+                                MaterialRules.condition(isAtOrAboveWaterLevel, GRASS_BLOCK))),
                 // Dirt just below surface
                 MaterialRules.condition(
                         MaterialRules.surface(),

@@ -13,8 +13,8 @@ import terrablender.api.TerraBlenderApi;
 public class ModTerraBlenderAPI implements TerraBlenderApi {
     @Override
     public void onTerraBlenderInitialized() {
-        Regions.register(new ModAppleGroveRegion(Identifier.of(MoreThanApples.MOD_ID, "overworld"), 6));
-        Regions.register(new ModGoldenAppleOrchardRegion(Identifier.of(MoreThanApples.MOD_ID, "overworld"), 6));
+        Regions.register(new ModAppleGroveRegion(Identifier.of(MoreThanApples.MOD_ID, "apple_grove_region"), 6));
+        Regions.register(new ModGoldenAppleOrchardRegion(Identifier.of(MoreThanApples.MOD_ID, "golden_apple_orchard_region"), 4));
 
         //Regions.register(new ModGoldenAppleOrchardRegion(Identifier.of(MoreThanApples.MOD_ID, "overworld"), 6));
 //        Regions.register(new ModOverworldRegion(

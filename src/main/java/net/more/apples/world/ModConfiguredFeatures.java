@@ -36,6 +36,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> APPLE_TREE_KEY = registryKey("apple_tree_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> LARGE_APPLE_KEY = registryKey("large_apple_key");
 
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORCHARD_SEAGRASS_KEY = registryKey("orchard_seagrass_key");
+
 
     public static void boostrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -112,6 +114,14 @@ public class ModConfiguredFeatures {
                 new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),
                 new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(4))
         ).build());
+
+        /*
+        context.register(
+                ORCHARD_SEAGRASS_KEY,
+                new ConfiguredFeature<>(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.SEAGRASS)))
+        );
+         */
 
     }
 

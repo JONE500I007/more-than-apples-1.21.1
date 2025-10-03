@@ -8,11 +8,13 @@ import net.more.apples.world.biome.worldbiomes.ModBiomesAppleGrove;
 
 public class ModTreeGeneration {
     public static void generaTrees(){
+        /*
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomesAppleGrove.APPLE_GROVE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.APPLE_TREE_PLACED_KEY);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomesAppleGrove.APPLE_GROVE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.LARGE_APPLE_TREE_PLACED_KEY);
+         */
 
 
 //        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomesGoldenAppleOrchard.GOLDEN_APPLE_ORCHARD),

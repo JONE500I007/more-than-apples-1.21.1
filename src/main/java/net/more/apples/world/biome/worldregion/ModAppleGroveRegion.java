@@ -57,7 +57,7 @@ public class ModAppleGroveRegion extends Region {
         new ParameterPointListBuilder()
                 .temperature(Temperature.span(Temperature.NEUTRAL, Temperature.WARM))
                 .humidity(Humidity.span(Humidity.NEUTRAL, Humidity.WET))
-                .continentalness(Continentalness.MID_INLAND)
+                .continentalness(Continentalness.INLAND, Continentalness.MID_INLAND)
                 //.erosion(Erosion.EROSION_5, Erosion.EROSION_6)
                 //.erosion(Erosion.span(Erosion.EROSION_0, Erosion.EROSION_3))
                 //.erosion(ParameterUtils.Erosion.span(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_4))

@@ -1,5 +1,7 @@
 package net.more.apples.world.biome.worldbiomes;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registerable;
@@ -12,6 +14,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.*;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
+import net.minecraft.world.gen.feature.OceanPlacedFeatures;
 import net.more.apples.MoreThanApples;
 import net.more.apples.world.ModPlacedFeatures;
 import org.joml.Vector3f;
@@ -37,8 +40,20 @@ public class ModBiomesGoldenAppleOrchard {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
         //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 5, 4, 4));
 
+
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
+        DefaultBiomeFeatures.addMonsters(spawnBuilder, 95, 5, 100, true);
+
+
+//        spawnBuilder.spawn(SpawnGroup.WATER_CREATURE,
+//                new SpawnSettings.SpawnEntry(EntityType.SQUID, 2, 1, 4));
+//        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT,
+//                new SpawnSettings.SpawnEntry(EntityType.COD, 5, 3, 6));
+//        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT,
+//                new SpawnSettings.SpawnEntry(EntityType.SALMON, 5, 1, 5));
+//        spawnBuilder.spawn(SpawnGroup.MONSTER,
+//                new SpawnSettings.SpawnEntry(EntityType.DROWNED, 5, 1, 1));
 
         // world gen maybe biome
         GenerationSettings.LookupBackedBuilder biomeBuilder =
@@ -48,27 +63,35 @@ public class ModBiomesGoldenAppleOrchard {
         globalOverworldGeneration(biomeBuilder);
         //DefaultBiomeFeatures.addMossyRocks(biomeBuilder);
         DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
-        //DefaultBiomeFeatures.addExtraGoldOre(biomeBuilder);
+        DefaultBiomeFeatures.addExtraGoldOre(biomeBuilder);
 
         //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.LARGE_APPLE_TREE_PLACED_KEY);
+//        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+//                ModPlacedFeatures.ORCHARD_SEAGRASS_PLACED_KEY);
+
         /*
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.EXTRA_FLOWERS_PLACED_KEY);
 
          */
 
-        //DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
         //DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
         //DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
         //DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
         //DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
         //DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
         DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
+        //DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
         DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
+        DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
+        DefaultBiomeFeatures.addLessKelp(biomeBuilder);
+//        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+//                OceanPlacedFeatures.SEA_PICKLE);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                OceanPlacedFeatures.SEAGRASS_RIVER);
         //DefaultBiomeFeatures.addKelp(biomeBuilder);
-        //DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
 
 
 //        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
@@ -77,15 +100,15 @@ public class ModBiomesGoldenAppleOrchard {
         return new Biome.Builder()
                 .precipitation(true)
                 .downfall(0.4f)
-                .temperature(1.0f)
+                .temperature(0.65f)
                 .generationSettings(biomeBuilder.build())
                 .spawnSettings(spawnBuilder.build())
                 .effects((new BiomeEffects.Builder())
                         .waterColor(0x3F76E4)
                         .waterFogColor(0x50533)
                         .skyColor(0xFFD580)
-                        .grassColor(0xE6B422)
-                        .foliageColor(0xD4AF37)
+                        .grassColor(0xFFC030)
+                        .foliageColor(0xFBC03A)
                         .fogColor(0xFFF2CC)
 //                        .particleConfig(new BiomeParticleConfig(
 //                                new DustParticleEffect(new Vector3f(0.95f, 0.69f, 0.15f), 1.0f), 0.02f))

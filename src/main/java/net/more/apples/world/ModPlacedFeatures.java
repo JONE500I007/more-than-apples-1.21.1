@@ -24,6 +24,8 @@ public class ModPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> EXTRA_FLOWERS_PLACED_KEY = registryKey("extra_flowers_placed");
 
+    public static final RegistryKey<PlacedFeature> ORCHARD_SEAGRASS_PLACED_KEY = registryKey("orchard_seagrass_placed");
+
 
     public static void boostrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -85,6 +87,21 @@ public class ModPlacedFeatures {
                 SquarePlacementModifier.of(),
                 PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
                 BiomePlacementModifier.of()
+        );
+         */
+
+        /*
+        context.register(ORCHARD_SEAGRASS_PLACED_KEY,
+                new PlacedFeature(
+                        context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE)
+                                .getOrThrow(ModConfiguredFeatures.ORCHARD_SEAGRASS_KEY),
+                        List.of(
+                                RarityFilterPlacementModifier.of(2),
+                                SquarePlacementModifier.of(),
+                                PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
+                                BiomePlacementModifier.of()
+                        )
+                )
         );
          */
 

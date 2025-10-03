@@ -15,6 +15,7 @@ import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
+import net.minecraft.world.gen.feature.OceanPlacedFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.more.apples.MoreThanApples;
 import net.more.apples.world.ModPlacedFeatures;
@@ -42,8 +43,27 @@ public class ModBiomesAppleGrove {
 
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
+        DefaultBiomeFeatures.addMonsters(spawnBuilder, 95, 5, 100, true);
 
-        // world gen maybe biome
+        /*
+        spawnBuilder.spawn(SpawnGroup.WATER_CREATURE, new SpawnSettings.SpawnEntry(EntityType.SQUID, 10, 1, 4));
+        spawnBuilder.spawn(SpawnGroup.WATER_CREATURE, new SpawnSettings.SpawnEntry(EntityType.DOLPHIN, 2, 1, 2));
+        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT, new SpawnSettings.SpawnEntry(EntityType.COD, 10, 3, 6));
+        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT, new SpawnSettings.SpawnEntry(EntityType.SALMON, 5, 1, 5));
+        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT, new SpawnSettings.SpawnEntry(EntityType.TROPICAL_FISH, 25, 8, 8));
+
+        spawnBuilder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.DROWNED, 5, 1, 1));
+         */
+
+//        spawnBuilder.spawn(SpawnGroup.WATER_CREATURE,
+//                new SpawnSettings.SpawnEntry(EntityType.SQUID, 2, 1, 4));
+//        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT,
+//                new SpawnSettings.SpawnEntry(EntityType.COD, 5, 3, 6));
+//        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT,
+//                new SpawnSettings.SpawnEntry(EntityType.SALMON, 5, 1, 5));
+//        spawnBuilder.spawn(SpawnGroup.MONSTER,
+//                new SpawnSettings.SpawnEntry(EntityType.DROWNED, 5, 1, 1));
+
         GenerationSettings.LookupBackedBuilder biomeBuilder =
                 new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
@@ -51,11 +71,13 @@ public class ModBiomesAppleGrove {
         globalOverworldGeneration(biomeBuilder);
         //DefaultBiomeFeatures.addMossyRocks(biomeBuilder);
         DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
-        DefaultBiomeFeatures.addExtraGoldOre(biomeBuilder);
+        //DefaultBiomeFeatures.addExtraGoldOre(biomeBuilder);
 
         //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.APPLE_TREE_PLACED_KEY);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                ModPlacedFeatures.LARGE_APPLE_TREE_PLACED_KEY);
         /*
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.EXTRA_FLOWERS_PLACED_KEY);
@@ -66,8 +88,23 @@ public class ModBiomesAppleGrove {
         //DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
         //DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
         //DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-        //DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
-        DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
+        DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
+        biomeBuilder.feature(
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
+        biomeBuilder.feature(
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                VegetationPlacedFeatures.FLOWER_MEADOW);
+//        DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
+
+        DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
+        DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
+        DefaultBiomeFeatures.addLessKelp(biomeBuilder);
+//        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+//                OceanPlacedFeatures.SEA_PICKLE);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                OceanPlacedFeatures.SEAGRASS_RIVER);
+        //DefaultBiomeFeatures.addKelp(biomeBuilder);
 
 
 //        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);

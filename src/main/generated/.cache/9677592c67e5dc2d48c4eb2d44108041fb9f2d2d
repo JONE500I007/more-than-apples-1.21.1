@@ -1,9 +1,9 @@
-// 1.21.1	2025-10-02T17:24:06.1381477	More Than Apples/MoreThanApples Registry Data Generator
+// 1.21.1	2025-10-03T21:45:29.3742675	More Than Apples/MoreThanApples Registry Data Generator
 a47e3b46f8668b74332a50b76cb88abc3cef30c2 data\more-than-apples\worldgen\placed_feature\apple_ore_placed.json
 951e1cc16850081058c9c14167093dbcd5b66923 data\more-than-apples\worldgen\configured_feature\apple_ore.json
 1fe694594fda4511ea42426d843d0bd901363c13 data\more-than-apples\worldgen\placed_feature\large_apple_tree_placed.json
 c74e10b97cd8d6d046c82ccf7a45d8a976f437a9 data\more-than-apples\worldgen\configured_feature\apple_tree_key.json
-36669ff00321ddff3532ec734a1338599eba96c6 data\more-than-apples\worldgen\biome\golden_apple_orchard.json
-a274bdb87f664d23fa1d02c552754924d95ae70b data\more-than-apples\worldgen\biome\apple_grove.json
+60bd8c013347d2ab9c5778ba4f55e92cdc5b2172 data\more-than-apples\worldgen\biome\golden_apple_orchard.json
+08f7e26901a91f1055b249923eb194b187899801 data\more-than-apples\worldgen\biome\apple_grove.json
 f18c812d651dbb4e9b998c9fd62b271e18479ab4 data\more-than-apples\worldgen\placed_feature\apple_tree_placed.json
 d2d941e772370f086dfe6727a342424d6748d8e9 data\more-than-apples\worldgen\configured_feature\large_apple_key.json
