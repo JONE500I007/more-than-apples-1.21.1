@@ -1,7 +1,5 @@
 package net.more.apples.world.biome.worldbiomes;
 
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
 import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registerable;
@@ -43,17 +41,9 @@ public class ModBiomesGoldenAppleOrchard {
 
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
+        DefaultBiomeFeatures.addOceanMobs(spawnBuilder, 10, 4, 10);
         DefaultBiomeFeatures.addMonsters(spawnBuilder, 95, 5, 100, true);
 
-
-//        spawnBuilder.spawn(SpawnGroup.WATER_CREATURE,
-//                new SpawnSettings.SpawnEntry(EntityType.SQUID, 2, 1, 4));
-//        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT,
-//                new SpawnSettings.SpawnEntry(EntityType.COD, 5, 3, 6));
-//        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT,
-//                new SpawnSettings.SpawnEntry(EntityType.SALMON, 5, 1, 5));
-//        spawnBuilder.spawn(SpawnGroup.MONSTER,
-//                new SpawnSettings.SpawnEntry(EntityType.DROWNED, 5, 1, 1));
 
         // world gen maybe biome
         GenerationSettings.LookupBackedBuilder biomeBuilder =

@@ -43,6 +43,7 @@ public class ModBiomesAppleGrove {
 
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
+        DefaultBiomeFeatures.addOceanMobs(spawnBuilder, 10, 4, 10);
         DefaultBiomeFeatures.addMonsters(spawnBuilder, 95, 5, 100, true);
 
         /*
@@ -54,16 +55,18 @@ public class ModBiomesAppleGrove {
 
         spawnBuilder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.DROWNED, 5, 1, 1));
          */
+        /*
+        spawnBuilder.spawn(SpawnGroup.WATER_CREATURE,
+                new SpawnSettings.SpawnEntry(EntityType.SQUID, 2, 1, 4));
+        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT,
+                new SpawnSettings.SpawnEntry(EntityType.SALMON, 5, 1, 5));
+        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT,
+                new SpawnSettings.SpawnEntry(EntityType.COD, 5, 3, 6));
+        spawnBuilder.spawn(SpawnGroup.MONSTER,
+                new SpawnSettings.SpawnEntry(EntityType.DROWNED, 5, 1, 1));
+         */
 
-//        spawnBuilder.spawn(SpawnGroup.WATER_CREATURE,
-//                new SpawnSettings.SpawnEntry(EntityType.SQUID, 2, 1, 4));
-//        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT,
-//                new SpawnSettings.SpawnEntry(EntityType.COD, 5, 3, 6));
-//        spawnBuilder.spawn(SpawnGroup.WATER_AMBIENT,
-//                new SpawnSettings.SpawnEntry(EntityType.SALMON, 5, 1, 5));
-//        spawnBuilder.spawn(SpawnGroup.MONSTER,
-//                new SpawnSettings.SpawnEntry(EntityType.DROWNED, 5, 1, 1));
-
+        // world gen maybe biome
         GenerationSettings.LookupBackedBuilder biomeBuilder =
                 new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
@@ -88,7 +91,7 @@ public class ModBiomesAppleGrove {
         //DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
         //DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
         //DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-        DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
+        //DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
         biomeBuilder.feature(
                 GenerationStep.Feature.VEGETAL_DECORATION,
                 VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
