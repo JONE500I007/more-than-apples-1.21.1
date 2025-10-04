@@ -17,8 +17,19 @@
   "block.more-than-apples.fruit_apple_leaves": "Fruit Apple Leaves",
   "block.more-than-apples.apple_sapling": "Apple Sapling",
 
+  "block.more-than-apples.apple_stairs": "Apple Stairs",
+  "block.more-than-apples.apple_slab": "Apple Slab",
+  "block.more-than-apples.apple_button": "Apple Button",
+  "block.more-than-apples.apple_pressure_plate": "Apple Pressure Plate",
+  "block.more-than-apples.apple_fence": "Apple Fence",
+  "block.more-than-apples.apple_fence_gate": "Apple Fence Gate",
+  "block.more-than-apples.apple_door": "Apple Door",
+  "block.more-than-apples.apple_trapdoor": "Apple Trapdoor",
+
   "block.more-than-apples.apple_ore": "Apple Ore",
   "block.more-than-apples.deepslate_apple_ore": "Deepslate Apple ore",
+
+  "entity.minecraft.villager.apple_master": "Apple Master",
 
   "itemgroup.more-than-apples.diamond_apple_icon": "More Than Apples",
   "itemgroup.more-than-apples.zpotion_icon": "More Than Apples Potion",

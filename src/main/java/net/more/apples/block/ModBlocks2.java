@@ -23,6 +23,9 @@ public class ModBlocks2 {
             new ExperienceDroppingBlock(UniformIntProvider.create(3, 6),
                     AbstractBlock.Settings.create().strength(4.5f, 3.0f)
                             .sounds(BlockSoundGroup.DEEPSLATE).requiresTool()));
+    public static final Block THISBOX = registerBlock2("thisbox",
+            new Block(AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.METAL)));
 
     public static final Block APPLE_LOG = registerBlock2("apple_log",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
@@ -41,6 +44,30 @@ public class ModBlocks2 {
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
     public static final Block APPLE_SAPLING = registerBlock2("apple_sapling",
             new SaplingBlock(ModSaplingGenerators.APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+
+    public static final Block APPLE_STAIRS = registerBlock2("apple_stairs",
+            new StairsBlock(ModBlocks2.APPLE_PLANKS.getDefaultState(),
+                    AbstractBlock.Settings.create()));
+    public static final Block APPLE_SLAB = registerBlock2("apple_slab",
+            new SlabBlock(AbstractBlock.Settings.create()));
+
+    public static final Block APPLE_BUTTON = registerBlock2("apple_button",
+            new ButtonBlock(BlockSetType.OAK, 2,
+                    AbstractBlock.Settings.create().noCollision()));
+    public static final Block APPLE_PRESSURE_PLATE = registerBlock2("apple_pressure_plate",
+            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create()));
+
+    public static final Block APPLE_FENCE = registerBlock2("apple_fence",
+            new FenceBlock(AbstractBlock.Settings.create()));
+    public static final Block APPLE_FENCE_GATE = registerBlock2("apple_fence_gate",
+            new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create()));
+//    public static final Block APPLE_WALL = registerBlock2("apple_wall",
+//            new WallBlock(AbstractBlock.Settings.create()));
+
+    public static final Block APPLE_DOOR = registerBlock2("apple_door",
+            new DoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()));
+    public static final Block APPLE_TRAPDOOR = registerBlock2("apple_trapdoor",
+            new TrapdoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()));
 
 
     private static Block registerBlock2(String name, Block block) {

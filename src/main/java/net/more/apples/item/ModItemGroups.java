@@ -46,6 +46,18 @@ public class ModItemGroups {
                         entries.add(ModBlocks2.APPLE_LEAVES);
                         entries.add(ModBlocks2.APPLE_SAPLING);
 
+                        entries.add(ModBlocks2.APPLE_STAIRS);
+                        entries.add(ModBlocks2.APPLE_SLAB);
+                        entries.add(ModBlocks2.APPLE_BUTTON);
+                        entries.add(ModBlocks2.APPLE_PRESSURE_PLATE);
+                        entries.add(ModBlocks2.APPLE_FENCE);
+                        entries.add(ModBlocks2.APPLE_FENCE_GATE);
+//                        entries.add(ModBlocks2.APPLE_WALL);
+                        entries.add(ModBlocks2.APPLE_DOOR);
+                        entries.add(ModBlocks2.APPLE_TRAPDOOR);
+
+                        entries.add(ModBlocks2.THISBOX);
+
 
                     }))
                     .build());

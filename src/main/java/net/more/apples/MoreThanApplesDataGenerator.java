@@ -4,7 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
-import net.more.apples.datagen.ModRegistryDataGenerator;
+import net.more.apples.datagen.*;
 import net.more.apples.world.ModConfiguredFeatures;
 import net.more.apples.world.ModPlacedFeatures;
 import net.more.apples.world.biome.worldbiomes.ModBiomesAppleGrove;
@@ -15,6 +15,12 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 		pack.addProvider(ModRegistryDataGenerator::new);
+		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModItemTagProvider::new);
+		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(ModLootTableProvider::new);
+
+		pack.addProvider(ModPoiTagProvider::new);
 		//pack.addProvider(ModLootTableGen::new);
 	}
 

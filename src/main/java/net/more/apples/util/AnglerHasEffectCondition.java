@@ -30,9 +30,8 @@ public class AnglerHasEffectCondition implements LootCondition {
                     instance.group(
                             Registries.STATUS_EFFECT.getEntryCodec()
                                     .fieldOf("effect")
-                                    .forGetter(c -> c.effect)
-                    ).apply(instance, AnglerHasEffectCondition::new)
-            );
+                                    .forGetter(c -> c.effect))
+                            .apply(instance, AnglerHasEffectCondition::new));
 
     private final RegistryEntry<StatusEffect> effect;
 

@@ -17,6 +17,7 @@ import net.more.apples.item.ModItemGroups2;
 import net.more.apples.item.ModItems;
 import net.more.apples.potion.ModPotions;
 import net.more.apples.util.*;
+import net.more.apples.villager.ModAppleVillagers;
 import net.more.apples.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,6 +56,9 @@ public class MoreThanApples implements ModInitializer {
 		ModWorldGeneration.generateWorldGen();
 
 		ModEntityUseHandler.register();
+
+		ModAppleVillagers.registerVillagers();
+		ModCustomAppleMTrades.registerCustomTrades();
 		//ModEntityUseHandler2.register();
 		/*
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
