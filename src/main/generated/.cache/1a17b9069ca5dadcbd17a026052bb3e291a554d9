@@ -1,0 +1,15 @@
+// 1.21.1	2025-10-04T20:04:10.5274122	More Than Apples/Block Loot Tables
+bcbc84075297aeffb3a5672b1bdd09316f378303 data\more-than-apples\loot_table\blocks\apple_slab.json
+ae51b501fdc1ead0cd72ec756adc4c9c46ff248b data\more-than-apples\loot_table\blocks\apple_pressure_plate.json
+d013017b485f660a9ef620f7a1fadcad372927da data\more-than-apples\loot_table\blocks\apple_fence_gate.json
+88751156490cc8828b34b3bb1612847d8dbf46a4 data\more-than-apples\loot_table\blocks\apple_sapling.json
+abc07b70ecf00fce960bd97312617406cdad755f data\more-than-apples\loot_table\blocks\apple_fence.json
+c49a1b9f71082d058d144b417dfd5cf5e5fe3b06 data\more-than-apples\loot_table\blocks\stripped_apple_wood.json
+f19ab724560ada48e2cd78f7b96dc0099b7e0424 data\more-than-apples\loot_table\blocks\stripped_apple_log.json
+505c5b37137c122f3e3baa971ad8d40c6ead4cd0 data\more-than-apples\loot_table\blocks\apple_wood.json
+f90f974c24ae29aa6336071834b4b39469734db7 data\more-than-apples\loot_table\blocks\apple_log.json
+e93c502c7151e758b1d3c97d776f2c347502cb8a data\more-than-apples\loot_table\blocks\apple_button.json
+271872835f76fbd73eaa9094732700e20ce6e6fc data\more-than-apples\loot_table\blocks\apple_planks.json
+9ba264748562e9f6a52c0ee4bd5040c0ee95b9fa data\more-than-apples\loot_table\blocks\apple_stairs.json
+bd4b6c17c17358f0442b797898350d95d86ec519 data\more-than-apples\loot_table\blocks\apple_trapdoor.json
+1ecdffbc817b70d360e9ba5be4a7ce609a0ae01b data\more-than-apples\loot_table\blocks\apple_door.json
