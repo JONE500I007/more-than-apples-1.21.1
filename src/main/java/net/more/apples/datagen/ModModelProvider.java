@@ -22,6 +22,9 @@ public class ModModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool appleGarnetPool = blockStateModelGenerator
                 .registerCubeAllModelTexturePool(ModBlocks2.APPLE_PLANKS);
 
+        BlockStateModelGenerator.BlockTexturePool testAppleGarnetPool = blockStateModelGenerator
+                .registerCubeAllModelTexturePool(ModBlocks2.TEST_APPLE_PLANKS);
+
         appleGarnetPool.stairs(ModBlocks2.APPLE_STAIRS);
         appleGarnetPool.slab(ModBlocks2.APPLE_SLAB);
 
@@ -39,13 +42,22 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks2.STRIPPED_APPLE_LOG).log(ModBlocks2.STRIPPED_APPLE_LOG).wood(ModBlocks2.STRIPPED_APPLE_WOOD);
         //blockStateModelGenerator.registerSingleton(ModBlocks2.APPLE_LEAVES, TexturedModel.LEAVES);
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.APPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.GOLDEN_APPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        blockStateModelGenerator.registerLog(ModBlocks2.TEST_APPLE_LOG).log(ModBlocks2.TEST_APPLE_LOG).wood(ModBlocks2.TEST_APPLE_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks2.TEST_STRIPPED_APPLE_LOG).log(ModBlocks2.TEST_STRIPPED_APPLE_LOG).wood(ModBlocks2.TEST_STRIPPED_APPLE_WOOD);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.TEST_APPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         //itemModelGenerator.register(ModItems.DIAMOND_APPLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GREEN_APPLE, Models.GENERATED);
+
         itemModelGenerator.register(ModBlocks2.APPLE_SAPLING.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks2.TEST_APPLE_SAPLING.asItem(), Models.GENERATED);
+        itemModelGenerator.register(ModBlocks2.GOLDEN_APPLE_SAPLING.asItem(), Models.GENERATED);
 
     }
 }

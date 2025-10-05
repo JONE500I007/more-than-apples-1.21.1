@@ -11,12 +11,14 @@ import net.more.apples.block.ModBlocks2;
 import net.more.apples.block.ModBlocksForText;
 import net.more.apples.effect.ModEffects;
 import net.more.apples.event.ModEntityUseHandler;
-import net.more.apples.event.ModEntityUseHandler2;
 import net.more.apples.item.ModItemGroups;
 import net.more.apples.item.ModItemGroups2;
 import net.more.apples.item.ModItems;
 import net.more.apples.potion.ModPotions;
 import net.more.apples.util.*;
+import net.more.apples.util.custom_loottable.*;
+import net.more.apples.util.custom_trade.ModCustomAppleMTrades;
+import net.more.apples.util.custom_trade.ModCustomFarmerTrades;
 import net.more.apples.villager.ModAppleVillagers;
 import net.more.apples.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
@@ -51,7 +53,7 @@ public class MoreThanApples implements ModInitializer {
 
 		ModLootConditions.init();
 
-		ModCustomTrades.registerCustomTrades();
+		ModCustomFarmerTrades.registerCustomTrades();
 
 		ModWorldGeneration.generateWorldGen();
 
@@ -85,6 +87,19 @@ public class MoreThanApples implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.APPLE_PLANKS, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.APPLE_LEAVES, 30, 60);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FRUIT_APPLE_LEAVES, 30, 60);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.GOLDEN_APPLE_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES, 30, 60);
+
+		StrippableBlockRegistry.register(ModBlocks2.TEST_APPLE_LOG, ModBlocks2.TEST_STRIPPED_APPLE_LOG);
+		StrippableBlockRegistry.register(ModBlocks2.TEST_APPLE_WOOD, ModBlocks2.TEST_STRIPPED_APPLE_WOOD);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_APPLE_LOG, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_APPLE_WOOD, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_STRIPPED_APPLE_LOG, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_STRIPPED_APPLE_WOOD, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_APPLE_PLANKS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_APPLE_LEAVES, 30, 60);
 
 		LOGGER.info("Hello Fabric world!");
 	}

@@ -78,8 +78,9 @@
     [],
     [
       "minecraft:glow_lichen",
-      "more-than-apples:large_apple_tree_placed",
-      "minecraft:patch_grass_badlands",
+      "more-than-apples:large_golden_apple_tree_placed",
+      "minecraft:flower_plains",
+      "minecraft:patch_grass_plain",
       "minecraft:seagrass_simple",
       "minecraft:kelp_warm",
       "minecraft:seagrass_river"

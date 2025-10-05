@@ -25,9 +25,15 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModBlocks2.APPLE_LOG.asItem())
                 .add(ModBlocks2.APPLE_WOOD.asItem())
                 .add(ModBlocks2.STRIPPED_APPLE_LOG.asItem())
-                .add(ModBlocks2.STRIPPED_APPLE_WOOD.asItem());
+                .add(ModBlocks2.STRIPPED_APPLE_WOOD.asItem())
+
+                .add(ModBlocks2.TEST_APPLE_LOG.asItem())
+                .add(ModBlocks2.TEST_APPLE_WOOD.asItem())
+                .add(ModBlocks2.TEST_STRIPPED_APPLE_LOG.asItem())
+                .add(ModBlocks2.TEST_STRIPPED_APPLE_WOOD.asItem());
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
-                .add(ModBlocks2.APPLE_PLANKS.asItem());
+                .add(ModBlocks2.APPLE_PLANKS.asItem())
+                .add(ModBlocks2.TEST_APPLE_PLANKS.asItem());
     }
 }

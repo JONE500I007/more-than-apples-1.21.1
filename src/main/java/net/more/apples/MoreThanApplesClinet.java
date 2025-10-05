@@ -18,18 +18,30 @@ public class MoreThanApplesClinet implements ClientModInitializer {
                     ? BiomeColors.getFoliageColor(world, pos)
                     : FoliageColors.getDefaultColor();
         }, ModBlocks2.APPLE_LEAVES,
-                ModBlocks2.FRUIT_APPLE_LEAVES);
+                ModBlocks2.FRUIT_APPLE_LEAVES,
+
+                ModBlocks2.GOLDEN_APPLE_LEAVES,
+                ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES);
 
         ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
                 FoliageColors.getDefaultColor(),
                 ModBlocks2.APPLE_LEAVES,
-                ModBlocks2.FRUIT_APPLE_LEAVES);
+                ModBlocks2.FRUIT_APPLE_LEAVES,
+
+                ModBlocks2.GOLDEN_APPLE_LEAVES,
+                ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES);
 
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.APPLE_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.FRUIT_APPLE_LEAVES, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.GOLDEN_APPLE_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES, RenderLayer.getCutout());
+
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.APPLE_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.APPLE_TRAPDOOR, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.TEST_APPLE_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.TEST_APPLE_LEAVES, RenderLayer.getCutout());
     }
 }

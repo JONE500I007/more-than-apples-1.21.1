@@ -107,6 +107,8 @@ public class ModBiomesAppleGrove {
 //                OceanPlacedFeatures.SEA_PICKLE);
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 OceanPlacedFeatures.SEAGRASS_RIVER);
+//        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+//                VegetationPlacedFeatures.PATCH_SUGAR_CANE);
         //DefaultBiomeFeatures.addKelp(biomeBuilder);
 
 

@@ -7,6 +7,12 @@ import net.more.apples.effect.ModEffects;
 
 public class ModFoodComponents {
     // 1s = 20 tick
+    public static final FoodComponent GREEN_APPLE_EFFECT = new FoodComponent.Builder().nutrition(4).saturationModifier(1.2f)
+            .alwaysEdible()
+            .statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 3960, 0), 1)
+            .build();
+
+
     public static final FoodComponent DIAMOND_APPLE_EFFECT = new FoodComponent.Builder().nutrition(4).saturationModifier(1.2f)
             .alwaysEdible()
             .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 4800, 2), 1)
@@ -21,7 +27,6 @@ public class ModFoodComponents {
             .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 12000, 0), 1)
             .statusEffect(new StatusEffectInstance(ModEffects.FREEZING_RESISTANCE, 12000, 0), 1)
             .statusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 6000, 0), 1)
-            .statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 6000, 0), 1)
             .build();
 
     public static final FoodComponent DIAMOND_CARROT_EFFECT = new FoodComponent.Builder().nutrition(6).saturationModifier(1.2f)
@@ -49,7 +54,6 @@ public class ModFoodComponents {
             .statusEffect(new StatusEffectInstance(ModEffects.MINING_FATIGUE_IMMUNE, 30000, 0), 1)
             .statusEffect(new StatusEffectInstance(ModEffects.DARKNESS_IMMUNE, 30000, 0), 1)
             .statusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 12000, 3), 1)
-            .statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 12000, 0), 1)
             .build();
 
 

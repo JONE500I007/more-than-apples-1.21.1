@@ -7,6 +7,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.more.apples.MoreThanApples;
+import net.more.apples.effect.this_effect.*;
 
 public class ModEffects {
     public static final RegistryEntry<StatusEffect> DARKNESS_IMMUNE = registerStatusEffect("darkness_immune",
@@ -17,6 +18,8 @@ public class ModEffects {
             new MiningFatigueImmuneEffect(StatusEffectCategory.BENEFICIAL, 0x91B399));
     public static final RegistryEntry<StatusEffect> FREEZING_RESISTANCE = registerStatusEffect("freezing_resistance",
             new FreezingResistanceEffect(StatusEffectCategory.BENEFICIAL, 0xA3EAFF));
+    public static final RegistryEntry<StatusEffect> CALL_OF_APPLE = registerStatusEffect("call_of_apple",
+            new CallofAppleEffect(StatusEffectCategory.BENEFICIAL, 0x24FF00));
 
     private static RegistryEntry<StatusEffect> registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(MoreThanApples.MOD_ID, name), statusEffect);

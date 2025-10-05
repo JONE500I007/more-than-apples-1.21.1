@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "more-than-apples:block/test_apple_planks"
+  }
+}

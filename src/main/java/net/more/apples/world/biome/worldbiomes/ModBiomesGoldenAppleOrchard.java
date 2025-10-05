@@ -13,6 +13,8 @@ import net.minecraft.world.biome.*;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.OceanPlacedFeatures;
+import net.minecraft.world.gen.feature.PlacedFeatures;
+import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.more.apples.MoreThanApples;
 import net.more.apples.world.ModPlacedFeatures;
 import org.joml.Vector3f;
@@ -51,13 +53,14 @@ public class ModBiomesGoldenAppleOrchard {
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
         globalOverworldGeneration(biomeBuilder);
-        //DefaultBiomeFeatures.addMossyRocks(biomeBuilder);
         DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
         DefaultBiomeFeatures.addExtraGoldOre(biomeBuilder);
 
-        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                ModPlacedFeatures.LARGE_APPLE_TREE_PLACED_KEY);
+                ModPlacedFeatures.LARGE_GOLDEN_APPLE_TREE_PLACED_KEY);
+        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
+//        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+//                ModPlacedFeatures.LARGE_APPLE_TREE_PLACED_KEY);
 //        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
 //                ModPlacedFeatures.ORCHARD_SEAGRASS_PLACED_KEY);
 
@@ -67,13 +70,13 @@ public class ModBiomesGoldenAppleOrchard {
 
          */
 
-        //DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
-        //DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
-        //DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-        //DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
-        //DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
-        DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
+        //DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
         //DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                VegetationPlacedFeatures.FLOWER_PLAIN);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
+
         DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
         DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
         DefaultBiomeFeatures.addLessKelp(biomeBuilder);
@@ -81,11 +84,10 @@ public class ModBiomesGoldenAppleOrchard {
 //                OceanPlacedFeatures.SEA_PICKLE);
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 OceanPlacedFeatures.SEAGRASS_RIVER);
+//        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+//                VegetationPlacedFeatures.PATCH_SUGAR_CANE);
+
         //DefaultBiomeFeatures.addKelp(biomeBuilder);
-
-
-//        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-//        DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
 
         return new Biome.Builder()
                 .precipitation(true)

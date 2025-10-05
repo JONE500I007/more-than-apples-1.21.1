@@ -60,16 +60,13 @@ public class AnglerHasEffectCondition implements LootCondition {
     public boolean test(LootContext ctx) {
         Entity e = ctx.get(LootContextParameters.THIS_ENTITY);
 
-        // เคส 1: เป็นทุ่นตกปลา
         if (e instanceof FishingBobberEntity bobber) {
             Entity owner = bobber.getOwner();
             if (owner instanceof LivingEntity living) {
-                return living.hasStatusEffect(effect); // 1.21.1 รับ RegistryEntry ได้ตรง ๆ
+                return living.hasStatusEffect(effect);
             }
             return false;
         }
-
-        // เคส 2: เป็นผู้เล่น/ม็อบตรง ๆ
         if (e instanceof LivingEntity living) {
             return living.hasStatusEffect(effect);
         }

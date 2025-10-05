@@ -26,6 +26,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.more-than-apples.diamond_apple_icon"))
                     .entries(((displayContext, entries) -> {
                         entries.add(ModItems.DIAMOND_NUGGET);
+                        entries.add(ModItems.GREEN_APPLE);
                         entries.add(ModItems.DIAMOND_APPLE);
                         entries.add(ModItems.ENCHANTED_DIAMOND_APPLE);
                         entries.add(ModItems.DIAMOND_CARROT);
@@ -42,9 +43,13 @@ public class ModItemGroups {
                         entries.add(ModBlocks2.STRIPPED_APPLE_WOOD);
                         entries.add(ModBlocks2.APPLE_PLANKS);
 
-                        entries.add(ModBlocks2.FRUIT_APPLE_LEAVES);
                         entries.add(ModBlocks2.APPLE_LEAVES);
+                        entries.add(ModBlocks2.FRUIT_APPLE_LEAVES);
                         entries.add(ModBlocks2.APPLE_SAPLING);
+
+                        entries.add(ModBlocks2.GOLDEN_APPLE_LEAVES);
+                        entries.add(ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES);
+                        entries.add(ModBlocks2.GOLDEN_APPLE_SAPLING);
 
                         entries.add(ModBlocks2.APPLE_STAIRS);
                         entries.add(ModBlocks2.APPLE_SLAB);
@@ -55,6 +60,15 @@ public class ModItemGroups {
 //                        entries.add(ModBlocks2.APPLE_WALL);
                         entries.add(ModBlocks2.APPLE_DOOR);
                         entries.add(ModBlocks2.APPLE_TRAPDOOR);
+
+                        entries.add(ModBlocks2.TEST_APPLE_LOG);
+                        entries.add(ModBlocks2.TEST_APPLE_WOOD);
+                        entries.add(ModBlocks2.TEST_STRIPPED_APPLE_LOG);
+                        entries.add(ModBlocks2.TEST_STRIPPED_APPLE_WOOD);
+                        entries.add(ModBlocks2.TEST_APPLE_PLANKS);
+
+                        entries.add(ModBlocks2.TEST_APPLE_LEAVES);
+                        entries.add(ModBlocks2.TEST_APPLE_SAPLING);
 
                         entries.add(ModBlocks2.THISBOX);
 

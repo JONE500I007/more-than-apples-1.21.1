@@ -32,10 +32,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks2.APPLE_LOG)
                 .add(ModBlocks2.APPLE_WOOD)
                 .add(ModBlocks2.STRIPPED_APPLE_LOG)
-                .add(ModBlocks2.STRIPPED_APPLE_WOOD);
+                .add(ModBlocks2.STRIPPED_APPLE_WOOD)
+
+                .add(ModBlocks2.TEST_APPLE_LOG)
+                .add(ModBlocks2.TEST_APPLE_WOOD)
+                .add(ModBlocks2.TEST_STRIPPED_APPLE_LOG)
+                .add(ModBlocks2.TEST_STRIPPED_APPLE_WOOD);
 
         getOrCreateTagBuilder(BlockTags.PLANKS)
-                .add(ModBlocks2.APPLE_PLANKS);
+                .add(ModBlocks2.APPLE_PLANKS)
+                .add(ModBlocks2.TEST_APPLE_PLANKS);
 
 
     }

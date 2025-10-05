@@ -39,6 +39,14 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks2.STRIPPED_APPLE_WOOD);
         addDrop(ModBlocks2.APPLE_PLANKS);
         addDrop(ModBlocks2.APPLE_SAPLING);
+        addDrop(ModBlocks2.GOLDEN_APPLE_SAPLING);
+
+        addDrop(ModBlocks2.TEST_APPLE_LOG);
+        addDrop(ModBlocks2.TEST_APPLE_WOOD);
+        addDrop(ModBlocks2.TEST_STRIPPED_APPLE_LOG);
+        addDrop(ModBlocks2.TEST_STRIPPED_APPLE_WOOD);
+        addDrop(ModBlocks2.TEST_APPLE_PLANKS);
+        addDrop(ModBlocks2.TEST_APPLE_SAPLING);
 
 
     }

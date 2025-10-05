@@ -1,5 +1,5 @@
-// 1.21.1	2025-10-04T20:04:10.5198723	More Than Apples/Tags for minecraft:block
+// 1.21.1	2025-10-06T01:38:17.8674527	More Than Apples/Tags for minecraft:block
 3d9df57adce2a33dd0080375efea3ba21e5f2d28 data\minecraft\tags\block\wooden_fences.json
-5eaea60eda5835b5b6cb21e42a691b5a950337cb data\minecraft\tags\block\logs_that_burn.json
-e1d1e4187017c4805742139e2f0bc4d3c59ec0d6 data\minecraft\tags\block\planks.json
+c3d8259eef5584a8b7da3bcf03ac4e31aec76f01 data\minecraft\tags\block\logs_that_burn.json
+48b7af39c8134715cc1f29b617649906b4c01480 data\minecraft\tags\block\planks.json
 2087522dd2381eb7565124c920df2fd8ec7491c0 data\minecraft\tags\block\fence_gates.json

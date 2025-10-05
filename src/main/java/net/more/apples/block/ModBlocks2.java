@@ -69,6 +69,29 @@ public class ModBlocks2 {
     public static final Block APPLE_TRAPDOOR = registerBlock2("apple_trapdoor",
             new TrapdoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()));
 
+    public static final Block TEST_APPLE_LOG = registerBlock2("test_apple_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
+    public static final Block TEST_APPLE_WOOD = registerBlock2("test_apple_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
+    public static final Block TEST_STRIPPED_APPLE_LOG = registerBlock2("test_stripped_apple_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block TEST_STRIPPED_APPLE_WOOD = registerBlock2("test_stripped_apple_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block TEST_APPLE_PLANKS = registerBlock2("test_apple_planks",
+            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
+    public static final Block TEST_APPLE_LEAVES = registerBlock2("test_apple_leaves",
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+    public static final Block TEST_APPLE_SAPLING = registerBlock2("test_apple_sapling",
+            new SaplingBlock(ModSaplingGenerators.TEST_APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+
+    public static final Block GOLDEN_APPLE_LEAVES = registerBlock2("golden_apple_leaves",
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+    public static final Block FRUIT_GOLDEN_APPLE_LEAVES = registerBlock2("fruit_golden_apple_leaves",
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+    public static final Block GOLDEN_APPLE_SAPLING = registerBlock2("golden_apple_sapling",
+            new SaplingBlock(ModSaplingGenerators.GOLDEN_APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+
 
     private static Block registerBlock2(String name, Block block) {
         registerBlockItem2(name, block);

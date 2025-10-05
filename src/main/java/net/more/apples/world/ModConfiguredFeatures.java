@@ -16,11 +16,14 @@ import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.AcaciaFoliagePlacer;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliage.LargeOakFoliagePlacer;
 import net.minecraft.world.gen.foliage.MegaPineFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
+import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
+import net.minecraft.world.gen.trunk.ForkingTrunkPlacer;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.more.apples.MoreThanApples;
@@ -35,6 +38,10 @@ public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> APPLE_TREE_KEY = registryKey("apple_tree_key");
     public static final RegistryKey<ConfiguredFeature<?, ?>> LARGE_APPLE_KEY = registryKey("large_apple_key");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> LARGE_GOLDEN_APPLE_KEY = registryKey("large_golden_apple_key");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> TEST_APPLE_TREE_KEY = registryKey("test_apple_tree_key");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORCHARD_SEAGRASS_KEY = registryKey("orchard_seagrass_key");
 
@@ -122,7 +129,46 @@ public class ModConfiguredFeatures {
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.SEAGRASS)))
         );
          */
+        /*
+        register(context, TEST_APPLE_TREE_KEY, Feature.TREE,
+                new TreeFeatureConfig.Builder(
+                        BlockStateProvider.of(ModBlocks2.TEST_APPLE_LOG),
+                        new BendingTrunkPlacer(
+                                5, 2, 1, 3,
+                                ConstantIntProvider.create(2)),
+                        BlockStateProvider.of(ModBlocks2.TEST_APPLE_LEAVES),
+                        new AcaciaFoliagePlacer(
+                                ConstantIntProvider.create(2),
+                                ConstantIntProvider.create(0)),
+                        new TwoLayersFeatureSize(1, 0, 2))
+                        .build());
+         */
 
+        register(context, TEST_APPLE_TREE_KEY, Feature.TREE,
+                new TreeFeatureConfig.Builder(
+                        BlockStateProvider.of(ModBlocks2.TEST_APPLE_LOG),
+                        new ForkingTrunkPlacer(3, 1, 1),
+                        BlockStateProvider.of(ModBlocks2.TEST_APPLE_LEAVES),
+                        new AcaciaFoliagePlacer(
+                                ConstantIntProvider.create(0),
+                                ConstantIntProvider.create(0)),
+                        new TwoLayersFeatureSize(0, 0, 0))
+                        .build());
+
+        WeightedBlockStateProvider twoLeavesProvider2 = new WeightedBlockStateProvider(
+                DataPool.<BlockState>builder()
+                        .add(ModBlocks2.GOLDEN_APPLE_LEAVES.getDefaultState(), 8)
+                        .add(ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES.getDefaultState(), 1)
+                        .build()
+        );
+        register(context, LARGE_GOLDEN_APPLE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks2.APPLE_LOG),
+                new LargeOakTrunkPlacer(6, 10, 14),
+                twoLeavesProvider2,
+
+                new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(3), 3),
+                new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(3))
+        ).build());
     }
 
 

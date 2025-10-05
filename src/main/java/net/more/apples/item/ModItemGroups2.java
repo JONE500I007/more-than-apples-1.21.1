@@ -120,7 +120,7 @@ public class ModItemGroups2 {
                         entries.add(freezingPotion);
                         ItemStack freezing_lPotion = new ItemStack(Items.POTION);
                         freezing_lPotion.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_l));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_L));
                         entries.add(freezing_lPotion);
 
                         ItemStack freezingPotionSP = new ItemStack(Items.SPLASH_POTION);
@@ -129,7 +129,7 @@ public class ModItemGroups2 {
                         entries.add(freezingPotionSP);
                         ItemStack freezing_lPotionSP = new ItemStack(Items.SPLASH_POTION);
                         freezing_lPotionSP.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_l));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_L));
                         entries.add(freezing_lPotionSP);
 
                         ItemStack freezingPotionLI = new ItemStack(Items.LINGERING_POTION);
@@ -138,7 +138,7 @@ public class ModItemGroups2 {
                         entries.add(freezingPotionLI);
                         ItemStack freezing_lPotionLI = new ItemStack(Items.LINGERING_POTION);
                         freezing_lPotionLI.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_l));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_L));
                         entries.add(freezing_lPotionLI);
 
 
@@ -155,6 +155,36 @@ public class ModItemGroups2 {
                         night_visionPotionLI.set(DataComponentTypes.POTION_CONTENTS,
                                 new PotionContentsComponent(ModPotions.NIGHT_VISION_POTION_V1));
                         entries.add(night_visionPotionLI);
+
+
+                        ItemStack CallofApplePotion = new ItemStack(Items.POTION);
+                        CallofApplePotion.set(DataComponentTypes.POTION_CONTENTS,
+                                new PotionContentsComponent(ModPotions.CALL_OF_APPLE_POTION));
+                        entries.add(CallofApplePotion);
+                        ItemStack CallofApple_lPotion = new ItemStack(Items.POTION);
+                        CallofApple_lPotion.set(DataComponentTypes.POTION_CONTENTS,
+                                new PotionContentsComponent(ModPotions.CALL_OF_APPLE_POTION_L));
+                        entries.add(CallofApple_lPotion);
+
+                        ItemStack CallofApplePotionSP = new ItemStack(Items.SPLASH_POTION);
+                        CallofApplePotionSP.set(DataComponentTypes.POTION_CONTENTS,
+                                new PotionContentsComponent(ModPotions.CALL_OF_APPLE_POTION));
+                        entries.add(CallofApplePotionSP);
+                        ItemStack CallofApple_lPotionSP = new ItemStack(Items.SPLASH_POTION);
+                        CallofApple_lPotionSP.set(DataComponentTypes.POTION_CONTENTS,
+                                new PotionContentsComponent(ModPotions.CALL_OF_APPLE_POTION_L));
+                        entries.add(CallofApple_lPotionSP);
+
+                        ItemStack CallofApplePotionLI = new ItemStack(Items.LINGERING_POTION);
+                        CallofApplePotionLI.set(DataComponentTypes.POTION_CONTENTS,
+                                new PotionContentsComponent(ModPotions.CALL_OF_APPLE_POTION));
+                        entries.add(CallofApplePotionLI);
+                        ItemStack CallofApple_lPotionLI = new ItemStack(Items.LINGERING_POTION);
+                        CallofApple_lPotionLI.set(DataComponentTypes.POTION_CONTENTS,
+                                new PotionContentsComponent(ModPotions.CALL_OF_APPLE_POTION_L));
+                        entries.add(CallofApple_lPotionLI);
+
+
 
                         ItemStack darknessArrow = new ItemStack(Items.TIPPED_ARROW);
                         darknessArrow.set(DataComponentTypes.POTION_CONTENTS,
@@ -189,13 +219,22 @@ public class ModItemGroups2 {
                         entries.add(freezingArrow);
                         ItemStack freezing_lArrow = new ItemStack(Items.TIPPED_ARROW);
                         freezing_lArrow.set(DataComponentTypes.POTION_CONTENTS,
-                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_l));
+                                new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION_L));
                         entries.add(freezing_lArrow);
 
                         ItemStack night_visionArrow = new ItemStack(Items.TIPPED_ARROW);
                         night_visionArrow.set(DataComponentTypes.POTION_CONTENTS,
                                 new PotionContentsComponent(ModPotions.NIGHT_VISION_POTION_V1));
                         entries.add(night_visionArrow);
+
+                        ItemStack CallofAppleArrow = new ItemStack(Items.TIPPED_ARROW);
+                        CallofAppleArrow.set(DataComponentTypes.POTION_CONTENTS,
+                                new PotionContentsComponent(ModPotions.CALL_OF_APPLE_POTION));
+                        entries.add(CallofAppleArrow);
+                        ItemStack CallofApple_lArrow = new ItemStack(Items.TIPPED_ARROW);
+                        CallofApple_lArrow.set(DataComponentTypes.POTION_CONTENTS,
+                                new PotionContentsComponent(ModPotions.CALL_OF_APPLE_POTION_L));
+                        entries.add(CallofApple_lArrow);
 
                     }))
                     .build());
