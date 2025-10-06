@@ -1,12 +1,12 @@
 {
-  "parent": "more-than-apples:apple/normal_golden_apple",
+  "parent": "more-than-apples:apple/normal_apple",
   "criteria": {
-    "obtain_diamond_apple": {
+    "obtain_normal_golden_apple": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
           "items": [
-            "more-than-apples:diamond_apple"
+            "minecraft:golden_apple"
           ]
         }
       }
@@ -14,13 +14,13 @@
   },
   "display": {
     "description": {
-      "translate": "advancements.more-than-apples.story.obtain_diamond_apple.description"
+      "translate": "advancements.more-than-apples.story.obtain_normal_golden_apple.description"
     },
     "icon": {
-      "id": "more-than-apples:diamond_apple"
+      "id": "minecraft:golden_apple"
     },
     "title": {
-      "translate": "advancements.more-than-apples.story.obtain_diamond_apple.title"
+      "translate": "advancements.more-than-apples.story.obtain_normal_golden_apple.title"
     },
     "frame": "task",
     "show_toast": true,
@@ -29,7 +29,7 @@
   },
   "requirements": [
     [
-      "obtain_diamond_apple"
+      "obtain_normal_golden_apple"
     ]
   ],
   "sends_telemetry_event": true

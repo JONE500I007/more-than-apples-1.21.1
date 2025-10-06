@@ -40,6 +40,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ModTags.Items.ALL_APPLE)
                 .add(Items.APPLE)
+                .add(Items.GOLDEN_APPLE)
+                .add(Items.ENCHANTED_GOLDEN_APPLE)
                 .add(ModItems.GREEN_APPLE)
                 .add(ModItems.TEST_APPLE)
                 .add(ModItems.DIAMOND_APPLE)

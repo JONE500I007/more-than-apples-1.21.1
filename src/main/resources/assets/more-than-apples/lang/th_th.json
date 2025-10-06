@@ -1,5 +1,10 @@
 {
+  "itemgroup.more-than-apples.diamond_apple_icon": "มากกว่าแอปเปิ้ลนั้น (:",
+  "itemgroup.more-than-apples.zpotion_icon": "น้ำยามากกว่าแอปเปิ้ลนั้น :)",
+
   "item.more-than-apples.diamond_nugget": "เศษเพชร",
+  "item.more-than-apples.green_apple": "แอปเปิ้ลเขียว",
+  "item.more-than-apples.test_apple": "แอปเปิ้ล_ทดสอบ",
   "item.more-than-apples.diamond_apple": "แอปเปิ้ลเพชร",
   "item.more-than-apples.enchanted_diamond_apple": "แอปเปิ้ลเพชรร่ายมนตร์",
   "item.more-than-apples.diamond_carrot": "แครอทเพชร",
@@ -7,14 +12,57 @@
   "item.more-than-apples.enchanted_netherite_apple": "แอปเปิ้ลเนเธอไรต์ร่ายมนตร์",
 
   "block.more-than-apples.diamond_apple_block": "บล็อกแอ๊ปเปิ้ลเพชร",
+  "block.more-than-apples.apple_barrel": "ถังแอปเปิ้ล",
 
-  "itemgroup.more-than-apples.diamond_apple_icon": "มากกว่าแอปเปิ้ลนั้น (:",
-  "itemgroup.more-than-apples.zpotion_icon": "น้ำยามากกว่าแอปเปิ้ลนั้น :)",
+  "block.more-than-apples.apple_log": "ท่อนไม้แอปเปิ้ล",
+  "block.more-than-apples.apple_wood": "ไม้แอปเปิ้ล",
+  "block.more-than-apples.stripped_apple_log": "ท่อนไม้แอปเปิ้ลลอกเปลือก",
+  "block.more-than-apples.stripped_apple_wood": "ไม้แอปเปิ้ลลอกเปลือก",
+  "block.more-than-apples.apple_planks": "แผ่นกระดานแอปเปิ้ล",
+  "block.more-than-apples.apple_leaves": "ใบไม้แอปเปิ้ล",
+  "block.more-than-apples.fruit_apple_leaves": "ใบไม้แอปเปิ้ลพร้อมผล",
+  "block.more-than-apples.apple_sapling": "ต้นอ่อนแอปเปิ้ล",
+
+  "block.more-than-apples.apple_stairs": "บันไดไม้แอปเปิ้ล",
+  "block.more-than-apples.apple_slab": "แผ่นไม้แอปเปิ้ล",
+  "block.more-than-apples.apple_fence": "รั้วไม้แอปเปิ้ล",
+  "block.more-than-apples.apple_fence_gate": "ประตูรั้วไม้แอปเปิ้ล",
+  "block.more-than-apples.apple_door": "ประตูไม้แอปเปิ้ล",
+  "block.more-than-apples.apple_trapdoor": "ประตูกับดักไม้แอปเปิ้ล",
+  "block.more-than-apples.apple_pressure_plate": "แป้นเหยียบไม้แอปเปิ้ล",
+  "block.more-than-apples.apple_button": "ปุ่มไม้แอปเปิ้ล",
+
+  "block.more-than-apples.golden_apple_leaves": "ใบไม้แอปเปิ้ลทองคำ",
+  "block.more-than-apples.fruit_golden_apple_leaves": "ใบไม้แอปเปิ้ลทองคำพร้อมผล",
+  "block.more-than-apples.golden_apple_sapling": "ต้นอ่อนแอปเปิ้ลทองคำ",
+
+  "block.more-than-apples.test_apple_log": "ท่อนไม้_แอปเปิ้ล_ทดสอบ",
+  "block.more-than-apples.test_apple_wood": "ไม้_แอปเปิ้ล_ทดสอบ",
+  "block.more-than-apples.stripped_test_apple_log": "ท่อนไม้_แอปเปิ้ล_ทดสอบ_ลอกเปลือก",
+  "block.more-than-apples.stripped_test_apple_wood": "ไม้_แอปเปิ้ล_ทดสอบ_ลอกเปลือก",
+  "block.more-than-apples.test_apple_planks": "แผ่นกระดาน_แอปเปิ้ล_ทดสอบ",
+  "block.more-than-apples.test_apple_leaves": "ใบไม้_แอปเปิ้ล_ทดสอบ",
+  "block.more-than-apples.test_apple_sapling": "ต้นอ่อน_แอปเปิ้ล_ทดสอบ",
+
+  "block.more-than-apples.test_apple_stairs": "บันไดไม้_แอปเปิ้ล_ทดสอบ",
+  "block.more-than-apples.test_apple_slab": "แผ่นไม้_แอปเปิ้ล_ทดสอบ",
+  "block.more-than-apples.test_apple_fence": "รั้วไม้_แอปเปิ้ล_ทดสอบ",
+  "block.more-than-apples.test_apple_fence_gate": "ประตูรั้วไม้_แอปเปิ้ล_ทดสอบ",
+  "block.more-than-apples.test_apple_door": "ประตูไม้_แอปเปิ้ล_ทดสอบ",
+  "block.more-than-apples.test_apple_trapdoor": "ประตูกับดักไม้_แอปเปิ้ล_ทดสอบ",
+  "block.more-than-apples.test_apple_pressure_plate": "แป้นเหยียบไม้_แอปเปิ้ล_ทดสอบ",
+  "block.more-than-apples.test_apple_button": "ปุ่มไม้_แอปเปิ้ล_ทดสอบ",
+
+  "block.more-than-apples.apple_ore": "แร่แอปเปิ้ล",
+  "block.more-than-apples.deepslate_apple_ore": "แร่แอปเปิ้ลในหินชนวนลึก",
+
+  "entity.minecraft.villager.apple_master": "ปรมาจารย์แอปเปิ้ล",
 
   "effect.more-than-apples.darkness_immune": "ภูมิคุ้มกันมืดมิด",
   "effect.more-than-apples.slowness_immune": "ภูมิคุ้มกันวิ่งช้า",
   "effect.more-than-apples.mining_fatigue_immune": "ภูมิคุ้มกันขุดช้า",
   "effect.more-than-apples.freezing_resistance": "ต้านทานการแช่แข็ง",
+  "effect.more-than-apples.call_of_apple": "เสียงเรียกร้องแห่งแอปเปิ้ล",
 
   "item.minecraft.potion.effect.darkness_immune_potion": "น้ำยาภูมิคุ้มกันความมืด",
   "item.minecraft.potion.effect.darkness_immune_potion_l": "น้ำยาภูมิคุ้มกันความมืด",
@@ -48,6 +96,13 @@
   "item.minecraft.splash_potion.effect.night_vision_potion_v1": "น้ำยามองกลางคืนแบบปา",
   "item.minecraft.lingering_potion.effect.night_vision_potion_v1": "น้ำยามองกลางคืนแบบระเหย",
 
+  "item.minecraft.potion.effect.call_of_apple_potion": "น้ำยาเสียงเรียกร้องแห่งแอปเปิ้ล",
+  "item.minecraft.potion.effect.call_of_apple_potion_l": "น้ำยาเสียงเรียกร้องแห่งแอปเปิ้ล",
+  "item.minecraft.splash_potion.effect.call_of_apple_potion": "น้ำยาเสียงเรียกร้องแห่งแอปเปิ้ลแบบปา",
+  "item.minecraft.splash_potion.effect.call_of_apple_potion_l": "น้ำยาเสียงเรียกร้องแห่งแอปเปิ้ลแบบปา",
+  "item.minecraft.lingering_potion.effect.call_of_apple_potion": "น้ำยาเสียงเรียกร้องแห่งแอปเปิ้ลแบบระเหย",
+  "item.minecraft.lingering_potion.effect.call_of_apple_potion_l": "น้ำยาเสียงเรียกร้องแห่งแอปเปิ้ลแบบระเหย",
+
   "item.minecraft.tipped_arrow.effect.darkness_immune_potion": "ลูกธนูอาบยาภูมิคุ้มกันมืดมิด",
   "item.minecraft.tipped_arrow.effect.darkness_immune_potion_l": "ลูกธนูอาบยาภูมิคุ้มกันมืดมิด",
   "item.minecraft.tipped_arrow.effect.slowness_immune_potion": "ลูกธนูอาบยาภูมิคุ้มกันวิ่งช้า",
@@ -57,6 +112,22 @@
   "item.minecraft.tipped_arrow.effect.freezing_resistance_potion": "ลูกธนูอาบยาต้านทานการแช่แข็ง",
   "item.minecraft.tipped_arrow.effect.freezing_resistance_potion_l": "ลูกธนูอาบยาต้านทานการแช่แข็ง",
   "item.minecraft.tipped_arrow.effect.night_vision_potion_v1": "ลูกธนูอาบยามองกลางคืน",
+
+
+  "advancements.more_than_apples.root.advancement_apple.title": "แอปเปิ้ลมากกว่านี้",
+  "advancements.more_than_apples.root.advancement_apple.description": "ผมก็ไม่รู้เหมือนกัน บางทีอาจเป็นแค่คำอธิบายบางอย่าง",
+
+  "advancements.more-than-apples.story.obtain_normal_apple.title": "การกัดครั้งแรกของคุณ!",
+  "advancements.more-than-apples.story.obtain_normal_apple.description": "กินแอปเปิ้ลครั้งแรกของคุณ บางทีมันน่าจะ กรอบ...?",
+
+  "advancements.more-than-apples.story.obtain_green_apple.title": "คุณรู้สึกถึงโชคไหม?",
+  "advancements.more-than-apples.story.obtain_green_apple.description": "ไม่ละ........ผมจะชนะ",
+
+  "advancements.more-than-apples.story.obtain_test_apple.title": "นี่_สำหรับ_การทดสอบ_ความก้าวหน้า",
+  "advancements.more-than-apples.story.obtain_test_apple.description": "คือผมขี้เกียจเกินกว่าที่จะวาด texture ใหม่ เพราะงั้นผมก็เลยทำแบบนี้ (:",
+
+  "advancements.more-than-apples.story.obtain_normal_golden_apple.title": "มันอร่อยมั้ยวะ?",
+  "advancements.more-than-apples.story.obtain_normal_golden_apple.description": "คุณรู้เปล่าว่ามันมีสวนผลไม้ที่เต็มไปด้วยแอปเปิ้ลทองคำ",
 
   "advancements.more-than-apples.story.obtain_diamond_apple.title": "แอปเปิ้ลเพชรแวววาว!",
   "advancements.more-than-apples.story.obtain_diamond_apple.description": "นี่มันยังแข็งกว่าทองอีกเหรอ?",
@@ -71,5 +142,11 @@
   "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.description": "เ่าหฟนกาเ่ำนำนววหเาเนำ",
 
   "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.title": "ข้าไม่กลัวใครทั้งนั้น!",
-  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.description": "ฉันคิดว่าถ้าคุณกินนี่ คุณคงไม่ตายแน่ๆ"
+  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.description": "ฉันคิดว่าถ้าคุณกินนี่ คุณคงไม่ตายแน่ๆ",
+
+  "advancements.more-than-apples.story.enter_golden_apple_orchard.title": "โลกช่างดูเป็นทอง",
+  "advancements.more-than-apples.story.enter_golden_apple_orchard.description": "ความฝันของฉันเป็นจริงแล้ว",
+
+  "advancements.more-than-apples.story.eat_all_apples.title": "มากกว่าแอปเปิ้ลนั้น",
+  "advancements.more-than-apples.story.eat_all_apples.description": "คำพูดมากมาย ความหมายแอปเปิ้ล"
 }

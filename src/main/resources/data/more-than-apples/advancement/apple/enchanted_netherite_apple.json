@@ -1,5 +1,5 @@
 {
-  "parent": "more-than-apples:apple/netherite_apple",
+  "parent": "more-than-apples:apple/enchanted_diamond_apple",
   "criteria": {
     "obtain_enchanted_netherite_apple": {
       "trigger": "minecraft:consume_item",

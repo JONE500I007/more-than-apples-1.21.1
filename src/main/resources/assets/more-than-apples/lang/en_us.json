@@ -1,4 +1,7 @@
 {
+  "itemgroup.more-than-apples.diamond_apple_icon": "More Than Apples",
+  "itemgroup.more-than-apples.zpotion_icon": "More Than Apples Potion",
+
   "item.more-than-apples.diamond_nugget": "Diamond Nugget",
   "item.more-than-apples.green_apple": "Green Apple",
   "item.more-than-apples.test_apple": "Test_Apple",
@@ -22,12 +25,12 @@
 
   "block.more-than-apples.apple_stairs": "Apple Stairs",
   "block.more-than-apples.apple_slab": "Apple Slab",
-  "block.more-than-apples.apple_button": "Apple Button",
-  "block.more-than-apples.apple_pressure_plate": "Apple Pressure Plate",
   "block.more-than-apples.apple_fence": "Apple Fence",
   "block.more-than-apples.apple_fence_gate": "Apple Fence Gate",
   "block.more-than-apples.apple_door": "Apple Door",
   "block.more-than-apples.apple_trapdoor": "Apple Trapdoor",
+  "block.more-than-apples.apple_pressure_plate": "Apple Pressure Plate",
+  "block.more-than-apples.apple_button": "Apple Button",
 
   "block.more-than-apples.golden_apple_leaves": "Golden Apple Leaves",
   "block.more-than-apples.fruit_golden_apple_leaves": "Fruit Golden Apple Leaves",
@@ -43,20 +46,17 @@
 
   "block.more-than-apples.test_apple_stairs": "Test_Apple_Stairs",
   "block.more-than-apples.test_apple_slab": "Test_Apple_Slab",
-  "block.more-than-apples.test_apple_button": "Test_Apple_Button",
-  "block.more-than-apples.test_apple_pressure_plate": "Test_Apple_Pressure_Plate",
   "block.more-than-apples.test_apple_fence": "Test_Apple_Fence",
   "block.more-than-apples.test_apple_fence_gate": "Test_Apple_Fence_Gate",
   "block.more-than-apples.test_apple_door": "Test_Apple_Door",
   "block.more-than-apples.test_apple_trapdoor": "Test_Apple_Trapdoor",
+  "block.more-than-apples.test_apple_pressure_plate": "Test_Apple_Pressure_Plate",
+  "block.more-than-apples.test_apple_button": "Test_Apple_Button",
 
   "block.more-than-apples.apple_ore": "Apple Ore",
   "block.more-than-apples.deepslate_apple_ore": "Deepslate Apple ore",
 
   "entity.minecraft.villager.apple_master": "Apple Master",
-
-  "itemgroup.more-than-apples.diamond_apple_icon": "More Than Apples",
-  "itemgroup.more-than-apples.zpotion_icon": "More Than Apples Potion",
 
   "effect.more-than-apples.darkness_immune": "Darkness Immune",
   "effect.more-than-apples.slowness_immune": "Slowness Immune",
@@ -115,8 +115,21 @@
   "item.minecraft.tipped_arrow.effect.call_of_apple_potion": "Arrow of Call of Apple",
   "item.minecraft.tipped_arrow.effect.call_of_apple_potion_l": "Arrow of Call of Apple",
 
-  "advancements.more_than_apples.root.advancement_apple.title": "THIS More Than Apples",
+
+  "advancements.more_than_apples.root.advancement_apple.title": "More apple",
   "advancements.more_than_apples.root.advancement_apple.description": "idk maybe just some description",
+
+  "advancements.more-than-apples.story.obtain_normal_apple.title": "Your first bite!",
+  "advancements.more-than-apples.story.obtain_normal_apple.description": "Eat your first apple maybe crisp..?",
+
+  "advancements.more-than-apples.story.obtain_green_apple.title": "Your feel lucky?",
+  "advancements.more-than-apples.story.obtain_green_apple.description": "Nah........I'd Win",
+
+  "advancements.more-than-apples.story.obtain_test_apple.title": "this_for_test_advancement",
+  "advancements.more-than-apples.story.obtain_test_apple.description": "i was too lazy to draw a new texture so I did it this way (:",
+
+  "advancements.more-than-apples.story.obtain_normal_golden_apple.title": "Is it delicious?",
+  "advancements.more-than-apples.story.obtain_normal_golden_apple.description": "Did you know there is a orchard full of golden apples",
 
   "advancements.more-than-apples.story.obtain_diamond_apple.title": "Shiny Diamond Apple!",
   "advancements.more-than-apples.story.obtain_diamond_apple.description": "This is still harder than gold?",
@@ -127,9 +140,18 @@
   "advancements.more-than-apples.story.obtain_netherite_apple.title": "Cover Me With Apple",
   "advancements.more-than-apples.story.obtain_netherite_apple.description": "I think maybe Steve can still eat this",
 
+  "advancements.more-than-apples.story.obtain_normal_enchanted_golden_apple.title": "NO WAY!",
+  "advancements.more-than-apples.story.obtain_normal_enchanted_golden_apple.description": "but i know the way",
+
   "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.title": "APPLE!!",
   "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.description": "htjgodgjgedogkeodpg",
 
   "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.title": "I FEAR NO ONE!",
-  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.description": "I think if you eat this, you're not going to die"
+  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.description": "I think if you eat this, you're not going to die",
+
+  "advancements.more-than-apples.story.enter_golden_apple_orchard.title": "The world looks gold",
+  "advancements.more-than-apples.story.enter_golden_apple_orchard.description": "My dream has come true",
+
+  "advancements.more-than-apples.story.eat_all_apples.title": "More Than Apples",
+  "advancements.more-than-apples.story.eat_all_apples.description": "So many words, one meaning: apple"
 }

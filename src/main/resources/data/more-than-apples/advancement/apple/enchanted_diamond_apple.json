@@ -1,5 +1,5 @@
 {
-  "parent": "more-than-apples:apple/diamond_apple",
+  "parent": "more-than-apples:apple/normal_enchanted_golden_apple",
   "criteria": {
     "obtain_enchanted_diamond_apple": {
       "trigger": "minecraft:consume_item",

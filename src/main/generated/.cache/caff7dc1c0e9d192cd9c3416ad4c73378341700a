@@ -1,9 +1,10 @@
-// 1.21.1	2025-10-07T01:38:30.8984112	More Than Apples/Tags for minecraft:block
+// 1.21.1	2025-10-07T04:11:31.0719012	More Than Apples/Tags for minecraft:block
 ec75947d79e428018bdd052b58d5d52404493304 data\minecraft\tags\block\wooden_stairs.json
 94a821fdb707945db1f42450de96894cf81af651 data\minecraft\tags\block\wooden_trapdoors.json
 c211765be30b66d0272a7dea2afed592d40d5259 data\more-than-apples\tags\block\all_test_apple_log.json
 48b7af39c8134715cc1f29b617649906b4c01480 data\minecraft\tags\block\planks.json
 f0b949e6d41f8a7d82f96b1719edc2670adf3840 data\minecraft\tags\block\fence_gates.json
+791db92eb2141239e4500115af543fead98c6e96 data\minecraft\tags\block\mineable\axe.json
 3be71ba3c2e6fc8e37b0003e35fbf44195736ab6 data\minecraft\tags\block\wooden_pressure_plates.json
 63f75baa371356cde5cfbc4e74a27f6b862087fe data\minecraft\tags\block\wooden_buttons.json
 72a63cb4a8985cba8f6e82c8be98340c587b25e5 data\minecraft\tags\block\wooden_fences.json

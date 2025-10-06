@@ -90,5 +90,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES)
                 .add(ModBlocks2.APPLE_PRESSURE_PLATE)
                 .add(ModBlocks2.TEST_APPLE_PRESSURE_PLATE);
+
+
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks2.APPLE_BARREL);
     }
 }

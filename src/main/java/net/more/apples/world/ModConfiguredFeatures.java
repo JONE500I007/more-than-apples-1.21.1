@@ -57,7 +57,7 @@ public class ModConfiguredFeatures {
                         OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks2.DEEPSLATE_APPLE_ORE.getDefaultState()));
 
 
-        register(context, APPLE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldAppleOre, 6));
+        register(context, APPLE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldAppleOre, 9));
 
 
 

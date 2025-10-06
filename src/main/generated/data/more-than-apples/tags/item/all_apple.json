@@ -1,6 +1,8 @@
 {
   "values": [
     "minecraft:apple",
+    "minecraft:golden_apple",
+    "minecraft:enchanted_golden_apple",
     "more-than-apples:green_apple",
     "more-than-apples:test_apple",
     "more-than-apples:diamond_apple",
