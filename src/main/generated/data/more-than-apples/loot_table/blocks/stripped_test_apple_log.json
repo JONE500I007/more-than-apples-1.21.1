@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "more-than-apples:test_stripped_apple_wood"
+          "name": "more-than-apples:stripped_test_apple_log"
         }
       ],
       "rolls": 1.0

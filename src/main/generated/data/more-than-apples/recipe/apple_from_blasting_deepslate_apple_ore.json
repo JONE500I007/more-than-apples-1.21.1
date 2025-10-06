@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "this_apple",
+  "ingredient": {
+    "item": "more-than-apples:deepslate_apple_ore"
+  },
+  "result": {
+    "id": "minecraft:apple"
+  }
+}

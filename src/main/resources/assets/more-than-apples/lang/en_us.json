@@ -35,8 +35,8 @@
 
   "block.more-than-apples.test_apple_log": "Test_Apple_Log",
   "block.more-than-apples.test_apple_wood": "Test_Apple_Wood",
-  "block.more-than-apples.test_stripped_apple_log": "Stripped_Test_Apple_Log",
-  "block.more-than-apples.test_stripped_apple_wood": "Stripped_Test_Apple_Wood",
+  "block.more-than-apples.stripped_test_apple_log": "Stripped_Test_Apple_Log",
+  "block.more-than-apples.stripped_test_apple_wood": "Stripped_Test_Apple_Wood",
   "block.more-than-apples.test_apple_planks": "Test_Apple_Planks",
   "block.more-than-apples.test_apple_leaves": "Test_Apple_Leaves",
   "block.more-than-apples.test_apple_sapling": "Test_Apple_Sapling",

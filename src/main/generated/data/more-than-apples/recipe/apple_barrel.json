@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "more-than-apples:all_apple"
+    },
+    "B": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "AA",
+    "BB",
+    "BB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "more-than-apples:apple_barrel"
+  }
+}

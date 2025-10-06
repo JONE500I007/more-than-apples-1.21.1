@@ -110,13 +110,13 @@ public class MoreThanApples implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.GOLDEN_APPLE_LEAVES, 30, 60);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES, 30, 60);
 
-		StrippableBlockRegistry.register(ModBlocks2.TEST_APPLE_LOG, ModBlocks2.TEST_STRIPPED_APPLE_LOG);
-		StrippableBlockRegistry.register(ModBlocks2.TEST_APPLE_WOOD, ModBlocks2.TEST_STRIPPED_APPLE_WOOD);
+		StrippableBlockRegistry.register(ModBlocks2.TEST_APPLE_LOG, ModBlocks2.STRIPPED_TEST_APPLE_LOG);
+		StrippableBlockRegistry.register(ModBlocks2.TEST_APPLE_WOOD, ModBlocks2.STRIPPED_TEST_APPLE_WOOD);
 
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_APPLE_LOG, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_APPLE_WOOD, 5, 20);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_STRIPPED_APPLE_LOG, 5, 20);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_STRIPPED_APPLE_WOOD, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.STRIPPED_TEST_APPLE_LOG, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.STRIPPED_TEST_APPLE_WOOD, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_APPLE_PLANKS, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_APPLE_LEAVES, 30, 60);
 

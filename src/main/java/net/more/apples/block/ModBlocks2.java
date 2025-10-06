@@ -44,36 +44,55 @@ public class ModBlocks2 {
 
     public static final Block APPLE_STAIRS = registerBlock2("apple_stairs",
             new StairsBlock(ModBlocks2.APPLE_PLANKS.getDefaultState(),
-                    AbstractBlock.Settings.create()));
+                    AbstractBlock.Settings.create()
+                            .strength(2.0f, 3.0f)
+                            .sounds(BlockSoundGroup.WOOD)));
     public static final Block APPLE_SLAB = registerBlock2("apple_slab",
-            new SlabBlock(AbstractBlock.Settings.create()));
+            new SlabBlock(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
 
     public static final Block APPLE_BUTTON = registerBlock2("apple_button",
             new ButtonBlock(BlockSetType.OAK, 30,
-                    AbstractBlock.Settings.create().noCollision()));
+                    AbstractBlock.Settings.create()
+                            .noCollision()
+                            .strength(0.5f)
+                            .sounds(BlockSoundGroup.WOOD)));
     public static final Block APPLE_PRESSURE_PLATE = registerBlock2("apple_pressure_plate",
-            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create()));
+            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOD)));
 
     public static final Block APPLE_FENCE = registerBlock2("apple_fence",
-            new FenceBlock(AbstractBlock.Settings.create()));
+            new FenceBlock(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
     public static final Block APPLE_FENCE_GATE = registerBlock2("apple_fence_gate",
-            new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create()));
+            new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
 //    public static final Block APPLE_WALL = registerBlock2("apple_wall",
 //            new WallBlock(AbstractBlock.Settings.create()));
 
     public static final Block APPLE_DOOR = registerBlock2("apple_door",
-            new DoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()));
+            new DoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create()
+                    .nonOpaque()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
     public static final Block APPLE_TRAPDOOR = registerBlock2("apple_trapdoor",
-            new TrapdoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()));
+            new TrapdoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create()
+                    .nonOpaque()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
 
 
     public static final Block TEST_APPLE_LOG = registerBlock2("test_apple_log",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
     public static final Block TEST_APPLE_WOOD = registerBlock2("test_apple_wood",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
-    public static final Block TEST_STRIPPED_APPLE_LOG = registerBlock2("test_stripped_apple_log",
+    public static final Block STRIPPED_TEST_APPLE_LOG = registerBlock2("stripped_test_apple_log",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
-    public static final Block TEST_STRIPPED_APPLE_WOOD = registerBlock2("test_stripped_apple_wood",
+    public static final Block STRIPPED_TEST_APPLE_WOOD = registerBlock2("stripped_test_apple_wood",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
 
     public static final Block TEST_APPLE_PLANKS = registerBlock2("test_apple_planks",
@@ -85,25 +104,42 @@ public class ModBlocks2 {
 
     public static final Block TEST_APPLE_STAIRS = registerBlock2("test_apple_stairs",
             new StairsBlock(ModBlocks2.TEST_APPLE_PLANKS.getDefaultState(),
-                    AbstractBlock.Settings.create()));
+                    AbstractBlock.Settings.create()
+                            .strength(2.0f, 3.0f)
+                            .sounds(BlockSoundGroup.WOOD)));
     public static final Block TEST_APPLE_SLAB = registerBlock2("test_apple_slab",
-            new SlabBlock(AbstractBlock.Settings.create()));
+            new SlabBlock(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
 
     public static final Block TEST_APPLE_BUTTON = registerBlock2("test_apple_button",
             new ButtonBlock(BlockSetType.OAK, 30,
-                    AbstractBlock.Settings.create().noCollision()));
+                    AbstractBlock.Settings.create()
+                            .noCollision()
+                            .strength(0.5f)
+                            .sounds(BlockSoundGroup.WOOD)));
     public static final Block TEST_APPLE_PRESSURE_PLATE = registerBlock2("test_apple_pressure_plate",
-            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create()));
+            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOD)));
 
     public static final Block TEST_APPLE_FENCE = registerBlock2("test_apple_fence",
-            new FenceBlock(AbstractBlock.Settings.create()));
+            new FenceBlock(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
     public static final Block TEST_APPLE_FENCE_GATE = registerBlock2("test_apple_fence_gate",
-            new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create()));
+            new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
 
     public static final Block TEST_APPLE_DOOR = registerBlock2("test_apple_door",
-            new DoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()));
+            new DoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
     public static final Block TEST_APPLE_TRAPDOOR = registerBlock2("test_apple_trapdoor",
-            new TrapdoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()));
+            new TrapdoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
 
 
     public static final Block GOLDEN_APPLE_LEAVES = registerBlock2("golden_apple_leaves",
@@ -115,6 +151,7 @@ public class ModBlocks2 {
 
     public static final Block APPLE_BARREL = registerBlock2("apple_barrel",
             new Block(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
 
 
@@ -153,8 +190,8 @@ public class ModBlocks2 {
 
             entrise.add(TEST_APPLE_LOG);
             entrise.add(TEST_APPLE_WOOD);
-            entrise.add(TEST_STRIPPED_APPLE_LOG);
-            entrise.add(TEST_STRIPPED_APPLE_WOOD);
+            entrise.add(STRIPPED_TEST_APPLE_LOG);
+            entrise.add(STRIPPED_TEST_APPLE_WOOD);
             entrise.add(TEST_APPLE_PLANKS);
             entrise.add(TEST_APPLE_STAIRS);
             entrise.add(TEST_APPLE_SLAB);

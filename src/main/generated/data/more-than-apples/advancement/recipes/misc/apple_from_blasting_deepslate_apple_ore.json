@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_apple_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "more-than-apples:deepslate_apple_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "more-than-apples:apple_from_blasting_deepslate_apple_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_deepslate_apple_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "more-than-apples:apple_from_blasting_deepslate_apple_ore"
+    ]
+  }
+}

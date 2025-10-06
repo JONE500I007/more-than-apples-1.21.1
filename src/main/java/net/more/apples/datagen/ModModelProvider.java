@@ -3,7 +3,6 @@ package net.more.apples.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
-import net.more.apples.block.ModBlocks;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.item.ModItems;
 
@@ -65,7 +64,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.GOLDEN_APPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         blockStateModelGenerator.registerLog(ModBlocks2.TEST_APPLE_LOG).log(ModBlocks2.TEST_APPLE_LOG).wood(ModBlocks2.TEST_APPLE_WOOD);
-        blockStateModelGenerator.registerLog(ModBlocks2.TEST_STRIPPED_APPLE_LOG).log(ModBlocks2.TEST_STRIPPED_APPLE_LOG).wood(ModBlocks2.TEST_STRIPPED_APPLE_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks2.STRIPPED_TEST_APPLE_LOG).log(ModBlocks2.STRIPPED_TEST_APPLE_LOG).wood(ModBlocks2.STRIPPED_TEST_APPLE_WOOD);
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.TEST_APPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
 

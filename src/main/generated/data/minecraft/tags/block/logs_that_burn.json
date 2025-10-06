@@ -6,7 +6,7 @@
     "more-than-apples:stripped_apple_wood",
     "more-than-apples:test_apple_log",
     "more-than-apples:test_apple_wood",
-    "more-than-apples:test_stripped_apple_log",
-    "more-than-apples:test_stripped_apple_wood"
+    "more-than-apples:stripped_test_apple_log",
+    "more-than-apples:stripped_test_apple_wood"
   ]
 }

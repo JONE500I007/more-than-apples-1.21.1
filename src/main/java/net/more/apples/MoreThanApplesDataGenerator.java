@@ -19,6 +19,7 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
+		pack.addProvider(ModRecipeProvider::new);
 
 		pack.addProvider(ModPoiTagProvider::new);
 		//pack.addProvider(ModLootTableGen::new);

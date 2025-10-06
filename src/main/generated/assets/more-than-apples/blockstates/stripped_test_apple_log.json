@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "more-than-apples:block/stripped_test_apple_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "more-than-apples:block/stripped_test_apple_log"
+    },
+    "axis=z": {
+      "model": "more-than-apples:block/stripped_test_apple_log_horizontal",
+      "x": 90
+    }
+  }
+}

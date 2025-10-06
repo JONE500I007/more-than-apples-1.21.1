@@ -2,10 +2,8 @@ package net.more.apples.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 import net.more.apples.block.ModBlocks2;
-import net.more.apples.item.ModItems;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -44,8 +42,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks2.TEST_APPLE_LOG);
         addDrop(ModBlocks2.TEST_APPLE_WOOD);
-        addDrop(ModBlocks2.TEST_STRIPPED_APPLE_LOG);
-        addDrop(ModBlocks2.TEST_STRIPPED_APPLE_WOOD);
+        addDrop(ModBlocks2.STRIPPED_TEST_APPLE_LOG);
+        addDrop(ModBlocks2.STRIPPED_TEST_APPLE_WOOD);
         addDrop(ModBlocks2.TEST_APPLE_PLANKS);
         addDrop(ModBlocks2.TEST_APPLE_SAPLING);
 

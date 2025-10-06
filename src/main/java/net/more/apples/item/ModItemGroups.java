@@ -1,22 +1,14 @@
 package net.more.apples.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.PotionItem;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.potion.Potions;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.more.apples.MoreThanApples;
-import net.more.apples.block.ModBlocks;
 import net.more.apples.block.ModBlocks2;
-import net.more.apples.potion.ModPotions;
 
 public class ModItemGroups {
 
@@ -65,8 +57,8 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks2.TEST_APPLE_LOG);
                         entries.add(ModBlocks2.TEST_APPLE_WOOD);
-                        entries.add(ModBlocks2.TEST_STRIPPED_APPLE_LOG);
-                        entries.add(ModBlocks2.TEST_STRIPPED_APPLE_WOOD);
+                        entries.add(ModBlocks2.STRIPPED_TEST_APPLE_LOG);
+                        entries.add(ModBlocks2.STRIPPED_TEST_APPLE_WOOD);
                         entries.add(ModBlocks2.TEST_APPLE_PLANKS);
 
                         entries.add(ModBlocks2.TEST_APPLE_STAIRS);
