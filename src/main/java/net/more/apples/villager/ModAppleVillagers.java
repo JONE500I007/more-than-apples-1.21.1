@@ -18,7 +18,7 @@ import net.more.apples.block.ModBlocks2;
 public class ModAppleVillagers {
 
     public static final RegistryKey<PointOfInterestType> APPLE_POI_KEY = registerPoiKey("apple_poi");
-    public static final PointOfInterestType APPLE_POI = registerPoi("apple_poi", ModBlocks2.THISBOX);
+    public static final PointOfInterestType APPLE_POI = registerPoi("apple_poi", ModBlocks2.APPLE_BARREL);
 
     public static final VillagerProfession APPLE_MASTER = registerProfession("apple_master", APPLE_POI_KEY);
 

@@ -23,9 +23,6 @@ public class ModBlocks2 {
             new ExperienceDroppingBlock(UniformIntProvider.create(3, 6),
                     AbstractBlock.Settings.create().strength(4.5f, 3.0f)
                             .sounds(BlockSoundGroup.DEEPSLATE).requiresTool()));
-    public static final Block THISBOX = registerBlock2("thisbox",
-            new Block(AbstractBlock.Settings.create()
-                    .sounds(BlockSoundGroup.METAL)));
 
     public static final Block APPLE_LOG = registerBlock2("apple_log",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
@@ -52,7 +49,7 @@ public class ModBlocks2 {
             new SlabBlock(AbstractBlock.Settings.create()));
 
     public static final Block APPLE_BUTTON = registerBlock2("apple_button",
-            new ButtonBlock(BlockSetType.OAK, 2,
+            new ButtonBlock(BlockSetType.OAK, 30,
                     AbstractBlock.Settings.create().noCollision()));
     public static final Block APPLE_PRESSURE_PLATE = registerBlock2("apple_pressure_plate",
             new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create()));
@@ -68,6 +65,7 @@ public class ModBlocks2 {
             new DoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()));
     public static final Block APPLE_TRAPDOOR = registerBlock2("apple_trapdoor",
             new TrapdoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()));
+
 
     public static final Block TEST_APPLE_LOG = registerBlock2("test_apple_log",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
@@ -85,12 +83,39 @@ public class ModBlocks2 {
     public static final Block TEST_APPLE_SAPLING = registerBlock2("test_apple_sapling",
             new SaplingBlock(ModSaplingGenerators.TEST_APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
 
+    public static final Block TEST_APPLE_STAIRS = registerBlock2("test_apple_stairs",
+            new StairsBlock(ModBlocks2.TEST_APPLE_PLANKS.getDefaultState(),
+                    AbstractBlock.Settings.create()));
+    public static final Block TEST_APPLE_SLAB = registerBlock2("test_apple_slab",
+            new SlabBlock(AbstractBlock.Settings.create()));
+
+    public static final Block TEST_APPLE_BUTTON = registerBlock2("test_apple_button",
+            new ButtonBlock(BlockSetType.OAK, 30,
+                    AbstractBlock.Settings.create().noCollision()));
+    public static final Block TEST_APPLE_PRESSURE_PLATE = registerBlock2("test_apple_pressure_plate",
+            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create()));
+
+    public static final Block TEST_APPLE_FENCE = registerBlock2("test_apple_fence",
+            new FenceBlock(AbstractBlock.Settings.create()));
+    public static final Block TEST_APPLE_FENCE_GATE = registerBlock2("test_apple_fence_gate",
+            new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create()));
+
+    public static final Block TEST_APPLE_DOOR = registerBlock2("test_apple_door",
+            new DoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()));
+    public static final Block TEST_APPLE_TRAPDOOR = registerBlock2("test_apple_trapdoor",
+            new TrapdoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()));
+
+
     public static final Block GOLDEN_APPLE_LEAVES = registerBlock2("golden_apple_leaves",
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
     public static final Block FRUIT_GOLDEN_APPLE_LEAVES = registerBlock2("fruit_golden_apple_leaves",
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
     public static final Block GOLDEN_APPLE_SAPLING = registerBlock2("golden_apple_sapling",
             new SaplingBlock(ModSaplingGenerators.GOLDEN_APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+
+    public static final Block APPLE_BARREL = registerBlock2("apple_barrel",
+            new Block(AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.WOOD)));
 
 
     private static Block registerBlock2(String name, Block block) {
@@ -106,7 +131,7 @@ public class ModBlocks2 {
     public static void registerModBlocks2() {
         MoreThanApples.LOGGER.info("Registering Mod Blocks " + MoreThanApples.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entrise -> {
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entrise -> {
             entrise.add(APPLE_ORE);
             entrise.add(DEEPSLATE_APPLE_ORE);
         });
@@ -117,12 +142,47 @@ public class ModBlocks2 {
             entrise.add(STRIPPED_APPLE_LOG);
             entrise.add(STRIPPED_APPLE_WOOD);
             entrise.add(APPLE_PLANKS);
+            entrise.add(APPLE_STAIRS);
+            entrise.add(APPLE_SLAB);
+            entrise.add(APPLE_FENCE);
+            entrise.add(APPLE_FENCE_GATE);
+            entrise.add(APPLE_DOOR);
+            entrise.add(APPLE_TRAPDOOR);
+            entrise.add(APPLE_PRESSURE_PLATE);
+            entrise.add(APPLE_BUTTON);
+
+            entrise.add(TEST_APPLE_LOG);
+            entrise.add(TEST_APPLE_WOOD);
+            entrise.add(TEST_STRIPPED_APPLE_LOG);
+            entrise.add(TEST_STRIPPED_APPLE_WOOD);
+            entrise.add(TEST_APPLE_PLANKS);
+            entrise.add(TEST_APPLE_STAIRS);
+            entrise.add(TEST_APPLE_SLAB);
+            entrise.add(TEST_APPLE_FENCE);
+            entrise.add(TEST_APPLE_FENCE_GATE);
+            entrise.add(TEST_APPLE_DOOR);
+            entrise.add(TEST_APPLE_TRAPDOOR);
+            entrise.add(TEST_APPLE_PRESSURE_PLATE);
+            entrise.add(TEST_APPLE_BUTTON);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entrise -> {
+            entrise.add(APPLE_LOG);
             entrise.add(APPLE_LEAVES);
             entrise.add(FRUIT_APPLE_LEAVES);
             entrise.add(APPLE_SAPLING);
+
+            entrise.add(GOLDEN_APPLE_LEAVES);
+            entrise.add(FRUIT_GOLDEN_APPLE_LEAVES);
+            entrise.add(GOLDEN_APPLE_SAPLING);
+
+            entrise.add(TEST_APPLE_LOG);
+            entrise.add(TEST_APPLE_LEAVES);
+            entrise.add(TEST_APPLE_SAPLING);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entrise -> {
+            entrise.add(APPLE_BARREL);
         });
     }
 }

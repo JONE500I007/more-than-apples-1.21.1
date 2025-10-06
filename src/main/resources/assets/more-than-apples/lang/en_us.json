@@ -1,6 +1,7 @@
 {
   "item.more-than-apples.diamond_nugget": "Diamond Nugget",
   "item.more-than-apples.green_apple": "Green Apple",
+  "item.more-than-apples.test_apple": "Test_Apple",
   "item.more-than-apples.diamond_apple": "Diamond Apple",
   "item.more-than-apples.enchanted_diamond_apple": "Enchanted Diamond Apple",
   "item.more-than-apples.diamond_carrot": "Diamond Carrot",
@@ -8,6 +9,7 @@
   "item.more-than-apples.enchanted_netherite_apple": "Enchanted Netherite Apple",
 
   "block.more-than-apples.diamond_apple_block": "Diamond Apple Block",
+  "block.more-than-apples.apple_barrel": "Apple Barrel",
 
   "block.more-than-apples.apple_log": "Apple Log",
   "block.more-than-apples.apple_wood": "Apple Wood",
@@ -38,6 +40,15 @@
   "block.more-than-apples.test_apple_planks": "Test_Apple_Planks",
   "block.more-than-apples.test_apple_leaves": "Test_Apple_Leaves",
   "block.more-than-apples.test_apple_sapling": "Test_Apple_Sapling",
+
+  "block.more-than-apples.test_apple_stairs": "Test_Apple_Stairs",
+  "block.more-than-apples.test_apple_slab": "Test_Apple_Slab",
+  "block.more-than-apples.test_apple_button": "Test_Apple_Button",
+  "block.more-than-apples.test_apple_pressure_plate": "Test_Apple_Pressure_Plate",
+  "block.more-than-apples.test_apple_fence": "Test_Apple_Fence",
+  "block.more-than-apples.test_apple_fence_gate": "Test_Apple_Fence_Gate",
+  "block.more-than-apples.test_apple_door": "Test_Apple_Door",
+  "block.more-than-apples.test_apple_trapdoor": "Test_Apple_Trapdoor",
 
   "block.more-than-apples.apple_ore": "Apple Ore",
   "block.more-than-apples.deepslate_apple_ore": "Deepslate Apple ore",

@@ -13,6 +13,8 @@ import net.more.apples.item.custom.CustomEnchApple;
 public class ModItems {
     public static final Item GREEN_APPLE = registerItem("green_apple", new Item(new Item.Settings()
             .food(ModFoodComponents.GREEN_APPLE_EFFECT)));
+    public static final Item TEST_APPLE = registerItem("test_apple", new Item(new Item.Settings()
+            .food(ModFoodComponents.TEST_APPLE_EFFECT)));
 
     public static final Item DIAMOND_APPLE = registerItem("diamond_apple", new Item(new Item.Settings()
             .food(ModFoodComponents.DIAMOND_APPLE_EFFECT)
@@ -48,6 +50,7 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entrise -> {
             entrise.add(GREEN_APPLE);
+            entrise.add(TEST_APPLE);
             entrise.add(DIAMOND_APPLE);
             entrise.add(ENCHANTED_DIAMOND_APPLE);
             entrise.add(DIAMOND_CARROT);

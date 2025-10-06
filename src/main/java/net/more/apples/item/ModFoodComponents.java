@@ -9,7 +9,12 @@ public class ModFoodComponents {
     // 1s = 20 tick
     public static final FoodComponent GREEN_APPLE_EFFECT = new FoodComponent.Builder().nutrition(4).saturationModifier(1.2f)
             .alwaysEdible()
-            .statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 3960, 0), 1)
+            .statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 2840, 0), 1)
+            .build();
+    public static final FoodComponent TEST_APPLE_EFFECT = new FoodComponent.Builder().nutrition(4).saturationModifier(1.2f)
+            .alwaysEdible()
+            .statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 1), 1)
+            .statusEffect(new StatusEffectInstance(ModEffects.CALL_OF_APPLE, 5680, 0), 1)
             .build();
 
 

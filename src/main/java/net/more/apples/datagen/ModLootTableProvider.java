@@ -41,6 +41,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks2.APPLE_SAPLING);
         addDrop(ModBlocks2.GOLDEN_APPLE_SAPLING);
 
+
         addDrop(ModBlocks2.TEST_APPLE_LOG);
         addDrop(ModBlocks2.TEST_APPLE_WOOD);
         addDrop(ModBlocks2.TEST_STRIPPED_APPLE_LOG);
@@ -48,6 +49,19 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks2.TEST_APPLE_PLANKS);
         addDrop(ModBlocks2.TEST_APPLE_SAPLING);
 
+        addDrop(ModBlocks2.TEST_APPLE_STAIRS);
+        addDrop(ModBlocks2.TEST_APPLE_SLAB, slabDrops(ModBlocks2.TEST_APPLE_SLAB));
+
+        addDrop(ModBlocks2.TEST_APPLE_BUTTON);
+        addDrop(ModBlocks2.TEST_APPLE_PRESSURE_PLATE);
+
+        addDrop(ModBlocks2.TEST_APPLE_FENCE);
+        addDrop(ModBlocks2.TEST_APPLE_FENCE_GATE);
+
+        addDrop(ModBlocks2.TEST_APPLE_DOOR, doorDrops(ModBlocks2.TEST_APPLE_DOOR));
+        addDrop(ModBlocks2.TEST_APPLE_TRAPDOOR);
+
+        addDrop(ModBlocks2.APPLE_BARREL);
 
     }
 }

@@ -10,7 +10,7 @@
     },
     "foliage_placer": {
       "type": "minecraft:acacia_foliage_placer",
-      "offset": 0,
+      "offset": 1,
       "radius": 0
     },
     "foliage_provider": {

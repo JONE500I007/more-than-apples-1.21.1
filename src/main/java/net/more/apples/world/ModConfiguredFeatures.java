@@ -57,7 +57,7 @@ public class ModConfiguredFeatures {
                         OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks2.DEEPSLATE_APPLE_ORE.getDefaultState()));
 
 
-        register(context, APPLE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldAppleOre, 12));
+        register(context, APPLE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldAppleOre, 6));
 
 
 
@@ -151,7 +151,7 @@ public class ModConfiguredFeatures {
                         BlockStateProvider.of(ModBlocks2.TEST_APPLE_LEAVES),
                         new AcaciaFoliagePlacer(
                                 ConstantIntProvider.create(0),
-                                ConstantIntProvider.create(0)),
+                                ConstantIntProvider.create(1)),
                         new TwoLayersFeatureSize(0, 0, 0))
                         .build());
 
