@@ -3,7 +3,7 @@
 	"id": "more-than-apples",
 	"version": "${version}",
 	"name": "More Than Apples",
-	"description": "This mod add new apples and effects",
+	"description": "This mod add new apples and effects and biomes",
 	"authors": [
 		"JONE 500"
 	],
@@ -33,7 +33,7 @@
 		"more-than-apples.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.14",
+		"fabricloader": ">=0.17.2",
 		"minecraft": "~1.21.1",
 		"java": ">=21",
 		"fabric-api": "*"
