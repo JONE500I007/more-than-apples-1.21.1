@@ -21,9 +21,11 @@ public class LeavesTestParticle extends BillboardParticle {
         super(world, x, y, z, spriteProvider.getSprite(world.random));
 
         this.setSprite(spriteProvider.getSprite(this.random));
+        //this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
 
         this.gravityStrength = 0.05F * 0.0025F;
         this.maxAge = Math.max(1, 300 + random.nextInt(200));
+        //this.maxAge = 300 + random.nextInt(200);
         this.scale = 0.07F + random.nextFloat() * 0.05F;
 
         this.spinDirection = random.nextBoolean() ? 1.0F : -1.0F;
