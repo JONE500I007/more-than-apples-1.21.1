@@ -22,6 +22,7 @@ import net.minecraft.world.gen.foliage.LargeOakFoliagePlacer;
 import net.minecraft.world.gen.foliage.MegaPineFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
+import net.minecraft.world.gen.treedecorator.BeehiveTreeDecorator;
 import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
 import net.minecraft.world.gen.trunk.ForkingTrunkPlacer;
 import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
@@ -111,7 +112,7 @@ public class ModConfiguredFeatures {
                 // lowerSize = thickness of the bottom layer, bottommost leaf
                 // upperSize = thickness of the top layer, top layer
                 new TwoLayersFeatureSize(1, 0, 1)
-        ).build());
+        ).decorators(List.of(new BeehiveTreeDecorator(0.1f))).build());
 
         register(context, LARGE_APPLE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks2.APPLE_LOG),
@@ -120,7 +121,7 @@ public class ModConfiguredFeatures {
 
                 new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),
                 new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(4))
-        ).build());
+        ).decorators(List.of(new BeehiveTreeDecorator(0.1f))).build());
 
         /*
         context.register(
