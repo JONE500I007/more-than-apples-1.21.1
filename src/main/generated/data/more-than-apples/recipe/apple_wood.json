@@ -3,9 +3,7 @@
   "category": "building",
   "group": "bark",
   "key": {
-    "#": {
-      "item": "more-than-apples:apple_log"
-    }
+    "#": "more-than-apples:apple_log"
   },
   "pattern": [
     "##",

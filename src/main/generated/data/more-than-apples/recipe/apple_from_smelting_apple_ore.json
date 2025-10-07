@@ -4,9 +4,7 @@
   "cookingtime": 200,
   "experience": 0.25,
   "group": "this_apple",
-  "ingredient": {
-    "item": "more-than-apples:apple_ore"
-  },
+  "ingredient": "more-than-apples:apple_ore",
   "result": {
     "id": "minecraft:apple"
   }

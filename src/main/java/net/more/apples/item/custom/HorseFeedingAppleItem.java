@@ -44,7 +44,7 @@ public class HorseFeedingAppleItem extends Item {
         if (didFeed) {
             if (!user.getAbilities().creativeMode) stack.decrement(1);
             world.playSound(null, horse.getBlockPos(),
-                    SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.NEUTRAL, 1.0f, 1.0f);
+                    SoundEvents.ENTITY_GENERIC_EAT.value(), SoundCategory.NEUTRAL, 1.0f, 1.0f);
             ((ServerWorld) world).spawnParticles(ParticleTypes.HAPPY_VILLAGER,
                     horse.getX(), horse.getBodyY(0.5), horse.getZ(), 5, 0.3, 0.3, 0.3, 0.01);
             user.swingHand(hand, true);

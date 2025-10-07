@@ -7,6 +7,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -18,57 +20,73 @@ public class ModBlocks2 {
     public static final Block APPLE_ORE = registerBlock2("apple_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(3, 6),
                     AbstractBlock.Settings.create().strength(3.0f, 3.0f)
-                    .sounds(BlockSoundGroup.STONE).requiresTool()));
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_ore")))
+                            .sounds(BlockSoundGroup.STONE).requiresTool()));
     public static final Block DEEPSLATE_APPLE_ORE = registerBlock2("deepslate_apple_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(3, 6),
                     AbstractBlock.Settings.create().strength(4.5f, 3.0f)
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "deepslate_apple_ore")))
                             .sounds(BlockSoundGroup.DEEPSLATE).requiresTool()));
 
     public static final Block APPLE_LOG = registerBlock2("apple_log",
-            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_log")))));
     public static final Block APPLE_WOOD = registerBlock2("apple_wood",
-            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_wood")))));
     public static final Block STRIPPED_APPLE_LOG = registerBlock2("stripped_apple_log",
-            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "stripped_apple_log")))));
     public static final Block STRIPPED_APPLE_WOOD = registerBlock2("stripped_apple_wood",
-            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "stripped_apple_wood")))));
 
     public static final Block APPLE_PLANKS = registerBlock2("apple_planks",
-            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
+            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_planks")))));
     public static final Block APPLE_LEAVES = registerBlock2("apple_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_leaves")))));
     public static final Block FRUIT_APPLE_LEAVES = registerBlock2("fruit_apple_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "fruit_apple_leaves")))));
     public static final Block APPLE_SAPLING = registerBlock2("apple_sapling",
-            new SaplingBlock(ModSaplingGenerators.APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+            new SaplingBlock(ModSaplingGenerators.APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_sapling")))));
 
     public static final Block APPLE_STAIRS = registerBlock2("apple_stairs",
             new StairsBlock(ModBlocks2.APPLE_PLANKS.getDefaultState(),
                     AbstractBlock.Settings.create()
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_stairs")))
                             .strength(2.0f, 3.0f)
                             .sounds(BlockSoundGroup.WOOD)));
     public static final Block APPLE_SLAB = registerBlock2("apple_slab",
             new SlabBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_slab")))
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
 
     public static final Block APPLE_BUTTON = registerBlock2("apple_button",
             new ButtonBlock(BlockSetType.OAK, 30,
                     AbstractBlock.Settings.create()
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_button")))
                             .noCollision()
                             .strength(0.5f)
                             .sounds(BlockSoundGroup.WOOD)));
     public static final Block APPLE_PRESSURE_PLATE = registerBlock2("apple_pressure_plate",
             new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_pressure_plate")))
                     .strength(0.5f)
                     .sounds(BlockSoundGroup.WOOD)));
 
     public static final Block APPLE_FENCE = registerBlock2("apple_fence",
             new FenceBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_fence")))
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
     public static final Block APPLE_FENCE_GATE = registerBlock2("apple_fence_gate",
             new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_fence_gate")))
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
 //    public static final Block APPLE_WALL = registerBlock2("apple_wall",
@@ -76,81 +94,102 @@ public class ModBlocks2 {
 
     public static final Block APPLE_DOOR = registerBlock2("apple_door",
             new DoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_door")))
                     .nonOpaque()
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
     public static final Block APPLE_TRAPDOOR = registerBlock2("apple_trapdoor",
             new TrapdoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_trapdoor")))
                     .nonOpaque()
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
 
 
     public static final Block TEST_APPLE_LOG = registerBlock2("test_apple_log",
-            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_log")))));
     public static final Block TEST_APPLE_WOOD = registerBlock2("test_apple_wood",
-            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_wood")))));
     public static final Block STRIPPED_TEST_APPLE_LOG = registerBlock2("stripped_test_apple_log",
-            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "stripped_test_apple_log")))));
     public static final Block STRIPPED_TEST_APPLE_WOOD = registerBlock2("stripped_test_apple_wood",
-            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "stripped_test_apple_wood")))));
 
     public static final Block TEST_APPLE_PLANKS = registerBlock2("test_apple_planks",
-            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
+            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_planks")))));
     public static final Block TEST_APPLE_LEAVES = registerBlock2("test_apple_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_leaves")))));
     public static final Block TEST_APPLE_SAPLING = registerBlock2("test_apple_sapling",
-            new SaplingBlock(ModSaplingGenerators.TEST_APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+            new SaplingBlock(ModSaplingGenerators.TEST_APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_sapling")))));
 
     public static final Block TEST_APPLE_STAIRS = registerBlock2("test_apple_stairs",
             new StairsBlock(ModBlocks2.TEST_APPLE_PLANKS.getDefaultState(),
                     AbstractBlock.Settings.create()
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_stairs")))
                             .strength(2.0f, 3.0f)
                             .sounds(BlockSoundGroup.WOOD)));
     public static final Block TEST_APPLE_SLAB = registerBlock2("test_apple_slab",
             new SlabBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_slab")))
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
 
     public static final Block TEST_APPLE_BUTTON = registerBlock2("test_apple_button",
             new ButtonBlock(BlockSetType.OAK, 30,
                     AbstractBlock.Settings.create()
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_button")))
                             .noCollision()
                             .strength(0.5f)
                             .sounds(BlockSoundGroup.WOOD)));
     public static final Block TEST_APPLE_PRESSURE_PLATE = registerBlock2("test_apple_pressure_plate",
             new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_pressure_plate")))
                     .strength(0.5f)
                     .sounds(BlockSoundGroup.WOOD)));
 
     public static final Block TEST_APPLE_FENCE = registerBlock2("test_apple_fence",
             new FenceBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_fence")))
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
     public static final Block TEST_APPLE_FENCE_GATE = registerBlock2("test_apple_fence_gate",
             new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_fence_gate")))
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
 
     public static final Block TEST_APPLE_DOOR = registerBlock2("test_apple_door",
             new DoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_door")))
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
     public static final Block TEST_APPLE_TRAPDOOR = registerBlock2("test_apple_trapdoor",
             new TrapdoorBlock(BlockSetType.OAK ,AbstractBlock.Settings.create().nonOpaque()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_trapdoor")))
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
 
 
     public static final Block GOLDEN_APPLE_LEAVES = registerBlock2("golden_apple_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "golden_apple_leaves")))));
     public static final Block FRUIT_GOLDEN_APPLE_LEAVES = registerBlock2("fruit_golden_apple_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "fruit_golden_apple_leaves")))));
     public static final Block GOLDEN_APPLE_SAPLING = registerBlock2("golden_apple_sapling",
-            new SaplingBlock(ModSaplingGenerators.GOLDEN_APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+            new SaplingBlock(ModSaplingGenerators.GOLDEN_APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "golden_apple_sapling")))));
 
     public static final Block APPLE_BARREL = registerBlock2("apple_barrel",
             new Block(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_barrel")))
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
 
@@ -162,7 +201,8 @@ public class ModBlocks2 {
 
     private static void registerBlockItem2(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(MoreThanApples.MOD_ID, name),
-                new BlockItem(block, new Item.Settings()));
+                new BlockItem(block, new Item.Settings()
+                        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, name)))));
     }
 
     public static void registerModBlocks2() {
