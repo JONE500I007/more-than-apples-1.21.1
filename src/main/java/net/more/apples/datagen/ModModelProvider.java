@@ -149,5 +149,4 @@ public class ModModelProvider extends FabricModelProvider {
     }
 
      */
-
 }
