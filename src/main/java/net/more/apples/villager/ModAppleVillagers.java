@@ -36,7 +36,7 @@ public class ModAppleVillagers {
                         ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_FISHERMAN));
                  */
                 new VillagerProfession(Text.translatable("entity.minecraft.villager.apple_master"), entry -> entry.matchesKey(type), entry -> entry.matchesKey(type),
-                        ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_FARMER));
+                        ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_FISHERMAN));
     }
     /*
     private static PointOfInterestType registerPoi(String name, Block block) {
