@@ -16,20 +16,23 @@ public class MoreThanApplesClinet implements ClientModInitializer {
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
             return world != null && pos != null
                     ? BiomeColors.getFoliageColor(world, pos)
-                    : FoliageColors.getDefaultColor();
+                    : FoliageColors.DEFAULT;
         }, ModBlocks2.APPLE_LEAVES,
                 ModBlocks2.FRUIT_APPLE_LEAVES,
 
                 ModBlocks2.GOLDEN_APPLE_LEAVES,
                 ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES);
 
+        // man... just use items i mean in .json
+        /*
         ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
-                FoliageColors.getDefaultColor(),
+                FoliageColors.DEFAULT,
                 ModBlocks2.APPLE_LEAVES,
                 ModBlocks2.FRUIT_APPLE_LEAVES,
 
                 ModBlocks2.GOLDEN_APPLE_LEAVES,
                 ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES);
+         */
 
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.APPLE_SAPLING, RenderLayer.getCutout());

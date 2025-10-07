@@ -1,8 +1,15 @@
 package net.more.apples.datagen;
 
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.*;
+
+import net.minecraft.block.Block;
+import net.minecraft.client.data.*;
+
+import net.minecraft.client.render.item.tint.TintSource;
+import net.minecraft.item.Item;
+import net.minecraft.util.Identifier;
+import net.more.apples.MoreThanApples;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.item.ModItems;
 
@@ -23,7 +30,6 @@ public class ModModelProvider extends FabricModelProvider {
 //                    map.put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks.DIAMOND_APPLE_BLOCK, "_bottom"));
 //                    map.put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.DIAMOND_APPLE_BLOCK, ""));
 //                }));
-
 
         BlockStateModelGenerator.BlockTexturePool appleGarnetPool = blockStateModelGenerator
                 .registerCubeAllModelTexturePool(ModBlocks2.APPLE_PLANKS);
@@ -60,12 +66,12 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks2.APPLE_LOG).log(ModBlocks2.APPLE_LOG).wood(ModBlocks2.APPLE_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks2.STRIPPED_APPLE_LOG).log(ModBlocks2.STRIPPED_APPLE_LOG).wood(ModBlocks2.STRIPPED_APPLE_WOOD);
         //blockStateModelGenerator.registerSingleton(ModBlocks2.APPLE_LEAVES, TexturedModel.LEAVES);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.APPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.GOLDEN_APPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.APPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.GOLDEN_APPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
         blockStateModelGenerator.registerLog(ModBlocks2.TEST_APPLE_LOG).log(ModBlocks2.TEST_APPLE_LOG).wood(ModBlocks2.TEST_APPLE_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks2.STRIPPED_TEST_APPLE_LOG).log(ModBlocks2.STRIPPED_TEST_APPLE_LOG).wood(ModBlocks2.STRIPPED_TEST_APPLE_WOOD);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.TEST_APPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.TEST_APPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
 
         blockStateModelGenerator.registerSingleton(
@@ -75,6 +81,7 @@ public class ModModelProvider extends FabricModelProvider {
             map.put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks2.APPLE_BARREL, "_bottom"));
             map.put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks2.APPLE_BARREL, ""));
         }));
+
     }
 
     @Override
@@ -83,9 +90,53 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.GREEN_APPLE, Models.GENERATED);
         itemModelGenerator.register(ModItems.TEST_APPLE, Models.GENERATED);
 
+
         itemModelGenerator.register(ModBlocks2.APPLE_SAPLING.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks2.TEST_APPLE_SAPLING.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks2.GOLDEN_APPLE_SAPLING.asItem(), Models.GENERATED);
 
+        /*
+        registerTintedConstant(itemModelGenerator,
+                ModBlocks2.APPLE_LEAVES.asItem(), "block/apple_leaves", -12012264);
+        registerTintedOverlayLeaves(itemModelGenerator, ModBlocks2.FRUIT_APPLE_LEAVES.asItem(),
+                "block/fruit_apple_leaves", "block/fruit_apple_leaves_overlay");
+
+         */
+
+
     }
+
+//    private void registerTintedConstant(ItemModelGenerator itemModelGenerator, Item item, String modelPath, int color) {
+//        Identifier modelId = Models.LEAVES.upload(item, TextureMap.layer0(Identifier.of(MoreThanApples.MOD_ID, modelPath)), itemModelGenerator.modelCollector);
+//        itemModelGenerator.output.accept(item, ItemModels.tinted(modelId, new TintSource[]{ItemModels.constantTintSource(color)}));
+//    }
+
+    // for gee items leaves
+    /*
+    private void registerTintedConstant(ItemModelGenerator itemModelGenerator, Item item, String modelPath, int color) {
+        Identifier modelId = Models.LEAVES.upload(
+                item, TextureMap.all(Identifier.of(MoreThanApples.MOD_ID, modelPath)),
+                itemModelGenerator.modelCollector);
+        itemModelGenerator.output.accept(item,
+                ItemModels.tinted(modelId, new TintSource[]{
+                        ItemModels.constantTintSource(color)
+                }));
+    }
+    private void registerTintedOverlayLeaves(ItemModelGenerator itemModelGenerator, Item item, String baseTexture, String overlayTexture) {
+        Identifier modelId = Models.GENERATED_TWO_LAYERS.upload(
+                item,
+                TextureMap.layered(
+                        Identifier.of(MoreThanApples.MOD_ID, baseTexture),
+                        Identifier.of(MoreThanApples.MOD_ID, overlayTexture)),
+                itemModelGenerator.modelCollector);
+
+        itemModelGenerator.output.accept(item,
+                ItemModels.tinted(modelId, new TintSource[]{
+                        ItemModels.constantTintSource(-12012264),
+                        ItemModels.constantTintSource(-1)
+                }));
+    }
+
+     */
+
 }

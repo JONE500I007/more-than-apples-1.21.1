@@ -9,7 +9,6 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.more.apples.MoreThanApples;
-import net.more.apples.block.ModBlocksForText;
 import net.more.apples.item.custom.CustomEnchApple;
 
 public class ModItems {
