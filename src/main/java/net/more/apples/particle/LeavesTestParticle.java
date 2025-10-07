@@ -11,9 +11,13 @@ import org.jetbrains.annotations.Nullable;
 
 @Environment(EnvType.CLIENT)
 public class LeavesTestParticle extends BillboardParticle {
+    //particle rotation
     private final float spinDirection;
+    //acceleration of rotation maybe speed
     private final float angularAcceleration;
+    //left and right swing
     private final float horizontalDrift;
+    //Initial angle of swing
     private final float initialAngle;
 
     protected LeavesTestParticle(ClientWorld world, double x, double y, double z,
@@ -23,17 +27,26 @@ public class LeavesTestParticle extends BillboardParticle {
         this.setSprite(spriteProvider.getSprite(this.random));
         //this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
 
+        //strength of gravity
         this.gravityStrength = 0.05F * 0.0025F;
-        this.maxAge = Math.max(1, 300 + random.nextInt(200));
+        //age of particle 300–500 tick for now
         //this.maxAge = 300 + random.nextInt(200);
+        this.maxAge = Math.max(1, 300 + random.nextInt(200));
+        //particle size
         this.scale = 0.07F + random.nextFloat() * 0.05F;
 
+        //direction of rotation
         this.spinDirection = random.nextBoolean() ? 1.0F : -1.0F;
+        //acceleration of rotation maybe speed
         this.angularAcceleration = (float) Math.toRadians(random.nextBoolean() ? 5.0 : -5.0);
+        //trength of the left and right swings in air
         this.horizontalDrift = 8.0F + random.nextFloat() * 2.0F;
+        //starting angle for swing
         this.initialAngle = random.nextFloat() * 60.0F;
 
+        //Initial vertical velocity maybe this just gravity
         this.velocityY = -0.01;
+        //this.setColor(0.9F, 0.8F, 0.3F);
     }
 
     @Override
@@ -46,16 +59,21 @@ public class LeavesTestParticle extends BillboardParticle {
         }
 
         float ageNorm = 1.0F - (float) this.maxAge / 300.0F;
+        //wwaying left and right
         double xOffset = Math.cos(ageNorm * this.horizontalDrift + this.initialAngle) * 0.002;
         double zOffset = Math.sin(ageNorm * this.horizontalDrift + this.initialAngle) * 0.002;
 
+        //update horizontal speed
         this.velocityX += xOffset;
+        //update vertical speed
         this.velocityZ += zOffset;
         this.velocityY -= this.gravityStrength;
 
+        //rotation of leaves
         this.lastZRotation = this.zRotation;
         this.zRotation += this.angularAcceleration * this.spinDirection;
 
+        //if a particle hit the ground just gone lol
         if (this.onGround) this.markDead();
     }
 
