@@ -68,7 +68,7 @@ public class ModCustomAppleMTrades {
                     14, 5, 0.08f
             ));
             factories.add((entity, random) -> new TradeOffer(
-                    new TradedItem(ModBlocks2.GOLDEN_APPLE_SAPLING, 18),
+                    new TradedItem(ModBlocks2.GOLDEN_APPLE_SAPLING, 8),
                     new ItemStack(Items.EMERALD, 3),
                     18, 5, 0.08f
             ));
