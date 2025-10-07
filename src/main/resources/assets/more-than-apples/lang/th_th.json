@@ -21,7 +21,7 @@
   "item.more-than-apples.apple_planks": "แผ่นกระดานแอปเปิ้ล",
   "item.more-than-apples.apple_leaves": "ใบไม้แอปเปิ้ล",
   "item.more-than-apples.fruit_apple_leaves": "ใบไม้แอปเปิ้ลพร้อมผล",
-  "item.more-than-apples.apple_sapling": "ต้นอ่อนแอปเปิ้ล",
+  "item.more-than-apples.apple_sapling": "ต้นอ่อนไม้แอปเปิ้ล",
 
   "item.more-than-apples.apple_stairs": "บันไดไม้แอปเปิ้ล",
   "item.more-than-apples.apple_slab": "แผ่นไม้แอปเปิ้ล",
@@ -34,7 +34,7 @@
 
   "item.more-than-apples.golden_apple_leaves": "ใบไม้แอปเปิ้ลทองคำ",
   "item.more-than-apples.fruit_golden_apple_leaves": "ใบไม้แอปเปิ้ลทองคำพร้อมผล",
-  "item.more-than-apples.golden_apple_sapling": "ต้นอ่อนแอปเปิ้ลทองคำ",
+  "item.more-than-apples.golden_apple_sapling": "ต้นอ่อนไม้แอปเปิ้ลทองคำ",
 
   "item.more-than-apples.test_apple_log": "ท่อนไม้_แอปเปิ้ล_ทดสอบ",
   "item.more-than-apples.test_apple_wood": "ไม้_แอปเปิ้ล_ทดสอบ",
@@ -42,7 +42,7 @@
   "item.more-than-apples.stripped_test_apple_wood": "ไม้_แอปเปิ้ล_ทดสอบ_ลอกเปลือก",
   "item.more-than-apples.test_apple_planks": "แผ่นกระดาน_แอปเปิ้ล_ทดสอบ",
   "item.more-than-apples.test_apple_leaves": "ใบไม้_แอปเปิ้ล_ทดสอบ",
-  "item.more-than-apples.test_apple_sapling": "ต้นอ่อน_แอปเปิ้ล_ทดสอบ",
+  "item.more-than-apples.test_apple_sapling": "ต้นอ่อน_ไม้แอปเปิ้ล_ทดสอบ",
 
   "item.more-than-apples.test_apple_stairs": "บันไดไม้_แอปเปิ้ล_ทดสอบ",
   "item.more-than-apples.test_apple_slab": "แผ่นไม้_แอปเปิ้ล_ทดสอบ",
