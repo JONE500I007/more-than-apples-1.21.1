@@ -9,6 +9,7 @@ import net.minecraft.data.server.recipe.RecipeGenerator;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
@@ -65,6 +66,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 offerPlanksRecipe(ModBlocks2.APPLE_PLANKS, ModTags.Items.ALL_APPLE_LOG, 4);
                 offerPlanksRecipe(ModBlocks2.TEST_APPLE_PLANKS, ModTags.Items.ALL_TEST_APPLE_LOG, 4);
+
+                /*
                 createShaped(RecipeCategory.MISC, ModBlocks2.APPLE_BARREL)
                         .input('A', ModTags.Items.ALL_APPLE)
                         .input('B', ItemTags.PLANKS)
@@ -74,6 +77,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion("has_apple", conditionsFromTag(ModTags.Items.ALL_APPLE))
                         .criterion("has_planks", conditionsFromTag(ItemTags.PLANKS))
                         .offerTo(recipeExporter);
+                 */
+
+
+                createShaped(RecipeCategory.MISC, ModBlocks2.APPLE_BARREL)
+                        .input('A', ingredientFromTag(ModTags.Items.ALL_APPLE))
+                        .input('B', ingredientFromTag(ItemTags.PLANKS))
+                        .pattern("AA")
+                        .pattern("BB")
+                        .pattern("BB")
+                        .criterion("has_apple", conditionsFromTag(ModTags.Items.ALL_APPLE))
+                        .criterion("has_planks", conditionsFromTag(ItemTags.PLANKS))
+                        .offerTo(recipeExporter);
+
 
 
                 offerBarkBlockRecipe(ModBlocks2.APPLE_WOOD, ModBlocks2.APPLE_LOG);

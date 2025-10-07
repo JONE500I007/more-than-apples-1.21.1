@@ -28,6 +28,8 @@ public class ModFoodComponents {
     public static final ConsumableComponent TEST_APPLE_EFFECT = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(
                     new StatusEffectInstance(ModEffects.CALL_OF_APPLE, 5680, 0), 1))
+            .consumeEffect(new ApplyEffectsConsumeEffect(
+                    new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 1), 1))
             .build();
 
     public static final FoodComponent DIAMOND_APPLE_FOOD = new FoodComponent.Builder()
