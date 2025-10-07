@@ -6,42 +6,32 @@ import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.client.particle.ParticleFactory;
 import net.minecraft.particle.SimpleParticleType;
+import net.minecraft.util.math.random.Random;
+import org.jetbrains.annotations.Nullable;
 
 @Environment(EnvType.CLIENT)
-public class LeavesTestParticle extends SpriteBillboardParticle {
-    //particle rotation
+public class LeavesTestParticle extends BillboardParticle {
     private final float spinDirection;
-    //acceleration of rotation maybe speed
     private final float angularAcceleration;
-    //left and right swing
     private final float horizontalDrift;
-    //Initial angle of swing
     private final float initialAngle;
+
     protected LeavesTestParticle(ClientWorld world, double x, double y, double z,
                                  SpriteProvider spriteProvider) {
-        super(world, x, y, z);
+        super(world, x, y, z, spriteProvider.getSprite(world.random));
 
-        this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
+        this.setSprite(spriteProvider.getSprite(this.random));
 
-        //strength of gravity
         this.gravityStrength = 0.05F * 0.0025F;
-        //age of particle 300–500 tick for now
-        this.maxAge = 300 + random.nextInt(200);
-        //particle size
+        this.maxAge = Math.max(1, 300 + random.nextInt(200));
         this.scale = 0.07F + random.nextFloat() * 0.05F;
 
-        //direction of rotation
         this.spinDirection = random.nextBoolean() ? 1.0F : -1.0F;
-        //acceleration of rotation maybe speed
         this.angularAcceleration = (float) Math.toRadians(random.nextBoolean() ? 5.0 : -5.0);
-        //trength of the left and right swings in air
         this.horizontalDrift = 8.0F + random.nextFloat() * 2.0F;
-        //starting angle for swing
         this.initialAngle = random.nextFloat() * 60.0F;
 
-        //Initial vertical velocity maybe this just gravity
         this.velocityY = -0.01;
-        //this.setColor(0.9F, 0.8F, 0.3F);
     }
 
     @Override
@@ -54,38 +44,39 @@ public class LeavesTestParticle extends SpriteBillboardParticle {
         }
 
         float ageNorm = 1.0F - (float) this.maxAge / 300.0F;
-        //wwaying left and right
         double xOffset = Math.cos(ageNorm * this.horizontalDrift + this.initialAngle) * 0.002;
         double zOffset = Math.sin(ageNorm * this.horizontalDrift + this.initialAngle) * 0.002;
 
-        //update horizontal speed
         this.velocityX += xOffset;
-        //update vertical speed
         this.velocityZ += zOffset;
         this.velocityY -= this.gravityStrength;
 
-        //rotation of leaves
-        this.lastAngle = this.angle;
-        this.angle += this.angularAcceleration * this.spinDirection;
+        this.lastZRotation = this.zRotation;
+        this.zRotation += this.angularAcceleration * this.spinDirection;
 
-        //if a particle hit the ground just gone lol
         if (this.onGround) this.markDead();
     }
 
     @Override
-    public ParticleTextureSheet getType() {
-        return ParticleTextureSheet.PARTICLE_SHEET_TRANSLUCENT;
+    protected RenderType getRenderType() {
+        return RenderType.PARTICLE_ATLAS_TRANSLUCENT;
     }
+
 
     public static class Factory implements ParticleFactory<SimpleParticleType> {
         private final SpriteProvider sprites;
-        public Factory(SpriteProvider sprites) { this.sprites = sprites; }
+
+        public Factory(SpriteProvider sprites) {
+            this.sprites = sprites;
+        }
 
         @Override
         public Particle createParticle(SimpleParticleType type, ClientWorld world,
                                        double x, double y, double z,
-                                       double velocityX, double velocityY, double velocityZ) {
+                                       double velocityX, double velocityY, double velocityZ,
+                                       Random random) {
             return new LeavesTestParticle(world, x, y, z, this.sprites);
         }
     }
 }
+

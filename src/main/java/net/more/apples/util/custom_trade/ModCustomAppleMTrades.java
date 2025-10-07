@@ -87,7 +87,7 @@ public class ModCustomAppleMTrades {
             ));
             factories.add((entity, random) -> {
                 ItemStack randomPick  = new ItemStack(Items.GOLDEN_PICKAXE);
-                var enchantments = entity.getWorld()
+                var enchantments = entity.getEntityWorld()
                         .getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .streamEntries()
