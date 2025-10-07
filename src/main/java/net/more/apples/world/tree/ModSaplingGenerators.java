@@ -15,7 +15,7 @@ public class ModSaplingGenerators {
             Optional.of(ModConfiguredFeatures.APPLE_TREE_KEY), // small tree
             Optional.of(ModConfiguredFeatures.LARGE_APPLE_KEY), // large tree
             Optional.empty(),
-            Optional.empty());
+            Optional.of(ModConfiguredFeatures.APPLE_TREE_KEY));
 
     public static final SaplingGenerator TEST_APPLE = new SaplingGenerator(
             MoreThanApples.MOD_ID + "test_apple",
