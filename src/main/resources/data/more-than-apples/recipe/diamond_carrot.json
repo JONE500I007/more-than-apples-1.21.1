@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "more-than-apples:diamond_nugget"
-    },
-    "X": {
-      "item": "minecraft:carrot"
-    }
+    "#": "more-than-apples:diamond_nugget",
+    "X": "minecraft:carrot"
   },
   "pattern": [
     "###",

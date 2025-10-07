@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:diamond"
-    },
-    "X": {
-      "item": "minecraft:apple"
-    }
+    "#": "minecraft:diamond",
+    "X": "minecraft:apple"
   },
   "pattern": [
     "###",
@@ -15,7 +11,7 @@
     "###"
   ],
   "result": {
-    "count": 1,
-    "id": "more-than-apples:diamond_apple"
+    "id": "more-than-apples:diamond_apple",
+    "count": 1
   }
 }
