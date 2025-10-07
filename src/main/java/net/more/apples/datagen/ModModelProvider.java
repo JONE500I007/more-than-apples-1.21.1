@@ -82,6 +82,8 @@ public class ModModelProvider extends FabricModelProvider {
             map.put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks2.APPLE_BARREL, ""));
         }));
 
+        //blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.APPLE_LEAVES, BlockStateModelGenerator.CrossType.TINTED);
+
     }
 
     @Override
@@ -95,13 +97,22 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModBlocks2.TEST_APPLE_SAPLING.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks2.GOLDEN_APPLE_SAPLING.asItem(), Models.GENERATED);
 
+
         /*
         registerTintedConstant(itemModelGenerator,
                 ModBlocks2.APPLE_LEAVES.asItem(), "block/apple_leaves", -12012264);
-        registerTintedOverlayLeaves(itemModelGenerator, ModBlocks2.FRUIT_APPLE_LEAVES.asItem(),
-                "block/fruit_apple_leaves", "block/fruit_apple_leaves_overlay");
-
+        registerTintedConstant(itemModelGenerator,
+                ModBlocks2.APPLE_LEAVES.asItem(), "block/fruit_apple_leaves", -12012264);
+        registerTintedConstant(itemModelGenerator,
+                ModBlocks2.APPLE_LEAVES.asItem(), "block/golden_apple_leaves", -12012264);
+        registerTintedConstant(itemModelGenerator,
+                ModBlocks2.APPLE_LEAVES.asItem(), "block/fruit_golden_apple_leaves", -12012264);
          */
+
+//        registerTintedOverlayLeaves(itemModelGenerator, ModBlocks2.FRUIT_APPLE_LEAVES.asItem(),
+//                "block/fruit_apple_leaves", "block/fruit_apple_leaves_overlay");
+
+
 
 
     }
