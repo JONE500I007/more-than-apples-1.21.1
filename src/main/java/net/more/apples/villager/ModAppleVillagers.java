@@ -35,8 +35,7 @@ public class ModAppleVillagers {
                 new VillagerProfession(Text.translatable("entity.minecraft.villager.fishing_master"), entry -> entry.matchesKey(type), entry -> entry.matchesKey(type),
                         ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_FISHERMAN));
                  */
-                new VillagerProfession(name, entry -> entry.matchesKey(type),
-                        entry -> entry.matchesKey(type),
+                new VillagerProfession(Text.translatable("entity.minecraft.villager.apple_master"), entry -> entry.matchesKey(type), entry -> entry.matchesKey(type),
                         ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_FARMER));
     }
     /*

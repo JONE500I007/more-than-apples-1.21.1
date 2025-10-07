@@ -5,6 +5,8 @@ import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.particle.EntityEffectParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -13,6 +15,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.more.apples.MoreThanApples;
+import net.more.apples.particle.ModParticle;
 import net.more.apples.world.tree.ModSaplingGenerators;
 
 public class ModBlocks2 {
@@ -45,10 +48,14 @@ public class ModBlocks2 {
             new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_planks")))));
     public static final Block APPLE_LEAVES = registerBlock2("apple_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+            new UntintedParticleLeavesBlock(
+                    0.02f, EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F)
+                    ,AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_leaves")))));
     public static final Block FRUIT_APPLE_LEAVES = registerBlock2("fruit_apple_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+            new UntintedParticleLeavesBlock(
+                    0.02f, EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F),
+                    AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "fruit_apple_leaves")))));
     public static final Block APPLE_SAPLING = registerBlock2("apple_sapling",
             new SaplingBlock(ModSaplingGenerators.APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)
@@ -123,7 +130,8 @@ public class ModBlocks2 {
             new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_planks")))));
     public static final Block TEST_APPLE_LEAVES = registerBlock2("test_apple_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+            new UntintedParticleLeavesBlock(0.05f, ModParticle.TEST_LEAVES_PARTICLE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_leaves")))));
     public static final Block TEST_APPLE_SAPLING = registerBlock2("test_apple_sapling",
             new SaplingBlock(ModSaplingGenerators.TEST_APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)
@@ -178,11 +186,19 @@ public class ModBlocks2 {
 
 
     public static final Block GOLDEN_APPLE_LEAVES = registerBlock2("golden_apple_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+            new UntintedParticleLeavesBlock(
+                    0.02f , EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
+                    AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "golden_apple_leaves")))));
     public static final Block FRUIT_GOLDEN_APPLE_LEAVES = registerBlock2("fruit_golden_apple_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+            new UntintedParticleLeavesBlock(
+                    0.02f , EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
+                    AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "fruit_golden_apple_leaves")))));
+
+    //    public static final Block FRUIT_GOLDEN_APPLE_LEAVES = registerBlock2("fruit_golden_apple_leaves",
+//            new UntintedParticleLeavesBlock(0.02f , ParticleTypes.CHERRY_LEAVES, AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+//                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "fruit_golden_apple_leaves")))));
     public static final Block GOLDEN_APPLE_SAPLING = registerBlock2("golden_apple_sapling",
             new SaplingBlock(ModSaplingGenerators.GOLDEN_APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "golden_apple_sapling")))));

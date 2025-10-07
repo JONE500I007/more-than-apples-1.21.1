@@ -2,11 +2,14 @@ package net.more.apples;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.world.biome.FoliageColors;
 import net.more.apples.block.ModBlocks2;
+import net.more.apples.particle.ModParticle;
+import net.more.apples.particle.LeavesTestParticle;
 
 public class MoreThanApplesClinet implements ClientModInitializer {
     @Override
@@ -49,5 +52,7 @@ public class MoreThanApplesClinet implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.TEST_APPLE_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.TEST_APPLE_TRAPDOOR, RenderLayer.getCutout());
+
+        ParticleFactoryRegistry.getInstance().register(ModParticle.TEST_LEAVES_PARTICLE, LeavesTestParticle.Factory::new);
     }
 }

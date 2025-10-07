@@ -28,7 +28,7 @@ public class ModCustomAppleMTrades {
     public static void registerCustomTrades() {
         MoreThanApples.LOGGER.info("Registering Villager Trades From " + MoreThanApples.MOD_ID);
 
-        TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER,1, factories -> {
+        TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER_KEY,1, factories -> {
             factories.add((entity, random) -> new TradeOffer(
                     new TradedItem(Items.APPLE, 9),
                     new ItemStack(Items.EMERALD, 1),
@@ -46,7 +46,7 @@ public class ModCustomAppleMTrades {
             ));
         });
 
-        TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER,2, factories -> {
+        TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER_KEY,2, factories -> {
             factories.add((entity, random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD, 4),
                     new ItemStack(ModBlocks2.APPLE_LOG, 1),
@@ -74,7 +74,7 @@ public class ModCustomAppleMTrades {
             ));
         });
 
-        TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER,3, factories -> {
+        TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER_KEY,3, factories -> {
             factories.add((entity, random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD, 9),
                     new ItemStack(Items.GOLD_INGOT, 1),
@@ -104,7 +104,7 @@ public class ModCustomAppleMTrades {
             });
         });
 
-        TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER,4, factories -> {
+        TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER_KEY,4, factories -> {
             factories.add((entity, random) -> new TradeOffer(
                     new TradedItem(ModBlocks2.TEST_APPLE_LOG, 1),
                     new ItemStack(Items.EMERALD_BLOCK, 1),
@@ -137,7 +137,7 @@ public class ModCustomAppleMTrades {
             });
         });
 
-        TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER,5, factories -> {
+        TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER_KEY,5, factories -> {
             factories.add((entity, random) -> {
                 if (random.nextFloat() < 0.3f) {
                     return new TradeOffer(

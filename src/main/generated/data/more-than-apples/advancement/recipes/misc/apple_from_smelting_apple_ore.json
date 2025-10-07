@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:apple_from_smelting_apple_ore"
+        "recipe": "more-than-apples:apple_from_smelting_apple_ore"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:apple_from_smelting_apple_ore"
+      "more-than-apples:apple_from_smelting_apple_ore"
     ]
   }
 }

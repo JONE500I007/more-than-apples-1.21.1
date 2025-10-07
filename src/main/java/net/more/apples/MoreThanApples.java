@@ -16,6 +16,7 @@ import net.more.apples.event.ModEntityUseHandler;
 import net.more.apples.item.ModItemGroups;
 import net.more.apples.item.ModItemGroups2;
 import net.more.apples.item.ModItems;
+import net.more.apples.particle.ModParticle;
 import net.more.apples.potion.ModPotions;
 import net.more.apples.util.*;
 import net.more.apples.util.custom_loottable.*;
@@ -63,6 +64,8 @@ public class MoreThanApples implements ModInitializer {
 
 		ModAppleVillagers.registerVillagers();
 		ModCustomAppleMTrades.registerCustomTrades();
+
+		ModParticle.registerParticle();
 		//ModEntityUseHandler2.register();
 		/*
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
