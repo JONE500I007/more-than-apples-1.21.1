@@ -14,8 +14,8 @@ public class ModFoodComponents {
     // 1s = 20 tick
     public static final FoodComponent GREEN_APPLE_FOOD = new FoodComponent.Builder()
             .nutrition(4)
-            .saturationModifier(1.2f)
-            .alwaysEdible().build();
+            .saturationModifier(0.3f)
+            .build();
     public static final ConsumableComponent GREEN_APPLE_EFFECT = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(
                     new StatusEffectInstance(StatusEffects.LUCK, 2840, 0), 1))
@@ -23,8 +23,8 @@ public class ModFoodComponents {
 
     public static final FoodComponent TEST_APPLE_FOOD = new FoodComponent.Builder()
             .nutrition(4)
-            .saturationModifier(1.2f)
-            .alwaysEdible().build();
+            .saturationModifier(0.3f)
+            .build();
     public static final ConsumableComponent TEST_APPLE_EFFECT = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(
                     new StatusEffectInstance(ModEffects.CALL_OF_APPLE, 5680, 0), 1))

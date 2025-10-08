@@ -94,5 +94,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         valueLookupBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks2.APPLE_BARREL);
+
+        valueLookupBuilder(BlockTags.HOE_MINEABLE)
+                .add(ModBlocks2.APPLE_LEAVES)
+                .add(ModBlocks2.FRUIT_APPLE_LEAVES)
+                .add(ModBlocks2.GOLDEN_APPLE_LEAVES)
+                .add(ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES)
+                .add(ModBlocks2.TEST_APPLE_LEAVES);
     }
 }
