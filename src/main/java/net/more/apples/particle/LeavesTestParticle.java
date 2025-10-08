@@ -24,14 +24,14 @@ public class LeavesTestParticle extends BillboardParticle {
                                  SpriteProvider spriteProvider) {
         super(world, x, y, z, spriteProvider.getSprite(world.random));
 
-        this.setSprite(spriteProvider.getSprite(this.random));
-        //this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
+        //this.setSprite(spriteProvider.getSprite(this.random));
+        this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
 
         //strength of gravity
         this.gravityStrength = 0.05F * 0.0025F;
         //age of particle 300–500 tick for now
-        //this.maxAge = 300 + random.nextInt(200);
-        this.maxAge = Math.max(1, 300 + random.nextInt(200));
+        this.maxAge = 300 + random.nextInt(200);
+        //this.maxAge = Math.max(1, 300 + random.nextInt(200));
         //particle size
         this.scale = 0.07F + random.nextFloat() * 0.05F;
 
