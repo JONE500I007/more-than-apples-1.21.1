@@ -24,8 +24,8 @@ public class LeavesTestParticle extends BillboardParticle {
                                  SpriteProvider spriteProvider) {
         super(world, x, y, z, spriteProvider.getSprite(world.random));
 
-        //this.setSprite(spriteProvider.getSprite(this.random));
-        this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
+        this.setSprite(spriteProvider.getSprite(this.random));
+        //this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
 
         //strength of gravity
         this.gravityStrength = 0.05F * 0.0025F;
