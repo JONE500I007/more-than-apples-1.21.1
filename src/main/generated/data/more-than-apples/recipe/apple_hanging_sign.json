@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "hanging_sign",
+  "key": {
+    "C": {
+      "item": "minecraft:chain"
+    },
+    "L": {
+      "item": "more-than-apples:stripped_apple_log"
+    }
+  },
+  "pattern": [
+    "C C",
+    "LLL",
+    "LLL"
+  ],
+  "result": {
+    "count": 6,
+    "id": "more-than-apples:apple_hanging_sign"
+  }
+}

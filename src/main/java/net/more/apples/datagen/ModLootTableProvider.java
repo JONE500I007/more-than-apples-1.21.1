@@ -61,5 +61,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks2.APPLE_BARREL);
 
+        addDrop(ModBlocks2.APPLE_STANDING_SIGN);
+        addDrop(ModBlocks2.APPLE_WALL_SIGN);
+        addDrop(ModBlocks2.APPLE_HANGING_SIGN);
+        addDrop(ModBlocks2.APPLE_WALL_HANGING_SIGN);
+
     }
 }

@@ -12,6 +12,7 @@ import net.more.apples.block.ModBlocks;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.block.ModBlocksForText;
 import net.more.apples.effect.ModEffects;
+import net.more.apples.entity.ModBoats;
 import net.more.apples.event.ModEntityUseHandler;
 import net.more.apples.item.ModItemGroups;
 import net.more.apples.item.ModItemGroups2;
@@ -63,6 +64,8 @@ public class MoreThanApples implements ModInitializer {
 
 		ModAppleVillagers.registerVillagers();
 		ModCustomAppleMTrades.registerCustomTrades();
+
+		ModBoats.registerBoats();
 		//ModEntityUseHandler2.register();
 		/*
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {

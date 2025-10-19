@@ -1,5 +1,6 @@
 package net.more.apples.item;
 
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -7,7 +8,9 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.ModBlocks2;
 import net.more.apples.block.ModBlocksForText;
+import net.more.apples.entity.ModBoats;
 import net.more.apples.item.custom.CustomEnchApple;
 
 public class ModItems {
@@ -31,6 +34,20 @@ public class ModItems {
     public static final Item ENCHANTED_NETHERITE_APPLE = registerItem("enchanted_netherite_apple", new CustomEnchApple(new Item.Settings()
             .food(ModFoodComponents.ENCHANTED_NETHERITE_APPLE_EFFECT)
             .rarity(Rarity.EPIC)));
+
+    public static final Item APPLE_SIGN = registerItem("apple_sign", new SignItem(new Item.Settings()
+            .maxCount(16),
+            ModBlocks2.APPLE_STANDING_SIGN,
+            ModBlocks2.APPLE_WALL_SIGN));
+    public static final Item APPLE_HANGING_SIGN = registerItem("apple_hanging_sign", new HangingSignItem(
+            ModBlocks2.APPLE_HANGING_SIGN,
+            ModBlocks2.APPLE_WALL_HANGING_SIGN,
+            new Item.Settings().maxCount(16)));
+    public static final Item APPLE_BOAT = registerItem("apple_boat",
+            TerraformBoatItemHelper.registerBoatItem(ModBoats.APPLE_BOAT_ID, ModBoats.APPLE_BOAT_KEY, false));
+    public static final Item APPLE_CHEST_BOAT = registerItem("apple_chest_boat",
+            TerraformBoatItemHelper.registerBoatItem(ModBoats.APPLE_CHEST_BOAT_ID, ModBoats.APPLE_BOAT_KEY, true));
+
 
 //    public static final Item CUSTOM_SIGN_ITEM = registerItem("custom_sign_item",
 //            new SignItem(new Item.Settings().maxCount(16), CUSTOM_SIGN, CUSTOM_WALL_SIGN));

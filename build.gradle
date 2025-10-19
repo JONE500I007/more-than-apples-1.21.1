@@ -25,6 +25,11 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven { url = 'https://maven.minecraftforge.net/' }
+
+	maven {
+		name = 'TerraformersMC'
+		url = 'https://maven.terraformersmc.com/'
+	}
 }
 
 fabricApi {
@@ -43,6 +48,9 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.21.1-4.1.0.8'
+
+	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0"
+	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0"
 	
 }
 

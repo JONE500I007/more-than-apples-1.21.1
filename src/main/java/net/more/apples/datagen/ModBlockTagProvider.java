@@ -93,6 +93,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(ModBlocks2.APPLE_BARREL);
+                .add(ModBlocks2.APPLE_BARREL)
+                .add(ModBlocks2.APPLE_STANDING_SIGN)
+                .add(ModBlocks2.APPLE_WALL_SIGN)
+                .add(ModBlocks2.APPLE_HANGING_SIGN)
+                .add(ModBlocks2.APPLE_WALL_HANGING_SIGN);
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+                .add(ModBlocks2.APPLE_LEAVES)
+                .add(ModBlocks2.FRUIT_APPLE_LEAVES)
+                .add(ModBlocks2.TEST_APPLE_LEAVES)
+                .add(ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES);
     }
 }

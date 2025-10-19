@@ -1,7 +1,13 @@
 package net.more.apples.block;
 
+import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
+import net.minecraft.data.family.BlockFamilies;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -84,6 +90,27 @@ public class ModBlocks2 {
                     .nonOpaque()
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
+
+    public static final Identifier APPLE_SIGN_TEXTURE = Identifier.of(MoreThanApples.MOD_ID, "entity/signs/apple");
+    public static final Identifier APPLE_HANGING_SIGN_TEXTURE = Identifier.of(MoreThanApples.MOD_ID, "entity/signs/hanging/apple");
+    public static final Identifier APPLE_HANGING_GUI_SIGN_TEXTURE = Identifier.of(MoreThanApples.MOD_ID, "textures/gui/hanging_signs/apple");
+
+    public static final Block APPLE_STANDING_SIGN = registerBlock2("apple_standing_sign",
+            new TerraformSignBlock(APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
+    public static final Block APPLE_WALL_SIGN = registerBlock2("apple_wall_sign",
+            new TerraformWallSignBlock(APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
+    public static final Block APPLE_HANGING_SIGN = registerBlock2("apple_hanging_sign",
+            new TerraformHangingSignBlock(APPLE_HANGING_SIGN_TEXTURE, APPLE_HANGING_GUI_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
+    public static final Block APPLE_WALL_HANGING_SIGN = registerBlock2("apple_wall_hanging_sign",
+            new TerraformWallHangingSignBlock(APPLE_HANGING_SIGN_TEXTURE, APPLE_HANGING_GUI_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
+
+//    public static final BlockFamily THE_APPLE_FAMILY = BlockFamilies.register(ModBlocks2.APPLE_PLANKS)
+//            .sign(ModBlocks2.APPLE_STANDING_SIGN, ModBlocks2.APPLE_WALL_SIGN)
+//            .group("wooden")
+//            .unlockCriterionName("has_planks")
+//            .build();
 
 
     public static final Block TEST_APPLE_LOG = registerBlock2("test_apple_log",

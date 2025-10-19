@@ -14,6 +14,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.more.apples.block.ModBlocks2;
+import net.more.apples.item.ModItems;
 import net.more.apples.util.ModTags;
 
 import java.util.List;
@@ -67,6 +68,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion("has_planks", conditionsFromTag(ItemTags.PLANKS))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.APPLE_HANGING_SIGN, 6)
+                .input('C', Items.CHAIN)
+                .input('L', ModBlocks2.STRIPPED_APPLE_LOG)
+                .pattern("C C")
+                .pattern("LLL")
+                .pattern("LLL")
+                .criterion("has_chain", conditionsFromItem(Items.CHAIN))
+                .criterion("has_stripped_apple_log", conditionsFromItem(ModBlocks2.STRIPPED_APPLE_LOG))
+                .group("hanging_sign")
+                .offerTo(recipeExporter);
 
         offerBarkBlockRecipe(recipeExporter,
                 ModBlocks2.APPLE_WOOD, ModBlocks2.APPLE_LOG);
@@ -89,7 +100,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             .pressurePlate(ModBlocks2.APPLE_PRESSURE_PLATE)
             .button(ModBlocks2.APPLE_BUTTON)
 
-            //.sign(ModBlocks2.APPLE_SIGN, ModBlocks2.APPLE_WALL_SIGN)
+            .sign(ModBlocks2.APPLE_STANDING_SIGN, ModBlocks2.APPLE_WALL_SIGN)
+
             //.group("apple_wood")
             .group("wooden")
             //.group("mod_all_apple")

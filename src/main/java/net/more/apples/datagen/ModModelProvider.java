@@ -3,6 +3,7 @@ package net.more.apples.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
+import net.minecraft.util.Identifier;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.item.ModItems;
 
@@ -39,6 +40,32 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerDoor(ModBlocks2.APPLE_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks2.APPLE_TRAPDOOR);
+
+//        Identifier appleSignModel = Models.PARTICLE.upload(
+//                ModBlocks2.APPLE_STANDING_SIGN,
+//                new TextureMap().put(TextureKey.PARTICLE, TextureMap.getId(ModBlocks2.APPLE_PLANKS)),
+//                blockStateModelGenerator.modelCollector
+//        );
+
+        Identifier appleSignModel = Models.GENERATED.upload(
+                ModBlocks2.APPLE_STANDING_SIGN,
+                new TextureMap().put(TextureKey.LAYER0, TextureMap.getId(ModBlocks2.APPLE_PLANKS)),
+                blockStateModelGenerator.modelCollector
+        );
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(ModBlocks2.APPLE_STANDING_SIGN, appleSignModel)
+        );
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(ModBlocks2.APPLE_WALL_SIGN, appleSignModel)
+        );
+
+        blockStateModelGenerator.registerHangingSign(
+                ModBlocks2.STRIPPED_APPLE_LOG,
+                ModBlocks2.APPLE_HANGING_SIGN,
+                ModBlocks2.APPLE_WALL_HANGING_SIGN
+        );
+
+        //appleGarnetPool.family(ModBlocks2.THE_APPLE_FAMILY);
 
 
         BlockStateModelGenerator.BlockTexturePool testAppleGarnetPool = blockStateModelGenerator
@@ -87,5 +114,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModBlocks2.TEST_APPLE_SAPLING.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks2.GOLDEN_APPLE_SAPLING.asItem(), Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.APPLE_SIGN, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.APPLE_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.APPLE_CHEST_BOAT, Models.GENERATED);
+        //itemModelGenerator.register(ModItems.APPLE_HANGING_SIGN, Models.GENERATED);
     }
 }

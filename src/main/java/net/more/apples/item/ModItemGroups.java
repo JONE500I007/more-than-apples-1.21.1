@@ -45,6 +45,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks2.APPLE_PRESSURE_PLATE);
                         entries.add(ModBlocks2.APPLE_BUTTON);
 //                        entries.add(ModBlocks2.APPLE_WALL);
+                        entries.add(ModItems.APPLE_SIGN);
+                        entries.add(ModItems.APPLE_HANGING_SIGN);
+                        entries.add(ModItems.APPLE_BOAT);
+                        entries.add(ModItems.APPLE_CHEST_BOAT);
 
                         entries.add(ModBlocks2.APPLE_LEAVES);
                         entries.add(ModBlocks2.FRUIT_APPLE_LEAVES);
