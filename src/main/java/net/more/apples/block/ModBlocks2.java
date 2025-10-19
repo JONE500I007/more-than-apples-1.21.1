@@ -112,7 +112,6 @@ public class ModBlocks2 {
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
 
-
     public static final Block TEST_APPLE_LOG = registerBlock2("test_apple_log",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_log")))));
