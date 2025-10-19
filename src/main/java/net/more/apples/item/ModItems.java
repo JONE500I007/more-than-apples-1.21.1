@@ -43,10 +43,10 @@ public class ModItems {
             ModBlocks2.APPLE_HANGING_SIGN,
             ModBlocks2.APPLE_WALL_HANGING_SIGN,
             new Item.Settings().maxCount(16)));
-    public static final Item APPLE_BOAT = registerItem("apple_boat",
-            TerraformBoatItemHelper.registerBoatItem(ModBoats.APPLE_BOAT_ID, ModBoats.APPLE_BOAT_KEY, false));
-    public static final Item APPLE_CHEST_BOAT = registerItem("apple_chest_boat",
-            TerraformBoatItemHelper.registerBoatItem(ModBoats.APPLE_CHEST_BOAT_ID, ModBoats.APPLE_BOAT_KEY, true));
+    public static final Item APPLE_BOAT =
+            TerraformBoatItemHelper.registerBoatItem(ModBoats.APPLE_BOAT_ID, ModBoats.APPLE_BOAT_KEY, false);
+    public static final Item APPLE_CHEST_BOAT =
+            TerraformBoatItemHelper.registerBoatItem(ModBoats.APPLE_CHEST_BOAT_ID, ModBoats.APPLE_BOAT_KEY, true);
 
 
 //    public static final Item CUSTOM_SIGN_ITEM = registerItem("custom_sign_item",
