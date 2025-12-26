@@ -91,9 +91,12 @@ public class ModBlocks2 {
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
 
-    public static final Identifier APPLE_SIGN_TEXTURE = Identifier.of(MoreThanApples.MOD_ID, "entity/signs/apple");
-    public static final Identifier APPLE_HANGING_SIGN_TEXTURE = Identifier.of(MoreThanApples.MOD_ID, "entity/signs/hanging/apple");
-    public static final Identifier APPLE_HANGING_GUI_SIGN_TEXTURE = Identifier.of(MoreThanApples.MOD_ID, "textures/gui/hanging_signs/apple");
+    public static final Identifier APPLE_SIGN_TEXTURE =
+            Identifier.of(MoreThanApples.MOD_ID, "entity/signs/apple_sign");
+    public static final Identifier APPLE_HANGING_SIGN_TEXTURE =
+            Identifier.of(MoreThanApples.MOD_ID, "entity/signs/hanging/apple_hanging_sign");
+    public static final Identifier APPLE_HANGING_GUI_SIGN_TEXTURE =
+            Identifier.of(MoreThanApples.MOD_ID, "textures/gui/hanging_signs/apple_sign_gui");
 
     public static final Block APPLE_STANDING_SIGN = registerBlock2("apple_standing_sign",
             new TerraformSignBlock(APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
