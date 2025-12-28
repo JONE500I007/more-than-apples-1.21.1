@@ -1,8 +1,9 @@
-// 1.21.1	2025-10-23T12:55:10.3236935	More Than Apples/Recipes
+// 1.21.1	2025-12-29T03:34:14.8318977	More Than Apples/Recipes
 5eb099ed5a3859ef5918681f60964cff1bb56ba3 data\more-than-apples\advancement\recipes\redstone\apple_pressure_plate.json
 32754c6bc67471780998dd2ade5865043c307fec data\more-than-apples\advancement\recipes\redstone\apple_fence_gate.json
 21fa1e084f3130adce2a9e8e029dc744ee1b1f68 data\more-than-apples\recipe\apple_trapdoor.json
 0e5ca9f26cde233365b706da083c7e1a04b8a9cc data\more-than-apples\advancement\recipes\building_blocks\test_apple_stairs.json
+b9681b926eed923a189a30bd4b223c07a7652ce1 data\more-than-apples\recipe\apple_boat.json
 ec1e73f41b1d422498cf9a97b51ff8017366e848 data\more-than-apples\recipe\apple_planks.json
 7cca2e232d7f33de4f595c6526d724b90511dfe7 data\more-than-apples\recipe\apple_slab.json
 dbe40492c302839068c17b07470f3baf7d627a0a data\more-than-apples\recipe\apple_fence_gate.json
@@ -10,6 +11,7 @@ dbe40492c302839068c17b07470f3baf7d627a0a data\more-than-apples\recipe\apple_fenc
 0ecc2deccebfb33f5831459ee23cf7456659871c data\more-than-apples\advancement\recipes\decorations\test_apple_fence.json
 d9f1a88724bb87d63572ef7e116174745fa7215c data\more-than-apples\recipe\apple_from_smelting_apple_ore.json
 cc94fbe55b4c5efab8586dae31b190594eb0c316 data\more-than-apples\recipe\test_apple_stairs.json
+909cbc621ad83e306dd8ed961042b4760191fe58 data\more-than-apples\recipe\apple_chest_boat.json
 7d2024257e7dea683718b310f21eec60214b9583 data\more-than-apples\recipe\stripped_test_apple_wood.json
 8ce17d5c717bfd05bfdfc3084f88fb07560d7297 data\more-than-apples\advancement\recipes\misc\apple_from_smelting_deepslate_apple_ore.json
 ea006ac2241fdc2e2d4d4dbe04f480d305e71223 data\more-than-apples\advancement\recipes\redstone\apple_door.json
@@ -18,6 +20,7 @@ c28dca232bed35cdb90fea6cef7a564a41b6e2a4 data\more-than-apples\advancement\recip
 30dd44f4d4043dc9caa122e9cba10e5e0d9099a9 data\more-than-apples\recipe\apple_sign.json
 bb530c16b85aae7d537547487516a678abca895d data\more-than-apples\recipe\test_apple_pressure_plate.json
 54fc580cb083acc5a5bdf47b1ebe095fe139f5ea data\more-than-apples\recipe\apple_pressure_plate.json
+b4ed325d672b16f1bdfc8446b6f3f89d44d2b62f data\more-than-apples\advancement\recipes\transportation\apple_chest_boat.json
 a0974148ee0582fb22fbd92ecf1f05d1e3d41612 data\more-than-apples\recipe\apple_from_blasting_apple_ore.json
 3001bac221bec0ec641067b5f65c6006b07200c9 data\more-than-apples\advancement\recipes\misc\apple_barrel.json
 a6945e3802e356edd0f4f7e54aaa2c4d251dbb8b data\more-than-apples\advancement\recipes\redstone\test_apple_pressure_plate.json
@@ -37,8 +40,8 @@ f18d93af22b5a9afabe5ed90d88b2ebabd903ad2 data\more-than-apples\recipe\apple_butt
 63e8b00f4bb8067bc2f4fcdcd53295a75522f8ea data\more-than-apples\recipe\apple_barrel.json
 5c009ff4c396ff0911a78e948416615dd2917b7e data\more-than-apples\advancement\recipes\building_blocks\stripped_apple_wood.json
 05c8f630a248aef0612d133ccadb27972d9f6325 data\more-than-apples\advancement\recipes\redstone\test_apple_trapdoor.json
-ef91243f7442c0227820ea71cfe7767d9225c0ba data\more-than-apples\advancement\recipes\redstone\test_apple_fence_gate.json
 bb1a2cd14bacef1d6d1cfd65287f471e690c99e7 data\more-than-apples\advancement\recipes\building_blocks\test_apple_slab.json
+ef91243f7442c0227820ea71cfe7767d9225c0ba data\more-than-apples\advancement\recipes\redstone\test_apple_fence_gate.json
 dfdad7e8bb3546b9163fc505892679e46a354242 data\more-than-apples\recipe\test_apple_planks.json
 b3dfb865d7d5280bbc96cc829319190688c70523 data\more-than-apples\advancement\recipes\redstone\test_apple_button.json
 22cdc2e4cdfa64d71b52ba11de6c1738d7db5fc5 data\more-than-apples\recipe\test_apple_slab.json
@@ -57,3 +60,4 @@ cf1d4ff643ea5bf35c0edb49f64f5cd651afc7e8 data\more-than-apples\advancement\recip
 8f50ffd5cec0f93da0598fd108549a254fec59d3 data\more-than-apples\recipe\apple_from_smelting_deepslate_apple_ore.json
 c699e6ec69430f8a1b02e39f02443a7a389fa9f0 data\more-than-apples\advancement\recipes\building_blocks\apple_slab.json
 3d56617b40edd0645002d73435b4a727d034e07e data\more-than-apples\advancement\recipes\building_blocks\test_apple_wood.json
+ea5820b5f1acc88e9d4170e0db20522c8f89377a data\more-than-apples\advancement\recipes\decorations\apple_boat.json

@@ -7,6 +7,7 @@ import net.minecraft.data.family.BlockFamily;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.RecipeProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -77,6 +78,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion("has_chain", conditionsFromItem(Items.CHAIN))
                 .criterion("has_stripped_apple_log", conditionsFromItem(ModBlocks2.STRIPPED_APPLE_LOG))
                 .group("hanging_sign")
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.APPLE_BOAT)
+                .input('B', ModBlocks2.APPLE_PLANKS)
+                .pattern("B B")
+                .pattern("BBB")
+                .criterion("has_planks", conditionsFromItem(ModBlocks2.APPLE_PLANKS))
+                .group("boat")
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.APPLE_CHEST_BOAT)
+                .input(Items.CHEST)
+                .input(ModItems.APPLE_BOAT)
+                .criterion("has_planks", conditionsFromItem(ModItems.APPLE_BOAT))
+                .group("chest_boat")
                 .offerTo(recipeExporter);
 
         offerBarkBlockRecipe(recipeExporter,
