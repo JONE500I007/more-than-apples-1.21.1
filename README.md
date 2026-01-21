@@ -14,4 +14,4 @@ This mod uses **Terraform API** developed by **TerraformersMC**
 
 According to the LGPLv3 terms:
 - A copy of the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) and [GNU LGPLv3](https://www.gnu.org/licenses/lgpl-3.0.html) is included in this project's documentation.
-- This mod uses the Terraform API as a library. It is not a modified version of the library itself, but a "Combined Work" as defined by the license.
+- This mod uses the above APIs as libraries and does not modify the libraries themselves.
