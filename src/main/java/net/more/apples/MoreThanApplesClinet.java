@@ -51,10 +51,19 @@ public class MoreThanApplesClinet implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.TEST_APPLE_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.TEST_APPLE_TRAPDOOR, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.FROSTY_APPLE_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.FROSTY_APPLE_LEAVES, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.FROSTY_APPLE_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks2.FROSTY_APPLE_TRAPDOOR, RenderLayer.getCutout());
+
+
         //SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks2.APPLE_SIGN_TEXTURE));
         //SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks2.APPLE_HANGING_SIGN_TEXTURE));
 
         TerraformBoatClientHelper.registerModelLayers(ModBoats.APPLE_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(ModBoats.TEST_APPLE_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(ModBoats.FROSTY_APPLE_BOAT_ID, false);
 
     }
 }

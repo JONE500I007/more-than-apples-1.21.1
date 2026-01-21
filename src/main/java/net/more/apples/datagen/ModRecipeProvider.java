@@ -45,6 +45,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         //RecipeProvider.generateFamily(recipeExporter, TEST_APPLE_WOOD_FAMILY, FeatureSet.of(FeatureFlags.VANILLA_FEATURES));
         RecipeProvider.generateFamily(recipeExporter, APPLE_WOOD_FAMILY, FeatureFlags.VANILLA_FEATURES);
         RecipeProvider.generateFamily(recipeExporter, TEST_APPLE_WOOD_FAMILY, FeatureFlags.VANILLA_FEATURES);
+        RecipeProvider.generateFamily(recipeExporter, FROSTY_APPLE_WOOD_FAMILY, FeatureFlags.VANILLA_FEATURES);
 
         /*
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks2.APPLE_BARREL)
@@ -59,6 +60,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offerPlanksRecipe(recipeExporter, ModBlocks2.APPLE_PLANKS, ModTags.Items.ALL_APPLE_LOG, 4);
         offerPlanksRecipe(recipeExporter, ModBlocks2.TEST_APPLE_PLANKS, ModTags.Items.ALL_TEST_APPLE_LOG, 4);
+        offerPlanksRecipe(recipeExporter, ModBlocks2.FROSTY_APPLE_PLANKS, ModTags.Items.ALL_FROSTY_APPLE_LOG, 4);
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks2.APPLE_BARREL)
                 .input('A', ModTags.Items.ALL_APPLE)
                 .input('B', ItemTags.PLANKS)
@@ -79,7 +81,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion("has_stripped_apple_log", conditionsFromItem(ModBlocks2.STRIPPED_APPLE_LOG))
                 .group("hanging_sign")
                 .offerTo(recipeExporter);
-
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.APPLE_BOAT)
                 .input('B', ModBlocks2.APPLE_PLANKS)
                 .pattern("B B")
@@ -87,11 +88,60 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion("has_planks", conditionsFromItem(ModBlocks2.APPLE_PLANKS))
                 .group("boat")
                 .offerTo(recipeExporter);
-
         ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.APPLE_CHEST_BOAT)
                 .input(Items.CHEST)
                 .input(ModItems.APPLE_BOAT)
                 .criterion("has_planks", conditionsFromItem(ModItems.APPLE_BOAT))
+                .group("chest_boat")
+                .offerTo(recipeExporter);
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.TEST_APPLE_HANGING_SIGN, 6)
+                .input('C', Items.CHAIN)
+                .input('L', ModBlocks2.STRIPPED_TEST_APPLE_LOG)
+                .pattern("C C")
+                .pattern("LLL")
+                .pattern("LLL")
+                .criterion("has_chain", conditionsFromItem(Items.CHAIN))
+                .criterion("has_stripped_apple_log", conditionsFromItem(ModBlocks2.STRIPPED_TEST_APPLE_LOG))
+                .group("hanging_sign")
+                .offerTo(recipeExporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.TEST_APPLE_BOAT)
+                .input('B', ModBlocks2.TEST_APPLE_PLANKS)
+                .pattern("B B")
+                .pattern("BBB")
+                .criterion("has_planks", conditionsFromItem(ModBlocks2.TEST_APPLE_PLANKS))
+                .group("boat")
+                .offerTo(recipeExporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.TEST_APPLE_CHEST_BOAT)
+                .input(Items.CHEST)
+                .input(ModItems.TEST_APPLE_BOAT)
+                .criterion("has_planks", conditionsFromItem(ModItems.TEST_APPLE_BOAT))
+                .group("chest_boat")
+                .offerTo(recipeExporter);
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.FROSTY_APPLE_HANGING_SIGN, 6)
+                .input('C', Items.CHAIN)
+                .input('L', ModBlocks2.STRIPPED_FROSTY_APPLE_LOG)
+                .pattern("C C")
+                .pattern("LLL")
+                .pattern("LLL")
+                .criterion("has_chain", conditionsFromItem(Items.CHAIN))
+                .criterion("has_stripped_apple_log", conditionsFromItem(ModBlocks2.STRIPPED_FROSTY_APPLE_LOG))
+                .group("hanging_sign")
+                .offerTo(recipeExporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.FROSTY_APPLE_BOAT)
+                .input('B', ModBlocks2.FROSTY_APPLE_PLANKS)
+                .pattern("B B")
+                .pattern("BBB")
+                .criterion("has_planks", conditionsFromItem(ModBlocks2.FROSTY_APPLE_PLANKS))
+                .group("boat")
+                .offerTo(recipeExporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.FROSTY_APPLE_CHEST_BOAT)
+                .input(Items.CHEST)
+                .input(ModItems.FROSTY_APPLE_BOAT)
+                .criterion("has_planks", conditionsFromItem(ModItems.FROSTY_APPLE_BOAT))
                 .group("chest_boat")
                 .offerTo(recipeExporter);
 
@@ -103,6 +153,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 ModBlocks2.TEST_APPLE_WOOD, ModBlocks2.TEST_APPLE_LOG);
         offerBarkBlockRecipe(recipeExporter,
                 ModBlocks2.STRIPPED_TEST_APPLE_WOOD, ModBlocks2.STRIPPED_TEST_APPLE_LOG);
+        offerBarkBlockRecipe(recipeExporter,
+                ModBlocks2.FROSTY_APPLE_WOOD, ModBlocks2.FROSTY_APPLE_LOG);
+        offerBarkBlockRecipe(recipeExporter,
+                ModBlocks2.STRIPPED_FROSTY_APPLE_WOOD, ModBlocks2.STRIPPED_FROSTY_APPLE_LOG);
 
     }
 
@@ -134,10 +188,27 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             .pressurePlate(ModBlocks2.TEST_APPLE_PRESSURE_PLATE)
             .button(ModBlocks2.TEST_APPLE_BUTTON)
 
+            .sign(ModBlocks2.TEST_APPLE_STANDING_SIGN, ModBlocks2.TEST_APPLE_WALL_SIGN)
+
             //.sign(ModBlocks2.APPLE_SIGN, ModBlocks2.APPLE_WALL_SIGN)
             //.group("test_apple_wood")
             .group("wooden")
             //.group("mod_all_apple")
+            .unlockCriterionName("has_apple_planks")
+            .build();
+
+    public static final BlockFamily FROSTY_APPLE_WOOD_FAMILY = BlockFamilies.register(ModBlocks2.FROSTY_APPLE_PLANKS)
+            .stairs(ModBlocks2.FROSTY_APPLE_STAIRS)
+            .slab(ModBlocks2.FROSTY_APPLE_SLAB)
+            .fence(ModBlocks2.FROSTY_APPLE_FENCE)
+            .fenceGate(ModBlocks2.FROSTY_APPLE_FENCE_GATE)
+            .door(ModBlocks2.FROSTY_APPLE_DOOR)
+            .trapdoor(ModBlocks2.FROSTY_APPLE_TRAPDOOR)
+            .pressurePlate(ModBlocks2.FROSTY_APPLE_PRESSURE_PLATE)
+            .button(ModBlocks2.FROSTY_APPLE_BUTTON)
+
+            .sign(ModBlocks2.FROSTY_APPLE_STANDING_SIGN, ModBlocks2.FROSTY_APPLE_WALL_SIGN)
+            .group("wooden")
             .unlockCriterionName("has_apple_planks")
             .build();
 }

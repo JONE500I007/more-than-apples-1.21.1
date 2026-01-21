@@ -73,9 +73,35 @@ public class ModItemGroups {
                         entries.add(ModBlocks2.TEST_APPLE_TRAPDOOR);
                         entries.add(ModBlocks2.TEST_APPLE_PRESSURE_PLATE);
                         entries.add(ModBlocks2.TEST_APPLE_BUTTON);
+                        entries.add(ModItems.TEST_APPLE_SIGN);
+                        entries.add(ModItems.TEST_APPLE_HANGING_SIGN);
+                        entries.add(ModItems.TEST_APPLE_BOAT);
+                        entries.add(ModItems.TEST_APPLE_CHEST_BOAT);
 
                         entries.add(ModBlocks2.TEST_APPLE_LEAVES);
                         entries.add(ModBlocks2.TEST_APPLE_SAPLING);
+
+                        entries.add(ModBlocks2.FROSTY_APPLE_LOG);
+                        entries.add(ModBlocks2.FROSTY_APPLE_WOOD);
+                        entries.add(ModBlocks2.STRIPPED_FROSTY_APPLE_LOG);
+                        entries.add(ModBlocks2.STRIPPED_FROSTY_APPLE_WOOD);
+                        entries.add(ModBlocks2.FROSTY_APPLE_PLANKS);
+
+                        entries.add(ModBlocks2.FROSTY_APPLE_STAIRS);
+                        entries.add(ModBlocks2.FROSTY_APPLE_SLAB);
+                        entries.add(ModBlocks2.FROSTY_APPLE_FENCE);
+                        entries.add(ModBlocks2.FROSTY_APPLE_FENCE_GATE);
+                        entries.add(ModBlocks2.FROSTY_APPLE_DOOR);
+                        entries.add(ModBlocks2.FROSTY_APPLE_TRAPDOOR);
+                        entries.add(ModBlocks2.FROSTY_APPLE_PRESSURE_PLATE);
+                        entries.add(ModBlocks2.FROSTY_APPLE_BUTTON);
+                        entries.add(ModItems.FROSTY_APPLE_SIGN);
+                        entries.add(ModItems.FROSTY_APPLE_HANGING_SIGN);
+                        entries.add(ModItems.FROSTY_APPLE_BOAT);
+                        entries.add(ModItems.FROSTY_APPLE_CHEST_BOAT);
+
+                        entries.add(ModBlocks2.FROSTY_APPLE_LEAVES);
+                        entries.add(ModBlocks2.FROSTY_APPLE_SAPLING);
 
                         entries.add(ModBlocks2.APPLE_BARREL);
 

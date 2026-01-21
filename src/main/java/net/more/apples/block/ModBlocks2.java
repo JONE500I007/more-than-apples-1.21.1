@@ -171,6 +171,100 @@ public class ModBlocks2 {
                     .strength(2.0f, 3.0f)
                     .sounds(BlockSoundGroup.WOOD)));
 
+    public static final Identifier TEST_APPLE_SIGN_TEXTURE =
+            Identifier.of(MoreThanApples.MOD_ID, "entity/signs/test_apple_sign");
+    public static final Identifier TEST_APPLE_HANGING_SIGN_TEXTURE =
+            Identifier.of(MoreThanApples.MOD_ID, "entity/signs/hanging/test_apple_hanging_sign");
+    public static final Identifier TEST_APPLE_HANGING_GUI_SIGN_TEXTURE =
+            Identifier.of(MoreThanApples.MOD_ID, "textures/gui/hanging_signs/test_apple_sign_gui");
+
+    public static final Block TEST_APPLE_STANDING_SIGN = registerBlock2("test_apple_standing_sign",
+            new TerraformSignBlock(TEST_APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
+    public static final Block TEST_APPLE_WALL_SIGN = registerBlock2("test_apple_wall_sign",
+            new TerraformWallSignBlock(TEST_APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
+    public static final Block TEST_APPLE_HANGING_SIGN = registerBlock2("test_apple_hanging_sign",
+            new TerraformHangingSignBlock(TEST_APPLE_HANGING_SIGN_TEXTURE, TEST_APPLE_HANGING_GUI_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
+    public static final Block TEST_APPLE_WALL_HANGING_SIGN = registerBlock2("test_apple_wall_hanging_sign",
+            new TerraformWallHangingSignBlock(TEST_APPLE_HANGING_SIGN_TEXTURE, TEST_APPLE_HANGING_GUI_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
+
+
+    public static final Block FROSTY_APPLE_LOG = registerBlock2("frosty_apple_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
+    public static final Block FROSTY_APPLE_WOOD = registerBlock2("frosty_apple_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_FROSTY_APPLE_LOG = registerBlock2("stripped_frosty_apple_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_FROSTY_APPLE_WOOD = registerBlock2("stripped_frosty_apple_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block FROSTY_APPLE_PLANKS = registerBlock2("frosty_apple_planks",
+            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
+    public static final Block FROSTY_APPLE_LEAVES = registerBlock2("frosty_apple_leaves",
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+    public static final Block FROSTY_APPLE_SAPLING = registerBlock2("frosty_apple_sapling",
+            new SaplingBlock(ModSaplingGenerators.FROSTY_APPLE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+
+    public static final Block FROSTY_APPLE_STAIRS = registerBlock2("frosty_apple_stairs",
+            new StairsBlock(ModBlocks2.FROSTY_APPLE_PLANKS.getDefaultState(),
+                    AbstractBlock.Settings.create()
+                            .strength(2.0f, 3.0f)
+                            .sounds(BlockSoundGroup.WOOD)));
+    public static final Block FROSTY_APPLE_SLAB = registerBlock2("frosty_apple_slab",
+            new SlabBlock(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
+    public static final Block FROSTY_APPLE_BUTTON = registerBlock2("frosty_apple_button",
+            new ButtonBlock(BlockSetType.OAK, 30,
+                    AbstractBlock.Settings.create()
+                            .noCollision()
+                            .strength(0.5f)
+                            .sounds(BlockSoundGroup.WOOD)));
+    public static final Block FROSTY_APPLE_PRESSURE_PLATE = registerBlock2("frosty_apple_pressure_plate",
+            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOD)));
+    public static final Block FROSTY_APPLE_FENCE = registerBlock2("frosty_apple_fence",
+            new FenceBlock(AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
+    public static final Block FROSTY_APPLE_FENCE_GATE = registerBlock2("frosty_apple_fence_gate",
+            new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
+    public static final Block FROSTY_APPLE_DOOR = registerBlock2("frosty_apple_door",
+            new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.create().nonOpaque()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
+    public static final Block FROSTY_APPLE_TRAPDOOR = registerBlock2("frosty_apple_trapdoor",
+            new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.create().nonOpaque()
+                    .strength(2.0f, 3.0f)
+                    .sounds(BlockSoundGroup.WOOD)));
+
+    public static final Identifier FROSTY_APPLE_SIGN_TEXTURE =
+            Identifier.of(MoreThanApples.MOD_ID, "entity/signs/frosty_apple_sign");
+    public static final Identifier FROSTY_APPLE_HANGING_SIGN_TEXTURE =
+            Identifier.of(MoreThanApples.MOD_ID, "entity/signs/hanging/frosty_apple_hanging_sign");
+    public static final Identifier FROSTY_APPLE_HANGING_GUI_SIGN_TEXTURE =
+            Identifier.of(MoreThanApples.MOD_ID, "textures/gui/hanging_signs/frosty_apple_sign_gui");
+    public static final Block FROSTY_APPLE_STANDING_SIGN = registerBlock2("frosty_apple_standing_sign",
+            new TerraformSignBlock(FROSTY_APPLE_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
+    public static final Block FROSTY_APPLE_WALL_SIGN = registerBlock2("frosty_apple_wall_sign",
+            new TerraformWallSignBlock(FROSTY_APPLE_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
+    public static final Block FROSTY_APPLE_HANGING_SIGN = registerBlock2("frosty_apple_hanging_sign",
+            new TerraformHangingSignBlock(
+                    FROSTY_APPLE_HANGING_SIGN_TEXTURE,
+                    FROSTY_APPLE_HANGING_GUI_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
+    public static final Block FROSTY_APPLE_WALL_HANGING_SIGN = registerBlock2("frosty_apple_wall_hanging_sign",
+            new TerraformWallHangingSignBlock(
+                    FROSTY_APPLE_HANGING_SIGN_TEXTURE,
+                    FROSTY_APPLE_HANGING_GUI_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
+
 
     public static final Block GOLDEN_APPLE_LEAVES = registerBlock2("golden_apple_leaves",
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));

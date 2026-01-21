@@ -29,6 +29,9 @@ import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.ModBlocks2;
+import net.more.apples.world.tree.custom.FrostyAppleFoliagePlacer;
+import net.more.apples.world.tree.custom.FrostyAppleTrunkPlacer;
+import net.more.apples.world.tree.custom.TestAppleTrunkPlacer;
 
 import java.util.List;
 import java.util.OptionalInt;
@@ -43,6 +46,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> LARGE_GOLDEN_APPLE_KEY = registryKey("large_golden_apple_key");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> TEST_APPLE_TREE_KEY = registryKey("test_apple_tree_key");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FROSTY_APPLE_TREE_KEY = registryKey("frosty_apple_tree_key");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORCHARD_SEAGRASS_KEY = registryKey("orchard_seagrass_key");
 
@@ -148,12 +153,13 @@ public class ModConfiguredFeatures {
         register(context, TEST_APPLE_TREE_KEY, Feature.TREE,
                 new TreeFeatureConfig.Builder(
                         BlockStateProvider.of(ModBlocks2.TEST_APPLE_LOG),
-                        new ForkingTrunkPlacer(3, 1, 1),
+                        new TestAppleTrunkPlacer(3, 1, 1),
                         BlockStateProvider.of(ModBlocks2.TEST_APPLE_LEAVES),
                         new AcaciaFoliagePlacer(
                                 ConstantIntProvider.create(0),
                                 ConstantIntProvider.create(1)),
-                        new TwoLayersFeatureSize(0, 0, 0))
+                        new TwoLayersFeatureSize(1, 0, 1))
+                        .forceDirt()
                         .build());
 
         WeightedBlockStateProvider twoLeavesProvider2 = new WeightedBlockStateProvider(
@@ -170,6 +176,15 @@ public class ModConfiguredFeatures {
                 new LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(3), 3),
                 new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(3))
         ).build());
+
+        register(context, FROSTY_APPLE_TREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks2.FROSTY_APPLE_LOG),
+                new FrostyAppleTrunkPlacer(4, 2, 0),
+
+                BlockStateProvider.of(ModBlocks2.FROSTY_APPLE_LEAVES),
+                new FrostyAppleFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 0),
+                new TwoLayersFeatureSize(1, 0, 1))
+                .build());
     }
 
 

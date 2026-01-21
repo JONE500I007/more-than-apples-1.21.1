@@ -1,12 +1,13 @@
-// 1.21.1	2025-12-29T03:34:14.839451	More Than Apples/MoreThanApples Registry Data Generator
-a47e3b46f8668b74332a50b76cb88abc3cef30c2 data\more-than-apples\worldgen\placed_feature\apple_ore_placed.json
+// 1.21.1	2026-01-21T16:36:07.4575821	More Than Apples/MoreThanApples Registry Data Generator
 abe80cd342eea3e6f355a630a1a846c567e70c0d data\more-than-apples\worldgen\configured_feature\apple_ore.json
-1fe694594fda4511ea42426d843d0bd901363c13 data\more-than-apples\worldgen\placed_feature\large_apple_tree_placed.json
 432124d48f8dc9e9739bc7dac0ff0db3463cb525 data\more-than-apples\worldgen\configured_feature\apple_tree_key.json
-16a8ab074866017df07f248f8a4a09f35bff20c5 data\more-than-apples\worldgen\biome\golden_apple_orchard.json
 1c1a14e6954eb58777b7e48e70f95a5b2896479a data\more-than-apples\worldgen\configured_feature\large_golden_apple_key.json
+9450f8c452135883bf2e4d5895703022a31c6e52 data\more-than-apples\worldgen\configured_feature\test_apple_tree_key.json
+3e5422b64f4993380c63d94306df2e9e7626455c data\more-than-apples\worldgen\configured_feature\large_apple_key.json
+a47e3b46f8668b74332a50b76cb88abc3cef30c2 data\more-than-apples\worldgen\placed_feature\apple_ore_placed.json
+1fe694594fda4511ea42426d843d0bd901363c13 data\more-than-apples\worldgen\placed_feature\large_apple_tree_placed.json
+16a8ab074866017df07f248f8a4a09f35bff20c5 data\more-than-apples\worldgen\biome\golden_apple_orchard.json
+d90f18e71b372dda0e1c9c33aa622c2a8eebe4fe data\more-than-apples\worldgen\configured_feature\frosty_apple_tree_key.json
 df1b350006a2fe46148793629b2f11798eb1f9e9 data\more-than-apples\worldgen\biome\apple_grove.json
-476d2a4bb55ea63da25ccfcb2af736bd61b203da data\more-than-apples\worldgen\configured_feature\test_apple_tree_key.json
 90607dd219ec6af5f1f60938368de4be216a345d data\more-than-apples\worldgen\placed_feature\large_golden_apple_tree_placed.json
 f18c812d651dbb4e9b998c9fd62b271e18479ab4 data\more-than-apples\worldgen\placed_feature\apple_tree_placed.json
-3e5422b64f4993380c63d94306df2e9e7626455c data\more-than-apples\worldgen\configured_feature\large_apple_key.json

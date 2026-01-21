@@ -28,5 +28,11 @@ public class ModSaplingGenerators {
             Optional.empty(),
             Optional.of(ModConfiguredFeatures.LARGE_GOLDEN_APPLE_KEY),
             Optional.empty());
+
+    public static final SaplingGenerator FROSTY_APPLE = new SaplingGenerator(
+            MoreThanApples.MOD_ID + "frosty_apple",
+            Optional.empty(),
+            Optional.of(ModConfiguredFeatures.FROSTY_APPLE_TREE_KEY),
+            Optional.empty());
 }
 

@@ -1,7 +1,10 @@
 {
   "values": [
     "more-than-apples:apple_fence_gate",
+    "more-than-apples:test_apple_fence_gate",
+    "more-than-apples:frosty_apple_fence_gate",
     "more-than-apples:apple_fence_gate",
-    "more-than-apples:test_apple_fence_gate"
+    "more-than-apples:test_apple_fence_gate",
+    "more-than-apples:frosty_apple_fence_gate"
   ]
 }

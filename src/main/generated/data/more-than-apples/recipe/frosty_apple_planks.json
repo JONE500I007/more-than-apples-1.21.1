@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "more-than-apples:all_frosty_apple_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "more-than-apples:frosty_apple_planks"
+  }
+}

@@ -24,16 +24,16 @@
         }
       }
     },
-    "force_dirt": false,
+    "force_dirt": true,
     "ignore_vines": false,
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",
-      "limit": 0,
+      "limit": 1,
       "lower_size": 0,
-      "upper_size": 0
+      "upper_size": 1
     },
     "trunk_placer": {
-      "type": "minecraft:forking_trunk_placer",
+      "type": "minecraft:test_apple_trunk_placer",
       "base_height": 3,
       "height_rand_a": 1,
       "height_rand_b": 1

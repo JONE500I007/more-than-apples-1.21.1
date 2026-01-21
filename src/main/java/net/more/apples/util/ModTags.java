@@ -13,8 +13,8 @@ public class ModTags {
         public static final TagKey<Block> LOGS_THAT_BURN = createTag("logs_that_burn");
 
         public static final TagKey<Block> ALL_APPLE_LOG = createTag("all_apple_log");
-
         public static final TagKey<Block> ALL_TEST_APPLE_LOG = createTag("all_test_apple_log");
+        public static final TagKey<Block> ALL_FROSTY_APPLE_LOG = createTag("all_frosty_apple_log");
 
         public static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, name));
@@ -29,6 +29,7 @@ public class ModTags {
 
         public static final TagKey<Item> ALL_APPLE_LOG = createTag("all_apple_log");
         public static final TagKey<Item> ALL_TEST_APPLE_LOG = createTag("all_test_apple_log");
+        public static final TagKey<Item> ALL_FROSTY_APPLE_LOG = createTag("all_frosty_apple_log");
 
         public static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, name));

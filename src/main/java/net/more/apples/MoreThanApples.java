@@ -24,6 +24,8 @@ import net.more.apples.util.custom_trade.ModCustomAppleMTrades;
 import net.more.apples.util.custom_trade.ModCustomFarmerTrades;
 import net.more.apples.villager.ModAppleVillagers;
 import net.more.apples.world.gen.ModWorldGeneration;
+import net.more.apples.world.tree.ModFoliagePlacerType;
+import net.more.apples.world.tree.ModTrunkPlacerType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -66,6 +68,11 @@ public class MoreThanApples implements ModInitializer {
 		ModCustomAppleMTrades.registerCustomTrades();
 
 		ModBoats.registerBoats();
+		ModBoats.registerBoats2();
+		ModBoats.registerBoats3();
+
+		ModTrunkPlacerType.register();
+		ModFoliagePlacerType.register();
 		//ModEntityUseHandler2.register();
 		/*
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
@@ -113,6 +120,7 @@ public class MoreThanApples implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.GOLDEN_APPLE_LEAVES, 30, 60);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES, 30, 60);
 
+
 		StrippableBlockRegistry.register(ModBlocks2.TEST_APPLE_LOG, ModBlocks2.STRIPPED_TEST_APPLE_LOG);
 		StrippableBlockRegistry.register(ModBlocks2.TEST_APPLE_WOOD, ModBlocks2.STRIPPED_TEST_APPLE_WOOD);
 
@@ -127,6 +135,22 @@ public class MoreThanApples implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_APPLE_SLAB, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_APPLE_FENCE, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.TEST_APPLE_FENCE_GATE, 5, 20);
+
+
+		StrippableBlockRegistry.register(ModBlocks2.FROSTY_APPLE_LOG, ModBlocks2.STRIPPED_FROSTY_APPLE_LOG);
+		StrippableBlockRegistry.register(ModBlocks2.FROSTY_APPLE_WOOD, ModBlocks2.STRIPPED_FROSTY_APPLE_WOOD);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_LOG, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_WOOD, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.STRIPPED_FROSTY_APPLE_LOG, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.STRIPPED_FROSTY_APPLE_WOOD, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_PLANKS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_LEAVES, 30, 60);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_STAIRS, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_SLAB, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_FENCE, 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_FENCE_GATE, 5, 20);
 
 		FuelRegistry.INSTANCE.add(ModBlocks2.APPLE_STAIRS, 300);
 		FuelRegistry.INSTANCE.add(ModBlocks2.APPLE_SLAB, 150);
@@ -145,6 +169,15 @@ public class MoreThanApples implements ModInitializer {
 		FuelRegistry.INSTANCE.add(ModBlocks2.TEST_APPLE_FENCE_GATE, 300);
 		FuelRegistry.INSTANCE.add(ModBlocks2.TEST_APPLE_DOOR, 200);
 		FuelRegistry.INSTANCE.add(ModBlocks2.TEST_APPLE_TRAPDOOR, 200);
+
+		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_STAIRS, 300);
+		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_SLAB, 150);
+		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_BUTTON, 100);
+		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_PRESSURE_PLATE, 300);
+		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_FENCE, 300);
+		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_FENCE_GATE, 300);
+		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_DOOR, 200);
+		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_TRAPDOOR, 200);
 
 
 		LOGGER.info("Hello Fabric world!");
