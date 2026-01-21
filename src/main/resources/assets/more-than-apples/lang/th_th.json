@@ -153,35 +153,46 @@
   "advancements.more-than-apples.story.obtain_normal_apple.description": "กินแอปเปิ้ลครั้งแรกของคุณ บางทีมันน่าจะ กรอบ...?",
 
   "advancements.more-than-apples.story.obtain_green_apple.title": "คุณรู้สึกถึงโชคไหม?",
-  "advancements.more-than-apples.story.obtain_green_apple.description": "ไม่ละ........ผมจะชนะ",
+  "advancements.more-than-apples.story.obtain_green_apple.description": "กินแอปเปิ้ลเขียวเป็นครั้งแรก",
+  "//": "ไม่ละ........ผมจะชนะ",
 
   "advancements.more-than-apples.story.obtain_test_apple.title": "นี่_สำหรับ_การทดสอบ_ความก้าวหน้า",
-  "advancements.more-than-apples.story.obtain_test_apple.description": "คือผมขี้เกียจเกินกว่าที่จะวาด texture ใหม่ เพราะงั้นผมก็เลยทำแบบนี้ (:",
+  "advancements.more-than-apples.story.obtain_test_apple.description": "กิน_แอปเปิ้ล_ทดสอบ_เป็นครั้งแรก",
+  "//": "คือผมขี้เกียจเกินกว่าที่จะวาด texture ใหม่ เพราะงั้นผมก็เลยทำแบบนี้ (:",
 
   "advancements.more-than-apples.story.obtain_normal_golden_apple.title": "มันอร่อยมั้ยวะ?",
-  "advancements.more-than-apples.story.obtain_normal_golden_apple.description": "คุณรู้เปล่าว่ามันมีสวนผลไม้ที่เต็มไปด้วยแอปเปิ้ลทองคำ",
+  "advancements.more-than-apples.story.obtain_normal_golden_apple.description": "กินแอปเปิ้ลทองเป็นครั้งแรก",
+  "//": "คุณรู้เปล่าว่ามันมีสวนผลไม้ที่เต็มไปด้วยแอปเปิ้ลทองคำ",
 
   "advancements.more-than-apples.story.obtain_diamond_apple.title": "แอปเปิ้ลเพชรแวววาว!",
-  "advancements.more-than-apples.story.obtain_diamond_apple.description": "นี่มันยังแข็งกว่าทองอีกเหรอ?",
+  "advancements.more-than-apples.story.obtain_diamond_apple.description": "กินแอปเปิ้ลเพชรเป็นครั้งแรก",
+  "//": "นี่มันยังแข็งกว่าทองอีกเหรอ?",
 
   "advancements.more-than-apples.story.obtain_diamond_carrot.title": "แครอทเพชรสุดเจิดจ้า!",
-  "advancements.more-than-apples.story.obtain_diamond_carrot.description": "คุณค้นพบแล้วว่าเพชรแข็งกว่าทอง",
+  "advancements.more-than-apples.story.obtain_diamond_carrot.description": "กินแครอทเพชรเป็นครั้งแรก",
+  "//": "คุณค้นพบแล้วว่าเพชรแข็งกว่าทอง",
 
   "advancements.more-than-apples.story.obtain_netherite_apple.title": "ห่อฉันด้วยแอปเปิ้ล",
-  "advancements.more-than-apples.story.obtain_netherite_apple.description": "ฉันว่าบางทีสตีฟก็น่าจะกินเจ้านี่ได้นะ",
+  "advancements.more-than-apples.story.obtain_netherite_apple.description": "กินแอปเปิ้ลเนเธอไรต์เป็นครั้งแรก",
+  "//": "ฉันว่าบางทีสตีฟก็น่าจะกินเจ้านี่ได้นะ",
 
   "advancements.more-than-apples.story.obtain_normal_enchanted_golden_apple.title": "ไม่มีทางนา!",
-  "advancements.more-than-apples.story.obtain_normal_enchanted_golden_apple.description": "แต่ฉันรู้ทาง",
+  "advancements.more-than-apples.story.obtain_normal_enchanted_golden_apple.description": "กินแอปเปิ้ลทองร่ายมนตร์เป็นครั้งแรก",
+  "//": "แต่ฉันรู้ทาง",
 
   "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.title": "แอปเปิ้ล!!",
-  "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.description": "เ่าหฟนกาเ่ำนำนววหเาเนำ",
+  "//": "เ่าหฟนกาเ่ำนำนววหเาเนำ",
+  "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.description": "กินแอปเปิ้ลเพชรร่ายมนตร์เป็นครั้งแรก",
 
   "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.title": "ข้าไม่กลัวใครทั้งนั้น!",
-  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.description": "ฉันคิดว่าถ้าคุณกินนี่ คุณคงไม่ตายแน่ๆ",
+  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.description": "กินแอปเปิ้ลเนเธอไรต์ร่ายมนตร์เป็นครั้งแรก",
+  "//": "ฉันคิดว่าถ้าคุณกินนี่ คุณคงไม่ตายแน่ๆ",
 
   "advancements.more-than-apples.story.enter_golden_apple_orchard.title": "โลกช่างดูเป็นทอง",
-  "advancements.more-than-apples.story.enter_golden_apple_orchard.description": "ความฝันของฉันเป็นจริงแล้ว",
+  "advancements.more-than-apples.story.enter_golden_apple_orchard.description": "เดินทางไปยังไบโอมสวนแอปเปิ้ลทองคำ",
+  "//": "ความฝันของฉันเป็นจริงแล้ว",
 
   "advancements.more-than-apples.story.eat_all_apples.title": "มากกว่าแอปเปิ้ลนั้น",
-  "advancements.more-than-apples.story.eat_all_apples.description": "คำพูดมากมาย ความหมายแอปเปิ้ล"
+  "advancements.more-than-apples.story.eat_all_apples.description": "กินแอปเปิ้ลทุกชนิดที่มีทั้งหมด",
+  "//": "คำพูดมากมาย ความหมายแอปเปิ้ล"
 }

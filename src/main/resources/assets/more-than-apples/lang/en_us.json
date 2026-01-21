@@ -154,36 +154,47 @@
   "advancements.more-than-apples.story.obtain_normal_apple.title": "Your first bite!",
   "advancements.more-than-apples.story.obtain_normal_apple.description": "Eat your first apple maybe crisp..?",
 
-  "advancements.more-than-apples.story.obtain_green_apple.title": "Your feel lucky?",
-  "advancements.more-than-apples.story.obtain_green_apple.description": "Nah........I'd Win",
+  "advancements.more-than-apples.story.obtain_green_apple.title": "Did you feel lucky?",
+  "advancements.more-than-apples.story.obtain_green_apple.description": "Eat a Green Apple for the first time",
+  "//": "Nah........I'd Win",
 
   "advancements.more-than-apples.story.obtain_test_apple.title": "this_for_test_advancement",
-  "advancements.more-than-apples.story.obtain_test_apple.description": "i was too lazy to draw a new texture so I did it this way (:",
+  "advancements.more-than-apples.story.obtain_test_apple.description": "Eat_A_Test_Apple_for_the_first_time",
+  "//": "i was too lazy to draw a new texture so I did it this way (:",
 
   "advancements.more-than-apples.story.obtain_normal_golden_apple.title": "Is it delicious?",
-  "advancements.more-than-apples.story.obtain_normal_golden_apple.description": "Did you know there is a orchard full of golden apples",
+  "advancements.more-than-apples.story.obtain_normal_golden_apple.description": "Eat a Golden Apple for the first time",
+  "//": "Did you know there is a orchard full of golden apples",
 
   "advancements.more-than-apples.story.obtain_diamond_apple.title": "Shiny Diamond Apple!",
-  "advancements.more-than-apples.story.obtain_diamond_apple.description": "This is still harder than gold?",
+  "advancements.more-than-apples.story.obtain_diamond_apple.description": "Eat a Diamond Apple for the first time",
+  "//": "This is still harder than gold?",
 
   "advancements.more-than-apples.story.obtain_diamond_carrot.title": "Brilliant Diamond Carrot!",
-  "advancements.more-than-apples.story.obtain_diamond_carrot.description": "You found that diamonds are harder than gold",
+  "advancements.more-than-apples.story.obtain_diamond_carrot.description": "Eat a Diamond Carrot for the first time",
+  "//": "You found that diamonds are harder than gold",
 
   "advancements.more-than-apples.story.obtain_netherite_apple.title": "Cover Me With Apple",
-  "advancements.more-than-apples.story.obtain_netherite_apple.description": "I think maybe Steve can still eat this",
+  "advancements.more-than-apples.story.obtain_netherite_apple.description": "Eat a Netherite Apple for the first time",
+  "//": "I think maybe Steve can still eat this",
 
   "advancements.more-than-apples.story.obtain_normal_enchanted_golden_apple.title": "NO WAY!",
-  "advancements.more-than-apples.story.obtain_normal_enchanted_golden_apple.description": "but i know the way",
+  "advancements.more-than-apples.story.obtain_normal_enchanted_golden_apple.description": "Eat a Enchanted Golden Apple for the first time",
+  "//": "but i know the way",
 
   "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.title": "APPLE!!",
-  "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.description": "htjgodgjgedogkeodpg",
+  "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.description": "Eat a Enchanted Diamond Apple for the first time",
+  "//": "htjgodgjgedogkeodpg",
 
   "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.title": "I FEAR NO ONE!",
-  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.description": "I think if you eat this, you're not going to die",
+  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.description": "Eat a Enchanted Netherite Apple for the first time",
+  "//": "I think if you eat this, you're not going to die",
 
   "advancements.more-than-apples.story.enter_golden_apple_orchard.title": "The world looks gold",
-  "advancements.more-than-apples.story.enter_golden_apple_orchard.description": "My dream has come true",
+  "advancements.more-than-apples.story.enter_golden_apple_orchard.description": "Travel to the Golden Apple Orchard biome",
+  "//": "My dream has come true",
 
   "advancements.more-than-apples.story.eat_all_apples.title": "More Than Apples",
-  "advancements.more-than-apples.story.eat_all_apples.description": "So many words, one meaning: apple"
+  "advancements.more-than-apples.story.eat_all_apples.description": "Eat every type of apple",
+  "//": "So many words, one meaning: apple"
 }
