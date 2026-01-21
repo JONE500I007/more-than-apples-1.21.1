@@ -1,7 +1,7 @@
 ## Credits and Licenses
 
 This mod used **Terraform API** developed by **TerraformersMC**
-and **TerraBlender** API developed by **Glitchfiend**
+<br>and **TerraBlender** API developed by **Glitchfiend**
 
 ### Terraform API
 * **Original API Source:** [https://github.com/TerraformersMC/Terraform](https://github.com/TerraformersMC/Terraform)
