@@ -7,6 +7,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.more.apples.datagen.*;
 import net.more.apples.world.ModConfiguredFeatures;
 import net.more.apples.world.ModPlacedFeatures;
+import net.more.apples.world.biome.worldbiomes.ModBiomeFrostyApple;
 import net.more.apples.world.biome.worldbiomes.ModBiomesAppleGrove;
 import net.more.apples.world.biome.worldbiomes.ModBiomesGoldenAppleOrchard;
 
@@ -32,5 +33,6 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 
 		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomesAppleGrove::boostrap);
 		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomesGoldenAppleOrchard::boostrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomeFrostyApple::boostrap);
 	}
 }

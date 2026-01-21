@@ -92,6 +92,10 @@ public class FrostyAppleTrunkPlacer extends TrunkPlacer {
             BlockPos startPos,
             TreeFeatureConfig config) {
 
+//        if (!world.testBlockState(startPos.down(), state -> !state.isAir())) {
+//            return Collections.emptyList();
+//        }
+
         setToDirt(world, replacer, random, startPos.down(), config);
 
         List<FoliagePlacer.TreeNode> foliageNodes = new ArrayList<>();
@@ -102,6 +106,10 @@ public class FrostyAppleTrunkPlacer extends TrunkPlacer {
 
         for (Direction dir : Direction.Type.HORIZONTAL) {
             BlockPos baseBranch = startPos.offset(dir);
+
+            if (!hasSupport(world, baseBranch)) {
+                continue;
+            }
 
             clearSnow(world, replacer, baseBranch);
             clearSnow(world, replacer, baseBranch.down());
@@ -188,5 +196,12 @@ public class FrostyAppleTrunkPlacer extends TrunkPlacer {
         if (world.testBlockState(pos, state -> state.isOf(Blocks.SNOW))) {
             replacer.accept(pos, Blocks.AIR.getDefaultState());
         }
+    }
+
+    private boolean hasSupport(TestableWorld world, BlockPos pos) {
+        return world.testBlockState(
+                pos.down(),
+                state -> !state.isAir()
+        );
     }
 }

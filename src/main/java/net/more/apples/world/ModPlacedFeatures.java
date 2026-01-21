@@ -24,6 +24,8 @@ public class ModPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> LARGE_GOLDEN_APPLE_TREE_PLACED_KEY = registryKey("large_golden_apple_tree_placed");
 
+    public static final RegistryKey<PlacedFeature> FROSTY_APPLE_TREE_PLACED_KEY = registryKey("frosty_apple_tree_placed");
+
     public static final RegistryKey<PlacedFeature> EXTRA_FLOWERS_PLACED_KEY = registryKey("extra_flowers_placed");
 
     public static final RegistryKey<PlacedFeature> ORCHARD_SEAGRASS_PLACED_KEY = registryKey("orchard_seagrass_placed");
@@ -65,6 +67,10 @@ public class ModPlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                         RarityFilterPlacementModifier.of(7),
                         ModBlocks2.GOLDEN_APPLE_SAPLING));
+
+        register(context, FROSTY_APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FROSTY_APPLE_TREE_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        PlacedFeatures.createCountExtraModifier(3, 0.1f, 2), ModBlocks2.FROSTY_APPLE_SAPLING));
 
         /*
         context.register(EXTRA_FLOWERS_PLACED_KEY,

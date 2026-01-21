@@ -111,5 +111,27 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entrise -> {
             entrise.add(DIAMOND_NUGGET);
         });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entrise -> {
+            entrise.add(APPLE_SIGN);
+            entrise.add(APPLE_HANGING_SIGN);
+
+            entrise.add(TEST_APPLE_SIGN);
+            entrise.add(TEST_APPLE_HANGING_SIGN);
+
+            entrise.add(FROSTY_APPLE_SIGN);
+            entrise.add(FROSTY_APPLE_HANGING_SIGN);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entrise -> {
+            entrise.add(APPLE_BOAT);
+            entrise.add(APPLE_CHEST_BOAT);
+
+            entrise.add(TEST_APPLE_BOAT);
+            entrise.add(TEST_APPLE_CHEST_BOAT);
+
+            entrise.add(FROSTY_APPLE_BOAT);
+            entrise.add(FROSTY_APPLE_CHEST_BOAT);
+        });
     }
 }

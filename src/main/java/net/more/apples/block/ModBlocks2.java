@@ -325,6 +325,20 @@ public class ModBlocks2 {
             entrise.add(TEST_APPLE_TRAPDOOR);
             entrise.add(TEST_APPLE_PRESSURE_PLATE);
             entrise.add(TEST_APPLE_BUTTON);
+
+            entrise.add(FROSTY_APPLE_LOG);
+            entrise.add(FROSTY_APPLE_WOOD);
+            entrise.add(STRIPPED_FROSTY_APPLE_LOG);
+            entrise.add(STRIPPED_FROSTY_APPLE_WOOD);
+            entrise.add(FROSTY_APPLE_PLANKS);
+            entrise.add(FROSTY_APPLE_STAIRS);
+            entrise.add(FROSTY_APPLE_SLAB);
+            entrise.add(FROSTY_APPLE_FENCE);
+            entrise.add(FROSTY_APPLE_FENCE_GATE);
+            entrise.add(FROSTY_APPLE_DOOR);
+            entrise.add(FROSTY_APPLE_TRAPDOOR);
+            entrise.add(FROSTY_APPLE_PRESSURE_PLATE);
+            entrise.add(FROSTY_APPLE_BUTTON);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entrise -> {
@@ -340,6 +354,10 @@ public class ModBlocks2 {
             entrise.add(TEST_APPLE_LOG);
             entrise.add(TEST_APPLE_LEAVES);
             entrise.add(TEST_APPLE_SAPLING);
+
+            entrise.add(FROSTY_APPLE_LOG);
+            entrise.add(FROSTY_APPLE_LEAVES);
+            entrise.add(FROSTY_APPLE_SAPLING);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entrise -> {

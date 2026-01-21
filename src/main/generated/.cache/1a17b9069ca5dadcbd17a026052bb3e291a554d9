@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-21T16:36:07.4676563	More Than Apples/Block Loot Tables
+// 1.21.1	2026-01-21T23:53:14.1125129	More Than Apples/Block Loot Tables
 ae51b501fdc1ead0cd72ec756adc4c9c46ff248b data\more-than-apples\loot_table\blocks\apple_pressure_plate.json
 505c5b37137c122f3e3baa971ad8d40c6ead4cd0 data\more-than-apples\loot_table\blocks\apple_wood.json
 eea6bfeee8f5045a96375af9febb886f08c840d0 data\more-than-apples\loot_table\blocks\test_apple_slab.json
@@ -32,12 +32,12 @@ f19ab724560ada48e2cd78f7b96dc0099b7e0424 data\more-than-apples\loot_table\blocks
 7dd8320045510161666ffee24dfaaf8a7941c7e3 data\more-than-apples\loot_table\blocks\test_apple_fence.json
 e93c502c7151e758b1d3c97d776f2c347502cb8a data\more-than-apples\loot_table\blocks\apple_button.json
 52325acebb146551171c27417f461a2d81219da1 data\more-than-apples\loot_table\blocks\test_apple_wood.json
-3322aa26f57ddcf82aa789c68b9a15a909d0ea33 data\more-than-apples\loot_table\blocks\test_apple_trapdoor.json
 d0b01ff1e8ef655315f4001980b3f732da9940d1 data\more-than-apples\loot_table\blocks\frosty_apple_door.json
+3322aa26f57ddcf82aa789c68b9a15a909d0ea33 data\more-than-apples\loot_table\blocks\test_apple_trapdoor.json
 e4afffbb8ab5eeaa513e7c83dedbf1caec57fc97 data\more-than-apples\loot_table\blocks\frosty_apple_planks.json
 bd4b6c17c17358f0442b797898350d95d86ec519 data\more-than-apples\loot_table\blocks\apple_trapdoor.json
-f96db9c1884ce04624bccfd43500d246abe18d38 data\more-than-apples\loot_table\blocks\frosty_apple_sapling.json
 2408800772435a4e73f73a019609b7e84d85587f data\more-than-apples\loot_table\blocks\frosty_apple_slab.json
+f96db9c1884ce04624bccfd43500d246abe18d38 data\more-than-apples\loot_table\blocks\frosty_apple_sapling.json
 ada6cdd244014f9018fddd561a2bec39846e7f33 data\minecraft\loot_table\blocks\oak_hanging_sign.json
 3472a0bf08833fafeb2772598af03f9b15fe3646 data\more-than-apples\loot_table\blocks\frosty_apple_trapdoor.json
 d013017b485f660a9ef620f7a1fadcad372927da data\more-than-apples\loot_table\blocks\apple_fence_gate.json
