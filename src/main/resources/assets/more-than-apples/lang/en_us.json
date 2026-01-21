@@ -31,10 +31,15 @@
   "block.more-than-apples.apple_trapdoor": "Apple Trapdoor",
   "block.more-than-apples.apple_pressure_plate": "Apple Pressure Plate",
   "block.more-than-apples.apple_button": "Apple Button",
+  "block.more-than-apples.apple_standing_sign": "Apple Sign",
+  "block.more-than-apples.apple_hanging_sign": "Apple Hanging Sign",
+  "item.more-than-apples.apple_boat": "Apple Boat",
+  "item.more-than-apples.apple_chest_boat": "Apple Boat with Chest",
 
   "block.more-than-apples.golden_apple_leaves": "Golden Apple Leaves",
   "block.more-than-apples.fruit_golden_apple_leaves": "Fruit Golden Apple Leaves",
   "block.more-than-apples.golden_apple_sapling": "Golden Apple Sapling",
+
 
   "block.more-than-apples.test_apple_log": "Test_Apple_Log",
   "block.more-than-apples.test_apple_wood": "Test_Apple_Wood",
@@ -52,6 +57,33 @@
   "block.more-than-apples.test_apple_trapdoor": "Test_Apple_Trapdoor",
   "block.more-than-apples.test_apple_pressure_plate": "Test_Apple_Pressure_Plate",
   "block.more-than-apples.test_apple_button": "Test_Apple_Button",
+  "block.more-than-apples.test_apple_standing_sign": "Test_Apple_Sign",
+  "block.more-than-apples.test_apple_hanging_sign": "Test_Apple_Hanging_Sign",
+  "item.more-than-apples.test_apple_boat": "Test_Apple_Boat",
+  "item.more-than-apples.test_apple_chest_boat": "Test_Apple_Boat_with_Chest",
+
+
+  "block.more-than-apples.frosty_apple_log": "Frosty Apple Log",
+  "block.more-than-apples.frosty_apple_wood": "Frosty Apple Wood",
+  "block.more-than-apples.stripped_frosty_apple_log": "Stripped Frosty Apple Log",
+  "block.more-than-apples.stripped_frosty_apple_wood": "Stripped Frosty Apple Wood",
+  "block.more-than-apples.frosty_apple_planks": "Frosty Apple Planks",
+  "block.more-than-apples.frosty_apple_leaves": "Frosty Apple Leaves",
+  "block.more-than-apples.frosty_apple_sapling": "Frosty Apple Sapling",
+
+  "block.more-than-apples.frosty_apple_stairs": "Frosty Apple Stairs",
+  "block.more-than-apples.frosty_apple_slab": "Frosty Apple Slab",
+  "block.more-than-apples.frosty_apple_fence": "Frosty Apple Fence",
+  "block.more-than-apples.frosty_apple_fence_gate": "Frosty Apple Fence Gate",
+  "block.more-than-apples.frosty_apple_door": "Frosty Apple Door",
+  "block.more-than-apples.frosty_apple_trapdoor": "Frosty Apple Trapdoor",
+  "block.more-than-apples.frosty_apple_pressure_plate": "Frosty Apple Pressure Plate",
+  "block.more-than-apples.frosty_apple_button": "Frosty Apple Button",
+  "block.more-than-apples.frosty_apple_standing_sign": "Frosty Apple Sign",
+  "block.more-than-apples.frosty_apple_hanging_sign": "Frosty Apple Hanging Sign",
+  "item.more-than-apples.frosty_apple_boat": "Frosty Apple Boat",
+  "item.more-than-apples.frosty_apple_chest_boat": "Frosty Apple Boat with Chest",
+
 
   "block.more-than-apples.apple_ore": "Apple Ore",
   "block.more-than-apples.deepslate_apple_ore": "Deepslate Apple ore",
