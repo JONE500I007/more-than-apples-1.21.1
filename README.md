@@ -1,15 +1,15 @@
 ## Credits and Licenses
 
-This mod used **Terraform API** developed by **TerraformersMC**
+This mod uses **Terraform API** developed by **TerraformersMC**
 <br>and **TerraBlender** API developed by **Glitchfiend**
 
 ### Terraform API
 * **Original API Source:** [https://github.com/TerraformersMC/Terraform](https://github.com/TerraformersMC/Terraform)
-* **Developer This API:** [TerraformersMC](https://github.com/TerraformersMC)
+* **Developer:** [TerraformersMC](https://github.com/TerraformersMC)
 * **License:** This API is licensed under the **GNU Lesser General Public License v3.0 (LGPLv3)**.
 ### TerraBlender
 * **Original API Source:** [https://github.com/Glitchfiend/TerraBlender](https://github.com/Glitchfiend/TerraBlender)
-* **Developer This API:** [Glitchfiend](https://github.com/Glitchfiend)
+* **Developer:** [Glitchfiend](https://github.com/Glitchfiend)
 * **License:** This API is licensed under the **GNU Lesser General Public License v3.0 (LGPLv3)**.
 
 According to the LGPLv3 terms:
