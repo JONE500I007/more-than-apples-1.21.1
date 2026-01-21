@@ -1,9 +1,9 @@
 ## Credits and Licenses
 
-This mod incorporates the **Terraform API** developed by **TerraformersMC**. 
+This mod used **Terraform API** developed by **TerraformersMC**. 
 
 * **Original API Source:** [https://github.com/TerraformersMC/Terraform](https://github.com/TerraformersMC/Terraform)
-* **Developer Group:** [TerraformersMC](https://github.com/TerraformersMC)
+* **Developer This API:** [TerraformersMC](https://github.com/TerraformersMC)
 * **License:** This API is licensed under the **GNU Lesser General Public License v3.0 (LGPLv3)**.
 
 According to the LGPLv3 terms:
