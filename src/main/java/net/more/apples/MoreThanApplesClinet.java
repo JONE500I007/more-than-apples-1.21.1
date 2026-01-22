@@ -61,7 +61,7 @@ public class MoreThanApplesClinet implements ClientModInitializer {
         //SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks2.APPLE_SIGN_TEXTURE));
         //SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks2.APPLE_HANGING_SIGN_TEXTURE));
 
-        TerraformBoatClientHelper.registerModelLayers(ModBoats.APPLE_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(ModBoats.APPLE_BOAT_ID);
 //        TerraformBoatClientHelper.registerModelLayers(ModBoats.TEST_APPLE_BOAT_ID);
 //        TerraformBoatClientHelper.registerModelLayers(ModBoats.FROSTY_APPLE_BOAT_ID);
 
