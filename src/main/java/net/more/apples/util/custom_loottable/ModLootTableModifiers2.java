@@ -20,7 +20,7 @@ public class ModLootTableModifiers2 {
             Identifier.of("minecraft", "entities/creeper");
 
     private static final RegistryKey<LootTable> CREEPER_LOOT_TABLE_KEY =
-            EntityType.CREEPER.getLootTableId();
+            EntityType.CREEPER.getLootTableKey().get();
     private static final RegistryKey<LootTable> FISHING_LOOT_KEY =
             LootTables.FISHING_TREASURE_GAMEPLAY;
     private static final RegistryKey<LootTable> JUNGLE_TEMPLE_LOOT_KEY =

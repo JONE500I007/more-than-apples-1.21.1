@@ -15,30 +15,29 @@ import net.more.apples.item.custom.CustomEnchApple;
 
 public class ModItems {
     public static final Item GREEN_APPLE = registerItem("green_apple", new Item(new Item.Settings()
-            .food(ModFoodComponents.GREEN_APPLE_EFFECT)));
+            .food(ModFoodComponents.GREEN_APPLE_FOOD ,ModFoodComponents.GREEN_APPLE_EFFECT)));
     public static final Item TEST_APPLE = registerItem("test_apple", new Item(new Item.Settings()
-            .food(ModFoodComponents.TEST_APPLE_EFFECT)));
+            .food(ModFoodComponents.TEST_APPLE_FOOD ,ModFoodComponents.TEST_APPLE_EFFECT)));
 
     public static final Item DIAMOND_APPLE = registerItem("diamond_apple", new Item(new Item.Settings()
-            .food(ModFoodComponents.DIAMOND_APPLE_EFFECT)
+            .food(ModFoodComponents.DIAMOND_APPLE_FOOD, ModFoodComponents.DIAMOND_APPLE_EFFECT)
             .rarity(Rarity.RARE)));
     public static final Item ENCHANTED_DIAMOND_APPLE = registerItem("enchanted_diamond_apple", new CustomEnchApple(new Item.Settings()
-            .food(ModFoodComponents.ENCHANTED_DIAMOND_APPLE_EFFECT)
+            .food(ModFoodComponents.ENCHANTED_DIAMOND_APPLE_FOOD ,ModFoodComponents.ENCHANTED_DIAMOND_APPLE_EFFECT)
             .rarity(Rarity.EPIC)));
     public static final Item DIAMOND_CARROT = registerItem("diamond_carrot", new Item(new Item.Settings()
-            .food(ModFoodComponents.DIAMOND_CARROT_EFFECT)));
+            .food(ModFoodComponents.DIAMOND_CARROT_FOOD ,ModFoodComponents.DIAMOND_CARROT_EFFECT)));
 
     public static final Item NETHERITE_APPLE = registerItem("netherite_apple", new Item(new Item.Settings()
-            .food(ModFoodComponents.NETHERITE_APPLE_EFFECT)
+            .food(ModFoodComponents.NETHERITE_APPLE_FOOD ,ModFoodComponents.NETHERITE_APPLE_EFFECT)
             .rarity(Rarity.RARE)));
     public static final Item ENCHANTED_NETHERITE_APPLE = registerItem("enchanted_netherite_apple", new CustomEnchApple(new Item.Settings()
-            .food(ModFoodComponents.ENCHANTED_NETHERITE_APPLE_EFFECT)
+            .food(ModFoodComponents.ENCHANTED_NETHERITE_APPLE_FOOD ,ModFoodComponents.ENCHANTED_NETHERITE_APPLE_EFFECT)
             .rarity(Rarity.EPIC)));
 
-    public static final Item APPLE_SIGN = registerItem("apple_sign", new SignItem(new Item.Settings()
-            .maxCount(16),
-            ModBlocks2.APPLE_STANDING_SIGN,
-            ModBlocks2.APPLE_WALL_SIGN));
+    public static final Item APPLE_SIGN = registerItem("apple_sign",
+            new SignItem(ModBlocks2.APPLE_STANDING_SIGN, ModBlocks2.APPLE_WALL_SIGN,
+                    new Item.Settings().maxCount(16)));
     public static final Item APPLE_HANGING_SIGN = registerItem("apple_hanging_sign", new HangingSignItem(
             ModBlocks2.APPLE_HANGING_SIGN,
             ModBlocks2.APPLE_WALL_HANGING_SIGN,
@@ -48,10 +47,9 @@ public class ModItems {
     public static final Item APPLE_CHEST_BOAT =
             TerraformBoatItemHelper.registerBoatItem(ModBoats.APPLE_CHEST_BOAT_ID, ModBoats.APPLE_BOAT_KEY, true);
 
-    public static final Item TEST_APPLE_SIGN = registerItem("test_apple_sign", new SignItem(new Item.Settings()
-            .maxCount(16),
-            ModBlocks2.TEST_APPLE_STANDING_SIGN,
-            ModBlocks2.TEST_APPLE_WALL_SIGN));
+    public static final Item TEST_APPLE_SIGN = registerItem("test_apple_sign",
+            new SignItem(ModBlocks2.TEST_APPLE_STANDING_SIGN, ModBlocks2.TEST_APPLE_WALL_SIGN,
+                    new Item.Settings().maxCount(16)));
     public static final Item TEST_APPLE_HANGING_SIGN = registerItem("test_apple_hanging_sign", new HangingSignItem(
             ModBlocks2.TEST_APPLE_HANGING_SIGN,
             ModBlocks2.TEST_APPLE_WALL_HANGING_SIGN,
@@ -61,10 +59,9 @@ public class ModItems {
     public static final Item TEST_APPLE_CHEST_BOAT =
             TerraformBoatItemHelper.registerBoatItem(ModBoats.TEST_APPLE_CHEST_BOAT_ID, ModBoats.TEST_APPLE_BOAT_KEY, true);
 
-    public static final Item FROSTY_APPLE_SIGN = registerItem("frosty_apple_sign", new SignItem(new Item.Settings()
-            .maxCount(16),
-            ModBlocks2.FROSTY_APPLE_STANDING_SIGN,
-            ModBlocks2.FROSTY_APPLE_WALL_SIGN));
+    public static final Item FROSTY_APPLE_SIGN = registerItem("frosty_apple_sign",
+            new SignItem(ModBlocks2.FROSTY_APPLE_STANDING_SIGN, ModBlocks2.FROSTY_APPLE_WALL_SIGN,
+                    new Item.Settings().maxCount(16)));
     public static final Item FROSTY_APPLE_HANGING_SIGN = registerItem("frosty_apple_hanging_sign", new HangingSignItem(
             ModBlocks2.FROSTY_APPLE_HANGING_SIGN,
             ModBlocks2.FROSTY_APPLE_WALL_HANGING_SIGN,

@@ -3,6 +3,7 @@ package net.more.apples.effect.this_effect;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.server.world.ServerWorld;
 
 public class FreezingResistanceEffect extends StatusEffect {
     public FreezingResistanceEffect(StatusEffectCategory category, int color) {
@@ -15,7 +16,7 @@ public class FreezingResistanceEffect extends StatusEffect {
     }
 
     @Override
-    public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
+    public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
         entity.setFrozenTicks(0);
         return true;
     }

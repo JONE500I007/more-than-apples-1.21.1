@@ -69,7 +69,7 @@ public class ModBiomeFrostyApple {
 //        DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
 
         DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
-        DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
+        //DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
         DefaultBiomeFeatures.addLessKelp(biomeBuilder);
 //        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
 //                OceanPlacedFeatures.SEA_PICKLE);

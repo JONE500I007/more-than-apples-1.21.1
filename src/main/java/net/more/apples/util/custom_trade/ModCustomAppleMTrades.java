@@ -89,7 +89,7 @@ public class ModCustomAppleMTrades {
                 ItemStack randomPick  = new ItemStack(Items.GOLDEN_PICKAXE);
                 var enchantments = entity.getWorld()
                         .getRegistryManager()
-                        .getWrapperOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .streamEntries()
                         .map(ref -> (RegistryEntry<Enchantment>) ref)
                         .filter(entry -> entry.value().isPrimaryItem(randomPick));

@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
@@ -152,32 +152,34 @@ public class MoreThanApples implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_FENCE, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_FENCE_GATE, 5, 20);
 
-		FuelRegistry.INSTANCE.add(ModBlocks2.APPLE_STAIRS, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.APPLE_SLAB, 150);
-		FuelRegistry.INSTANCE.add(ModBlocks2.APPLE_BUTTON, 100);
-		FuelRegistry.INSTANCE.add(ModBlocks2.APPLE_PRESSURE_PLATE, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.APPLE_FENCE, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.APPLE_FENCE_GATE, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.APPLE_DOOR, 200);
-		FuelRegistry.INSTANCE.add(ModBlocks2.APPLE_TRAPDOOR, 200);
+		FuelRegistryEvents.BUILD.register(((builder, context) -> {
+			builder.add(ModBlocks2.APPLE_STAIRS, 300);
+			builder.add(ModBlocks2.APPLE_SLAB, 150);
+			builder.add(ModBlocks2.APPLE_BUTTON, 100);
+			builder.add(ModBlocks2.APPLE_PRESSURE_PLATE, 300);
+			builder.add(ModBlocks2.APPLE_FENCE, 300);
+			builder.add(ModBlocks2.APPLE_FENCE_GATE, 300);
+			builder.add(ModBlocks2.APPLE_DOOR, 200);
+			builder.add(ModBlocks2.APPLE_TRAPDOOR, 200);
 
-		FuelRegistry.INSTANCE.add(ModBlocks2.TEST_APPLE_STAIRS, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.TEST_APPLE_SLAB, 150);
-		FuelRegistry.INSTANCE.add(ModBlocks2.TEST_APPLE_BUTTON, 100);
-		FuelRegistry.INSTANCE.add(ModBlocks2.TEST_APPLE_PRESSURE_PLATE, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.TEST_APPLE_FENCE, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.TEST_APPLE_FENCE_GATE, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.TEST_APPLE_DOOR, 200);
-		FuelRegistry.INSTANCE.add(ModBlocks2.TEST_APPLE_TRAPDOOR, 200);
+			builder.add(ModBlocks2.TEST_APPLE_STAIRS, 300);
+			builder.add(ModBlocks2.TEST_APPLE_SLAB, 150);
+			builder.add(ModBlocks2.TEST_APPLE_BUTTON, 100);
+			builder.add(ModBlocks2.TEST_APPLE_PRESSURE_PLATE, 300);
+			builder.add(ModBlocks2.TEST_APPLE_FENCE, 300);
+			builder.add(ModBlocks2.TEST_APPLE_FENCE_GATE, 300);
+			builder.add(ModBlocks2.TEST_APPLE_DOOR, 200);
+			builder.add(ModBlocks2.TEST_APPLE_TRAPDOOR, 200);
 
-		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_STAIRS, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_SLAB, 150);
-		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_BUTTON, 100);
-		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_PRESSURE_PLATE, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_FENCE, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_FENCE_GATE, 300);
-		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_DOOR, 200);
-		FuelRegistry.INSTANCE.add(ModBlocks2.FROSTY_APPLE_TRAPDOOR, 200);
+			builder.add(ModBlocks2.FROSTY_APPLE_STAIRS, 300);
+			builder.add(ModBlocks2.FROSTY_APPLE_SLAB, 150);
+			builder.add(ModBlocks2.FROSTY_APPLE_BUTTON, 100);
+			builder.add(ModBlocks2.FROSTY_APPLE_PRESSURE_PLATE, 300);
+			builder.add(ModBlocks2.FROSTY_APPLE_FENCE, 300);
+			builder.add(ModBlocks2.FROSTY_APPLE_FENCE_GATE, 300);
+			builder.add(ModBlocks2.FROSTY_APPLE_DOOR, 200);
+			builder.add(ModBlocks2.FROSTY_APPLE_TRAPDOOR, 200);
+		}));
 
 
 		LOGGER.info("Hello Fabric world!");
