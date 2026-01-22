@@ -68,6 +68,7 @@ public class ModBiomeFrostyApple {
 //                VegetationPlacedFeatures.FLOWER_MEADOW);
 //        DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
 
+        DefaultBiomeFeatures.addSweetBerryBushes(biomeBuilder);
         DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
         DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
         DefaultBiomeFeatures.addLessKelp(biomeBuilder);

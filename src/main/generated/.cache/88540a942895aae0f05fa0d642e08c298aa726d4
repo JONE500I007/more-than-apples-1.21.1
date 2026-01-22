@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-21T23:53:14.1080081	More Than Apples/Model Definitions
+// 1.21.1	2026-01-23T04:44:15.9575198	More Than Apples/Model Definitions
 82633f10829c41be3f11ee309926fc4769ab9d34 assets\more-than-apples\blockstates\apple_log.json
 a98f0a531eb91f1ceba91334a1d292ddeaa534be assets\more-than-apples\blockstates\frosty_apple_door.json
 dff15634144ef1fb5c13068095c066fced69328e assets\more-than-apples\models\block\stripped_test_apple_log.json
@@ -27,8 +27,8 @@ c9e0e3190933c6f0fa38e0b6af48e352b470d536 assets\more-than-apples\models\block\fr
 5bc9338aca935444d6ec5cfcc9f8dbe77f3a990a assets\more-than-apples\blockstates\apple_slab.json
 6afd5ee4ea7f6bcef8da6d1bba760be91229598a assets\more-than-apples\models\item\frosty_apple_pressure_plate.json
 0e8421f9bb6a4a6e1216f2100a0a8f627ec97c1c assets\more-than-apples\blockstates\frosty_apple_trapdoor.json
-09be5ad4199d6239af433ed98b3d83a1955e900a assets\more-than-apples\models\block\frosty_apple_door_bottom_left_open.json
 c7aaa880dbb33309d947ad0922686f2e7c3aa0e6 assets\more-than-apples\models\block\apple_door_top_left_open.json
+09be5ad4199d6239af433ed98b3d83a1955e900a assets\more-than-apples\models\block\frosty_apple_door_bottom_left_open.json
 036c93aad5d09c14144ad0aea367630bc834ebb1 assets\more-than-apples\blockstates\stripped_test_apple_wood.json
 0f1d86c97b7e3a32fe1c030807c8ee4a73957f2b assets\more-than-apples\blockstates\stripped_frosty_apple_log.json
 690ca7dff8df1c68d0512d8809b87223cf9fee85 assets\more-than-apples\blockstates\test_apple_standing_sign.json
@@ -76,8 +76,8 @@ f930db6992c618e74ebd59f55f9bf2263dceb745 assets\more-than-apples\models\block\te
 192a74c86db95ca5ad31162ce6f8d913a12f005d assets\more-than-apples\blockstates\apple_wood.json
 f1c83cde6af46e44b91cb7ce1ede69c55ac470b8 assets\more-than-apples\models\item\test_apple_door.json
 afce703cb7ae784e131d9ed06f8dee6e2ef52598 assets\more-than-apples\blockstates\test_apple_wall_hanging_sign.json
-7caf6d2bcebadcbc139ffadf8b3d2caf56779e62 assets\more-than-apples\blockstates\frosty_apple_log.json
 590818d30d372f2063ffa8f82f7bf79a845f1b54 assets\more-than-apples\blockstates\frosty_apple_standing_sign.json
+7caf6d2bcebadcbc139ffadf8b3d2caf56779e62 assets\more-than-apples\blockstates\frosty_apple_log.json
 39d4a987fb3ddeee12d31ecfbfad45df6cc658eb assets\more-than-apples\blockstates\apple_fence_gate.json
 67e14d203eed3473dacab9d12cf0064fa9fd66b3 assets\more-than-apples\models\item\apple_stairs.json
 adcacbe994c939ad5e85d76b00adf03d23741fe7 assets\more-than-apples\models\block\stripped_frosty_apple_log.json

@@ -24,6 +24,8 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(ModPoiTagProvider::new);
 		//pack.addProvider(ModLootTableGen::new);
+
+		pack.addProvider((output, registriesFuture) -> new ModBiomeTagProvider(output, registriesFuture));
 	}
 
 	@Override

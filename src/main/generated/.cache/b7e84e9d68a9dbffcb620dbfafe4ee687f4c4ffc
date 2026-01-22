@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-21T23:53:14.1024927	More Than Apples/Recipes
+// 1.21.1	2026-01-23T04:44:15.952508	More Than Apples/Recipes
 c1a75eda5b7ffbc6ab573a7a0b0f1252b05622a8 data\more-than-apples\advancement\recipes\decorations\frosty_apple_boat.json
 1484f2aa5d0f0a5e6da65f3609baebe06b5dae51 data\more-than-apples\recipe\frosty_apple_door.json
 fece3c0098eca3612cdf3c1dc95b6835366cc175 data\more-than-apples\advancement\recipes\redstone\frosty_apple_button.json
@@ -80,8 +80,8 @@ c79ef11c4e84fb382b878e45c8c9606034d663bc data\more-than-apples\recipe\stripped_a
 f18d93af22b5a9afabe5ed90d88b2ebabd903ad2 data\more-than-apples\recipe\apple_button.json
 62e51fc7325cc1f0b913ea653fdd518e4023dff9 data\more-than-apples\advancement\recipes\building_blocks\test_apple_planks.json
 8688e91316a66beed6c5676dece35d476be8a7c2 data\more-than-apples\advancement\recipes\redstone\frosty_apple_fence_gate.json
-bb1a2cd14bacef1d6d1cfd65287f471e690c99e7 data\more-than-apples\advancement\recipes\building_blocks\test_apple_slab.json
 05c8f630a248aef0612d133ccadb27972d9f6325 data\more-than-apples\advancement\recipes\redstone\test_apple_trapdoor.json
+bb1a2cd14bacef1d6d1cfd65287f471e690c99e7 data\more-than-apples\advancement\recipes\building_blocks\test_apple_slab.json
 7fe6feaafb3426bcd109ce362b79111493e2fc61 data\more-than-apples\recipe\frosty_apple_trapdoor.json
 e595ea353ca1b6320465ea03a2457cb357f7b6ed data\more-than-apples\advancement\recipes\decorations\frosty_apple_sign.json
 794e066ddd8d39c61a82063b6cc80e17be988e87 data\more-than-apples\recipe\frosty_apple_planks.json
