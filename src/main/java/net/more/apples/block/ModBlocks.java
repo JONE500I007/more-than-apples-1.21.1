@@ -8,6 +8,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.more.apples.MoreThanApples;
@@ -17,6 +19,7 @@ public class ModBlocks {
 
     public static final Block DIAMOND_APPLE_BLOCK = registerBlock("diamond_apple_block",
             new Block(AbstractBlock.Settings.create().strength(2f)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "diamond_apple_block")))
                     .sounds(BlockSoundGroup.METAL)));
 
     private static Block registerBlock(String name, Block block) {
