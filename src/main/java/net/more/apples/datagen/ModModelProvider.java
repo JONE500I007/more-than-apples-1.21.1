@@ -170,19 +170,19 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModBlocks2.FROSTY_APPLE_SAPLING.asItem(), Models.GENERATED);
 
         itemModelGenerator.register(ModItems.APPLE_SIGN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.APPLE_HANGING_SIGN, Models.GENERATED);
         itemModelGenerator.register(ModItems.APPLE_BOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.APPLE_CHEST_BOAT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.APPLE_HANGING_SIGN, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.TEST_APPLE_SIGN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TEST_APPLE_HANGING_SIGN, Models.GENERATED);
         itemModelGenerator.register(ModItems.TEST_APPLE_BOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.TEST_APPLE_CHEST_BOAT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TEST_APPLE_HANGING_SIGN, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.FROSTY_APPLE_SIGN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FROSTY_APPLE_HANGING_SIGN, Models.GENERATED);
         itemModelGenerator.register(ModItems.FROSTY_APPLE_BOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.FROSTY_APPLE_CHEST_BOAT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FROSTY_APPLE_HANGING_SIGN, Models.GENERATED);
 
 //        itemModelGenerator.register(ModItems.APPLE_SIGN, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.APPLE_BOAT, Models.GENERATED);

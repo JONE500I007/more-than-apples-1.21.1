@@ -3,15 +3,15 @@
     "more-than-apples:apple_barrel",
     "more-than-apples:apple_standing_sign",
     "more-than-apples:apple_wall_sign",
-    "more-than-apples:apple_hanging_sign",
+    "more-than-apples:apple_hanging_sign_block",
     "more-than-apples:apple_wall_hanging_sign",
     "more-than-apples:test_apple_standing_sign",
     "more-than-apples:test_apple_wall_sign",
-    "more-than-apples:test_apple_hanging_sign",
+    "more-than-apples:test_apple_hanging_sign_block",
     "more-than-apples:test_apple_wall_hanging_sign",
     "more-than-apples:frosty_apple_standing_sign",
     "more-than-apples:frosty_apple_wall_sign",
-    "more-than-apples:frosty_apple_hanging_sign",
+    "more-than-apples:frosty_apple_hanging_sign_block",
     "more-than-apples:frosty_apple_wall_hanging_sign"
   ]
 }

@@ -133,6 +133,7 @@ public class ModBlocks2 {
                     AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)
                             .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_wall_hanging_sign")))));
 
+
     public static final Block GOLDEN_APPLE_LEAVES = registerBlock2("golden_apple_leaves",
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "golden_apple_leaves")))));
@@ -236,7 +237,7 @@ public class ModBlocks2 {
     public static final Block TEST_APPLE_HANGING_SIGN_BLOCK = registerBlock2("test_apple_hanging_sign_block",
             new TerraformHangingSignBlock(TEST_APPLE_HANGING_SIGN_TEXTURE, TEST_APPLE_HANGING_GUI_SIGN_TEXTURE,
                     AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)
-                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_hanging_sign")))));
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_hanging_sign_block")))));
     public static final Block TEST_APPLE_WALL_HANGING_SIGN = registerBlock2("test_apple_wall_hanging_sign",
             new TerraformWallHangingSignBlock(TEST_APPLE_HANGING_SIGN_TEXTURE, TEST_APPLE_HANGING_GUI_SIGN_TEXTURE,
                     AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)
@@ -329,7 +330,7 @@ public class ModBlocks2 {
                     FROSTY_APPLE_HANGING_SIGN_TEXTURE,
                     FROSTY_APPLE_HANGING_GUI_SIGN_TEXTURE,
                     AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)
-                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_hanging_sign")))));
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_hanging_sign_block")))));
     public static final Block FROSTY_APPLE_WALL_HANGING_SIGN = registerBlock2("frosty_apple_wall_hanging_sign",
             new TerraformWallHangingSignBlock(
                     FROSTY_APPLE_HANGING_SIGN_TEXTURE,
@@ -353,7 +354,8 @@ public class ModBlocks2 {
 
     private static void registerBlockItem2(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(MoreThanApples.MOD_ID, name),
-                new BlockItem(block, new Item.Settings()));
+                new BlockItem(block, new Item.Settings()
+                        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, name)))));
     }
 
     public static void registerModBlocks2() {

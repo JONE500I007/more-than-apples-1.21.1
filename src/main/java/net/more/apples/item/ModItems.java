@@ -15,8 +15,7 @@ import net.more.apples.block.ModBlocksForText;
 import net.more.apples.entity.ModBoats;
 import net.more.apples.item.custom.CustomEnchApple;
 
-import static net.more.apples.entity.ModBoats.APPLE_BOAT_ID;
-import static net.more.apples.entity.ModBoats.TEST_APPLE_BOAT_ID;
+import static net.more.apples.entity.ModBoats.*;
 
 public class ModItems {
     public static final Item GREEN_APPLE = registerItem("green_apple", new Item(new Item.Settings()
@@ -100,9 +99,9 @@ public class ModItems {
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_hanging_sign")))
                     .maxCount(16)));
     public static final Item FROSTY_APPLE_BOAT =
-            TerraformBoatItemHelper.registerBoatItem(APPLE_BOAT_ID, false);
+            TerraformBoatItemHelper.registerBoatItem(FROSTY_APPLE_BOAT_ID, false);
     public static final Item FROSTY_APPLE_CHEST_BOAT =
-            TerraformBoatItemHelper.registerBoatItem(APPLE_BOAT_ID, true);
+            TerraformBoatItemHelper.registerBoatItem(FROSTY_APPLE_BOAT_ID, true);
 
 
 //    public static final Item CUSTOM_SIGN_ITEM = registerItem("custom_sign_item",
@@ -144,25 +143,25 @@ public class ModItems {
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entrise -> {
-//            entrise.add(APPLE_SIGN);
-//            entrise.add(APPLE_HANGING_SIGN);
-//
-//            entrise.add(TEST_APPLE_SIGN);
-//            entrise.add(TEST_APPLE_HANGING_SIGN);
+            entrise.add(APPLE_SIGN);
+            entrise.add(APPLE_HANGING_SIGN);
 
-//            entrise.add(FROSTY_APPLE_SIGN);
-//            entrise.add(FROSTY_APPLE_HANGING_SIGN);
+            entrise.add(TEST_APPLE_SIGN);
+            entrise.add(TEST_APPLE_HANGING_SIGN);
+
+            entrise.add(FROSTY_APPLE_SIGN);
+            entrise.add(FROSTY_APPLE_HANGING_SIGN);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entrise -> {
-//            entrise.add(APPLE_BOAT);
-//            entrise.add(APPLE_CHEST_BOAT);
+            entrise.add(APPLE_BOAT);
+            entrise.add(APPLE_CHEST_BOAT);
 
-//            entrise.add(TEST_APPLE_BOAT);
-//            entrise.add(TEST_APPLE_CHEST_BOAT);
-//
-//            entrise.add(FROSTY_APPLE_BOAT);
-//            entrise.add(FROSTY_APPLE_CHEST_BOAT);
+            entrise.add(TEST_APPLE_BOAT);
+            entrise.add(TEST_APPLE_CHEST_BOAT);
+
+            entrise.add(FROSTY_APPLE_BOAT);
+            entrise.add(FROSTY_APPLE_CHEST_BOAT);
         });
     }
 }

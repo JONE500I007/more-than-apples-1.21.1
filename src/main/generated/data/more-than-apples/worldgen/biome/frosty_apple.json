@@ -1,11 +1,9 @@
 {
-  "carvers": {
-    "air": [
-      "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
-    ]
-  },
+  "carvers": [
+    "minecraft:cave",
+    "minecraft:cave_extra_underground",
+    "minecraft:canyon"
+  ],
   "downfall": 0.8,
   "effects": {
     "fog_color": 12638463,
@@ -79,7 +77,6 @@
       "minecraft:glow_lichen",
       "more-than-apples:frosty_apple_tree_placed",
       "minecraft:patch_grass_badlands",
-      "minecraft:seagrass_simple",
       "minecraft:kelp_warm",
       "minecraft:seagrass_river"
     ],

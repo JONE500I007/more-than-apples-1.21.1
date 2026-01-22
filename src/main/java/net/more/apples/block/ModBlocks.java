@@ -29,7 +29,9 @@ public class ModBlocks {
 
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(MoreThanApples.MOD_ID, name),
-                new BlockItem(block, new Item.Settings().food(ModFoodComponents.DIAMOND_CARROT_FOOD ,ModFoodComponents.DIAMOND_APPLE_EFFECT)));
+                new BlockItem(block, new Item.Settings()
+                        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, name)))
+                        .food(ModFoodComponents.DIAMOND_CARROT_FOOD ,ModFoodComponents.DIAMOND_APPLE_EFFECT)));
     }
 
     public static void registerModBlocks() {
