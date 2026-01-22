@@ -3,9 +3,7 @@
   "category": "building",
   "group": "wooden_slab",
   "key": {
-    "#": {
-      "item": "more-than-apples:test_apple_planks"
-    }
+    "#": "more-than-apples:test_apple_planks"
   },
   "pattern": [
     "###"

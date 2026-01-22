@@ -1,5 +1,7 @@
 package net.more.apples.world.biome.worldbiomes;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -38,6 +40,8 @@ public class ModBiomeFrostyApple {
     public static Biome applegBiome(Registerable<Biome> context) {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.FOX, 8, 2, 4));
+
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
         DefaultBiomeFeatures.addOceanMobs(spawnBuilder, 10, 4, 10);
@@ -71,6 +75,7 @@ public class ModBiomeFrostyApple {
         DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
         //DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
         DefaultBiomeFeatures.addLessKelp(biomeBuilder);
+        DefaultBiomeFeatures.addSweetBerryBushes(biomeBuilder);
 //        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
 //                OceanPlacedFeatures.SEA_PICKLE);
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,

@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "wooden_sign",
   "key": {
-    "#": {
-      "item": "more-than-apples:apple_planks"
-    },
-    "X": {
-      "item": "minecraft:stick"
-    }
+    "#": "more-than-apples:apple_planks",
+    "X": "minecraft:stick"
   },
   "pattern": [
     "###",

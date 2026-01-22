@@ -118,6 +118,7 @@ public class ModBlocks2 {
     public static final Identifier APPLE_HANGING_GUI_SIGN_TEXTURE =
             Identifier.of(MoreThanApples.MOD_ID, "textures/gui/hanging_signs/apple_sign_gui");
 
+    /*
     public static final Block APPLE_STANDING_SIGN = registerBlock2("apple_standing_sign",
             new TerraformSignBlock(APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_standing_sign")))));
@@ -129,6 +130,25 @@ public class ModBlocks2 {
                     AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)
                             .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_hanging_sign_block")))));
     public static final Block APPLE_WALL_HANGING_SIGN = registerBlock2("apple_wall_hanging_sign",
+            new TerraformWallHangingSignBlock(APPLE_HANGING_SIGN_TEXTURE, APPLE_HANGING_GUI_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_wall_hanging_sign")))));
+     */
+    public static final Block APPLE_STANDING_SIGN = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "apple_standing_sign"),
+            new TerraformSignBlock(APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_standing_sign")))));
+    public static final Block APPLE_WALL_SIGN = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "apple_wall_sign"),
+            new TerraformWallSignBlock(APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_wall_sign")))));
+    public static final Block APPLE_HANGING_SIGN_BLOCK = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "apple_hanging_sign_block"),
+            new TerraformHangingSignBlock(APPLE_HANGING_SIGN_TEXTURE, APPLE_HANGING_GUI_SIGN_TEXTURE,
+                    AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_hanging_sign_block")))));
+    public static final Block APPLE_WALL_HANGING_SIGN = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "apple_wall_hanging_sign"),
             new TerraformWallHangingSignBlock(APPLE_HANGING_SIGN_TEXTURE, APPLE_HANGING_GUI_SIGN_TEXTURE,
                     AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)
                             .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_wall_hanging_sign")))));
@@ -228,17 +248,21 @@ public class ModBlocks2 {
     public static final Identifier TEST_APPLE_HANGING_GUI_SIGN_TEXTURE =
             Identifier.of(MoreThanApples.MOD_ID, "textures/gui/hanging_signs/test_apple_sign_gui");
 
-    public static final Block TEST_APPLE_STANDING_SIGN = registerBlock2("test_apple_standing_sign",
+    public static final Block TEST_APPLE_STANDING_SIGN = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "test_apple_standing_sign"),
             new TerraformSignBlock(TEST_APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_standing_sign")))));
-    public static final Block TEST_APPLE_WALL_SIGN = registerBlock2("test_apple_wall_sign",
+    public static final Block TEST_APPLE_WALL_SIGN = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "test_apple_wall_sign"),
             new TerraformWallSignBlock(TEST_APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_wall_sign")))));
-    public static final Block TEST_APPLE_HANGING_SIGN_BLOCK = registerBlock2("test_apple_hanging_sign_block",
+    public static final Block TEST_APPLE_HANGING_SIGN_BLOCK = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "test_apple_hanging_sign_block"),
             new TerraformHangingSignBlock(TEST_APPLE_HANGING_SIGN_TEXTURE, TEST_APPLE_HANGING_GUI_SIGN_TEXTURE,
                     AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)
                             .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_hanging_sign_block")))));
-    public static final Block TEST_APPLE_WALL_HANGING_SIGN = registerBlock2("test_apple_wall_hanging_sign",
+    public static final Block TEST_APPLE_WALL_HANGING_SIGN = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "test_apple_wall_hanging_sign"),
             new TerraformWallHangingSignBlock(TEST_APPLE_HANGING_SIGN_TEXTURE, TEST_APPLE_HANGING_GUI_SIGN_TEXTURE,
                     AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)
                             .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "test_apple_wall_hanging_sign")))));
@@ -317,24 +341,23 @@ public class ModBlocks2 {
             Identifier.of(MoreThanApples.MOD_ID, "entity/signs/hanging/frosty_apple_hanging_sign");
     public static final Identifier FROSTY_APPLE_HANGING_GUI_SIGN_TEXTURE =
             Identifier.of(MoreThanApples.MOD_ID, "textures/gui/hanging_signs/frosty_apple_sign_gui");
-    public static final Block FROSTY_APPLE_STANDING_SIGN = registerBlock2("frosty_apple_standing_sign",
-            new TerraformSignBlock(FROSTY_APPLE_SIGN_TEXTURE,
-                    AbstractBlock.Settings.copy(Blocks.OAK_SIGN)
-                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_standing_sign")))));
-    public static final Block FROSTY_APPLE_WALL_SIGN = registerBlock2("frosty_apple_wall_sign",
-            new TerraformWallSignBlock(FROSTY_APPLE_SIGN_TEXTURE,
-                    AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)
-                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_wall_sign")))));
-    public static final Block FROSTY_APPLE_HANGING_SIGN_BLOCK = registerBlock2("frosty_apple_hanging_sign_block",
-            new TerraformHangingSignBlock(
-                    FROSTY_APPLE_HANGING_SIGN_TEXTURE,
-                    FROSTY_APPLE_HANGING_GUI_SIGN_TEXTURE,
+
+    public static final Block FROSTY_APPLE_STANDING_SIGN = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_standing_sign"),
+            new TerraformSignBlock(FROSTY_APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_standing_sign")))));
+    public static final Block FROSTY_APPLE_WALL_SIGN = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_wall_sign"),
+            new TerraformWallSignBlock(FROSTY_APPLE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_wall_sign")))));
+    public static final Block FROSTY_APPLE_HANGING_SIGN_BLOCK = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_hanging_sign_block"),
+            new TerraformHangingSignBlock(FROSTY_APPLE_HANGING_SIGN_TEXTURE, FROSTY_APPLE_HANGING_GUI_SIGN_TEXTURE,
                     AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)
                             .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_hanging_sign_block")))));
-    public static final Block FROSTY_APPLE_WALL_HANGING_SIGN = registerBlock2("frosty_apple_wall_hanging_sign",
-            new TerraformWallHangingSignBlock(
-                    FROSTY_APPLE_HANGING_SIGN_TEXTURE,
-                    FROSTY_APPLE_HANGING_GUI_SIGN_TEXTURE,
+    public static final Block FROSTY_APPLE_WALL_HANGING_SIGN = Registry.register(Registries.BLOCK,
+            Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_wall_hanging_sign"),
+            new TerraformWallHangingSignBlock(FROSTY_APPLE_HANGING_SIGN_TEXTURE, FROSTY_APPLE_HANGING_GUI_SIGN_TEXTURE,
                     AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)
                             .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_wall_hanging_sign")))));
 

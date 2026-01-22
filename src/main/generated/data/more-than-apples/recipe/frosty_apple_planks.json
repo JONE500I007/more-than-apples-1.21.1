@@ -3,9 +3,7 @@
   "category": "building",
   "group": "planks",
   "ingredients": [
-    {
-      "tag": "more-than-apples:all_frosty_apple_log"
-    }
+    "#more-than-apples:all_apple_log"
   ],
   "result": {
     "count": 4,

@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "hanging_sign",
   "key": {
-    "C": {
-      "item": "minecraft:chain"
-    },
-    "L": {
-      "item": "more-than-apples:stripped_test_apple_log"
-    }
+    "C": "minecraft:chain",
+    "L": "more-than-apples:stripped_test_apple_log"
   },
   "pattern": [
     "C C",

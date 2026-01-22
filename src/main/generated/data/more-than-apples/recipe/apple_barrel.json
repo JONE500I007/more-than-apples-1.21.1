@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "tag": "more-than-apples:all_apple"
-    },
-    "B": {
-      "tag": "minecraft:planks"
-    }
+    "A": "#more-than-apples:all_apple",
+    "B": "#minecraft:planks"
   },
   "pattern": [
     "AA",

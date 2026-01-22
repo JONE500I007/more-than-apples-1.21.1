@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#more-than-apples:all_frosty_apple_log"
+            "items": "#more-than-apples:all_apple_log"
           }
         ]
       },
