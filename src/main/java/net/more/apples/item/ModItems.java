@@ -42,6 +42,7 @@ public class ModItems {
             ModBlocks2.APPLE_HANGING_SIGN,
             ModBlocks2.APPLE_WALL_HANGING_SIGN,
             new Item.Settings().maxCount(16)));
+
     public static final Item APPLE_BOAT =
             TerraformBoatItemHelper.registerBoatItem(ModBoats.APPLE_BOAT_ID, ModBoats.APPLE_BOAT_KEY, false);
     public static final Item APPLE_CHEST_BOAT =
@@ -54,10 +55,10 @@ public class ModItems {
             ModBlocks2.TEST_APPLE_HANGING_SIGN,
             ModBlocks2.TEST_APPLE_WALL_HANGING_SIGN,
             new Item.Settings().maxCount(16)));
-    public static final Item TEST_APPLE_BOAT =
-            TerraformBoatItemHelper.registerBoatItem(ModBoats.TEST_APPLE_BOAT_ID, ModBoats.TEST_APPLE_BOAT_KEY, false);
-    public static final Item TEST_APPLE_CHEST_BOAT =
-            TerraformBoatItemHelper.registerBoatItem(ModBoats.TEST_APPLE_CHEST_BOAT_ID, ModBoats.TEST_APPLE_BOAT_KEY, true);
+//    public static final Item TEST_APPLE_BOAT =
+//            TerraformBoatItemHelper.registerBoatItem(ModBoats.TEST_APPLE_BOAT_ID, ModBoats.TEST_APPLE_BOAT_KEY, false);
+//    public static final Item TEST_APPLE_CHEST_BOAT =
+//            TerraformBoatItemHelper.registerBoatItem(ModBoats.TEST_APPLE_CHEST_BOAT_ID, ModBoats.TEST_APPLE_BOAT_KEY, true);
 
     public static final Item FROSTY_APPLE_SIGN = registerItem("frosty_apple_sign",
             new SignItem(ModBlocks2.FROSTY_APPLE_STANDING_SIGN, ModBlocks2.FROSTY_APPLE_WALL_SIGN,
@@ -66,10 +67,10 @@ public class ModItems {
             ModBlocks2.FROSTY_APPLE_HANGING_SIGN,
             ModBlocks2.FROSTY_APPLE_WALL_HANGING_SIGN,
             new Item.Settings().maxCount(16)));
-    public static final Item FROSTY_APPLE_BOAT =
-            TerraformBoatItemHelper.registerBoatItem(ModBoats.FROSTY_APPLE_BOAT_ID, ModBoats.FROSTY_APPLE_BOAT_KEY, false);
-    public static final Item FROSTY_APPLE_CHEST_BOAT =
-            TerraformBoatItemHelper.registerBoatItem(ModBoats.FROSTY_APPLE_CHEST_BOAT_ID, ModBoats.FROSTY_APPLE_BOAT_KEY, true);
+//    public static final Item FROSTY_APPLE_BOAT =
+//            TerraformBoatItemHelper.registerBoatItem(ModBoats.FROSTY_APPLE_BOAT_ID, ModBoats.FROSTY_APPLE_BOAT_KEY, false);
+//    public static final Item FROSTY_APPLE_CHEST_BOAT =
+//            TerraformBoatItemHelper.registerBoatItem(ModBoats.FROSTY_APPLE_CHEST_BOAT_ID, ModBoats.FROSTY_APPLE_BOAT_KEY, true);
 
 
 //    public static final Item CUSTOM_SIGN_ITEM = registerItem("custom_sign_item",
@@ -124,11 +125,11 @@ public class ModItems {
             entrise.add(APPLE_BOAT);
             entrise.add(APPLE_CHEST_BOAT);
 
-            entrise.add(TEST_APPLE_BOAT);
-            entrise.add(TEST_APPLE_CHEST_BOAT);
-
-            entrise.add(FROSTY_APPLE_BOAT);
-            entrise.add(FROSTY_APPLE_CHEST_BOAT);
+//            entrise.add(TEST_APPLE_BOAT);
+//            entrise.add(TEST_APPLE_CHEST_BOAT);
+//
+//            entrise.add(FROSTY_APPLE_BOAT);
+//            entrise.add(FROSTY_APPLE_CHEST_BOAT);
         });
     }
 }

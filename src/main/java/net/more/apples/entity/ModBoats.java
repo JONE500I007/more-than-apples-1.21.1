@@ -14,6 +14,7 @@ public class ModBoats {
     public static final Identifier APPLE_CHEST_BOAT_ID = Identifier.of(MoreThanApples.MOD_ID, "apple_chest_boat");
     public static final RegistryKey<TerraformBoatType> APPLE_BOAT_KEY = TerraformBoatTypeRegistry.createKey(APPLE_BOAT_ID);
 
+
     public static void registerBoats() {
         TerraformBoatType appleBoat = new TerraformBoatType.Builder()
                 .item(ModItems.APPLE_BOAT)
@@ -22,7 +23,7 @@ public class ModBoats {
                 .build();
         Registry.register(TerraformBoatTypeRegistry.INSTANCE, APPLE_BOAT_KEY, appleBoat);
     }
-
+    /*
     public static final Identifier TEST_APPLE_BOAT_ID = Identifier.of(MoreThanApples.MOD_ID, "test_apple_boat");
     public static final Identifier TEST_APPLE_CHEST_BOAT_ID = Identifier.of(MoreThanApples.MOD_ID, "test_apple_chest_boat");
     public static final RegistryKey<TerraformBoatType> TEST_APPLE_BOAT_KEY = TerraformBoatTypeRegistry.createKey(TEST_APPLE_BOAT_ID);
@@ -48,4 +49,5 @@ public class ModBoats {
                 .build();
         Registry.register(TerraformBoatTypeRegistry.INSTANCE, FROSTY_APPLE_BOAT_KEY, appleBoat);
     }
+     */
 }

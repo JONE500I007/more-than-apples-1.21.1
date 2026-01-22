@@ -68,8 +68,8 @@ public class MoreThanApples implements ModInitializer {
 		ModCustomAppleMTrades.registerCustomTrades();
 
 		ModBoats.registerBoats();
-		ModBoats.registerBoats2();
-		ModBoats.registerBoats3();
+//		ModBoats.registerBoats2();
+//		ModBoats.registerBoats3();
 
 		ModTrunkPlacerType.register();
 		ModFoliagePlacerType.register();

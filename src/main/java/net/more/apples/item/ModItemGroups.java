@@ -75,8 +75,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks2.TEST_APPLE_BUTTON);
                         entries.add(ModItems.TEST_APPLE_SIGN);
                         entries.add(ModItems.TEST_APPLE_HANGING_SIGN);
-                        entries.add(ModItems.TEST_APPLE_BOAT);
-                        entries.add(ModItems.TEST_APPLE_CHEST_BOAT);
+//                        entries.add(ModItems.TEST_APPLE_BOAT);
+//                        entries.add(ModItems.TEST_APPLE_CHEST_BOAT);
 
                         entries.add(ModBlocks2.TEST_APPLE_LEAVES);
                         entries.add(ModBlocks2.TEST_APPLE_SAPLING);
@@ -97,8 +97,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks2.FROSTY_APPLE_BUTTON);
                         entries.add(ModItems.FROSTY_APPLE_SIGN);
                         entries.add(ModItems.FROSTY_APPLE_HANGING_SIGN);
-                        entries.add(ModItems.FROSTY_APPLE_BOAT);
-                        entries.add(ModItems.FROSTY_APPLE_CHEST_BOAT);
+//                        entries.add(ModItems.FROSTY_APPLE_BOAT);
+//                        entries.add(ModItems.FROSTY_APPLE_CHEST_BOAT);
 
                         entries.add(ModBlocks2.FROSTY_APPLE_LEAVES);
                         entries.add(ModBlocks2.FROSTY_APPLE_SAPLING);
