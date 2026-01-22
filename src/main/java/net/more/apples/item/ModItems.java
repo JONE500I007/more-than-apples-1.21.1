@@ -16,6 +16,7 @@ import net.more.apples.entity.ModBoats;
 import net.more.apples.item.custom.CustomEnchApple;
 
 import static net.more.apples.entity.ModBoats.APPLE_BOAT_ID;
+import static net.more.apples.entity.ModBoats.TEST_APPLE_BOAT_ID;
 
 public class ModItems {
     public static final Item GREEN_APPLE = registerItem("green_apple", new Item(new Item.Settings()
@@ -46,58 +47,62 @@ public class ModItems {
             .food(ModFoodComponents.ENCHANTED_NETHERITE_APPLE_FOOD ,ModFoodComponents.ENCHANTED_NETHERITE_APPLE_EFFECT)
             .rarity(Rarity.EPIC)));
 
-//    public static final Item APPLE_SIGN = registerItem("apple_sign",
-//            new SignItem(ModBlocks2.APPLE_STANDING_SIGN, ModBlocks2.APPLE_WALL_SIGN,
-//                    new Item.Settings()
-//                            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "apple_sign")))
-//                            .maxCount(16)));
-//    public static final Item APPLE_HANGING_SIGN = registerItem("apple_hanging_sign", new HangingSignItem(
-//            ModBlocks2.APPLE_HANGING_SIGN,
-//            ModBlocks2.APPLE_WALL_HANGING_SIGN,
-//            new Item.Settings()
-//                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "apple_hanging_sign")))
-//                    .maxCount(16)));
+    public static final Item APPLE_SIGN = registerItem("apple_sign",
+            new SignItem(ModBlocks2.APPLE_STANDING_SIGN, ModBlocks2.APPLE_WALL_SIGN,
+                    new Item.Settings()
+                            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "apple_sign")))
+                            .maxCount(16)));
+    public static final Item APPLE_HANGING_SIGN = registerItem("apple_hanging_sign", new HangingSignItem(
+            ModBlocks2.APPLE_HANGING_SIGN_BLOCK,
+            ModBlocks2.APPLE_WALL_HANGING_SIGN,
+            new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "apple_hanging_sign")))
+                    .maxCount(16)));
 
 
-//    public static final Item APPLE_BOAT =
-//            TerraformBoatItemHelper.registerBoatItem(APPLE_BOAT_ID, false);
-//    public static final Item APPLE_CHEST_BOAT =
-//            TerraformBoatItemHelper.registerBoatItem(APPLE_BOAT_ID, true);
+    public static final Item APPLE_BOAT =
+            TerraformBoatItemHelper.registerBoatItem(APPLE_BOAT_ID, false);
+    public static final Item APPLE_CHEST_BOAT =
+            TerraformBoatItemHelper.registerBoatItem(APPLE_BOAT_ID, true);
 //    public static final Item APPLE_BOAT = ModBoats.APPLE_BOAT_ITEM;
 //    public static final Item APPLE_CHEST_BOAT = ModBoats.APPLE_CHEST_BOAT_ITEM;
-
-
-//    public static final Item TEST_APPLE_SIGN = registerItem("test_apple_sign",
-//            new SignItem(ModBlocks2.TEST_APPLE_STANDING_SIGN, ModBlocks2.TEST_APPLE_WALL_SIGN,
-//                    new Item.Settings()
-//                            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "test_apple_sign")))
-//                            .maxCount(16)));
-//    public static final Item TEST_APPLE_HANGING_SIGN = registerItem("test_apple_hanging_sign", new HangingSignItem(
-//            ModBlocks2.TEST_APPLE_HANGING_SIGN,
-//            ModBlocks2.TEST_APPLE_WALL_HANGING_SIGN,
-//            new Item.Settings()
-//                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "test_apple_hanging_sign")))
-//                    .maxCount(16)));
 //    public static final Item TEST_APPLE_BOAT =
-//            TerraformBoatItemHelper.registerBoatItem(ModBoats.TEST_APPLE_BOAT_ID, ModBoats.TEST_APPLE_BOAT_KEY, false);
+//        TerraformBoatItemHelper.registerBoatItem(ModBoats.TEST_APPLE_BOAT_ID, ModBoats.TEST_APPLE_BOAT_KEY, false);
 //    public static final Item TEST_APPLE_CHEST_BOAT =
 //            TerraformBoatItemHelper.registerBoatItem(ModBoats.TEST_APPLE_CHEST_BOAT_ID, ModBoats.TEST_APPLE_BOAT_KEY, true);
 
-//    public static final Item FROSTY_APPLE_SIGN = registerItem("frosty_apple_sign",
-//            new SignItem(ModBlocks2.FROSTY_APPLE_STANDING_SIGN, ModBlocks2.FROSTY_APPLE_WALL_SIGN,
-//                    new Item.Settings()
-//                            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_sign")))
-//                            .maxCount(16)));
-//    public static final Item FROSTY_APPLE_HANGING_SIGN = registerItem("frosty_apple_hanging_sign", new HangingSignItem(
-//            ModBlocks2.FROSTY_APPLE_HANGING_SIGN,
-//            ModBlocks2.FROSTY_APPLE_WALL_HANGING_SIGN,
-//            new Item.Settings()
-//                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_hanging_sign")))
-//                    .maxCount(16)));
-//    public static final Item FROSTY_APPLE_BOAT =
-//            TerraformBoatItemHelper.registerBoatItem(ModBoats.FROSTY_APPLE_BOAT_ID, ModBoats.FROSTY_APPLE_BOAT_KEY, false);
-//    public static final Item FROSTY_APPLE_CHEST_BOAT =
-//            TerraformBoatItemHelper.registerBoatItem(ModBoats.FROSTY_APPLE_CHEST_BOAT_ID, ModBoats.FROSTY_APPLE_BOAT_KEY, true);
+
+    public static final Item TEST_APPLE_SIGN = registerItem("test_apple_sign",
+            new SignItem(ModBlocks2.TEST_APPLE_STANDING_SIGN, ModBlocks2.TEST_APPLE_WALL_SIGN,
+                    new Item.Settings()
+                            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "test_apple_sign")))
+                            .maxCount(16)));
+    public static final Item TEST_APPLE_HANGING_SIGN = registerItem("test_apple_hanging_sign", new HangingSignItem(
+            ModBlocks2.TEST_APPLE_HANGING_SIGN_BLOCK,
+            ModBlocks2.TEST_APPLE_WALL_HANGING_SIGN,
+            new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "test_apple_hanging_sign")))
+                    .maxCount(16)));
+    public static final Item TEST_APPLE_BOAT =
+            TerraformBoatItemHelper.registerBoatItem(TEST_APPLE_BOAT_ID, false);
+    public static final Item TEST_APPLE_CHEST_BOAT =
+            TerraformBoatItemHelper.registerBoatItem(TEST_APPLE_BOAT_ID, true);
+
+    public static final Item FROSTY_APPLE_SIGN = registerItem("frosty_apple_sign",
+            new SignItem(ModBlocks2.FROSTY_APPLE_STANDING_SIGN, ModBlocks2.FROSTY_APPLE_WALL_SIGN,
+                    new Item.Settings()
+                            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_sign")))
+                            .maxCount(16)));
+    public static final Item FROSTY_APPLE_HANGING_SIGN = registerItem("frosty_apple_hanging_sign", new HangingSignItem(
+            ModBlocks2.FROSTY_APPLE_HANGING_SIGN_BLOCK,
+            ModBlocks2.FROSTY_APPLE_WALL_HANGING_SIGN,
+            new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_hanging_sign")))
+                    .maxCount(16)));
+    public static final Item FROSTY_APPLE_BOAT =
+            TerraformBoatItemHelper.registerBoatItem(APPLE_BOAT_ID, false);
+    public static final Item FROSTY_APPLE_CHEST_BOAT =
+            TerraformBoatItemHelper.registerBoatItem(APPLE_BOAT_ID, true);
 
 
 //    public static final Item CUSTOM_SIGN_ITEM = registerItem("custom_sign_item",

@@ -73,13 +73,13 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerHangingSign(
                 ModBlocks2.STRIPPED_APPLE_LOG,
-                ModBlocks2.APPLE_HANGING_SIGN,
+                ModBlocks2.APPLE_HANGING_SIGN_BLOCK,
                 ModBlocks2.APPLE_WALL_HANGING_SIGN
         );
 
         blockStateModelGenerator.registerHangingSign(
                 ModBlocks2.STRIPPED_TEST_APPLE_LOG,
-                ModBlocks2.TEST_APPLE_HANGING_SIGN,
+                ModBlocks2.TEST_APPLE_HANGING_SIGN_BLOCK,
                 ModBlocks2.TEST_APPLE_WALL_HANGING_SIGN
         );
 
@@ -126,7 +126,7 @@ public class ModModelProvider extends FabricModelProvider {
         );
         blockStateModelGenerator.registerHangingSign(
                 ModBlocks2.STRIPPED_FROSTY_APPLE_LOG,
-                ModBlocks2.FROSTY_APPLE_HANGING_SIGN,
+                ModBlocks2.FROSTY_APPLE_HANGING_SIGN_BLOCK,
                 ModBlocks2.FROSTY_APPLE_WALL_HANGING_SIGN
         );
         BlockStateModelGenerator.BlockTexturePool frostyAppleGarnetPool = blockStateModelGenerator
@@ -169,22 +169,24 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModBlocks2.GOLDEN_APPLE_SAPLING.asItem(), Models.GENERATED);
         itemModelGenerator.register(ModBlocks2.FROSTY_APPLE_SAPLING.asItem(), Models.GENERATED);
 
-//        itemModelGenerator.register(ModItems.APPLE_SIGN, Models.GENERATED);
-//        itemModelGenerator.register(ModItems.TEST_APPLE_SIGN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.APPLE_SIGN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.APPLE_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.APPLE_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.APPLE_HANGING_SIGN, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.TEST_APPLE_SIGN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TEST_APPLE_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TEST_APPLE_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TEST_APPLE_HANGING_SIGN, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.FROSTY_APPLE_SIGN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FROSTY_APPLE_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FROSTY_APPLE_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FROSTY_APPLE_HANGING_SIGN, Models.GENERATED);
+
+//        itemModelGenerator.register(ModItems.APPLE_SIGN, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.APPLE_BOAT, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.APPLE_CHEST_BOAT, Models.GENERATED);
-
-//        itemModelGenerator.register(ModItems.TEST_APPLE_BOAT, Models.GENERATED);
-//        itemModelGenerator.register(ModItems.TEST_APPLE_CHEST_BOAT, Models.GENERATED);
-
-        //itemModelGenerator.register(ModItems.FROSTY_APPLE_SIGN, Models.GENERATED);
-//        itemModelGenerator.register(ModItems.FROSTY_APPLE_BOAT, Models.GENERATED);
-//        itemModelGenerator.register(ModItems.FROSTY_APPLE_CHEST_BOAT, Models.GENERATED);
-
-        //itemModelGenerator.register(ModItems.APPLE_SIGN, Models.GENERATED);
-        //itemModelGenerator.register(ModItems.APPLE_BOAT, Models.GENERATED);
-        //itemModelGenerator.register(ModItems.APPLE_CHEST_BOAT, Models.GENERATED);
-        //itemModelGenerator.register(ModItems.APPLE_HANGING_SIGN, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.APPLE_HANGING_SIGN, Models.GENERATED);
     }
 }

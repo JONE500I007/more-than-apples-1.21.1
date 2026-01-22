@@ -41,7 +41,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks2.APPLE_STANDING_SIGN);
         addDrop(ModBlocks2.APPLE_WALL_SIGN);
-        addDrop(ModBlocks2.APPLE_HANGING_SIGN);
+        addDrop(ModBlocks2.APPLE_HANGING_SIGN_BLOCK);
         addDrop(ModBlocks2.APPLE_WALL_HANGING_SIGN);
 
 
@@ -66,7 +66,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks2.TEST_APPLE_STANDING_SIGN);
         addDrop(ModBlocks2.TEST_APPLE_WALL_SIGN);
-        addDrop(ModBlocks2.TEST_APPLE_HANGING_SIGN);
+        addDrop(ModBlocks2.TEST_APPLE_HANGING_SIGN_BLOCK);
         addDrop(ModBlocks2.TEST_APPLE_WALL_HANGING_SIGN);
 
         addDrop(ModBlocks2.APPLE_BARREL);
@@ -93,7 +93,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks2.FROSTY_APPLE_STANDING_SIGN);
         addDrop(ModBlocks2.FROSTY_APPLE_WALL_SIGN);
-        addDrop(ModBlocks2.FROSTY_APPLE_HANGING_SIGN);
+        addDrop(ModBlocks2.FROSTY_APPLE_HANGING_SIGN_BLOCK);
         addDrop(ModBlocks2.FROSTY_APPLE_WALL_HANGING_SIGN);
 
     }

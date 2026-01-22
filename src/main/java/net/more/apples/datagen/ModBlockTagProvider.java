@@ -119,17 +119,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks2.APPLE_BARREL)
                 .add(ModBlocks2.APPLE_STANDING_SIGN)
                 .add(ModBlocks2.APPLE_WALL_SIGN)
-                .add(ModBlocks2.APPLE_HANGING_SIGN)
+                .add(ModBlocks2.APPLE_HANGING_SIGN_BLOCK)
                 .add(ModBlocks2.APPLE_WALL_HANGING_SIGN)
 
                 .add(ModBlocks2.TEST_APPLE_STANDING_SIGN)
                 .add(ModBlocks2.TEST_APPLE_WALL_SIGN)
-                .add(ModBlocks2.TEST_APPLE_HANGING_SIGN)
+                .add(ModBlocks2.TEST_APPLE_HANGING_SIGN_BLOCK)
                 .add(ModBlocks2.TEST_APPLE_WALL_HANGING_SIGN)
 
                 .add(ModBlocks2.FROSTY_APPLE_STANDING_SIGN)
                 .add(ModBlocks2.FROSTY_APPLE_WALL_SIGN)
-                .add(ModBlocks2.FROSTY_APPLE_HANGING_SIGN)
+                .add(ModBlocks2.FROSTY_APPLE_HANGING_SIGN_BLOCK)
                 .add(ModBlocks2.FROSTY_APPLE_WALL_HANGING_SIGN);
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
                 .add(ModBlocks2.APPLE_LEAVES)
