@@ -35,6 +35,7 @@
   "item.more-than-apples.apple_hanging_sign": "Apple Hanging Sign",
   "item.more-than-apples.apple_boat": "Apple Boat",
   "item.more-than-apples.apple_chest_boat": "Apple Boat with Chest",
+  "entity.more-than-apples.apple_chest_boat": "Apple Boat with Chest",
 
   "item.more-than-apples.golden_apple_leaves": "Golden Apple Leaves",
   "item.more-than-apples.fruit_golden_apple_leaves": "Fruit Golden Apple Leaves",
@@ -61,6 +62,7 @@
   "item.more-than-apples.test_apple_hanging_sign": "Test_Apple_Hanging_Sign",
   "item.more-than-apples.test_apple_boat": "Test_Apple_Boat",
   "item.more-than-apples.test_apple_chest_boat": "Test_Apple_Boat_with_Chest",
+  "entity.more-than-apples.test_apple_chest_boat": "Test_Apple_Boat_with_Chest",
 
 
   "item.more-than-apples.frosty_apple_log": "Frosty Apple Log",
@@ -83,6 +85,7 @@
   "item.more-than-apples.frosty_apple_hanging_sign": "Frosty Apple Hanging Sign",
   "item.more-than-apples.frosty_apple_boat": "Frosty Apple Boat",
   "item.more-than-apples.frosty_apple_chest_boat": "Frosty Apple Boat with Chest",
+  "entity.more-than-apples.frosty_apple_chest_boat": "Frosty Apple Boat with Chest",
 
 
   "item.more-than-apples.apple_ore": "Apple Ore",
