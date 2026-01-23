@@ -10,8 +10,8 @@ import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import net.minecraft.particle.EntityEffectParticleEffect;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.particle.TintedParticleEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -54,12 +54,12 @@ public class ModBlocks2 {
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_planks")))));
     public static final Block APPLE_LEAVES = registerBlock2("apple_leaves",
             new UntintedParticleLeavesBlock(
-                    0.02f, EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F)
+                    0.02f, TintedParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F)
                     ,AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "apple_leaves")))));
     public static final Block FRUIT_APPLE_LEAVES = registerBlock2("fruit_apple_leaves",
             new UntintedParticleLeavesBlock(
-                    0.02f, EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F)
+                    0.02f, TintedParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F)
                     ,AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "fruit_apple_leaves")))));
     public static final Block APPLE_SAPLING = registerBlock2("apple_sapling",
@@ -186,12 +186,12 @@ public class ModBlocks2 {
 
     public static final Block GOLDEN_APPLE_LEAVES = registerBlock2("golden_apple_leaves",
             new UntintedParticleLeavesBlock(
-                    0.02f , EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
+                    0.02f , TintedParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
                     AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                             .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "golden_apple_leaves")))));
     public static final Block FRUIT_GOLDEN_APPLE_LEAVES = registerBlock2("fruit_golden_apple_leaves",
             new UntintedParticleLeavesBlock(
-                    0.02f , EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
+                    0.02f , TintedParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
                     AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                             .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "fruit_golden_apple_leaves")))));
     public static final Block GOLDEN_APPLE_SAPLING = registerBlock2("golden_apple_sapling",
@@ -325,7 +325,7 @@ public class ModBlocks2 {
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_planks")))));
     public static final Block FROSTY_APPLE_LEAVES = registerBlock2("frosty_apple_leaves",
             new UntintedParticleLeavesBlock(
-                    0.02f , EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0x85c0c8),
+                    0.02f , TintedParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0x85c0c8),
                     AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
                             .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "frosty_apple_leaves")))));
     public static final Block FROSTY_APPLE_SAPLING = registerBlock2("frosty_apple_sapling",
