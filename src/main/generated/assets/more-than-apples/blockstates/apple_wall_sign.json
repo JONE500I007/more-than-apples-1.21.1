@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "more-than-apples:block/apple_standing_sign"
+      "model": "more-than-apples:block/apple_wall_sign"
     }
   }
 }

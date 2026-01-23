@@ -14,7 +14,7 @@ c3ae5f7db9d4160c2c293c623c6a017c2e484193 assets/more-than-apples/blockstates/app
 f7870356cf4eecbddc9b199d5bf623188ddb0454 assets/more-than-apples/blockstates/apple_standing_sign.json
 053045c23d1c7b1e17de8e3ef59e2993410fe11a assets/more-than-apples/blockstates/apple_trapdoor.json
 8f224052e2e81408d2db68b6886d134e6c8e46f4 assets/more-than-apples/blockstates/apple_wall_hanging_sign.json
-f7870356cf4eecbddc9b199d5bf623188ddb0454 assets/more-than-apples/blockstates/apple_wall_sign.json
+79c04431ac3f7672034340eb39af33705111b726 assets/more-than-apples/blockstates/apple_wall_sign.json
 192a74c86db95ca5ad31162ce6f8d913a12f005d assets/more-than-apples/blockstates/apple_wood.json
 144874a7eae8309436e24981d89cdb3fcbeddd78 assets/more-than-apples/blockstates/frosty_apple_button.json
 a98f0a531eb91f1ceba91334a1d292ddeaa534be assets/more-than-apples/blockstates/frosty_apple_door.json
@@ -31,7 +31,7 @@ ba92c3446dd70ba289b4792f2915d85f2b07bd79 assets/more-than-apples/blockstates/fro
 590818d30d372f2063ffa8f82f7bf79a845f1b54 assets/more-than-apples/blockstates/frosty_apple_standing_sign.json
 0e8421f9bb6a4a6e1216f2100a0a8f627ec97c1c assets/more-than-apples/blockstates/frosty_apple_trapdoor.json
 69a8fa9d8fe0c75bd6cda8dcc8d797ababbebe29 assets/more-than-apples/blockstates/frosty_apple_wall_hanging_sign.json
-590818d30d372f2063ffa8f82f7bf79a845f1b54 assets/more-than-apples/blockstates/frosty_apple_wall_sign.json
+a72d4820ab3d7b9015339da0142fa9dccabccae7 assets/more-than-apples/blockstates/frosty_apple_wall_sign.json
 b5329e408267de4d29d5344d966aa0f9e19346f6 assets/more-than-apples/blockstates/frosty_apple_wood.json
 c1e493a0c3b71c53c07fb2680a3057bc4ac592ef assets/more-than-apples/blockstates/golden_apple_sapling.json
 093764bbe83ea9ac49c4032fbf5f2ab8d27546ce assets/more-than-apples/blockstates/stripped_apple_log.json
@@ -54,7 +54,7 @@ db34d110efc6a90333615663269152510fabdf8f assets/more-than-apples/blockstates/tes
 690ca7dff8df1c68d0512d8809b87223cf9fee85 assets/more-than-apples/blockstates/test_apple_standing_sign.json
 de8346a170f99d8c32f8ebb3f9b2f0a85b1e9f5f assets/more-than-apples/blockstates/test_apple_trapdoor.json
 73992d851f6033862353d4fcc7b20112fe6f24aa assets/more-than-apples/blockstates/test_apple_wall_hanging_sign.json
-690ca7dff8df1c68d0512d8809b87223cf9fee85 assets/more-than-apples/blockstates/test_apple_wall_sign.json
+87dbbc8fb4fbdf865ba97c5b36ef21fa7dd6ea8e assets/more-than-apples/blockstates/test_apple_wall_sign.json
 d1af5d8f86b8b85e76dc066e89f396c924115037 assets/more-than-apples/blockstates/test_apple_wood.json
 1a67e7b384f5458ac124ea0716f39ea8bd9cb3fa assets/more-than-apples/items/apple_barrel.json
 08cbc60a9581da00730d0c197f9c08c8a71a5c2e assets/more-than-apples/items/apple_boat.json
@@ -64,6 +64,7 @@ d1af5d8f86b8b85e76dc066e89f396c924115037 assets/more-than-apples/blockstates/tes
 e5c9d52e1f2a2af5c892e7f64766731afa7892d7 assets/more-than-apples/items/apple_fence.json
 7ff4017017f0e87f98bd75ea6adfbff069166052 assets/more-than-apples/items/apple_fence_gate.json
 1d71905971482994edda719d0f01a3b77b7f6a39 assets/more-than-apples/items/apple_hanging_sign.json
+18c37968bf11adc46687d3c9511663b0711cb5c5 assets/more-than-apples/items/apple_hanging_sign_block.json
 75f465868840c86943d1bfc7df21ffb2cd777abb assets/more-than-apples/items/apple_leaves.json
 445b16e77182047987cdb77b323082933f25abf9 assets/more-than-apples/items/apple_log.json
 688d39c79df4c7e3c936f9bea5963628158cf9b1 assets/more-than-apples/items/apple_ore.json
@@ -73,7 +74,10 @@ e5c9d52e1f2a2af5c892e7f64766731afa7892d7 assets/more-than-apples/items/apple_fen
 5d5ecfe365897be296ecd59b0d366d6a2346b085 assets/more-than-apples/items/apple_sign.json
 328585b1ebd07ad6c4cbbf34e2babb7757ed94b6 assets/more-than-apples/items/apple_slab.json
 bb57ca48b75beab88acddb6f19c3e6e958575903 assets/more-than-apples/items/apple_stairs.json
+25784fd6d7f64900f34bf32dbf50a18c0e047521 assets/more-than-apples/items/apple_standing_sign.json
 fb68f64364cc483dddd69bfc00a2128c268bef09 assets/more-than-apples/items/apple_trapdoor.json
+4aa19c980b122b3364f1aa23404f783f2762b999 assets/more-than-apples/items/apple_wall_hanging_sign.json
+95b2fdc73168bcf78fe26ecdd4c3bb6eca392f82 assets/more-than-apples/items/apple_wall_sign.json
 fda6d5b4fc8a66a9c827b1f392a9966160ec4d10 assets/more-than-apples/items/apple_wood.json
 b0a55955f0c2765991337af0fa3f2e6fcdbfa710 assets/more-than-apples/items/deepslate_apple_ore.json
 41a78c7031aaa41582c14872aafa99f062b349d7 assets/more-than-apples/items/diamond_apple_block.json
@@ -155,10 +159,11 @@ c605bab8e748d82e1663ae4b22c130799e86aa4f assets/more-than-apples/models/block/ap
 1a06f18b0758190fcc0573a3d578473f7ae1406f assets/more-than-apples/models/block/apple_stairs.json
 1fbb78ee5ebee1c80348c843bde1701c52274d09 assets/more-than-apples/models/block/apple_stairs_inner.json
 a7433e80787579fa2d671a9fdbd613ae88153a30 assets/more-than-apples/models/block/apple_stairs_outer.json
-07dc9a97f281b0fb00615ac59fd5940a326d91f1 assets/more-than-apples/models/block/apple_standing_sign.json
+d384202b5da061f080cfd8f196005ee10ef470bf assets/more-than-apples/models/block/apple_standing_sign.json
 47ef9024f6f38e18d2f4a7818a766523b580b89b assets/more-than-apples/models/block/apple_trapdoor_bottom.json
 99be762d4ed7457ad6489a2f37fdae488113ccb0 assets/more-than-apples/models/block/apple_trapdoor_open.json
 e5839e23e08ffe870aad0f6650513ccfd9346561 assets/more-than-apples/models/block/apple_trapdoor_top.json
+d384202b5da061f080cfd8f196005ee10ef470bf assets/more-than-apples/models/block/apple_wall_sign.json
 3d42c9cb99749a0cab038d3af22fc5e65cfb19ac assets/more-than-apples/models/block/apple_wood.json
 c8078d3f035966b1f70fc41a9e30eb0f36221f92 assets/more-than-apples/models/block/frosty_apple_button.json
 2de1f68cf6666b106850cab9918eb0f9b1530c38 assets/more-than-apples/models/block/frosty_apple_button_inventory.json
@@ -191,10 +196,11 @@ ac57669dcaada46f968e0cf1da3e66c24cc350e0 assets/more-than-apples/models/block/fr
 d2290e22650cfda30ce92b3ffad4e5680aedabb1 assets/more-than-apples/models/block/frosty_apple_stairs.json
 416ef7719206bbfc4f5b456dd3672b0580be1e7d assets/more-than-apples/models/block/frosty_apple_stairs_inner.json
 3e937ff16daba2c8b8227f5f445bd66fc6bbda74 assets/more-than-apples/models/block/frosty_apple_stairs_outer.json
-806fb478dc4c7f8ba53692ec84133e2e51842d78 assets/more-than-apples/models/block/frosty_apple_standing_sign.json
+9788b9f6d2f379e0c7b1bdc4b7b98cee431ab65d assets/more-than-apples/models/block/frosty_apple_standing_sign.json
 6176addd4899f61362723c4c54d72c70ca244abf assets/more-than-apples/models/block/frosty_apple_trapdoor_bottom.json
 bef29f10ed8b6ed966479694669cf7664a2be173 assets/more-than-apples/models/block/frosty_apple_trapdoor_open.json
 7a97c64b3cdca0916fc4c8c9fc511a51e4777d34 assets/more-than-apples/models/block/frosty_apple_trapdoor_top.json
+9788b9f6d2f379e0c7b1bdc4b7b98cee431ab65d assets/more-than-apples/models/block/frosty_apple_wall_sign.json
 17e0cf320695419d270d39e65a3f050ed23f5bcc assets/more-than-apples/models/block/frosty_apple_wood.json
 baeda905d310b90f19116e929ffeea8d4479575f assets/more-than-apples/models/block/golden_apple_sapling.json
 08761a4b2bb31db00eba213fe51795b974c500d2 assets/more-than-apples/models/block/stripped_apple_log.json
@@ -236,10 +242,11 @@ dc1b8eec11792ac7b2b53feb6de1d4379097c337 assets/more-than-apples/models/block/te
 1f18fe7acda9ab18ddffa299884e10abc03ed1ab assets/more-than-apples/models/block/test_apple_stairs.json
 9b9a9c7b4a6d7d64475a15df9f99ed1b008fecf1 assets/more-than-apples/models/block/test_apple_stairs_inner.json
 fef7af664897b243bee863bc2df3ba6e336798a0 assets/more-than-apples/models/block/test_apple_stairs_outer.json
-12e9c69e9a9523df185d77ec192c4115e930fa5d assets/more-than-apples/models/block/test_apple_standing_sign.json
+c113a8ee8c70e4a007abbfbe2d2c8aead57844af assets/more-than-apples/models/block/test_apple_standing_sign.json
 b549675ecd8d5c20bafcab4a4bcd9e009f2b8777 assets/more-than-apples/models/block/test_apple_trapdoor_bottom.json
 debeb4c7db18cd57c438889a0b45fc0bd87cc60d assets/more-than-apples/models/block/test_apple_trapdoor_open.json
 d378c86fde3492f021b84c4bee5997b3f8a7568e assets/more-than-apples/models/block/test_apple_trapdoor_top.json
+c113a8ee8c70e4a007abbfbe2d2c8aead57844af assets/more-than-apples/models/block/test_apple_wall_sign.json
 39d1b3337640c9c3927ac7485e5655873948a795 assets/more-than-apples/models/block/test_apple_wood.json
 e98789c309baad5a87b89242427b2d81493a0fa2 assets/more-than-apples/models/item/apple_boat.json
 d719d04ba3ad3b589aad3d8ab8818578aacc59e0 assets/more-than-apples/models/item/apple_chest_boat.json

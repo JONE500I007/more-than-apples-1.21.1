@@ -48,6 +48,7 @@ public class ModModelProvider extends FabricModelProvider {
 //                blockStateModelGenerator.modelCollector
 //        );
 
+        /*
         Identifier appleSignModel = Models.GENERATED.upload(
                 ModBlocks2.APPLE_STANDING_SIGN,
                 new TextureMap().put(TextureKey.LAYER0, TextureMap.getId(ModBlocks2.APPLE_PLANKS)),
@@ -59,7 +60,17 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(ModBlocks2.APPLE_WALL_SIGN, appleSignModel)
         );
+         */
+        blockStateModelGenerator.registerBuiltinWithParticle(
+                ModBlocks2.APPLE_STANDING_SIGN,
+                ModBlocks2.APPLE_PLANKS
+        );
+        blockStateModelGenerator.registerBuiltinWithParticle(
+                ModBlocks2.APPLE_WALL_SIGN,
+                ModBlocks2.APPLE_PLANKS
+        );
 
+        /*
         Identifier testAppleSignModel = Models.GENERATED.upload(
                 ModBlocks2.TEST_APPLE_STANDING_SIGN,
                 new TextureMap().put(TextureKey.LAYER0, TextureMap.getId(ModBlocks2.TEST_APPLE_PLANKS)),
@@ -70,6 +81,15 @@ public class ModModelProvider extends FabricModelProvider {
         );
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(ModBlocks2.TEST_APPLE_WALL_SIGN, testAppleSignModel)
+        );
+         */
+        blockStateModelGenerator.registerBuiltinWithParticle(
+                ModBlocks2.TEST_APPLE_STANDING_SIGN,
+                ModBlocks2.TEST_APPLE_PLANKS
+        );
+        blockStateModelGenerator.registerBuiltinWithParticle(
+                ModBlocks2.TEST_APPLE_WALL_SIGN,
+                ModBlocks2.TEST_APPLE_PLANKS
         );
 
         blockStateModelGenerator.registerHangingSign(
@@ -114,6 +134,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.TEST_APPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
 
+        /*
         Identifier frostyAppleSignModel = Models.GENERATED.upload(
                 ModBlocks2.FROSTY_APPLE_STANDING_SIGN,
                 new TextureMap().put(TextureKey.LAYER0, TextureMap.getId(ModBlocks2.FROSTY_APPLE_PLANKS)),
@@ -125,6 +146,16 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(ModBlocks2.FROSTY_APPLE_WALL_SIGN, frostyAppleSignModel)
         );
+         */
+        blockStateModelGenerator.registerBuiltinWithParticle(
+                ModBlocks2.FROSTY_APPLE_STANDING_SIGN,
+                ModBlocks2.FROSTY_APPLE_PLANKS
+        );
+        blockStateModelGenerator.registerBuiltinWithParticle(
+                ModBlocks2.FROSTY_APPLE_WALL_SIGN,
+                ModBlocks2.FROSTY_APPLE_PLANKS
+        );
+
         blockStateModelGenerator.registerHangingSign(
                 ModBlocks2.STRIPPED_FROSTY_APPLE_LOG,
                 ModBlocks2.FROSTY_APPLE_HANGING_SIGN_BLOCK,
