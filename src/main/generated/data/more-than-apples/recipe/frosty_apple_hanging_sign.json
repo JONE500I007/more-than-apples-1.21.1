@@ -3,7 +3,7 @@
   "category": "misc",
   "group": "hanging_sign",
   "key": {
-    "C": "minecraft:chain",
+    "C": "minecraft:iron_chain",
     "L": "more-than-apples:stripped_frosty_apple_log"
   },
   "pattern": [

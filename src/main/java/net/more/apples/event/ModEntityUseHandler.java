@@ -24,7 +24,7 @@ public final class ModEntityUseHandler {
             ItemStack stack = player.getStackInHand(hand);
             if (!stack.isIn(MY_HORSE_FOOD)) return ActionResult.PASS;
 
-            if (world.isClient) return ActionResult.SUCCESS;
+            if (world.isClient()) return ActionResult.SUCCESS;
 
             boolean acted = false;
             boolean bred  = false;

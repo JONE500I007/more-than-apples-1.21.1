@@ -5,9 +5,10 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.SimpleParticleType;
+import net.minecraft.util.math.random.Random;
 
 @Environment(EnvType.CLIENT)
-public class LeavesTestParticle extends SpriteBillboardParticle {
+public class LeavesTestParticle extends BillboardParticle {
     //particle rotation
     private final float spinDirection;
     //acceleration of rotation maybe speed
@@ -16,16 +17,19 @@ public class LeavesTestParticle extends SpriteBillboardParticle {
     private final float horizontalDrift;
     //Initial angle of swing
     private final float initialAngle;
+
     protected LeavesTestParticle(ClientWorld world, double x, double y, double z,
                                  SpriteProvider spriteProvider) {
-        super(world, x, y, z);
+        super(world, x, y, z, spriteProvider.getSprite(world.random));
 
-        this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
+        this.setSprite(spriteProvider.getSprite(this.random));
+        //this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
 
         //strength of gravity
         this.gravityStrength = 0.05F * 0.0025F;
         //age of particle 300–500 tick for now
         this.maxAge = 300 + random.nextInt(200);
+        //this.maxAge = Math.max(1, 300 + random.nextInt(200));
         //particle size
         this.scale = 0.07F + random.nextFloat() * 0.05F;
 
@@ -64,26 +68,31 @@ public class LeavesTestParticle extends SpriteBillboardParticle {
         this.velocityY -= this.gravityStrength;
 
         //rotation of leaves
-        this.lastAngle = this.angle;
-        this.angle += this.angularAcceleration * this.spinDirection;
+        this.lastZRotation = this.zRotation;
+        this.zRotation += this.angularAcceleration * this.spinDirection;
 
         //if a particle hit the ground just gone lol
         if (this.onGround) this.markDead();
     }
 
     @Override
-    public ParticleTextureSheet getType() {
-        return ParticleTextureSheet.PARTICLE_SHEET_TRANSLUCENT;
+    protected RenderType getRenderType() {
+        return RenderType.PARTICLE_ATLAS_TRANSLUCENT;
     }
+
 
     public static class Factory implements ParticleFactory<SimpleParticleType> {
         private final SpriteProvider sprites;
-        public Factory(SpriteProvider sprites) { this.sprites = sprites; }
+
+        public Factory(SpriteProvider sprites) {
+            this.sprites = sprites;
+        }
 
         @Override
         public Particle createParticle(SimpleParticleType type, ClientWorld world,
                                        double x, double y, double z,
-                                       double velocityX, double velocityY, double velocityZ) {
+                                       double velocityX, double velocityY, double velocityZ,
+                                       Random random) {
             return new LeavesTestParticle(world, x, y, z, this.sprites);
         }
     }

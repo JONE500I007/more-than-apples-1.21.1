@@ -83,12 +83,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .offerTo(recipeExporter);
 
                 createShaped(RecipeCategory.DECORATIONS, ModItems.APPLE_HANGING_SIGN, 6)
-                        .input('C', Items.CHAIN)
+                        .input('C', Items.IRON_CHAIN)
                         .input('L', ModBlocks2.STRIPPED_APPLE_LOG)
                         .pattern("C C")
                         .pattern("LLL")
                         .pattern("LLL")
-                        .criterion("has_chain", conditionsFromItem(Items.CHAIN))
+                        .criterion("has_chain", conditionsFromItem(Items.IRON_CHAIN))
                         .criterion("has_stripped_apple_log", conditionsFromItem(ModBlocks2.STRIPPED_APPLE_LOG))
                         .group("hanging_sign")
                         .offerTo(recipeExporter);
@@ -108,12 +108,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 
                 createShaped(RecipeCategory.DECORATIONS, ModItems.TEST_APPLE_HANGING_SIGN, 6)
-                        .input('C', Items.CHAIN)
+                        .input('C', Items.IRON_CHAIN)
                         .input('L', ModBlocks2.STRIPPED_TEST_APPLE_LOG)
                         .pattern("C C")
                         .pattern("LLL")
                         .pattern("LLL")
-                        .criterion("has_chain", conditionsFromItem(Items.CHAIN))
+                        .criterion("has_chain", conditionsFromItem(Items.IRON_CHAIN))
                         .criterion("has_stripped_apple_log", conditionsFromItem(ModBlocks2.STRIPPED_TEST_APPLE_LOG))
                         .group("hanging_sign")
                         .offerTo(recipeExporter);
@@ -133,12 +133,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 
                 createShaped(RecipeCategory.DECORATIONS, ModItems.FROSTY_APPLE_HANGING_SIGN, 6)
-                        .input('C', Items.CHAIN)
+                        .input('C', Items.IRON_CHAIN)
                         .input('L', ModBlocks2.STRIPPED_FROSTY_APPLE_LOG)
                         .pattern("C C")
                         .pattern("LLL")
                         .pattern("LLL")
-                        .criterion("has_chain", conditionsFromItem(Items.CHAIN))
+                        .criterion("has_chain", conditionsFromItem(Items.IRON_CHAIN))
                         .criterion("has_stripped_apple_log", conditionsFromItem(ModBlocks2.STRIPPED_FROSTY_APPLE_LOG))
                         .group("hanging_sign")
                         .offerTo(recipeExporter);
