@@ -1,4 +1,4 @@
-// 1.21.4	-999999999-01-01T00:00:00	More Than Apples/
+// 1.21.5	-999999999-01-01T00:00:00	More Than Apples/
 8ec6eb2504cdf8b9d19b4a580c64e1052ad59c0f data/more-than-apples/advancement/recipes/building_blocks/apple_planks.json
 c699e6ec69430f8a1b02e39f02443a7a389fa9f0 data/more-than-apples/advancement/recipes/building_blocks/apple_slab.json
 2b24270a00963e3f5803456352d6481fb1174257 data/more-than-apples/advancement/recipes/building_blocks/apple_stairs.json
@@ -27,10 +27,10 @@ e595ea353ca1b6320465ea03a2457cb357f7b6ed data/more-than-apples/advancement/recip
 5523f5b413e5259069101874695881b28eddb83a data/more-than-apples/advancement/recipes/decorations/test_apple_hanging_sign.json
 562a0f76a059e0550c040cda41903e5858b3078e data/more-than-apples/advancement/recipes/decorations/test_apple_sign.json
 3001bac221bec0ec641067b5f65c6006b07200c9 data/more-than-apples/advancement/recipes/misc/apple_barrel.json
-e750757348c3b95d4e2ff201a5cc4887f80ff240 data/more-than-apples/advancement/recipes/misc/apple_from_blasting_apple_ore.json
-54efe624d85b52fceed76f600fda61219e3a17c4 data/more-than-apples/advancement/recipes/misc/apple_from_blasting_deepslate_apple_ore.json
-0e077bbae8918bf8d5e8d1febcf364b3ccdc2c3a data/more-than-apples/advancement/recipes/misc/apple_from_smelting_apple_ore.json
-7b4e7611c334504b662e0a9ba887b1f77f5547db data/more-than-apples/advancement/recipes/misc/apple_from_smelting_deepslate_apple_ore.json
+4dfc9e0f5ba4a08bc87197de87e7611285a9a387 data/more-than-apples/advancement/recipes/misc/apple_from_blasting_apple_ore.json
+c28dca232bed35cdb90fea6cef7a564a41b6e2a4 data/more-than-apples/advancement/recipes/misc/apple_from_blasting_deepslate_apple_ore.json
+88dfe2b0ef68b447cda49197fe8b7c9997182e4e data/more-than-apples/advancement/recipes/misc/apple_from_smelting_apple_ore.json
+8ce17d5c717bfd05bfdfc3084f88fb07560d7297 data/more-than-apples/advancement/recipes/misc/apple_from_smelting_deepslate_apple_ore.json
 8c665de959f491682ab36754b5f62c5bf563b2b8 data/more-than-apples/advancement/recipes/redstone/apple_button.json
 ea006ac2241fdc2e2d4d4dbe04f480d305e71223 data/more-than-apples/advancement/recipes/redstone/apple_door.json
 32754c6bc67471780998dd2ade5865043c307fec data/more-than-apples/advancement/recipes/redstone/apple_fence_gate.json

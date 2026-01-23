@@ -1,4 +1,4 @@
-// 1.21.4	-999999999-01-01T00:00:00	More Than Apples/Model Definitions
+// 1.21.5	-999999999-01-01T00:00:00	More Than Apples/Model Definitions
 7193768b631a7c23d6dfe271f3cfa71bc01c12b4 assets/more-than-apples/blockstates/apple_barrel.json
 e5e5cf4f73b4c893ee7342f11136b3833b90aee4 assets/more-than-apples/blockstates/apple_button.json
 ac10f0092bc7a476e47fa6dbc44be94c92bed273 assets/more-than-apples/blockstates/apple_door.json
@@ -65,9 +65,7 @@ e5c9d52e1f2a2af5c892e7f64766731afa7892d7 assets/more-than-apples/items/apple_fen
 7ff4017017f0e87f98bd75ea6adfbff069166052 assets/more-than-apples/items/apple_fence_gate.json
 1d71905971482994edda719d0f01a3b77b7f6a39 assets/more-than-apples/items/apple_hanging_sign.json
 18c37968bf11adc46687d3c9511663b0711cb5c5 assets/more-than-apples/items/apple_hanging_sign_block.json
-75f465868840c86943d1bfc7df21ffb2cd777abb assets/more-than-apples/items/apple_leaves.json
 445b16e77182047987cdb77b323082933f25abf9 assets/more-than-apples/items/apple_log.json
-688d39c79df4c7e3c936f9bea5963628158cf9b1 assets/more-than-apples/items/apple_ore.json
 65be030856e8579a4869c9d8e3639cdd89e8f276 assets/more-than-apples/items/apple_planks.json
 11a63e505f5cb66f782b8b4232276a55b5ba4586 assets/more-than-apples/items/apple_pressure_plate.json
 237b18df6181389d214f4426b32e83acfb0665bc assets/more-than-apples/items/apple_sapling.json
@@ -79,8 +77,6 @@ fb68f64364cc483dddd69bfc00a2128c268bef09 assets/more-than-apples/items/apple_tra
 4aa19c980b122b3364f1aa23404f783f2762b999 assets/more-than-apples/items/apple_wall_hanging_sign.json
 95b2fdc73168bcf78fe26ecdd4c3bb6eca392f82 assets/more-than-apples/items/apple_wall_sign.json
 fda6d5b4fc8a66a9c827b1f392a9966160ec4d10 assets/more-than-apples/items/apple_wood.json
-b0a55955f0c2765991337af0fa3f2e6fcdbfa710 assets/more-than-apples/items/deepslate_apple_ore.json
-41a78c7031aaa41582c14872aafa99f062b349d7 assets/more-than-apples/items/diamond_apple_block.json
 09761919e810cb11fee7c497cd6e7212f99aa26f assets/more-than-apples/items/frosty_apple_boat.json
 818c0eb62f0914207565b340428f5c40d0a406be assets/more-than-apples/items/frosty_apple_button.json
 eb57be1b9642376355e8deb04a2205f387df4d8a assets/more-than-apples/items/frosty_apple_chest_boat.json
@@ -98,10 +94,6 @@ bc0f91e024051d90c987f99baab9d885806e64c5 assets/more-than-apples/items/frosty_ap
 d8a71ba5c9e769a55cf676fd190aa6a262afcdd1 assets/more-than-apples/items/frosty_apple_stairs.json
 94187bfca44e67624208bd9f33ec838018f893fc assets/more-than-apples/items/frosty_apple_trapdoor.json
 b66f12656dc6c334eff35d95ee72f0e8708b39f1 assets/more-than-apples/items/frosty_apple_wood.json
-b5a00e5a4d5b92f24b1aeef959d052275c082563 assets/more-than-apples/items/fruit_apple_leaves.json
-e3caab855056f791b0d20ca1ceaca08c6d2d337e assets/more-than-apples/items/fruit_apple_leaves_test.json
-df95d066b4faae5f1fd5b302fa99f3f4a6cf6d39 assets/more-than-apples/items/fruit_golden_apple_leaves.json
-28c67ba4016d9bff3bf1ed036abcdf1018c0b560 assets/more-than-apples/items/golden_apple_leaves.json
 61c520509cb208db28cec6e241049f677b14233d assets/more-than-apples/items/golden_apple_sapling.json
 f1b00b5ae4694bfca6214a1a35e592bc64c69408 assets/more-than-apples/items/green_apple.json
 c89c87d2e956c7f9ac28e71bf7c827934faf5afc assets/more-than-apples/items/stripped_apple_log.json
@@ -118,7 +110,6 @@ bf54e0f5360b8a0473ebbf3d8129d8a7bf96eba4 assets/more-than-apples/items/test_appl
 5282ae9eff8be966da750ac7bbcec92b4e0dcef9 assets/more-than-apples/items/test_apple_fence.json
 2f5524d6a27f2c9d2dd869705a8d61570f63d36a assets/more-than-apples/items/test_apple_fence_gate.json
 684f89fd69828066bbc5318129c212ea4b171f7f assets/more-than-apples/items/test_apple_hanging_sign.json
-d84cdc8147619634163384ecf76916e231de83b2 assets/more-than-apples/items/test_apple_leaves.json
 7b7b8fc32ec51df9ba8dc2b31040d70470645156 assets/more-than-apples/items/test_apple_log.json
 d3c185974c601138e22c5441519aa77a45b2f4c2 assets/more-than-apples/items/test_apple_planks.json
 6fc6a10c9152a995e18871f22e402f7f6db436b0 assets/more-than-apples/items/test_apple_pressure_plate.json

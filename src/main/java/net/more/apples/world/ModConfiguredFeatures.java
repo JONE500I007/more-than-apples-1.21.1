@@ -12,7 +12,7 @@ import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.DataPool;
+import net.minecraft.util.collection.Pool;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
@@ -95,7 +95,7 @@ public class ModConfiguredFeatures {
          */
 
         WeightedBlockStateProvider twoLeavesProvider = new WeightedBlockStateProvider(
-                DataPool.<BlockState>builder()
+                Pool.<BlockState>builder()
                         .add(ModBlocks2.APPLE_LEAVES.getDefaultState(), 5)
                         .add(ModBlocks2.FRUIT_APPLE_LEAVES.getDefaultState(), 1)
                         .build()
@@ -163,7 +163,7 @@ public class ModConfiguredFeatures {
                         .build());
 
         WeightedBlockStateProvider twoLeavesProvider2 = new WeightedBlockStateProvider(
-                DataPool.<BlockState>builder()
+                Pool.<BlockState>builder()
                         .add(ModBlocks2.GOLDEN_APPLE_LEAVES.getDefaultState(), 8)
                         .add(ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES.getDefaultState(), 1)
                         .build()

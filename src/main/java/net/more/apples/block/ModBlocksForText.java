@@ -5,6 +5,8 @@ import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.particle.EntityEffectParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -19,8 +21,10 @@ import net.more.apples.world.tree.ModSaplingGenerators;
 public class ModBlocksForText {
 
     public static final Block FRUIT_APPLE_LEAVES_TEST = registerBlock("fruit_apple_leaves_test",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "fruit_apple_leaves_test")))));
+            new UntintedParticleLeavesBlock(
+                    0.02f, EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F),
+                    AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, "fruit_apple_leaves")))));
 
 //    public static final Block CUSTOM_SIGN = registerBlock("custom_sign",
 //            new SignBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
