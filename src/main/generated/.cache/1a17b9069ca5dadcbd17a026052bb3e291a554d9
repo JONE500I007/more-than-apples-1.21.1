@@ -1,4 +1,4 @@
-// 1.21.7	-999999999-01-01T00:00:00	More Than Apples/Block Loot Tables
+// 1.21.8	-999999999-01-01T00:00:00	More Than Apples/Block Loot Tables
 ada6cdd244014f9018fddd561a2bec39846e7f33 data/minecraft/loot_table/blocks/oak_hanging_sign.json
 02f705b3568067e3d778db0e5e77ed94b228eb6d data/minecraft/loot_table/blocks/oak_sign.json
 69b474d51ab373585e889bf1aa86ed7e14a78aa0 data/more-than-apples/loot_table/blocks/apple_barrel.json
