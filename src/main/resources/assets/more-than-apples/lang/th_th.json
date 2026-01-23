@@ -35,6 +35,7 @@
   "block.more-than-apples.apple_hanging_sign": "ป้ายแขวนไม้แอปเปิ้ล",
   "item.more-than-apples.apple_boat": "เรือไม้แอปเปิ้ล",
   "item.more-than-apples.apple_chest_boat": "เรือไม้แอปเปิ้ลพร้อมหีบ",
+  "entity.more-than-apples.apple_chest_boat": "เรือไม้แอปเปิ้ลพร้อมหีบ",
 
   "block.more-than-apples.golden_apple_leaves": "ใบไม้แอปเปิ้ลทองคำ",
   "block.more-than-apples.fruit_golden_apple_leaves": "ใบไม้แอปเปิ้ลทองคำพร้อมผล",
@@ -61,6 +62,7 @@
   "block.more-than-apples.test_apple_hanging_sign": "ป้ายแขวน_ไม้แอปเปิ้ล_ทดสอบ",
   "item.more-than-apples.test_apple_boat": "เรือ_ไม้แอปเปิ้ล_ทดสอบ",
   "item.more-than-apples.test_apple_chest_boat": "เรือ_ไม้แอปเปิ้ล_ทดสอบ_พร้อมหีบ",
+  "entity.more-than-apples.test_apple_chest_boat": "เรือ_ไม้แอปเปิ้ล_ทดสอบ_พร้อมหีบ",
 
 
   "block.more-than-apples.frosty_apple_log": "ท่อนไม้ฟรอสตี้",
@@ -83,6 +85,7 @@
   "block.more-than-apples.frosty_apple_hanging_sign": "ป้ายแขวนไม้ฟรอสตี้",
   "item.more-than-apples.frosty_apple_boat": "เรือไม้ฟรอสตี้",
   "item.more-than-apples.frosty_apple_chest_boat": "เรือไม้ฟรอสตี้พร้อมหีบ",
+  "entity.more-than-apples.frosty_apple_chest_boat": "เรือไม้ฟรอสตี้พร้อมหีบ",
 
 
   "block.more-than-apples.apple_ore": "แร่แอปเปิ้ล",
