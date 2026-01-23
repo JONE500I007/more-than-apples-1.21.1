@@ -3,7 +3,7 @@
   "category": "building",
   "group": "planks",
   "ingredients": [
-    "#more-than-apples:all_apple_log"
+    "#more-than-apples:all_test_apple_log"
   ],
   "result": {
     "count": 4,

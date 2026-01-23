@@ -67,8 +67,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
          */
 
                 offerPlanksRecipe(ModBlocks2.APPLE_PLANKS, ModTags.Items.ALL_APPLE_LOG, 4);
-                offerPlanksRecipe(ModBlocks2.TEST_APPLE_PLANKS, ModTags.Items.ALL_APPLE_LOG, 4);
-                offerPlanksRecipe(ModBlocks2.FROSTY_APPLE_PLANKS, ModTags.Items.ALL_APPLE_LOG, 4);
+                offerPlanksRecipe(ModBlocks2.TEST_APPLE_PLANKS, ModTags.Items.ALL_TEST_APPLE_LOG, 4);
+                offerPlanksRecipe(ModBlocks2.FROSTY_APPLE_PLANKS, ModTags.Items.ALL_FROSTY_APPLE_LOG, 4);
 
                 RegistryEntryLookup<Item> itemLookup = registries.getOrThrow(RegistryKeys.ITEM);
 
