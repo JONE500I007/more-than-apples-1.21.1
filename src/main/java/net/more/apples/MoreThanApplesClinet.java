@@ -20,16 +20,8 @@ public class MoreThanApplesClinet implements ClientModInitializer {
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
             return world != null && pos != null
                     ? BiomeColors.getFoliageColor(world, pos)
-                    : FoliageColors.getDefaultColor();
+                    : FoliageColors.DEFAULT;
         }, ModBlocks2.APPLE_LEAVES,
-                ModBlocks2.FRUIT_APPLE_LEAVES,
-
-                ModBlocks2.GOLDEN_APPLE_LEAVES,
-                ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES);
-
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
-                FoliageColors.getDefaultColor(),
-                ModBlocks2.APPLE_LEAVES,
                 ModBlocks2.FRUIT_APPLE_LEAVES,
 
                 ModBlocks2.GOLDEN_APPLE_LEAVES,
