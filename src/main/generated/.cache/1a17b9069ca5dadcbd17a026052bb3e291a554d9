@@ -1,12 +1,12 @@
-// 1.21.5	-999999999-01-01T00:00:00	More Than Apples/Block Loot Tables
-ada6cdd244014f9018fddd561a2bec39846e7f33 data/minecraft/loot_table/blocks/oak_hanging_sign.json
-02f705b3568067e3d778db0e5e77ed94b228eb6d data/minecraft/loot_table/blocks/oak_sign.json
+// 1.21.6	-999999999-01-01T00:00:00	More Than Apples/Block Loot Tables
+26509bb3dfadeb85e361f628c8b5eb08992a3c8a data/minecraft/loot_table/blocks/oak_hanging_sign.json
+c7e5c670b0c1c6e2e35240467b3704686853dcfb data/minecraft/loot_table/blocks/oak_sign.json
 69b474d51ab373585e889bf1aa86ed7e14a78aa0 data/more-than-apples/loot_table/blocks/apple_barrel.json
 e93c502c7151e758b1d3c97d776f2c347502cb8a data/more-than-apples/loot_table/blocks/apple_button.json
 1ecdffbc817b70d360e9ba5be4a7ce609a0ae01b data/more-than-apples/loot_table/blocks/apple_door.json
 abc07b70ecf00fce960bd97312617406cdad755f data/more-than-apples/loot_table/blocks/apple_fence.json
 d013017b485f660a9ef620f7a1fadcad372927da data/more-than-apples/loot_table/blocks/apple_fence_gate.json
-26509bb3dfadeb85e361f628c8b5eb08992a3c8a data/more-than-apples/loot_table/blocks/apple_hanging_sign_block.json
+26509bb3dfadeb85e361f628c8b5eb08992a3c8a data/more-than-apples/loot_table/blocks/apple_hanging_sign.json
 f90f974c24ae29aa6336071834b4b39469734db7 data/more-than-apples/loot_table/blocks/apple_log.json
 271872835f76fbd73eaa9094732700e20ce6e6fc data/more-than-apples/loot_table/blocks/apple_planks.json
 ae51b501fdc1ead0cd72ec756adc4c9c46ff248b data/more-than-apples/loot_table/blocks/apple_pressure_plate.json
@@ -29,6 +29,8 @@ f96db9c1884ce04624bccfd43500d246abe18d38 data/more-than-apples/loot_table/blocks
 0cbf91d134cae4fd193b84531e5b7e4dd3fece87 data/more-than-apples/loot_table/blocks/frosty_apple_stairs.json
 02f705b3568067e3d778db0e5e77ed94b228eb6d data/more-than-apples/loot_table/blocks/frosty_apple_standing_sign.json
 3472a0bf08833fafeb2772598af03f9b15fe3646 data/more-than-apples/loot_table/blocks/frosty_apple_trapdoor.json
+ada6cdd244014f9018fddd561a2bec39846e7f33 data/more-than-apples/loot_table/blocks/frosty_apple_wall_hanging_sign.json
+02f705b3568067e3d778db0e5e77ed94b228eb6d data/more-than-apples/loot_table/blocks/frosty_apple_wall_sign.json
 1a9d964fbbac4e4af688f38647fc28b27c56f6f2 data/more-than-apples/loot_table/blocks/frosty_apple_wood.json
 40678c1d3efa2381ab10210003285352ada68d00 data/more-than-apples/loot_table/blocks/golden_apple_sapling.json
 f19ab724560ada48e2cd78f7b96dc0099b7e0424 data/more-than-apples/loot_table/blocks/stripped_apple_log.json
@@ -50,4 +52,6 @@ eea6bfeee8f5045a96375af9febb886f08c840d0 data/more-than-apples/loot_table/blocks
 5e5bc55765e6470a4954ebad70bbf5acd9fb9b7a data/more-than-apples/loot_table/blocks/test_apple_stairs.json
 5240399fa2cba470bc1b5d4ca6fc9bb087e1b54a data/more-than-apples/loot_table/blocks/test_apple_standing_sign.json
 3322aa26f57ddcf82aa789c68b9a15a909d0ea33 data/more-than-apples/loot_table/blocks/test_apple_trapdoor.json
+c70e3a1f5349f2529952e333a2c506bcbe25177a data/more-than-apples/loot_table/blocks/test_apple_wall_hanging_sign.json
+5240399fa2cba470bc1b5d4ca6fc9bb087e1b54a data/more-than-apples/loot_table/blocks/test_apple_wall_sign.json
 52325acebb146551171c27417f461a2d81219da1 data/more-than-apples/loot_table/blocks/test_apple_wood.json

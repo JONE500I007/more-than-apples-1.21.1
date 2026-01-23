@@ -5,6 +5,8 @@ import net.minecraft.data.tag.TagProvider;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.PointOfInterestTypeTags;
+import net.minecraft.registry.tag.TagBuilder;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.poi.PointOfInterestType;
 import net.more.apples.MoreThanApples;
@@ -17,8 +19,13 @@ public class ModPoiTagProvider extends TagProvider<PointOfInterestType> {
     }
 
     @Override
+//    protected void configure(RegistryWrapper.WrapperLookup registries) {
+//        this.getTagBuilder(PointOfInterestTypeTags.ACQUIRABLE_JOB_SITE)
+//                .addOptional(Identifier.of(MoreThanApples.MOD_ID, "apple_poi"));
+//    }
     protected void configure(RegistryWrapper.WrapperLookup registries) {
-        this.getOrCreateTagBuilder(PointOfInterestTypeTags.ACQUIRABLE_JOB_SITE)
-                .addOptional(Identifier.of(MoreThanApples.MOD_ID, "apple_poi"));
+        TagKey<PointOfInterestType> jobSiteTag = PointOfInterestTypeTags.ACQUIRABLE_JOB_SITE;
+        TagBuilder builder = this.getTagBuilder(jobSiteTag);
+        builder.addOptional(Identifier.of(MoreThanApples.MOD_ID, "apple_poi"));
     }
 }

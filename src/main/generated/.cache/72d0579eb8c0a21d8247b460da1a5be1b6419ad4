@@ -1,4 +1,4 @@
-// 1.21.5	-999999999-01-01T00:00:00	More Than Apples/Tags for minecraft:worldgen/biome
+// 1.21.6	-999999999-01-01T00:00:00	More Than Apples/Tags for minecraft:worldgen/biome
 e60952f13baffdb2dfb9185818bd1f8c6fd2da19 data/minecraft/tags/worldgen/biome/is_overworld.json
 afe75bfc3fef48a5fff93787d83d3310669e4658 data/minecraft/tags/worldgen/biome/spawns_snow_foxes.json
 afe75bfc3fef48a5fff93787d83d3310669e4658 data/minecraft/tags/worldgen/biome/spawns_white_rabbits.json

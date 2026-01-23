@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "more-than-apples:frosty_apple_sign"
+          "name": "more-than-apples:apple_sign"
         }
       ],
       "rolls": 1.0

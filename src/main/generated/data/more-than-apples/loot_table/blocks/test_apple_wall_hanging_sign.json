@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "more-than-apples:apple_hanging_sign"
+          "name": "more-than-apples:test_apple_hanging_sign"
         }
       ],
       "rolls": 1.0

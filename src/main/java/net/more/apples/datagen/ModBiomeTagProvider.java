@@ -21,17 +21,17 @@ public class ModBiomeTagProvider extends FabricTagProvider<Biome> {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(BiomeTags.IS_OVERWORLD)
+        builder(BiomeTags.IS_OVERWORLD)
                 .add(ModBiomesAppleGrove.APPLE_GROVE);
 
-        getOrCreateTagBuilder(BiomeTags.IS_OVERWORLD)
+        builder(BiomeTags.IS_OVERWORLD)
                 .add(ModBiomesGoldenAppleOrchard.GOLDEN_APPLE_ORCHARD);
 
-        getOrCreateTagBuilder(BiomeTags.SPAWNS_SNOW_FOXES)
+        builder(BiomeTags.SPAWNS_SNOW_FOXES)
                 .add(ModBiomeFrostyApple.FROSTY_APPLE);
-        getOrCreateTagBuilder(BiomeTags.SPAWNS_WHITE_RABBITS)
+        builder(BiomeTags.SPAWNS_WHITE_RABBITS)
                 .add(ModBiomeFrostyApple.FROSTY_APPLE);
-        getOrCreateTagBuilder(BiomeTags.IS_OVERWORLD)
+        builder(BiomeTags.IS_OVERWORLD)
                 .add(ModBiomeFrostyApple.FROSTY_APPLE);
     }
 }
