@@ -27,6 +27,8 @@ public class ModBiomeTagProvider extends FabricTagProvider<Biome> {
         builder(BiomeTags.IS_OVERWORLD)
                 .add(ModBiomesGoldenAppleOrchard.GOLDEN_APPLE_ORCHARD);
 
+        builder(BiomeTags.SPAWNS_COLD_VARIANT_FARM_ANIMALS)
+                .add(ModBiomeFrostyApple.FROSTY_APPLE);
         builder(BiomeTags.SPAWNS_SNOW_FOXES)
                 .add(ModBiomeFrostyApple.FROSTY_APPLE);
         builder(BiomeTags.SPAWNS_WHITE_RABBITS)
