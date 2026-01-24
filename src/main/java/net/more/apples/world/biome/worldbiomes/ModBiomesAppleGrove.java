@@ -100,6 +100,7 @@ public class ModBiomesAppleGrove {
                 VegetationPlacedFeatures.FLOWER_MEADOW);
 //        DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
 
+        DefaultBiomeFeatures.addLeafLitter(biomeBuilder);
         DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
         //DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
         DefaultBiomeFeatures.addLessKelp(biomeBuilder);
