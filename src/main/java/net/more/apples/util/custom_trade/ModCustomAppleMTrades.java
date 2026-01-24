@@ -29,70 +29,82 @@ public class ModCustomAppleMTrades {
         MoreThanApples.LOGGER.info("Registering Villager Trades From " + MoreThanApples.MOD_ID);
 
         TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER_KEY,1, factories -> {
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(Items.APPLE, 9),
+                    Optional.empty(),
                     new ItemStack(Items.EMERALD, 1),
                     16, 2, 0.05f
             ));
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(ModBlocks2.APPLE_SAPLING, 16),
+                    Optional.empty(),
                     new ItemStack(Items.EMERALD, 1),
                     18, 2, 0.05f
             ));
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(Items.STICK, 30),
+                    Optional.empty(),
                     new ItemStack(Items.EMERALD, 1),
                     16, 2, 0.05f
             ));
         });
 
+
         TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER_KEY,2, factories -> {
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD, 4),
+                    Optional.empty(),
                     new ItemStack(ModBlocks2.APPLE_LOG, 1),
                     14, 5, 0.08f
             ));
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD, 4),
+                    Optional.empty(),
                     new ItemStack(ModBlocks2.FROSTY_APPLE_LOG, 1),
                     14, 5, 0.08f
             ));
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD, 4),
+                    Optional.empty(),
                     new ItemStack(Items.OAK_LOG, 1),
                     14, 5, 0.08f
             ));
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity, random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD, 4),
+                    Optional.empty(),
                     new ItemStack(Items.BIRCH_LOG, 1),
                     14, 5, 0.08f
             ));
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD, 4),
+                    Optional.empty(),
                     new ItemStack(Items.DARK_OAK_LOG, 1),
                     14, 5, 0.08f
             ));
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(ModBlocks2.GOLDEN_APPLE_SAPLING, 8),
+                    Optional.empty(),
                     new ItemStack(Items.EMERALD, 3),
                     18, 5, 0.08f
             ));
         });
 
         TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER_KEY,3, factories -> {
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD, 9),
+                    Optional.empty(),
                     new ItemStack(Items.GOLD_INGOT, 1),
                     16, 10, 0.1f
             ));
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity, random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD_BLOCK, 3),
+                    Optional.empty(),
                     new ItemStack(Items.GOLDEN_APPLE, 1),
                     6, 10, 0.2f
             ));
-            factories.add((entity, random) -> {
+            factories.add((world,entity,random) -> {
                 ItemStack randomPick  = new ItemStack(Items.GOLDEN_PICKAXE);
-                var enchantments = entity.getEntityWorld()
+                var enchantments = entity
                         .getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .streamEntries()
@@ -110,17 +122,19 @@ public class ModCustomAppleMTrades {
         });
 
         TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER_KEY,4, factories -> {
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(ModBlocks2.TEST_APPLE_LOG, 1),
+                    Optional.empty(),
                     new ItemStack(Items.EMERALD_BLOCK, 1),
                     18, 15, 0.08f
             ));
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD_BLOCK, 7),
+                    Optional.empty(),
                     new ItemStack(ModItems.DIAMOND_APPLE, 1),
                     6, 15, 0.08f
             ));
-            factories.add((entity, random) -> {
+            factories.add((world,entity,random) -> {
                 ItemStack healingPotion = new ItemStack(Items.POTION);
                 healingPotion.set(DataComponentTypes.POTION_CONTENTS,
                         new PotionContentsComponent(ModPotions.FREEZING_RESISTANCE_POTION));
@@ -130,7 +144,7 @@ public class ModCustomAppleMTrades {
                         4, 15, 0.08f
                 );
             });
-            factories.add((entity, random) -> {
+            factories.add((world,entity,random) -> {
                 ItemStack healingPotion = new ItemStack(Items.POTION);
                 healingPotion.set(DataComponentTypes.POTION_CONTENTS,
                         new PotionContentsComponent(ModPotions.DARKNESS_IMMUNE_POTION));
@@ -143,7 +157,7 @@ public class ModCustomAppleMTrades {
         });
 
         TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER_KEY,5, factories -> {
-            factories.add((entity, random) -> {
+            factories.add((world,entity, random) -> {
                 if (random.nextFloat() < 0.3f) {
                     return new TradeOffer(
                             new TradedItem(Items.DIRT, 1),
@@ -158,13 +172,15 @@ public class ModCustomAppleMTrades {
 //                        1, 10, 0.05f
 //                );
             });
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD_BLOCK, 15),
+                    Optional.empty(),
                     new ItemStack(Items.ENCHANTED_GOLDEN_APPLE, 1),
                     3, 35, 0.2f
             ));
-            factories.add((entity, random) -> new TradeOffer(
+            factories.add((world,entity,random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD_BLOCK, 13),
+                    Optional.empty(),
                     new ItemStack(ModItems.NETHERITE_APPLE, 1),
                     2, 35, 0.2f
             ));

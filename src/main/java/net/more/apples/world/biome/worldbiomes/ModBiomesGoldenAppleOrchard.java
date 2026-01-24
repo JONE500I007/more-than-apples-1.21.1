@@ -9,6 +9,9 @@ import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.sound.MusicType;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.attribute.AmbientSounds;
+import net.minecraft.world.attribute.BackgroundMusic;
+import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.biome.*;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
@@ -18,6 +21,9 @@ import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.more.apples.MoreThanApples;
 import net.more.apples.world.ModPlacedFeatures;
 import org.joml.Vector3f;
+
+import java.util.List;
+import java.util.Optional;
 
 public class ModBiomesGoldenAppleOrchard {
     public static final RegistryKey<Biome> GOLDEN_APPLE_ORCHARD = RegistryKey.of(RegistryKeys.BIOME,
@@ -42,9 +48,10 @@ public class ModBiomesGoldenAppleOrchard {
 
 
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
-        DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
+        DefaultBiomeFeatures.addCaveMobs(spawnBuilder);
+        DefaultBiomeFeatures.addCaveAndMonsters(spawnBuilder);
         DefaultBiomeFeatures.addOceanMobs(spawnBuilder, 10, 4, 10);
-        DefaultBiomeFeatures.addMonsters(spawnBuilder, 95, 5, 100, true);
+        DefaultBiomeFeatures.addMonsters(spawnBuilder, 95, 5,5, 100, true);
 
 
         // world gen maybe biome
@@ -95,19 +102,29 @@ public class ModBiomesGoldenAppleOrchard {
                 .temperature(0.65f)
                 .generationSettings(biomeBuilder.build())
                 .spawnSettings(spawnBuilder.build())
+
+                .setEnvironmentAttribute(EnvironmentAttributes.SKY_COLOR_VISUAL, 0xFFD580)
+                .setEnvironmentAttribute(EnvironmentAttributes.FOG_COLOR_VISUAL, 0xFFF2CC)
+                .setEnvironmentAttribute(EnvironmentAttributes.WATER_FOG_COLOR_VISUAL, 0x50533)
+
+                .setEnvironmentAttribute(EnvironmentAttributes.AMBIENT_SOUNDS_AUDIO, new AmbientSounds(
+                        Optional.empty(),
+                        Optional.of(BiomeMoodSound.CAVE),
+                        List.of()))
+                .setEnvironmentAttribute(EnvironmentAttributes.BACKGROUND_MUSIC_AUDIO,
+                        new BackgroundMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW))
                 .effects((new BiomeEffects.Builder())
                         .waterColor(0x3F76E4)
-                        .waterFogColor(0x50533)
-                        .skyColor(0xFFD580)
+
                         .grassColor(0xFFC030)
                         .foliageColor(0xFBC03A)
-                        .fogColor(0xFFF2CC)
+
 //                        .particleConfig(new BiomeParticleConfig(
 //                                new DustParticleEffect(new Vector3f(0.95f, 0.69f, 0.15f), 1.0f), 0.02f))
-                        .moodSound(BiomeMoodSound.CAVE)
+
                         .grassColorModifier(BiomeEffects.GrassColorModifier.NONE)
                         //.music(MusicType.createIngameMusic(RegistryEntry.of(ModSounds.APPLE_LAND)))
-                        .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FOREST))
+
                 .build())
                 .build();
     }
