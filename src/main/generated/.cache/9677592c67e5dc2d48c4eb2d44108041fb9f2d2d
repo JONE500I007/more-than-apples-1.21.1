@@ -1,7 +1,7 @@
 // 1.21.11	-999999999-01-01T00:00:00	More Than Apples/MoreThanApples Registry Data Generator
 a24119dbd5bfc251c4e2c75785e1da17085fee59 data/more-than-apples/worldgen/biome/apple_grove.json
 c02f04bcc27f63e8b76feefaf558cb12ed55f0c8 data/more-than-apples/worldgen/biome/frosty_apple.json
-bb66729ed4ace09718f450beaa653aff4bfd2370 data/more-than-apples/worldgen/biome/golden_apple_orchard.json
+73699a9085df1cc0a61e597827afb175936abcbd data/more-than-apples/worldgen/biome/golden_apple_orchard.json
 abe80cd342eea3e6f355a630a1a846c567e70c0d data/more-than-apples/worldgen/configured_feature/apple_ore.json
 432124d48f8dc9e9739bc7dac0ff0db3463cb525 data/more-than-apples/worldgen/configured_feature/apple_tree_key.json
 d90f18e71b372dda0e1c9c33aa622c2a8eebe4fe data/more-than-apples/worldgen/configured_feature/frosty_apple_tree_key.json
