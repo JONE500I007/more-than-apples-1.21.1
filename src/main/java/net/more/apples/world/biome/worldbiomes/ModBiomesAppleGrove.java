@@ -81,6 +81,7 @@ public class ModBiomesAppleGrove {
                 ModPlacedFeatures.APPLE_TREE_PLACED_KEY);
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.LARGE_APPLE_TREE_PLACED_KEY);
+
         /*
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.EXTRA_FLOWERS_PLACED_KEY);
@@ -100,6 +101,7 @@ public class ModBiomesAppleGrove {
                 VegetationPlacedFeatures.FLOWER_MEADOW);
 //        DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
 
+        DefaultBiomeFeatures.addLeafLitter(biomeBuilder);
         DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
         //DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
         DefaultBiomeFeatures.addLessKelp(biomeBuilder);
