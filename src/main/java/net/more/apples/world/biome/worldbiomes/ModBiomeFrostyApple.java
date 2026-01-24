@@ -73,7 +73,7 @@ public class ModBiomeFrostyApple {
 //                GenerationStep.Feature.VEGETAL_DECORATION,
 //                VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
 
-        DefaultBiomeFeatures.addLeafLitter(biomeBuilder);
+        //DefaultBiomeFeatures.addLeafLitter(biomeBuilder);
         DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
 //        biomeBuilder.feature(
 //                GenerationStep.Feature.VEGETAL_DECORATION,
