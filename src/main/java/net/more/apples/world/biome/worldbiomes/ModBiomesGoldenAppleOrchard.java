@@ -77,6 +77,7 @@ public class ModBiomesGoldenAppleOrchard {
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 VegetationPlacedFeatures.PATCH_GRASS_PLAIN);
 
+        DefaultBiomeFeatures.addLeafLitter(biomeBuilder);
         DefaultBiomeFeatures.addDefaultDisks(biomeBuilder);
         //DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);
         DefaultBiomeFeatures.addLessKelp(biomeBuilder);
