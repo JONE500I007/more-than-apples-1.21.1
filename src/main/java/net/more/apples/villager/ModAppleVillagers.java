@@ -1,42 +1,45 @@
 package net.more.apples.villager;
 
 import com.google.common.collect.ImmutableSet;
-import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
-import net.minecraft.block.Block;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-import net.minecraft.village.VillagerProfession;
-import net.minecraft.world.poi.PointOfInterestType;
+
+import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
+import net.fabricmc.fabric.api.object.builder.v1.world.poi.PoiHelper;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.ai.village.poi.PoiType;
+import net.minecraft.world.entity.npc.villager.VillagerProfession;
+import net.minecraft.world.level.block.Block;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.ModBlocks2;
 
+import java.util.Optional;
+
 public class ModAppleVillagers {
 
-    public static final RegistryKey<PointOfInterestType> APPLE_POI_KEY = registerPoiKey("apple_poi");
-    public static final PointOfInterestType APPLE_POI = registerPoi("apple_poi", ModBlocks2.APPLE_BARREL);
+    public static final ResourceKey<PoiType> APPLE_POI_KEY = registerPoiKey("apple_poi");
+    public static final PoiType APPLE_POI = registerPoi("apple_poi", ModBlocks2.APPLE_BARREL);
 
     public static final VillagerProfession APPLE_MASTER = registerProfession("apple_master", APPLE_POI_KEY);
 
-    public static final RegistryKey<VillagerProfession> APPLE_MASTER_KEY = RegistryKey.of(
-            RegistryKeys.VILLAGER_PROFESSION, Identifier.of(MoreThanApples.MOD_ID, "apple_master"));
+    public static final ResourceKey<VillagerProfession> APPLE_MASTER_KEY = ResourceKey.create(
+            Registries.VILLAGER_PROFESSION, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_master"));
 
-    private static VillagerProfession registerProfession(String name, RegistryKey<PointOfInterestType> type) {
-        return Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(MoreThanApples.MOD_ID, name),
-                /*
-                new VillagerProfession(Text.literal(name), entry -> entry.matchesKey(type), entry -> entry.matchesKey(type),
-                        ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_FISHERMAN));
-                 */
-                /*
-                new VillagerProfession(Text.translatable("entity.minecraft.villager.fishing_master"), entry -> entry.matchesKey(type), entry -> entry.matchesKey(type),
-                        ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_FISHERMAN));
-                 */
-                new VillagerProfession(Text.translatable("entity.minecraft.villager.apple_master"), entry -> entry.matchesKey(type), entry -> entry.matchesKey(type),
-                        ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_FISHERMAN));
+    private static VillagerProfession registerProfession(String name, ResourceKey<PoiType> type) {
+        return Registry.register(BuiltInRegistries.VILLAGER_PROFESSION,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name),
+                new VillagerProfession(
+                        Component.translatable("entity.minecraft.villager.apple_master"),
+                        entry -> entry.is(type),
+                        entry -> entry.is(type),
+                        ImmutableSet.of(),
+                        ImmutableSet.of(),
+                        SoundEvents.VILLAGER_WORK_FISHERMAN,
+                        Int2ObjectMaps.emptyMap()));
     }
     /*
     private static PointOfInterestType registerPoi(String name, Block block) {
@@ -44,13 +47,14 @@ public class ModAppleVillagers {
     }
      */
 
-    private static PointOfInterestType registerPoi(String name, Block block) {
-        return PointOfInterestHelper.register(Identifier.of(MoreThanApples.MOD_ID, name),
-                1, 1, ImmutableSet.copyOf(block.getStateManager().getStates()));
+    private static PoiType registerPoi(String name, Block block) {
+        return PoiHelper.register(Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name),
+                1, 1, ImmutableSet.copyOf(block.getStateDefinition().getPossibleStates()));
     }
 
-    private static RegistryKey<PointOfInterestType> registerPoiKey(String name) {
-        return RegistryKey.of(RegistryKeys.POINT_OF_INTEREST_TYPE, Identifier.of(MoreThanApples.MOD_ID, name));
+    private static ResourceKey<PoiType> registerPoiKey(String name) {
+        return ResourceKey.create(Registries.POINT_OF_INTEREST_TYPE,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
     }
 
     public static void registerVillagers() {

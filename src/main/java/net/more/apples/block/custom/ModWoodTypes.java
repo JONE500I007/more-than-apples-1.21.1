@@ -1,7 +1,8 @@
 package net.more.apples.block.custom;
 
-import net.minecraft.block.BlockSetType;
-import net.minecraft.block.WoodType;
+
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.more.apples.MoreThanApples;
 
 public class ModWoodTypes {

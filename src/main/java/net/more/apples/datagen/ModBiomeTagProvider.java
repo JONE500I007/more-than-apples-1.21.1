@@ -1,26 +1,26 @@
 package net.more.apples.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BiomeTags;
-import net.minecraft.world.biome.Biome;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.biome.Biome;
 import net.more.apples.world.biome.worldbiomes.ModBiomeFrostyApple;
 import net.more.apples.world.biome.worldbiomes.ModBiomesAppleGrove;
 import net.more.apples.world.biome.worldbiomes.ModBiomesGoldenAppleOrchard;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModBiomeTagProvider extends FabricTagProvider<Biome> {
-    public ModBiomeTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-        super(output, RegistryKeys.BIOME, registriesFuture);
+import static java.util.stream.DoubleStream.builder;
+
+public class ModBiomeTagProvider extends FabricTagsProvider<Biome> {
+    public ModBiomeTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+        super(output, Registries.BIOME, registriesFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+    protected void addTags(HolderLookup.Provider registries) {
         builder(BiomeTags.IS_OVERWORLD)
                 .add(ModBiomesAppleGrove.APPLE_GROVE);
 

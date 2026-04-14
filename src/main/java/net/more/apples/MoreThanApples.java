@@ -2,12 +2,13 @@ package net.more.apples;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
+import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
+import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
-import net.minecraft.item.Items;
-import net.minecraft.potion.Potions;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.more.apples.block.ModBlocks;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.block.ModBlocksForText;
@@ -85,16 +86,16 @@ public class MoreThanApples implements ModInitializer {
 			builder.registerPotionRecipe(Potions.AWKWARD,ModItems.DIAMOND_APPLE, ModPotions.FREEZING_RESOSTANCE_POTION);
 		});
 		 */
-		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
-			builder.registerPotionRecipe(Potions.AWKWARD,ModItems.DIAMOND_CARROT, ModPotions.NIGHT_VISION_POTION_V1);
+		FabricPotionBrewingBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(Potions.AWKWARD,Ingredient.of(ModItems.DIAMOND_CARROT), ModPotions.NIGHT_VISION_POTION_V1);
 		});
-		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
-			builder.registerPotionRecipe(Potions.AWKWARD,ModItems.TEST_APPLE, ModPotions.CALL_OF_APPLE_POTION);
-			builder.registerPotionRecipe(ModPotions.CALL_OF_APPLE_POTION, Items.REDSTONE, ModPotions.CALL_OF_APPLE_POTION_L);
+		FabricPotionBrewingBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(Potions.AWKWARD,Ingredient.of(ModItems.TEST_APPLE), ModPotions.CALL_OF_APPLE_POTION);
+			builder.registerPotionRecipe(ModPotions.CALL_OF_APPLE_POTION, Ingredient.of(Items.REDSTONE), ModPotions.CALL_OF_APPLE_POTION_L);
 		});
 
-		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
-			builder.registerPotionRecipe(Potions.AWKWARD,ModItems.GREEN_APPLE, Potions.LUCK);
+		FabricPotionBrewingBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(Potions.AWKWARD,Ingredient.of(ModItems.GREEN_APPLE), Potions.LUCK);
 		});
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
@@ -155,7 +156,7 @@ public class MoreThanApples implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_FENCE, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks2.FROSTY_APPLE_FENCE_GATE, 5, 20);
 
-		FuelRegistryEvents.BUILD.register(((builder, context) -> {
+		FuelValueEvents.BUILD.register(((builder, context) -> {
 			builder.add(ModBlocks2.APPLE_STAIRS, 300);
 			builder.add(ModBlocks2.APPLE_SLAB, 150);
 			builder.add(ModBlocks2.APPLE_BUTTON, 100);

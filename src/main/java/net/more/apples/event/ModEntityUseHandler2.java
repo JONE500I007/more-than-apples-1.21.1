@@ -1,35 +1,36 @@
 package net.more.apples.event;
 
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
-import net.minecraft.entity.passive.AbstractHorseEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.animal.equine.AbstractHorse;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+
 
 public final class ModEntityUseHandler2 {
     private static final TagKey<Item> MY_HORSE_FOOD =
-            TagKey.of(RegistryKeys.ITEM, Identifier.of("more-than-apples", "horse_food"));
+            TagKey.create(BuiltInRegistries.ITEM.key(), Identifier.fromNamespaceAndPath("more-than-apples", "horse_food"));
 
     public static void register() {
         UseEntityCallback.EVENT.register((player, world, hand, entity, hit) -> {
-            if (!(entity instanceof AbstractHorseEntity horse)) return ActionResult.PASS;
+            if (!(entity instanceof AbstractHorse horse)) return InteractionResult.PASS;
 
-            ItemStack stack = player.getStackInHand(hand);
-            if (!stack.isIn(MY_HORSE_FOOD)) return ActionResult.PASS;
+            ItemStack stack = player.getItemInHand(hand);
+            if (!stack.is(MY_HORSE_FOOD)) return InteractionResult.PASS;
 
-            if (world.isClient()) return ActionResult.SUCCESS;
+            if (world.isClientSide()) return InteractionResult.SUCCESS;
 
             boolean acted = false;
             boolean bred  = false;
 
-            if (!horse.isTame()) {
+            if (!horse.isTamed()) {
                 try {
                     int max  = horse.getMaxTemper();
                     int now  = horse.getTemper();
@@ -48,25 +49,25 @@ public final class ModEntityUseHandler2 {
             }
 
             boolean canBreed =
-                    horse.isTame() &&
+                    horse.isTamed() &&
                             !horse.isBaby() &&
-                            horse.getBreedingAge() == 0 &&
+                            horse.getAge() == 0 &&
                             !horse.isInLove();
 
             if (canBreed) {
-                horse.setLoveTicks(600);
+                horse.setInLoveTime(600);
                 bred = true;
                 acted = true;
             } else {
 
                 if (horse.isBaby()) {
-                    ((ServerWorld) world).spawnParticles(
+                    ((ServerLevel) world).sendParticles(
                             bred ? ParticleTypes.HEART : ParticleTypes.HAPPY_VILLAGER,
-                            horse.getX(), horse.getBodyY(0.5), horse.getZ(),
+                            horse.getX(), horse.getY(0.5), horse.getZ(),
                             bred ? 7 : 6, 0.3, 0.3, 0.3, 0.02
                     );
                     int grow = 60 * 20;
-                    horse.setBreedingAge(Math.min(0, horse.getBreedingAge() + grow));
+                    horse.setAge(Math.min(0, horse.getAge() + grow));
                     acted = true;
                 }
                 if (horse.getHealth() < horse.getMaxHealth()) {
@@ -76,21 +77,21 @@ public final class ModEntityUseHandler2 {
             }
 
             if (acted) {
-                if (!player.getAbilities().creativeMode) stack.decrement(1);
+                if (!player.getAbilities().instabuild) stack.shrink(1);
 
                 world.playSound(
                         null,
                         horse.getX(), horse.getY(), horse.getZ(),
-                        SoundEvents.ENTITY_HORSE_EAT,
-                        SoundCategory.NEUTRAL,
+                        SoundEvents.HORSE_EAT,
+                        SoundSource.NEUTRAL,
                         1.0f, 1.0f
                 );
 
-                player.swingHand(hand, true);
-                return ActionResult.SUCCESS;
+                player.swing(hand, true);
+                return InteractionResult.SUCCESS;
             }
 
-            return ActionResult.PASS;
+            return InteractionResult.PASS;
         });
     }
 }

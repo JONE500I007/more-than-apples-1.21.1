@@ -1,10 +1,12 @@
 package net.more.apples.particle;
 
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
-import net.minecraft.particle.SimpleParticleType;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+
+import net.minecraft.core.Registry;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.more.apples.MoreThanApples;
 
 public class ModParticle {
@@ -12,7 +14,7 @@ public class ModParticle {
             registerParticle("test_leaves_particle", FabricParticleTypes.simple());
 
     private static SimpleParticleType registerParticle(String name, SimpleParticleType particleType) {
-        return Registry.register(Registries.PARTICLE_TYPE, Identifier.of(MoreThanApples.MOD_ID, name), particleType);
+        return Registry.register(BuiltInRegistries.PARTICLE_TYPE, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name), particleType);
     }
 
     public static void registerParticle() {
