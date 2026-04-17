@@ -114,7 +114,7 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks2.FROSTY_APPLE_PRESSURE_PLATE);
 
 
-        valueLookupBuilder(BlockTags.AXE_MINEABLE)
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks2.APPLE_BARREL)
                 .add(ModBlocks2.APPLE_STANDING_SIGN)
                 .add(ModBlocks2.APPLE_WALL_SIGN)
@@ -130,7 +130,7 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks2.FROSTY_APPLE_WALL_SIGN)
                 .add(ModBlocks2.FROSTY_APPLE_HANGING_SIGN_BLOCK)
                 .add(ModBlocks2.FROSTY_APPLE_WALL_HANGING_SIGN);
-        valueLookupBuilder(BlockTags.HOE_MINEABLE)
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_HOE)
                 .add(ModBlocks2.APPLE_LEAVES)
                 .add(ModBlocks2.FRUIT_APPLE_LEAVES)
                 .add(ModBlocks2.TEST_APPLE_LEAVES)

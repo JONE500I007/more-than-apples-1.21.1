@@ -1,6 +1,7 @@
 package net.more.apples.world.tree;
 
-import net.minecraft.world.gen.trunk.TrunkPlacerType;
+
+import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.more.apples.MoreThanApples;
 import net.more.apples.mixin.TrunkPlacerTypeInvoker;
 import net.more.apples.world.tree.custom.FrostyAppleTrunkPlacer;

@@ -1,20 +1,25 @@
 package net.more.apples.datagen;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.*;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.item.ModItems;
 
 public class ModModelProvider extends FabricModelProvider {
-    public ModModelProvider(FabricDataOutput output) {
+    public ModModelProvider(FabricPackOutput output) {
         super(output);
     }
 
     @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+    public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         //all model blockstate block and item man...
         //blockStateModelGenerator.registerSimpleCubeAll(ModBlocks2.APPLE_ORE);
         //blockStateModelGenerator.registerSimpleCubeAll(ModBlocks2.APPLE_PLANKS);
@@ -26,9 +31,9 @@ public class ModModelProvider extends FabricModelProvider {
 //                    map.put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.DIAMOND_APPLE_BLOCK, ""));
 //                }));
 
-
-        BlockStateModelGenerator.BlockTexturePool appleGarnetPool = blockStateModelGenerator
-                .registerCubeAllModelTexturePool(ModBlocks2.APPLE_PLANKS);
+        blockModelGenerators.createTrivialCube(ModBlocks2.APPLE_PLANKS);
+        BlockModelGenerators.BlockFamilyProvider appleGarnetPool =
+                blockModelGenerators.family(ModBlocks2.APPLE_PLANKS);
 
         appleGarnetPool.stairs(ModBlocks2.APPLE_STAIRS);
         appleGarnetPool.slab(ModBlocks2.APPLE_SLAB);
@@ -39,8 +44,8 @@ public class ModModelProvider extends FabricModelProvider {
         appleGarnetPool.fence(ModBlocks2.APPLE_FENCE);
         appleGarnetPool.fenceGate(ModBlocks2.APPLE_FENCE_GATE);
 
-        blockStateModelGenerator.registerDoor(ModBlocks2.APPLE_DOOR);
-        blockStateModelGenerator.registerTrapdoor(ModBlocks2.APPLE_TRAPDOOR);
+        blockModelGenerators.createDoor(ModBlocks2.APPLE_DOOR);
+        blockModelGenerators.createTrapdoor(ModBlocks2.APPLE_TRAPDOOR);
 
 //        Identifier appleSignModel = Models.PARTICLE.upload(
 //                ModBlocks2.APPLE_STANDING_SIGN,
@@ -61,11 +66,11 @@ public class ModModelProvider extends FabricModelProvider {
                 BlockStateModelGenerator.createSingletonBlockState(ModBlocks2.APPLE_WALL_SIGN, appleSignModel)
         );
          */
-        blockStateModelGenerator.registerBuiltinWithParticle(
+        blockModelGenerators.createParticleOnlyBlock(
                 ModBlocks2.APPLE_STANDING_SIGN,
                 ModBlocks2.APPLE_PLANKS
         );
-        blockStateModelGenerator.registerBuiltinWithParticle(
+        blockModelGenerators.createParticleOnlyBlock(
                 ModBlocks2.APPLE_WALL_SIGN,
                 ModBlocks2.APPLE_PLANKS
         );
@@ -83,22 +88,22 @@ public class ModModelProvider extends FabricModelProvider {
                 BlockStateModelGenerator.createSingletonBlockState(ModBlocks2.TEST_APPLE_WALL_SIGN, testAppleSignModel)
         );
          */
-        blockStateModelGenerator.registerBuiltinWithParticle(
+        blockModelGenerators.createParticleOnlyBlock(
                 ModBlocks2.TEST_APPLE_STANDING_SIGN,
                 ModBlocks2.TEST_APPLE_PLANKS
         );
-        blockStateModelGenerator.registerBuiltinWithParticle(
+        blockModelGenerators.createParticleOnlyBlock(
                 ModBlocks2.TEST_APPLE_WALL_SIGN,
                 ModBlocks2.TEST_APPLE_PLANKS
         );
 
-        blockStateModelGenerator.registerHangingSign(
+        blockModelGenerators.createHangingSign(
                 ModBlocks2.STRIPPED_APPLE_LOG,
                 ModBlocks2.APPLE_HANGING_SIGN_BLOCK,
                 ModBlocks2.APPLE_WALL_HANGING_SIGN
         );
 
-        blockStateModelGenerator.registerHangingSign(
+        blockModelGenerators.createHangingSign(
                 ModBlocks2.STRIPPED_TEST_APPLE_LOG,
                 ModBlocks2.TEST_APPLE_HANGING_SIGN_BLOCK,
                 ModBlocks2.TEST_APPLE_WALL_HANGING_SIGN
@@ -107,8 +112,9 @@ public class ModModelProvider extends FabricModelProvider {
         //appleGarnetPool.family(ModBlocks2.THE_APPLE_FAMILY);
 
 
-        BlockStateModelGenerator.BlockTexturePool testAppleGarnetPool = blockStateModelGenerator
-                .registerCubeAllModelTexturePool(ModBlocks2.TEST_APPLE_PLANKS);
+        blockModelGenerators.createTrivialCube(ModBlocks2.TEST_APPLE_PLANKS);
+        BlockModelGenerators.BlockFamilyProvider testAppleGarnetPool = blockModelGenerators
+                .family(ModBlocks2.TEST_APPLE_PLANKS);
 
         testAppleGarnetPool.stairs(ModBlocks2.TEST_APPLE_STAIRS);
         testAppleGarnetPool.slab(ModBlocks2.TEST_APPLE_SLAB);
@@ -119,19 +125,27 @@ public class ModModelProvider extends FabricModelProvider {
         testAppleGarnetPool.fence(ModBlocks2.TEST_APPLE_FENCE);
         testAppleGarnetPool.fenceGate(ModBlocks2.TEST_APPLE_FENCE_GATE);
 
-        blockStateModelGenerator.registerDoor(ModBlocks2.TEST_APPLE_DOOR);
-        blockStateModelGenerator.registerTrapdoor(ModBlocks2.TEST_APPLE_TRAPDOOR);
+        blockModelGenerators.createDoor(ModBlocks2.TEST_APPLE_DOOR);
+        blockModelGenerators.createDoor(ModBlocks2.TEST_APPLE_TRAPDOOR);
 
 
-        blockStateModelGenerator.createLogTexturePool(ModBlocks2.APPLE_LOG).log(ModBlocks2.APPLE_LOG).wood(ModBlocks2.APPLE_WOOD);
-        blockStateModelGenerator.createLogTexturePool(ModBlocks2.STRIPPED_APPLE_LOG).log(ModBlocks2.STRIPPED_APPLE_LOG).wood(ModBlocks2.STRIPPED_APPLE_WOOD);
+        blockModelGenerators.woodProvider(ModBlocks2.APPLE_LOG)
+                .log(ModBlocks2.APPLE_LOG)
+                .wood(ModBlocks2.APPLE_WOOD);
+        blockModelGenerators.woodProvider(ModBlocks2.STRIPPED_APPLE_LOG)
+                .log(ModBlocks2.STRIPPED_APPLE_LOG)
+                .wood(ModBlocks2.STRIPPED_APPLE_WOOD);
         //blockStateModelGenerator.registerSingleton(ModBlocks2.APPLE_LEAVES, TexturedModel.LEAVES);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.APPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.GOLDEN_APPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockModelGenerators.createCrossBlock(ModBlocks2.APPLE_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
+        blockModelGenerators.createCrossBlock(ModBlocks2.GOLDEN_APPLE_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
 
-        blockStateModelGenerator.createLogTexturePool(ModBlocks2.TEST_APPLE_LOG).log(ModBlocks2.TEST_APPLE_LOG).wood(ModBlocks2.TEST_APPLE_WOOD);
-        blockStateModelGenerator.createLogTexturePool(ModBlocks2.STRIPPED_TEST_APPLE_LOG).log(ModBlocks2.STRIPPED_TEST_APPLE_LOG).wood(ModBlocks2.STRIPPED_TEST_APPLE_WOOD);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.TEST_APPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockModelGenerators.woodProvider(ModBlocks2.TEST_APPLE_LOG)
+                .log(ModBlocks2.TEST_APPLE_LOG)
+                .wood(ModBlocks2.TEST_APPLE_WOOD);
+        blockModelGenerators.woodProvider(ModBlocks2.STRIPPED_TEST_APPLE_LOG)
+                .log(ModBlocks2.STRIPPED_TEST_APPLE_LOG)
+                .wood(ModBlocks2.STRIPPED_TEST_APPLE_WOOD);
+        blockModelGenerators.createCrossBlock(ModBlocks2.TEST_APPLE_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
 
 
         /*
@@ -147,22 +161,22 @@ public class ModModelProvider extends FabricModelProvider {
                 BlockStateModelGenerator.createSingletonBlockState(ModBlocks2.FROSTY_APPLE_WALL_SIGN, frostyAppleSignModel)
         );
          */
-        blockStateModelGenerator.registerBuiltinWithParticle(
+        blockModelGenerators.createParticleOnlyBlock(
                 ModBlocks2.FROSTY_APPLE_STANDING_SIGN,
                 ModBlocks2.FROSTY_APPLE_PLANKS
         );
-        blockStateModelGenerator.registerBuiltinWithParticle(
+        blockModelGenerators.createParticleOnlyBlock(
                 ModBlocks2.FROSTY_APPLE_WALL_SIGN,
                 ModBlocks2.FROSTY_APPLE_PLANKS
         );
 
-        blockStateModelGenerator.registerHangingSign(
+        blockModelGenerators.createHangingSign(
                 ModBlocks2.STRIPPED_FROSTY_APPLE_LOG,
                 ModBlocks2.FROSTY_APPLE_HANGING_SIGN_BLOCK,
                 ModBlocks2.FROSTY_APPLE_WALL_HANGING_SIGN
         );
-        BlockStateModelGenerator.BlockTexturePool frostyAppleGarnetPool = blockStateModelGenerator
-                .registerCubeAllModelTexturePool(ModBlocks2.FROSTY_APPLE_PLANKS);
+        BlockModelGenerators.BlockFamilyProvider frostyAppleGarnetPool = blockModelGenerators
+                .family(ModBlocks2.FROSTY_APPLE_PLANKS);
 
         frostyAppleGarnetPool.stairs(ModBlocks2.FROSTY_APPLE_STAIRS);
         frostyAppleGarnetPool.slab(ModBlocks2.FROSTY_APPLE_SLAB);
@@ -173,47 +187,52 @@ public class ModModelProvider extends FabricModelProvider {
         frostyAppleGarnetPool.fence(ModBlocks2.FROSTY_APPLE_FENCE);
         frostyAppleGarnetPool.fenceGate(ModBlocks2.FROSTY_APPLE_FENCE_GATE);
 
-        blockStateModelGenerator.registerDoor(ModBlocks2.FROSTY_APPLE_DOOR);
-        blockStateModelGenerator.registerTrapdoor(ModBlocks2.FROSTY_APPLE_TRAPDOOR);
+        blockModelGenerators.createDoor(ModBlocks2.FROSTY_APPLE_DOOR);
+        blockModelGenerators.createTrapdoor(ModBlocks2.FROSTY_APPLE_TRAPDOOR);
 
-        blockStateModelGenerator.createLogTexturePool(ModBlocks2.FROSTY_APPLE_LOG).log(ModBlocks2.FROSTY_APPLE_LOG).wood(ModBlocks2.FROSTY_APPLE_WOOD);
-        blockStateModelGenerator.createLogTexturePool(ModBlocks2.STRIPPED_FROSTY_APPLE_LOG).log(ModBlocks2.STRIPPED_FROSTY_APPLE_LOG).wood(ModBlocks2.STRIPPED_FROSTY_APPLE_WOOD);
-        blockStateModelGenerator.registerSingleton(ModBlocks2.FROSTY_APPLE_LEAVES, TexturedModel.LEAVES);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks2.FROSTY_APPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockModelGenerators.woodProvider(ModBlocks2.FROSTY_APPLE_LOG)
+                .log(ModBlocks2.FROSTY_APPLE_LOG)
+                .wood(ModBlocks2.FROSTY_APPLE_WOOD);
+        blockModelGenerators.woodProvider(ModBlocks2.STRIPPED_FROSTY_APPLE_LOG)
+                .log(ModBlocks2.STRIPPED_FROSTY_APPLE_LOG)
+                .wood(ModBlocks2.STRIPPED_FROSTY_APPLE_WOOD);
+        blockModelGenerators.createTrivialBlock(ModBlocks2.FROSTY_APPLE_LEAVES, TexturedModel.LEAVES);
 
-        blockStateModelGenerator.registerSingleton(
+        blockModelGenerators.createCrossBlock(ModBlocks2.FROSTY_APPLE_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
+
+        blockModelGenerators.createTrivialBlock(
         ModBlocks2.APPLE_BARREL,
-        TexturedModel.CUBE_BOTTOM_TOP.andThen((map) -> {
-            map.put(TextureKey.TOP, TextureMap.getSubId(ModBlocks2.APPLE_BARREL, "_top"));
-            map.put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks2.APPLE_BARREL, "_bottom"));
-            map.put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks2.APPLE_BARREL, ""));
+        TexturedModel.CUBE_TOP_BOTTOM.updateTexture((map) -> {
+            map.put(TextureSlot.TOP, TextureMapping.getBlockTexture(ModBlocks2.APPLE_BARREL, "_top"));
+            map.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks2.APPLE_BARREL, "_bottom"));
+            map.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModBlocks2.APPLE_BARREL, ""));
         }));
     }
 
     @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+    public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         //itemModelGenerator.register(ModItems.DIAMOND_APPLE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GREEN_APPLE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TEST_APPLE, Models.GENERATED);
+        itemModelGenerators.generateFlatItem(ModItems.GREEN_APPLE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.TEST_APPLE, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.register(ModBlocks2.APPLE_SAPLING.asItem(), Models.GENERATED);
-        itemModelGenerator.register(ModBlocks2.TEST_APPLE_SAPLING.asItem(), Models.GENERATED);
-        itemModelGenerator.register(ModBlocks2.GOLDEN_APPLE_SAPLING.asItem(), Models.GENERATED);
-        itemModelGenerator.register(ModBlocks2.FROSTY_APPLE_SAPLING.asItem(), Models.GENERATED);
+        itemModelGenerators.generateFlatItem(ModBlocks2.APPLE_SAPLING.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModBlocks2.TEST_APPLE_SAPLING.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModBlocks2.GOLDEN_APPLE_SAPLING.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModBlocks2.FROSTY_APPLE_SAPLING.asItem(), ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.register(ModItems.APPLE_SIGN, Models.GENERATED);
-//        itemModelGenerator.register(ModItems.APPLE_HANGING_SIGN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.APPLE_BOAT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.APPLE_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerators.generateFlatItem(ModItems.APPLE_SIGN, ModelTemplates.FLAT_ITEM);
+//        itemModelGenerator.register(ModItems.APPLE_HANGING_SIGN, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.APPLE_BOAT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.APPLE_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.register(ModItems.TEST_APPLE_SIGN, Models.GENERATED);
-//        itemModelGenerator.register(ModItems.TEST_APPLE_HANGING_SIGN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TEST_APPLE_BOAT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TEST_APPLE_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerators.generateFlatItem(ModItems.TEST_APPLE_SIGN, ModelTemplates.FLAT_ITEM);
+//        itemModelGenerator.register(ModItems.TEST_APPLE_HANGING_SIGN, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.TEST_APPLE_BOAT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.TEST_APPLE_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.register(ModItems.FROSTY_APPLE_SIGN, Models.GENERATED);
-//        itemModelGenerator.register(ModItems.FROSTY_APPLE_HANGING_SIGN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FROSTY_APPLE_BOAT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FROSTY_APPLE_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerators.generateFlatItem(ModItems.FROSTY_APPLE_SIGN, ModelTemplates.FLAT_ITEM);
+//        itemModelGenerator.register(ModItems.FROSTY_APPLE_HANGING_SIGN, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.FROSTY_APPLE_BOAT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.FROSTY_APPLE_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
     }
 }

@@ -1,10 +1,10 @@
 package net.more.apples.util;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.more.apples.MoreThanApples;
 
 public class ModTags {
@@ -17,7 +17,7 @@ public class ModTags {
         public static final TagKey<Block> ALL_FROSTY_APPLE_LOG = createTag("all_frosty_apple_log");
 
         public static TagKey<Block> createTag(String name) {
-            return TagKey.of(RegistryKeys.BLOCK, Identifier.of(MoreThanApples.MOD_ID, name));
+            return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
         }
     }
 
@@ -32,7 +32,7 @@ public class ModTags {
         public static final TagKey<Item> ALL_FROSTY_APPLE_LOG = createTag("all_frosty_apple_log");
 
         public static TagKey<Item> createTag(String name) {
-            return TagKey.of(RegistryKeys.ITEM, Identifier.of(MoreThanApples.MOD_ID, name));
+            return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
         }
     }
 }

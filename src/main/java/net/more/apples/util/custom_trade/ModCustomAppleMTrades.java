@@ -1,20 +1,10 @@
 package net.more.apples.util.custom_trade;
 
-import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.PotionContentsComponent;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.potion.Potions;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Util;
-import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TradedItem;
+
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.*;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.item.ModItems;
@@ -28,21 +18,21 @@ public class ModCustomAppleMTrades {
     public static void registerCustomTrades() {
         MoreThanApples.LOGGER.info("Registering Villager Trades From " + MoreThanApples.MOD_ID);
 
-        TradeOfferHelper.registerVillagerOffers(ModAppleVillagers.APPLE_MASTER_KEY,1, factories -> {
-            factories.add((world,entity,random) -> new TradeOffer(
-                    new TradedItem(Items.APPLE, 9),
+        MerchantOffer.createFromStream(ModAppleVillagers.APPLE_MASTER_KEY,1, factories -> {
+            factories.add((world,entity,random) -> new MerchantOffer(
+                    new ItemCost(Items.APPLE, 9),
                     Optional.empty(),
                     new ItemStack(Items.EMERALD, 1),
                     16, 2, 0.05f
             ));
-            factories.add((world,entity,random) -> new TradeOffer(
-                    new TradedItem(ModBlocks2.APPLE_SAPLING, 16),
+            factories.add((world,entity,random) -> new MerchantOffer(
+                    new ItemCost(ModBlocks2.APPLE_SAPLING, 16),
                     Optional.empty(),
                     new ItemStack(Items.EMERALD, 1),
                     18, 2, 0.05f
             ));
-            factories.add((world,entity,random) -> new TradeOffer(
-                    new TradedItem(Items.STICK, 30),
+            factories.add((world,entity,random) -> new MerchantOffer(
+                    new ItemCost(Items.STICK, 30),
                     Optional.empty(),
                     new ItemStack(Items.EMERALD, 1),
                     16, 2, 0.05f

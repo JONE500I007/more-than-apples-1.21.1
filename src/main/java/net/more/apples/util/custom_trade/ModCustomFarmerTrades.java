@@ -1,11 +1,10 @@
 package net.more.apples.util.custom_trade;
 
-import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TradedItem;
-import net.minecraft.village.VillagerProfession;
+import net.minecraft.world.entity.npc.villager.VillagerProfession;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.ItemCost;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.more.apples.MoreThanApples;
 import net.more.apples.item.ModItems;
 
@@ -27,7 +26,7 @@ public class ModCustomFarmerTrades {
             factories.add((world,entity, random) -> {
                 if (random.nextBoolean()) {
                     return new TradeOffer(
-                            new TradedItem(Items.EMERALD, 20),
+                            new ItemCost(Items.EMERALD, 20),
                             new ItemStack(ModItems.DIAMOND_CARROT, 2),
                             6, 40, 0.2f
                     );
@@ -39,20 +38,20 @@ public class ModCustomFarmerTrades {
         // level 1 for WanderingTrader is common trades
         // level 2 for WanderingTrader is rare trades lol not have level 3
         // maybe cuz i dont know for this as much lol
-        TradeOfferHelper.registerWanderingTraderOffers(factories -> {
-            factories.addOffersToPool(TradeOfferHelper.WanderingTraderOffersBuilder.BUY_ITEMS_POOL,
-                    (world,entity,random) -> new TradeOffer(
-                            new TradedItem(Items.EMERALD_BLOCK, 3),
+        MerchantOffer.createFromStream(factories -> {
+            factories.addOffersToPool(MerchantOffer.WanderingTraderOffersBuilder.BUY_ITEMS_POOL,
+                    (world,entity,random) -> new MerchantOffer(
+                            new ItemCost(Items.EMERALD_BLOCK, 3),
                             new ItemStack(Items.GOLDEN_APPLE, 1),
                             13, 100, 0.2f
                     ),
-                    (world,entity,random) -> new TradeOffer(
-                            new TradedItem(Items.EMERALD_BLOCK, 7),
+                    (world,entity,random) -> new MerchantOffer(
+                            new ItemCost(Items.EMERALD_BLOCK, 7),
                             new ItemStack(ModItems.DIAMOND_APPLE, 1),
                             10, 200, 0.2f
                     ),
-                    (world,entity,random) -> new TradeOffer(
-                            new TradedItem(Items.EMERALD_BLOCK, 7),
+                    (world,entity,random) -> new MerchantOffer(
+                            new ItemCost(Items.EMERALD_BLOCK, 7),
                             new ItemStack(ModItems.DIAMOND_APPLE, 1),
                             10, 200, 0.2f
                     )
