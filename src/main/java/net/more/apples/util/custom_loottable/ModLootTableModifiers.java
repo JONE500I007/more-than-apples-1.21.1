@@ -1,12 +1,12 @@
 package net.more.apples.util.custom_loottable;
 
-import net.minecraft.util.Identifier;
+import net.minecraft.resources.Identifier;
 
 public class ModLootTableModifiers {
     private static final Identifier JUNGLE_TEMPLE_ID =
-            Identifier.of("minecraft", "chests/jungle_temple");
+            Identifier.fromNamespaceAndPath("minecraft", "chests/jungle_temple");
     private static final Identifier CREEPER_ID =
-            Identifier.of("minecraft", "entities/creeper");
+            Identifier.fromNamespaceAndPath("minecraft", "entities/creeper");
 
     public static void modifyLootTables() {
         /*

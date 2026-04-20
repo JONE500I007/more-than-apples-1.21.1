@@ -1,15 +1,16 @@
 package net.more.apples.util.custom_loottable;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.LootTables;
-import net.minecraft.loot.condition.RandomChanceLootCondition;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.registry.RegistryKey;
+
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.storage.loot.BuiltInLootTables;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.more.apples.item.ModItems;
 
 public class ModLootTableModifiers_DiaCarrot {
@@ -17,86 +18,92 @@ public class ModLootTableModifiers_DiaCarrot {
 //            Identifier.of("minecraft", "chests/jungle_temple");
 //    private static final Identifier CREEPER_ID =
 //            Identifier.of("minecraft", "entities/creeper");
-    private static final RegistryKey<LootTable> ANCIENT_CITY_ICE_BOX_CHEST_KEY =
-            LootTables.ANCIENT_CITY_ICE_BOX_CHEST;
+    private static final ResourceKey<LootTable> ANCIENT_CITY_ICE_BOX_CHEST_KEY =
+        BuiltInLootTables.ANCIENT_CITY_ICE_BOX;
 
-    private static final RegistryKey<LootTable> BASTION_HOGLIN_STABLE_CHEST_KEY =
-            LootTables.BASTION_HOGLIN_STABLE_CHEST;
-    private static final RegistryKey<LootTable> BASTION_OTHER_CHEST_KEY =
-            LootTables.BASTION_OTHER_CHEST;
+    private static final ResourceKey<LootTable> BASTION_HOGLIN_STABLE_CHEST_KEY =
+            BuiltInLootTables.BASTION_HOGLIN_STABLE;
+    private static final ResourceKey<LootTable> BASTION_OTHER_CHEST_KEY =
+            BuiltInLootTables.BASTION_OTHER;
 
-    private static final RegistryKey<LootTable> RUINED_PORTAL_CHEST_KEY =
-            LootTables.RUINED_PORTAL_CHEST;
+    private static final ResourceKey<LootTable> RUINED_PORTAL_CHEST_KEY =
+            BuiltInLootTables.RUINED_PORTAL;
 
-    private static final RegistryKey<LootTable> TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_CHEST_KEY =
-            LootTables.TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_CHEST;
-    private static final RegistryKey<LootTable> TRIAL_CHAMBERS_REWARD_RARE_CHEST_KEY =
-            LootTables.TRIAL_CHAMBERS_REWARD_RARE_CHEST;
+    private static final ResourceKey<LootTable> TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_CHEST_KEY =
+            BuiltInLootTables.TRIAL_CHAMBERS_REWARD_OMINOUS_RARE;
+    private static final ResourceKey<LootTable> TRIAL_CHAMBERS_REWARD_RARE_CHEST_KEY =
+            BuiltInLootTables.TRIAL_CHAMBERS_REWARD_RARE;
 
 
 
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ANCIENT_CITY_ICE_BOX_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.549f))
-                        .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f))));
+                tableBuilder.pool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.549f))
+                        .add(LootItem.lootTableItem(ModItems.DIAMOND_CARROT))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 10.0f)))
+                        .build());
             }
 
             if (BASTION_HOGLIN_STABLE_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.10f))
-                        .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(8.0f, 17.0f))));
+                tableBuilder.pool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.10f))
+                        .add(LootItem.lootTableItem(ModItems.DIAMOND_CARROT))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0f, 17.0f)))
+                        .build());
             }
             if (BASTION_OTHER_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.135f))
-                        .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(6.0f, 17.0f))));
+                tableBuilder.pool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.135f))
+                        .add(LootItem.lootTableItem(ModItems.DIAMOND_CARROT))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(6.0f, 17.0f)))
+                        .build());
             }
 
             if (RUINED_PORTAL_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.073f))
-                        .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(4.0f, 12.0f))));
+                tableBuilder.pool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.073f))
+                        .add(LootItem.lootTableItem(ModItems.DIAMOND_CARROT))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0f, 12.0f)))
+                        .build());
             }
 
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.14f))
-                        .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f))));
+                tableBuilder.pool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.14f))
+                        .add(LootItem.lootTableItem(ModItems.DIAMOND_CARROT))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
+                        .build());
             }
             if (TRIAL_CHAMBERS_REWARD_RARE_CHEST_KEY.equals(key)) {
-                tableBuilder.pool(LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.07f))
-                        .with(ItemEntry.builder(ModItems.DIAMOND_CARROT))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f))));
+                tableBuilder.pool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(LootItemRandomChanceCondition.randomChance(0.07f))
+                        .add(LootItem.lootTableItem(ModItems.DIAMOND_CARROT))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
+                        .build());
             }
 
             /*
             if (CREEPER_LOOT_TABLE_KEY.equals(key)) {
                 tableBuilder.modifyPools(poolBuilder -> poolBuilder
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(ModItems.DIAMOND_APPLE))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).build()));
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(LootItemRandomChanceCondition.randomChance(1.0f))
+                        .add(LootItem.lootTableItem(ModItems.DIAMOND_APPLE))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 3.0f)).build()));
             }
             if (LootTables.ANCIENT_CITY_CHEST.equals(key.getValue())) {
                 tableBuilder.modifyPools(poolBuilder -> poolBuilder
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(7.0f))
-                        .with(ItemEntry.builder(ModItems.DIAMOND_APPLE))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).build()));
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(LootItemRandomChanceCondition.randomChance(7.0f))
+                        .add(LootItem.lootTableItem(ModItems.DIAMOND_APPLE))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 3.0f)).build()));
             }
              */
         });
