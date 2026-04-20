@@ -1,6 +1,6 @@
 package net.more.apples.world;
 
-import net.minecraft.world.gen.placementmodifier.*;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 
 import java.util.List;
 

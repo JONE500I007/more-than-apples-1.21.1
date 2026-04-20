@@ -2,33 +2,26 @@ package net.more.apples.world;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.placementmodifier.*;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.ModBlocks2;
 
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final RegistryKey<PlacedFeature> APPLE_ORE_PLACED_KEY = registryKey("apple_ore_placed");
+    public static final ResourceKey<PlacedFeature> APPLE_ORE_PLACED_KEY = registryKey("apple_ore_placed");
 
-    public static final RegistryKey<PlacedFeature> APPLE_TREE_PLACED_KEY = registryKey("apple_tree_placed");
-    public static final RegistryKey<PlacedFeature> LARGE_APPLE_TREE_PLACED_KEY = registryKey("large_apple_tree_placed");
+    public static final ResourceKey<PlacedFeature> APPLE_TREE_PLACED_KEY = registryKey("apple_tree_placed");
+    public static final ResourceKey<PlacedFeature> LARGE_APPLE_TREE_PLACED_KEY = registryKey("large_apple_tree_placed");
 
-    public static final RegistryKey<PlacedFeature> LARGE_GOLDEN_APPLE_TREE_PLACED_KEY = registryKey("large_golden_apple_tree_placed");
+    public static final ResourceKey<PlacedFeature> LARGE_GOLDEN_APPLE_TREE_PLACED_KEY = registryKey("large_golden_apple_tree_placed");
 
-    public static final RegistryKey<PlacedFeature> FROSTY_APPLE_TREE_PLACED_KEY = registryKey("frosty_apple_tree_placed");
+    public static final ResourceKey<PlacedFeature> FROSTY_APPLE_TREE_PLACED_KEY = registryKey("frosty_apple_tree_placed");
 
-    public static final RegistryKey<PlacedFeature> EXTRA_FLOWERS_PLACED_KEY = registryKey("extra_flowers_placed");
+    public static final ResourceKey<PlacedFeature> EXTRA_FLOWERS_PLACED_KEY = registryKey("extra_flowers_placed");
 
-    public static final RegistryKey<PlacedFeature> ORCHARD_SEAGRASS_PLACED_KEY = registryKey("orchard_seagrass_placed");
+    public static final ResourceKey<PlacedFeature> ORCHARD_SEAGRASS_PLACED_KEY = registryKey("orchard_seagrass_placed");
 
 
     public static void boostrap(Registerable<PlacedFeature> context) {

@@ -1,6 +1,8 @@
 package net.more.apples.world.tree;
 
-import net.minecraft.world.gen.foliage.FoliagePlacerType;
+
+
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.more.apples.MoreThanApples;
 import net.more.apples.mixin.FoliagePlacerTypeInvoker;
 import net.more.apples.world.tree.custom.FrostyAppleFoliagePlacer;
