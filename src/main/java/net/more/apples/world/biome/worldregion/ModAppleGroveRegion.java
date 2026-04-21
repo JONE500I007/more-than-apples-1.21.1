@@ -1,11 +1,11 @@
 package net.more.apples.world.biome.worldregion;
 
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.source.util.MultiNoiseUtil;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Climate;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
 import terrablender.api.VanillaParameterOverlayBuilder;
@@ -30,8 +30,7 @@ public class ModAppleGroveRegion extends Region {
      */
 
     @Override
-    public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube,
-            RegistryKey<Biome>>> mapper) {
+    public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 
         /*
@@ -66,7 +65,7 @@ public class ModAppleGroveRegion extends Region {
                 // -values = surface/above ground
                 // +values = basement, floor maybe
                 //.depth(MultiNoiseUtil.ParameterRange.of(-0.5F, 0.0F)) maybe use this
-                .depth(MultiNoiseUtil.ParameterRange.of(-1.0F, 1.0F))
+                .depth(Climate.Parameter.span(-1.0F, 1.0F))
                 .weirdness(Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.LOW_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, APPLE_GROVE));
 

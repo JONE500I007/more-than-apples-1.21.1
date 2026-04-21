@@ -1,23 +1,15 @@
 package net.more.apples.world.biome.worldbiomes;
 
-import net.minecraft.particle.DustParticleEffect;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.sound.BiomeMoodSound;
-import net.minecraft.sound.MusicType;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
+
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.attribute.AmbientSounds;
 import net.minecraft.world.attribute.BackgroundMusic;
 import net.minecraft.world.attribute.EnvironmentAttributes;
-import net.minecraft.world.biome.*;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
-import net.minecraft.world.gen.feature.OceanPlacedFeatures;
-import net.minecraft.world.gen.feature.PlacedFeatures;
-import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.more.apples.MoreThanApples;
 import net.more.apples.world.ModPlacedFeatures;
 import org.joml.Vector3f;
@@ -26,11 +18,11 @@ import java.util.List;
 import java.util.Optional;
 
 public class ModBiomesGoldenAppleOrchard {
-    public static final RegistryKey<Biome> GOLDEN_APPLE_ORCHARD = RegistryKey.of(RegistryKeys.BIOME,
-            Identifier.of(MoreThanApples.MOD_ID, "golden_apple_orchard"));
+    public static final ResourceKey<Biome> GOLDEN_APPLE_ORCHARD = ResourceKey.create(Registries.BIOME,
+            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "golden_apple_orchard"));
 
 
-    public static void boostrap(Registerable<Biome> context) {
+    public static void boostrap(BootstrapContext<Biome> context) {
         context.register(GOLDEN_APPLE_ORCHARD, applegBiome(context));
     }
 

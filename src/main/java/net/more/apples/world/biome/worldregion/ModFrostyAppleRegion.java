@@ -1,11 +1,11 @@
 package net.more.apples.world.biome.worldregion;
 
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.source.util.MultiNoiseUtil;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Climate;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
 import terrablender.api.VanillaParameterOverlayBuilder;
@@ -20,9 +20,9 @@ public class ModFrostyAppleRegion extends Region {
         super(name, RegionType.OVERWORLD, weight);
     }
 
+
     @Override
-    public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube,
-            RegistryKey<Biome>>> mapper) {
+    public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 
         new ParameterPointListBuilder()
@@ -30,7 +30,7 @@ public class ModFrostyAppleRegion extends Region {
                 .humidity(Humidity.span(Humidity.ARID, Humidity.NEUTRAL))
                 .continentalness(Continentalness.NEAR_INLAND, Continentalness.FAR_INLAND)
                 .erosion(Erosion.EROSION_5, Erosion.EROSION_6)
-                .depth(MultiNoiseUtil.ParameterRange.of(-1.0F, 1.0F))
+                .depth(Climate.Parameter.span(-1.0F, 1.0F))
                 .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING,
                         Weirdness.VALLEY,
                         Weirdness.MID_SLICE_NORMAL_DESCENDING)

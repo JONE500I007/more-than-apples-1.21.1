@@ -1,11 +1,12 @@
 package net.more.apples.world.biome.worldregion;
 
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.source.util.MultiNoiseUtil;
+import net.minecraft.core.Registry;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Climate;
 import net.more.apples.world.biome.worldbiomes.ModBiomesGoldenAppleOrchard;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
@@ -23,8 +24,7 @@ public class ModGoldenAppleOrchardRegion extends Region {
     }
 
     @Override
-    public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube,
-            RegistryKey<Biome>>> mapper) {
+    public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 
         new ParameterPointListBuilder()
@@ -32,7 +32,7 @@ public class ModGoldenAppleOrchardRegion extends Region {
                 .humidity(Humidity.span(Humidity.NEUTRAL, Humidity.WET))
                 .continentalness(Continentalness.INLAND, Continentalness.MID_INLAND)
                 .erosion(Erosion.EROSION_5, Erosion.EROSION_6)
-                .depth(MultiNoiseUtil.ParameterRange.of(-1.0F, 1.0F))
+                .depth(Climate.Parameter.span(-1.0F, 1.0F))
                 .weirdness(Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.LOW_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, GOLDEN_APPLE_ORCHARD));
 
