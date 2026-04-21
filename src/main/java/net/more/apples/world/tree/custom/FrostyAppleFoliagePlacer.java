@@ -77,28 +77,30 @@ public class FrostyAppleFoliagePlacer extends FoliagePlacer {
                         int hangLength = minHang + random.nextInt(maxHangVariation);
 
                         for (int i = 1; i <= hangLength; i++) {
-                            mutablePos.set(center, x, -1 - foliageHeight - i, z);
+                            mutablePos.set(
+                                    center.getX() + x,
+                                    center.getY() - 1 - foliageHeight - i,
+                                    center.getZ() + z);
                             final BlockPos currentPos = mutablePos.immutable();
 
-                            if (level.getBlockState(currentPos, state -> {
-                                return (state.isAir() || state.isOf(Blocks.WATER))
-                                        && !state.isOf(ModBlocks2.FROSTY_APPLE_LOG);
-                            })) {
-
-                                placer.placeBlock(currentPos, config.foliageProvider.get(random, currentPos));
+                            if ((level.getBlockState(currentPos).getBlock() == Blocks.AIR
+                                    || level.getBlockState(currentPos).getBlock() == Blocks.WATER)
+                                    && level.getBlockState(currentPos).getBlock() != ModBlocks2.FROSTY_APPLE_LOG) {
+                                foliageSetter.set(currentPos, config.foliageProvider.getState(level, random, currentPos));
                             } else {
-                                break;
+                                {
+                                    break;
+                                }
                             }
                         }
                     }
                 }
             }
         }
-
     }
 
     @Override
-    public int foliageHeight(RandomSource random, int treeHeight, TreeConfiguration config {
+    public int foliageHeight(RandomSource random, int treeHeight, TreeConfiguration config) {
         return this.height;
     }
 
@@ -107,7 +109,7 @@ public class FrostyAppleFoliagePlacer extends FoliagePlacer {
         if (y == 0) {
             return (dx > 1 || dz > 1) && dx != 0 && dz != 0;
         } else {
-            return dx == radius && dz == radius && radius > 0;
+            return dx == currentRadius && dz == currentRadius && currentRadius > 0;
         }
     }
 }
