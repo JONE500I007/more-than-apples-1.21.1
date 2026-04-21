@@ -3,27 +3,30 @@ package net.more.apples.world.tree.custom;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.TestableWorld;
-import net.minecraft.world.gen.feature.TreeFeature;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
-import net.minecraft.world.gen.foliage.FoliagePlacer;
-import net.minecraft.world.gen.trunk.TrunkPlacer;
-import net.minecraft.world.gen.trunk.TrunkPlacerType;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.more.apples.world.tree.ModTrunkPlacerType;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalInt;
+import java.util.Random;
 import java.util.function.BiConsumer;
 
 public class TestAppleTrunkPlacer extends TrunkPlacer {
     public static final MapCodec<TestAppleTrunkPlacer> CODEC =
             RecordCodecBuilder.mapCodec(testAppleTrunkPlacerInstance ->
-                    fillTrunkPlacerFields(testAppleTrunkPlacerInstance)
+                    trunkPlacerParts(testAppleTrunkPlacerInstance)
                             .apply(testAppleTrunkPlacerInstance, TestAppleTrunkPlacer::new));
 
     public TestAppleTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
@@ -31,63 +34,63 @@ public class TestAppleTrunkPlacer extends TrunkPlacer {
     }
 
     @Override
-    protected TrunkPlacerType<?> getType() {
+    protected TrunkPlacerType<?> type() {
         return ModTrunkPlacerType.TEST_TRUNK_PLACER;
     }
 
     @Override
-    public List<FoliagePlacer.TreeNode> generate(
-            TestableWorld world,
-            BiConsumer<BlockPos, BlockState> replacer,
-            Random random, int height, BlockPos startPos,
-            TreeFeatureConfig config) {
+    public List<FoliagePlacer.FoliageAttachment> placeTrunk(
+            WorldGenLevel level,
+            BiConsumer<BlockPos, BlockState> trunkSetter,
+            RandomSource random, int treeHeight, BlockPos origin,
+            TreeConfiguration config) {
 
-        setToDirt(world, replacer, random, startPos.down(), config);
-        List<FoliagePlacer.TreeNode> list = Lists.newArrayList();
+        placeBelowTrunkBlock(level, trunkSetter, random, origin.below(), config);
+        List<FoliagePlacer.FoliageAttachment> list = new ArrayList<>();
 
-        Direction direction = Direction.Type.HORIZONTAL.random(random);
-        int splitHeight = height - random.nextInt(4) - 1;
+        Direction direction = Direction.Plane.HORIZONTAL.getRandomDirection(random);
+        int splitHeight = treeHeight - random.nextInt(4) - 1;
         int branchLength = 3 - random.nextInt(3);
-        BlockPos.Mutable mutable = new BlockPos.Mutable();
+        BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 
-        int currentX = startPos.getX();
-        int currentZ = startPos.getZ();
+        int currentX = origin.getX();
+        int currentZ = origin.getZ();
         OptionalInt mainNodeY = OptionalInt.empty();
 
-        for (int m = 0; m < height; ++m) {
-            int currentY = startPos.getY() + m;
+        for (int m = 0; m < treeHeight; ++m) {
+            int currentY = origin.getY() + m;
 
             if (m >= splitHeight && m > 1 && branchLength > 0) {
-                currentX += direction.getOffsetX();
-                currentZ += direction.getOffsetZ();
+                currentX += direction.getStepX();
+                currentZ += direction.getStepZ();
                 --branchLength;
             }
 
-            if (this.placeLogAt(world, replacer, random, mutable.set(currentX, currentY, currentZ), config)) {
+            if (this.placeLogAt(level, trunkSetter, random, mutable.set(currentX, currentY, currentZ), config)) {
                 mainNodeY = OptionalInt.of(currentY + 1);
             }
         }
 
         if (mainNodeY.isPresent()) {
-            list.add(new FoliagePlacer.TreeNode(new BlockPos(currentX, mainNodeY.getAsInt(), currentZ), 1, false));
+            list.add(new FoliagePlacer.FoliageAttachment(new BlockPos(currentX, mainNodeY.getAsInt(), currentZ), 1, false));
         }
 
-        currentX = startPos.getX();
-        currentZ = startPos.getZ();
-        Direction direction2 = Direction.Type.HORIZONTAL.random(random);
+        currentX = origin.getX();
+        currentZ = origin.getZ();
+        Direction direction2 = Direction.Plane.HORIZONTAL.getRandomDirection(random);
 
         if (direction2 != direction) {
             int secondarySplitHeight = splitHeight - random.nextInt(2) - 1;
             int secondaryLength = 1 + random.nextInt(3);
             OptionalInt secondaryNodeY = OptionalInt.empty();
 
-            for (int p = secondarySplitHeight; p < height && secondaryLength > 0; ++secondaryLength) {
+            for (int p = secondarySplitHeight; p < treeHeight && secondaryLength > 0; ++secondaryLength) {
                 if (p >= 1) {
-                    int q = startPos.getY() + p;
-                    currentX += direction2.getOffsetX();
-                    currentZ += direction2.getOffsetZ();
+                    int q = origin.getY() + p;
+                    currentX += direction2.getStepX();
+                    currentZ += direction2.getStepZ();
 
-                    if (this.placeLogAt(world, replacer, random, mutable.set(currentX, q, currentZ), config)) {
+                    if (this.placeLogAt(level, trunkSetter, random, mutable.set(currentX, q, currentZ), config)) {
                         secondaryNodeY = OptionalInt.of(q + 1);
                     }
                 }
@@ -97,16 +100,26 @@ public class TestAppleTrunkPlacer extends TrunkPlacer {
             }
 
             if (secondaryNodeY.isPresent()) {
-                list.add(new FoliagePlacer.TreeNode(new BlockPos(currentX, secondaryNodeY.getAsInt(), currentZ), 0, false));
+                list.add(new FoliagePlacer.FoliageAttachment(new BlockPos(currentX, secondaryNodeY.getAsInt(), currentZ), 0, false));
             }
         }
 
         return list;
     }
+//testBlockState
+    private boolean placeLogAt(
+            WorldGenLevel level,
+            BiConsumer<BlockPos, BlockState> replacer,
+            RandomSource random,
+            BlockPos pos,
+            TreeConfiguration config) {
 
-    private boolean placeLogAt(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, BlockPos pos, TreeFeatureConfig config) {
-        if (TreeFeature.canReplace(world, pos) || world.testBlockState(pos, state -> state.isOf(Blocks.SNOW))) {
-            this.getAndSetState(world, replacer, random, pos, config);
+        BlockState state = level.getBlockState(pos);
+
+        if (TreeFeature.validTreePos(level, pos) ||
+                state.getBlock() == Blocks.SNOW) {
+
+            this.placeLog(level, replacer, random, pos, config);
             return true;
         }
         return false;
