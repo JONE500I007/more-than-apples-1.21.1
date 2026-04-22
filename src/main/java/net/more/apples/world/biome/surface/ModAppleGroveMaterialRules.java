@@ -3,21 +3,32 @@ package net.more.apples.world.biome.surface;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.NoiseChunk;
+import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.more.apples.block.ModBlocks;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.world.biome.worldbiomes.ModBiomesAppleGrove;
 
 public class ModAppleGroveMaterialRules {
-    private static final NoiseChunk.BlockStateFiller DIRT = makeStateRule(Blocks.DIRT);
+    /*
     private static final NoiseChunk.BlockStateFiller GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
     private static final NoiseChunk.BlockStateFiller STONE = makeStateRule(Blocks.STONE);
     private static final NoiseChunk.BlockStateFiller DEEPSLATE = makeStateRule(Blocks.DEEPSLATE);
 
     private static final NoiseChunk.BlockStateFiller APPLE_BLOCK1 = makeStateRule(ModBlocks2.APPLE_PLANKS);
     private static final NoiseChunk.BlockStateFiller APPLE_BLOCK2 = makeStateRule(ModBlocks.DIAMOND_APPLE_BLOCK);
+     */
+    private static final SurfaceRules.RuleSource DIRT = SurfaceRules.state(Blocks.DIRT.defaultBlockState());
+    private static final SurfaceRules.RuleSource GRASS_BLOCK = SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState());
+    private static final SurfaceRules.RuleSource STONE = SurfaceRules.state(Blocks.STONE.defaultBlockState());
+    private static final SurfaceRules.RuleSource DEEPSLATE = SurfaceRules.state(Blocks.DEEPSLATE.defaultBlockState());
+
+    private static final SurfaceRules.RuleSource APPLE_BLOCK1 = SurfaceRules.state(ModBlocks2.APPLE_PLANKS.defaultBlockState());
+    private static final SurfaceRules.RuleSource APPLE_BLOCK2 = SurfaceRules.state(ModBlocks.DIAMOND_APPLE_BLOCK.defaultBlockState());
 
 
-    public static NoiseChunk.BlockStateFiller makeRule() {
+    //public static NoiseChunk.BlockStateFiller makeRule() {
+    public static SurfaceRules.RuleSource makeRule() {
         /*
         MaterialRules.MaterialCondition isAtOrAboveWaterLevel = MaterialRules.water(-1, 0);
 
@@ -46,22 +57,32 @@ public class ModAppleGroveMaterialRules {
                 MaterialRules.condition(isAppleGrove, appleSurface)
         );
          */
-        return (context) -> {
-            int y = context.blockY();
-            if (y < 0) {
-                return Blocks.DEEPSLATE.defaultBlockState();
-            }
-            if (y > 60) {
-                return Blocks.GRASS_BLOCK.defaultBlockState();
-            }
-            if (y > 55) {
-                return Blocks.DIRT.defaultBlockState();
-            }
-            return Blocks.STONE.defaultBlockState();
-        };
+        return SurfaceRules.sequence(
+                SurfaceRules.ifTrue(
+                        SurfaceRules.ON_FLOOR,
+                        SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState())
+                ),
+
+                SurfaceRules.ifTrue(
+                        SurfaceRules.UNDER_FLOOR,
+                        SurfaceRules.state(Blocks.DIRT.defaultBlockState())
+                ),
+
+                SurfaceRules.ifTrue(
+                        SurfaceRules.verticalGradient("deepslate",
+                                VerticalAnchor.bottom(),
+                                VerticalAnchor.absolute(0)),
+                        SurfaceRules.state(Blocks.DEEPSLATE.defaultBlockState())
+                ),
+
+                SurfaceRules.state(Blocks.STONE.defaultBlockState())
+        );
     }
 
-    private static NoiseChunk.BlockStateFiller makeStateRule(Block block) {
-        return (context) -> block.defaultBlockState();
+//    private static NoiseChunk.BlockStateFiller makeStateRule(Block block) {
+//        return (context) -> block.defaultBlockState();
+//    }
+    private static SurfaceRules.RuleSource makeStateRule(Block block) {
+        return SurfaceRules.state(block.defaultBlockState());
     }
 }
