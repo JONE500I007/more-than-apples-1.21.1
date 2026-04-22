@@ -175,9 +175,11 @@ public class ModBiomesGoldenAppleOrchard {
 
         //DefaultBiomeFeatures.addDefaultGrass(biomeBuilder);
         //DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.VEGETAL_DECORATION,
                 VegetationPlacements.FLOWER_PLAINS);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.VEGETAL_DECORATION,
                 VegetationPlacements.PATCH_GRASS_PLAIN);
 
 
