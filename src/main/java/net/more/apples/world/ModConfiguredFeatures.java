@@ -26,6 +26,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlace
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.more.apples.MoreThanApples;
@@ -57,7 +58,7 @@ public class ModConfiguredFeatures {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherReplaceables = new TagMatchTest(BlockTags.BASE_STONE_NETHER);
-        RuleTest endReplaceables = new TagMatchTest(Blocks.END_STONE);
+        RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
         List<OreConfiguration.TargetBlockState> overworldAppleOre =
                 List.of(OreConfiguration.target(stoneReplaceables, ModBlocks2.APPLE_ORE.defaultBlockState()),
@@ -110,7 +111,6 @@ public class ModConfiguredFeatures {
                                 ConstantInt.of(0),
                                 ConstantInt.of(1)),
                         new TwoLayersFeatureSize(1, 0, 1))
-                        .forceDirt()
                         .build());
 
         WeightedStateProvider twoLeavesProvider2 = new WeightedStateProvider(

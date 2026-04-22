@@ -30,11 +30,11 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
-		registryBuilder.addRegistry(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::boostrap);
-		registryBuilder.addRegistry(Registries.PLACED_FEATURE, ModPlacedFeatures::boostrap);
+		registryBuilder.add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+		registryBuilder.add(Registries.PLACED_FEATURE, ModPlacedFeatures::boostrap);
 
-		registryBuilder.addRegistry(Registries.BIOME, ModBiomesAppleGrove::boostrap);
-		registryBuilder.addRegistry(Registries.BIOME, ModBiomesGoldenAppleOrchard::boostrap);
-		registryBuilder.addRegistry(Registries.BIOME, ModBiomeFrostyApple::boostrap);
+		registryBuilder.add(Registries.BIOME, ModBiomesAppleGrove::boostrap);
+		registryBuilder.add(Registries.BIOME, ModBiomesGoldenAppleOrchard::boostrap);
+		registryBuilder.add(Registries.BIOME, ModBiomeFrostyApple::boostrap);
 	}
 }
