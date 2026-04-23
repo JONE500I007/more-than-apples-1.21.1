@@ -2,8 +2,8 @@
   "feature": "more-than-apples:large_apple_key",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 4
+      "type": "minecraft:count",
+      "count": 4
     },
     {
       "type": "minecraft:in_square"

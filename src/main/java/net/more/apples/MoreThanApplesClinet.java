@@ -5,12 +5,6 @@ import net.fabricmc.api.ClientModInitializer;
 
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
-import net.minecraft.client.color.block.BlockTintSource;
-import net.minecraft.client.renderer.BiomeColors;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
-import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.world.level.FoliageColor;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.custom_folicolor.FoliageTintSource;
 import net.more.apples.entity.ModBoats;
@@ -25,37 +19,12 @@ public class MoreThanApplesClinet implements ClientModInitializer {
     public void onInitializeClient() {
 
         //make leaves can color by map
-        List<BlockTintSource> foliageTint = List.of(new FoliageTintSource());
-        BlockColorRegistry.register(foliageTint,
+        BlockColorRegistry.register(List.of(new FoliageTintSource()),
                 ModBlocks2.APPLE_LEAVES,
                 ModBlocks2.FRUIT_APPLE_LEAVES,
                 ModBlocks2.GOLDEN_APPLE_LEAVES,
-                ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES
-        );
+                ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES);
 
-
-        /*
-        BlockRenderLayerMap.putBlock(ModBlocks2.APPLE_SAPLING, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks2.FRUIT_APPLE_LEAVES, BlockRenderLayer.CUTOUT);
-
-        BlockRenderLayerMap.putBlock(ModBlocks2.APPLE_DOOR, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks2.APPLE_TRAPDOOR, BlockRenderLayer.CUTOUT);
-
-        BlockRenderLayerMap.putBlock(ModBlocks2.GOLDEN_APPLE_SAPLING, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES, BlockRenderLayer.CUTOUT);
-
-        BlockRenderLayerMap.putBlock(ModBlocks2.TEST_APPLE_SAPLING, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks2.TEST_APPLE_LEAVES, BlockRenderLayer.CUTOUT);
-
-        BlockRenderLayerMap.putBlock(ModBlocks2.TEST_APPLE_DOOR, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks2.TEST_APPLE_TRAPDOOR, BlockRenderLayer.CUTOUT);
-
-        BlockRenderLayerMap.putBlock(ModBlocks2.FROSTY_APPLE_SAPLING, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks2.FROSTY_APPLE_LEAVES, BlockRenderLayer.CUTOUT);
-
-        BlockRenderLayerMap.putBlock(ModBlocks2.FROSTY_APPLE_DOOR, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks2.FROSTY_APPLE_TRAPDOOR, BlockRenderLayer.CUTOUT);
-         */
 
         //BlockEntityRendererFactories.register(BlockEntityType.SIGN, SignBlockEntityRenderer::new);
 

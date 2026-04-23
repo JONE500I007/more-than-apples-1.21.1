@@ -2,7 +2,7 @@ package net.more.apples.villager;
 
 import com.google.common.collect.ImmutableSet;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.fabricmc.fabric.api.object.builder.v1.world.poi.PoiHelper;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -13,11 +13,11 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraft.world.entity.npc.villager.VillagerProfession;
+import net.minecraft.world.item.trading.TradeSet;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.util.Util;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.ModBlocks2;
-
-import java.util.Optional;
 
 public class ModAppleVillagers {
 
@@ -39,7 +39,13 @@ public class ModAppleVillagers {
                         ImmutableSet.of(),
                         ImmutableSet.of(),
                         SoundEvents.VILLAGER_WORK_FISHERMAN,
-                        Int2ObjectMaps.emptyMap()));
+                        Util.make(new Int2ObjectOpenHashMap<>(), trades -> {
+                            trades.put(1, tradeSetKey("apple_master/level_1"));
+                            trades.put(2, tradeSetKey("apple_master/level_2"));
+                            trades.put(3, tradeSetKey("apple_master/level_3"));
+                            trades.put(4, tradeSetKey("apple_master/level_4"));
+                            trades.put(5, tradeSetKey("apple_master/level_5"));
+                        })));
     }
     /*
     private static PointOfInterestType registerPoi(String name, Block block) {
@@ -54,6 +60,11 @@ public class ModAppleVillagers {
 
     private static ResourceKey<PoiType> registerPoiKey(String name) {
         return ResourceKey.create(Registries.POINT_OF_INTEREST_TYPE,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
+    }
+
+    private static ResourceKey<TradeSet> tradeSetKey(String name) {
+        return ResourceKey.create(Registries.TRADE_SET,
                 Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
     }
 

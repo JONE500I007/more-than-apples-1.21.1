@@ -1,6 +1,7 @@
 package net.more.apples.custom_folicolor;
 
 import net.minecraft.client.color.block.BlockTintSource;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.block.BlockAndTintGetter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.FoliageColor;
@@ -14,6 +15,6 @@ public class FoliageTintSource implements BlockTintSource {
 
     @Override
     public int colorInWorld(BlockState state, BlockAndTintGetter level, BlockPos pos) {
-        return BlockTintSource.super.colorInWorld(state, level, pos);
+        return BiomeColors.getAverageFoliageColor(level, pos);
     }
 }
