@@ -46,33 +46,33 @@ public class ModBlocks2 {
                             .requiresCorrectToolForDrops()));
 
     public static final Block APPLE_LOG = registerBlock2("apple_log",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LOG)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_log")))));
     public static final Block APPLE_WOOD = registerBlock2("apple_wood",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WOOD)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wood")))));
     public static final Block STRIPPED_APPLE_LOG = registerBlock2("stripped_apple_log",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_LOG)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "stripped_apple_log")))));
     public static final Block STRIPPED_APPLE_WOOD = registerBlock2("stripped_apple_wood",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_WOOD)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "stripped_apple_wood")))));
 
     public static final Block APPLE_PLANKS = registerBlock2("apple_planks",
-            new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_PLANKS)
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_planks")))));
     public static final Block APPLE_LEAVES = registerBlock2("apple_leaves",
             new UntintedParticleLeavesBlock(
                     0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0.46f, 0.67f, 0.18f)
-                    ,BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES)
+                    ,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_leaves")))));
     public static final Block FRUIT_APPLE_LEAVES = registerBlock2("fruit_apple_leaves",
             new UntintedParticleLeavesBlock(
                     0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F)
-                    ,BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES)
+                    ,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "fruit_apple_leaves")))));
     public static final Block APPLE_SAPLING = registerBlock2("apple_sapling",
-            new SaplingBlock(ModSaplingGenerators.APPLE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)
+            new SaplingBlock(ModSaplingGenerators.APPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_sapling")))));
 
     public static final Block APPLE_STAIRS = registerBlock2("apple_stairs",
@@ -134,23 +134,23 @@ public class ModBlocks2 {
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "textures/gui/hanging_signs/apple_sign_gui");
 
 //    public static final Block APPLE_STANDING_SIGN = registerBlock2(
-//            "apple_standing_sign", new SignBlock(WoodType.OAK, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SIGN)
+//            "apple_standing_sign", new SignBlock(WoodType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)
 //                    .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_standing_sign")))));
 
     /*
     public static final Block APPLE_STANDING_SIGN = registerBlock2("apple_standing_sign",
-            new TerraformSignBlock(APPLE_SIGN_TEXTURE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SIGN)
+            new TerraformSignBlock(APPLE_SIGN_TEXTURE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_standing_sign")))));
     public static final Block APPLE_WALL_SIGN = registerBlock2("apple_wall_sign",
-            new TerraformWallSignBlock(APPLE_SIGN_TEXTURE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_SIGN)
+            new TerraformWallSignBlock(APPLE_SIGN_TEXTURE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_sign")))));
     public static final Block APPLE_HANGING_SIGN_BLOCK = registerBlock2("apple_hanging_sign_block",
             new TerraformHangingSignBlock(APPLE_HANGING_SIGN_TEXTURE, APPLE_HANGING_GUI_SIGN_TEXTURE,
-                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_HANGING_SIGN)
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)
                             .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_hanging_sign_block")))));
     public static final Block APPLE_WALL_HANGING_SIGN = registerBlock2("apple_wall_hanging_sign",
             new TerraformWallHangingSignBlock(APPLE_HANGING_SIGN_TEXTURE, APPLE_HANGING_GUI_SIGN_TEXTURE,
-                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_HANGING_SIGN)
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)
                             .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_hanging_sign")))));
      */
     public static final WoodType APPLE_SIGN_WOOD_TYPE = TerraformSignBlockHelper.registerDefaultWoodType(
@@ -161,50 +161,50 @@ public class ModBlocks2 {
     public static final Block APPLE_STANDING_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_standing_sign"),
             (settings) -> new StandingSignBlock(APPLE_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN));
     public static final Block APPLE_WALL_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_sign"),
             (settings) -> new WallSignBlock(APPLE_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN));
 
     public static final Block APPLE_HANGING_SIGN_BLOCK = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_hanging_sign"),
             (settings) -> new CeilingHangingSignBlock(APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_HANGING_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN));
     public static final Block APPLE_WALL_HANGING_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_hanging_sign"),
             (settings) -> new WallHangingSignBlock(APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_HANGING_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN));
 
 
 //    public static final Block APPLE_STANDING_SIGN = registerBlock2("apple_standing_sign",
-//            new TerraformSignBlock(APPLE_SIGN_TEXTURE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SIGN)
+//            new TerraformSignBlock(APPLE_SIGN_TEXTURE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)
 //                    .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_standing_sign")))));
 //    public static final Block APPLE_WALL_SIGN = registerBlock2("apple_wall_sign",
-//            new TerraformWallSignBlock(APPLE_SIGN_TEXTURE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_SIGN)
+//            new TerraformWallSignBlock(APPLE_SIGN_TEXTURE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)
 //                    .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_sign")))));
 //    public static final Block APPLE_HANGING_SIGN_BLOCK = registerBlock2("apple_hanging_sign_block",
 //            new TerraformHangingSignBlock(APPLE_HANGING_SIGN_TEXTURE, APPLE_HANGING_GUI_SIGN_TEXTURE,
-//                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_HANGING_SIGN)
+//                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)
 //                            .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_hanging_sign_block")))));
 //    public static final Block APPLE_WALL_HANGING_SIGN = registerBlock2("apple_wall_hanging_sign",
 //            new TerraformWallHangingSignBlock(APPLE_HANGING_SIGN_TEXTURE, APPLE_HANGING_GUI_SIGN_TEXTURE,
-//                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_HANGING_SIGN)
+//                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)
 //                            .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_hanging_sign")))));
 
 
     public static final Block GOLDEN_APPLE_LEAVES = registerBlock2("golden_apple_leaves",
             new UntintedParticleLeavesBlock(
                     0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
-                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES)
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
                             .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "golden_apple_leaves")))));
     public static final Block FRUIT_GOLDEN_APPLE_LEAVES = registerBlock2("fruit_golden_apple_leaves",
             new UntintedParticleLeavesBlock(
                     0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
-                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES)
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
                             .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "fruit_golden_apple_leaves")))));
     public static final Block GOLDEN_APPLE_SAPLING = registerBlock2("golden_apple_sapling",
-            new SaplingBlock(ModSaplingGenerators.GOLDEN_APPLE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)
+            new SaplingBlock(ModSaplingGenerators.GOLDEN_APPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "golden_apple_sapling")))));
 
 //    public static final BlockFamily THE_APPLE_FAMILY = BlockFamilies.register(ModBlocks2.APPLE_PLANKS)
@@ -215,27 +215,27 @@ public class ModBlocks2 {
 
 
     public static final Block TEST_APPLE_LOG = registerBlock2("test_apple_log",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LOG)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_log")))));
     public static final Block TEST_APPLE_WOOD = registerBlock2("test_apple_wood",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WOOD)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_wood")))));
     public static final Block STRIPPED_TEST_APPLE_LOG = registerBlock2("stripped_test_apple_log",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_LOG)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "stripped_test_apple_log")))));
     public static final Block STRIPPED_TEST_APPLE_WOOD = registerBlock2("stripped_test_apple_wood",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_WOOD)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "stripped_test_apple_wood")))));
 
     public static final Block TEST_APPLE_PLANKS = registerBlock2("test_apple_planks",
-            new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_PLANKS)
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_planks")))));
     public static final Block TEST_APPLE_LEAVES = registerBlock2("test_apple_leaves",
             new UntintedParticleLeavesBlock(0.05f, ModParticle.TEST_LEAVES_PARTICLE,
-                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES)
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
                             .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_leaves")))));
     public static final Block TEST_APPLE_SAPLING = registerBlock2("test_apple_sapling",
-            new SaplingBlock(ModSaplingGenerators.TEST_APPLE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)
+            new SaplingBlock(ModSaplingGenerators.TEST_APPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_sapling")))));
 
     public static final Block TEST_APPLE_STAIRS = registerBlock2("test_apple_stairs",
@@ -300,45 +300,45 @@ public class ModBlocks2 {
     public static final Block TEST_APPLE_STANDING_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_standing_sign"),
             (settings) -> new StandingSignBlock(TEST_APPLE_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN));
     public static final Block TEST_APPLE_WALL_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_wall_sign"),
             (settings) -> new WallSignBlock(TEST_APPLE_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN));
 
     public static final Block TEST_APPLE_HANGING_SIGN_BLOCK = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_hanging_sign_block"),
             (settings) -> new CeilingHangingSignBlock(TEST_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_HANGING_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN));
     public static final Block TEST_APPLE_WALL_HANGING_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_wall_hanging_sign"),
             (settings) -> new WallHangingSignBlock(TEST_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_HANGING_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN));
 
 
     public static final Block FROSTY_APPLE_LOG = registerBlock2("frosty_apple_log",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LOG)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_log")))));
     public static final Block FROSTY_APPLE_WOOD = registerBlock2("frosty_apple_wood",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WOOD)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_wood")))));
     public static final Block STRIPPED_FROSTY_APPLE_LOG = registerBlock2("stripped_frosty_apple_log",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_LOG)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "stripped_frosty_apple_log")))));
     public static final Block STRIPPED_FROSTY_APPLE_WOOD = registerBlock2("stripped_frosty_apple_wood",
-            new RotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_WOOD)
+            new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "stripped_frosty_apple_wood")))));
 
     public static final Block FROSTY_APPLE_PLANKS = registerBlock2("frosty_apple_planks",
-            new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_PLANKS)
+            new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_planks")))));
     public static final Block FROSTY_APPLE_LEAVES = registerBlock2("frosty_apple_leaves",
             new UntintedParticleLeavesBlock(
                     0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x85c0c8),
-                    BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES)
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
                             .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_leaves")))));
     public static final Block FROSTY_APPLE_SAPLING = registerBlock2("frosty_apple_sapling",
-            new SaplingBlock(ModSaplingGenerators.FROSTY_APPLE, BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)
+            new SaplingBlock(ModSaplingGenerators.FROSTY_APPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_sapling")))));
 
     public static final Block FROSTY_APPLE_STAIRS = registerBlock2("frosty_apple_stairs",
@@ -400,22 +400,22 @@ public class ModBlocks2 {
     public static final Block FROSTY_APPLE_STANDING_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_standing_sign"),
             (settings) -> new StandingSignBlock(FROSTY_APPLE_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN));
     public static final Block FROSTY_APPLE_WALL_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_wall_sign"),
             (settings) -> new WallSignBlock(FROSTY_APPLE_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN));
     public static final Block FROSTY_APPLE_HANGING_SIGN_BLOCK = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_hanging_sign_block"),
             (settings) -> new CeilingHangingSignBlock(FROSTY_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_HANGING_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN));
     public static final Block FROSTY_APPLE_WALL_HANGING_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_wall_hanging_sign"),
             (settings) -> new WallHangingSignBlock(FROSTY_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_HANGING_SIGN));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN));
 
     public static final Block APPLE_SHELF = registerBlock2("apple_shelf",
-            new AppleShelfBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SHELF)
+            new AppleShelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SHELF)
                     .setId(ResourceKey.create(Registries.BLOCK,
                             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_shelf")))));
 
