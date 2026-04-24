@@ -13,7 +13,7 @@ import net.more.apples.effect.this_effect.*;
 
 public class ModEffects {
     public static final Holder<MobEffect> DARKNESS_IMMUNE = registerStatusEffect("darkness_immune",
-            new DarknessImmuneEffect(MobEffectCategory.BENEFICIAL.BENEFICIAL, 0xF5C827));
+            new DarknessImmuneEffect(MobEffectCategory.BENEFICIAL, 0xF5C827));
     public static final Holder<MobEffect> SLOWNESS_IMMUNE = registerStatusEffect("slowness_immune",
             new SlownessImmuneEffect(MobEffectCategory.BENEFICIAL, 0x647570));
     public static final Holder<MobEffect> MINING_FATIGUE_IMMUNE = registerStatusEffect("mining_fatigue_immune",
