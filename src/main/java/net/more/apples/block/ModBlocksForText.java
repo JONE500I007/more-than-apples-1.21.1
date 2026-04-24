@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.custom.AppleShelfBlock;
 
 import java.util.function.Function;
 
@@ -43,6 +44,10 @@ public class ModBlocksForText {
     public static final Block THE_BLOCK1 = registerBlock("the_block1",
             properties -> new Block(properties.strength(3f)
                     .requiresCorrectToolForDrops()));
+
+//    public static final Block TEST_SHELF = registerBlock("test_shelf",
+//            properties -> new ShelfBlock(BlockBehaviour.Properties
+//                    .ofFullCopy(Blocks.OAK_SHELF)));
 
 //    public static final Block CUSTOM_SIGN = registerBlock("custom_sign",
 //            new SignBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
