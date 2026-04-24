@@ -18,6 +18,7 @@ public class ModCustomAppleMTrades {
     public static void registerCustomTrades() {
         MoreThanApples.LOGGER.info("Registering Villager Trades From " + MoreThanApples.MOD_ID);
 
+        /*
         MerchantOffer.createFromStream(ModAppleVillagers.APPLE_MASTER_KEY,1, factories -> {
             factories.add((world,entity,random) -> new MerchantOffer(
                     new ItemCost(Items.APPLE, 9),

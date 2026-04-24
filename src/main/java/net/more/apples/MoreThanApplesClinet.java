@@ -25,13 +25,18 @@ public class MoreThanApplesClinet implements ClientModInitializer {
     public void onInitializeClient() {
 
         //make leaves can color by map
-        List<BlockTintSource> foliageTint = List.of(new FoliageTintSource());
-        BlockColorRegistry.register(foliageTint,
+//        List<BlockTintSource> foliageTint = List.of(new FoliageTintSource());
+//        BlockColorRegistry.register(foliageTint,
+//                ModBlocks2.APPLE_LEAVES,
+//                ModBlocks2.FRUIT_APPLE_LEAVES,
+//                ModBlocks2.GOLDEN_APPLE_LEAVES,
+//                ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES);
+
+        BlockColorRegistry.register(List.of(new FoliageTintSource()),
                 ModBlocks2.APPLE_LEAVES,
                 ModBlocks2.FRUIT_APPLE_LEAVES,
                 ModBlocks2.GOLDEN_APPLE_LEAVES,
-                ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES
-        );
+                ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES);
 
 
         /*

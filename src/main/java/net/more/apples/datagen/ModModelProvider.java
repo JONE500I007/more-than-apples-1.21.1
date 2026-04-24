@@ -31,7 +31,7 @@ public class ModModelProvider extends FabricModelProvider {
 //                    map.put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.DIAMOND_APPLE_BLOCK, ""));
 //                }));
 
-        blockModelGenerators.createTrivialCube(ModBlocks2.APPLE_PLANKS);
+        //blockModelGenerators.createTrivialCube(ModBlocks2.APPLE_PLANKS);
         BlockModelGenerators.BlockFamilyProvider appleGarnetPool =
                 blockModelGenerators.family(ModBlocks2.APPLE_PLANKS);
 
@@ -112,7 +112,7 @@ public class ModModelProvider extends FabricModelProvider {
         //appleGarnetPool.family(ModBlocks2.THE_APPLE_FAMILY);
 
 
-        blockModelGenerators.createTrivialCube(ModBlocks2.TEST_APPLE_PLANKS);
+        //blockModelGenerators.createTrivialCube(ModBlocks2.TEST_APPLE_PLANKS);
         BlockModelGenerators.BlockFamilyProvider testAppleGarnetPool = blockModelGenerators
                 .family(ModBlocks2.TEST_APPLE_PLANKS);
 
@@ -126,7 +126,7 @@ public class ModModelProvider extends FabricModelProvider {
         testAppleGarnetPool.fenceGate(ModBlocks2.TEST_APPLE_FENCE_GATE);
 
         blockModelGenerators.createDoor(ModBlocks2.TEST_APPLE_DOOR);
-        blockModelGenerators.createDoor(ModBlocks2.TEST_APPLE_TRAPDOOR);
+        blockModelGenerators.createTrapdoor(ModBlocks2.TEST_APPLE_TRAPDOOR);
 
 
         blockModelGenerators.woodProvider(ModBlocks2.APPLE_LOG)

@@ -21,7 +21,7 @@ public class ModCustomFarmerTrades {
             ));
         });
          */
-
+        /*
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 5, factories -> {
             factories.add((world,entity, random) -> {
                 if (random.nextBoolean()) {
@@ -86,5 +86,7 @@ public class ModCustomFarmerTrades {
                     )
             );
         });
+
+         */
     }
 }
