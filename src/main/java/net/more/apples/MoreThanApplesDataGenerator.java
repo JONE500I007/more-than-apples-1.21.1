@@ -5,6 +5,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.more.apples.datagen.*;
+import net.more.apples.datagen.villager_trade.famer.ModTradeFarmerDefinitionProvider;
+import net.more.apples.datagen.villager_trade.famer.ModTradeFarmerSetProvider;
 import net.more.apples.world.ModConfiguredFeatures;
 import net.more.apples.world.ModPlacedFeatures;
 import net.more.apples.world.biome.worldbiomes.ModBiomeFrostyApple;
@@ -24,6 +26,9 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(ModPoiTagProvider::new);
 		//pack.addProvider(ModLootTableGen::new);
+
+//		pack.addProvider(ModTradeFarmerDefinitionProvider::new);
+//		pack.addProvider(ModTradeFarmerSetProvider::new);
 
 		pack.addProvider((output, registriesFuture) -> new ModBiomeTagProvider(output, registriesFuture));
 	}

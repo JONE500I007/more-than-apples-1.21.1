@@ -32,6 +32,8 @@ public class ModModelProvider extends FabricModelProvider {
 //                }));
 
         //blockModelGenerators.createTrivialCube(ModBlocks2.APPLE_PLANKS);
+        blockModelGenerators.createShelf(ModBlocks2.APPLE_SHELF, ModBlocks2.STRIPPED_APPLE_LOG);
+
         BlockModelGenerators.BlockFamilyProvider appleGarnetPool =
                 blockModelGenerators.family(ModBlocks2.APPLE_PLANKS);
 

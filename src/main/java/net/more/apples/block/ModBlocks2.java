@@ -3,6 +3,7 @@ package net.more.apples.block;
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.client.particle.FallingLeavesParticle;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ColorParticleOption;
@@ -16,10 +17,13 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.custom.AppleShelfBlock;
+import net.more.apples.entity.AppleBlockEntity;
 import net.more.apples.particle.ModParticle;
 import net.more.apples.world.tree.ModSaplingGenerators;
 
@@ -406,6 +410,19 @@ public class ModBlocks2 {
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_wall_hanging_sign"),
             (settings) -> new WallHangingSignBlock(FROSTY_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
             BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WALL_HANGING_SIGN));
+
+    public static final Block APPLE_SHELF = registerBlock2("apple_shelf",
+            new AppleShelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SHELF)
+                    .setId(ResourceKey.create(Registries.BLOCK,
+                            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_shelf")))));
+
+    public static final BlockEntityType<AppleBlockEntity> SHELF_ENTITY_TYPE =
+            Registry.register(
+                    BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_shelf"),
+                    FabricBlockEntityTypeBuilder
+                            .create(AppleBlockEntity::new, ModBlocks2.APPLE_SHELF)
+                            .build());
 
 
 
