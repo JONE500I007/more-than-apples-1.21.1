@@ -33,6 +33,10 @@ public class AppleBlockEntity extends BlockEntity {
     private final NonNullList<ItemStack> items =
             NonNullList.withSize(3, ItemStack.EMPTY);
 
+    public NonNullList<ItemStack> getItems() {
+        return this.items;
+    }
+
     @Override
     protected void loadAdditional(ValueInput input) {
         super.loadAdditional(input);

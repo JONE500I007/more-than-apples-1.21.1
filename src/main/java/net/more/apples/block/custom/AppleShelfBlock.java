@@ -8,6 +8,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
@@ -19,13 +21,42 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.more.apples.entity.AppleBlockEntity;
 import org.jspecify.annotations.Nullable;
+
+import static net.minecraft.world.level.block.CaveVines.SHAPE;
+
 //DirectionProperty
 public class AppleShelfBlock extends BaseEntityBlock {
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public static final EnumProperty<SideChainPart> SIDE_CHAIN_PART = BlockStateProperties.SIDE_CHAIN_PART;
+
+    private static final VoxelShape SHAPE_NORTH = Shapes.or(
+            Block.box(0, 0, 11, 16, 4, 16),
+            Block.box(0, 12, 11, 16, 16, 16),
+            Block.box(0, 4, 13, 16, 12, 16)
+    );
+    private static final VoxelShape SHAPE_SOUTH = Shapes.or(
+            Block.box(0, 0, 0, 16, 4, 5),
+            Block.box(0, 12, 0, 16, 16, 5),
+            Block.box(0, 4, 0, 16, 12, 3)
+    );
+
+    private static final VoxelShape SHAPE_EAST = Shapes.or(
+            Block.box(0, 0, 0, 5, 4, 16),
+            Block.box(0, 12, 0, 5, 16, 16),
+            Block.box(0, 4, 0, 3, 12, 16)
+    );
+
+    private static final VoxelShape SHAPE_WEST = Shapes.or(
+            Block.box(11, 0, 0, 16, 4, 16),
+            Block.box(11, 12, 0, 16, 16, 16),
+            Block.box(13, 4, 0, 16, 12, 16)
+    );
 
     public static final MapCodec<AppleShelfBlock> CODEC =
             simpleCodec(AppleShelfBlock::new);
@@ -55,6 +86,30 @@ public class AppleShelfBlock extends BaseEntityBlock {
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new AppleBlockEntity(pos, state);
+    }
+
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState()
+                .setValue(FACING, context.getHorizontalDirection().getOpposite())
+                .setValue(POWERED, false)
+                .setValue(SIDE_CHAIN_PART, SideChainPart.UNCONNECTED);
+    }
+
+//    @Override
+//    protected VoxelShape getInteractionShape(BlockState state, BlockGetter level, BlockPos pos) {
+//        return this.getShape(state, level, pos, CollisionContext.empty());
+//    }
+
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return switch (state.getValue(FACING)) {
+            case NORTH -> SHAPE_NORTH;
+            case SOUTH -> SHAPE_SOUTH;
+            case EAST  -> SHAPE_EAST;
+            case WEST  -> SHAPE_WEST;
+            default -> SHAPE;
+        };
     }
 
     @Override
@@ -122,5 +177,24 @@ public class AppleShelfBlock extends BaseEntityBlock {
             }
         }
         return InteractionResult.PASS;
+    }
+
+    private static VoxelShape rotate90(VoxelShape shape) {
+        VoxelShape[] buffer = new VoxelShape[]{shape, Shapes.empty()};
+
+        shape.forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) -> {
+            buffer[1] = Shapes.or(buffer[1],
+                    Block.box(
+                            16 - maxZ, minY, minX,
+                            16 - minZ, maxY, maxX
+                    ));
+        });
+        return buffer[1];
+    }
+    private static VoxelShape rotate180(VoxelShape shape) {
+        return rotate90(rotate90(shape));
+    }
+    private static VoxelShape rotate270(VoxelShape shape) {
+        return rotate90(rotate180(shape));
     }
 }
