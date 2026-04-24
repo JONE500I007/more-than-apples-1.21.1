@@ -24,6 +24,8 @@ import net.more.apples.block.custom.AppleShelfBlock;
 import net.more.apples.entity.AppleBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Arrays;
+
 @Environment(EnvType.CLIENT)
 public class AppleShelfRenderer implements BlockEntityRenderer<AppleBlockEntity, AppleShelfRenderState> {
     private final ItemModelResolver itemModelResolver;
@@ -46,6 +48,8 @@ public class AppleShelfRenderer implements BlockEntityRenderer<AppleBlockEntity,
             @Nullable ModelFeatureRenderer.CrumblingOverlay overlay
     ) {
         state.facing = blockEntity.getBlockState().getValue(AppleShelfBlock.FACING);
+
+        Arrays.fill(state.items, null);
 
         NonNullList<ItemStack> items = blockEntity.getItems();
 

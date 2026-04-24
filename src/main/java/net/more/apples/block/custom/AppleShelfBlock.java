@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -124,7 +125,37 @@ public class AppleShelfBlock extends BaseEntityBlock {
     ) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
+        Direction facing = state.getValue(FACING);
+
+        if (hit.getDirection() != facing) {
+            return InteractionResult.PASS;
+        }
+
         if (level.getBlockEntity(pos) instanceof AppleBlockEntity shelf) {
+
+            Vec3 hitPos = hit.getLocation().subtract(pos.getX(), pos.getY(), pos.getZ());
+
+            double x = hitPos.x;
+            double z = hitPos.z;
+
+            double localX;
+
+            switch (facing) {
+                case NORTH -> localX = 1 - x;
+                case SOUTH -> localX = x;
+                case WEST  -> localX = z;
+                case EAST  -> localX = 1 - z;
+                default -> localX = x;
+            }
+
+            int slot;
+            if (localX < 0.33) {
+                slot = 0;
+            } else if (localX < 0.66) {
+                slot = 1;
+            } else {
+                slot = 2;
+            }
 
             if (!stack.isEmpty()) {
                 for (int i = 0; i < 3; i++) {
