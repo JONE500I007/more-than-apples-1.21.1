@@ -24,8 +24,8 @@ public class ModTerraBlenderAPI implements TerraBlenderApi {
 //                Identifier.of(MoreThanApples.MOD_ID, "apple_grove"), 4
 //        ));
 
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModAppleGroveMaterialRules.makeRule());
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModGoldenAppleOrchardMaterialRules.makeRule());
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModFrostyAppleMaterialRules.makeRule());
+//        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModAppleGroveMaterialRules.makeRule());
+//        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModGoldenAppleOrchardMaterialRules.makeRule());
+//        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModFrostyAppleMaterialRules.makeRule());
     }
 }

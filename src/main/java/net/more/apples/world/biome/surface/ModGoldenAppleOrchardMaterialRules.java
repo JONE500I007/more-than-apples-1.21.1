@@ -17,6 +17,7 @@ public class ModGoldenAppleOrchardMaterialRules {
     //private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
     //private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
     //private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
+    /*
     private static final SurfaceRules.RuleSource DEEPSLATE = makeStateRule(Blocks.DEEPSLATE);
 
     public static SurfaceRules.RuleSource makeRule() {
@@ -40,12 +41,11 @@ public class ModGoldenAppleOrchardMaterialRules {
                 DEEPSLATE
         );
 
-        return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(isAppleGrove, appleSurface)
-        );
+        return SurfaceRules.state(Blocks.DIAMOND_BLOCK.defaultBlockState());
     }
 
     private static SurfaceRules.RuleSource makeStateRule(Block block) {
         return SurfaceRules.state(block.defaultBlockState());
     }
+     */
 }
