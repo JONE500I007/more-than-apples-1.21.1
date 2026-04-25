@@ -5,13 +5,7 @@ import net.fabricmc.api.ClientModInitializer;
 
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
-import net.minecraft.client.color.block.BlockTintSource;
-import net.minecraft.client.renderer.BiomeColors;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.world.level.FoliageColor;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.custom_folicolor.FoliageTintSource;
 import net.more.apples.entity.ModBoats;
@@ -66,7 +60,7 @@ public class MoreThanApplesClinet implements ClientModInitializer {
 
         //BlockEntityRendererFactories.register(BlockEntityType.SIGN, SignBlockEntityRenderer::new);
 
-        BlockEntityRenderers.register(ModBlocks2.SHELF_ENTITY_TYPE, AppleShelfRenderer::new);
+        BlockEntityRenderers.register(ModBlocks2.THE_SHELF_ENTITY_TYPE, AppleShelfRenderer::new);
 
         //SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks2.APPLE_SIGN_TEXTURE));
         //SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks2.APPLE_HANGING_SIGN_TEXTURE));

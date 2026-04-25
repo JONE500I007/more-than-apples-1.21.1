@@ -3,7 +3,6 @@ package net.more.apples.datagen;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
-import net.minecraft.client.data.*;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
@@ -32,7 +31,7 @@ public class ModModelProvider extends FabricModelProvider {
 //                }));
 
         //blockModelGenerators.createTrivialCube(ModBlocks2.APPLE_PLANKS);
-        blockModelGenerators.createShelf(ModBlocks2.APPLE_SHELF, ModBlocks2.STRIPPED_APPLE_LOG);
+        blockModelGenerators.createShelf(ModBlocks2.THE_TEST_SHELF, ModBlocks2.STRIPPED_APPLE_LOG);
 
         BlockModelGenerators.BlockFamilyProvider appleGarnetPool =
                 blockModelGenerators.family(ModBlocks2.APPLE_PLANKS);
