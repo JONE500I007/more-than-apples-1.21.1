@@ -15,10 +15,7 @@ import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.placement.CountPlacement;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.ModBlocks2;
 
@@ -38,6 +35,7 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> ORCHARD_SEAGRASS_PLACED_KEY = registryKey("orchard_seagrass_placed");
 
+    public static final ResourceKey<PlacedFeature> GOLDEN_DANDELION_PLACED_KEY = registryKey("golden_dandelion_placed");
 
     public static void boostrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -66,18 +64,38 @@ public class ModPlacedFeatures {
         register(context, LARGE_APPLE_TREE_PLACED_KEY,
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_APPLE_KEY),
                 VegetationPlacements.treePlacement(
-                        CountPlacement.of(4),
+                        //CountPlacement.of(4),
+                        RarityFilter.onAverageOnceEvery(4),
                         ModBlocks2.APPLE_SAPLING));
-
+//RarityFilterPlacementModifier
         register(context, LARGE_GOLDEN_APPLE_TREE_PLACED_KEY,
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_GOLDEN_APPLE_KEY),
                 VegetationPlacements.treePlacement(
-                        CountPlacement.of(7),
+                        //CountPlacement.of(7),
+                        RarityFilter.onAverageOnceEvery(7),
                         ModBlocks2.GOLDEN_APPLE_SAPLING));
 
         register(context, FROSTY_APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FROSTY_APPLE_TREE_KEY),
                 VegetationPlacements.treePlacement(
                         PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks2.FROSTY_APPLE_SAPLING));
+
+        register(context, GOLDEN_DANDELION_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.GOLDEN_DANDELION_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(5),
+                        CountPlacement.of(4),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()));
+
+//        register(context, GOLDEN_DANDELION_PLACED_KEY,
+//                configuredFeatures.getOrThrow(ModConfiguredFeatures.GOLDEN_DANDELION_KEY),
+//                List.of(CountPlacement.of(64),
+//                        InSquarePlacement.spread(),
+//                        PlacementUtils.HEIGHTMAP,
+//                        RandomOffsetPlacement.of(
+//                                ClampedNormalInt.of(0f, 6f, -6, 6),
+//                                ClampedNormalInt.of(0f, 2f, -2, 2)),
+//                        BiomeFilter.biome()));
     }
 
 

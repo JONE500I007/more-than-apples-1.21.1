@@ -2,8 +2,8 @@
   "feature": "more-than-apples:large_golden_apple_key",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 7
+      "type": "minecraft:rarity_filter",
+      "chance": 7
     },
     {
       "type": "minecraft:in_square"

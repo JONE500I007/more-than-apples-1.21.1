@@ -5,9 +5,7 @@
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
-          "tag": [
-            "more-than-apples:all_apple"
-          ]
+          "items": "#more-than-apples:all_apple"
         }
       }
     }

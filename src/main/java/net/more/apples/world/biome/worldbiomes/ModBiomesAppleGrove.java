@@ -27,8 +27,7 @@ import net.more.apples.world.ModPlacedFeatures;
 import java.util.List;
 import java.util.Optional;
 
-import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.UNDERGROUND_DECORATION;
-import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.UNDERGROUND_ORES;
+import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.*;
 
 public class ModBiomesAppleGrove {
     public static final ResourceKey<Biome> APPLE_GROVE = ResourceKey.create(Registries.BIOME,
@@ -51,9 +50,14 @@ public class ModBiomesAppleGrove {
                 GenerationStep.Decoration.UNDERGROUND_STRUCTURES,
                 CavePlacements.MONSTER_ROOM);
 
-        builder.addFeature(
-                GenerationStep.Decoration.TOP_LAYER_MODIFICATION,
-                MiscOverworldPlacements.FREEZE_TOP_LAYER);
+        //builder.addFeature(UNDERGROUND_DECORATION, CavePlacements.DRIPSTONE_CLUSTER);
+        //builder.addFeature(UNDERGROUND_DECORATION, CavePlacements.LARGE_DRIPSTONE);
+        //builder.addFeature(UNDERGROUND_DECORATION, CavePlacements.POINTED_DRIPSTONE);
+
+        builder.addFeature(UNDERGROUND_DECORATION, CavePlacements.UNDERWATER_MAGMA);
+        builder.addFeature(VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
+        builder.addFeature(VEGETAL_DECORATION, CavePlacements.CAVE_VINES);
+
     }
 
     public static Biome applegBiome(BootstrapContext<Biome> context) {
@@ -116,39 +120,50 @@ public class ModBiomesAppleGrove {
                         context.lookup(Registries.CONFIGURED_CARVER));
 
         globalOverworldGeneration(biomeBuilder);
-        //DefaultBiomeFeatures.addMossyRocks(biomeBuilder);
+
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_COAL_UPPER);
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_COAL_LOWER);
 
-        //biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_IRON_UPPER);
+        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_IRON_UPPER);
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_IRON_MIDDLE);
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_IRON_SMALL);
 
+        //biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_GOLD_EXTRA);
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_GOLD);
+        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_GOLD_LOWER);
 
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_REDSTONE);
-        //biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_REDSTONE_LOWER);
+        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_REDSTONE_LOWER);
 
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND);
-        //biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND_BURIED);
+        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND_MEDIUM);
+        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND_LARGE);
+        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND_BURIED);
 
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_LAPIS);
-        //biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_LAPIS_BURIED);
+        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_LAPIS_BURIED);
 
 
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_COPPER);
-        //biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_COPPER_LARGE);
+        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_COPPER_LARGE);
 
-        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_EMERALD);
+        //biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_EMERALD);
 
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, OrePlacements.ORE_DIRT);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, OrePlacements.ORE_GRAVEL);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, OrePlacements.ORE_GRANITE_UPPER);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, OrePlacements.ORE_GRANITE_LOWER);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, OrePlacements.ORE_DIORITE_UPPER);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, OrePlacements.ORE_DIORITE_LOWER);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, OrePlacements.ORE_ANDESITE_UPPER);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, OrePlacements.ORE_ANDESITE_LOWER);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, OrePlacements.ORE_TUFF);
         //DefaultBiomeFeatures.addExtraGoldOre(biomeBuilder);
 
         //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+        biomeBuilder.addFeature(VEGETAL_DECORATION,
                 ModPlacedFeatures.APPLE_TREE_PLACED_KEY);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
+        biomeBuilder.addFeature(VEGETAL_DECORATION,
                 ModPlacedFeatures.LARGE_APPLE_TREE_PLACED_KEY);
         /*
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
@@ -162,17 +177,25 @@ public class ModBiomesAppleGrove {
         //DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
         //DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
         biomeBuilder.addFeature(
-                GenerationStep.Decoration.VEGETAL_DECORATION,
+                VEGETAL_DECORATION,
                 VegetationPlacements.PATCH_GRASS_PLAIN);
         biomeBuilder.addFeature(
-                GenerationStep.Decoration.VEGETAL_DECORATION,
+                VEGETAL_DECORATION,
                 VegetationPlacements.FLOWER_MEADOW);
 //        DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
 
 
         biomeBuilder.addFeature(
-                GenerationStep.Decoration.VEGETAL_DECORATION,
+                VEGETAL_DECORATION,
                 VegetationPlacements.PATCH_LEAF_LITTER);
+
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                MiscOverworldPlacements.SPRING_WATER);
+        biomeBuilder.addFeature(
+                GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                MiscOverworldPlacements.SPRING_LAVA);
+
         biomeBuilder.addFeature(
                 GenerationStep.Decoration.UNDERGROUND_DECORATION,
                 MiscOverworldPlacements.DISK_SAND);
@@ -183,10 +206,10 @@ public class ModBiomesAppleGrove {
                 GenerationStep.Decoration.UNDERGROUND_DECORATION,
                 MiscOverworldPlacements.DISK_GRAVEL);
         biomeBuilder.addFeature(
-                GenerationStep.Decoration.VEGETAL_DECORATION,
+                VEGETAL_DECORATION,
                 AquaticPlacements.KELP_COLD);
         biomeBuilder.addFeature(
-                GenerationStep.Decoration.VEGETAL_DECORATION,
+                VEGETAL_DECORATION,
                 AquaticPlacements.SEAGRASS_RIVER);
 
 

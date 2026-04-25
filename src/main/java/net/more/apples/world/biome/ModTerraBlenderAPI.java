@@ -1,6 +1,7 @@
 package net.more.apples.world.biome;
 
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.more.apples.MoreThanApples;
 import net.more.apples.world.biome.surface.ModAppleGroveMaterialRules;
 import net.more.apples.world.biome.surface.ModFrostyAppleMaterialRules;
@@ -24,8 +25,20 @@ public class ModTerraBlenderAPI implements TerraBlenderApi {
 //                Identifier.of(MoreThanApples.MOD_ID, "apple_grove"), 4
 //        ));
 
-//        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModAppleGroveMaterialRules.makeRule());
-//        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModGoldenAppleOrchardMaterialRules.makeRule());
-//        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModFrostyAppleMaterialRules.makeRule());
+//        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD,
+//                MoreThanApples.MOD_ID, ModAppleGroveMaterialRules.makeRule());
+//        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD,
+//                MoreThanApples.MOD_ID, ModGoldenAppleOrchardMaterialRules.makeRule());
+//        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD,
+//                MoreThanApples.MOD_ID, ModFrostyAppleMaterialRules.makeRule());
+
+        /*
+        SurfaceRuleManager.addSurfaceRules(
+                SurfaceRuleManager.RuleCategory.OVERWORLD,
+                MoreThanApples.MOD_ID,
+                SurfaceRules.sequence(
+                        ModGoldenAppleOrchardMaterialRules.makeRule()
+                ));
+         */
     }
 }

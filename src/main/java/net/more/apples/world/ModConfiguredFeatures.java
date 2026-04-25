@@ -4,6 +4,7 @@ import com.mojang.blaze3d.audio.Library;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.OreFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
@@ -26,6 +28,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlace
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -52,6 +55,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FROSTY_APPLE_TREE_KEY = registryKey("frosty_apple_tree_key");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORCHARD_SEAGRASS_KEY = registryKey("orchard_seagrass_key");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GOLDEN_DANDELION_KEY = registryKey("golden_dandelion_key");
 
 //OreFeatureConfiguration
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
@@ -136,6 +141,19 @@ public class ModConfiguredFeatures {
                 new FrostyAppleFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 0),
                 new TwoLayersFeatureSize(1, 0, 1))
                 .build());
+
+//        register(context, GOLDEN_DANDELION_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
+//                        BlockStateProvider.simple(Blocks.GOLDEN_DANDELION)));
+
+        register(context, GOLDEN_DANDELION_KEY,
+                Feature.SIMPLE_BLOCK,
+                new SimpleBlockConfiguration(
+                        new WeightedStateProvider(
+                                WeightedList.<BlockState>builder()
+                                        .add(Blocks.POPPY.defaultBlockState(), 2)
+                                        .add(Blocks.DANDELION.defaultBlockState(), 2)
+                                        .add(Blocks.GOLDEN_DANDELION.defaultBlockState(), 4)
+                                        .build())));
     }
 
 
