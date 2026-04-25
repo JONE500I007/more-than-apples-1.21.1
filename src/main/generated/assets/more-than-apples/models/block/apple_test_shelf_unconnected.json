@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_shelf_unconnected",
   "textures": {
-    "all": "more-than-apples:block/apple_shelf",
+    "all": "more-than-apples:block/apple_test_shelf",
     "particle": "more-than-apples:block/stripped_apple_log"
   }
 }

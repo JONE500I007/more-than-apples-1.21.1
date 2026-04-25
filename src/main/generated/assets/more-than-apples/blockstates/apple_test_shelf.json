@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf"
+        "model": "more-than-apples:block/apple_test_shelf"
       },
       "when": {
         "facing": "north"
@@ -10,7 +10,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf",
+        "model": "more-than-apples:block/apple_test_shelf",
         "y": 90
       },
       "when": {
@@ -19,7 +19,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf",
+        "model": "more-than-apples:block/apple_test_shelf",
         "y": 180
       },
       "when": {
@@ -28,7 +28,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf",
+        "model": "more-than-apples:block/apple_test_shelf",
         "y": 270
       },
       "when": {
@@ -37,7 +37,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_unpowered"
+        "model": "more-than-apples:block/apple_test_shelf_unpowered"
       },
       "when": {
         "AND": [
@@ -52,7 +52,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_unpowered",
+        "model": "more-than-apples:block/apple_test_shelf_unpowered",
         "y": 90
       },
       "when": {
@@ -68,7 +68,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_unpowered",
+        "model": "more-than-apples:block/apple_test_shelf_unpowered",
         "y": 180
       },
       "when": {
@@ -84,7 +84,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_unpowered",
+        "model": "more-than-apples:block/apple_test_shelf_unpowered",
         "y": 270
       },
       "when": {
@@ -100,7 +100,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_unconnected"
+        "model": "more-than-apples:block/apple_test_shelf_unconnected"
       },
       "when": {
         "AND": [
@@ -118,7 +118,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_unconnected",
+        "model": "more-than-apples:block/apple_test_shelf_unconnected",
         "y": 90
       },
       "when": {
@@ -137,7 +137,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_unconnected",
+        "model": "more-than-apples:block/apple_test_shelf_unconnected",
         "y": 180
       },
       "when": {
@@ -156,7 +156,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_unconnected",
+        "model": "more-than-apples:block/apple_test_shelf_unconnected",
         "y": 270
       },
       "when": {
@@ -175,7 +175,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_left"
+        "model": "more-than-apples:block/apple_test_shelf_left"
       },
       "when": {
         "AND": [
@@ -193,7 +193,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_left",
+        "model": "more-than-apples:block/apple_test_shelf_left",
         "y": 90
       },
       "when": {
@@ -212,7 +212,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_left",
+        "model": "more-than-apples:block/apple_test_shelf_left",
         "y": 180
       },
       "when": {
@@ -231,7 +231,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_left",
+        "model": "more-than-apples:block/apple_test_shelf_left",
         "y": 270
       },
       "when": {
@@ -250,7 +250,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_center"
+        "model": "more-than-apples:block/apple_test_shelf_center"
       },
       "when": {
         "AND": [
@@ -268,7 +268,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_center",
+        "model": "more-than-apples:block/apple_test_shelf_center",
         "y": 90
       },
       "when": {
@@ -287,7 +287,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_center",
+        "model": "more-than-apples:block/apple_test_shelf_center",
         "y": 180
       },
       "when": {
@@ -306,7 +306,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_center",
+        "model": "more-than-apples:block/apple_test_shelf_center",
         "y": 270
       },
       "when": {
@@ -325,7 +325,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_right"
+        "model": "more-than-apples:block/apple_test_shelf_right"
       },
       "when": {
         "AND": [
@@ -343,7 +343,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_right",
+        "model": "more-than-apples:block/apple_test_shelf_right",
         "y": 90
       },
       "when": {
@@ -362,7 +362,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_right",
+        "model": "more-than-apples:block/apple_test_shelf_right",
         "y": 180
       },
       "when": {
@@ -381,7 +381,7 @@
     },
     {
       "apply": {
-        "model": "more-than-apples:block/apple_shelf_right",
+        "model": "more-than-apples:block/apple_test_shelf_right",
         "y": 270
       },
       "when": {

@@ -1,44 +1,47 @@
 package net.more.apples.world.biome.surface;
 
+import net.minecraft.data.worldgen.SurfaceRuleData;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.SurfaceSystem;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.more.apples.block.ModBlocks;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.world.biome.worldbiomes.ModBiomesAppleGrove;
 import net.more.apples.world.biome.worldbiomes.ModBiomesGoldenAppleOrchard;
+import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 
 public class ModGoldenAppleOrchardMaterialRules {
-    private static final SurfaceRules.RuleSource DIRT = SurfaceRules.state(Blocks.DIRT.defaultBlockState());
-    private static final SurfaceRules.RuleSource GRASS_BLOCK = SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState());
-    private static final SurfaceRules.RuleSource STONE = SurfaceRules.state(Blocks.STONE.defaultBlockState());
-    private static final SurfaceRules.RuleSource DEEPSLATE = SurfaceRules.state(Blocks.DEEPSLATE.defaultBlockState());
-
-    private static final SurfaceRules.RuleSource APPLE_BLOCK1 = SurfaceRules.state(ModBlocks2.APPLE_PLANKS.defaultBlockState());
-    private static final SurfaceRules.RuleSource APPLE_BLOCK2 = SurfaceRules.state(ModBlocks.DIAMOND_APPLE_BLOCK.defaultBlockState());
-
+    //private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
+    //private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
+    //private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
+    private static final SurfaceRules.RuleSource DEEPSLATE = makeStateRule(Blocks.DEEPSLATE);
 
     public static SurfaceRules.RuleSource makeRule() {
-        return SurfaceRules.sequence(
+        SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
+        SurfaceRules.ConditionSource isAppleGrove = SurfaceRules.isBiome(ModBiomesGoldenAppleOrchard.GOLDEN_APPLE_ORCHARD);
+        SurfaceRules.RuleSource appleSurface = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(
                         SurfaceRules.ON_FLOOR,
-                        SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState())
+                        SurfaceRules.ifTrue(isAtOrAboveWaterLevel, DEEPSLATE)
                 ),
-
                 SurfaceRules.ifTrue(
                         SurfaceRules.UNDER_FLOOR,
-                        SurfaceRules.state(Blocks.DIRT.defaultBlockState())
+                        DEEPSLATE
                 ),
 
                 SurfaceRules.ifTrue(
-                        SurfaceRules.verticalGradient("deepslate",
-                                VerticalAnchor.bottom(),
-                                VerticalAnchor.absolute(0)),
-                        SurfaceRules.state(Blocks.DEEPSLATE.defaultBlockState())
+                        SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(0), 0)),
+                        DEEPSLATE
                 ),
 
-                SurfaceRules.state(Blocks.STONE.defaultBlockState())
+                DEEPSLATE
+        );
+
+        return SurfaceRules.sequence(
+                SurfaceRules.ifTrue(isAppleGrove, appleSurface)
         );
     }
 

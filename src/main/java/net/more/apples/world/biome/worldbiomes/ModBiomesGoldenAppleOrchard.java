@@ -150,14 +150,14 @@ public class ModBiomesGoldenAppleOrchard {
 
         globalOverworldGeneration(biomeBuilder);
 
-        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_COAL_UPPER);
-        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_IRON_MIDDLE);
-        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_COPPER);
-        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND);
-        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_LAPIS);
-
-        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_GOLD);
-        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_GOLD_EXTRA);
+//        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_COAL_UPPER);
+//        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_IRON_MIDDLE);
+//        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_COPPER);
+//        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND);
+//        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_LAPIS);
+//
+//        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_GOLD);
+//        biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_GOLD_EXTRA);
 
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
                 ModPlacedFeatures.LARGE_GOLDEN_APPLE_TREE_PLACED_KEY);
@@ -187,13 +187,13 @@ public class ModBiomesGoldenAppleOrchard {
                 GenerationStep.Decoration.VEGETAL_DECORATION,
                 VegetationPlacements.PATCH_LEAF_LITTER);
         biomeBuilder.addFeature(
-                GenerationStep.Decoration.UNDERGROUND_ORES,
+                GenerationStep.Decoration.UNDERGROUND_DECORATION,
                 MiscOverworldPlacements.DISK_SAND);
         biomeBuilder.addFeature(
-                GenerationStep.Decoration.UNDERGROUND_ORES,
+                GenerationStep.Decoration.UNDERGROUND_DECORATION,
                 MiscOverworldPlacements.DISK_CLAY);
         biomeBuilder.addFeature(
-                GenerationStep.Decoration.UNDERGROUND_ORES,
+                GenerationStep.Decoration.UNDERGROUND_DECORATION,
                 MiscOverworldPlacements.DISK_GRAVEL);
         //DefaultBiomeFeatures.addSeagrassOnStone(biomeBuilder);//KELP_COLD
         biomeBuilder.addFeature(

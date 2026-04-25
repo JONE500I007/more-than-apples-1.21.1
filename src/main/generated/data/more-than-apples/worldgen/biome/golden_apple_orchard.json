@@ -40,19 +40,12 @@
     ],
     [],
     [],
+    [],
     [
-      "minecraft:ore_coal_upper",
-      "minecraft:ore_iron_middle",
-      "minecraft:ore_copper",
-      "minecraft:ore_diamond",
-      "minecraft:ore_lapis",
-      "minecraft:ore_gold",
-      "minecraft:ore_gold_extra",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
-    [],
     [],
     [
       "more-than-apples:large_golden_apple_tree_placed",
