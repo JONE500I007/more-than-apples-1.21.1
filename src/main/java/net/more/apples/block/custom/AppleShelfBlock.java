@@ -121,6 +121,8 @@ public class AppleShelfBlock extends BaseEntityBlock {
         level.updateNeighborsAt(pos, this);
     }
 
+    //redstone
+
     @Override
     protected void neighborChanged(
             BlockState state,
@@ -244,7 +246,6 @@ public class AppleShelfBlock extends BaseEntityBlock {
         return InteractionResult.PASS;
     }
 
-    //redstone
 
     @Override
     protected boolean hasAnalogOutputSignal(BlockState state) {
