@@ -410,17 +410,17 @@ public class ModBlocks2 {
             (settings) -> new WallHangingSignBlock(FROSTY_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN));
 
-    public static final Block THE_TEST_SHELF = registerBlock2("apple_test_shelf",
+    public static final Block APPLE_SHELF = registerBlock2("apple_shelf",
             new AppleShelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SHELF)
                     .setId(ResourceKey.create(Registries.BLOCK,
-                            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_test_shelf")))));
+                            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_shelf")))));
 
-    public static final BlockEntityType<AppleBlockEntity> THE_SHELF_ENTITY_TYPE =
+    public static final BlockEntityType<AppleBlockEntity> APPLE_SHELF_ENTITY_TYPE =
             Registry.register(
                     BuiltInRegistries.BLOCK_ENTITY_TYPE,
-                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_test_shelf"),
+                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_shelf"),
                     FabricBlockEntityTypeBuilder
-                            .create(AppleBlockEntity::new, ModBlocks2.THE_TEST_SHELF)
+                            .create(AppleBlockEntity::new, ModBlocks2.APPLE_SHELF)
                             .build());
 
 

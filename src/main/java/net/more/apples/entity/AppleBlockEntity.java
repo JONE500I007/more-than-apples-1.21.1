@@ -16,9 +16,22 @@ import net.minecraft.world.level.storage.ValueOutput;
 import net.more.apples.block.ModBlocks2;
 
 public class AppleBlockEntity extends BlockEntity {
+
+    // inv item in shelf
+    private final NonNullList<ItemStack> items =
+            NonNullList.withSize(3, ItemStack.EMPTY);
+
+    // vanilla shelf
+    private boolean alignItemsToBottom = false;
+
     public AppleBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlocks2.THE_SHELF_ENTITY_TYPE, pos, state);
+        super(ModBlocks2.APPLE_SHELF_ENTITY_TYPE, pos, state);
     }
+
+
+    // item logic
+
+
     public ItemStack getItem(int slot) {
         return items.get(slot);
     }
@@ -26,31 +39,48 @@ public class AppleBlockEntity extends BlockEntity {
     public void setItem(int slot, ItemStack stack) {
         items.set(slot, stack);
         setChanged();
-
-        if (level != null && !level.isClientSide()) {
-            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
-        }
     }
-
-    private final NonNullList<ItemStack> items =
-            NonNullList.withSize(3, ItemStack.EMPTY);
 
     public NonNullList<ItemStack> getItems() {
         return this.items;
     }
 
+    // align logic
+
+    public boolean getAlignItemsToBottom() {
+        return this.alignItemsToBottom;
+    }
+
+    public void setAlignItemsToBottom(boolean value) {
+        this.alignItemsToBottom = value;
+        setChanged();
+    }
+
+
+    //save item and load item
+
+
     @Override
     protected void loadAdditional(ValueInput input) {
         super.loadAdditional(input);
+
         this.items.clear();
         ContainerHelper.loadAllItems(input, this.items);
+
+        this.alignItemsToBottom = input.getBooleanOr("align_items_to_bottom", false);
     }
 
     @Override
     protected void saveAdditional(ValueOutput output) {
         super.saveAdditional(output);
+
         ContainerHelper.saveAllItems(output, this.items, true);
+        output.putBoolean("align_items_to_bottom", this.alignItemsToBottom);
     }
+
+
+    //client sync
+
 
     @Override
     public ClientboundBlockEntityDataPacket getUpdatePacket() {
@@ -60,10 +90,18 @@ public class AppleBlockEntity extends BlockEntity {
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         TagValueOutput output = TagValueOutput.createWithoutContext(
-                ProblemReporter.DISCARDING);
+                ProblemReporter.DISCARDING
+        );
+
         ContainerHelper.saveAllItems(output, this.items, true);
+        output.putBoolean("align_items_to_bottom", this.alignItemsToBottom);
+
         return output.buildResult();
     }
+
+
+    // update item
+
 
     @Override
     public void setChanged() {

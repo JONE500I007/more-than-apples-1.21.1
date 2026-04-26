@@ -60,7 +60,7 @@ public class MoreThanApplesClinet implements ClientModInitializer {
 
         //BlockEntityRendererFactories.register(BlockEntityType.SIGN, SignBlockEntityRenderer::new);
 
-        BlockEntityRenderers.register(ModBlocks2.THE_SHELF_ENTITY_TYPE, AppleShelfRenderer::new);
+        BlockEntityRenderers.register(ModBlocks2.APPLE_SHELF_ENTITY_TYPE, AppleShelfRenderer::new);
 
         //SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks2.APPLE_SIGN_TEXTURE));
         //SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks2.APPLE_HANGING_SIGN_TEXTURE));
