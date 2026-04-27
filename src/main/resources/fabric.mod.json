@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 1,
+	"id": "more-than-apples",
+	"version": "${version}",
+	"name": "More Than Apples",
+	"description": "This mod add new apples and effects and biomes",
+	"authors": [
+		"JONE 500"
+	],
+	"contact": {
+		"discord": "https://discord.gg/u5fu3fKgCu",
+		"issues": "https://github.com/JONE500I007/more-than-apples-1.21.1/issues",
+		"sources": "https://github.com/JONE500I007/more-than-apples-1.21.1"
+	},
+	"license": "MIT",
+	"icon": "assets/more-than-apples/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.more.apples.MoreThanApples"
+		],
+		"fabric-datagen": [
+			"net.more.apples.MoreThanApplesDataGenerator"
+		],
+		"client": [
+			"net.more.apples.MoreThanApplesClinet"
+		],
+		"terrablender": [
+			"net.more.apples.world.biome.ModTerraBlenderAPI"
+		]
+	},
+	"mixins": [
+		"more-than-apples.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*",
+		"terrablender": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
