@@ -14,9 +14,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
-import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SideChainPartBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -40,7 +38,8 @@ import java.util.List;
 import static net.minecraft.world.level.block.CaveVines.SHAPE;
 
 //DirectionProperty
-public class AppleShelfBlock extends BaseEntityBlock {
+public class AppleShelfBlock extends BaseEntityBlock
+        implements SelectableSlotContainer, SideChainPartBlock {
 
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
@@ -298,13 +297,19 @@ public class AppleShelfBlock extends BaseEntityBlock {
             BlockPos checkPos = pos.relative(side, -i);
             BlockState checkState = level.getBlockState(checkPos);
 
-            if (!(checkState.getBlock() instanceof AppleShelfBlock)
-                    || checkState.getValue(FACING) != facing
-                    || !checkState.getValue(POWERED)) {
-                break;
-            }
+
+            BlockEntity be = level.getBlockEntity(checkPos);
+
+            if (!(be instanceof IShelfLike)) break;
+
+            Direction otherFacing = getFacingSafe(checkState);
+            if (otherFacing != facing) break;
+
+            if (!checkState.getValue(BlockStateProperties.POWERED)) break;
 
             list.add(checkPos);
+
+
         }
 
         list.add(pos);
@@ -314,11 +319,16 @@ public class AppleShelfBlock extends BaseEntityBlock {
             BlockPos checkPos = pos.relative(side, i);
             BlockState checkState = level.getBlockState(checkPos);
 
-            if (!(checkState.getBlock() instanceof AppleShelfBlock)
-                    || checkState.getValue(FACING) != facing
-                    || !checkState.getValue(POWERED)) {
-                break;
-            }
+            BlockEntity be = level.getBlockEntity(checkPos);
+
+
+            if (!(be instanceof IShelfLike)) break;
+
+            Direction otherFacing = getFacingSafe(checkState);
+            if (otherFacing != facing) break;
+
+            if (!checkState.getValue(BlockStateProperties.POWERED)) break;
+
 
             list.add(checkPos);
         }
@@ -334,6 +344,16 @@ public class AppleShelfBlock extends BaseEntityBlock {
 
         return list;
     }
+    private Direction getFacingSafe(BlockState state) {
+        if (state.hasProperty(AppleShelfBlock.FACING))
+            return state.getValue(AppleShelfBlock.FACING);
+
+        if (state.hasProperty(ShelfBlock.FACING))
+            return state.getValue(ShelfBlock.FACING);
+
+        return Direction.NORTH;
+    }
+
     private void swapChain(Player player, List<BlockPos> positions) {
 
         Inventory inv = player.getInventory();
@@ -394,5 +414,43 @@ public class AppleShelfBlock extends BaseEntityBlock {
         }
 
         return 0;
+    }
+
+
+    @Override
+    public int getRows() {
+        return 1;
+    }
+
+    @Override
+    public int getColumns() {
+        return 3;
+    }
+
+
+
+    @Override
+    public SideChainPart getSideChainPart(BlockState state) {
+        return state.getValue(SIDE_CHAIN_PART);
+    }
+
+    @Override
+    public BlockState setSideChainPart(BlockState state, SideChainPart part) {
+        return state.setValue(SIDE_CHAIN_PART, part);
+    }
+
+    @Override
+    public Direction getFacing(BlockState state) {
+        return state.getValue(FACING);
+    }
+
+    @Override
+    public boolean isConnectable(BlockState state) {
+        return state.getValue(POWERED);
+    }
+
+    @Override
+    public int getMaxChainLength() {
+        return 3;
     }
 }
