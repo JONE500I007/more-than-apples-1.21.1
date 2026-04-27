@@ -3,6 +3,8 @@ package net.more.apples.mixin;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Inventory;
@@ -82,6 +84,19 @@ public abstract class ShelfGetBlock2Mixin {
 
             shelf.setChanged();
 
+            if (!itemStack.isEmpty() || !removed.isEmpty()) {
+                level.playSound(
+                        null,
+                        pos,
+                        !itemStack.isEmpty()
+                                ? SoundEvents.SHELF_PLACE_ITEM
+                                : SoundEvents.SHELF_TAKE_ITEM,
+                        SoundSource.BLOCKS,
+                        1.0F,
+                        1.0F + level.getRandom().nextFloat() * 0.1F
+                );
+            }
+
             cir.setReturnValue(InteractionResult.SUCCESS);
             cir.cancel();
             return;
@@ -92,6 +107,8 @@ public abstract class ShelfGetBlock2Mixin {
                 .getAllBlocksConnectedTo(level, pos);
 
         boolean any = false;
+
+        boolean playedSound = false;
 
         for (int i = 0; i < connected.size(); i++) {
 
@@ -107,6 +124,22 @@ public abstract class ShelfGetBlock2Mixin {
 
                 ItemStack invItem = inventory.removeItemNoUpdate(invSlot);
                 ItemStack shelfItem = part.swapItemNoUpdate(slot, invItem);
+
+                if (!playedSound && (!invItem.isEmpty() || !shelfItem.isEmpty())) {
+
+                    level.playSound(
+                            null,
+                            pos,
+                            !invItem.isEmpty()
+                                    ? SoundEvents.SHELF_PLACE_ITEM
+                                    : SoundEvents.SHELF_TAKE_ITEM,
+                            SoundSource.BLOCKS,
+                            1.0F,
+                            1.0F + level.getRandom().nextFloat() * 0.1F
+                    );
+
+                    playedSound = true;
+                }
 
                 if (!invItem.isEmpty() || !shelfItem.isEmpty()) {
                     inventory.setItem(invSlot, shelfItem);

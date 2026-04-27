@@ -357,6 +357,9 @@ public class AppleShelfBlock extends BaseEntityBlock
     private void swapChain(Player player, List<BlockPos> positions) {
 
         Inventory inv = player.getInventory();
+        Level level = player.level();
+
+        boolean playedSound = false;
 
         int totalShelves = positions.size();
 
@@ -374,6 +377,22 @@ public class AppleShelfBlock extends BaseEntityBlock
 
                 ItemStack invStack = inv.getItem(invIndex);
                 ItemStack removed = shelf.swapItemNoUpdate(i, invStack);
+
+                if (!playedSound && (!invStack.isEmpty() || !removed.isEmpty())) {
+
+                    level.playSound(
+                            null,
+                            pos,
+                            !invStack.isEmpty()
+                                    ? SoundEvents.SHELF_PLACE_ITEM
+                                    : SoundEvents.SHELF_TAKE_ITEM,
+                            SoundSource.BLOCKS,
+                            1.0F,
+                            1.0F + level.getRandom().nextFloat() * 0.1F
+                    );
+
+                    playedSound = true;
+                }
 
                 if (!invStack.isEmpty() || !removed.isEmpty()) {
                     inv.setItem(invIndex, removed);
