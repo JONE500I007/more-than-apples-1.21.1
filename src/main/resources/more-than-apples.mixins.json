@@ -5,7 +5,8 @@
 	"mixins": [
 		"ExampleMixin",
 		"TrunkPlacerTypeInvoker",
-		"FoliagePlacerTypeInvoker"
+		"FoliagePlacerTypeInvoker",
+		"AppleShelfBlockEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

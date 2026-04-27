@@ -29,6 +29,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.more.apples.entity.AppleBlockEntity;
 import net.more.apples.util.ModTags;
+import net.more.apples.world.IShelfLike;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -205,7 +206,7 @@ public class AppleShelfBlock extends BaseEntityBlock {
             InteractionHand hand,
             BlockHitResult hit
     ) {
-        if (!(level.getBlockEntity(pos) instanceof AppleBlockEntity shelf)) {
+        if (!(level.getBlockEntity(pos) instanceof IShelfLike shelf)) {
             return InteractionResult.PASS;
         }
 
@@ -337,7 +338,7 @@ public class AppleShelfBlock extends BaseEntityBlock {
 
             BlockPos pos = positions.get(s);
 
-            if (!(player.level().getBlockEntity(pos) instanceof AppleBlockEntity shelf)) continue;
+            if (!(player.level().getBlockEntity(pos) instanceof IShelfLike shelf)) continue;
 
             for (int i = 0; i < 3; i++) {
 
@@ -378,7 +379,7 @@ public class AppleShelfBlock extends BaseEntityBlock {
             return 0;
         }
 
-        if (level.getBlockEntity(pos) instanceof AppleBlockEntity shelf) {
+        if (level.getBlockEntity(pos) instanceof IShelfLike shelf) {
             int item1 = shelf.getItem(0).isEmpty() ? 0 : 1;
             int item2 = shelf.getItem(1).isEmpty() ? 0 : 1;
             int item3 = shelf.getItem(2).isEmpty() ? 0 : 1;

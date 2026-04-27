@@ -18,9 +18,10 @@ import net.minecraft.world.level.storage.TagValueOutput;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.more.apples.block.ModBlocks2;
+import net.more.apples.world.IShelfLike;
 import org.jspecify.annotations.Nullable;
 
-public class AppleBlockEntity extends BlockEntity implements WorldlyContainer {
+public class AppleBlockEntity extends BlockEntity implements WorldlyContainer, IShelfLike {
 
     // inv item in shelf
     private final NonNullList<ItemStack> items =
@@ -69,6 +70,7 @@ public class AppleBlockEntity extends BlockEntity implements WorldlyContainer {
         setChanged();
     }
 
+    @Override
     public NonNullList<ItemStack> getItems() {
         return this.items;
     }
