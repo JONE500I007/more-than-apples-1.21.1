@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stripped_apple_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "more-than-apples:stripped_apple_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "more-than-apples:flo_apple_shelf"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stripped_apple_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "more-than-apples:flo_apple_shelf"
+    ]
+  }
+}

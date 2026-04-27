@@ -42,7 +42,7 @@ public abstract class ShelfGetBlock2Mixin {
         BlockEntity be = level.getBlockEntity(pos);
 
         if (!(be instanceof IShelfLike shelf)) {
-            return; // ใช้ vanilla
+            return;
         }
 
         if (hand == InteractionHand.OFF_HAND) return;
@@ -66,9 +66,7 @@ public abstract class ShelfGetBlock2Mixin {
             return;
         }
 
-        // =========================
-        // 🟢 SINGLE MODE
-        // =========================
+
         if (!state.getValue(ShelfBlock.POWERED)) {
 
             int slot = hitSlot.getAsInt();
@@ -89,9 +87,6 @@ public abstract class ShelfGetBlock2Mixin {
             return;
         }
 
-        // =========================
-        // 🔴 CHAIN MODE
-        // =========================
 
         List<BlockPos> connected = ((SideChainPartBlock)this)
                 .getAllBlocksConnectedTo(level, pos);

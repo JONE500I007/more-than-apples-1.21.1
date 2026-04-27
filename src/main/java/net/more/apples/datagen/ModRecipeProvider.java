@@ -60,6 +60,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 planksFromLog(ModBlocks2.TEST_APPLE_PLANKS, ModTags.Items.ALL_TEST_APPLE_LOG, 4);
                 planksFromLog(ModBlocks2.FROSTY_APPLE_PLANKS, ModTags.Items.ALL_FROSTY_APPLE_LOG, 4);
 
+                shelf(ModBlocks2.APPLE_SHELF, ModBlocks2.STRIPPED_APPLE_LOG);
+                shelf(ModBlocks2.FLO_APPLE_SHELF, ModBlocks2.STRIPPED_APPLE_LOG);
+
                 HolderLookup.RegistryLookup<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
 
                 shaped(RecipeCategory.MISC, ModBlocks2.APPLE_BARREL)
@@ -169,6 +172,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             .button(ModBlocks2.APPLE_BUTTON)
 
             .sign(ModBlocks2.APPLE_STANDING_SIGN, ModBlocks2.APPLE_WALL_SIGN)
+
 
             //.group("apple_wood")
             .recipeGroupPrefix("wooden")

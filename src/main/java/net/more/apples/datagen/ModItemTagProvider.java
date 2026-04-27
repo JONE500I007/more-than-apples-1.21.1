@@ -3,6 +3,7 @@ package net.more.apples.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.more.apples.block.ModBlocks2;
@@ -111,6 +112,10 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(ModBlocks2.APPLE_PRESSURE_PLATE.asItem())
                 .add(ModBlocks2.TEST_APPLE_PRESSURE_PLATE.asItem())
                 .add(ModBlocks2.FROSTY_APPLE_STAIRS.asItem());
+
+        valueLookupBuilder(ItemTags.WOODEN_SHELVES)
+                .add(ModBlocks2.APPLE_SHELF.asItem())
+                .add(ModBlocks2.FLO_APPLE_SHELF.asItem());
     }
 
 }
