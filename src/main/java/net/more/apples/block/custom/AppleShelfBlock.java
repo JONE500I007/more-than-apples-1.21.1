@@ -6,16 +6,17 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SideChainPartBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -323,9 +324,13 @@ public class AppleShelfBlock extends BaseEntityBlock {
         }
 
         // sort
-        list.sort(Comparator.comparingInt((BlockPos p) ->
-                facing.getAxis() == Direction.Axis.X ? p.getZ() : p.getX()
-        ));
+        list.sort(Comparator.comparingInt(p -> {
+            if (facing == Direction.NORTH) return -p.getX();
+            if (facing == Direction.SOUTH) return p.getX();
+            if (facing == Direction.WEST)  return p.getZ();
+            if (facing == Direction.EAST)  return -p.getZ();
+            return 0;
+        }));
 
         return list;
     }
