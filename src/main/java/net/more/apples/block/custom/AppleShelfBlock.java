@@ -28,7 +28,12 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.more.apples.entity.AppleBlockEntity;
+import net.more.apples.util.ModTags;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 import static net.minecraft.world.level.block.CaveVines.SHAPE;
 
@@ -216,7 +221,10 @@ public class AppleShelfBlock extends BaseEntityBlock {
 
         if (state.getValue(POWERED)) {
             if (!level.isClientSide()) {
-                swapHotbar(player, shelf);
+                List<BlockPos> shelves =
+                        getConnectedShelves(level, pos, state.getValue(FACING));
+
+                swapChain(player, shelves);
             }
             return InteractionResult.SUCCESS;
         }
@@ -274,6 +282,81 @@ public class AppleShelfBlock extends BaseEntityBlock {
             shelf.setItem(i, invStack);
             inv.setItem(invIndex, shelfStack);
         }
+    }
+
+    private List<BlockPos> getConnectedShelves(Level level, BlockPos pos, Direction facing) {
+
+        List<BlockPos> list = new ArrayList<>();
+
+        Direction side = facing.getClockWise();
+
+        for (int i = 1; i <= 2; i++) {
+
+            BlockPos checkPos = pos.relative(side, -i);
+            BlockState checkState = level.getBlockState(checkPos);
+
+            if (!(checkState.getBlock() instanceof AppleShelfBlock)
+                    || checkState.getValue(FACING) != facing
+                    || !checkState.getValue(POWERED)) {
+                break;
+            }
+
+            list.add(checkPos);
+        }
+
+        list.add(pos);
+
+        for (int i = 1; i <= 2; i++) {
+
+            BlockPos checkPos = pos.relative(side, i);
+            BlockState checkState = level.getBlockState(checkPos);
+
+            if (!(checkState.getBlock() instanceof AppleShelfBlock)
+                    || checkState.getValue(FACING) != facing
+                    || !checkState.getValue(POWERED)) {
+                break;
+            }
+
+            list.add(checkPos);
+        }
+
+        // sort
+        list.sort(Comparator.comparingInt((BlockPos p) ->
+                facing.getAxis() == Direction.Axis.X ? p.getZ() : p.getX()
+        ));
+
+        return list;
+    }
+    private void swapChain(Player player, List<BlockPos> positions) {
+
+        Inventory inv = player.getInventory();
+
+        int totalShelves = positions.size();
+
+        for (int s = 0; s < totalShelves; s++) {
+
+            BlockPos pos = positions.get(s);
+
+            if (!(player.level().getBlockEntity(pos) instanceof AppleBlockEntity shelf)) continue;
+
+            for (int i = 0; i < 3; i++) {
+
+                int invIndex = 9 - (totalShelves - s) * 3 + i;
+
+                if (invIndex < 0 || invIndex >= 9) continue;
+
+                ItemStack invStack = inv.getItem(invIndex);
+                ItemStack removed = shelf.swapItemNoUpdate(i, invStack);
+
+                if (!invStack.isEmpty() || !removed.isEmpty()) {
+                    inv.setItem(invIndex, removed);
+                }
+            }
+
+            shelf.setChanged();
+        }
+
+        inv.setChanged();
     }
 
 

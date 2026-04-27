@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.more.apples.block.ModBlocks2;
 import net.more.apples.util.ModTags;
 
@@ -112,6 +113,32 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks2.APPLE_PRESSURE_PLATE)
                 .add(ModBlocks2.TEST_APPLE_PRESSURE_PLATE)
                 .add(ModBlocks2.FROSTY_APPLE_PRESSURE_PLATE);
+
+
+        valueLookupBuilder(BlockTags.WOODEN_SHELVES)
+                .add(ModBlocks2.APPLE_SHELF);
+
+//        valueLookupBuilder(ModTags.Blocks.ALL_THE_SHELF)
+//                .addTag(BlockTags.WOODEN_SHELVES)
+//                .add(ModBlocks2.APPLE_SHELF);
+
+        valueLookupBuilder(ModTags.Blocks.ALL_THE_SHELF)
+                .add(
+                        ModBlocks2.APPLE_SHELF,
+                        Blocks.OAK_SHELF,
+                        Blocks.SPRUCE_SHELF,
+                        Blocks.BIRCH_SHELF,
+                        Blocks.JUNGLE_SHELF,
+                        Blocks.ACACIA_SHELF,
+                        Blocks.DARK_OAK_SHELF,
+                        Blocks.MANGROVE_SHELF,
+                        Blocks.CHERRY_SHELF,
+                        Blocks.BAMBOO_SHELF,
+                        Blocks.CRIMSON_SHELF,
+                        Blocks.WARPED_SHELF);
+
+
+
 
 
         valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)

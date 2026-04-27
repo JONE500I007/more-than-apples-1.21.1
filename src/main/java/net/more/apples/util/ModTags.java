@@ -16,6 +16,8 @@ public class ModTags {
         public static final TagKey<Block> ALL_TEST_APPLE_LOG = createTag("all_test_apple_log");
         public static final TagKey<Block> ALL_FROSTY_APPLE_LOG = createTag("all_frosty_apple_log");
 
+        public static final TagKey<Block> ALL_THE_SHELF = createTag("all_the_shelf");
+
         public static TagKey<Block> createTag(String name) {
             return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
         }
