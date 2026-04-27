@@ -1,12 +1,15 @@
 package net.more.apples.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.WorldlyContainer;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,8 +17,9 @@ import net.minecraft.world.level.storage.TagValueOutput;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.more.apples.block.ModBlocks2;
+import org.jspecify.annotations.Nullable;
 
-public class AppleBlockEntity extends BlockEntity {
+public class AppleBlockEntity extends BlockEntity implements WorldlyContainer {
 
     // inv item in shelf
     private final NonNullList<ItemStack> items =
@@ -32,8 +36,28 @@ public class AppleBlockEntity extends BlockEntity {
     // item logic
 
 
+    @Override
+    public int getContainerSize() {
+        return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
     public ItemStack getItem(int slot) {
         return items.get(slot);
+    }
+
+    @Override
+    public ItemStack removeItem(int slot, int count) {
+        return null;
+    }
+
+    @Override
+    public ItemStack removeItemNoUpdate(int slot) {
+        return null;
     }
 
     public void setItem(int slot, ItemStack stack) {
@@ -111,4 +135,37 @@ public class AppleBlockEntity extends BlockEntity {
             level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
         }
     }
+
+    @Override
+    public boolean stillValid(Player player) {
+        return false;
+    }
+    //HOPPER SUPPORT
+
+    @Override
+    public int[] getSlotsForFace(Direction direction) {
+        return new int[0];
+    }
+
+    @Override
+    public boolean canPlaceItemThroughFace(int slot, ItemStack itemStack, @Nullable Direction direction) {
+        return false;
+    }
+
+    @Override
+    public boolean canTakeItemThroughFace(int slot, ItemStack itemStack, Direction direction) {
+        return false;
+    }
+
+    @Override
+    public void clearContent() {
+
+    }
+
+    public ItemStack swapItemNoUpdate(int slot, ItemStack newStack) {
+        ItemStack old = items.get(slot);
+        items.set(slot, newStack);
+        return old;
+    }
+
 }

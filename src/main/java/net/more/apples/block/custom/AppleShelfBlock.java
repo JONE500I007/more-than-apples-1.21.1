@@ -8,6 +8,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -213,37 +214,66 @@ public class AppleShelfBlock extends BaseEntityBlock {
             return InteractionResult.PASS;
         }
 
-        int slot = getSlot(hit, facing, pos);
+        if (state.getValue(POWERED)) {
+            if (!level.isClientSide()) {
+                swapHotbar(player, shelf);
+            }
+            return InteractionResult.SUCCESS;
+        }
 
         if (level.isClientSide()) {
             return InteractionResult.SUCCESS;
         }
 
+        int slot = getSlot(hit, facing, pos);
         ItemStack current = shelf.getItem(slot);
+        int selected = player.getInventory().getSelectedSlot();
 
         if (!stack.isEmpty()) {
-            if (current.isEmpty()) {
 
-                shelf.setItem(slot, stack.copy());
+            ItemStack old = shelf.swapItemNoUpdate(slot, stack.copy());
 
-                if (!player.getAbilities().instabuild) {
-                    stack.setCount(0);
-                }
-
-                level.playSound(null, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1f, 1f);
-                return InteractionResult.SUCCESS;
+            if (!player.getAbilities().instabuild) {
+                player.getInventory().setItem(selected, old);
             }
+
+            shelf.setChanged();
+            return InteractionResult.SUCCESS;
         }
 
         if (stack.isEmpty() && !current.isEmpty()) {
-            player.addItem(current.copy());
-            shelf.setItem(slot, ItemStack.EMPTY);
 
-            level.playSound(null, pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 1f, 1f);
+            ItemStack inHand = player.getInventory().getItem(selected);
+
+            if (inHand.isEmpty()) {
+                player.getInventory().setItem(selected, current.copy());
+            } else {
+                player.addItem(current.copy());
+            }
+
+            shelf.setItem(slot, ItemStack.EMPTY);
             return InteractionResult.SUCCESS;
         }
 
         return InteractionResult.PASS;
+    }
+
+    private void swapHotbar(Player player, AppleBlockEntity shelf) {
+
+        Inventory inv = player.getInventory();
+
+        int base = inv.getSelectedSlot();
+
+        for (int i = 0; i < 3; i++) {
+
+            int invIndex = (base + i) % 9;
+
+            ItemStack invStack = inv.getItem(invIndex);
+            ItemStack shelfStack = shelf.getItem(i);
+
+            shelf.setItem(i, invStack);
+            inv.setItem(invIndex, shelfStack);
+        }
     }
 
 
