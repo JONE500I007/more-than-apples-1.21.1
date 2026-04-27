@@ -80,6 +80,7 @@ public class AppleShelfBlock extends BaseEntityBlock {
         );
     }
 
+
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;

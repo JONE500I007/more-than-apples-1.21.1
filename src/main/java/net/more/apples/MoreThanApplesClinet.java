@@ -13,6 +13,7 @@ import net.more.apples.entity.ModBoats;
 import net.more.apples.particle.LeavesTestParticle;
 import net.more.apples.particle.ModParticle;
 import net.more.apples.render.AppleShelfRenderer;
+import net.more.apples.render.custom.TheTestShelfRender;
 
 import java.util.List;
 

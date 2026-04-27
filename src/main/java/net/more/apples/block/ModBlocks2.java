@@ -22,7 +22,9 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.custom.AppleShelfBlock;
+import net.more.apples.block.custom.this_test.TestTheShelfBlock;
 import net.more.apples.entity.AppleBlockEntity;
+import net.more.apples.entity.custom.TestTheShelfBlockEntity;
 import net.more.apples.particle.ModParticle;
 import net.more.apples.world.tree.ModSaplingGenerators;
 
@@ -415,14 +417,22 @@ public class ModBlocks2 {
                     .setId(ResourceKey.create(Registries.BLOCK,
                             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_shelf")))));
 
+    public static final Block FLO_APPLE_SHELF = registerBlock2("flo_apple_shelf",
+            new AppleShelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SHELF)
+                    .setId(ResourceKey.create(Registries.BLOCK,
+                            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "flo_apple_shelf")))));
+
     public static final BlockEntityType<AppleBlockEntity> APPLE_SHELF_ENTITY_TYPE =
             Registry.register(
                     BuiltInRegistries.BLOCK_ENTITY_TYPE,
                     Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_shelf"),
                     FabricBlockEntityTypeBuilder
-                            .create(AppleBlockEntity::new, ModBlocks2.APPLE_SHELF)
+                            //.create(AppleBlockEntity::new, ModBlocks2.APPLE_SHELF)
+                            .create(AppleBlockEntity::new,
+                                    ModBlocks2.APPLE_SHELF,
+                                    Blocks.OAK_SHELF,
+                                    ModBlocks2.FLO_APPLE_SHELF)
                             .build());
-
 
 
     public static final Block APPLE_BARREL = registerBlock2("apple_barrel",

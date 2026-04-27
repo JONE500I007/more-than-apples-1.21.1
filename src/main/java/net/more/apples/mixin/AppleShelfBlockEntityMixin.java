@@ -20,11 +20,6 @@ public abstract class AppleShelfBlockEntityMixin implements IShelfLike {
     public abstract void setChanged();
 
     @Override
-    public NonNullList<ItemStack> getItems() {
-        return this.items;
-    }
-
-    @Override
     public ItemStack getItem(int slot) {
         return this.items.get(slot);
     }

@@ -116,7 +116,8 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
 
         valueLookupBuilder(BlockTags.WOODEN_SHELVES)
-                .add(ModBlocks2.APPLE_SHELF);
+                .add(ModBlocks2.APPLE_SHELF)
+                .add(ModBlocks2.FLO_APPLE_SHELF);
 
 //        valueLookupBuilder(ModTags.Blocks.ALL_THE_SHELF)
 //                .addTag(BlockTags.WOODEN_SHELVES)
@@ -125,6 +126,7 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
         valueLookupBuilder(ModTags.Blocks.ALL_THE_SHELF)
                 .add(
                         ModBlocks2.APPLE_SHELF,
+                        ModBlocks2.FLO_APPLE_SHELF,
                         Blocks.OAK_SHELF,
                         Blocks.SPRUCE_SHELF,
                         Blocks.BIRCH_SHELF,
