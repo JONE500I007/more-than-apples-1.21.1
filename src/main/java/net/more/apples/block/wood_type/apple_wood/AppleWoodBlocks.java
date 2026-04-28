@@ -43,12 +43,28 @@ public class AppleWoodBlocks {
                     0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0.46f, 0.67f, 0.18f),
                     BlockBehaviour.Properties
                             .ofFullCopy(Blocks.OAK_LEAVES)));
-
     public static final Block APPLE_SAPLING = registerBlock("apple_sapling",
             properties -> new SaplingBlock(
                     ModSaplingGenerators.APPLE),
                     BlockBehaviour.Properties
-                            .ofFullCopy(Blocks.OAK_SAPLING)));
+                            .ofFullCopy(Blocks.OAK_SAPLING));
+
+
+    public static final Block GOLDEN_APPLE_LEAVES  = registerBlock("golden_apple_leaves",
+            properties -> new UntintedParticleLeavesBlock(
+                    0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
+                    BlockBehaviour.Properties
+                            .ofFullCopy(Blocks.OAK_LEAVES)));
+    public static final Block FRUIT_GOLDEN_APPLE_LEAVES = registerBlock("fruit_golden_apple_leaves",
+            properties -> new UntintedParticleLeavesBlock(
+                    0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
+                    BlockBehaviour.Properties
+                            .ofFullCopy(Blocks.OAK_LEAVES)));
+    public static final Block GOLDEN_APPLE_SAPLING = registerBlock("golden_apple_sapling",
+            properties -> new SaplingBlock(
+                    ModSaplingGenerators.GOLDEN_APPLE),
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.OAK_SAPLING));
 
 
 

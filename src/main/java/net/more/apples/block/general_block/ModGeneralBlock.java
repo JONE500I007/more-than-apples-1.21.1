@@ -22,6 +22,8 @@ public class ModGeneralBlock {
                     .strength(2.0f, 3.0f)
                     .sound(SoundType.WOOD)));
 
+
+
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name)));

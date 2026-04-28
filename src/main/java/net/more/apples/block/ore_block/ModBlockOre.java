@@ -32,6 +32,7 @@ public class ModBlockOre {
                     .requiresCorrectToolForDrops()));
 
 
+
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name)));

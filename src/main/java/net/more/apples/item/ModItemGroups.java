@@ -12,6 +12,7 @@ import net.more.apples.block.ore_block.ModBlockOre;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
+import net.more.apples.item.apple_wood_item.apple_varen.AppleWoodItem;
 import net.more.apples.item.general_item.ModGeneralItems;
 
 public class ModItemGroups {
@@ -42,15 +43,15 @@ public class ModItemGroups {
 
                         entries.accept(AppleWoodVariants.APPLE_STAIRS);
                         entries.accept(AppleWoodVariants.APPLE_SLAB);
-                        entries.accept(ModBlocks2.APPLE_FENCE);
-                        entries.accept(ModBlocks2.APPLE_FENCE_GATE);
-                        entries.accept(ModBlocks2.APPLE_DOOR);
-                        entries.accept(ModBlocks2.APPLE_TRAPDOOR);
-                        entries.accept(ModBlocks2.APPLE_PRESSURE_PLATE);
-                        entries.accept(ModBlocks2.APPLE_BUTTON);
-                        //entries.accept(ModBlocks2.APPLE_WALL);
-                        entries.accept(ModItems.APPLE_SIGN);
-                        entries.accept(ModItems.APPLE_HANGING_SIGN);
+                        entries.accept(AppleWoodVariants.APPLE_FENCE);
+                        entries.accept(AppleWoodVariants.APPLE_FENCE_GATE);
+                        entries.accept(AppleWoodVariants.APPLE_DOOR);
+                        entries.accept(AppleWoodVariants.APPLE_TRAPDOOR);
+                        entries.accept(AppleWoodVariants.APPLE_PRESSURE_PLATE);
+                        entries.accept(AppleWoodVariants.APPLE_BUTTON);
+                        //entries.accept(AppleWoodVariants.APPLE_WALL);
+                        entries.accept(AppleWoodItem.APPLE_SIGN);
+                        entries.accept(AppleWoodItem.APPLE_HANGING_SIGN);
                         entries.accept(ModItems.APPLE_BOAT);
                         entries.accept(ModItems.APPLE_CHEST_BOAT);
 

@@ -5,12 +5,15 @@ import net.fabricmc.api.ModInitializer;
 import net.more.apples.block.CreativeModeBlockTabs;
 import net.more.apples.block.general_block.ModGeneralBlock;
 import net.more.apples.block.ore_block.ModBlockOre;
+import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
+import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.effect.ModEffectsRegister;
 import net.more.apples.event.ModEntityUseHandler2;
 import net.more.apples.item.CreativeModeItemTabs;
 import net.more.apples.item.ModItemGroups;
 import net.more.apples.item.ModPotionsGroups;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
+import net.more.apples.item.apple_wood_item.apple_varen.AppleWoodItem;
 import net.more.apples.item.general_item.ModGeneralItems;
 import net.more.apples.potion.ModPotions;
 import org.slf4j.Logger;
@@ -26,23 +29,47 @@ public class MoreThanApples implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		CreativeModeItemTabs.registerModItemTab();
-		ModAppleFoodItems.registerModForItem();
-		ModGeneralItems.registerModForItem();
-
-		CreativeModeBlockTabs.registerModBlockTab();
-		ModBlockOre.registerModOreBlocks();
-		ModGeneralBlock.registerModGenerBlocks();
-
-
-		ModItemGroups.registerItemGroups();
-		ModPotionsGroups.registerItemGroups2();
+		// =========================
+		// 🎨 CREATIVE TABS / GROUPS
+		// =========================
+//		CreativeModeItemTabs.registerModItemTab();
+//		CreativeModeBlockTabs.registerModBlockTab();
+//
+//		ModItemGroups.registerItemGroups();
+//		ModPotionsGroups.registerItemGroups2();
 
 
+		// =========================
+		// 🍎 ITEMS
+		// =========================
+//		ModAppleFoodItems.registerModForItem();
+//		ModGeneralItems.registerModForItem();
+//		AppleWoodItem.registerWoodItem();
+
+
+		// =========================
+		// 🧱 BLOCKS
+		// =========================
+//		ModGeneralBlock.registerModGenerBlocks();
+//		ModBlockOre.registerModOreBlocks();
+
+		// 🌳 wood set
+//		AppleWoodBlocks.registerAppleWoodBlock();
+//		AppleWoodVariants.registerAppleWoodVariant();
+
+
+		// =========================
+		// 🧪 EFFECTS & POTIONS
+		// =========================
 		ModEffectsRegister.registerEffects();
 		ModPotions.registerPotionsForItem();
 
+
+		// =========================
+		// ⚙️ EVENTS / HANDLERS
+		// =========================
 		ModEntityUseHandler2.register();
+
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.

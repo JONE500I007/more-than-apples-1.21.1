@@ -8,18 +8,19 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.more.apples.MoreThanApples;
 
+import java.util.function.Function;
+
 public class ModGeneralItems {
 
-    public static final Item DIAMOND_NUGGET = registerItem("diamond_nugget", new Item(new Item.Properties()
-            .setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "diamond_nugget")))));
+    public static final Item DIAMOND_NUGGET = registerItem("diamond_nugget",
+            Item::new, new Item.Properties());
 
-
-
-    private static Item registerItem(String name, Item item) {
-        return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name), item);
+    private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {
+        Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name))));
+        return Registry.register(BuiltInRegistries.ITEM, ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name)), item);
     }
 
-    public static void registerModForItem(){
-        MoreThanApples.LOGGER.info("Registering Mod General Items for " + MoreThanApples.MOD_ID);
+    public static void registerModForItem() {
+        MoreThanApples.LOGGER.info("Registering Mod Items for " + MoreThanApples.MOD_ID);
     }
 }
