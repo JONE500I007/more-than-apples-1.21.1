@@ -1,0 +1,203 @@
+{
+  "itemgroup.more-than-apples.diamond_apple_icon": "More Than Apples",
+  "itemgroup.more-than-apples.zpotion_icon": "More Than Apples Potion",
+
+  "item.more-than-apples.diamond_nugget": "Diamond Nugget",
+  "item.more-than-apples.green_apple": "Green Apple",
+  "item.more-than-apples.test_apple": "Test_Apple",
+  "item.more-than-apples.diamond_apple": "Diamond Apple",
+  "item.more-than-apples.enchanted_diamond_apple": "Enchanted Diamond Apple",
+  "item.more-than-apples.diamond_carrot": "Diamond Carrot",
+  "item.more-than-apples.netherite_apple": "Netherite Apple",
+  "item.more-than-apples.enchanted_netherite_apple": "Enchanted Netherite Apple",
+
+  "item.more-than-apples.diamond_apple_block": "Diamond Apple Block",
+  "item.more-than-apples.apple_barrel": "Apple Barrel",
+
+  "item.more-than-apples.apple_log": "Apple Log",
+  "item.more-than-apples.apple_wood": "Apple Wood",
+  "item.more-than-apples.stripped_apple_log": "Stripped Apple Log",
+  "item.more-than-apples.stripped_apple_wood": "Stripped Apple Wood",
+  "item.more-than-apples.apple_planks": "Apple Planks",
+  "item.more-than-apples.apple_leaves": "Apple Leaves",
+  "item.more-than-apples.fruit_apple_leaves": "Fruit Apple Leaves",
+  "item.more-than-apples.apple_sapling": "Apple Sapling",
+
+  "item.more-than-apples.apple_stairs": "Apple Stairs",
+  "item.more-than-apples.apple_slab": "Apple Slab",
+  "item.more-than-apples.apple_fence": "Apple Fence",
+  "item.more-than-apples.apple_fence_gate": "Apple Fence Gate",
+  "item.more-than-apples.apple_door": "Apple Door",
+  "item.more-than-apples.apple_trapdoor": "Apple Trapdoor",
+  "item.more-than-apples.apple_pressure_plate": "Apple Pressure Plate",
+  "item.more-than-apples.apple_button": "Apple Button",
+  "item.more-than-apples.apple_sign": "Apple Sign",
+  "item.more-than-apples.apple_hanging_sign": "Apple Hanging Sign",
+  "item.more-than-apples.apple_boat": "Apple Boat",
+  "item.more-than-apples.apple_chest_boat": "Apple Boat with Chest",
+  "entity.more-than-apples.apple_chest_boat": "Apple Boat with Chest",
+
+  "item.more-than-apples.golden_apple_leaves": "Golden Apple Leaves",
+  "item.more-than-apples.fruit_golden_apple_leaves": "Fruit Golden Apple Leaves",
+  "item.more-than-apples.golden_apple_sapling": "Golden Apple Sapling",
+
+
+  "item.more-than-apples.test_apple_log": "Test_Apple_Log",
+  "item.more-than-apples.test_apple_wood": "Test_Apple_Wood",
+  "item.more-than-apples.stripped_test_apple_log": "Stripped_Test_Apple_Log",
+  "item.more-than-apples.stripped_test_apple_wood": "Stripped_Test_Apple_Wood",
+  "item.more-than-apples.test_apple_planks": "Test_Apple_Planks",
+  "item.more-than-apples.test_apple_leaves": "Test_Apple_Leaves",
+  "item.more-than-apples.test_apple_sapling": "Test_Apple_Sapling",
+
+  "item.more-than-apples.test_apple_stairs": "Test_Apple_Stairs",
+  "item.more-than-apples.test_apple_slab": "Test_Apple_Slab",
+  "item.more-than-apples.test_apple_fence": "Test_Apple_Fence",
+  "item.more-than-apples.test_apple_fence_gate": "Test_Apple_Fence_Gate",
+  "item.more-than-apples.test_apple_door": "Test_Apple_Door",
+  "item.more-than-apples.test_apple_trapdoor": "Test_Apple_Trapdoor",
+  "item.more-than-apples.test_apple_pressure_plate": "Test_Apple_Pressure_Plate",
+  "item.more-than-apples.test_apple_button": "Test_Apple_Button",
+  "item.more-than-apples.test_apple_sign": "Test_Apple_Sign",
+  "item.more-than-apples.test_apple_hanging_sign": "Test_Apple_Hanging_Sign",
+  "item.more-than-apples.test_apple_boat": "Test_Apple_Boat",
+  "item.more-than-apples.test_apple_chest_boat": "Test_Apple_Boat_with_Chest",
+  "entity.more-than-apples.test_apple_chest_boat": "Test_Apple_Boat_with_Chest",
+
+
+  "item.more-than-apples.frosty_apple_log": "Frosty Apple Log",
+  "item.more-than-apples.frosty_apple_wood": "Frosty Apple Wood",
+  "item.more-than-apples.stripped_frosty_apple_log": "Stripped Frosty Apple Log",
+  "item.more-than-apples.stripped_frosty_apple_wood": "Stripped Frosty Apple Wood",
+  "item.more-than-apples.frosty_apple_planks": "Frosty Apple Planks",
+  "item.more-than-apples.frosty_apple_leaves": "Frosty Apple Leaves",
+  "item.more-than-apples.frosty_apple_sapling": "Frosty Apple Sapling",
+
+  "item.more-than-apples.frosty_apple_stairs": "Frosty Apple Stairs",
+  "item.more-than-apples.frosty_apple_slab": "Frosty Apple Slab",
+  "item.more-than-apples.frosty_apple_fence": "Frosty Apple Fence",
+  "item.more-than-apples.frosty_apple_fence_gate": "Frosty Apple Fence Gate",
+  "item.more-than-apples.frosty_apple_door": "Frosty Apple Door",
+  "item.more-than-apples.frosty_apple_trapdoor": "Frosty Apple Trapdoor",
+  "item.more-than-apples.frosty_apple_pressure_plate": "Frosty Apple Pressure Plate",
+  "item.more-than-apples.frosty_apple_button": "Frosty Apple Button",
+  "item.more-than-apples.frosty_apple_sign": "Frosty Apple Sign",
+  "item.more-than-apples.frosty_apple_hanging_sign": "Frosty Apple Hanging Sign",
+  "item.more-than-apples.frosty_apple_boat": "Frosty Apple Boat",
+  "item.more-than-apples.frosty_apple_chest_boat": "Frosty Apple Boat with Chest",
+  "entity.more-than-apples.frosty_apple_chest_boat": "Frosty Apple Boat with Chest",
+
+
+  "item.more-than-apples.apple_ore": "Apple Ore",
+  "item.more-than-apples.deepslate_apple_ore": "Deepslate Apple ore",
+
+  "entity.minecraft.villager.apple_master": "Apple Master",
+
+  "effect.more-than-apples.darkness_immune": "Darkness Immune",
+  "effect.more-than-apples.slowness_immune": "Slowness Immune",
+  "effect.more-than-apples.mining_fatigue_immune": "Mining Fatigue Immune",
+  "effect.more-than-apples.freezing_resistance": "Freezing Resistance",
+  "effect.more-than-apples.call_of_apple": "Call of Apple",
+
+  "item.minecraft.potion.effect.darkness_immune_potion": "Potion of Darkness Immunity",
+  "item.minecraft.potion.effect.darkness_immune_potion_l": "Potion of Darkness Immunity",
+  "item.minecraft.splash_potion.effect.darkness_immune_potion": "Splash Potion of Darkness Immunity",
+  "item.minecraft.splash_potion.effect.darkness_immune_potion_l": "Splash Potion of Darkness Immunity",
+  "item.minecraft.lingering_potion.effect.darkness_immune_potion": "Lingering Potion of Darkness Immunity",
+  "item.minecraft.lingering_potion.effect.darkness_immune_potion_l": "Lingering Potion of Darkness Immunity",
+
+  "item.minecraft.potion.effect.slowness_immune_potion": "Potion of Slowness Immunity",
+  "item.minecraft.potion.effect.slowness_immune_potion_l": "Potion of Slowness Immunity",
+  "item.minecraft.splash_potion.effect.slowness_immune_potion": "Splash Potion of Slowness Immunity",
+  "item.minecraft.splash_potion.effect.slowness_immune_potion_l": "Splash Potion of Slowness Immunity",
+  "item.minecraft.lingering_potion.effect.slowness_immune_potion": "Lingering Potion of Slowness Immunity",
+  "item.minecraft.lingering_potion.effect.slowness_immune_potion_l": "Lingering Potion of Slowness Immunity",
+
+  "item.minecraft.potion.effect.mining_fatigue_immune_potion": "Potion of Mining Fatigue Immunity",
+  "item.minecraft.potion.effect.mining_fatigue_immune_potion_l": "Potion of Mining Fatigue Immunity",
+  "item.minecraft.splash_potion.effect.mining_fatigue_immune_potion": "Splash Potion of Mining Fatigue Immunity",
+  "item.minecraft.splash_potion.effect.mining_fatigue_immune_potion_l": "Splash Potion of Mining Fatigue Immunity",
+  "item.minecraft.lingering_potion.effect.mining_fatigue_immune_potion": "Lingering Potion of Mining Fatigue Immunity",
+  "item.minecraft.lingering_potion.effect.mining_fatigue_immune_potion_l": "Lingering Potion of Mining Fatigue Immunity",
+
+  "item.minecraft.potion.effect.freezing_resistance_potion": "Potion of Freezing Resistance",
+  "item.minecraft.potion.effect.freezing_resistance_potion_l": "Potion of Freezing Resistance",
+  "item.minecraft.splash_potion.effect.freezing_resistance_potion": "Splash Potion of Freezing Resistance",
+  "item.minecraft.splash_potion.effect.freezing_resistance_potion_l": "Splash Potion of Freezing Resistance",
+  "item.minecraft.lingering_potion.effect.freezing_resistance_potion": "Lingering Potion of Freezing Resistance",
+  "item.minecraft.lingering_potion.effect.freezing_resistance_potion_l": "Lingering Potion of Freezing Resistance",
+
+  "item.minecraft.potion.effect.night_vision_potion_v1": "Potion of Night Vision",
+  "item.minecraft.splash_potion.effect.night_vision_potion_v1": "Splash Potion of Night Vision",
+  "item.minecraft.lingering_potion.effect.night_vision_potion_v1": "Lingering Potion of Night Vision",
+
+  "item.minecraft.potion.effect.call_of_apple_potion": "Potion of Call of Apple",
+  "item.minecraft.potion.effect.call_of_apple_potion_l": "Potion of Call of Apple",
+  "item.minecraft.splash_potion.effect.call_of_apple_potion": "Splash Potion of Call of Apple",
+  "item.minecraft.splash_potion.effect.call_of_apple_potion_l": "Splash Potion of DCall of Apple",
+  "item.minecraft.lingering_potion.effect.call_of_apple_potion": "Lingering Potion of Call of Apple",
+  "item.minecraft.lingering_potion.effect.call_of_apple_potion_l": "Lingering Potion of Call of Apple",
+
+  "item.minecraft.tipped_arrow.effect.darkness_immune_potion": "Arrow of Darkness Immunity",
+  "item.minecraft.tipped_arrow.effect.darkness_immune_potion_l": "Arrow of Darkness Immunity",
+  "item.minecraft.tipped_arrow.effect.slowness_immune_potion": "Arrow of Slowness Immune",
+  "item.minecraft.tipped_arrow.effect.slowness_immune_potion_l": "Arrow of Slowness Immune",
+  "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion": "Arrow of Mining Fatigue",
+  "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion_l": "Arrow of Mining Fatigue",
+  "item.minecraft.tipped_arrow.effect.freezing_resistance_potion": "Arrow of Freezing Resistance",
+  "item.minecraft.tipped_arrow.effect.freezing_resistance_potion_l": "Arrow of Freezing Resistance",
+  "item.minecraft.tipped_arrow.effect.night_vision_potion_v1": "Potion of Night Vision",
+  "item.minecraft.tipped_arrow.effect.call_of_apple_potion": "Arrow of Call of Apple",
+  "item.minecraft.tipped_arrow.effect.call_of_apple_potion_l": "Arrow of Call of Apple",
+
+
+  "advancements.more_than_apples.root.advancement_apple.title": "More apple",
+  "advancements.more_than_apples.root.advancement_apple.description": "idk maybe just some description",
+
+  "advancements.more-than-apples.story.obtain_normal_apple.title": "Your first bite!",
+  "advancements.more-than-apples.story.obtain_normal_apple.description": "Eat your first apple maybe crisp..?",
+
+  "advancements.more-than-apples.story.obtain_green_apple.title": "Did you feel lucky?",
+  "advancements.more-than-apples.story.obtain_green_apple.description": "Eat a Green Apple for the first time",
+  "//": "Nah........I'd Win",
+
+  "advancements.more-than-apples.story.obtain_test_apple.title": "this_for_test_advancement",
+  "advancements.more-than-apples.story.obtain_test_apple.description": "Eat_A_Test_Apple_for_the_first_time",
+  "//": "i was too lazy to draw a new texture so I did it this way (:",
+
+  "advancements.more-than-apples.story.obtain_normal_golden_apple.title": "Is it delicious?",
+  "advancements.more-than-apples.story.obtain_normal_golden_apple.description": "Eat a Golden Apple for the first time",
+  "//": "Did you know there is a orchard full of golden apples",
+
+  "advancements.more-than-apples.story.obtain_diamond_apple.title": "Shiny Diamond Apple!",
+  "advancements.more-than-apples.story.obtain_diamond_apple.description": "Eat a Diamond Apple for the first time",
+  "//": "This is still harder than gold?",
+
+  "advancements.more-than-apples.story.obtain_diamond_carrot.title": "Brilliant Diamond Carrot!",
+  "advancements.more-than-apples.story.obtain_diamond_carrot.description": "Eat a Diamond Carrot for the first time",
+  "//": "You found that diamonds are harder than gold",
+
+  "advancements.more-than-apples.story.obtain_netherite_apple.title": "Cover Me With Apple",
+  "advancements.more-than-apples.story.obtain_netherite_apple.description": "Eat a Netherite Apple for the first time",
+  "//": "I think maybe Steve can still eat this",
+
+  "advancements.more-than-apples.story.obtain_normal_enchanted_golden_apple.title": "NO WAY!",
+  "advancements.more-than-apples.story.obtain_normal_enchanted_golden_apple.description": "Eat a Enchanted Golden Apple for the first time",
+  "//": "but i know the way",
+
+  "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.title": "APPLE!!",
+  "advancements.more-than-apples.story.obtain_enchanted_diamond_apple.description": "Eat a Enchanted Diamond Apple for the first time",
+  "//": "htjgodgjgedogkeodpg",
+
+  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.title": "I FEAR NO ONE!",
+  "advancements.more-than-apples.story.obtain_enchanted_netherite_apple.description": "Eat a Enchanted Netherite Apple for the first time",
+  "//": "I think if you eat this, you're not going to die",
+
+  "advancements.more-than-apples.story.enter_golden_apple_orchard.title": "The world looks gold",
+  "advancements.more-than-apples.story.enter_golden_apple_orchard.description": "Travel to the Golden Apple Orchard biome",
+  "//": "My dream has come true",
+
+  "advancements.more-than-apples.story.eat_all_apples.title": "More Than Apples",
+  "advancements.more-than-apples.story.eat_all_apples.description": "Eat every type of apple",
+  "//": "So many words, one meaning: apple"
+}

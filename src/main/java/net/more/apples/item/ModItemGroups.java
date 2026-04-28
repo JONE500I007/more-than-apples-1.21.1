@@ -9,6 +9,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.general_block.ModGeneralBlock;
 import net.more.apples.block.ore_block.ModBlockOre;
+import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
+import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 import net.more.apples.item.general_item.ModGeneralItems;
 
@@ -32,14 +34,14 @@ public class ModItemGroups {
                         entries.accept(ModBlockOre.APPLE_ORE);
                         entries.accept(ModBlockOre.DEEPSLATE_APPLE_ORE);
 
-                        entries.accept(ModBlocks2.APPLE_LOG);
-                        entries.accept(ModBlocks2.APPLE_WOOD);
-                        entries.accept(ModBlocks2.STRIPPED_APPLE_LOG);
-                        entries.accept(ModBlocks2.STRIPPED_APPLE_WOOD);
-                        entries.accept(ModBlocks2.APPLE_PLANKS);
+                        entries.accept(AppleWoodBlocks.APPLE_LOG);
+                        entries.accept(AppleWoodBlocks.APPLE_WOOD);
+                        entries.accept(AppleWoodBlocks.STRIPPED_APPLE_LOG);
+                        entries.accept(AppleWoodBlocks.STRIPPED_APPLE_WOOD);
+                        entries.accept(AppleWoodBlocks.APPLE_PLANKS);
 
-                        entries.accept(ModBlocks2.APPLE_STAIRS);
-                        entries.accept(ModBlocks2.APPLE_SLAB);
+                        entries.accept(AppleWoodVariants.APPLE_STAIRS);
+                        entries.accept(AppleWoodVariants.APPLE_SLAB);
                         entries.accept(ModBlocks2.APPLE_FENCE);
                         entries.accept(ModBlocks2.APPLE_FENCE_GATE);
                         entries.accept(ModBlocks2.APPLE_DOOR);
@@ -52,8 +54,8 @@ public class ModItemGroups {
                         entries.accept(ModItems.APPLE_BOAT);
                         entries.accept(ModItems.APPLE_CHEST_BOAT);
 
-                        entries.accept(ModBlocks2.APPLE_LEAVES);
-                        entries.accept(ModBlocks2.FRUIT_APPLE_LEAVES);
+                        entries.accept(AppleWoodBlocks.APPLE_LEAVES);
+                        entries.accept(AppleWoodBlocks.FRUIT_APPLE_LEAVES);
                         entries.accept(ModBlocks2.APPLE_SAPLING);
 
                         entries.accept(ModBlocks2.GOLDEN_APPLE_LEAVES);

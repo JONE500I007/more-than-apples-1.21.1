@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "more-than-apples:item/enchanted_diamond_apple"
+  }
+}
