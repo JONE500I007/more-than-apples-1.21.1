@@ -42,6 +42,15 @@ public class ModAppleFoodItems {
                     .food(ModFoodProperties.DIAMOND_CARROT_FOOD)
                     .component(DataComponents.CONSUMABLE, ModFoodConEffects.DIAMOND_CARROT_EFFECT));
 
+    public static final Item NETHERITE_APPLE = registerItem("netherite_apple",
+            Item::new, new Item.Properties()
+                    .food(ModFoodProperties.NETHERITE_APPLE_FOOD)
+                    .component(DataComponents.CONSUMABLE, ModFoodConEffects.NETHERITE_APPLE_EFFECT));
+    public static final Item ENCHANTED_NETHERITE_APPLE = registerItem("enchanted_netherite_apple",
+            Item::new, new Item.Properties()
+                    .food(ModFoodProperties.ENCHANTED_NETHERITE_APPLE_FOOD)
+                    .component(DataComponents.CONSUMABLE, ModFoodConEffects.ENCHANTED_NETHERITE_APPLE_EFFECT));
+
 
 
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {
