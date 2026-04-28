@@ -19,7 +19,7 @@ public class ModGeneralItems {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name), item);
     }
 
-    public static void registerModItem(){
+    public static void registerModForItem(){
         MoreThanApples.LOGGER.info("Registering Mod General Items for " + MoreThanApples.MOD_ID);
     }
 }
