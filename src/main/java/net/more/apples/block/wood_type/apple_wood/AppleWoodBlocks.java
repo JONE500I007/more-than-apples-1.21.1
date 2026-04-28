@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.more.apples.MoreThanApples;
+import net.more.apples.world.tree.ModSaplingGenerators;
 
 import java.util.function.Function;
 
@@ -45,9 +46,8 @@ public class AppleWoodBlocks {
                             .ofFullCopy(Blocks.OAK_LEAVES)));
     public static final Block APPLE_SAPLING = registerBlock("apple_sapling",
             properties -> new SaplingBlock(
-                    ModSaplingGenerators.APPLE),
-                    BlockBehaviour.Properties
-                            .ofFullCopy(Blocks.OAK_SAPLING));
+                    ModSaplingGenerators.APPLE,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
 
     public static final Block GOLDEN_APPLE_LEAVES  = registerBlock("golden_apple_leaves",
@@ -62,9 +62,8 @@ public class AppleWoodBlocks {
                             .ofFullCopy(Blocks.OAK_LEAVES)));
     public static final Block GOLDEN_APPLE_SAPLING = registerBlock("golden_apple_sapling",
             properties -> new SaplingBlock(
-                    ModSaplingGenerators.GOLDEN_APPLE),
-            BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.OAK_SAPLING));
+                    ModSaplingGenerators.GOLDEN_APPLE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
 
 

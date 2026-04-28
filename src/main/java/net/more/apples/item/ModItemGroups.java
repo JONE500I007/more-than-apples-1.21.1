@@ -57,11 +57,11 @@ public class ModItemGroups {
 
                         entries.accept(AppleWoodBlocks.APPLE_LEAVES);
                         entries.accept(AppleWoodBlocks.FRUIT_APPLE_LEAVES);
-                        entries.accept(ModBlocks2.APPLE_SAPLING);
+                        entries.accept(AppleWoodBlocks.APPLE_SAPLING);
 
-                        entries.accept(ModBlocks2.GOLDEN_APPLE_LEAVES);
-                        entries.accept(ModBlocks2.FRUIT_GOLDEN_APPLE_LEAVES);
-                        entries.accept(ModBlocks2.GOLDEN_APPLE_SAPLING);
+                        entries.accept(AppleWoodBlocks.GOLDEN_APPLE_LEAVES);
+                        entries.accept(AppleWoodBlocks.FRUIT_GOLDEN_APPLE_LEAVES);
+                        entries.accept(AppleWoodBlocks.GOLDEN_APPLE_SAPLING);
 
 
                         entries.accept(ModBlocks2.TEST_APPLE_LOG);
