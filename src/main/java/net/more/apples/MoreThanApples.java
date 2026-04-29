@@ -16,6 +16,7 @@ import net.more.apples.item.apple_item.ModAppleFoodItems;
 import net.more.apples.item.apple_wood_item.apple_varen.AppleWoodItem;
 import net.more.apples.item.general_item.ModGeneralItems;
 import net.more.apples.potion.ModPotions;
+import net.more.apples.villager.ModAppleVillagers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -69,6 +70,8 @@ public class MoreThanApples implements ModInitializer {
 		// ⚙️ EVENTS / HANDLERS
 		// =========================
 		ModEntityUseHandler2.register();
+
+		ModAppleVillagers.registerVillagers();
 
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.

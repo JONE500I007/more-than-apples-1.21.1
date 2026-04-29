@@ -13,6 +13,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 
 public class FrostyTreeConfig {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FROSTY_APPLE_TREE_KEY = registryTreeKey("frosty_apple_tree_key");
@@ -20,10 +21,10 @@ public class FrostyTreeConfig {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         registerTreeConfig(context, FROSTY_APPLE_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks2.FROSTY_APPLE_LOG),
+                BlockStateProvider.simple(FrostyAppleWoodBlocks.FROSTY_APPLE_LOG),
                 new FrostyAppleTrunkPlacer(4, 2, 0),
 
-                BlockStateProvider.simple(ModBlocks2.FROSTY_APPLE_LEAVES),
+                BlockStateProvider.simple(FrostyAppleWoodBlocks.FROSTY_APPLE_LEAVES),
                 new FrostyAppleFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 0),
                 new TwoLayersFeatureSize(1, 0, 1))
                 .build());

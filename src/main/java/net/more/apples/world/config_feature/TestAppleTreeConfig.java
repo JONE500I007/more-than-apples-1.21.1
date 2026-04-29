@@ -13,6 +13,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 
 public class TestAppleTreeConfig {
     public static final ResourceKey<ConfiguredFeature<?, ?>> TEST_APPLE_TREE_KEY = registryTreeKey("test_apple_tree_key");
@@ -21,9 +22,9 @@ public class TestAppleTreeConfig {
 
         registerTreeConfig(context, TEST_APPLE_TREE_KEY, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
-                        BlockStateProvider.simple(ModBlocks2.TEST_APPLE_LOG),
+                        BlockStateProvider.simple(TestAppleWoodBlocks.TEST_APPLE_LOG),
                         new TestAppleTrunkPlacer(3, 1, 1),
-                        BlockStateProvider.simple(ModBlocks2.TEST_APPLE_LEAVES),
+                        BlockStateProvider.simple(TestAppleWoodBlocks.TEST_APPLE_LEAVES),
                         new AcaciaFoliagePlacer(
                                 ConstantInt.of(0),
                                 ConstantInt.of(1)),

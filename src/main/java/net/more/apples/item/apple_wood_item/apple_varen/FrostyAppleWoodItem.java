@@ -10,30 +10,28 @@ import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
 import net.more.apples.MoreThanApples;
-import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
+import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 
 import java.util.function.Function;
 
-import static net.more.apples.entity.ModBoats.APPLE_BOAT_ID;
+import static net.more.apples.entity.ModBoats.FROSTY_APPLE_BOAT_ID;
 
-public class AppleWoodItem {
-
-    public static final Item APPLE_SIGN = registerSignItem("apple_sign",
+public class FrostyAppleWoodItem {
+    public static final Item FROSTY_APPLE_SIGN = registerSignItem("frosty_apple_sign",
             new SignItem(
-                    AppleWoodVariants.APPLE_STANDING_SIGN,
-                    AppleWoodVariants.APPLE_WALL_SIGN,
+                    FrostyAppleWoodVariants.FROSTY_APPLE_STANDING_SIGN,
+                    FrostyAppleWoodVariants.FROSTY_APPLE_WALL_SIGN,
                     new Item.Properties().stacksTo(16)));
-    public static final Item APPLE_HANGING_SIGN = registerSignItem("apple_hanging_sign",
+    public static final Item FROSTY_APPLE_HANGING_SIGN = registerSignItem("frosty_apple_hanging_sign",
             new HangingSignItem(
-                    AppleWoodVariants.APPLE_HANGING_SIGN_BLOCK,
-                    AppleWoodVariants.APPLE_WALL_HANGING_SIGN,
+                    FrostyAppleWoodVariants.FROSTY_APPLE_HANGING_SIGN_BLOCK,
+                    FrostyAppleWoodVariants.FROSTY_APPLE_WALL_HANGING_SIGN,
                     new Item.Properties().stacksTo(16)));
-    public static final Item APPLE_BOAT =
-            TerraformBoatItemHelper.registerBoatItem(APPLE_BOAT_ID, false);
-    public static final Item APPLE_CHEST_BOAT =
-            TerraformBoatItemHelper.registerBoatItem(APPLE_BOAT_ID, true);
-
-
+    public static final Item FROSTY_APPLE_BOAT =
+            TerraformBoatItemHelper.registerBoatItem(FROSTY_APPLE_BOAT_ID, false);
+    public static final Item FROSTY_APPLE_CHEST_BOAT =
+            TerraformBoatItemHelper.registerBoatItem(FROSTY_APPLE_BOAT_ID, true);
 
 
     private static Item registerSignItem(String name, Item item) {
