@@ -92,6 +92,10 @@ public class FrostyAppleWoodVariants {
             (settings) -> new WallHangingSignBlock(FROSTY_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN));
 
+    public static final Block FROSTY_APPLE_SHELF = registerBlock("frosty_apple_shelf",
+            properties -> new ShelfBlock(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SHELF)));
+
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()

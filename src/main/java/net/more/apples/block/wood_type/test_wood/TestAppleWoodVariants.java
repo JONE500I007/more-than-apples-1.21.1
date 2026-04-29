@@ -92,6 +92,10 @@ public class TestAppleWoodVariants {
             (settings) -> new WallHangingSignBlock(TEST_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN));
 
+    public static final Block TEST_APPLE_SHELF = registerBlock("apple_shelf",
+            properties -> new ShelfBlock(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SHELF)));
+
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()
