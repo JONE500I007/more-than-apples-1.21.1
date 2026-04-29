@@ -7,7 +7,7 @@ import net.minecraft.core.registries.Registries;
 import net.more.apples.datagen.ModPoiTagProvider;
 import net.more.apples.datagen.ModRegistryDataGenerator;
 import net.more.apples.datagen.model.GeneralBlockAndItem;
-import net.more.apples.world.config_feature.ModConfiguredFeatures;
+import net.more.apples.world.config_feature.GoldenDandeltioConfig;
 
 public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -26,7 +26,7 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+		registryBuilder.add(Registries.CONFIGURED_FEATURE, GoldenDandeltioConfig::bootstrap);
 //		registryBuilder.add(Registries.PLACED_FEATURE, ModPlacedFeatures::boostrap);
 //
 //		registryBuilder.add(Registries.BIOME, ModBiomesAppleGrove::boostrap);

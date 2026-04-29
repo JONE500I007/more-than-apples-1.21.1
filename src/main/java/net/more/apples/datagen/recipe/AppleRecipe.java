@@ -16,7 +16,7 @@ import net.minecraft.world.item.Items;
 import net.more.apples.block.general_block.ModGeneralBlock;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
-import net.more.apples.item.apple_wood_item.apple_varen.AppleWoodItem;
+import net.more.apples.item.apple_wood_item.AppleWoodItem;
 import net.more.apples.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;

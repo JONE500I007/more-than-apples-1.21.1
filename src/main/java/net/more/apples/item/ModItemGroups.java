@@ -16,9 +16,9 @@ import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
-import net.more.apples.item.apple_wood_item.apple_varen.AppleWoodItem;
-import net.more.apples.item.apple_wood_item.apple_varen.FrostyAppleWoodItem;
-import net.more.apples.item.apple_wood_item.apple_varen.TestAppleWoodItem;
+import net.more.apples.item.apple_wood_item.AppleWoodItem;
+import net.more.apples.item.apple_wood_item.FrostyAppleWoodItem;
+import net.more.apples.item.apple_wood_item.TestAppleWoodItem;
 import net.more.apples.item.general_item.ModGeneralItems;
 
 public class ModItemGroups {

@@ -1,4 +1,4 @@
-package net.more.apples.item.apple_wood_item.apple_varen;
+package net.more.apples.item.apple_wood_item;
 
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.core.Registry;
@@ -11,7 +11,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
-import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 
 import java.util.function.Function;
 

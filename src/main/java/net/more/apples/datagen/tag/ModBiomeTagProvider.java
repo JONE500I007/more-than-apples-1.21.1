@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
+import net.more.apples.world.biome.biomes_regions.apple_biome.ModBiomesAppleGrove;
 
 import java.util.concurrent.CompletableFuture;
 

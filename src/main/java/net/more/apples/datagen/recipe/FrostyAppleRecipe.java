@@ -14,8 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
-import net.more.apples.item.apple_wood_item.apple_varen.FrostyAppleWoodItem;
-import net.more.apples.item.apple_wood_item.apple_varen.FrostyAppleWoodItem;
+import net.more.apples.item.apple_wood_item.FrostyAppleWoodItem;
 import net.more.apples.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;

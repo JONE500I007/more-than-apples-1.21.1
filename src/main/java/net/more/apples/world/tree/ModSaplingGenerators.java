@@ -4,7 +4,6 @@ import net.minecraft.world.level.block.grower.TreeGrower;
 import net.more.apples.MoreThanApples;
 import net.more.apples.world.config_feature.AppleTreeConfig;
 import net.more.apples.world.config_feature.FrostyTreeConfig;
-import net.more.apples.world.config_feature.ModConfiguredFeatures;
 import net.more.apples.world.config_feature.TestAppleTreeConfig;
 
 import java.util.Optional;

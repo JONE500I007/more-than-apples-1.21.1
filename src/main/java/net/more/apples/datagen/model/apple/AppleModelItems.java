@@ -5,14 +5,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.client.data.models.model.TexturedModel;
-import net.more.apples.block.general_block.ModGeneralBlock;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
-import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
-import net.more.apples.item.apple_item.ModAppleFoodItems;
-import net.more.apples.item.apple_wood_item.apple_varen.AppleWoodItem;
+import net.more.apples.item.apple_wood_item.AppleWoodItem;
 
 public class AppleModelItems extends FabricModelProvider {
     public AppleModelItems(FabricPackOutput output) {

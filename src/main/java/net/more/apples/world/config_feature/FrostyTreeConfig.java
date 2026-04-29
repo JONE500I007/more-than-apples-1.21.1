@@ -14,6 +14,8 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePl
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
+import net.more.apples.world.tree.custom.frosty_tree.FrostyAppleFoliagePlacer;
+import net.more.apples.world.tree.custom.frosty_tree.FrostyAppleTrunkPlacer;
 
 public class FrostyTreeConfig {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FROSTY_APPLE_TREE_KEY = registryTreeKey("frosty_apple_tree_key");

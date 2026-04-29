@@ -2,22 +2,14 @@ package net.more.apples;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.more.apples.block.CreativeModeBlockTabs;
-import net.more.apples.block.general_block.ModGeneralBlock;
-import net.more.apples.block.ore_block.ModBlockOre;
-import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
-import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.effect.ModEffectsRegister;
 import net.more.apples.event.ModEntityUseHandler2;
-import net.more.apples.item.CreativeModeItemTabs;
-import net.more.apples.item.ModItemGroups;
-import net.more.apples.item.ModPotionsGroups;
-import net.more.apples.item.apple_item.ModAppleFoodItems;
-import net.more.apples.item.apple_wood_item.apple_varen.AppleWoodItem;
-import net.more.apples.item.general_item.ModGeneralItems;
 import net.more.apples.particle.ModParticle;
 import net.more.apples.potion.ModPotions;
 import net.more.apples.util.ModLootConditions;
+import net.more.apples.util.custom_loottable.ModLootTableModifiers_DiaApple;
+import net.more.apples.util.custom_trade.ModCustomAppleMTrades;
+import net.more.apples.util.custom_trade.ModCustomFarmerTrades;
 import net.more.apples.villager.ModAppleVillagers;
 import net.more.apples.world.tree.ModFoliagePlacerType;
 import net.more.apples.world.tree.ModTrunkPlacerType;
@@ -83,6 +75,11 @@ public class MoreThanApples implements ModInitializer {
 
 		ModTrunkPlacerType.register();
 		ModFoliagePlacerType.register();
+
+		ModCustomAppleMTrades.registerCustomTrades();
+		ModCustomFarmerTrades.registerCustomTrades();
+
+		ModLootTableModifiers_DiaApple.modifyLootTables();
 
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.

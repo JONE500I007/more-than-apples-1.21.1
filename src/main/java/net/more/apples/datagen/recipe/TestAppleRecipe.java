@@ -9,16 +9,12 @@ import net.minecraft.data.BlockFamily;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.more.apples.block.general_block.ModGeneralBlock;
-import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
-import net.more.apples.item.apple_wood_item.apple_varen.AppleWoodItem;
-import net.more.apples.item.apple_wood_item.apple_varen.TestAppleWoodItem;
+import net.more.apples.item.apple_wood_item.TestAppleWoodItem;
 import net.more.apples.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;

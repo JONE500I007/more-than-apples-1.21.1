@@ -6,9 +6,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
-import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
-import net.more.apples.item.apple_wood_item.apple_varen.FrostyAppleWoodItem;
-import net.more.apples.item.apple_wood_item.apple_varen.TestAppleWoodItem;
+import net.more.apples.item.apple_wood_item.FrostyAppleWoodItem;
 
 public class FrostyAppleModelItems extends FabricModelProvider {
     public FrostyAppleModelItems(FabricPackOutput output) {

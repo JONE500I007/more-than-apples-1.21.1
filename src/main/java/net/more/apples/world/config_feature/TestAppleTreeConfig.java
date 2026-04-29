@@ -14,6 +14,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePl
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
+import net.more.apples.world.tree.custom.test_tree.TestAppleTrunkPlacer;
 
 public class TestAppleTreeConfig {
     public static final ResourceKey<ConfiguredFeature<?, ?>> TEST_APPLE_TREE_KEY = registryTreeKey("test_apple_tree_key");
