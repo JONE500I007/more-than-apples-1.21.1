@@ -17,57 +17,61 @@ import net.more.apples.world.tree.ModSaplingGenerators;
 import java.util.function.Function;
 
 public class AppleWoodBlocks {
+
     public static final Block APPLE_LOG = registerBlock("apple_log",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.OAK_LOG)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("apple_log", Blocks.OAK_LOG)));
     public static final Block APPLE_WOOD = registerBlock("apple_wood",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.OAK_WOOD)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("apple_wood", Blocks.OAK_WOOD)));
     public static final Block STRIPPED_APPLE_LOG = registerBlock("stripped_apple_log",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("stripped_apple_log", Blocks.STRIPPED_OAK_LOG)));
     public static final Block STRIPPED_APPLE_WOOD = registerBlock("stripped_apple_wood",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("stripped_apple_wood", Blocks.STRIPPED_OAK_WOOD)));
 
     public static final Block APPLE_PLANKS = registerBlock("apple_planks",
-            properties -> new Block(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.OAK_PLANKS)));
+            properties -> new Block(
+                    registerIdBlock("apple_planks", Blocks.OAK_PLANKS)));
 
     public static final Block APPLE_LEAVES  = registerBlock("apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
                     0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0.46f, 0.67f, 0.18f),
-                    BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.OAK_LEAVES)));
+                    registerIdBlock("apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block FRUIT_APPLE_LEAVES = registerBlock("fruit_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
                     0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0.46f, 0.67f, 0.18f),
-                    BlockBehaviour.Properties
-                            .ofFullCopy(Blocks.OAK_LEAVES)));
+                    registerIdBlock("fruit_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block APPLE_SAPLING = registerBlock("apple_sapling",
             properties -> new SaplingBlock(
                     ModSaplingGenerators.APPLE,
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+                    registerIdBlock("apple_sapling", Blocks.OAK_SAPLING)));
 
 
     public static final Block GOLDEN_APPLE_LEAVES  = registerBlock("golden_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
                     0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
-                    BlockBehaviour.Properties
-                            .ofFullCopy(Blocks.OAK_LEAVES)));
+                    registerIdBlock("golden_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block FRUIT_GOLDEN_APPLE_LEAVES = registerBlock("fruit_golden_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
                     0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
-                    BlockBehaviour.Properties
-                            .ofFullCopy(Blocks.OAK_LEAVES)));
+                    registerIdBlock("fruit_golden_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block GOLDEN_APPLE_SAPLING = registerBlock("golden_apple_sapling",
             properties -> new SaplingBlock(
                     ModSaplingGenerators.GOLDEN_APPLE,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+                    registerIdBlock("golden_apple_sapling", Blocks.OAK_SAPLING)));
 
 
 
 
+    private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
+        ResourceKey<Block> key = ResourceKey.create(
+                Registries.BLOCK,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
+
+        return BlockBehaviour.Properties.ofFullCopy(base).setId(key);
+    }
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()

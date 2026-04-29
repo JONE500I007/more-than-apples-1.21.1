@@ -18,40 +18,45 @@ import java.util.function.Function;
 
 public class FrostyAppleWoodBlocks {
     public static final Block FROSTY_APPLE_LOG = registerBlock("frosty_frosty_apple_log",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.OAK_LOG)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("frosty_frosty_apple_log", Blocks.OAK_LOG)));
     public static final Block FROSTY_APPLE_WOOD = registerBlock("frosty_frosty_apple_wood",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.OAK_WOOD)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("frosty_frosty_apple_wood", Blocks.OAK_WOOD)));
     public static final Block STRIPPED_FROSTY_APPLE_LOG = registerBlock("stripped_frosty_apple_log",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("stripped_frosty_apple_log", Blocks.STRIPPED_OAK_LOG)));
     public static final Block STRIPPED_FROSTY_APPLE_WOOD = registerBlock("stripped_frosty_apple_wood",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("stripped_frosty_apple_wood", Blocks.STRIPPED_OAK_WOOD)));
 
     public static final Block FROSTY_APPLE_PLANKS = registerBlock("frosty_apple_planks",
-            properties -> new Block(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.OAK_PLANKS)));
+            properties -> new Block(
+                    registerIdBlock("frosty_apple_planks", Blocks.OAK_PLANKS)));
 
     public static final Block FROSTY_APPLE_LEAVES  = registerBlock("frosty_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
                     0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0.46f, 0.67f, 0.18f),
-                    BlockBehaviour.Properties
-                            .ofFullCopy(Blocks.OAK_LEAVES)));
+                    registerIdBlock("frosty_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block FRUIT_FROSTY_APPLE_LEAVES = registerBlock("fruit_frosty_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
                     0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0.46f, 0.67f, 0.18f),
-                    BlockBehaviour.Properties
-                            .ofFullCopy(Blocks.OAK_LEAVES)));
+                    registerIdBlock("fruit_frosty_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block FROSTY_APPLE_SAPLING = registerBlock("frosty_apple_sapling",
             properties -> new SaplingBlock(
                     ModSaplingGenerators.FROSTY_APPLE,
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+                    registerIdBlock("frosty_apple_sapling", Blocks.OAK_SAPLING)));
 
 
 
 
+    private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
+        ResourceKey<Block> key = ResourceKey.create(
+                Registries.BLOCK,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
+
+        return BlockBehaviour.Properties.ofFullCopy(base).setId(key);
+    }
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()

@@ -77,25 +77,34 @@ public class FrostyAppleWoodVariants {
     public static final Block FROSTY_APPLE_STANDING_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_standing_sign"),
             (settings) -> new StandingSignBlock(FROSTY_APPLE_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN));
+            registerIdBlock("frosty_apple_standing_sign", Blocks.OAK_SIGN));
     public static final Block FROSTY_APPLE_WALL_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_wall_sign"),
             (settings) -> new WallSignBlock(FROSTY_APPLE_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN));
+            registerIdBlock("frosty_apple_wall_sign", Blocks.OAK_WALL_SIGN));
 
     public static final Block FROSTY_APPLE_HANGING_SIGN_BLOCK = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_hanging_sign"),
             (settings) -> new CeilingHangingSignBlock(FROSTY_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN));
+            registerIdBlock("frosty_apple_hanging_sign", Blocks.OAK_HANGING_SIGN));
     public static final Block FROSTY_APPLE_WALL_HANGING_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_wall_hanging_sign"),
             (settings) -> new WallHangingSignBlock(FROSTY_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN));
+            registerIdBlock("frosty_apple_wall_hanging_sign", Blocks.OAK_WALL_HANGING_SIGN));
 
     public static final Block FROSTY_APPLE_SHELF = registerBlock("frosty_apple_shelf",
             properties -> new ShelfBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SHELF)));
+                    registerIdBlock("frosty_apple_shelf", Blocks.OAK_SHELF)));
 
+
+
+    private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
+        ResourceKey<Block> key = ResourceKey.create(
+                Registries.BLOCK,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
+
+        return BlockBehaviour.Properties.ofFullCopy(base).setId(key);
+    }
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()

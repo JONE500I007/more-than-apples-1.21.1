@@ -19,34 +19,40 @@ import java.util.function.Function;
 
 public class TestAppleWoodBlocks {
     public static final Block TEST_APPLE_LOG = registerBlock("test_apple_log",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.OAK_LOG)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("test_apple_log", Blocks.OAK_LOG)));
     public static final Block TEST_APPLE_WOOD = registerBlock("test_apple_wood",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.OAK_WOOD)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("test_apple_wood", Blocks.OAK_WOOD)));
     public static final Block STRIPPED_TEST_APPLE_LOG = registerBlock("stripped_test_apple_log",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("stripped_test_apple_log", Blocks.STRIPPED_OAK_LOG)));
     public static final Block STRIPPED_TEST_APPLE_WOOD = registerBlock("stripped_test_apple_wood",
-            properties -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+            properties -> new RotatedPillarBlock(
+                    registerIdBlock("stripped_test_apple_wood", Blocks.STRIPPED_OAK_WOOD)));
 
     public static final Block TEST_APPLE_PLANKS = registerBlock("test_apple_planks",
-            properties -> new Block(BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.OAK_PLANKS)));
+            properties -> new Block(
+                    registerIdBlock("test_apple_planks", Blocks.OAK_PLANKS)));
 
     public static final Block TEST_APPLE_LEAVES  = registerBlock("test_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(0.05f, ModParticle.TEST_LEAVES_PARTICLE,
-                    BlockBehaviour.Properties
-                            .ofFullCopy(Blocks.OAK_LEAVES)));
+                    registerIdBlock("test_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block TEST_APPLE_SAPLING = registerBlock("test_apple_sapling",
             properties -> new SaplingBlock(
                     ModSaplingGenerators.TEST_APPLE,
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+                    registerIdBlock("test_apple_sapling", Blocks.OAK_SAPLING)));
 
 
 
 
+    private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
+        ResourceKey<Block> key = ResourceKey.create(
+                Registries.BLOCK,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
+
+        return BlockBehaviour.Properties.ofFullCopy(base).setId(key);
+    }
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()

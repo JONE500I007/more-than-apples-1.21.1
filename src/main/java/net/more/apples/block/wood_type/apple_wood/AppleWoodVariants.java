@@ -77,25 +77,32 @@ public class AppleWoodVariants {
     public static final Block APPLE_STANDING_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_standing_sign"),
             (settings) -> new StandingSignBlock(APPLE_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN));
+            registerIdBlock("apple_standing_sign", Blocks.OAK_SIGN));
     public static final Block APPLE_WALL_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_sign"),
             (settings) -> new WallSignBlock(APPLE_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN));
+            registerIdBlock("apple_wall_sign", Blocks.OAK_WALL_SIGN));
 
     public static final Block APPLE_HANGING_SIGN_BLOCK = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_hanging_sign"),
             (settings) -> new CeilingHangingSignBlock(APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN));
+            registerIdBlock("apple_hanging_sign", Blocks.OAK_HANGING_SIGN));
     public static final Block APPLE_WALL_HANGING_SIGN = TerraformSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_hanging_sign"),
             (settings) -> new WallHangingSignBlock(APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN));
+            registerIdBlock("apple_wall_hanging_sign", Blocks.OAK_WALL_HANGING_SIGN));
 
     public static final Block APPLE_SHELF = registerBlock("apple_shelf",
             properties -> new ShelfBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SHELF)));
+                    registerIdBlock("apple_shelf", Blocks.OAK_SHELF)));
 
+    private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
+        ResourceKey<Block> key = ResourceKey.create(
+                Registries.BLOCK,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
+
+        return BlockBehaviour.Properties.ofFullCopy(base).setId(key);
+    }
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of()
