@@ -5,6 +5,8 @@ import net.more.apples.block.general_block.ModGeneralBlock;
 import net.more.apples.block.ore_block.ModBlockOre;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 
@@ -20,5 +22,8 @@ public class IniBlocks implements ModInitializer {
 
         TestAppleWoodBlocks.registerTestAppleWoodBlock();
         TestAppleWoodVariants.registerTestAppleWoodVariant();
+
+        FrostyAppleWoodBlocks.registerFrostyAppleWoodBlock();
+        FrostyAppleWoodVariants.registerFrostyAppleWoodVariant();
     }
 }
