@@ -3,6 +3,7 @@ package net.more.apples;
 import net.fabricmc.api.ModInitializer;
 
 import net.more.apples.effect.ModEffectsRegister;
+import net.more.apples.entity.ModBoats;
 import net.more.apples.event.ModEntityUseHandler2;
 import net.more.apples.particle.ModParticle;
 import net.more.apples.potion.ModPotions;
@@ -80,6 +81,8 @@ public class MoreThanApples implements ModInitializer {
 		ModCustomFarmerTrades.registerCustomTrades();
 
 		ModLootTableModifiers_DiaApple.modifyLootTables();
+
+		//ModBoats.registerBoats();
 
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.

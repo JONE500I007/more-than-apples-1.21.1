@@ -8,7 +8,12 @@ import net.more.apples.datagen.ModPoiTagProvider;
 import net.more.apples.datagen.ModRegistryDataGenerator;
 import net.more.apples.datagen.model.GeneralBlockAndItem;
 import net.more.apples.datagen.tag.ModBiomeTagProvider;
+import net.more.apples.world.biome.biomes_regions.apple_biome.AppleGroveBiome;
+import net.more.apples.world.biome.biomes_regions.frosty_apple_biome.FrostyAppleBiome;
+import net.more.apples.world.biome.biomes_regions.golden_apple_orchard_biome.GoldenAppleOrchardBiome;
 import net.more.apples.world.config_feature.GoldenDandeltioConfig;
+import net.more.apples.world.placed_feature.ApplePlacedFeature;
+import net.more.apples.world.placed_feature.TestApplePlacedFeature;
 
 public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -28,10 +33,11 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
 		registryBuilder.add(Registries.CONFIGURED_FEATURE, GoldenDandeltioConfig::bootstrap);
-//		registryBuilder.add(Registries.PLACED_FEATURE, ModPlacedFeatures::boostrap);
-//
-//		registryBuilder.add(Registries.BIOME, ModBiomesAppleGrove::boostrap);
-//		registryBuilder.add(Registries.BIOME, ModBiomesGoldenAppleOrchard::boostrap);
-//		registryBuilder.add(Registries.BIOME, ModBiomeFrostyApple::boostrap);
+
+		registryBuilder.add(Registries.PLACED_FEATURE, ApplePlacedFeature::boostrap);
+
+		registryBuilder.add(Registries.BIOME, AppleGroveBiome::boostrap);
+		registryBuilder.add(Registries.BIOME, GoldenAppleOrchardBiome::boostrap);
+		registryBuilder.add(Registries.BIOME, FrostyAppleBiome::boostrap);
 	}
 }
