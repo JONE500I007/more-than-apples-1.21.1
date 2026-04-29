@@ -20,7 +20,8 @@
 			"net.more.apples.MoreThanApples"
 		],
 		"fabric-datagen": [
-			"net.more.apples.MoreThanApplesDataGenerator"
+			"net.more.apples.MoreThanApplesDataGenerator",
+			"net.more.apples.datage_entrypoint.BlockAndItemDataGenPoint"
 		],
 		"client": [
 			"net.more.apples.MoreThanApplesClinet"
