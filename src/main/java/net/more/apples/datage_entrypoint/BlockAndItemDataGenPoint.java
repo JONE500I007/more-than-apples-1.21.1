@@ -5,6 +5,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.more.apples.datagen.loot_table.loot_blockdrop.AppleLootBlockDrop;
 import net.more.apples.datagen.loot_table.loot_blockdrop.FrostyAppleLootBlockDrop;
 import net.more.apples.datagen.loot_table.loot_blockdrop.TestAppleLootBlockDrop;
+import net.more.apples.datagen.recipe.AppleRecipe;
+import net.more.apples.datagen.recipe.FrostyAppleRecipe;
+import net.more.apples.datagen.recipe.TestAppleRecipe;
 import net.more.apples.datagen.tag.apple_tag.AppleBlockTag;
 import net.more.apples.datagen.tag.apple_tag.AppleItemTag;
 import net.more.apples.datagen.tag.frosty_apple_tag.FrostyAppleBlockTag;
@@ -19,13 +22,16 @@ public class BlockAndItemDataGenPoint implements DataGeneratorEntrypoint {
         pack.addProvider(AppleBlockTag::new);
         pack.addProvider(AppleItemTag::new);
         pack.addProvider(AppleLootBlockDrop::new);
+        pack.addProvider(AppleRecipe::new);
 
         pack.addProvider(TestAppleBlockTag::new);
         pack.addProvider(TestAppleItemTag::new);
         pack.addProvider(TestAppleLootBlockDrop::new);
+        pack.addProvider(TestAppleRecipe::new);
 
         pack.addProvider(FrostyAppleBlockTag::new);
         pack.addProvider(FrostyAppleItemTag::new);
         pack.addProvider(FrostyAppleLootBlockDrop::new);
+        pack.addProvider(FrostyAppleRecipe::new);
     }
 }

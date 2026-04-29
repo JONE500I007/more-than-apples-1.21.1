@@ -5,8 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.more.apples.datagen.ModPoiTagProvider;
-import net.more.apples.datagen.tag.apple_tag.AppleBlockTag;
-import net.more.apples.datagen.tag.apple_tag.AppleItemTag;
+import net.more.apples.datagen.ModRegistryDataGenerator;
 import net.more.apples.world.config_feature.ModConfiguredFeatures;
 
 public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
