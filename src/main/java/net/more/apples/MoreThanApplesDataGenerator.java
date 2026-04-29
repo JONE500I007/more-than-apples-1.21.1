@@ -6,7 +6,7 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.more.apples.datagen.ModPoiTagProvider;
 import net.more.apples.datagen.ModRegistryDataGenerator;
-import net.more.apples.datagen.model.GeneralBlockAndItem;
+import net.more.apples.datagen.provider.ModModelProvider;
 import net.more.apples.datagen.tag.ModBiomeTagProvider;
 import net.more.apples.world.biome.biomes_regions.apple_biome.AppleGroveBiome;
 import net.more.apples.world.biome.biomes_regions.frosty_apple_biome.FrostyAppleBiome;
@@ -22,7 +22,7 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-		pack.addProvider(GeneralBlockAndItem::new);
+		pack.addProvider(ModModelProvider::new);
 
 		pack.addProvider(ModRegistryDataGenerator::new);
 
