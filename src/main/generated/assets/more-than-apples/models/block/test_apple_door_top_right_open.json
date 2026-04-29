@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "bottom": "more-than-apples:block/test_apple_door_bottom",
+    "top": "more-than-apples:block/test_apple_door_top"
+  }
+}

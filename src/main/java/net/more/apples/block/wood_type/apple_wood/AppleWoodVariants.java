@@ -20,43 +20,42 @@ public class AppleWoodVariants {
 
     public static final Block APPLE_STAIRS = registerBlock("apple_stairs",
             properties -> new StairBlock(AppleWoodBlocks.APPLE_PLANKS.defaultBlockState(),
-                    BlockBehaviour.Properties.of()
-                            .strength(2.0f, 3.0f)
+                    properties.strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
     public static final Block APPLE_SLAB = registerBlock("apple_slab",
-            properties -> new SlabBlock(BlockBehaviour.Properties.of()
+            properties -> new SlabBlock(properties
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
     public static final Block APPLE_BUTTON = registerBlock("apple_button",
             properties -> new ButtonBlock(BlockSetType.OAK, 30,
-                    BlockBehaviour.Properties.of()
+                    properties
                             .noCollision()
                             .strength(0.5f)
                             .sound(SoundType.WOOD)));
     public static final Block APPLE_PRESSURE_PLATE = registerBlock("apple_pressure_plate",
             properties -> new PressurePlateBlock(BlockSetType.OAK,
-                    BlockBehaviour.Properties.of()
+                    properties
                             .strength(0.5f)
                             .sound(SoundType.WOOD)));
     public static final Block APPLE_FENCE = registerBlock("apple_fence",
             properties -> new FenceBlock(
-                    BlockBehaviour.Properties.of()
+                    properties
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
     public static final Block APPLE_FENCE_GATE = registerBlock("apple_fence_gate",
             properties -> new FenceGateBlock(WoodType.OAK,
-                    BlockBehaviour.Properties.of()
+                    properties
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
     public static final Block APPLE_DOOR = registerBlock("apple_door",
             properties -> new DoorBlock(BlockSetType.OAK,
-                    BlockBehaviour.Properties.of()
+                    properties
                             .noOcclusion()
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
     public static final Block APPLE_TRAPDOOR = registerBlock("apple_trapdoor",
             properties -> new TrapDoorBlock(BlockSetType.OAK,
-                    BlockBehaviour.Properties.of()
+                    properties
                             .noCollision()
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));

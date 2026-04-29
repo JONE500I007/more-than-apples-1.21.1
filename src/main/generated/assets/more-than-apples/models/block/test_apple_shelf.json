@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_shelf_body",
+  "textures": {
+    "all": "more-than-apples:block/test_apple_shelf",
+    "particle": "more-than-apples:block/stripped_test_apple_log"
+  }
+}

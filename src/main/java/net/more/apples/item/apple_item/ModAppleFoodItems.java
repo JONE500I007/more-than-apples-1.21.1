@@ -35,10 +35,10 @@ public class ModAppleFoodItems {
                     .food(ModFoodProperties.DIAMOND_APPLE_FOOD)
                     .component(DataComponents.CONSUMABLE, ModFoodConEffects.DIAMOND_APPLE_EFFECT)
                     .rarity(Rarity.RARE));
-    public static final Item ENCHANTED_DIAMOND_APPLE = registerEnchItem("apple_hanging_sign",
-            new CustomEnchApple(new Item.Properties().
-                    food(ModFoodProperties.ENCHANTED_DIAMOND_APPLE_FOOD)
-                    .component(DataComponents.CONSUMABLE, ModFoodConEffects.ENCHANTED_DIAMOND_APPLE_EFFECT)));
+    public static final Item ENCHANTED_DIAMOND_APPLE = registerItem("enchanted_diamond_apple",
+            CustomEnchApple::new, new Item.Properties()
+                    .food(ModFoodProperties.ENCHANTED_DIAMOND_APPLE_FOOD)
+                    .component(DataComponents.CONSUMABLE, ModFoodConEffects.ENCHANTED_DIAMOND_APPLE_EFFECT));
     public static final Item DIAMOND_CARROT = registerItem("diamond_carrot",
             Item::new, new Item.Properties()
                     .food(ModFoodProperties.DIAMOND_CARROT_FOOD)
@@ -48,18 +48,10 @@ public class ModAppleFoodItems {
             Item::new, new Item.Properties()
                     .food(ModFoodProperties.NETHERITE_APPLE_FOOD)
                     .component(DataComponents.CONSUMABLE, ModFoodConEffects.NETHERITE_APPLE_EFFECT));
-    public static final Item ENCHANTED_NETHERITE_APPLE = registerEnchItem("apple_hanging_sign",
-            new CustomEnchApple(new Item.Properties().
-                    food(ModFoodProperties.ENCHANTED_NETHERITE_APPLE_FOOD)
-                    .component(DataComponents.CONSUMABLE, ModFoodConEffects.ENCHANTED_NETHERITE_APPLE_EFFECT)));
-
-
-    private static Item registerEnchItem(String name, Item item) {
-        return Registry.register(
-                BuiltInRegistries.ITEM,
-                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name),
-                item);
-    }
+    public static final Item ENCHANTED_NETHERITE_APPLE = registerItem("enchanted_netherite_apple",
+            CustomEnchApple::new, new Item.Properties()
+                    .food(ModFoodProperties.ENCHANTED_NETHERITE_APPLE_FOOD)
+                    .component(DataComponents.CONSUMABLE, ModFoodConEffects.ENCHANTED_NETHERITE_APPLE_EFFECT));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {
         Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name))));

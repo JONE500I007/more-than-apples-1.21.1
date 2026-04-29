@@ -17,38 +17,27 @@ import java.util.function.Function;
 import static net.more.apples.entity.ModBoats.TEST_APPLE_BOAT_ID;
 
 public class TestAppleWoodItem {
-    public static final Item TEST_APPLE_SIGN = registerSignItem("test_apple_sign",
-            new SignItem(
+    public static final Item TEST_APPLE_SIGN = registerItem("test_apple_sign",
+            properties -> new SignItem(
                     TestAppleWoodVariants.TEST_APPLE_STANDING_SIGN,
                     TestAppleWoodVariants.TEST_APPLE_WALL_SIGN,
-                    new Item.Properties().stacksTo(16)));
-    public static final Item TEST_APPLE_HANGING_SIGN = registerSignItem("test_apple_hanging_sign",
-            new HangingSignItem(
+                    properties.stacksTo(16)),
+            new Item.Properties());
+    public static final Item TEST_APPLE_HANGING_SIGN = registerItem("test_apple_hanging_sign",
+            properties -> new HangingSignItem(
                     TestAppleWoodVariants.TEST_APPLE_HANGING_SIGN_BLOCK,
                     TestAppleWoodVariants.TEST_APPLE_WALL_HANGING_SIGN,
-                    new Item.Properties().stacksTo(16)));
+                    properties.stacksTo(16)),
+            new Item.Properties());
     public static final Item TEST_APPLE_BOAT =
             TerraformBoatItemHelper.registerBoatItem(TEST_APPLE_BOAT_ID, false);
     public static final Item TEST_APPLE_CHEST_BOAT =
             TerraformBoatItemHelper.registerBoatItem(TEST_APPLE_BOAT_ID, true);
     
 
-    private static Item registerSignItem(String name, Item item) {
-        return Registry.register(
-                BuiltInRegistries.ITEM,
-                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name),
-                item);
-    }
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {
         Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name))));
         return Registry.register(BuiltInRegistries.ITEM, ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name)), item);
-    }
-
-    private static Item registerItemV2(String name, Function<Item.Properties, Item> factory) {
-        return Registry.register(
-                BuiltInRegistries.ITEM,
-                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name),
-                factory.apply(new Item.Properties()));
     }
 
     public static void registerWoodItem() {

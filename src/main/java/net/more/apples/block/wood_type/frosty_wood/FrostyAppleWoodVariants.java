@@ -20,43 +20,43 @@ import java.util.function.Function;
 public class FrostyAppleWoodVariants {
     public static final Block FROSTY_APPLE_STAIRS = registerBlock("frosty_apple_stairs",
             properties -> new StairBlock(AppleWoodBlocks.APPLE_PLANKS.defaultBlockState(),
-                    BlockBehaviour.Properties.of()
+                    properties
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
     public static final Block FROSTY_APPLE_SLAB = registerBlock("frosty_apple_slab",
-            properties -> new SlabBlock(BlockBehaviour.Properties.of()
+            properties -> new SlabBlock(properties
                     .strength(2.0f, 3.0f)
                     .sound(SoundType.WOOD)));
     public static final Block FROSTY_APPLE_BUTTON = registerBlock("frosty_apple_button",
             properties -> new ButtonBlock(BlockSetType.OAK, 30,
-                    BlockBehaviour.Properties.of()
+                    properties
                             .noCollision()
                             .strength(0.5f)
                             .sound(SoundType.WOOD)));
     public static final Block FROSTY_APPLE_PRESSURE_PLATE = registerBlock("frosty_apple_pressure_plate",
             properties -> new PressurePlateBlock(BlockSetType.OAK,
-                    BlockBehaviour.Properties.of()
+                    properties
                             .strength(0.5f)
                             .sound(SoundType.WOOD)));
     public static final Block FROSTY_APPLE_FENCE = registerBlock("frosty_apple_fence",
             properties -> new FenceBlock(
-                    BlockBehaviour.Properties.of()
+                    properties
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
     public static final Block FROSTY_APPLE_FENCE_GATE = registerBlock("frosty_apple_fence_gate",
             properties -> new FenceGateBlock(WoodType.OAK,
-                    BlockBehaviour.Properties.of()
+                    properties
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
     public static final Block FROSTY_APPLE_DOOR = registerBlock("frosty_apple_door",
             properties -> new DoorBlock(BlockSetType.OAK,
-                    BlockBehaviour.Properties.of()
+                    properties
                             .noOcclusion()
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
     public static final Block FROSTY_APPLE_TRAPDOOR = registerBlock("frosty_apple_trapdoor",
             properties -> new TrapDoorBlock(BlockSetType.OAK,
-                    BlockBehaviour.Properties.of()
+                    properties
                             .noCollision()
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
