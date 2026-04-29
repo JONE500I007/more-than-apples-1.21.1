@@ -7,6 +7,7 @@ import net.minecraft.core.registries.Registries;
 import net.more.apples.datagen.ModPoiTagProvider;
 import net.more.apples.datagen.ModRegistryDataGenerator;
 import net.more.apples.datagen.model.GeneralBlockAndItem;
+import net.more.apples.datagen.tag.ModBiomeTagProvider;
 import net.more.apples.world.config_feature.GoldenDandeltioConfig;
 
 public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {

@@ -13,6 +13,8 @@ import terrablender.api.VanillaParameterOverlayBuilder;
 
 import java.util.function.Consumer;
 
+import static net.more.apples.world.biome.biomes_regions.frosty_apple_biome.FrostyAppleBiome.FROSTY_APPLE;
+
 public class FrostyAppleRegion extends Region{
     public FrostyAppleRegion(Identifier name, int weight) {
         super(name, RegionType.OVERWORLD, weight);

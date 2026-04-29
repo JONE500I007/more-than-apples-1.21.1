@@ -7,6 +7,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.more.apples.world.biome.biomes_regions.apple_biome.AppleGroveBiome;
+import net.more.apples.world.biome.biomes_regions.frosty_apple_biome.FrostyAppleBiome;
+import net.more.apples.world.biome.biomes_regions.golden_apple_orchard_biome.GoldenAppleOrchardBiome;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -21,15 +23,15 @@ public class ModBiomeTagProvider extends FabricTagsProvider<Biome> {
                 .add(AppleGroveBiome.APPLE_GROVE);
 
         builder(BiomeTags.IS_OVERWORLD)
-                .add(ModBiomesGoldenAppleOrchard.GOLDEN_APPLE_ORCHARD);
+                .add(GoldenAppleOrchardBiome.GOLDEN_APPLE_ORCHARD);
 
         builder(BiomeTags.SPAWNS_COLD_VARIANT_FARM_ANIMALS)
-                .add(ModBiomeFrostyApple.FROSTY_APPLE);
+                .add(FrostyAppleBiome.FROSTY_APPLE);
         builder(BiomeTags.SPAWNS_SNOW_FOXES)
-                .add(ModBiomeFrostyApple.FROSTY_APPLE);
+                .add(FrostyAppleBiome.FROSTY_APPLE);
         builder(BiomeTags.SPAWNS_WHITE_RABBITS)
-                .add(ModBiomeFrostyApple.FROSTY_APPLE);
+                .add(FrostyAppleBiome.FROSTY_APPLE);
         builder(BiomeTags.IS_OVERWORLD)
-                .add(ModBiomeFrostyApple.FROSTY_APPLE);
+                .add(FrostyAppleBiome.FROSTY_APPLE);
     }
 }
