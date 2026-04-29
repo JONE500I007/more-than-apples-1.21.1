@@ -6,7 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
-import net.more.apples.world.biome.biomes_regions.apple_biome.ModBiomesAppleGrove;
+import net.more.apples.world.biome.biomes_regions.apple_biome.AppleGroveBiome;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -18,7 +18,7 @@ public class ModBiomeTagProvider extends FabricTagsProvider<Biome> {
     @Override
     protected void addTags(HolderLookup.Provider registries) {
         builder(BiomeTags.IS_OVERWORLD)
-                .add(ModBiomesAppleGrove.APPLE_GROVE);
+                .add(AppleGroveBiome.APPLE_GROVE);
 
         builder(BiomeTags.IS_OVERWORLD)
                 .add(ModBiomesGoldenAppleOrchard.GOLDEN_APPLE_ORCHARD);

@@ -13,10 +13,10 @@ import terrablender.api.VanillaParameterOverlayBuilder;
 
 import java.util.function.Consumer;
 
-import static net.more.apples.world.biome.biomes_regions.apple_biome.ModBiomesAppleGrove.APPLE_GROVE;
+import static net.more.apples.world.biome.biomes_regions.apple_biome.AppleGroveBiome.APPLE_GROVE;
 
-public class ModAppleGroveRegion extends Region {
-    public ModAppleGroveRegion(Identifier name, int weight) {
+public class AppleGroveRegion extends Region {
+    public AppleGroveRegion(Identifier name, int weight) {
         super(name, RegionType.OVERWORLD, weight);
     }
     /*
