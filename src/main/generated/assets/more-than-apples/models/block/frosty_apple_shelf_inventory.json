@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_shelf_inventory",
-  "textures": {
-    "all": "more-than-apples:block/frosty_apple_shelf",
-    "particle": "more-than-apples:block/stripped_frosty_apple_log"
-  }
-}

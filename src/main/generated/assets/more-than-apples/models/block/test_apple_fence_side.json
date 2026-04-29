@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/fence_side",
-  "textures": {
-    "texture": "more-than-apples:block/test_apple_planks"
-  }
-}

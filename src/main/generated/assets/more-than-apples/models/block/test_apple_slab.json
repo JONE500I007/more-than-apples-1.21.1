@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "more-than-apples:block/test_apple_planks",
-    "side": "more-than-apples:block/test_apple_planks",
-    "top": "more-than-apples:block/test_apple_planks"
-  }
-}
