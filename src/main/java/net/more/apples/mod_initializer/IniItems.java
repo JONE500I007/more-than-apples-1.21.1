@@ -1,4 +1,4 @@
-package net.more.apples.modinitializer;
+package net.more.apples.mod_initializer;
 
 import net.fabricmc.api.ModInitializer;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
