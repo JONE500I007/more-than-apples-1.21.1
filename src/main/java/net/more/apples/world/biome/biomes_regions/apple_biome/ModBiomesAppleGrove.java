@@ -19,6 +19,7 @@ import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.more.apples.MoreThanApples;
+import net.more.apples.world.placed_feature.ApplePlacedFeature;
 
 import java.util.List;
 import java.util.Optional;
@@ -158,9 +159,9 @@ public class ModBiomesAppleGrove {
 
         //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
         biomeBuilder.addFeature(VEGETAL_DECORATION,
-                ModPlacedFeatures.APPLE_TREE_PLACED_KEY);
+                ApplePlacedFeature.APPLE_TREE_PLACED_KEY);
         biomeBuilder.addFeature(VEGETAL_DECORATION,
-                ModPlacedFeatures.LARGE_APPLE_TREE_PLACED_KEY);
+                ApplePlacedFeature.LARGE_APPLE_TREE_PLACED_KEY);
         /*
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 ModPlacedFeatures.EXTRA_FLOWERS_PLACED_KEY);
