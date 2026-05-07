@@ -9,7 +9,7 @@ public final class FrostyLootBlockDrop {
     }
 
     public static void addLoot(ModLootBlockDrop provider) {
-        // --- Apple Wood Blocks ---
+        // --- Frosty Apple Wood Blocks ---
         provider.drop(FrostyAppleWoodBlocks.FROSTY_APPLE_LOG);
         provider.drop(FrostyAppleWoodBlocks.FROSTY_APPLE_WOOD);
         provider.drop(FrostyAppleWoodBlocks.STRIPPED_FROSTY_APPLE_LOG);
@@ -17,7 +17,7 @@ public final class FrostyLootBlockDrop {
         provider.drop(FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS);
         provider.drop(FrostyAppleWoodBlocks.FROSTY_APPLE_SAPLING);
 
-        // --- Apple Wood Variants ---
+        // --- Frosty Apple Wood Variants ---
         provider.drop(FrostyAppleWoodVariants.FROSTY_APPLE_STAIRS);
         provider.addSlabLoot(FrostyAppleWoodVariants.FROSTY_APPLE_SLAB);
 
@@ -30,7 +30,7 @@ public final class FrostyLootBlockDrop {
         provider.addDoorLoot(FrostyAppleWoodVariants.FROSTY_APPLE_DOOR);
         provider.drop(FrostyAppleWoodVariants.FROSTY_APPLE_TRAPDOOR);
 
-        // --- Apple Signs ---
+        // --- Frosty Apple Signs ---
         provider.drop(FrostyAppleWoodVariants.FROSTY_APPLE_STANDING_SIGN);
 
         provider.addWallSignLoot(

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "more-than-apples:block/frosty_apple_leaves"
+  }
+}

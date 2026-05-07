@@ -33,7 +33,7 @@ public final class FrostyTags {
         provider.addToTag(BlockTags.PLANKS,
                 FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS);
 
-        // --- Custom Apple Logs ---
+        // --- Custom Frosty Apple Logs ---
         provider.addToTag(ModTags.Blocks.ALL_FROSTY_APPLE_LOG,
                 FrostyAppleWoodBlocks.FROSTY_APPLE_LOG,
                 FrostyAppleWoodBlocks.STRIPPED_FROSTY_APPLE_LOG,
@@ -90,7 +90,7 @@ public final class FrostyTags {
         provider.addToTag(ItemTags.PLANKS,
                 FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS.asItem());
 
-        // --- Custom Apple Logs ---
+        // --- Custom Frosty Apple Logs ---
         provider.addToTag(ModTags.Items.ALL_FROSTY_APPLE_LOG,
                 FrostyAppleWoodBlocks.FROSTY_APPLE_LOG.asItem(),
                 FrostyAppleWoodBlocks.STRIPPED_FROSTY_APPLE_LOG.asItem(),

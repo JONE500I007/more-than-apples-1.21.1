@@ -9,7 +9,7 @@ public final class TestAppleLootBlockDrop {
     }
 
     public static void addLoot(ModLootBlockDrop provider) {
-        // --- Apple Wood Blocks ---
+        // --- Test Apple Wood Blocks ---
         provider.drop(TestAppleWoodBlocks.TEST_APPLE_WOOD);
         provider.drop(TestAppleWoodBlocks.TEST_APPLE_WOOD);
         provider.drop(TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG);
@@ -17,7 +17,7 @@ public final class TestAppleLootBlockDrop {
         provider.drop(TestAppleWoodBlocks.TEST_APPLE_PLANKS);
         provider.drop(TestAppleWoodBlocks.TEST_APPLE_SAPLING);
 
-        // --- Apple Wood Variants ---
+        // --- Test Apple Wood Variants ---
         provider.drop(TestAppleWoodVariants.TEST_APPLE_STAIRS);
         provider.addSlabLoot(TestAppleWoodVariants.TEST_APPLE_SLAB);
 
@@ -30,7 +30,7 @@ public final class TestAppleLootBlockDrop {
         provider.addDoorLoot(TestAppleWoodVariants.TEST_APPLE_DOOR);
         provider.drop(TestAppleWoodVariants.TEST_APPLE_TRAPDOOR);
 
-        // --- Apple Signs ---
+        // --- Test Apple Signs ---
         provider.drop(TestAppleWoodVariants.TEST_APPLE_STANDING_SIGN);
 
         provider.addWallSignLoot(

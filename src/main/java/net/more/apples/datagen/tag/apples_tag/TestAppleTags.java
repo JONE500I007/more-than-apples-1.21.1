@@ -33,7 +33,7 @@ public final class TestAppleTags {
         provider.addToTag(BlockTags.PLANKS,
                 TestAppleWoodBlocks.TEST_APPLE_PLANKS);
 
-        // --- Custom Apple Logs ---
+        // --- Custom Test Apple Logs ---
         provider.addToTag(ModTags.Blocks.ALL_TEST_APPLE_LOG,
                 TestAppleWoodBlocks.TEST_APPLE_LOG,
                 TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG,
@@ -90,7 +90,7 @@ public final class TestAppleTags {
         provider.addToTag(ItemTags.PLANKS,
                 TestAppleWoodBlocks.TEST_APPLE_PLANKS.asItem());
 
-        // --- Custom Apple Logs ---
+        // --- Custom Test Apple Logs ---
         provider.addToTag(ModTags.Items.ALL_TEST_APPLE_LOG,
                 TestAppleWoodBlocks.TEST_APPLE_LOG.asItem(),
                 TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG.asItem(),

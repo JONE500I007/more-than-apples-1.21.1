@@ -31,16 +31,13 @@ public class GuideBookScreen extends Screen {
         this.addRenderableWidget(
                 Button.builder(
                                 Component.literal("Close"),
-                                button -> this.onClose()
-                        )
+                                button -> this.onClose())
                         .bounds(
                                 this.width / 2 - 40,
                                 this.height - 40,
                                 80,
-                                20
-                        )
-                        .build()
-        );
+                                20)
+                        .build());
 
         // Next Page
         this.addRenderableWidget(
@@ -50,16 +47,13 @@ public class GuideBookScreen extends Screen {
                                     if(currentPage < MAX_PAGE) {
                                         currentPage++;
                                     }
-                                }
-                        )
+                                })
                         .bounds(
                                 this.width - 40,
                                 this.height / 2 - 10,
                                 20,
-                                20
-                        )
-                        .build()
-        );
+                                20)
+                        .build());
 
         // Previous Page
         this.addRenderableWidget(
@@ -69,16 +63,13 @@ public class GuideBookScreen extends Screen {
                                     if(currentPage > 0) {
                                         currentPage--;
                                     }
-                                }
-                        )
+                                })
                         .bounds(
                                 20,
                                 this.height / 2 - 10,
                                 20,
-                                20
-                        )
-                        .build()
-        );
+                                20)
+                        .build());
     }
 
     @Override
@@ -89,8 +80,7 @@ public class GuideBookScreen extends Screen {
                 0,
                 this.width,
                 this.height,
-                0xAA000000
-        );
+                0xAA000000);
 
         // PAGE 0
         if(currentPage == 0) {
@@ -100,8 +90,7 @@ public class GuideBookScreen extends Screen {
                     "Hello Applepedia!",
                     this.width / 2 - 50,
                     20,
-                    0xFFFFFF
-            );
+                    0xFFFFFF);
 
 //            boolean discovered =
 //                    Minecraft.getInstance().player.getInventory().contains(
@@ -112,8 +101,7 @@ public class GuideBookScreen extends Screen {
 //                    DiscoveryHelper.hasDiscoveredApple();
             boolean apple =
                     DiscoveryHelper2.hasDiscovered(
-                            "discover_items/discover_apple"
-                    );
+                            "discover_items/discover_apple");
 
             // Render Apple
             if(apple) {
@@ -121,8 +109,7 @@ public class GuideBookScreen extends Screen {
                 graphics.item(
                         new ItemStack(Items.APPLE),
                         40,
-                        40
-                );
+                        40);
 
             } else {
 
@@ -139,8 +126,7 @@ public class GuideBookScreen extends Screen {
                         16,
                         16,
                         16,
-                        16
-                );
+                        16);
             }
 
             // Hover Tooltip
@@ -153,12 +139,10 @@ public class GuideBookScreen extends Screen {
                             this.font,
                             List.of(
                                     Component.literal("Apple"),
-                                    Component.literal("This apple")
-                            ),
+                                    Component.literal("This apple")),
                             Optional.empty(),
                             mouseX,
-                            mouseY
-                    );
+                            mouseY);
 
                 } else {
 
@@ -166,8 +150,7 @@ public class GuideBookScreen extends Screen {
                             this.font,
                             Component.literal("Undiscovered"),
                             mouseX,
-                            mouseY
-                    );
+                            mouseY);
                 }
             }
         }
@@ -180,14 +163,12 @@ public class GuideBookScreen extends Screen {
                     "Second Page",
                     this.width / 2 - 40,
                     20,
-                    0xFFFFFF
-            );
+                    0xFFFFFF);
 
             graphics.item(
                     new ItemStack(Items.DIAMOND),
                     40,
-                    40
-            );
+                    40);
         }
 
         super.extractRenderState(graphics, mouseX, mouseY, delta);

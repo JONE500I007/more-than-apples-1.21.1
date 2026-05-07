@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "more-than-apples:block/apple_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "more-than-apples:block/apple_log"
+    },
+    "axis=z": {
+      "model": "more-than-apples:block/apple_log",
+      "x": 90
+    }
+  }
+}

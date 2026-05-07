@@ -26,9 +26,7 @@ public class DiscoveryHelper2 {
                 connection.getAdvancements().get(
                         Identifier.fromNamespaceAndPath(
                                 MoreThanApples.MOD_ID,
-                                advancementPath
-                        )
-                );
+                                advancementPath));
 
         return advancement != null;
     }
