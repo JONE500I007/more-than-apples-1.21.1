@@ -11,6 +11,7 @@ import net.more.apples.MoreThanApples;
 import java.util.function.Function;
 
 public class ModGeneralItems {
+
     public static final Item DIAMOND_NUGGET = registerItem("diamond_nugget",
             Item::new, new Item.Properties());
 

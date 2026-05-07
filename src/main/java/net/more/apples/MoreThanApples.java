@@ -2,6 +2,17 @@ package net.more.apples;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.more.apples.effect.ModEffectsRegister;
+import net.more.apples.event.ModEntityUseHandler2;
+import net.more.apples.particle.ModParticle;
+import net.more.apples.potion.ModPotions;
+import net.more.apples.util.ModLootConditions;
+import net.more.apples.util.custom_loottable.ModLootTableModifiers_DiaApple;
+import net.more.apples.util.custom_trade.ModCustomAppleMTrades;
+import net.more.apples.util.custom_trade.ModCustomFarmerTrades;
+import net.more.apples.villager.ModAppleVillagers;
+import net.more.apples.world.tree.ModFoliagePlacerType;
+import net.more.apples.world.tree.ModTrunkPlacerType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,9 +26,25 @@ public class MoreThanApples implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		ModEffectsRegister.registerEffects();
+		ModPotions.registerPotionsForItem();
+
+
+		ModEntityUseHandler2.register();
+
+		ModParticle.registerParticle();
+
+		ModAppleVillagers.registerVillagers();
+
+		ModLootConditions.init();
+
+		//ModTrunkPlacerType.register();
+		//ModFoliagePlacerType.register();
+
+		ModCustomAppleMTrades.registerCustomTrades();
+		ModCustomFarmerTrades.registerCustomTrades();
+
+		//ModLootTableModifiers_DiaApple.modifyLootTables();
 
 		LOGGER.info("Hello Fabric world!");
 	}
