@@ -15,6 +15,9 @@ import java.util.List;
 import java.util.Optional;
 
 public class GuideBookScreen extends Screen {
+    private int currentPage = 0;
+    private final int MAX_PAGE = 1;
+
     public GuideBookScreen() {
         super(Component.literal("Guide Book"));
     }
@@ -23,6 +26,7 @@ public class GuideBookScreen extends Screen {
     protected void init() {
         super.init();
 
+        // Close Button
         this.addRenderableWidget(
                 Button.builder(
                                 Component.literal("Close"),
@@ -30,8 +34,46 @@ public class GuideBookScreen extends Screen {
                         )
                         .bounds(
                                 this.width / 2 - 40,
-                                this.height / 2 + 40,
+                                this.height - 40,
                                 80,
+                                20
+                        )
+                        .build()
+        );
+
+        // Next Page
+        this.addRenderableWidget(
+                Button.builder(
+                                Component.literal(">"),
+                                button -> {
+                                    if(currentPage < MAX_PAGE) {
+                                        currentPage++;
+                                    }
+                                }
+                        )
+                        .bounds(
+                                this.width - 40,
+                                this.height / 2 - 10,
+                                20,
+                                20
+                        )
+                        .build()
+        );
+
+        // Previous Page
+        this.addRenderableWidget(
+                Button.builder(
+                                Component.literal("<"),
+                                button -> {
+                                    if(currentPage > 0) {
+                                        currentPage--;
+                                    }
+                                }
+                        )
+                        .bounds(
+                                20,
+                                this.height / 2 - 10,
+                                20,
                                 20
                         )
                         .build()
@@ -49,73 +91,95 @@ public class GuideBookScreen extends Screen {
                 0xAA000000
         );
 
-        graphics.text(
-                this.font,
-                "Hello Applepedia!",
-                this.width / 2 - 50,
-                20,
-                0xFFFFFF
-        );
+        // PAGE 0
+        if(currentPage == 0) {
 
-        boolean discovered =
-                Minecraft.getInstance().player.getInventory().contains(
-                        new ItemStack(Items.APPLE)
-                );
-
-        // Render Apple
-        if(discovered) {
-
-            graphics.item(
-                    new ItemStack(Items.APPLE),
-                    40,
-                    40
+            graphics.text(
+                    this.font,
+                    "Hello Applepedia!",
+                    this.width / 2 - 50,
+                    20,
+                    0xFFFFFF
             );
 
-        } else {
+            boolean discovered =
+                    Minecraft.getInstance().player.getInventory().contains(
+                            new ItemStack(Items.APPLE)
+                    );
 
-            graphics.blit(
-                    RenderPipelines.GUI_TEXTURED,
-                    Identifier.fromNamespaceAndPath(
-                            MoreThanApples.MOD_ID,
-                            "textures/gui/unknown_apple.png"
-                    ),
-                    40,
-                    40,
-                    0,
-                    0,
-                    16,
-                    16,
-                    16,
-                    16
-            );
-        }
-
-        // Hover Tooltip
-        if(mouseX >= 40 && mouseX <= 56
-                && mouseY >= 40 && mouseY <= 56) {
-
+            // Render Apple
             if(discovered) {
 
-                graphics.setTooltipForNextFrame(
-                        this.font,
-                        List.of(
-                                Component.literal("Apple"),
-                                Component.literal("This apple")
-                        ),
-                        Optional.empty(),
-                        mouseX,
-                        mouseY
+                graphics.item(
+                        new ItemStack(Items.APPLE),
+                        40,
+                        40
                 );
 
             } else {
 
-                graphics.setTooltipForNextFrame(
-                        this.font,
-                        Component.literal("Undiscovered"),
-                        mouseX,
-                        mouseY
+                graphics.blit(
+                        RenderPipelines.GUI_TEXTURED,
+                        Identifier.fromNamespaceAndPath(
+                                MoreThanApples.MOD_ID,
+                                "textures/gui/unknown_apple.png"
+                        ),
+                        40,
+                        40,
+                        0,
+                        0,
+                        16,
+                        16,
+                        16,
+                        16
                 );
             }
+
+            // Hover Tooltip
+            if(mouseX >= 40 && mouseX <= 56
+                    && mouseY >= 40 && mouseY <= 56) {
+
+                if(discovered) {
+
+                    graphics.setTooltipForNextFrame(
+                            this.font,
+                            List.of(
+                                    Component.literal("Apple"),
+                                    Component.literal("This apple")
+                            ),
+                            Optional.empty(),
+                            mouseX,
+                            mouseY
+                    );
+
+                } else {
+
+                    graphics.setTooltipForNextFrame(
+                            this.font,
+                            Component.literal("Undiscovered"),
+                            mouseX,
+                            mouseY
+                    );
+                }
+            }
+        }
+
+        // PAGE 1
+        if(currentPage == 1) {
+
+            graphics.text(
+                    this.font,
+                    "Second Page",
+                    this.width / 2 - 40,
+                    20,
+                    0xFFFFFF
+            );
+
+            graphics.item(
+                    new ItemStack(Items.DIAMOND),
+                    40,
+                    40
+            );
         }
 
         super.extractRenderState(graphics, mouseX, mouseY, delta);
