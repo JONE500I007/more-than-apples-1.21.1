@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "boat",
+  "key": {
+    "B": "more-than-apples:frosty_apple_planks"
+  },
+  "pattern": [
+    "B B",
+    "BBB"
+  ],
+  "result": {
+    "id": "more-than-apples:frosty_apple_boat"
+  }
+}
