@@ -1,5 +1,7 @@
 {
   "values": [
-    "more-than-apples:apple_shelf"
+    "more-than-apples:apple_shelf",
+    "more-than-apples:test_apple_shelf",
+    "more-than-apples:frosty_apple_shelf"
   ]
 }

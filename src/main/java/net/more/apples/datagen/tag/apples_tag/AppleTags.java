@@ -1,4 +1,4 @@
-package net.more.apples.datagen.tag;
+package net.more.apples.datagen.tag.apples_tag;
 
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;

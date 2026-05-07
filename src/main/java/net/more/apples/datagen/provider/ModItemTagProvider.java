@@ -5,7 +5,9 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.more.apples.datagen.tag.AppleTags;
+import net.more.apples.datagen.tag.apples_tag.AppleTags;
+import net.more.apples.datagen.tag.apples_tag.FrostyTags;
+import net.more.apples.datagen.tag.apples_tag.TestAppleTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -17,8 +19,8 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider registries) {
         AppleTags.addItemTags(this);
-        //TestAppleTags.addItemTags(this);
-        //FrostyTags.addItemTags(this);
+        TestAppleTags.addItemTags(this);
+        FrostyTags.addItemTags(this);
     }
 
     public void addToTag(TagKey<Item> tag, Item... items) {
