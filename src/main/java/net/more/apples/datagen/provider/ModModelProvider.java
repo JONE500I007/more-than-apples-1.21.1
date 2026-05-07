@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Block;
 import net.more.apples.datagen.model.all_apple.AppleModels;
 import net.more.apples.datagen.model.all_apple.FrostyModels;
 import net.more.apples.datagen.model.all_apple.TestAppleModels;
+import net.more.apples.datagen.model.items.AppleItemsModel;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricPackOutput output) {
@@ -31,17 +32,18 @@ public class ModModelProvider extends FabricModelProvider {
         AppleModels.addItemModels(itemModelGenerators);
         TestAppleModels.addItemModels(itemModelGenerators);
         FrostyModels.addItemModels(itemModelGenerators);
+        AppleItemsModel.addItemModels(itemModelGenerators);
     }
 
-    public static void createBarrel(BlockModelGenerators generators, Block block) {
-        generators.createTrivialBlock(
-                block,
-                TexturedModel.CUBE_TOP_BOTTOM.updateTexture(map -> {
-                    map.put(TextureSlot.TOP, TextureMapping.getBlockTexture(block, "_top"));
-                    map.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(block, "_bottom"));
-                    map.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, ""));
-                }));
-    }
+//    public static void createBarrel(BlockModelGenerators generators, Block block) {
+//        generators.createTrivialBlock(
+//                block,
+//                TexturedModel.CUBE_TOP_BOTTOM.updateTexture(map -> {
+//                    map.put(TextureSlot.TOP, TextureMapping.getBlockTexture(block, "_top"));
+//                    map.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(block, "_bottom"));
+//                    map.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, ""));
+//                }));
+//    }
 
     public static void flatItem(ItemModelGenerators generators, Item item, ModelTemplate template) {
         generators.generateFlatItem(item, template);
