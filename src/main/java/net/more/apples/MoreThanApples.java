@@ -38,8 +38,8 @@ public class MoreThanApples implements ModInitializer {
 
 		ModLootConditions.init();
 
-		//ModTrunkPlacerType.register();
-		//ModFoliagePlacerType.register();
+		ModTrunkPlacerType.register();
+		ModFoliagePlacerType.register();
 
 		ModCustomAppleMTrades.registerCustomTrades();
 		ModCustomFarmerTrades.registerCustomTrades();

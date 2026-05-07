@@ -13,6 +13,8 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 import net.more.apples.world.ModOrePlacement;
 import net.more.apples.world.config_feature.AppleOreConfig;
 import net.more.apples.world.config_feature.AppleTreeConfig;
@@ -55,29 +57,29 @@ public class ApplePlacedFeature {
                 VegetationPlacements.treePlacement(
                         CountPlacement.of(2, 0.1f, 2), ModBlocks2.APPLE_SAPLING));
          */
-//        register(context, APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(AppleTreeConfig.APPLE_TREE_KEY),
-//                VegetationPlacements.treePlacement(
-//                        PlacementUtils.countExtra(2, 0.1f, 2),
-//                        AppleWoodBlocks.APPLE_SAPLING));
-//        // 1 in 6 chunk for your num
-//        // 1 in 4 chunk
-//        register(context, LARGE_APPLE_TREE_PLACED_KEY,
-//                configuredFeatures.getOrThrow(AppleTreeConfig.LARGE_APPLE_KEY),
-//                VegetationPlacements.treePlacement(
-//                        //CountPlacement.of(4),
-//                        RarityFilter.onAverageOnceEvery(4),
-//                        AppleWoodBlocks.APPLE_SAPLING));
-////RarityFilterPlacementModifier
-//        register(context, LARGE_GOLDEN_APPLE_TREE_PLACED_KEY,
-//                configuredFeatures.getOrThrow(AppleTreeConfig.LARGE_GOLDEN_APPLE_KEY),
-//                VegetationPlacements.treePlacement(
-//                        //CountPlacement.of(7),
-//                        RarityFilter.onAverageOnceEvery(7),
-//                        AppleWoodBlocks.GOLDEN_APPLE_SAPLING));
-//
-//        register(context, FROSTY_APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(FrostyTreeConfig.FROSTY_APPLE_TREE_KEY),
-//                VegetationPlacements.treePlacement(
-//                        PlacementUtils.countExtra(3, 0.1f, 2), FrostyAppleWoodBlocks.FROSTY_APPLE_SAPLING));
+        register(context, APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(AppleTreeConfig.APPLE_TREE_KEY),
+                VegetationPlacements.treePlacement(
+                        PlacementUtils.countExtra(2, 0.1f, 2),
+                        AppleWoodBlocks.APPLE_SAPLING));
+        // 1 in 6 chunk for your num
+        // 1 in 4 chunk
+        register(context, LARGE_APPLE_TREE_PLACED_KEY,
+                configuredFeatures.getOrThrow(AppleTreeConfig.LARGE_APPLE_KEY),
+                VegetationPlacements.treePlacement(
+                        //CountPlacement.of(4),
+                        RarityFilter.onAverageOnceEvery(4),
+                        AppleWoodBlocks.APPLE_SAPLING));
+//RarityFilterPlacementModifier
+        register(context, LARGE_GOLDEN_APPLE_TREE_PLACED_KEY,
+                configuredFeatures.getOrThrow(AppleTreeConfig.LARGE_GOLDEN_APPLE_KEY),
+                VegetationPlacements.treePlacement(
+                        //CountPlacement.of(7),
+                        RarityFilter.onAverageOnceEvery(7),
+                        AppleWoodBlocks.GOLDEN_APPLE_SAPLING));
+
+        register(context, FROSTY_APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(FrostyTreeConfig.FROSTY_APPLE_TREE_KEY),
+                VegetationPlacements.treePlacement(
+                        PlacementUtils.countExtra(3, 0.1f, 2), FrostyAppleWoodBlocks.FROSTY_APPLE_SAPLING));
 
         register(context, GOLDEN_DANDELION_PLACED_KEY,
                 configuredFeatures.getOrThrow(GoldenDandeltioConfig.GOLDEN_DANDELION_KEY),

@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 import net.more.apples.world.tree.ModFoliagePlacerType;
 
 public class FrostyAppleFoliagePlacer extends FoliagePlacer {
@@ -66,33 +67,33 @@ public class FrostyAppleFoliagePlacer extends FoliagePlacer {
         int minHang = 1;
         int maxHangVariation = 3;
 
-//        for (int x = -hangingRadius; x <= hangingRadius; ++x) {
-//            for (int z = -hangingRadius; z <= hangingRadius; ++z) {
-//                if (!this.shouldSkipLocation(random, Math.abs(x), -1 - foliageHeight, Math.abs(z), hangingRadius, giant)) {
-//                    if (random.nextFloat() < hangChance) {
-//                        int hangLength = minHang + random.nextInt(maxHangVariation);
-//
-//                        for (int i = 1; i <= hangLength; i++) {
-//                            mutablePos.set(
-//                                    center.getX() + x,
-//                                    center.getY() - 1 - foliageHeight - i,
-//                                    center.getZ() + z);
-//                            final BlockPos currentPos = mutablePos.immutable();
-//
-//                            if ((level.getBlockState(currentPos).getBlock() == Blocks.AIR
-//                                    || level.getBlockState(currentPos).getBlock() == Blocks.WATER)
-//                                    && level.getBlockState(currentPos).getBlock() != FrostyAppleWoodBlocks.FROSTY_APPLE_LOG) {
-//                                foliageSetter.set(currentPos, config.foliageProvider.getState(level, random, currentPos));
-//                            } else {
-//                                {
-//                                    break;
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
+        for (int x = -hangingRadius; x <= hangingRadius; ++x) {
+            for (int z = -hangingRadius; z <= hangingRadius; ++z) {
+                if (!this.shouldSkipLocation(random, Math.abs(x), -1 - foliageHeight, Math.abs(z), hangingRadius, giant)) {
+                    if (random.nextFloat() < hangChance) {
+                        int hangLength = minHang + random.nextInt(maxHangVariation);
+
+                        for (int i = 1; i <= hangLength; i++) {
+                            mutablePos.set(
+                                    center.getX() + x,
+                                    center.getY() - 1 - foliageHeight - i,
+                                    center.getZ() + z);
+                            final BlockPos currentPos = mutablePos.immutable();
+
+                            if ((level.getBlockState(currentPos).getBlock() == Blocks.AIR
+                                    || level.getBlockState(currentPos).getBlock() == Blocks.WATER)
+                                    && level.getBlockState(currentPos).getBlock() != FrostyAppleWoodBlocks.FROSTY_APPLE_LOG) {
+                                foliageSetter.set(currentPos, config.foliageProvider.getState(level, random, currentPos));
+                            } else {
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @Override

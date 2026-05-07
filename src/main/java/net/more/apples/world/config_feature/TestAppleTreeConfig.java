@@ -13,6 +13,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.world.tree.custom.test_tree.TestAppleTrunkPlacer;
 
 public class TestAppleTreeConfig {
@@ -20,16 +21,16 @@ public class TestAppleTreeConfig {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
-//        registerTreeConfig(context, TEST_APPLE_TREE_KEY, Feature.TREE,
-//                new TreeConfiguration.TreeConfigurationBuilder(
-//                        BlockStateProvider.simple(TestAppleWoodBlocks.TEST_APPLE_LOG),
-//                        new TestAppleTrunkPlacer(3, 1, 1),
-//                        BlockStateProvider.simple(TestAppleWoodBlocks.TEST_APPLE_LEAVES),
-//                        new AcaciaFoliagePlacer(
-//                                ConstantInt.of(0),
-//                                ConstantInt.of(1)),
-//                        new TwoLayersFeatureSize(1, 0, 1))
-//                        .build());
+        registerTreeConfig(context, TEST_APPLE_TREE_KEY, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(TestAppleWoodBlocks.TEST_APPLE_LOG),
+                        new TestAppleTrunkPlacer(3, 1, 1),
+                        BlockStateProvider.simple(TestAppleWoodBlocks.TEST_APPLE_LEAVES),
+                        new AcaciaFoliagePlacer(
+                                ConstantInt.of(0),
+                                ConstantInt.of(1)),
+                        new TwoLayersFeatureSize(1, 0, 1))
+                        .build());
     }
 
 
