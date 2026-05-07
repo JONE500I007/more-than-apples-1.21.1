@@ -1,0 +1,42 @@
+{
+  "parent": "more-than-apples:apple/normal_golden_apple",
+  "display": {
+    "icon": {
+      "id": "minecraft:golden_apple"
+    },
+    "title": {
+      "translate": "advancements.more-than-apples.story.enter_golden_apple_orchard.title"
+    },
+    "description": {
+      "translate": "advancements.more-than-apples.story.enter_golden_apple_orchard.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "enter_golden_apple_orchard": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "more-than-apples:golden_apple_orchard"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "enter_golden_apple_orchard"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

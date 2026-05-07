@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "more-than-apples:green_apple",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.more_than_apples.root.advancement_apple.title"
+    },
+    "description": {
+      "translate": "advancements.more_than_apples.root.advancement_apple.description"
+    },
+    "background": "minecraft:gui/advancements/backgrounds/stone",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "advancement_apple": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

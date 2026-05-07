@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:diamond"
+  },
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "id": "more-than-apples:diamond_nugget",
+    "count": 9
+  }
+}

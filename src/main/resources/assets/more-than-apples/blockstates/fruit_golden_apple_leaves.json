@@ -1,0 +1,6 @@
+{
+  "multipart": [
+    { "apply": { "model": "more-than-apples:block/fruit_golden_apple_leaves" } },
+    { "apply": { "model": "more-than-apples:block/fruit_golden_apple_leaves_overlay" } }
+  ]
+}

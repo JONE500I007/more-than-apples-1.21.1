@@ -1,0 +1,18 @@
+{
+  "given_item_modifiers": [
+    {
+      "function": "minecraft:set_potion",
+      "id": "more-than-apples:darkness_immune_potion"
+    }
+  ],
+  "gives": {
+    "id": "minecraft:potion"
+  },
+  "max_uses": 4.0,
+  "reputation_discount": 0.08,
+  "wants": {
+    "count": 23.0,
+    "id": "minecraft:emerald"
+  },
+  "xp": 15.0
+}
