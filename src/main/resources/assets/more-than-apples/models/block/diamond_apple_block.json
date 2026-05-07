@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "more-than-apples:block/diamond_apple_block_top",
-    "side": "more-than-apples:block/diamond_apple_block",
-    "down": "more-than-apples:block/diamond_apple_block_down"
-  }
-}
