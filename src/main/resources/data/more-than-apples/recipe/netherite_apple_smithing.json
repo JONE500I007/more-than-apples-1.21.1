@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:netherite_ingot",
+  "base": "more-than-apples:diamond_apple",
+  "result": {
+    "count": 1,
+    "id": "more-than-apples:netherite_apple"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

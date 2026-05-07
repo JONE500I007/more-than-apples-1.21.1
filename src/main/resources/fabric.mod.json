@@ -3,15 +3,16 @@
 	"id": "more-than-apples",
 	"version": "${version}",
 	"name": "More Than Apples",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This mod add new apples and effects and biomes",
 	"authors": [
-		"Me!"
+		"JONE 500"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"discord": "https://discord.gg/u5fu3fKgCu",
+		"issues": "https://github.com/JONE500I007/more-than-apples-1.21.1/issues",
+		"sources": "https://github.com/JONE500I007/more-than-apples-1.21.1"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/more-than-apples/icon.png",
 	"environment": "*",
 	"entrypoints": {

@@ -1,0 +1,36 @@
+{
+  "parent": "more-than-apples:apple/normal_apple",
+  "criteria": {
+    "obtain_green_apple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "more-than-apples:green_apple"
+          ]
+        }
+      }
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.more-than-apples.story.obtain_green_apple.description"
+    },
+    "icon": {
+      "id": "more-than-apples:green_apple"
+    },
+    "title": {
+      "translate": "advancements.more-than-apples.story.obtain_green_apple.title"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "obtain_green_apple"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

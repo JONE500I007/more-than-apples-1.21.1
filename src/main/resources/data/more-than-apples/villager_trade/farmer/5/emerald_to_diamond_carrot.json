@@ -1,0 +1,17 @@
+{
+  "gives": {
+    "count": 2,
+    "id": "more-than-apples:diamond_carrot"
+  },
+  "merchant_predicate": {
+    "chance": 0.5,
+    "condition": "minecraft:random_chance"
+  },
+  "max_uses": 6.0,
+  "reputation_discount": 0.2,
+  "wants": {
+    "count": 20.0,
+    "id": "minecraft:emerald"
+  },
+  "xp": 40.0
+}
