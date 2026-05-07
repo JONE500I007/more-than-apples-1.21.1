@@ -1,6 +1,5 @@
 package net.more.apples.item.custom;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
@@ -10,6 +9,8 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.more.apples.MoreThanApples;
+import net.more.apples.util.discovery.DiscoveryHelper;
+import net.more.apples.util.discovery.DiscoveryHelper2;
 
 import java.util.List;
 import java.util.Optional;
@@ -102,13 +103,20 @@ public class GuideBookScreen extends Screen {
                     0xFFFFFF
             );
 
-            boolean discovered =
-                    Minecraft.getInstance().player.getInventory().contains(
-                            new ItemStack(Items.APPLE)
+//            boolean discovered =
+//                    Minecraft.getInstance().player.getInventory().contains(
+//                            new ItemStack(Items.APPLE)
+//                    );
+
+//            boolean discovered =
+//                    DiscoveryHelper.hasDiscoveredApple();
+            boolean apple =
+                    DiscoveryHelper2.hasDiscovered(
+                            "discover_items/discover_apple"
                     );
 
             // Render Apple
-            if(discovered) {
+            if(apple) {
 
                 graphics.item(
                         new ItemStack(Items.APPLE),
@@ -139,7 +147,7 @@ public class GuideBookScreen extends Screen {
             if(mouseX >= 40 && mouseX <= 56
                     && mouseY >= 40 && mouseY <= 56) {
 
-                if(discovered) {
+                if(apple) {
 
                     graphics.setTooltipForNextFrame(
                             this.font,
