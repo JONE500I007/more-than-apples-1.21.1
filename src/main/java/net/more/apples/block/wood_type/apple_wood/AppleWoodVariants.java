@@ -1,6 +1,7 @@
 package net.more.apples.block.wood_type.apple_wood;
 
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -9,10 +10,13 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.custom.AppleShelfBlock;
+import net.more.apples.entity.AppleBlockEntity;
 
 import java.util.function.Function;
 
@@ -91,8 +95,18 @@ public class AppleWoodVariants {
             registerIdBlock("apple_wall_hanging_sign", Blocks.OAK_WALL_HANGING_SIGN));
 
     public static final Block APPLE_SHELF = registerBlock("apple_shelf",
-            properties -> new ShelfBlock(
+            properties -> new AppleShelfBlock(
                     registerIdBlock("apple_shelf", Blocks.OAK_SHELF)));
+
+    public static final BlockEntityType<AppleBlockEntity> APPLE_SHELF_ENTITY_TYPE =
+            Registry.register(
+                    BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_shelf"),
+                    FabricBlockEntityTypeBuilder
+                            //.create(AppleBlockEntity::new, ModBlocks2.APPLE_SHELF)
+                            .create(AppleBlockEntity::new,
+                                    AppleWoodVariants.APPLE_SHELF)
+                            .build());
 
 
     private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
