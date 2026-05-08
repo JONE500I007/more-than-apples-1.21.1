@@ -20,6 +20,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -38,11 +40,13 @@ import java.util.List;
 import static net.minecraft.world.level.block.CaveVines.SHAPE;
 
 public class AppleShelfBlock extends BaseEntityBlock
-        implements SelectableSlotContainer, SideChainPartBlock {
+        implements SelectableSlotContainer, SideChainPartBlock, SimpleWaterloggedBlock {
 
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public static final EnumProperty<SideChainPart> SIDE_CHAIN_PART = BlockStateProperties.SIDE_CHAIN_PART;
+
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     // SHAPES
     private static final VoxelShape SHAPE_NORTH = Shapes.or(
@@ -76,6 +80,7 @@ public class AppleShelfBlock extends BaseEntityBlock
                         .setValue(FACING, Direction.NORTH)
                         .setValue(POWERED, false)
                         .setValue(SIDE_CHAIN_PART, SideChainPart.UNCONNECTED)
+                        .setValue(WATERLOGGED, false)
         );
     }
 
@@ -92,15 +97,40 @@ public class AppleShelfBlock extends BaseEntityBlock
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, POWERED, SIDE_CHAIN_PART);
+        builder.add(
+                FACING,
+                POWERED,
+                SIDE_CHAIN_PART,
+                WATERLOGGED
+        );
     }
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
+
+        FluidState fluid =
+                context.getLevel()
+                        .getFluidState(context.getClickedPos());
+
         return this.defaultBlockState()
-                .setValue(FACING, context.getHorizontalDirection().getOpposite())
-                .setValue(POWERED, context.getLevel().hasNeighborSignal(context.getClickedPos()))
-                .setValue(SIDE_CHAIN_PART, SideChainPart.UNCONNECTED);
+                .setValue(
+                        FACING,
+                        context.getHorizontalDirection().getOpposite()
+                )
+                .setValue(
+                        POWERED,
+                        context.getLevel().hasNeighborSignal(
+                                context.getClickedPos()
+                        )
+                )
+                .setValue(
+                        SIDE_CHAIN_PART,
+                        SideChainPart.UNCONNECTED
+                )
+                .setValue(
+                        WATERLOGGED,
+                        fluid.is(Fluids.WATER)
+                );
     }
 
     @Override
@@ -516,5 +546,47 @@ public class AppleShelfBlock extends BaseEntityBlock
     @Override
     public int getMaxChainLength() {
         return 3;
+    }
+
+
+    @Override
+    protected FluidState getFluidState(BlockState state) {
+
+        return state.getValue(WATERLOGGED)
+                ? Fluids.WATER.getSource(false)
+                : super.getFluidState(state);
+    }
+
+    @Override
+    protected BlockState updateShape(
+            BlockState state,
+            LevelReader level,
+            ScheduledTickAccess ticks,
+            BlockPos pos,
+            Direction direction,
+            BlockPos neighborPos,
+            BlockState neighborState,
+            RandomSource random
+    ) {
+
+        if (state.getValue(WATERLOGGED)) {
+
+            ticks.scheduleTick(
+                    pos,
+                    Fluids.WATER,
+                    Fluids.WATER.getTickDelay(level)
+            );
+        }
+
+        return super.updateShape(
+                state,
+                level,
+                ticks,
+                pos,
+                direction,
+                neighborPos,
+                neighborState,
+                random
+        );
     }
 }
