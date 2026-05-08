@@ -27,7 +27,7 @@ public class GoldenAppleOrchardRegion extends Region{
         new ParameterPointListBuilder()
                 .temperature(Temperature.span(Temperature.NEUTRAL, Temperature.WARM))
                 .humidity(Humidity.span(Humidity.NEUTRAL, Humidity.WET))
-                .continentalness(Continentalness.INLAND, Continentalness.MID_INLAND)
+                .continentalness(Continentalness.MID_INLAND, Continentalness.INLAND)
                 .erosion(Erosion.EROSION_5, Erosion.EROSION_6)
                 .depth(Climate.Parameter.span(-1.0F, 1.0F))
                 .weirdness(Weirdness.MID_SLICE_NORMAL_DESCENDING, Weirdness.LOW_SLICE_NORMAL_DESCENDING)

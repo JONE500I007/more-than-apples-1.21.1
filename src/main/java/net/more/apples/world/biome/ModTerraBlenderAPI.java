@@ -17,7 +17,7 @@ public class ModTerraBlenderAPI implements TerraBlenderApi {
     public void onTerraBlenderInitialized() {
         Regions.register(new AppleGroveRegion(Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_grove_region"), 6));
         Regions.register(new GoldenAppleOrchardRegion(Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "golden_apple_orchard_region"), 4));
-        Regions.register(new FrostyAppleRegion(Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_region"), 4));
+        Regions.register(new FrostyAppleRegion(Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_region"), 5));
 
         //SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModAppleGroveMaterialRules.makeRule());
         //SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModGoldenAppleOrchardMaterialRules.makeRule());

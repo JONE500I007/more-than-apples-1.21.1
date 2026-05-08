@@ -56,7 +56,7 @@ public class AppleGroveRegion extends Region {
         new ParameterPointListBuilder()
                 .temperature(Temperature.span(Temperature.NEUTRAL, Temperature.WARM))
                 .humidity(Humidity.span(Humidity.NEUTRAL, Humidity.WET))
-                .continentalness(Continentalness.INLAND, Continentalness.MID_INLAND)
+                .continentalness(Continentalness.MID_INLAND, Continentalness.INLAND)
                 //.erosion(Erosion.EROSION_5, Erosion.EROSION_6)
                 //.erosion(Erosion.span(Erosion.EROSION_0, Erosion.EROSION_3))
                 //.erosion(Erosion.span(Erosion.EROSION_0, Erosion.EROSION_4))

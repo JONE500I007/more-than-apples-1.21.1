@@ -26,14 +26,14 @@ public class FrostyAppleRegion extends Region{
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 
         new ParameterPointListBuilder()
-                .temperature(Temperature.span(Temperature.FROZEN, Temperature.COOL))
+                .temperature(Temperature.span(Temperature.COOL, Temperature.FROZEN))
                 .humidity(Humidity.span(Humidity.ARID, Humidity.NEUTRAL))
                 .continentalness(Continentalness.NEAR_INLAND, Continentalness.FAR_INLAND)
                 .erosion(Erosion.EROSION_5, Erosion.EROSION_6)
                 .depth(Climate.Parameter.span(-1.0F, 1.0F))
                 .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING,
-                        Weirdness.VALLEY,
-                        Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                        Weirdness.MID_SLICE_NORMAL_DESCENDING,
+                        Weirdness.VALLEY)
                 .build().forEach(point -> builder.add(point, FROSTY_APPLE));
 
         builder.build().forEach(mapper);
