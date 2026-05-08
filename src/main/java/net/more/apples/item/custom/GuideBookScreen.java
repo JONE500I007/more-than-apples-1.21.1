@@ -29,68 +29,45 @@ public class GuideBookScreen extends Screen {
 
         // Close Button
         this.addRenderableWidget(
-                Button.builder(
-                                Component.literal("Close"),
-                                button -> this.onClose())
-                        .bounds(
-                                this.width / 2 - 40,
-                                this.height - 40,
-                                80,
-                                20)
+                Button.builder(Component.literal("Close"),
+                                button -> this.onClose()).bounds(
+                                this.width / 2 - 40, this.height - 40,
+                                80, 20)
                         .build());
 
         // Next Page
-        this.addRenderableWidget(
-                Button.builder(
-                                Component.literal(">"),
-                                button -> {
-                                    if(currentPage < MAX_PAGE) {
-                                        currentPage++;
-                                    }
-                                })
-                        .bounds(
-                                this.width - 40,
-                                this.height / 2 - 10,
-                                20,
-                                20)
-                        .build());
+        this.addRenderableWidget(Button.builder(
+                Component.literal(">"),
+                        button -> {
+                    if(currentPage < MAX_PAGE) {
+                        currentPage++;
+                    }
+                })
+                .bounds(
+                        this.width - 40, this.height / 2 - 10, 20, 20)
+                .build());
 
         // Previous Page
-        this.addRenderableWidget(
-                Button.builder(
-                                Component.literal("<"),
-                                button -> {
-                                    if(currentPage > 0) {
-                                        currentPage--;
-                                    }
-                                })
-                        .bounds(
-                                20,
-                                this.height / 2 - 10,
-                                20,
-                                20)
-                        .build());
+        this.addRenderableWidget(Button.builder(
+                Component.literal("<"),
+                        button -> {
+                    if(currentPage > 0) {
+                        currentPage--;
+                    }
+                })
+                .bounds(
+                        20, this.height / 2 - 10, 20, 20)
+                .build());
     }
 
     @Override
     public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
 
-        graphics.fill(
-                0,
-                0,
-                this.width,
-                this.height,
-                0xAA000000);
+        graphics.fill(0, 0, this.width, this.height, 0xAA000000);
 
         // PAGE 0
-        if(currentPage == 0) {
-
-            graphics.text(
-                    this.font,
-                    "Hello Applepedia!",
-                    this.width / 2 - 50,
-                    20,
-                    0xFFFFFF);
+        if(currentPage == 0) {graphics.text(this.font, "Hello Applepedia!",
+                this.width / 2 - 50, 20, 0xFFFFFF);
 
 //            boolean discovered =
 //                    Minecraft.getInstance().player.getInventory().contains(
@@ -99,34 +76,18 @@ public class GuideBookScreen extends Screen {
 
 //            boolean discovered =
 //                    DiscoveryHelper.hasDiscoveredApple();
-            boolean apple =
-                    DiscoveryHelper2.hasDiscovered(
-                            "discover_items/discover_apple");
+            boolean apple = DiscoveryHelper2.hasDiscovered(
+                    "discover_items/discover_apple");
 
             // Render Apple
             if(apple) {
-
-                graphics.item(
-                        new ItemStack(Items.APPLE),
-                        40,
-                        40);
+                graphics.item(new ItemStack(Items.APPLE), 40, 40);
 
             } else {
-
-                graphics.blit(
-                        RenderPipelines.GUI_TEXTURED,
-                        Identifier.fromNamespaceAndPath(
-                                MoreThanApples.MOD_ID,
-                                "textures/gui/unknown_apple.png"
-                        ),
-                        40,
-                        40,
-                        0,
-                        0,
-                        16,
-                        16,
-                        16,
-                        16);
+                graphics.blit(RenderPipelines.GUI_TEXTURED, Identifier.fromNamespaceAndPath(
+                        MoreThanApples.MOD_ID, "textures/gui/unknown_apple.png"),
+                        40, 40, 0, 0,
+                        16, 16, 16, 16);
             }
 
             // Hover Tooltip
@@ -134,20 +95,14 @@ public class GuideBookScreen extends Screen {
                     && mouseY >= 40 && mouseY <= 56) {
 
                 if(apple) {
-
-                    graphics.setTooltipForNextFrame(
-                            this.font,
-                            List.of(
-                                    Component.literal("Apple"),
+                    graphics.setTooltipForNextFrame(this.font,
+                            List.of(Component.literal("Apple"),
                                     Component.literal("This apple")),
                             Optional.empty(),
-                            mouseX,
-                            mouseY);
+                            mouseX, mouseY);
 
                 } else {
-
-                    graphics.setTooltipForNextFrame(
-                            this.font,
+                    graphics.setTooltipForNextFrame(this.font,
                             Component.literal("Undiscovered"),
                             mouseX,
                             mouseY);
@@ -158,17 +113,11 @@ public class GuideBookScreen extends Screen {
         // PAGE 1
         if(currentPage == 1) {
 
-            graphics.text(
-                    this.font,
-                    "Second Page",
-                    this.width / 2 - 40,
-                    20,
-                    0xFFFFFF);
+            graphics.text(this.font, "Second Page",
+                    this.width / 2 - 40, 20, 0xFFFFFF);
 
-            graphics.item(
-                    new ItemStack(Items.DIAMOND),
-                    40,
-                    40);
+            graphics.item(new ItemStack(Items.DIAMOND),
+                    40, 40);
         }
 
         super.extractRenderState(graphics, mouseX, mouseY, delta);
