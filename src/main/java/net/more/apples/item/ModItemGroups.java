@@ -31,6 +31,7 @@ public class ModItemGroups {
                         entries.accept(ModGeneralItems.DIAMOND_NUGGET);
                         entries.accept(ModAppleFoodItems.GREEN_APPLE);
                         entries.accept(ModAppleFoodItems.TEST_APPLE);
+                        entries.accept(ModAppleFoodItems.FROSTY_APPLE);
                         entries.accept(ModAppleFoodItems.DIAMOND_APPLE);
                         entries.accept(ModAppleFoodItems.ENCHANTED_DIAMOND_APPLE);
                         entries.accept(ModAppleFoodItems.DIAMOND_CARROT);

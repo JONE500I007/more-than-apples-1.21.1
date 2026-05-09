@@ -6,6 +6,7 @@ import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
+import net.more.apples.item.apple_item.ModAppleFoodItems;
 import net.more.apples.item.general_item.ModGeneralItems;
 
 import static net.more.apples.item.apple_item.ModAppleFoodItems.*;
@@ -22,6 +23,7 @@ public class CreativeModeItemTabs {
                 .register(entrise -> {
                     entrise.accept(GREEN_APPLE);
                     entrise.accept(TEST_APPLE);
+                    entrise.accept(FROSTY_APPLE);
 
                     entrise.accept(DIAMOND_APPLE);
                     entrise.accept(ENCHANTED_DIAMOND_APPLE);
