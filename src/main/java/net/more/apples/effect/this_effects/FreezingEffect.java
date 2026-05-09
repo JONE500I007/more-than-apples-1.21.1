@@ -26,16 +26,16 @@ public class FreezingEffect extends MobEffect {
 
         int current = mob.getTicksFrozen();
         int max = mob.getTicksRequiredToFreeze();
-
         mob.setIsInPowderSnow(true);
 
-        // Increase freezing slowly
+        // Freeze speed scales with level
+        int freezeAmount = 1 + amplification;
+
         if (current < max) {
-            mob.setTicksFrozen(Math.min(current + 1, max)
-            );
+            mob.setTicksFrozen(Math.min(current + freezeAmount, max));
         }
 
-        // Freeze damage after fully frozen
+        // Damage scales and every 2 seconds ONLY
         if (mob.isFullyFrozen()) {
             if (serverLevel.getGameTime() % 40 == 0) {
                 mob.hurtServer(serverLevel, mob.damageSources().freeze(), 1.0F + amplification);
