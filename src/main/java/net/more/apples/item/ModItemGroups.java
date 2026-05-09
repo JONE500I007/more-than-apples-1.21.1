@@ -56,6 +56,7 @@ public class ModItemGroups {
                         entries.accept(AppleWoodVariants.APPLE_PRESSURE_PLATE);
                         entries.accept(AppleWoodVariants.APPLE_BUTTON);
                         //entries.accept(AppleWoodVariants.APPLE_WALL);
+                        entries.accept(AppleWoodVariants.APPLE_SHELF);
                         entries.accept(AppleWoodItem.APPLE_SIGN);
                         entries.accept(AppleWoodItem.APPLE_HANGING_SIGN);
                         entries.accept(AppleWoodItem.APPLE_BOAT);
@@ -84,6 +85,7 @@ public class ModItemGroups {
                         entries.accept(TestAppleWoodVariants.TEST_APPLE_TRAPDOOR);
                         entries.accept(TestAppleWoodVariants.TEST_APPLE_PRESSURE_PLATE);
                         entries.accept(TestAppleWoodVariants.TEST_APPLE_BUTTON);
+                        entries.accept(TestAppleWoodVariants.TEST_APPLE_SHELF);
                         entries.accept(TestAppleWoodItem.TEST_APPLE_SIGN);
                         entries.accept(TestAppleWoodItem.TEST_APPLE_HANGING_SIGN);
                         entries.accept(TestAppleWoodItem.TEST_APPLE_BOAT);
@@ -106,6 +108,7 @@ public class ModItemGroups {
                         entries.accept(FrostyAppleWoodVariants.FROSTY_APPLE_TRAPDOOR);
                         entries.accept(FrostyAppleWoodVariants.FROSTY_APPLE_PRESSURE_PLATE);
                         entries.accept(FrostyAppleWoodVariants.FROSTY_APPLE_BUTTON);
+                        entries.accept(FrostyAppleWoodVariants.FROSTY_APPLE_SHELF);
                         entries.accept(FrostyAppleWoodItem.FROSTY_APPLE_SIGN);
                         entries.accept(FrostyAppleWoodItem.FROSTY_APPLE_HANGING_SIGN);
                         entries.accept(FrostyAppleWoodItem.FROSTY_APPLE_BOAT);

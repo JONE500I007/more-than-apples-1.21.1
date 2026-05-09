@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.custom.AppleShelfBlock;
 
 import java.util.function.Function;
 
@@ -92,7 +93,7 @@ public class TestAppleWoodVariants {
             registerIdBlock("test_apple_wall_hanging_sign", Blocks.OAK_WALL_HANGING_SIGN));
 
     public static final Block TEST_APPLE_SHELF = registerBlock("test_apple_shelf",
-            properties -> new ShelfBlock(
+            properties -> new AppleShelfBlock(
                     registerIdBlock("test_apple_shelf", Blocks.OAK_SHELF)));
 
 

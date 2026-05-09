@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.TagValueOutput;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
+import net.more.apples.block.wood_type.AppleShelfEntityType;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.block.custom.IShelfLike;
@@ -32,7 +33,7 @@ public class AppleBlockEntity extends BlockEntity implements WorldlyContainer, I
     private boolean alignItemsToBottom = false;
 
     public AppleBlockEntity(BlockPos pos, BlockState state) {
-        super(AppleWoodVariants.APPLE_SHELF_ENTITY_TYPE, pos, state);
+        super(AppleShelfEntityType.APPLE_SHELF_ENTITY_TYPE, pos, state);
     }
 
 

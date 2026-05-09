@@ -3,6 +3,9 @@ package net.more.apples.item;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
+import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 import net.more.apples.item.general_item.ModGeneralItems;
 
 import static net.more.apples.item.apple_item.ModAppleFoodItems.*;
@@ -35,12 +38,15 @@ public class CreativeModeItemTabs {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS)
                 .register(entrise -> {
+                    entrise.accept(AppleWoodVariants.APPLE_SHELF);
                     entrise.accept(APPLE_SIGN);
                     entrise.accept(APPLE_HANGING_SIGN);
 
+                    entrise.accept(TestAppleWoodVariants.TEST_APPLE_SHELF);
                     entrise.accept(TEST_APPLE_SIGN);
                     entrise.accept(TEST_APPLE_HANGING_SIGN);
 
+                    entrise.accept(FrostyAppleWoodVariants.FROSTY_APPLE_SHELF);
                     entrise.accept(FROSTY_APPLE_SIGN);
                     entrise.accept(FROSTY_APPLE_HANGING_SIGN);
                 });

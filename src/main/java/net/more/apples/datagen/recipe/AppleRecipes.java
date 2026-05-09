@@ -48,6 +48,7 @@ public final class AppleRecipes {
                 .unlockedBy("has_stripped_apple_log", provider.hasItem(AppleWoodBlocks.STRIPPED_APPLE_LOG))
                 .group("hanging_sign")
                 .save(exporter);
+
         provider.shapedRecipe(RecipeCategory.DECORATIONS, AppleWoodItem.APPLE_BOAT)
                 .define('B', AppleWoodBlocks.APPLE_PLANKS)
                 .pattern("B B")
@@ -55,6 +56,7 @@ public final class AppleRecipes {
                 .unlockedBy("has_planks", provider.hasItem(AppleWoodBlocks.APPLE_PLANKS))
                 .group("boat")
                 .save(exporter);
+
         provider.shapelessRecipe(RecipeCategory.TRANSPORTATION, AppleWoodItem.APPLE_CHEST_BOAT)
                 .requires(Items.CHEST)
                 .requires(AppleWoodItem.APPLE_BOAT)

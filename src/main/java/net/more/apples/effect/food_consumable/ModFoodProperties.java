@@ -14,6 +14,11 @@ public class ModFoodProperties {
             .saturationModifier(1.2f)
             .alwaysEdible().build();
 
+    public static final FoodProperties FROSTY_APPLE_FOOD = new FoodProperties.Builder()
+            .nutrition(4)
+            .saturationModifier(1.2f)
+            .alwaysEdible().build();
+
     public static final FoodProperties DIAMOND_APPLE_FOOD = new FoodProperties.Builder()
             .nutrition(4)
             .saturationModifier(1.2f)

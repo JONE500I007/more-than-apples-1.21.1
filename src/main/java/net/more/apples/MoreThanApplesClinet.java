@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.more.apples.block.custom.FoliageTintSource;
+import net.more.apples.block.wood_type.AppleShelfEntityType;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.entity.ModBoats;
@@ -24,7 +25,7 @@ public class MoreThanApplesClinet implements ClientModInitializer {
                 AppleWoodBlocks.GOLDEN_APPLE_LEAVES,
                 AppleWoodBlocks.FRUIT_GOLDEN_APPLE_LEAVES);
 
-        BlockEntityRenderers.register(AppleWoodVariants.APPLE_SHELF_ENTITY_TYPE, AppleShelfRenderer::new);
+        BlockEntityRenderers.register(AppleShelfEntityType.APPLE_SHELF_ENTITY_TYPE, AppleShelfRenderer::new);
 
         TerraformBoatClientHelper.registerModelLayers(ModBoats.APPLE_BOAT_ID);
         TerraformBoatClientHelper.registerModelLayers(ModBoats.TEST_APPLE_BOAT_ID);

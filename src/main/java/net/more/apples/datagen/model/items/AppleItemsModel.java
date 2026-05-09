@@ -15,5 +15,9 @@ public final class AppleItemsModel {
                 ModAppleFoodItems.GREEN_APPLE,
                 ModelTemplates.FLAT_ITEM
         );
+        ModModelProvider.flatItem(generators,
+                ModAppleFoodItems.FROSTY_APPLE,
+                ModelTemplates.FLAT_ITEM
+        );
     }
 }

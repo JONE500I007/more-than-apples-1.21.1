@@ -46,6 +46,7 @@ public final class FrostyRecipes {
                 .unlockedBy("has_stripped_apple_log", provider.hasItem(FrostyAppleWoodBlocks.STRIPPED_FROSTY_APPLE_LOG))
                 .group("hanging_sign")
                 .save(exporter);
+
         provider.shapedRecipe(RecipeCategory.DECORATIONS, FrostyAppleWoodItem.FROSTY_APPLE_BOAT)
                 .define('B', FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS)
                 .pattern("B B")
@@ -53,6 +54,7 @@ public final class FrostyRecipes {
                 .unlockedBy("has_planks", provider.hasItem(FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS))
                 .group("boat")
                 .save(exporter);
+
         provider.shapelessRecipe(RecipeCategory.TRANSPORTATION, FrostyAppleWoodItem.FROSTY_APPLE_CHEST_BOAT)
                 .requires(Items.CHEST)
                 .requires(FrostyAppleWoodItem.FROSTY_APPLE_BOAT)

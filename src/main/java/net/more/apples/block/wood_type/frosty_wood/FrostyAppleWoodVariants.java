@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.custom.AppleShelfBlock;
 
 import java.util.function.Function;
 
@@ -90,9 +91,9 @@ public class FrostyAppleWoodVariants {
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_wall_hanging_sign"),
             (settings) -> new WallHangingSignBlock(FROSTY_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
             registerIdBlock("frosty_apple_wall_hanging_sign", Blocks.OAK_WALL_HANGING_SIGN));
-
+    
     public static final Block FROSTY_APPLE_SHELF = registerBlock("frosty_apple_shelf",
-            properties -> new ShelfBlock(
+            properties -> new AppleShelfBlock(
                     registerIdBlock("frosty_apple_shelf", Blocks.OAK_SHELF)));
 
 

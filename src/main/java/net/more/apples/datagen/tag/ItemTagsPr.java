@@ -16,6 +16,7 @@ public final class ItemTagsPr {
                 Items.ENCHANTED_GOLDEN_APPLE,
 
                 ModAppleFoodItems.GREEN_APPLE,
+                ModAppleFoodItems.FROSTY_APPLE,
                 ModAppleFoodItems.TEST_APPLE,
 
                 ModAppleFoodItems.DIAMOND_APPLE,

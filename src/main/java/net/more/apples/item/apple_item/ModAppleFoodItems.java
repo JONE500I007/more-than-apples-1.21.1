@@ -27,6 +27,11 @@ public class ModAppleFoodItems {
                     .food(ModFoodProperties.TEST_APPLE_FOOD)
                     .component(DataComponents.CONSUMABLE, ModFoodConEffects.TEST_APPLE_EFFECT));
 
+    public static final Item FROSTY_APPLE = registerItem("frosty_apple",
+            Item::new, new Item.Properties()
+                    .food(ModFoodProperties.FROSTY_APPLE_FOOD)
+                    .component(DataComponents.CONSUMABLE, ModFoodConEffects.FROSTY_APPLE_EFFECT));
+
     public static final Item DIAMOND_APPLE = registerItem("diamond_apple",
             Item::new, new Item.Properties()
                     .food(ModFoodProperties.DIAMOND_APPLE_FOOD)

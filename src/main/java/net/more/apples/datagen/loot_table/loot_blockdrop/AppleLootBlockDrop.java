@@ -32,6 +32,9 @@ public final class AppleLootBlockDrop {
         provider.addDoorLoot(AppleWoodVariants.APPLE_DOOR);
         provider.drop(AppleWoodVariants.APPLE_TRAPDOOR);
 
+        // --- Apple Shelf ---
+        provider.drop(AppleWoodVariants.APPLE_SHELF);
+
         // --- Apple Signs ---
         provider.drop(AppleWoodVariants.APPLE_STANDING_SIGN);
 

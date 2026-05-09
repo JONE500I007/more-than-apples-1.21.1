@@ -16,6 +16,8 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.custom.AppleShelfBlock;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
+import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 import net.more.apples.entity.AppleBlockEntity;
 
 import java.util.function.Function;
@@ -97,16 +99,6 @@ public class AppleWoodVariants {
     public static final Block APPLE_SHELF = registerBlock("apple_shelf",
             properties -> new AppleShelfBlock(
                     registerIdBlock("apple_shelf", Blocks.OAK_SHELF)));
-
-    public static final BlockEntityType<AppleBlockEntity> APPLE_SHELF_ENTITY_TYPE =
-            Registry.register(
-                    BuiltInRegistries.BLOCK_ENTITY_TYPE,
-                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_shelf"),
-                    FabricBlockEntityTypeBuilder
-                            //.create(AppleBlockEntity::new, ModBlocks2.APPLE_SHELF)
-                            .create(AppleBlockEntity::new,
-                                    AppleWoodVariants.APPLE_SHELF)
-                            .build());
 
 
     private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {

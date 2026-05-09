@@ -1,5 +1,6 @@
 package net.more.apples.datagen.loot_table.loot_blockdrop;
 
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 import net.more.apples.datagen.provider.ModLootBlockDrop;
@@ -29,6 +30,9 @@ public final class TestAppleLootBlockDrop {
 
         provider.addDoorLoot(TestAppleWoodVariants.TEST_APPLE_DOOR);
         provider.drop(TestAppleWoodVariants.TEST_APPLE_TRAPDOOR);
+
+        // --- Apple Shelf ---
+        provider.drop(TestAppleWoodVariants.TEST_APPLE_SHELF);
 
         // --- Test Apple Signs ---
         provider.drop(TestAppleWoodVariants.TEST_APPLE_STANDING_SIGN);
