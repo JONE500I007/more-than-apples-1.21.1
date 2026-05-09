@@ -18,12 +18,29 @@ public class FreezingEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(ServerLevel serverLevel, net.minecraft.world.entity.LivingEntity mob, int amplification) {
+    public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity mob, int amplification) {
+//        int max = mob.getTicksRequiredToFreeze();
+//        mob.setIsInPowderSnow(true);
+//        mob.setTicksFrozen(max);
+//        mob.hurtServer(serverLevel, mob.damageSources().freeze(), 1.0F);
+
+        int current = mob.getTicksFrozen();
         int max = mob.getTicksRequiredToFreeze();
 
         mob.setIsInPowderSnow(true);
-        mob.setTicksFrozen(max);
-        mob.hurtServer(serverLevel, mob.damageSources().freeze(), 1.0F);
+
+        // Increase freezing slowly
+        if (current < max) {
+            mob.setTicksFrozen(Math.min(current + 1, max)
+            );
+        }
+
+        // Freeze damage after fully frozen
+        if (mob.isFullyFrozen()) {
+            if (serverLevel.getGameTime() % 40 == 0) {
+                mob.hurtServer(serverLevel, mob.damageSources().freeze(), 1.0F + amplification);
+            }
+        }
 
         return true;
     }

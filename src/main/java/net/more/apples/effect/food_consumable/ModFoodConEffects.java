@@ -25,7 +25,7 @@ public class ModFoodConEffects {
 
     public static final Consumable FROSTY_APPLE_EFFECT = Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                    new MobEffectInstance(ModEffectsRegister.FREEZING, 300, 0), 0.4f))
+                    new MobEffectInstance(ModEffectsRegister.FREEZING, 600, 0), 0.43f))
             .build();
 
     public static final Consumable DIAMOND_APPLE_EFFECT = Consumables.defaultFood()
