@@ -36,11 +36,11 @@ public class AppleWoodBlocks {
 
     public static final Block APPLE_LEAVES  = registerBlock("apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
-                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0.46f, 0.67f, 0.18f),
+                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F),
                     registerIdBlock("apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block FRUIT_APPLE_LEAVES = registerBlock("fruit_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
-                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0.46f, 0.67f, 0.18f),
+                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F),
                     registerIdBlock("fruit_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block APPLE_SAPLING = registerBlock("apple_sapling",
             properties -> new SaplingBlock(

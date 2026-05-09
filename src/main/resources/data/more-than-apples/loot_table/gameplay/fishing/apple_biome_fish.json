@@ -36,6 +36,11 @@
         },
         {
           "type": "minecraft:item",
+          "name": "more-than-apples:frosty_apple",
+          "weight": 18
+        },
+        {
+          "type": "minecraft:item",
           "name": "more-than-apples:test_apple_sapling",
           "weight": 12
         },
