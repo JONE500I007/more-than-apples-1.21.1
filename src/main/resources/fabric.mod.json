@@ -20,7 +20,13 @@
 			"net.more.apples.MoreThanApples",
 			"net.more.apples.mod_initializer.IniBlocks",
 			"net.more.apples.mod_initializer.IniItems",
-			"net.more.apples.mod_initializer.IniCreativeTabs"
+			"net.more.apples.mod_initializer.IniCreativeTabs",
+			"net.more.apples.mod_initializer.IniLootTable",
+			"net.more.apples.mod_initializer.IniBrewingBuilder",
+
+			"net.more.apples.mod_initializer.wood_apple.IniAppleFlamStr",
+			"net.more.apples.mod_initializer.wood_apple.IniTestAppleFlamStr",
+			"net.more.apples.mod_initializer.wood_apple.IniFrostyAppleFlamStr"
 		],
 		"fabric-datagen": [
 			"net.more.apples.MoreThanApplesDataGenerator"

@@ -44,8 +44,6 @@ public class MoreThanApples implements ModInitializer {
 		ModCustomAppleMTrades.registerCustomTrades();
 		ModCustomFarmerTrades.registerCustomTrades();
 
-		//ModLootTableModifiers_DiaApple.modifyLootTables();
-
 		LOGGER.info("Hello Fabric world!");
 	}
 }
