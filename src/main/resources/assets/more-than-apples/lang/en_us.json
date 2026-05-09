@@ -125,6 +125,13 @@
   "item.minecraft.lingering_potion.effect.mining_fatigue_immune_potion": "Lingering Potion of Mining Fatigue Immunity",
   "item.minecraft.lingering_potion.effect.mining_fatigue_immune_potion_l": "Lingering Potion of Mining Fatigue Immunity",
 
+  "item.minecraft.potion.effect.freezing_potion": "Potion of Freezing",
+  "item.minecraft.potion.effect.freezing_potion_l": "Potion of Freezing",
+  "item.minecraft.splash_potion.effect.freezing_potion": "Splash Potion of Freezing",
+  "item.minecraft.splash_potion.effect.freezing_potion_l": "Splash Potion of Freezing",
+  "item.minecraft.lingering_potion.effect.freezing_potion": "Lingering Potion of Freezing",
+  "item.minecraft.lingering_potion.effect.freezing_potion_l": "Lingering Potion of Freezing",
+
   "item.minecraft.potion.effect.freezing_resistance_potion": "Potion of Freezing Resistance",
   "item.minecraft.potion.effect.freezing_resistance_potion_l": "Potion of Freezing Resistance",
   "item.minecraft.splash_potion.effect.freezing_resistance_potion": "Splash Potion of Freezing Resistance",
@@ -143,12 +150,15 @@
   "item.minecraft.lingering_potion.effect.call_of_apple_potion": "Lingering Potion of Call of Apple",
   "item.minecraft.lingering_potion.effect.call_of_apple_potion_l": "Lingering Potion of Call of Apple",
 
+
   "item.minecraft.tipped_arrow.effect.darkness_immune_potion": "Arrow of Darkness Immunity",
   "item.minecraft.tipped_arrow.effect.darkness_immune_potion_l": "Arrow of Darkness Immunity",
   "item.minecraft.tipped_arrow.effect.slowness_immune_potion": "Arrow of Slowness Immune",
   "item.minecraft.tipped_arrow.effect.slowness_immune_potion_l": "Arrow of Slowness Immune",
   "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion": "Arrow of Mining Fatigue",
   "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion_l": "Arrow of Mining Fatigue",
+  "item.minecraft.tipped_arrow.effect.freezing_potion": "Arrow of Freezing",
+  "item.minecraft.tipped_arrow.effect.freezing_potion_l": "Arrow of Freezing",
   "item.minecraft.tipped_arrow.effect.freezing_resistance_potion": "Arrow of Freezing Resistance",
   "item.minecraft.tipped_arrow.effect.freezing_resistance_potion_l": "Arrow of Freezing Resistance",
   "item.minecraft.tipped_arrow.effect.night_vision_potion_v1": "Potion of Night Vision",

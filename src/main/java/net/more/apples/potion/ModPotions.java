@@ -26,6 +26,11 @@ public class ModPotions {
     public static final Holder<Potion> MINING_FATIGUE_IMMUNE_POTION_L = registerPotion("mining_fatigue_immune_potion_l",
             new Potion("mining_fatigue_immune_potion_l", new MobEffectInstance(ModEffectsRegister.MINING_FATIGUE_IMMUNE, 9600, 0)));
 
+    public static final Holder<Potion> FREEZING_POTION = registerPotion("freezing_potion",
+            new Potion("freezing_potion", new MobEffectInstance(ModEffectsRegister.FREEZING, 3600, 0)));
+    public static final Holder<Potion> FREEZING_POTION_L = registerPotion("freezing_potion_l",
+            new Potion("freezing_potion_l", new MobEffectInstance(ModEffectsRegister.FREEZING, 9600, 0)));
+
     public static final Holder<Potion> FREEZING_RESISTANCE_POTION = registerPotion("freezing_resistance_potion",
             new Potion("freezing_resistance_potion", new MobEffectInstance(ModEffectsRegister.FREEZING_RESISTANCE, 3600, 0)));
     public static final Holder<Potion> FREEZING_RESISTANCE_POTION_L = registerPotion("freezing_resistance_potion_l",

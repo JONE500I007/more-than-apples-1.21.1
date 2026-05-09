@@ -27,210 +27,309 @@ public class ModPotionsGroups {
                     .title(Component.translatable("itemgroup.more-than-apples.zpotion_icon"))
                     .displayItems(((displayContext, entries) -> {
 
+                        // ================================================================
+                        // POTIONS (Drinkable)
+                        // ================================================================
+
+                        // --- Darkness Immune ---
                         ItemStack darknessPotion = new ItemStack(Items.POTION);
                         darknessPotion.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.DARKNESS_IMMUNE_POTION));
                         entries.accept(darknessPotion);
+
                         ItemStack darkness_lPotion = new ItemStack(Items.POTION);
                         darkness_lPotion.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.DARKNESS_IMMUNE_POTION_L));
                         entries.accept(darkness_lPotion);
 
+                        // --- Darkness Immune (Splash) ---
                         ItemStack darknessPotionSP = new ItemStack(Items.SPLASH_POTION);
                         darknessPotionSP.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.DARKNESS_IMMUNE_POTION));
                         entries.accept(darknessPotionSP);
+
                         ItemStack darkness_lPotionSP = new ItemStack(Items.SPLASH_POTION);
                         darkness_lPotionSP.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.DARKNESS_IMMUNE_POTION_L));
                         entries.accept(darkness_lPotionSP);
 
+                        // --- Darkness Immune (Lingering) ---
                         ItemStack darknessPotionLI = new ItemStack(Items.LINGERING_POTION);
                         darknessPotionLI.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.DARKNESS_IMMUNE_POTION));
                         entries.accept(darknessPotionLI);
+
                         ItemStack darkness_lPotionLI = new ItemStack(Items.LINGERING_POTION);
                         darkness_lPotionLI.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.DARKNESS_IMMUNE_POTION_L));
                         entries.accept(darkness_lPotionLI);
 
+                        // ----------------------------------------------------------------
 
-
+                        // --- Slowness Immune ---
                         ItemStack slownessPotion = new ItemStack(Items.POTION);
                         slownessPotion.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.SLOWNESS_IMMUNE_POTION));
                         entries.accept(slownessPotion);
+
                         ItemStack slowness_lPotion = new ItemStack(Items.POTION);
                         slowness_lPotion.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.SLOWNESS_IMMUNE_POTION_L));
                         entries.accept(slowness_lPotion);
 
+                        // --- Slowness Immune (Splash) ---
                         ItemStack slownessPotionSP = new ItemStack(Items.SPLASH_POTION);
                         slownessPotionSP.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.SLOWNESS_IMMUNE_POTION));
                         entries.accept(slownessPotionSP);
+
                         ItemStack slowness_lPotionSP = new ItemStack(Items.SPLASH_POTION);
                         slowness_lPotionSP.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.SLOWNESS_IMMUNE_POTION_L));
                         entries.accept(slowness_lPotionSP);
 
+                        // --- Slowness Immune (Lingering) ---
                         ItemStack slownessPotionLI = new ItemStack(Items.LINGERING_POTION);
                         slownessPotionLI.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.SLOWNESS_IMMUNE_POTION));
                         entries.accept(slownessPotionLI);
+
                         ItemStack slowness_lPotionLI = new ItemStack(Items.LINGERING_POTION);
                         slowness_lPotionLI.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.SLOWNESS_IMMUNE_POTION_L));
                         entries.accept(slowness_lPotionLI);
 
+                        // ----------------------------------------------------------------
 
-
+                        // --- Mining Fatigue Immune ---
                         ItemStack miningFatiguePotion = new ItemStack(Items.POTION);
                         miningFatiguePotion.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.MINING_FATIGUE_IMMUNE_POTION));
                         entries.accept(miningFatiguePotion);
+
                         ItemStack miningFatigue_lPotion = new ItemStack(Items.POTION);
                         miningFatigue_lPotion.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.MINING_FATIGUE_IMMUNE_POTION_L));
                         entries.accept(miningFatigue_lPotion);
 
+                        // --- Mining Fatigue Immune (Splash) ---
                         ItemStack miningFatiguePotionSP = new ItemStack(Items.SPLASH_POTION);
                         miningFatiguePotionSP.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.MINING_FATIGUE_IMMUNE_POTION));
                         entries.accept(miningFatiguePotionSP);
+
                         ItemStack miningFatigue_lPotionSP = new ItemStack(Items.SPLASH_POTION);
                         miningFatigue_lPotionSP.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.MINING_FATIGUE_IMMUNE_POTION_L));
                         entries.accept(miningFatigue_lPotionSP);
 
+                        // --- Mining Fatigue Immune (Lingering) ---
                         ItemStack miningFatiguePotionLI = new ItemStack(Items.LINGERING_POTION);
                         miningFatiguePotionLI.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.MINING_FATIGUE_IMMUNE_POTION));
                         entries.accept(miningFatiguePotionLI);
+
                         ItemStack miningFatigue_lPotionLI = new ItemStack(Items.LINGERING_POTION);
                         miningFatigue_lPotionLI.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.MINING_FATIGUE_IMMUNE_POTION_L));
                         entries.accept(miningFatigue_lPotionLI);
 
+                        // ----------------------------------------------------------------
 
-
+                        // --- Freezing ---
                         ItemStack freezingPotion = new ItemStack(Items.POTION);
                         freezingPotion.set(DataComponents.POTION_CONTENTS,
-                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION));
+                                new PotionContents(ModPotions.FREEZING_POTION));
                         entries.accept(freezingPotion);
+
                         ItemStack freezing_lPotion = new ItemStack(Items.POTION);
                         freezing_lPotion.set(DataComponents.POTION_CONTENTS,
-                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION_L));
+                                new PotionContents(ModPotions.FREEZING_POTION_L));
                         entries.accept(freezing_lPotion);
 
+                        // --- Freezing (Splash) ---
                         ItemStack freezingPotionSP = new ItemStack(Items.SPLASH_POTION);
                         freezingPotionSP.set(DataComponents.POTION_CONTENTS,
-                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION));
+                                new PotionContents(ModPotions.FREEZING_POTION));
                         entries.accept(freezingPotionSP);
+
                         ItemStack freezing_lPotionSP = new ItemStack(Items.SPLASH_POTION);
                         freezing_lPotionSP.set(DataComponents.POTION_CONTENTS,
-                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION_L));
+                                new PotionContents(ModPotions.FREEZING_POTION_L));
                         entries.accept(freezing_lPotionSP);
 
+                        // --- Freezing (Lingering) ---
                         ItemStack freezingPotionLI = new ItemStack(Items.LINGERING_POTION);
                         freezingPotionLI.set(DataComponents.POTION_CONTENTS,
-                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION));
+                                new PotionContents(ModPotions.FREEZING_POTION));
                         entries.accept(freezingPotionLI);
+
                         ItemStack freezing_lPotionLI = new ItemStack(Items.LINGERING_POTION);
                         freezing_lPotionLI.set(DataComponents.POTION_CONTENTS,
-                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION_L));
+                                new PotionContents(ModPotions.FREEZING_POTION_L));
                         entries.accept(freezing_lPotionLI);
 
+                        // ----------------------------------------------------------------
 
+                        // --- Freezing Resistance ---
+                        ItemStack freezingRePotion = new ItemStack(Items.POTION);
+                        freezingRePotion.set(DataComponents.POTION_CONTENTS,
+                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION));
+                        entries.accept(freezingRePotion);
 
+                        ItemStack freezingRe_lPotion = new ItemStack(Items.POTION);
+                        freezingRe_lPotion.set(DataComponents.POTION_CONTENTS,
+                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION_L));
+                        entries.accept(freezingRe_lPotion);
+
+                        // --- Freezing Resistance (Splash) ---
+                        ItemStack freezingRePotionSP = new ItemStack(Items.SPLASH_POTION);
+                        freezingRePotionSP.set(DataComponents.POTION_CONTENTS,
+                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION));
+                        entries.accept(freezingRePotionSP);
+
+                        ItemStack freezingRe_lPotionSP = new ItemStack(Items.SPLASH_POTION);
+                        freezingRe_lPotionSP.set(DataComponents.POTION_CONTENTS,
+                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION_L));
+                        entries.accept(freezingRe_lPotionSP);
+
+                        // --- Freezing Resistance (Lingering) ---
+                        ItemStack freezingRePotionLI = new ItemStack(Items.LINGERING_POTION);
+                        freezingRePotionLI.set(DataComponents.POTION_CONTENTS,
+                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION));
+                        entries.accept(freezingRePotionLI);
+
+                        ItemStack freezingRe_lPotionLI = new ItemStack(Items.LINGERING_POTION);
+                        freezingRe_lPotionLI.set(DataComponents.POTION_CONTENTS,
+                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION_L));
+                        entries.accept(freezingRe_lPotionLI);
+
+                        // ----------------------------------------------------------------
+
+                        // --- Night Vision V1 (no Long variant) ---
                         ItemStack night_visionPotion = new ItemStack(Items.POTION);
                         night_visionPotion.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.NIGHT_VISION_POTION_V1));
                         entries.accept(night_visionPotion);
+
+                        // --- Night Vision V1 (Splash) ---
                         ItemStack night_visionPotionSP = new ItemStack(Items.SPLASH_POTION);
                         night_visionPotionSP.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.NIGHT_VISION_POTION_V1));
                         entries.accept(night_visionPotionSP);
+
+                        // --- Night Vision V1 (Lingering) ---
                         ItemStack night_visionPotionLI = new ItemStack(Items.LINGERING_POTION);
                         night_visionPotionLI.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.NIGHT_VISION_POTION_V1));
                         entries.accept(night_visionPotionLI);
 
+                        // ----------------------------------------------------------------
 
+                        // --- Call of Apple ---
                         ItemStack CallofApplePotion = new ItemStack(Items.POTION);
                         CallofApplePotion.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.CALL_OF_APPLE_POTION));
                         entries.accept(CallofApplePotion);
+
                         ItemStack CallofApple_lPotion = new ItemStack(Items.POTION);
                         CallofApple_lPotion.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.CALL_OF_APPLE_POTION_L));
                         entries.accept(CallofApple_lPotion);
 
+                        // --- Call of Apple (Splash) ---
                         ItemStack CallofApplePotionSP = new ItemStack(Items.SPLASH_POTION);
                         CallofApplePotionSP.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.CALL_OF_APPLE_POTION));
                         entries.accept(CallofApplePotionSP);
+
                         ItemStack CallofApple_lPotionSP = new ItemStack(Items.SPLASH_POTION);
                         CallofApple_lPotionSP.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.CALL_OF_APPLE_POTION_L));
                         entries.accept(CallofApple_lPotionSP);
 
+                        // --- Call of Apple (Lingering) ---
                         ItemStack CallofApplePotionLI = new ItemStack(Items.LINGERING_POTION);
                         CallofApplePotionLI.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.CALL_OF_APPLE_POTION));
                         entries.accept(CallofApplePotionLI);
+
                         ItemStack CallofApple_lPotionLI = new ItemStack(Items.LINGERING_POTION);
                         CallofApple_lPotionLI.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.CALL_OF_APPLE_POTION_L));
                         entries.accept(CallofApple_lPotionLI);
 
+                        // ================================================================
+                        // TIPPED ARROWS
+                        // ================================================================
 
-
+                        // --- Darkness Immune Arrows ---
                         ItemStack darknessArrow = new ItemStack(Items.TIPPED_ARROW);
                         darknessArrow.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.DARKNESS_IMMUNE_POTION));
                         entries.accept(darknessArrow);
+
                         ItemStack darkness_lArrow = new ItemStack(Items.TIPPED_ARROW);
                         darkness_lArrow.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.DARKNESS_IMMUNE_POTION_L));
                         entries.accept(darkness_lArrow);
 
+                        // --- Slowness Immune Arrows ---
                         ItemStack slownessArrow = new ItemStack(Items.TIPPED_ARROW);
                         slownessArrow.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.SLOWNESS_IMMUNE_POTION));
                         entries.accept(slownessArrow);
+
                         ItemStack slowness_lArrow = new ItemStack(Items.TIPPED_ARROW);
                         slowness_lArrow.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.SLOWNESS_IMMUNE_POTION_L));
                         entries.accept(slowness_lArrow);
 
+                        // --- Mining Fatigue Immune Arrows ---
                         ItemStack miningFatigueArrow = new ItemStack(Items.TIPPED_ARROW);
                         miningFatigueArrow.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.MINING_FATIGUE_IMMUNE_POTION));
                         entries.accept(miningFatigueArrow);
+
                         ItemStack miningFatigue_lArrow = new ItemStack(Items.TIPPED_ARROW);
                         miningFatigue_lArrow.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.MINING_FATIGUE_IMMUNE_POTION_L));
                         entries.accept(miningFatigue_lArrow);
 
+                        // --- Freezing Arrows ---
                         ItemStack freezingArrow = new ItemStack(Items.TIPPED_ARROW);
                         freezingArrow.set(DataComponents.POTION_CONTENTS,
-                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION));
+                                new PotionContents(ModPotions.FREEZING_POTION));
                         entries.accept(freezingArrow);
+
                         ItemStack freezing_lArrow = new ItemStack(Items.TIPPED_ARROW);
                         freezing_lArrow.set(DataComponents.POTION_CONTENTS,
-                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION_L));
+                                new PotionContents(ModPotions.FREEZING_POTION_L));
                         entries.accept(freezing_lArrow);
 
+                        // --- Freezing Resistance Arrows ---
+                        ItemStack freezingReArrow = new ItemStack(Items.TIPPED_ARROW);
+                        freezingReArrow.set(DataComponents.POTION_CONTENTS,
+                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION));
+                        entries.accept(freezingReArrow);
+
+                        ItemStack freezingRe_lArrow = new ItemStack(Items.TIPPED_ARROW);
+                        freezingRe_lArrow.set(DataComponents.POTION_CONTENTS,
+                                new PotionContents(ModPotions.FREEZING_RESISTANCE_POTION_L));
+                        entries.accept(freezingRe_lArrow);
+
+                        // --- Night Vision V1 Arrow (no Long variant) ---
                         ItemStack night_visionArrow = new ItemStack(Items.TIPPED_ARROW);
                         night_visionArrow.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.NIGHT_VISION_POTION_V1));
                         entries.accept(night_visionArrow);
 
+                        // --- Call of Apple Arrows ---
                         ItemStack CallofAppleArrow = new ItemStack(Items.TIPPED_ARROW);
                         CallofAppleArrow.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.CALL_OF_APPLE_POTION));
                         entries.accept(CallofAppleArrow);
+
                         ItemStack CallofApple_lArrow = new ItemStack(Items.TIPPED_ARROW);
                         CallofApple_lArrow.set(DataComponents.POTION_CONTENTS,
                                 new PotionContents(ModPotions.CALL_OF_APPLE_POTION_L));

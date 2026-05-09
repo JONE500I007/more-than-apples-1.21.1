@@ -125,6 +125,13 @@
   "item.minecraft.lingering_potion.effect.mining_fatigue_immune_potion": "น้ำยาภูมิคุ้มกันขุดช้าแบบระเหย",
   "item.minecraft.lingering_potion.effect.mining_fatigue_immune_potion_l": "น้ำยาภูมิคุ้มกันขุดช้าแบบระเหย",
 
+  "item.minecraft.potion.effect.freezing_potion": "น้ำยาแช่แข็ง",
+  "item.minecraft.potion.effect.freezing_potion_l": "น้ำยาแช่แข็ง",
+  "item.minecraft.splash_potion.effect.freezing_potion": "น้ำยาแช่แข็งแบบปา",
+  "item.minecraft.splash_potion.effect.freezing_potion_l": "น้ำยาแช่แข็งแบบปา",
+  "item.minecraft.lingering_potion.effect.freezing_potion": "น้ำยาแช่แข็งแบบระเหย",
+  "item.minecraft.lingering_potion.effect.freezing_potion_l": "น้ำยาแช่แข็งแบบระเหย",
+
   "item.minecraft.potion.effect.freezing_resistance_potion": "น้ำยาต้านทานการแช่แข็ง",
   "item.minecraft.potion.effect.freezing_resistance_potion_l": "น้ำยาต้านทานการแช่แข็ง",
   "item.minecraft.splash_potion.effect.freezing_resistance_potion": "น้ำยาต้านทานการแช่แข็งแบบปา",
@@ -149,6 +156,8 @@
   "item.minecraft.tipped_arrow.effect.slowness_immune_potion_l": "ลูกธนูอาบยาภูมิคุ้มกันวิ่งช้า",
   "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion": "ลูกธนูอาบยาภูมิคุ้มกันขุดช้า",
   "item.minecraft.tipped_arrow.effect.mining_fatigue_immune_potion_l": "ลูกธนูอาบยาภูมิคุ้มกันขุดช้า",
+  "item.minecraft.tipped_arrow.effect.freezing_potion": "ลูกธนูอาบยาแช่แข็ง",
+  "item.minecraft.tipped_arrow.effect.freezing_potion_l": "ลูกธนูอาบยาแช่แข็ง",
   "item.minecraft.tipped_arrow.effect.freezing_resistance_potion": "ลูกธนูอาบยาต้านทานการแช่แข็ง",
   "item.minecraft.tipped_arrow.effect.freezing_resistance_potion_l": "ลูกธนูอาบยาต้านทานการแช่แข็ง",
   "item.minecraft.tipped_arrow.effect.night_vision_potion_v1": "ลูกธนูอาบยามองกลางคืน",

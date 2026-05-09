@@ -39,8 +39,8 @@
 		"fabricloader": ">=0.19.2",
 		"minecraft": "~26.1.2",
 		"java": ">=25",
-		"fabric-api": "*",
-		"terrablender": "*"
+		"fabric-api": "0.148.0+",
+		"terrablender": "26.1.2.0.1+"
 	},
 	"suggests": {
 		"another-mod": "*"
