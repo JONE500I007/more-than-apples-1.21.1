@@ -5,6 +5,7 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.datagen.provider.ModModelProvider;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
+import net.more.apples.item.general_item.ModGeneralItems;
 
 public final class AppleItemsModel {
     private  AppleItemsModel() {
@@ -17,6 +18,10 @@ public final class AppleItemsModel {
         );
         ModModelProvider.flatItem(generators,
                 ModAppleFoodItems.FROSTY_APPLE,
+                ModelTemplates.FLAT_ITEM
+        );
+        ModModelProvider.flatItem(generators,
+                ModGeneralItems.APPLE_CODEX,
                 ModelTemplates.FLAT_ITEM
         );
     }

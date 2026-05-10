@@ -35,6 +35,7 @@ public class CreativeModeItemTabs {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
                 .register(entrise -> {
+                    entrise.accept(APPLE_CODEX);
                     entrise.accept(DIAMOND_NUGGET);
                 });
 

@@ -1,16 +1,15 @@
 package net.more.apples.item.custom;
 
-import com.mojang.authlib.minecraft.client.MinecraftClient;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class GuideBookItem extends Item {
-    public GuideBookItem(Properties properties) {
+public class AppleCodexItem extends Item {
+    public AppleCodexItem(Properties properties) {
         super(properties);
     }
 
@@ -18,7 +17,7 @@ public class GuideBookItem extends Item {
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
 
         if(level.isClientSide()) {
-            Minecraft.getInstance().setScreen(new GuideBookScreen());
+            Minecraft.getInstance().setScreen(new AppleCodexScreen(Component.literal("Apple Codex")));
         }
 
         return InteractionResult.SUCCESS;

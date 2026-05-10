@@ -9,13 +9,15 @@ import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
-import net.more.apples.util.custom_loottable.ModLootTableModifiers_DiaApple;
-import net.more.apples.util.custom_loottable.ModLootTableModifiers_DiaCarrot;
+import net.more.apples.util.custom_loottable.*;
 
 public class IniLootTable implements ModInitializer {
     @Override
     public void onInitialize() {
         ModLootTableModifiers_DiaApple.modifyLootTables();
         ModLootTableModifiers_DiaCarrot.modifyLootTables();
+        ModLootTableModifiers_EnchDiaApple.modifyLootTables();
+        ModLootTableModifiers_EnchNetherApple.modifyLootTables();
+        ModLootTableModifiers_NetherApple.modifyLootTables();
     }
 }

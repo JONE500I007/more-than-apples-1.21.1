@@ -7,7 +7,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.more.apples.MoreThanApples;
-import net.more.apples.item.custom.GuideBookItem;
+import net.more.apples.item.custom.AppleCodexItem;
 
 import java.util.function.Function;
 
@@ -16,8 +16,8 @@ public class ModGeneralItems {
     public static final Item DIAMOND_NUGGET = registerItem("diamond_nugget",
             Item::new, new Item.Properties());
 
-    public static final Item GUIDE_BOOK = registerItem("guide_book",
-            GuideBookItem::new, new Item.Properties());
+    public static final Item APPLE_CODEX = registerItem("apple_codex",
+            AppleCodexItem::new, new Item.Properties());
 
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {
         Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name))));

@@ -28,6 +28,7 @@ public class ModItemGroups {
             FabricCreativeModeTab.builder().icon(() -> new net.minecraft.world.item.ItemStack(ModAppleFoodItems.DIAMOND_APPLE))
                     .title(Component.translatable("itemgroup.more-than-apples.diamond_apple_icon"))
                     .displayItems(((displayContext, entries) -> {
+                        entries.accept(ModGeneralItems.APPLE_CODEX);
                         entries.accept(ModGeneralItems.DIAMOND_NUGGET);
                         entries.accept(ModAppleFoodItems.GREEN_APPLE);
                         entries.accept(ModAppleFoodItems.TEST_APPLE);
