@@ -1,6 +1,8 @@
 package net.more.apples.effect.this_effects;
 
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -19,30 +21,24 @@ public class FreezingEffect extends MobEffect {
 
     @Override
     public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity mob, int amplification) {
-//        int max = mob.getTicksRequiredToFreeze();
-//        mob.setIsInPowderSnow(true);
-//        mob.setTicksFrozen(max);
-//        mob.hurtServer(serverLevel, mob.damageSources().freeze(), 1.0F);
-
         int current = mob.getTicksFrozen();
         int max = mob.getTicksRequiredToFreeze();
         mob.setIsInPowderSnow(true);
 
-        // Freeze speed scales with level
         int freezeAmount = 1 + amplification;
-
         if (current < max) {
             mob.setTicksFrozen(Math.min(current + freezeAmount, max));
         }
 
-        // Damage scales and every 2 seconds ONLY
-        if (mob.isFullyFrozen()) {
-            if (serverLevel.getGameTime() % 40 == 0) {
-                mob.hurtServer(serverLevel, mob.damageSources().freeze(), 1.0F + amplification);
-            }
-        }
-
         return true;
+    }
+
+    @Override
+    public void onMobHurt(ServerLevel level, LivingEntity mob, int amplifier, DamageSource source, float damage) {
+        if (source.is(DamageTypes.FREEZE)) {
+            //System.out.println("[FreezingEffect] onMobHurt called | amp=" + amplifier + " | incomingDmg=" + damage);
+            mob.hurtServer(level, source, amplifier);
+        }
     }
 
     @Override
