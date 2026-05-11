@@ -73,6 +73,12 @@ public class AppleCodexScreen extends Screen {
                         .build());
 
         // Next Page
+        btnRight = new BookTextureButton(
+                bookX + BOOK_WIDTH - 20, bookY + BOOK_HEIGHT / 2 - 10,
+                15, 21, BTN_RIGHT, BTN_RIGHT_HOVER,
+                () -> { if (currentPage < MAX_PAGE) currentPage++; }
+        );
+        this.addRenderableWidget(btnRight);
         /*
         this.addRenderableWidget(new BookTextureButton(
                 bookX + BOOK_WIDTH - 20, bookY + BOOK_HEIGHT / 2 - 10,
@@ -90,14 +96,12 @@ public class AppleCodexScreen extends Screen {
          */
 
         // Previous Page
-        /*
-        this.addRenderableWidget(new BookTextureButton(
+        btnLeft = new BookTextureButton(
                 bookX, bookY + BOOK_HEIGHT / 2 - 10,
-                15, 21,
-                BTN_LEFT, BTN_LEFT_HOVER,
+                15, 21, BTN_LEFT, BTN_LEFT_HOVER,
                 () -> { if (currentPage > 0) currentPage--; }
-        ));
-         */
+        );
+        this.addRenderableWidget(btnLeft);
         /*
         this.addRenderableWidget(
                 Button.builder(Component.literal("<"), button -> {
