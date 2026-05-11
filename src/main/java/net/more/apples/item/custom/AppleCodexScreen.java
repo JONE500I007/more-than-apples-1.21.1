@@ -26,6 +26,8 @@ import java.util.Optional;
 public class AppleCodexScreen extends Screen {
     private int currentPage = 0;
     private final int MAX_PAGE = 3;
+    private BookTextureButton btnLeft;
+    private BookTextureButton btnRight;
 
     private static final Identifier BTN_RIGHT = Identifier.fromNamespaceAndPath(
             MoreThanApples.MOD_ID, "textures/gui/book_button_right.png");
@@ -71,12 +73,14 @@ public class AppleCodexScreen extends Screen {
                         .build());
 
         // Next Page
+        /*
         this.addRenderableWidget(new BookTextureButton(
                 bookX + BOOK_WIDTH - 20, bookY + BOOK_HEIGHT / 2 - 10,
                 15, 21,
                 BTN_RIGHT, BTN_RIGHT_HOVER,
                 () -> { if (currentPage < MAX_PAGE) currentPage++; }
         ));
+         */
         /*
         this.addRenderableWidget(
                 Button.builder(Component.literal(">"), button -> {
@@ -86,12 +90,14 @@ public class AppleCodexScreen extends Screen {
          */
 
         // Previous Page
+        /*
         this.addRenderableWidget(new BookTextureButton(
                 bookX, bookY + BOOK_HEIGHT / 2 - 10,
                 15, 21,
                 BTN_LEFT, BTN_LEFT_HOVER,
                 () -> { if (currentPage > 0) currentPage--; }
         ));
+         */
         /*
         this.addRenderableWidget(
                 Button.builder(Component.literal("<"), button -> {
