@@ -7,6 +7,7 @@ import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
+import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
@@ -74,6 +75,11 @@ public class BookTextureButton extends AbstractWidget {
                 15, 21,
                 15, 21
         );
+    }
+
+    @Override
+    public void playDownSound(SoundManager soundManager) {
+
     }
 
     @Override

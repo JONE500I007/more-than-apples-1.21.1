@@ -7,6 +7,7 @@ import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
+import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
@@ -31,6 +32,10 @@ public class BookmarkButton extends AbstractWidget {
         Identifier current = this.isHovered ? hoverTexture : texture;
         graphics.blit(RenderPipelines.GUI_TEXTURED, current,
                 this.getX(), this.getY(), 0, 0, BM_WIDTH, BM_HEIGHT, BM_WIDTH, BM_HEIGHT);
+    }
+    @Override
+    public void playDownSound(SoundManager soundManager) {
+
     }
 
     @Override
