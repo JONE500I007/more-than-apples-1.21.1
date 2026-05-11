@@ -181,6 +181,9 @@ public class AppleCodexScreen extends Screen {
         }
          */
 
+        btnLeft.visible = currentPage > 0;
+        btnRight.visible = currentPage < MAX_PAGE;
+
         if (currentPage < PAGES.size()) {
             PAGES.get(currentPage).render(graphics, this.font, bookX, bookY, mouseX, mouseY);
         }
