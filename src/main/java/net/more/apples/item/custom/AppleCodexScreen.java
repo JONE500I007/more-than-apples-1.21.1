@@ -11,6 +11,9 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.more.apples.MoreThanApples;
+import net.more.apples.item.custom.codex_page.CodexPage;
+import net.more.apples.item.custom.codex_page.Page0ApplePage;
+import net.more.apples.item.custom.codex_page.Page1ApplePage;
 import net.more.apples.util.discovery.DiscoveryHelper2;
 import org.lwjgl.glfw.GLFW;
 
@@ -19,7 +22,7 @@ import java.util.Optional;
 
 public class AppleCodexScreen extends Screen {
     private int currentPage = 0;
-    private final int MAX_PAGE = 1;
+    private final int MAX_PAGE = 3;
 
     private static final Identifier BTN_RIGHT = Identifier.fromNamespaceAndPath(
             MoreThanApples.MOD_ID, "textures/gui/book_button_right.png");
@@ -42,6 +45,10 @@ public class AppleCodexScreen extends Screen {
     private static final int TEXTURE_HEIGHT = 256;
 
     private int bookX, bookY;
+
+    private static final List<CodexPage> PAGES = List.of(
+            new Page0ApplePage(),
+            new Page1ApplePage());
 
     protected AppleCodexScreen(Component title) {
         super(title);
@@ -126,6 +133,7 @@ public class AppleCodexScreen extends Screen {
                 bookY + offsetY, 0xFF000000, false);
 
         // Content
+        /*
         if (currentPage == 0) {
             graphics.text(this.font, "Hello Applepedia!",
                     bookX + 20, bookY + 20, 0x3B2A1A);
@@ -157,6 +165,11 @@ public class AppleCodexScreen extends Screen {
             graphics.text(this.font, "Second Page",
                     bookX + 20, bookY + 20, 0x3B2A1A);
             graphics.item(new ItemStack(Items.DIAMOND), bookX + 40, bookY + 40);
+        }
+         */
+
+        if (currentPage < PAGES.size()) {
+            PAGES.get(currentPage).render(graphics, this.font, bookX, bookY, mouseX, mouseY);
         }
 
         super.extractRenderState(graphics, mouseX, mouseY, delta);
