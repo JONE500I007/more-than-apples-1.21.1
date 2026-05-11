@@ -101,7 +101,7 @@ public class Page0ApplePage implements CodexPage{
         } else {
             graphics.blit(RenderPipelines.GUI_TEXTURED,
                     Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
-                            "textures/gui/items/unknown_apple.png"),
+                            "textures/gui/items/unknown_frosty_apple.png"),
                     bookX + 100, bookY + 40, 0, 0, 16, 16, 16, 16);
         }
         if (mouseX >= bookX + 100 && mouseX <= bookX + 116

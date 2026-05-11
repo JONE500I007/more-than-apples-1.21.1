@@ -14,6 +14,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.more.apples.MoreThanApples;
+import net.more.apples.item.custom.codex_page.BookmarkButton;
 import net.more.apples.item.custom.codex_page.CodexPage;
 import net.more.apples.item.custom.codex_page.Page0ApplePage;
 import net.more.apples.item.custom.codex_page.Page1ApplePage;
@@ -25,7 +26,7 @@ import java.util.Optional;
 
 public class AppleCodexScreen extends Screen {
     private int currentPage = 0;
-    private final int MAX_PAGE = 3;
+    private final int MAX_PAGE = 10;
     private BookTextureButton btnLeft;
     private BookTextureButton btnRight;
 
@@ -38,6 +39,16 @@ public class AppleCodexScreen extends Screen {
             MoreThanApples.MOD_ID, "textures/gui/book_button_right_hover.png");
     private static final Identifier BTN_LEFT_HOVER = Identifier.fromNamespaceAndPath(
             MoreThanApples.MOD_ID, "textures/gui/book_button_left_hover.png");
+
+    private static final Identifier BM_APPLE = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/icon_book/bookmark_apple.png");
+    private static final Identifier BM_APPLE_HOVER = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/icon_book/bookmark_apple_hover.png");
+
+    private static final Identifier BM_BIOME = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/icon_book/bookmark_biome.png");
+    private static final Identifier BM_BIOME_HOVER = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/icon_book/bookmark_biome_hover.png");
 
 
     private static final Identifier BOOK_TEXTURE = Identifier.fromNamespaceAndPath(
@@ -109,6 +120,20 @@ public class AppleCodexScreen extends Screen {
                         }).bounds(bookX, bookY + BOOK_HEIGHT / 2 - 10, 20, 20)
                         .build());
          */
+        // Bookmark ขอบขวา (x = bookX + BOOK_WIDTH - 8 ให้มันยื่นออกมา)
+        int bmX = bookX + BOOK_WIDTH - 8;
+
+        this.addRenderableWidget(new BookmarkButton(
+                bmX, bookY + 20,       // Apple bookmark ด้านบน
+                BM_APPLE, BM_APPLE_HOVER,
+                () -> currentPage = 0
+        ));
+
+        this.addRenderableWidget(new BookmarkButton(
+                bmX, bookY + 40,       // Biome bookmark ถัดลงมา
+                BM_BIOME, BM_BIOME_HOVER,
+                () -> currentPage = 6
+        ));
     }
 
     @Override
