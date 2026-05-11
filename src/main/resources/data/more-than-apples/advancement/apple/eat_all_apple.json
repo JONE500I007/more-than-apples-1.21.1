@@ -56,6 +56,14 @@
         }
       }
     },
+    "eat_frosty_apple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": ["more-than-apples:frosty_apple"]
+        }
+      }
+    },
     "eat_diamond_apple": {
       "trigger": "minecraft:consume_item",
       "conditions": {
@@ -95,6 +103,7 @@
     ["eat_enchanted_golden_apple"],
     ["eat_green_apple"],
     ["eat_test_apple"],
+    ["eat_frosty_apple"],
     ["eat_diamond_apple"],
     ["eat_enchanted_diamond_apple"],
     ["eat_netherite_apple"],
