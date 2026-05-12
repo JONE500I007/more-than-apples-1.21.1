@@ -28,44 +28,41 @@ public class Page1ApplePage implements CodexPage{
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        //graphics.text(font, "Hello Applepedia!", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+        graphics.text(font, "All Apple Item", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
-        boolean diamond_apple = DiscoveryHelper2.hasDiscovered("discover_items/discover_diamond_apple");
-        boolean enchanted_diamond_apple = DiscoveryHelper2.hasDiscovered("discover_items/discover_enchanted_diamond_apple");
-        boolean netherite_apple= DiscoveryHelper2.hasDiscovered("discover_items/discover_netherite_apple");
-        boolean enchanted_netherite_apple  = DiscoveryHelper2.hasDiscovered("discover_items/discover_enchanted_netherite_apple");
-
+        boolean apple       = DiscoveryHelper2.hasDiscovered("discover_items/discover_apple");
+        boolean green_apple = DiscoveryHelper2.hasDiscovered("discover_items/discover_green_apple");
+        boolean test_apple  = DiscoveryHelper2.hasDiscovered("discover_items/discover_test_apple");
+        boolean frosty_apple= DiscoveryHelper2.hasDiscovered("discover_items/discover_frosty_apple");
 
         int y_leftpage = bookY + 40;
         int y_rightpage = bookY + 40;
 
-        renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, diamond_apple,
-                new ItemStack(ModAppleFoodItems.DIAMOND_APPLE),
-                Component.literal("Diamond Apple").withStyle(ChatFormatting.AQUA),
-                new Component[]{Component.literal("Just A OP Apple"),
-                Component.literal("if you eat you got :3")},
+        renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, apple,
+                new ItemStack(Items.APPLE),
+                Component.literal("Apple"),
+                new Component[]{Component.literal("A common fruit.")},
                 "textures/gui/items/unknown_apple.png");
         y_leftpage += ROW_HEIGHT;
 
-
-        renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, enchanted_diamond_apple,
-                new ItemStack(ModAppleFoodItems.ENCHANTED_DIAMOND_APPLE),
-                Component.literal("Enchanted Diamond Apple").withStyle(ChatFormatting.LIGHT_PURPLE),
-                new Component[]{Component.literal("Man....i just")},
+        renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, green_apple,
+                new ItemStack(ModAppleFoodItems.GREEN_APPLE),
+                Component.literal("Green Apple"),
+                new Component[]{Component.literal("Brings good luck :3")},
                 "textures/gui/items/unknown_apple.png");
         y_leftpage += ROW_HEIGHT;
 
-        renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, netherite_apple,
-                new ItemStack(ModAppleFoodItems.NETHERITE_APPLE),
-                Component.literal("Netherite Apple").withStyle(ChatFormatting.AQUA),
-                new Component[]{Component.literal("This too Op")},
+        renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, test_apple,
+                new ItemStack(ModAppleFoodItems.TEST_APPLE),
+                Component.literal("Test_Apple"),
+                new Component[]{Component.literal("Just_some_test.")},
                 "textures/gui/items/unknown_apple.png");
         y_rightpage += ROW_HEIGHT;
 
-        renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, enchanted_netherite_apple,
-                new ItemStack(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE),
-                Component.literal("Enchanted Netherite Apple").withStyle(ChatFormatting.LIGHT_PURPLE),
-                new Component[]{Component.literal("This for test")},
+        renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, frosty_apple,
+                new ItemStack(ModAppleFoodItems.FROSTY_APPLE),
+                Component.literal("Frosty Apple"),
+                new Component[]{Component.literal("Gives Freezing effect.")},
                 "textures/gui/items/unknown_frosty_apple.png");
     }
 
@@ -102,10 +99,10 @@ public class Page1ApplePage implements CodexPage{
     }
 
     private void renderItem_right(GuiGraphicsExtractor graphics, Font font,
-                                 int bookX, int y, int mouseX, int mouseY,
-                                 boolean discovered, ItemStack item,
+                                  int bookX, int y, int mouseX, int mouseY,
+                                  boolean discovered, ItemStack item,
                                   Component name, Component[] desc,
-                                 String unknownTexture) {
+                                  String unknownTexture) {
         if (discovered) {
             graphics.item(item, bookX + ICON_X_right, y);
             for (int i = 0; i < desc.length; i++) {
