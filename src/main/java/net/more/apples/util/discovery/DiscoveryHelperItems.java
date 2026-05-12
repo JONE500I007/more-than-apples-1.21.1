@@ -6,7 +6,7 @@ import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.resources.Identifier;
 import net.more.apples.MoreThanApples;
 
-public class DiscoveryHelper2 {
+public class DiscoveryHelperItems {
 
     public static boolean hasDiscovered(String advancementPath) {
 

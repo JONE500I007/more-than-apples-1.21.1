@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.more.apples.MoreThanApples;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
-import net.more.apples.util.discovery.DiscoveryHelper2;
+import net.more.apples.util.discovery.DiscoveryHelperItems;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,10 +30,10 @@ public class Page1ApplePage implements CodexPage{
 
         graphics.text(font, "All Apple Item", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
-        boolean apple       = DiscoveryHelper2.hasDiscovered("discover_items/discover_apple");
-        boolean green_apple = DiscoveryHelper2.hasDiscovered("discover_items/discover_green_apple");
-        boolean test_apple  = DiscoveryHelper2.hasDiscovered("discover_items/discover_test_apple");
-        boolean frosty_apple= DiscoveryHelper2.hasDiscovered("discover_items/discover_frosty_apple");
+        boolean apple       = DiscoveryHelperItems.hasDiscovered("discover_items/discover_apple");
+        boolean green_apple = DiscoveryHelperItems.hasDiscovered("discover_items/discover_green_apple");
+        boolean test_apple  = DiscoveryHelperItems.hasDiscovered("discover_items/discover_test_apple");
+        boolean frosty_apple= DiscoveryHelperItems.hasDiscovered("discover_items/discover_frosty_apple");
 
         int y_leftpage = bookY + 40;
         int y_rightpage = bookY + 40;

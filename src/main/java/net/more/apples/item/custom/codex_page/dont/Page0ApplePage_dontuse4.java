@@ -9,7 +9,7 @@ import net.minecraft.world.item.Items;
 import net.more.apples.MoreThanApples;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 import net.more.apples.item.custom.codex_page.CodexPage;
-import net.more.apples.util.discovery.DiscoveryHelper2;
+import net.more.apples.util.discovery.DiscoveryHelperItems;
 
 public class Page0ApplePage_dontuse4 implements CodexPage {
     @Override
@@ -21,13 +21,13 @@ public class Page0ApplePage_dontuse4 implements CodexPage {
         graphics.text(font, "Hello Applepedia!",
                 bookX + 20, bookY + 20, 0xFF000000, false);
 
-        boolean apple = DiscoveryHelper2.hasDiscovered(
+        boolean apple = DiscoveryHelperItems.hasDiscovered(
                 "discover_items/discover_apple");
-        boolean green_apple = DiscoveryHelper2.hasDiscovered(
+        boolean green_apple = DiscoveryHelperItems.hasDiscovered(
                 "discover_items/discover_green_apple");
-        boolean test_apple = DiscoveryHelper2.hasDiscovered(
+        boolean test_apple = DiscoveryHelperItems.hasDiscovered(
                 "discover_items/discover_test_apple");
-        boolean frosty_apple = DiscoveryHelper2.hasDiscovered(
+        boolean frosty_apple = DiscoveryHelperItems.hasDiscovered(
                 "discover_items/discover_frosty_apple");
 
         // -------- Apple --------

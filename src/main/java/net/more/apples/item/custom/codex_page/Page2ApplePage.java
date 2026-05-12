@@ -9,7 +9,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.more.apples.MoreThanApples;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
-import net.more.apples.util.discovery.DiscoveryHelper2;
+import net.more.apples.util.discovery.DiscoveryHelperItems;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,10 +29,10 @@ public class Page2ApplePage implements CodexPage{
 
         //graphics.text(font, "Hello Applepedia!", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
-        boolean diamond_apple = DiscoveryHelper2.hasDiscovered("discover_items/discover_diamond_apple");
-        boolean enchanted_diamond_apple = DiscoveryHelper2.hasDiscovered("discover_items/discover_enchanted_diamond_apple");
-        boolean netherite_apple= DiscoveryHelper2.hasDiscovered("discover_items/discover_netherite_apple");
-        boolean enchanted_netherite_apple  = DiscoveryHelper2.hasDiscovered("discover_items/discover_enchanted_netherite_apple");
+        boolean diamond_apple = DiscoveryHelperItems.hasDiscovered("discover_items/discover_diamond_apple");
+        boolean enchanted_diamond_apple = DiscoveryHelperItems.hasDiscovered("discover_items/discover_enchanted_diamond_apple");
+        boolean netherite_apple= DiscoveryHelperItems.hasDiscovered("discover_items/discover_netherite_apple");
+        boolean enchanted_netherite_apple  = DiscoveryHelperItems.hasDiscovered("discover_items/discover_enchanted_netherite_apple");
 
 
         int y_leftpage = bookY + 40;

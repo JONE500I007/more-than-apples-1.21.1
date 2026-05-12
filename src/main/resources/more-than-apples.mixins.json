@@ -7,7 +7,9 @@
 		"TrunkPlacerTypeInvoker",
 		"FoliagePlacerTypeInvoker",
 		"AppleShelfBlockEntityMixin",
-		"ShelfGetBlock2Mixin"
+		"ShelfGetBlock2Mixin",
+
+		"ClientAdvancementsMixinImpl"
 	],
 	"injectors": {
 		"defaultRequire": 1

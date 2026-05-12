@@ -6,14 +6,9 @@ import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.more.apples.MoreThanApples;
-import net.more.apples.item.apple_item.ModAppleFoodItems;
-import net.more.apples.util.discovery.DiscoveryHelper2;
-
-import java.util.List;
-import java.util.Optional;
+import net.more.apples.util.discovery.DiscoveryHelperBiomes;
+import net.more.apples.util.discovery.DiscoveryHelperItems;
 
 public class Page0ApplePage implements CodexPage{
     private static final int ICON_X_left = 20;
@@ -22,110 +17,60 @@ public class Page0ApplePage implements CodexPage{
     private static final int ICON_X_right = 125 + 20;
     private static final int TEXT_X_right = 125 + 40;
 
+    private static final Identifier APPLE_GROVE_IMG = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/image_biome/apple_grove.png");
+
+    private static final int IMG_WIDTH  = 109;
+    private static final int IMG_HEIGHT = 58;
+
     private static final int ROW_HEIGHT = 64;
 
     @Override
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        graphics.text(font, "All Apple Item", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+        graphics.text(font, "All Apple Biome", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
-        boolean apple       = DiscoveryHelper2.hasDiscovered("discover_items/discover_apple");
-        boolean green_apple = DiscoveryHelper2.hasDiscovered("discover_items/discover_green_apple");
-        boolean test_apple  = DiscoveryHelper2.hasDiscovered("discover_items/discover_test_apple");
-        boolean frosty_apple= DiscoveryHelper2.hasDiscovered("discover_items/discover_frosty_apple");
+        boolean apple_grove = DiscoveryHelperBiomes.hasDiscovered("discover_biomes/discover_apple_grove");
 
         int y_leftpage = bookY + 40;
         int y_rightpage = bookY + 40;
 
-        renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, apple,
-                new ItemStack(Items.APPLE),
-                Component.literal("Apple"),
-                new Component[]{Component.literal("A common fruit.")},
-                "textures/gui/items/unknown_apple.png");
-        y_leftpage += ROW_HEIGHT;
-
-        renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, green_apple,
-                new ItemStack(ModAppleFoodItems.GREEN_APPLE),
-                Component.literal("Green Apple"),
-                new Component[]{Component.literal("Brings good luck :3")},
-                "textures/gui/items/unknown_apple.png");
-        y_leftpage += ROW_HEIGHT;
-
-        renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, test_apple,
-                new ItemStack(ModAppleFoodItems.TEST_APPLE),
-                Component.literal("Test_Apple"),
-                new Component[]{Component.literal("Just_some_test.")},
-                "textures/gui/items/unknown_apple.png");
-        y_rightpage += ROW_HEIGHT;
-
-        renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, frosty_apple,
-                new ItemStack(ModAppleFoodItems.FROSTY_APPLE),
-                Component.literal("Frosty Apple"),
-                new Component[]{Component.literal("Gives Freezing effect.")},
-                "textures/gui/items/unknown_frosty_apple.png");
-    }
-
-    // helper method
-    private void renderItem_left(GuiGraphicsExtractor graphics, Font font,
-                                 int bookX, int y, int mouseX, int mouseY,
-                                 boolean discovered, ItemStack item,
-                                 Component name, Component[] desc,
-                                 String unknownTexture) {
-        if (discovered) {
-            graphics.item(item, bookX + ICON_X_left, y);
-            for (int i = 0; i < desc.length; i++) {
-                graphics.text(font, desc[i], bookX + TEXT_X_left, y + 4 + (i * 9), 0xFF888888, false);
-            }
-            if (mouseX >= bookX + ICON_X_left && mouseX <= bookX + ICON_X_left + 16
-                    && mouseY >= y && mouseY <= y + 16) {
-                graphics.setTooltipForNextFrame(font,
-                        List.of(name),
-                        Optional.empty(), mouseX, mouseY);
-            }
+        if (apple_grove) {
+            renderImage(graphics, font, bookX, y_leftpage,
+                    APPLE_GROVE_IMG, IMG_WIDTH, IMG_HEIGHT,
+                    new Component[]{
+                            Component.literal("Apple Grove Biome."),
+                            Component.literal("Rich with apple trees.")
+                    });
         } else {
-            graphics.blit(RenderPipelines.GUI_TEXTURED,
-                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, unknownTexture),
-                    bookX + ICON_X_left, y, 0, 0, 16, 16, 16, 16);
-            graphics.text(font, "Undiscovered", bookX + TEXT_X_left, y + 4, 0xFF888888, false);
-            // hover → tooltip Undiscovered
-            if (mouseX >= bookX + ICON_X_left && mouseX <= bookX + ICON_X_left + 16
-                    && mouseY >= y && mouseY <= y + 16) {
-                graphics.setTooltipForNextFrame(font,
-                        Component.literal("Undiscovered").withStyle(ChatFormatting.GRAY),
-                        mouseX, mouseY);
-            }
+            renderImage(graphics, font, bookX, y_leftpage,
+                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                            "textures/gui/image_biome/unknown_apple_biome.png"),
+                    IMG_WIDTH, IMG_HEIGHT,
+                    new Component[]{
+                            Component.literal("???").withStyle(ChatFormatting.GRAY),
+                            Component.literal("Undiscovered Biome").withStyle(ChatFormatting.GRAY)
+                    });
         }
     }
 
-    private void renderItem_right(GuiGraphicsExtractor graphics, Font font,
-                                  int bookX, int y, int mouseX, int mouseY,
-                                  boolean discovered, ItemStack item,
-                                  Component name, Component[] desc,
-                                  String unknownTexture) {
-        if (discovered) {
-            graphics.item(item, bookX + ICON_X_right, y);
-            for (int i = 0; i < desc.length; i++) {
-                graphics.text(font, desc[i], bookX + TEXT_X_right, y + 4 + (i * 9), 0xFF888888, false);
-            }
-            if (mouseX >= bookX + ICON_X_right && mouseX <= bookX + ICON_X_right + 16
-                    && mouseY >= y && mouseY <= y + 16) {
-                graphics.setTooltipForNextFrame(font,
-                        List.of(name),
-                        Optional.empty(), mouseX, mouseY);
-            }
-        } else {
-            graphics.blit(RenderPipelines.GUI_TEXTURED,
-                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, unknownTexture),
-                    bookX + ICON_X_right, y, 0, 0, 16, 16, 16, 16);
-            graphics.text(font, "Undiscovered", bookX + TEXT_X_right, y + 4, 0xFF888888, false);
-            // hover → tooltip Undiscovered
-            if (mouseX >= bookX + ICON_X_right && mouseX <= bookX + ICON_X_right + 16
-                    && mouseY >= y && mouseY <= y + 16) {
-                graphics.setTooltipForNextFrame(font,
-                        Component.literal("Undiscovered").withStyle(ChatFormatting.GRAY),
-                        mouseX, mouseY);
-            }
+    // helper method
+    private void renderImage(GuiGraphicsExtractor graphics, Font font,
+                             int bookX, int y,
+                             Identifier image, int imgW, int imgH,
+                             Component[] caption) {
+        graphics.blit(RenderPipelines.GUI_TEXTURED,
+                image,
+                bookX + ICON_X_left, y,
+                0, 0,
+                imgW, imgH,
+                imgW, imgH);
+
+        for (int i = 0; i < caption.length; i++) {
+            graphics.text(font, caption[i],
+                    bookX + ICON_X_left, y + imgH + 3 + (i * 9),
+                    0xFF888888, false);
         }
     }
 }
