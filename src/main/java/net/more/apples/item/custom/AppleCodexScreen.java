@@ -54,7 +54,8 @@ public class AppleCodexScreen extends Screen {
     private static final List<CodexPage> PAGES = List.of(
             new Page0ApplePage(),
             new Page1ApplePage(),
-            new Page2ApplePage());
+            new Page2ApplePage(),
+            new Page6ApplePage());
 
     protected AppleCodexScreen(Component title) {
         super(title);
@@ -116,7 +117,7 @@ public class AppleCodexScreen extends Screen {
         this.addRenderableWidget(new BookmarkButton(
                 bmX, bookY + 20,       // Apple bookmark ด้านบน
                 BM_APPLE, BM_APPLE_HOVER,
-                () -> currentPage = 0
+                () -> currentPage = 1
         ));
 
         this.addRenderableWidget(new BookmarkButton(

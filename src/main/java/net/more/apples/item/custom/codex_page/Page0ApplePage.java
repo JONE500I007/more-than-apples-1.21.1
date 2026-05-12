@@ -8,7 +8,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.more.apples.MoreThanApples;
 import net.more.apples.util.discovery.DiscoveryHelperBiomes;
-import net.more.apples.util.discovery.DiscoveryHelperItems;
 
 public class Page0ApplePage implements CodexPage{
     private static final int ICON_X_left = 20;
@@ -17,60 +16,91 @@ public class Page0ApplePage implements CodexPage{
     private static final int ICON_X_right = 125 + 20;
     private static final int TEXT_X_right = 125 + 40;
 
-    private static final Identifier APPLE_GROVE_IMG = Identifier.fromNamespaceAndPath(
-            MoreThanApples.MOD_ID, "textures/gui/image_biome/apple_grove.png");
-
-    private static final int IMG_WIDTH  = 109;
-    private static final int IMG_HEIGHT = 58;
-
-    private static final int ROW_HEIGHT = 64;
+    private static final int LINE_HEIGHT = 10;
 
     @Override
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        graphics.text(font, "All Apple Biome", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+        // left page
+        int y = bookY + 20;
 
-        boolean apple_grove = DiscoveryHelperBiomes.hasDiscovered("discover_biomes/discover_apple_grove");
+        graphics.text(font, "Welcome to the",
+                bookX + ICON_X_left, y, 0xFF3B2A1A, false);
+        y += LINE_HEIGHT;
 
-        int y_leftpage = bookY + 40;
-        int y_rightpage = bookY + 40;
+        graphics.text(font,
+                Component.literal("Apple Codex!").withStyle(ChatFormatting.BOLD),
+                bookX + ICON_X_left, y, 0xFF3B2A1A, false);
+        y += LINE_HEIGHT + 4; // เว้นช่องว่างหลังชื่อ
 
-        if (apple_grove) {
-            renderImage(graphics, font, bookX, y_leftpage,
-                    APPLE_GROVE_IMG, IMG_WIDTH, IMG_HEIGHT,
-                    new Component[]{
-                            Component.literal("Apple Grove Biome."),
-                            Component.literal("Rich with apple trees.")
-                    });
-        } else {
-            renderImage(graphics, font, bookX, y_leftpage,
-                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
-                            "textures/gui/image_biome/unknown_apple_biome.png"),
-                    IMG_WIDTH, IMG_HEIGHT,
-                    new Component[]{
-                            Component.literal("???").withStyle(ChatFormatting.GRAY),
-                            Component.literal("Undiscovered Biome").withStyle(ChatFormatting.GRAY)
-                    });
+        String[] leftLines = {
+                "This tome holds knowledge",
+                "of every apple discovered",
+                "across your journey.",
+                "",
+                "Explore the world,",
+                "collect rare apples,",
+                "and uncover their secrets.",
+                "",
+                "\u2014 Happy Exploring! \u2014"  // — Happy Exploring! —
+        };
+
+        for (String line : leftLines) {
+            if (line.isEmpty()) {
+                y += LINE_HEIGHT / 2; // เว้นบรรทัด
+            } else if (line.startsWith("\u2014")) {
+                // บรรทัดสุดท้าย italic
+                graphics.text(font,
+                        Component.literal(line).withStyle(ChatFormatting.ITALIC),
+                        bookX + ICON_X_left, y, 0xFF888888, false);
+                y += LINE_HEIGHT;
+            } else {
+                graphics.text(font, line,
+                        bookX + ICON_X_left, y, 0xFF3B2A1A, false);
+                y += LINE_HEIGHT;
+            }
         }
-    }
 
-    // helper method
-    private void renderImage(GuiGraphicsExtractor graphics, Font font,
-                             int bookX, int y,
-                             Identifier image, int imgW, int imgH,
-                             Component[] caption) {
-        graphics.blit(RenderPipelines.GUI_TEXTURED,
-                image,
-                bookX + ICON_X_left, y,
-                0, 0,
-                imgW, imgH,
-                imgW, imgH);
+        // right page
+        int ry = bookY + 20;
 
-        for (int i = 0; i < caption.length; i++) {
-            graphics.text(font, caption[i],
-                    bookX + ICON_X_left, y + imgH + 3 + (i * 9),
-                    0xFF888888, false);
+        graphics.text(font,
+                Component.literal("How to Use").withStyle(ChatFormatting.BOLD),
+                bookX + ICON_X_right, ry, 0xFF3B2A1A, false);
+        ry += LINE_HEIGHT + 4;
+
+        String[] rightLines = {
+                "\u2767 Tap an item icon",       // ❧
+                "  to reveal its name.",
+                "",
+                "\u2767 Gray icons mean",
+                "  the item is yet",
+                "  to be discovered.",
+                "",
+                "\u2767 Use the bookmarks",
+                "  on the right to jump",
+                "  between categories.",
+                "",
+                "\u2767 New entries appear",
+                "  as you explore",
+                "  the world."
+        };
+
+        for (String line : rightLines) {
+            if (line.isEmpty()) {
+                ry += LINE_HEIGHT / 2;
+            } else if (line.startsWith("\u2767")) {
+                // บรรทัด bullet สีน้ำตาลเข้ม
+                graphics.text(font, line,
+                        bookX + ICON_X_right, ry, 0xFF3B2A1A, false);
+                ry += LINE_HEIGHT;
+            } else {
+                // บรรทัด indent สีจาง
+                graphics.text(font, line,
+                        bookX + ICON_X_right, ry, 0xFF888888, false);
+                ry += LINE_HEIGHT;
+            }
         }
     }
 }
