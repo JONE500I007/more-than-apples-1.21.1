@@ -3,7 +3,6 @@ package net.more.apples.item.custom.codex_page;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.renderer.RenderPipelines;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -11,110 +10,89 @@ import net.more.apples.MoreThanApples;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 import net.more.apples.util.discovery.DiscoveryHelper2;
 
-import java.util.List;
-import java.util.Optional;
-
 public class Page0ApplePage implements CodexPage{
+    private static final int ICON_X_left = 20;
+    private static final int TEXT_X_left = 40;
+
+    private static final int ICON_X_right = 125 + 20;
+    private static final int TEXT_X_right = 125 + 40;
+
+    private static final int ROW_HEIGHT = 64;
+
     @Override
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        graphics.text(font, "Hello Applepedia!",
-                bookX + 20, bookY + 20, 0xFF3B2A1A, false);
+        graphics.text(font, "Hello Applepedia!", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
-        boolean apple = DiscoveryHelper2.hasDiscovered(
-                "discover_items/discover_apple");
-        boolean green_apple = DiscoveryHelper2.hasDiscovered(
-                "discover_items/discover_green_apple");
-        boolean test_apple = DiscoveryHelper2.hasDiscovered(
-                "discover_items/discover_test_apple");
-        boolean frosty_apple = DiscoveryHelper2.hasDiscovered(
-                "discover_items/discover_frosty_apple");
+        boolean apple       = DiscoveryHelper2.hasDiscovered("discover_items/discover_apple");
+        boolean green_apple = DiscoveryHelper2.hasDiscovered("discover_items/discover_green_apple");
+        boolean test_apple  = DiscoveryHelper2.hasDiscovered("discover_items/discover_test_apple");
+        boolean frosty_apple= DiscoveryHelper2.hasDiscovered("discover_items/discover_frosty_apple");
 
-        // -------- Apple --------
-        if (apple) {
-            graphics.item(new ItemStack(Items.APPLE), bookX + 40, bookY + 40);
+        int y_leftpage = bookY + 40;
+        int y_rightpage = bookY + 40;
+
+        renderItem_left(graphics, font, bookX, y_leftpage, apple,
+                new ItemStack(Items.APPLE),
+                "Apple", new String[]{"A common fruit."},
+                "textures/gui/items/unknown_apple.png");
+        y_leftpage += ROW_HEIGHT;
+
+        renderItem_left(graphics, font, bookX, y_leftpage, green_apple,
+                new ItemStack(ModAppleFoodItems.GREEN_APPLE),
+                "Green Apple", new String[]{"Brings good luck :3"},
+                "textures/gui/items/unknown_apple.png");
+        y_leftpage += ROW_HEIGHT;
+
+        renderItem_right(graphics, font, bookX, y_rightpage, test_apple,
+                new ItemStack(ModAppleFoodItems.TEST_APPLE),
+                "Test_Apple", new String[]{"Just_some_test."},
+                "textures/gui/items/unknown_apple.png");
+        y_rightpage += ROW_HEIGHT;
+
+        renderItem_right(graphics, font, bookX, y_rightpage, frosty_apple,
+                new ItemStack(ModAppleFoodItems.FROSTY_APPLE),
+                "Frosty Apple", new String[]{"Gives Freezing effect."},
+                "textures/gui/items/unknown_frosty_apple.png");
+    }
+
+    // helper method
+    private void renderItem_left(GuiGraphicsExtractor graphics, Font font,
+                                 int bookX, int y,
+                                 boolean discovered, ItemStack item,
+                                 String name, String[] desc,
+                                 String unknownTexture) {
+        if (discovered) {
+            graphics.item(item, bookX + ICON_X_left, y);
+            graphics.text(font, name, bookX + TEXT_X_left, y, 0xFF000000, false);
+            for (int i = 0; i < desc.length; i++) {
+                graphics.text(font, desc[i], bookX + TEXT_X_left, y + 10 + (i * 9), 0xFF888888, false);
+            }
         } else {
             graphics.blit(RenderPipelines.GUI_TEXTURED,
-                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
-                            "textures/gui/items/unknown_apple.png"),
-                    bookX + 40, bookY + 40, 0, 0, 16, 16, 16, 16);
+                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, unknownTexture),
+                    bookX + ICON_X_left, y, 0, 0, 16, 16, 16, 16);
+            graphics.text(font, "Undiscovered", bookX + TEXT_X_left, y + 4, 0xFF888888, false);
         }
-        if (mouseX >= bookX + 40 && mouseX <= bookX + 56
-                && mouseY >= bookY + 40 && mouseY <= bookY + 56) {
-            if (apple) {
-                graphics.setTooltipForNextFrame(font,
-                        List.of(Component.literal("Apple"),
-                                Component.literal("This apple")),
-                        Optional.empty(), mouseX, mouseY);
-            } else {
-                graphics.setTooltipForNextFrame(font,
-                        Component.literal("Undiscovered"), mouseX, mouseY);
+    }
+
+    private void renderItem_right(GuiGraphicsExtractor graphics, Font font,
+                                 int bookX, int y,
+                                 boolean discovered, ItemStack item,
+                                 String name, String[] desc,
+                                 String unknownTexture) {
+        if (discovered) {
+            graphics.item(item, bookX + ICON_X_right, y);
+            graphics.text(font, name, bookX + TEXT_X_right, y, 0xFF000000, false);
+            for (int i = 0; i < desc.length; i++) {
+                graphics.text(font, desc[i], bookX + TEXT_X_right, y + 10 + (i * 9), 0xFF888888, false);
             }
-        }
-        // ------ Gree Apple (ตำแหน่ง 60, 40 เลื่อนขวา 20px) ------
-        if (green_apple) {
-            graphics.item(new ItemStack(ModAppleFoodItems.GREEN_APPLE), bookX + 60, bookY + 40);
         } else {
             graphics.blit(RenderPipelines.GUI_TEXTURED,
-                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
-                            "textures/gui/items/unknown_apple.png"),
-                    bookX + 60, bookY + 40, 0, 0, 16, 16, 16, 16);
-        }
-        if (mouseX >= bookX + 60 && mouseX <= bookX + 76
-                && mouseY >= bookY + 40 && mouseY <= bookY + 56) {
-            if (green_apple) {
-                graphics.setTooltipForNextFrame(font,
-                        List.of(Component.literal("Green Apple"),
-                                Component.literal("This apple, when you eat it, "),
-                                Component.literal("will bring you good luck :3")),
-                        Optional.empty(), mouseX, mouseY);
-            } else {
-                graphics.setTooltipForNextFrame(font,
-                        Component.literal("Undiscovered"), mouseX, mouseY);
-            }
-        }
-        // ------ Test_Apple ------
-        if (test_apple) {
-            graphics.item(new ItemStack(ModAppleFoodItems.TEST_APPLE), bookX + 80, bookY + 40);
-        } else {
-            graphics.blit(RenderPipelines.GUI_TEXTURED,
-                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
-                            "textures/gui/items/unknown_apple.png"),
-                    bookX + 80, bookY + 40, 0, 0, 16, 16, 16, 16);
-        }
-        if (mouseX >= bookX + 80 && mouseX <= bookX + 96
-                && mouseY >= bookY + 40 && mouseY <= bookY + 56) {
-            if (test_apple) {
-                graphics.setTooltipForNextFrame(font,
-                        List.of(Component.literal("Test_Apple"),
-                                Component.literal("This_Test_Apple")),
-                        Optional.empty(), mouseX, mouseY);
-            } else {
-                graphics.setTooltipForNextFrame(font,
-                        Component.literal("Undiscovered"), mouseX, mouseY);
-            }
-        }
-        // ------ Frosty Apple ------
-        if (frosty_apple) {
-            graphics.item(new ItemStack(ModAppleFoodItems.FROSTY_APPLE), bookX + 100, bookY + 40);
-        } else {
-            graphics.blit(RenderPipelines.GUI_TEXTURED,
-                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
-                            "textures/gui/items/unknown_frosty_apple.png"),
-                    bookX + 100, bookY + 40, 0, 0, 16, 16, 16, 16);
-        }
-        if (mouseX >= bookX + 100 && mouseX <= bookX + 116
-                && mouseY >= bookY + 40 && mouseY <= bookY + 56) {
-            if (frosty_apple) {
-                graphics.setTooltipForNextFrame(font,
-                        List.of(Component.literal("Frosty Apple"),
-                                Component.literal("if you eat it you got na FREEZING")),
-                        Optional.empty(), mouseX, mouseY);
-            } else {
-                graphics.setTooltipForNextFrame(font,
-                        Component.literal("Undiscovered"), mouseX, mouseY);
-            }
+                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, unknownTexture),
+                    bookX + ICON_X_right, y, 0, 0, 16, 16, 16, 16);
+            graphics.text(font, "Undiscovered", bookX + TEXT_X_right, y + 4, 0xFF888888, false);
         }
     }
 }
