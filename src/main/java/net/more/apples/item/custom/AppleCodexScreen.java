@@ -76,7 +76,8 @@ public class AppleCodexScreen extends Screen {
 
         // Next Page
         btnRight = new BookTextureButton(
-                bookX + BOOK_WIDTH - 20, bookY + BOOK_HEIGHT / 2 - 10,
+                bookX + BOOK_WIDTH - 20 + 10,
+                bookY + BOOK_HEIGHT / 2 - 20,
                 15, 21, BTN_RIGHT, BTN_RIGHT_HOVER,
                 () -> { if (currentPage < MAX_PAGE) currentPage++; }
         );
@@ -99,7 +100,8 @@ public class AppleCodexScreen extends Screen {
 
         // Previous Page
         btnLeft = new BookTextureButton(
-                bookX, bookY + BOOK_HEIGHT / 2 - 10,
+                bookX - 5,
+                bookY + BOOK_HEIGHT / 2 - 20,
                 15, 21, BTN_LEFT, BTN_LEFT_HOVER,
                 () -> { if (currentPage > 0) currentPage--; }
         );
@@ -123,7 +125,7 @@ public class AppleCodexScreen extends Screen {
         this.addRenderableWidget(new BookmarkButton(
                 bmX, bookY + 40,       // Biome bookmark ถัดลงมา
                 BM_BIOME, BM_BIOME_HOVER,
-                () -> currentPage = 6
+                () -> currentPage = 4
         ));
     }
 

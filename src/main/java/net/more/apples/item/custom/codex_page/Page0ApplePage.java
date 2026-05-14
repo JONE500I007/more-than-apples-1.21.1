@@ -35,13 +35,16 @@ public class Page0ApplePage implements CodexPage{
         y += LINE_HEIGHT + 4; // เว้นช่องว่างหลังชื่อ
 
         String[] leftLines = {
-                "This tome holds knowledge",
-                "of every apple discovered",
+                "This tome holds",
+                "knowledge",
+                "of every apple",
+                "discovered",
                 "across your journey.",
                 "",
                 "Explore the world,",
                 "collect rare apples,",
-                "and uncover their secrets.",
+                "and uncover their",
+                "secrets",
                 "",
                 "\u2014 Happy Exploring! \u2014"  // — Happy Exploring! —
         };

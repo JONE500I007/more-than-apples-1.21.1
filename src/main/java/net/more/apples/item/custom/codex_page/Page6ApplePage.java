@@ -18,6 +18,9 @@ public class Page6ApplePage implements CodexPage{
 
     private static final Identifier APPLE_GROVE_IMG = Identifier.fromNamespaceAndPath(
             MoreThanApples.MOD_ID, "textures/gui/image_biome/apple_grove.png");
+    private static final Identifier GOLDEN_APPLE_GROVE_IMG = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/image_biome/golden_apple_grove.png");
+
 
     private static final int IMG_WIDTH  = 109;
     private static final int IMG_HEIGHT = 58;
@@ -30,20 +33,41 @@ public class Page6ApplePage implements CodexPage{
 
         graphics.text(font, "All Apple Biome", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
-        boolean apple_grove = DiscoveryHelperBiomes.hasDiscovered("discover_biomes/discover_apple_grove");
+        boolean apple_grove = DiscoveryHelperBiomes.hasDiscovered(
+                "discover_biomes/discover_apple_grove");
+        boolean golden_apple_orchard = DiscoveryHelperBiomes.hasDiscovered(
+                "discover_biomes/discover_golden_apple_orchard");
 
         int y_leftpage = bookY + 40;
         int y_rightpage = bookY + 40;
 
         if (apple_grove) {
-            renderImage(graphics, font, bookX, y_leftpage,
+            renderImage_left(graphics, font, bookX, y_leftpage,
                     APPLE_GROVE_IMG, IMG_WIDTH, IMG_HEIGHT,
                     new Component[]{
-                            Component.literal("Apple Grove Biome."),
+                            Component.literal("Apple Orchard Biome."),
                             Component.literal("Rich with apple trees.")
                     });
         } else {
-            renderImage(graphics, font, bookX, y_leftpage,
+            renderImage_left(graphics, font, bookX, y_leftpage,
+                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                            "textures/gui/image_biome/unknown_apple_biome.png"),
+                    IMG_WIDTH, IMG_HEIGHT,
+                    new Component[]{
+                            Component.literal("???").withStyle(ChatFormatting.GRAY),
+                            Component.literal("Undiscovered Biome").withStyle(ChatFormatting.GRAY)
+                    });
+        }
+
+        if (golden_apple_orchard) {
+            renderImage_right(graphics, font, bookX, y_leftpage,
+                    GOLDEN_APPLE_GROVE_IMG, IMG_WIDTH, IMG_HEIGHT,
+                    new Component[]{
+                            Component.literal("Golden Apple Orchard Biome."),
+                            Component.literal("Rich with apple trees.")
+                    });
+        } else {
+            renderImage_right(graphics, font, bookX, y_leftpage,
                     Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                             "textures/gui/image_biome/unknown_apple_biome.png"),
                     IMG_WIDTH, IMG_HEIGHT,
@@ -55,10 +79,10 @@ public class Page6ApplePage implements CodexPage{
     }
 
     // helper method
-    private void renderImage(GuiGraphicsExtractor graphics, Font font,
-                             int bookX, int y,
-                             Identifier image, int imgW, int imgH,
-                             Component[] caption) {
+    private void renderImage_left(GuiGraphicsExtractor graphics, Font font,
+                                  int bookX, int y,
+                                  Identifier image, int imgW, int imgH,
+                                  Component[] caption) {
         graphics.blit(RenderPipelines.GUI_TEXTURED,
                 image,
                 bookX + ICON_X_left, y,
@@ -69,6 +93,24 @@ public class Page6ApplePage implements CodexPage{
         for (int i = 0; i < caption.length; i++) {
             graphics.text(font, caption[i],
                     bookX + ICON_X_left, y + imgH + 3 + (i * 9),
+                    0xFF888888, false);
+        }
+    }
+
+    private void renderImage_right(GuiGraphicsExtractor graphics, Font font,
+                                   int bookX, int y,
+                                   Identifier image, int imgW, int imgH,
+                                   Component[] caption) {
+        graphics.blit(RenderPipelines.GUI_TEXTURED,
+                image,
+                bookX + ICON_X_right, y,
+                0, 0,
+                imgW, imgH,
+                imgW, imgH);
+
+        for (int i = 0; i < caption.length; i++) {
+            graphics.text(font, caption[i],
+                    bookX + ICON_X_right, y + imgH + 3 + (i * 9),
                     0xFF888888, false);
         }
     }

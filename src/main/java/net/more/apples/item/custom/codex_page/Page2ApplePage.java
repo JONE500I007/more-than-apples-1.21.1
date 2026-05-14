@@ -65,7 +65,7 @@ public class Page2ApplePage implements CodexPage{
                 new ItemStack(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE),
                 Component.literal("Enchanted Netherite Apple").withStyle(ChatFormatting.LIGHT_PURPLE),
                 new Component[]{Component.literal("This for test")},
-                "textures/gui/items/unknown_frosty_apple.png");
+                "textures/gui/items/unknown_apple.png");
     }
 
     // helper method

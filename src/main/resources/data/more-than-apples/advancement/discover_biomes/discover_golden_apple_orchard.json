@@ -9,7 +9,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "biomes": "more-than-apples:apple_grove"
+                "biomes": "more-than-apples:golden_apple_orchard"
               }
             }
           }
