@@ -74,18 +74,18 @@ public class Page0ApplePage implements CodexPage{
         ry += LINE_HEIGHT + 4;
 
         String[] rightLines = {
-                "\u2767 Tap an item icon",       // ❧
+                "\u27A4 Tap an item icon",       // ➤
                 "  to reveal its name.",
                 "",
-                "\u2767 Gray icons mean",
+                "\u27A4 Gray icons mean",
                 "  the item is yet",
                 "  to be discovered.",
                 "",
-                "\u2767 Use the bookmarks",
+                "\u27A4 Use the bookmarks",
                 "  on the right to jump",
                 "  between categories.",
                 "",
-                "\u2767 New entries appear",
+                "\u27A4 New entries appear",
                 "  as you explore",
                 "  the world."
         };
@@ -93,7 +93,7 @@ public class Page0ApplePage implements CodexPage{
         for (String line : rightLines) {
             if (line.isEmpty()) {
                 ry += LINE_HEIGHT / 2;
-            } else if (line.startsWith("\u2767")) {
+            } else if (line.startsWith("\u27A4")) {
                 // บรรทัด bullet สีน้ำตาลเข้ม
                 graphics.text(font, line,
                         bookX + ICON_X_right, ry, 0xFF3B2A1A, false);

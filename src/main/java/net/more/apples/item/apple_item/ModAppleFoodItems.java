@@ -51,12 +51,14 @@ public class ModAppleFoodItems {
             Item::new, new Item.Properties()
                     .food(ModFoodProperties.NETHERITE_APPLE_FOOD)
                     .component(DataComponents.CONSUMABLE, ModFoodConEffects.NETHERITE_APPLE_EFFECT)
-                    .rarity(Rarity.RARE));
+                    .rarity(Rarity.RARE)
+                    .fireResistant());
     public static final Item ENCHANTED_NETHERITE_APPLE = registerItem("enchanted_netherite_apple",
             CustomEnchApple::new, new Item.Properties()
                     .food(ModFoodProperties.ENCHANTED_NETHERITE_APPLE_FOOD)
                     .component(DataComponents.CONSUMABLE, ModFoodConEffects.ENCHANTED_NETHERITE_APPLE_EFFECT)
-                    .rarity(Rarity.EPIC));
+                    .rarity(Rarity.EPIC)
+                    .fireResistant());
 
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {
         Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name))));

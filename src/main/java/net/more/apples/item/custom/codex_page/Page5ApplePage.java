@@ -9,17 +9,17 @@ import net.minecraft.resources.Identifier;
 import net.more.apples.MoreThanApples;
 import net.more.apples.util.discovery.DiscoveryHelperBiomes;
 
-public class Page6ApplePage implements CodexPage{
+public class Page5ApplePage implements CodexPage{
     private static final int ICON_X_left = 20;
     private static final int TEXT_X_left = 40;
 
     private static final int ICON_X_right = 125 + 20;
     private static final int TEXT_X_right = 125 + 40;
 
-    private static final Identifier APPLE_GROVE_IMG = Identifier.fromNamespaceAndPath(
-            MoreThanApples.MOD_ID, "textures/gui/image_biome/apple_grove.png");
-    private static final Identifier GOLDEN_APPLE_GROVE_IMG = Identifier.fromNamespaceAndPath(
-            MoreThanApples.MOD_ID, "textures/gui/image_biome/golden_apple_grove.png");
+    private static final Identifier FROSTY_APPLE = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/image_biome/frosty_apple.png");
+    private static final Identifier GOLDEN_APPLE_ORCHARD_IMG = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/image_biome/golden_apple_orchard.png");
 
 
     private static final int IMG_WIDTH  = 109;
@@ -31,21 +31,21 @@ public class Page6ApplePage implements CodexPage{
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        graphics.text(font, "All Apple Biome", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+        //graphics.text(font, "All Apple Biome", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
-        boolean apple_grove = DiscoveryHelperBiomes.hasDiscovered(
-                "discover_biomes/discover_apple_grove");
+        boolean frosty_apple = DiscoveryHelperBiomes.hasDiscovered(
+                "discover_biomes/discover_frosty_apple");
         boolean golden_apple_orchard = DiscoveryHelperBiomes.hasDiscovered(
                 "discover_biomes/discover_golden_apple_orchard");
 
         int y_leftpage = bookY + 40;
         int y_rightpage = bookY + 40;
 
-        if (apple_grove) {
+        if (frosty_apple) {
             renderImage_left(graphics, font, bookX, y_leftpage,
-                    APPLE_GROVE_IMG, IMG_WIDTH, IMG_HEIGHT,
+                    FROSTY_APPLE, IMG_WIDTH, IMG_HEIGHT,
                     new Component[]{
-                            Component.literal("Apple Orchard Biome."),
+                            Component.literal("Frosty Apple Biome."),
                             Component.literal("Rich with apple trees.")
                     });
         } else {
@@ -61,7 +61,7 @@ public class Page6ApplePage implements CodexPage{
 
         if (golden_apple_orchard) {
             renderImage_right(graphics, font, bookX, y_leftpage,
-                    GOLDEN_APPLE_GROVE_IMG, IMG_WIDTH, IMG_HEIGHT,
+                    GOLDEN_APPLE_ORCHARD_IMG, IMG_WIDTH, IMG_HEIGHT,
                     new Component[]{
                             Component.literal("Golden Apple Orchard Biome."),
                             Component.literal("Rich with apple trees.")

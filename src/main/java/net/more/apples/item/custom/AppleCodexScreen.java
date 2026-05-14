@@ -55,7 +55,8 @@ public class AppleCodexScreen extends Screen {
             new Page0ApplePage(),
             new Page1ApplePage(),
             new Page2ApplePage(),
-            new Page6ApplePage());
+            new Page4ApplePage(),
+            new Page5ApplePage());
 
     protected AppleCodexScreen(Component title) {
         super(title);
@@ -125,7 +126,7 @@ public class AppleCodexScreen extends Screen {
         this.addRenderableWidget(new BookmarkButton(
                 bmX, bookY + 40,       // Biome bookmark ถัดลงมา
                 BM_BIOME, BM_BIOME_HOVER,
-                () -> currentPage = 4
+                () -> currentPage = 3
         ));
     }
 
