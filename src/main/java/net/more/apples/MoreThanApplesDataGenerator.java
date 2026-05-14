@@ -41,6 +41,7 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.CONFIGURED_FEATURE, TestAppleTreeConfig::bootstrap);
 		registryBuilder.add(Registries.CONFIGURED_FEATURE, FrostyTreeConfig::bootstrap);
 		registryBuilder.add(Registries.CONFIGURED_FEATURE, GoldenDandeltioConfig::bootstrap);
+		registryBuilder.add(Registries.CONFIGURED_FEATURE, HugeAppleTreeConfig::bootstrap);
 
 		registryBuilder.add(Registries.PLACED_FEATURE, ApplePlacedFeature::boostrap);
 

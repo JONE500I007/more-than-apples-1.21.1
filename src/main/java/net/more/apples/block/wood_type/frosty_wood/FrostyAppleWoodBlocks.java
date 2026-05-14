@@ -48,6 +48,7 @@ public class FrostyAppleWoodBlocks {
                     registerIdBlock("frosty_apple_sapling", Blocks.OAK_SAPLING)));
 
 
+
     private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
         ResourceKey<Block> key = ResourceKey.create(
                 Registries.BLOCK,

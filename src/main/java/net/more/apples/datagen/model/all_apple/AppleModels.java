@@ -76,6 +76,10 @@ public final class AppleModels {
                 AppleWoodBlocks.GOLDEN_APPLE_SAPLING,
                 BlockModelGenerators.PlantType.NOT_TINTED
         );
+        generators.createCrossBlock(
+                AppleWoodBlocks.HUGE_APPLE_SAPLING,
+                BlockModelGenerators.PlantType.NOT_TINTED
+        );
 
         generators.createTrivialBlock(ModGeneralBlock.APPLE_BARREL,
                 TexturedModel.CUBE_TOP_BOTTOM.updateTexture((map) -> {

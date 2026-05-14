@@ -61,6 +61,11 @@ public class AppleWoodBlocks {
                     ModSaplingGenerators.GOLDEN_APPLE,
                     registerIdBlock("golden_apple_sapling", Blocks.OAK_SAPLING)));
 
+    public static final Block HUGE_APPLE_SAPLING = registerBlock("huge_apple_sapling",
+            properties -> new SaplingBlock(
+                    ModSaplingGenerators.HUGE_APPLE,
+                    registerIdBlock("huge_apple_sapling", Blocks.OAK_SAPLING)));
+
 
 
     private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
