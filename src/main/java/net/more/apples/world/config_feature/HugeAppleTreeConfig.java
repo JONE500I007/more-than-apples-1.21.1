@@ -44,8 +44,8 @@ public class HugeAppleTreeConfig {
                 BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
                 new HugeAppleTrunkPlacer(60, 20, 20),
                 twoLeavesProvider,
-                new HugeAppleFoliagePlacer(ConstantInt.of(5), ConstantInt.of(0), 5),
-                new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(4))
+                new HugeAppleFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 3),
+                new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(80))
         ).decorators(List.of(new BeehiveDecorator(0.1f))).build());
     }
 

@@ -58,4 +58,9 @@ public class HugeAppleFoliagePlacer extends FoliagePlacer {
         // ทรงกลมเหมือน FancyFoliagePlacer
         return Mth.square(dx + 0.5F) + Mth.square(dz + 0.5F) > currentRadius * currentRadius;
     }
+
+    @Override
+    public int foliageRadius(RandomSource random, int trunkHeight) {
+        return this.radius.sample(random);
+    }
 }

@@ -25,24 +25,37 @@ import java.util.function.BiConsumer;
 public class HugeAppleTrunkPlacer extends TrunkPlacer {
     public static final MapCodec<HugeAppleTrunkPlacer> CODEC =
             RecordCodecBuilder.mapCodec(i -> i.group(
-                    // ขยาย range จาก 32 เป็น 128 ได้เลย
-                    Codec.intRange(0, 128).fieldOf("base_height").forGetter(p -> p.baseHeight),
-                    Codec.intRange(0, 64).fieldOf("height_rand_a").forGetter(p -> p.heightRandA),
-                    Codec.intRange(0, 64).fieldOf("height_rand_b").forGetter(p -> p.heightRandB)
+                    Codec.intRange(0, 256).fieldOf("base_height").forGetter(p -> p.hugeHeight),
+                    Codec.intRange(0, 256).fieldOf("height_rand_a").forGetter(p -> p.hugeHeightRandA),
+                    Codec.intRange(0, 256).fieldOf("height_rand_b").forGetter(p -> p.hugeHeightRandB)
             ).apply(i, HugeAppleTrunkPlacer::new));
 
     private static final double TRUNK_HEIGHT_SCALE = 0.618;
     private static final double BRANCH_SLOPE = 0.381;
     private static final double BRANCH_LENGTH_MAGIC = 0.328;
 
-    public HugeAppleTrunkPlacer(int baseHeight, int heightRandA, int heightRandB) {
-        super(baseHeight, heightRandA, heightRandB);
+    private final int hugeHeight;
+    private final int hugeHeightRandA;
+    private final int hugeHeightRandB;
+
+    public HugeAppleTrunkPlacer(int hugeHeight, int hugeHeightRandA, int hugeHeightRandB) {
+        super(1, 0, 0); // ส่งค่าน้อยๆ ให้ parent เพื่อผ่าน validation
+        this.hugeHeight = hugeHeight;
+        this.hugeHeightRandA = hugeHeightRandA;
+        this.hugeHeightRandB = hugeHeightRandB;
+    }
+
+    private int getHugeTreeHeight(RandomSource random) {
+        return hugeHeight
+                + random.nextInt(hugeHeightRandA + 1)
+                + random.nextInt(hugeHeightRandB + 1);
     }
 
     @Override
     protected TrunkPlacerType<?> type() {
         return ModTrunkPlacerType.HUGE_APPLE_TRUNK_PLACER;
     }
+
 
     @Override
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(
@@ -54,6 +67,8 @@ public class HugeAppleTrunkPlacer extends TrunkPlacer {
             TreeConfiguration config) {
 
         // ── รากโคนต้น (แบบ DarkOak แต่ใหญ่กว่า) ──────────────────
+        int actualHeight = getHugeTreeHeight(random);
+
         BlockPos below = origin.below();
         placeBelowTrunkBlock(level, trunkSetter, random, below, config);
         placeBelowTrunkBlock(level, trunkSetter, random, below.east(), config);
@@ -63,21 +78,33 @@ public class HugeAppleTrunkPlacer extends TrunkPlacer {
         // รากยื่นออกมาจากโคน
         placeRoots(level, trunkSetter, random, origin, config);
 
-        // ── ลำต้นหลัก 2x2 ──────────────────────────────────────────
-        int trunkHeight = Mth.floor(treeHeight * TRUNK_HEIGHT_SCALE);
+        // ── ลำต้นหลัก 5x5 ──────────────────────────────────────────
+        int trunkHeight = Mth.floor(actualHeight * TRUNK_HEIGHT_SCALE);
 
         for (int y = 0; y < trunkHeight; y++) {
+
+            int size;
+            if (y < trunkHeight / 3) {
+                size = 2;
+            } else if (y < trunkHeight * 2 / 3) {
+                size = 1;
+            } else {
+                size = 0;
+            }
+
             BlockPos base = origin.above(y);
-            if (TreeFeature.isAirOrLeaves(level, base)) {
-                placeLog(level, trunkSetter, random, base, config);
-                placeLog(level, trunkSetter, random, base.east(), config);
-                placeLog(level, trunkSetter, random, base.south(), config);
-                placeLog(level, trunkSetter, random, base.east().south(), config);
+            for (int ox = -size; ox <= size; ox++) {
+                for (int oz = -size; oz <= size; oz++) {
+                    BlockPos pos = base.offset(ox, 0, oz);
+                    if (TreeFeature.isAirOrLeaves(level, pos)) {
+                        placeLog(level, trunkSetter, random, pos, config);
+                    }
+                }
             }
         }
 
         // ── กิ่งก้าน (แบบ FancyTrunkPlacer) ──────────────────────
-        int height = treeHeight + 2;
+        int height = actualHeight + 2;
         int clustersPerY = Math.min(2, Mth.floor(1.382 + Math.pow(1.0 * height / 13.0, 2.0)));
         int trunkTop = origin.getY() + trunkHeight;
         int relativeY = height - 5;
