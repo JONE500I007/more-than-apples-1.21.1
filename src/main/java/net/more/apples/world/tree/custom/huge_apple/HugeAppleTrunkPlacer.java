@@ -208,6 +208,30 @@ public class HugeAppleTrunkPlacer extends TrunkPlacer {
                         }
                     }
 
+                    // เมื่อถึงระดับ 1 block แล้ว ต่อหางออกไปอีก
+                    if (rootThickness == 1 && i == rootLength) {
+                        int tailLength = random.nextIntBetweenInclusive(4, 8);
+                        Direction tailDir = currentDir;
+
+                        for (int t = 1; t <= tailLength; t++) {
+                            // เลี้ยวบ้างเล็กน้อย
+                            if (random.nextFloat() < 0.3f) {
+                                tailDir = random.nextBoolean()
+                                        ? tailDir.getClockWise()
+                                        : tailDir.getCounterClockWise();
+                            }
+
+                            pos.move(tailDir);
+                            final Direction.Axis tailAxis = tailDir.getAxis();
+                            BlockPos tailPos = new BlockPos(pos.getX(), origin.getY(), pos.getZ());
+
+                            if (TreeFeature.isAirOrLeaves(level, tailPos)) {
+                                placeLog(level, trunkSetter, random, tailPos, config,
+                                        state -> state.setValue(RotatedPillarBlock.AXIS, tailAxis));
+                            }
+                        }
+                    }
+
 
                     if (i < rootLength / 2 && random.nextFloat() < 0.5f) {
                         BlockPos wide = pos.relative(currentDir.getClockWise()).immutable();
