@@ -163,46 +163,58 @@ public class HugeAppleTrunkPlacer extends TrunkPlacer {
                             TreeConfiguration config) {
 
         for (Direction dir : Direction.Plane.HORIZONTAL) {
-            int rootLength = random.nextIntBetweenInclusive(20, 35); // ยาวขึ้น
-            int startHeight = 0; // เริ่มที่ 3 block สูง
+            // สร้างราก 2-3 เส้นต่อทิศ
+            int rootCount = random.nextIntBetweenInclusive(2, 3);
+            for (int r = 0; r < rootCount; r++) {
 
-            BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(
-                    origin.getX(), origin.getY() + startHeight, origin.getZ());
+                int rootLength = random.nextIntBetweenInclusive(25, 40);
+                int startHeight = 3;
 
-            for (int i = 1; i <= rootLength; i++) {
-                // เลี้ยวไปเลี้ยวมา random
+                // offset เริ่มต้นให้แต่ละเส้นไม่ซ้อนกัน
+                int sideOffset = r - 1; // -1, 0, 1
+                BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(
+                        origin.getX() + dir.getClockWise().getStepX() * sideOffset,
+                        origin.getY() + startHeight,
+                        origin.getZ() + dir.getClockWise().getStepZ() * sideOffset);
+
                 Direction currentDir = dir;
-                if (i > 2 && random.nextFloat() < 0.3f) {
-                    currentDir = random.nextBoolean() ? dir.getClockWise() : dir.getCounterClockWise();
-                }
 
-                pos.move(currentDir);
-
-                // ยิ่งห่างจากต้น ยิ่งต่ำลง
-                float progress = (float) i / rootLength; // 0.0 ~ 1.0
-                int targetY = origin.getY() + Math.round(startHeight * (1.0f - progress));
-                pos.setY(targetY);
-
-                // วาง log แนวนอน
-                final Direction.Axis axis = currentDir.getAxis();
-
-                // ความสูงของรากที่จุดนั้น (เริ่ม 3 ลดเหลือ 1)
-                int rootThickness = Math.max(1, Math.round(startHeight * (1.0f - progress)));
-
-                for (int h = 0; h < rootThickness; h++) {
-                    BlockPos placePos = pos.above(h).immutable();
-                    if (TreeFeature.isAirOrLeaves(level, placePos)) {
-                        placeLog(level, trunkSetter, random, placePos, config,
-                                state -> state.setValue(RotatedPillarBlock.AXIS, axis));
+                for (int i = 1; i <= rootLength; i++) {
+                    // เลี้ยวบ่อย
+                    float chance = random.nextFloat();
+                    if (i > 1) {
+                        if (chance < 0.4f) {
+                            currentDir = currentDir.getClockWise();
+                        } else if (chance < 0.7f) {
+                            currentDir = currentDir.getCounterClockWise();
+                        }
                     }
-                }
 
-                // กว้าง 2 block บางส่วน
-                if (i < rootLength / 2 && random.nextFloat() < 0.5f) {
-                    BlockPos wide = pos.relative(dir.getClockWise()).immutable();
-                    if (TreeFeature.isAirOrLeaves(level, wide)) {
-                        placeLog(level, trunkSetter, random, wide, config,
-                                state -> state.setValue(RotatedPillarBlock.AXIS, axis));
+                    pos.move(currentDir);
+
+                    float progress = (float) i / rootLength;
+                    int targetY = origin.getY() + Math.round(startHeight * (1.0f - progress));
+                    pos.setY(targetY);
+
+                    final Direction.Axis axis = currentDir.getAxis();
+                    int rootThickness = Math.max(1, Math.round(startHeight * (1.0f - progress)));
+
+                    // วาด block จากพื้นขึ้นไปแค่ rootThickness block
+                    for (int h = 0; h < rootThickness; h++) {
+                        BlockPos placePos = new BlockPos(pos.getX(), origin.getY() + h, pos.getZ());
+                        if (TreeFeature.isAirOrLeaves(level, placePos)) {
+                            placeLog(level, trunkSetter, random, placePos, config,
+                                    state -> state.setValue(RotatedPillarBlock.AXIS, axis));
+                        }
+                    }
+
+
+                    if (i < rootLength / 2 && random.nextFloat() < 0.5f) {
+                        BlockPos wide = pos.relative(currentDir.getClockWise()).immutable();
+                        if (TreeFeature.isAirOrLeaves(level, wide)) {
+                            placeLog(level, trunkSetter, random, wide, config,
+                                    state -> state.setValue(RotatedPillarBlock.AXIS, axis));
+                        }
                     }
                 }
             }
