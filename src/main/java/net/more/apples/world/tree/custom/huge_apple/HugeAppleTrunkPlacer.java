@@ -66,46 +66,33 @@ public class HugeAppleTrunkPlacer extends TrunkPlacer {
             BlockPos origin,
             TreeConfiguration config) {
 
-        // ── รากโคนต้น (แบบ DarkOak แต่ใหญ่กว่า) ──────────────────
         int actualHeight = getHugeTreeHeight(random);
-
-        BlockPos below = origin.below();
-        placeBelowTrunkBlock(level, trunkSetter, random, below, config);
-        placeBelowTrunkBlock(level, trunkSetter, random, below.east(), config);
-        placeBelowTrunkBlock(level, trunkSetter, random, below.south(), config);
-        placeBelowTrunkBlock(level, trunkSetter, random, below.south().east(), config);
-
-        // รากยื่นออกมาจากโคน
-        placeRoots(level, trunkSetter, random, origin, config);
-
-        // ── ลำต้นหลัก 5x5 ──────────────────────────────────────────
         int trunkHeight = Mth.floor(actualHeight * TRUNK_HEIGHT_SCALE);
 
+        // ── รากโคนต้น ──────────────────────────────────────────────
+        placeBelowTrunkBlock(level, trunkSetter, random, origin.below(), config);
+        placeRoots(level, trunkSetter, random, origin, config);
+
+        // ── ลำต้น เริ่ม 5x3 ค่อยๆ เรียวขึ้น ──────────────────────
         for (int y = 0; y < trunkHeight; y++) {
-
-            int size;
-            if (y < trunkHeight / 3) {
-                size = 2;
-            } else if (y < trunkHeight * 2 / 3) {
-                size = 1;
-            } else {
-                size = 0;
-            }
-
             BlockPos base = origin.above(y);
-            for (int ox = -size; ox <= size; ox++) {
-                for (int oz = -size; oz <= size; oz++) {
-                    BlockPos pos = base.offset(ox, 0, oz);
-                    if (TreeFeature.isAirOrLeaves(level, pos)) {
-                        placeLog(level, trunkSetter, random, pos, config);
-                    }
-                }
+
+            if (y < trunkHeight / 3) {
+                // โคน: cross 5x5
+                placeCross(level, trunkSetter, random, base, config, 2);
+            } else if (y < trunkHeight * 2 / 3) {
+                // กลาง: cross 3x3
+                placeCross(level, trunkSetter, random, base, config, 1);
+            } else {
+                // ยอด: 1x1
+                if (TreeFeature.isAirOrLeaves(level, base))
+                    placeLog(level, trunkSetter, random, base, config);
             }
         }
 
-        // ── กิ่งก้าน (แบบ FancyTrunkPlacer) ──────────────────────
+        // ── กิ่งก้าน ────────────────────────────────────────────────
         int height = actualHeight + 2;
-        int clustersPerY = Math.min(2, Mth.floor(1.382 + Math.pow(1.0 * height / 13.0, 2.0)));
+        int clustersPerY = Math.min(3, Mth.floor(1.382 + Math.pow(1.0 * height / 13.0, 2.0)));
         int trunkTop = origin.getY() + trunkHeight;
         int relativeY = height - 5;
 
@@ -117,8 +104,7 @@ public class HugeAppleTrunkPlacer extends TrunkPlacer {
             if (shape < 0.0F) continue;
 
             for (int i = 0; i < clustersPerY; i++) {
-                // scale radius ขึ้น 1.5x เพื่อให้กิ่งแผ่กว้างกว่า vanilla
-                double radius = 1.5 * shape * (random.nextFloat() + BRANCH_LENGTH_MAGIC);
+                double radius = 1.7 * shape * (random.nextFloat() + BRANCH_LENGTH_MAGIC);
                 double angle = random.nextFloat() * 2.0F * Math.PI;
                 double x = radius * Math.sin(angle) + 0.5;
                 double z = radius * Math.cos(angle) + 0.5;
@@ -153,42 +139,70 @@ public class HugeAppleTrunkPlacer extends TrunkPlacer {
         return attachments;
     }
 
+    private void placeCross(WorldGenLevel level, BiConsumer<BlockPos, BlockState> trunkSetter,
+                            RandomSource random, BlockPos center,
+                            TreeConfiguration config, int size) {
+        // วาง core กลาง
+        for (int ox = -size; ox <= size; ox++) {
+            for (int oz = -size; oz <= size; oz++) {
+                // เอาแค่แนว + ออกไป ตัดมุมออก
+                if (Math.abs(ox) <= 1 || Math.abs(oz) <= 1) {
+                    BlockPos pos = center.offset(ox, 0, oz);
+                    if (TreeFeature.isAirOrLeaves(level, pos))
+                        placeLog(level, trunkSetter, random, pos, config);
+                }
+            }
+        }
+    }
+
     // ── รากยื่นออกมาจากโคน ──────────────────────────────────────
     private void placeRoots(WorldGenLevel level,
                             BiConsumer<BlockPos, BlockState> trunkSetter,
                             RandomSource random,
                             BlockPos origin,
                             TreeConfiguration config) {
-        // วนรอบทิศทาง รากยื่นออกไป 2-4 block
+
         for (Direction dir : Direction.Plane.HORIZONTAL) {
-            int rootLength = random.nextIntBetweenInclusive(2, 4);
+            int rootLength = random.nextIntBetweenInclusive(20, 35); // ยาวขึ้น
+            int startHeight = 0; // เริ่มที่ 3 block สูง
+
+            BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(
+                    origin.getX(), origin.getY() + startHeight, origin.getZ());
 
             for (int i = 1; i <= rootLength; i++) {
-                BlockPos rootPos = origin.relative(dir, i);
-                // รากจะค่อยๆ ลงต่ำ
-                int rootY = -Math.max(0, i - 1);
-                BlockPos finalPos = rootPos.above(rootY);
-
-                if (TreeFeature.isAirOrLeaves(level, finalPos)) {
-                    placeLog(level, trunkSetter, random, finalPos, config,
-                            state -> state.setValue(RotatedPillarBlock.AXIS, dir.getAxis()));
+                // เลี้ยวไปเลี้ยวมา random
+                Direction currentDir = dir;
+                if (i > 2 && random.nextFloat() < 0.3f) {
+                    currentDir = random.nextBoolean() ? dir.getClockWise() : dir.getCounterClockWise();
                 }
-            }
-        }
 
-        // รากแนวทแยง
-        for (int ox = -1; ox <= 2; ox++) {
-            for (int oz = -1; oz <= 2; oz++) {
-                if ((ox < 0 || ox > 1 || oz < 0 || oz > 1) && random.nextInt(3) <= 1) {
-                    int length = random.nextInt(3) + 1;
-                    for (int i = 0; i < length; i++) {
-                        BlockPos rootPos = new BlockPos(
-                                origin.getX() + ox,
-                                origin.getY() - i,
-                                origin.getZ() + oz);
-                        if (TreeFeature.isAirOrLeaves(level, rootPos)) {
-                            placeLog(level, trunkSetter, random, rootPos, config);
-                        }
+                pos.move(currentDir);
+
+                // ยิ่งห่างจากต้น ยิ่งต่ำลง
+                float progress = (float) i / rootLength; // 0.0 ~ 1.0
+                int targetY = origin.getY() + Math.round(startHeight * (1.0f - progress));
+                pos.setY(targetY);
+
+                // วาง log แนวนอน
+                final Direction.Axis axis = currentDir.getAxis();
+
+                // ความสูงของรากที่จุดนั้น (เริ่ม 3 ลดเหลือ 1)
+                int rootThickness = Math.max(1, Math.round(startHeight * (1.0f - progress)));
+
+                for (int h = 0; h < rootThickness; h++) {
+                    BlockPos placePos = pos.above(h).immutable();
+                    if (TreeFeature.isAirOrLeaves(level, placePos)) {
+                        placeLog(level, trunkSetter, random, placePos, config,
+                                state -> state.setValue(RotatedPillarBlock.AXIS, axis));
+                    }
+                }
+
+                // กว้าง 2 block บางส่วน
+                if (i < rootLength / 2 && random.nextFloat() < 0.5f) {
+                    BlockPos wide = pos.relative(dir.getClockWise()).immutable();
+                    if (TreeFeature.isAirOrLeaves(level, wide)) {
+                        placeLog(level, trunkSetter, random, wide, config,
+                                state -> state.setValue(RotatedPillarBlock.AXIS, axis));
                     }
                 }
             }
@@ -208,15 +222,28 @@ public class HugeAppleTrunkPlacer extends TrunkPlacer {
         float dz = (float) delta.getZ() / steps;
 
         for (int i = 0; i <= steps; i++) {
-            BlockPos pos = startPos.offset(
+            BlockPos center = startPos.offset(
                     Mth.floor(0.5F + i * dx),
                     Mth.floor(0.5F + i * dy),
                     Mth.floor(0.5F + i * dz));
+
             if (doPlace) {
-                placeLog(level, trunkSetter, random, pos, config,
-                        state -> state.trySetValue(RotatedPillarBlock.AXIS,
-                                getLogAxis(startPos, pos)));
-            } else if (!isFree(level, pos)) {
+                Direction.Axis axis = getLogAxis(startPos, center);
+                placeLog(level, trunkSetter, random, center, config,
+                        state -> state.trySetValue(RotatedPillarBlock.AXIS, axis));
+
+                // กิ่งหนา 2 block ตามแกนที่ตั้งฉาก
+                BlockPos extra = axis == Direction.Axis.X
+                        ? center.south()
+                        : axis == Direction.Axis.Z
+                          ? center.east()
+                          : center.east(); // แนวตั้ง
+
+                if (TreeFeature.isAirOrLeaves(level, extra)) {
+                    placeLog(level, trunkSetter, random, extra, config,
+                            state -> state.trySetValue(RotatedPillarBlock.AXIS, axis));
+                }
+            } else if (!isFree(level, center)) {
                 return false;
             }
         }

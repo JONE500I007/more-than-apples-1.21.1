@@ -15,7 +15,7 @@ import net.more.apples.world.tree.ModFoliagePlacerType;
 public class HugeAppleFoliagePlacer extends FoliagePlacer {
     public static final MapCodec<HugeAppleFoliagePlacer> CODEC =
             RecordCodecBuilder.mapCodec(i -> foliagePlacerParts(i)
-                    .and(Codec.intRange(0, 16).fieldOf("height").forGetter(p -> p.height))
+                    .and(Codec.intRange(0, 128).fieldOf("height").forGetter(p -> p.height)) // ขยาย limit
                     .apply(i, HugeAppleFoliagePlacer::new));
 
     private final int height;
@@ -39,9 +39,16 @@ public class HugeAppleFoliagePlacer extends FoliagePlacer {
         boolean giant = attachment.doubleTrunk();
 
         for (int yo = offset; yo >= offset - foliageHeight; yo--) {
-            // radius ใหญ่กว่า FancyFoliagePlacer
-            int currentRadius = leafRadius + attachment.radiusOffset()
-                    + (yo != offset && yo != offset - foliageHeight ? 2 : 0);
+            int layer = offset - yo;
+            float progress = (float) layer / Math.max(1, foliageHeight);
+
+            // ทรงกลมรี ใหญ่กลาง เล็กบนล่าง
+            int currentRadius = Math.round(
+                    leafRadius * (float) Math.sin(Math.PI * progress)
+                            + leafRadius * 0.5f  // minimum radius
+                            + attachment.radiusOffset()
+            );
+
             placeLeavesRow(level, foliageSetter, random, config,
                     attachment.pos(), currentRadius, yo, giant);
         }
@@ -53,14 +60,13 @@ public class HugeAppleFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    protected boolean shouldSkipLocation(RandomSource random, int dx, int y, int dz,
-                                         int currentRadius, boolean doubleTrunk) {
-        // ทรงกลมเหมือน FancyFoliagePlacer
-        return Mth.square(dx + 0.5F) + Mth.square(dz + 0.5F) > currentRadius * currentRadius;
+    public int foliageRadius(RandomSource random, int trunkHeight) {
+        return this.radius.sample(random);
     }
 
     @Override
-    public int foliageRadius(RandomSource random, int trunkHeight) {
-        return this.radius.sample(random);
+    protected boolean shouldSkipLocation(RandomSource random, int dx, int y, int dz,
+                                         int currentRadius, boolean doubleTrunk) {
+        return Mth.square(dx + 0.5F) + Mth.square(dz + 0.5F) > currentRadius * currentRadius;
     }
 }

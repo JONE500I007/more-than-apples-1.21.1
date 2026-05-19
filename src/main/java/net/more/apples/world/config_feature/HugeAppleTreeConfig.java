@@ -42,11 +42,11 @@ public class HugeAppleTreeConfig {
 
         registerTreeConfig(context, HUGE_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
-                new HugeAppleTrunkPlacer(60, 20, 20),
+                new HugeAppleTrunkPlacer(30, 8, 7),
                 twoLeavesProvider,
-                new HugeAppleFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 3),
-                new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(80))
-        ).decorators(List.of(new BeehiveDecorator(0.1f))).build());
+                new HugeAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
+                new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(30)))
+                .build());
     }
 
 

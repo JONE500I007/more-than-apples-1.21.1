@@ -21,17 +21,12 @@
         }
       ]
     },
-    "decorators": [
-      {
-        "type": "minecraft:beehive",
-        "probability": 0.1
-      }
-    ],
+    "decorators": [],
     "foliage_placer": {
       "type": "minecraft:huge_apple_foliage_placer",
-      "height": 3,
-      "offset": 0,
-      "radius": 3
+      "height": 6,
+      "offset": 4,
+      "radius": 4
     },
     "foliage_provider": {
       "type": "minecraft:weighted_state_provider",
@@ -65,14 +60,14 @@
       "type": "minecraft:two_layers_feature_size",
       "limit": 2,
       "lower_size": 0,
-      "min_clipped_height": 80,
+      "min_clipped_height": 30,
       "upper_size": 2
     },
     "trunk_placer": {
       "type": "minecraft:huge_apple_trunk_placer",
-      "base_height": 60,
-      "height_rand_a": 20,
-      "height_rand_b": 20
+      "base_height": 30,
+      "height_rand_a": 8,
+      "height_rand_b": 7
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
