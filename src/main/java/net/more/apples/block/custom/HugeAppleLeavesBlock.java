@@ -3,15 +3,15 @@ package net.more.apples.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,6 +21,10 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.OptionalInt;
 
 public abstract class HugeAppleLeavesBlock extends Block implements SimpleWaterloggedBlock {
 
@@ -95,7 +99,9 @@ public abstract class HugeAppleLeavesBlock extends Block implements SimpleWaterl
 
     private static int getDistanceAt(BlockState state) {
         if (state.is(BlockTags.PREVENTS_NEARBY_LEAF_DECAY)) return 0;
-        return state.hasProperty(DISTANCE) ? state.getValue(DISTANCE) : DECAY_DISTANCE;
+        if (state.hasProperty(DISTANCE)) return state.getValue(DISTANCE);
+        if (state.hasProperty(LeavesBlock.DISTANCE)) return state.getValue(LeavesBlock.DISTANCE);
+        return DECAY_DISTANCE;
     }
 
     @Override
@@ -112,5 +118,59 @@ public abstract class HugeAppleLeavesBlock extends Block implements SimpleWaterl
         return updateDistance(state, context.getLevel(), context.getClickedPos());
     }
 
+    private static boolean cutoutLeaves = true;
 
+    public static void setCutoutLeaves(boolean cutoutLeaves) {
+        HugeAppleLeavesBlock.cutoutLeaves = cutoutLeaves;
+    }
+
+    @Override
+    protected boolean skipRendering(BlockState state, BlockState neighborState, Direction direction) {
+        if (!cutoutLeaves && (neighborState.getBlock() instanceof HugeAppleLeavesBlock
+                || neighborState.getBlock() instanceof LeavesBlock)) {
+            return true;
+        }
+        return super.skipRendering(state, neighborState, direction);
+    }
+
+    @Override
+    protected VoxelShape getBlockSupportShape(BlockState state, BlockGetter level, BlockPos pos) {
+        return Shapes.empty();
+    }
+
+    @Override
+    protected int getLightDampening(BlockState state) {
+        return 1;
+    }
+
+    @Override
+    protected FluidState getFluidState(BlockState state) {
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+    }
+
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        super.animateTick(state, level, pos, random);
+        BlockPos below = pos.below();
+        BlockState belowState = level.getBlockState(below);
+        // dripping water
+        if (level.isRainingAt(pos.above())) {
+            if (random.nextInt(15) == 1) {
+                if (!belowState.canOcclude() || !belowState.isFaceSturdy(level, below, Direction.UP)) {
+                    ParticleUtils.spawnParticleBelow(level, pos, random, ParticleTypes.DRIPPING_WATER);
+                }
+            }
+        }
+        // falling leaves
+        if (!(random.nextFloat() >= this.leafParticleChance)) {
+            if (!isFaceFull(belowState.getCollisionShape(level, below), Direction.UP)) {
+                this.spawnFallingLeavesParticle(level, pos, random);
+            }
+        }
+    }
+
+    public static OptionalInt getOptionalDistanceAt(BlockState state) {
+        if (state.is(BlockTags.PREVENTS_NEARBY_LEAF_DECAY)) return OptionalInt.of(0);
+        return state.hasProperty(DISTANCE) ? OptionalInt.of(state.getValue(DISTANCE)) : OptionalInt.empty();
+    }
 }

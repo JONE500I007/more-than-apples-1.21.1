@@ -50,5 +50,10 @@ public final class BlockTagsPr {
 
                 // Frosty Apple Leaves
                 FrostyAppleWoodBlocks.FROSTY_APPLE_LEAVES);
+
+        provider.addToTag(BlockTags.PREVENTS_NEARBY_LEAF_DECAY,
+                // Apple Leaves
+                AppleWoodBlocks.APPLE_LEAVES,
+                AppleWoodBlocks.FRUIT_APPLE_LEAVES);
     }
 }

@@ -35,7 +35,7 @@
           "data": {
             "Name": "more-than-apples:apple_leaves",
             "Properties": {
-              "distance": "7",
+              "distance": "64",
               "persistent": "false",
               "waterlogged": "false"
             }
@@ -46,7 +46,7 @@
           "data": {
             "Name": "more-than-apples:fruit_apple_leaves",
             "Properties": {
-              "distance": "7",
+              "distance": "64",
               "persistent": "false",
               "waterlogged": "false"
             }
