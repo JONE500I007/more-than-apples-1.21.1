@@ -26,9 +26,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.OptionalInt;
 
-public abstract class HugeAppleLeavesBlock extends Block implements SimpleWaterloggedBlock {
+public abstract class AncientAppleLeavesBlock extends Block implements SimpleWaterloggedBlock {
 
-    public abstract MapCodec<? extends HugeAppleLeavesBlock> codec();
+    public abstract MapCodec<? extends AncientAppleLeavesBlock> codec();
     // เปลี่ยนจาก 7 เป็น 64
 
     public static final int DECAY_DISTANCE = 64;
@@ -37,7 +37,7 @@ public abstract class HugeAppleLeavesBlock extends Block implements SimpleWaterl
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected final float leafParticleChance;
 
-    public HugeAppleLeavesBlock(float leafParticleChance, BlockBehaviour.Properties properties) {
+    public AncientAppleLeavesBlock(float leafParticleChance, BlockBehaviour.Properties properties) {
         super(properties);
         this.leafParticleChance = leafParticleChance; // เพิ่มบรรทัดนี้
         this.registerDefaultState(this.stateDefinition.any()
@@ -121,12 +121,12 @@ public abstract class HugeAppleLeavesBlock extends Block implements SimpleWaterl
     private static boolean cutoutLeaves = true;
 
     public static void setCutoutLeaves(boolean cutoutLeaves) {
-        HugeAppleLeavesBlock.cutoutLeaves = cutoutLeaves;
+        AncientAppleLeavesBlock.cutoutLeaves = cutoutLeaves;
     }
 
     @Override
     protected boolean skipRendering(BlockState state, BlockState neighborState, Direction direction) {
-        if (!cutoutLeaves && (neighborState.getBlock() instanceof HugeAppleLeavesBlock
+        if (!cutoutLeaves && (neighborState.getBlock() instanceof AncientAppleLeavesBlock
                 || neighborState.getBlock() instanceof LeavesBlock)) {
             return true;
         }

@@ -9,9 +9,8 @@ import net.minecraft.util.ExtraCodecs;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.LeavesBlock;
 
-public class AppleLeavesBlock extends HugeAppleLeavesBlock {
+public class AppleLeavesBlock extends AncientAppleLeavesBlock {
 
     public static final MapCodec<AppleLeavesBlock> CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
             ExtraCodecs.floatRange(0.0F, 1.0F).fieldOf("leaf_particle_chance").forGetter(e -> e.leafParticleChance),

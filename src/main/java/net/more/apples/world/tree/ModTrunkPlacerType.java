@@ -14,8 +14,8 @@ public class ModTrunkPlacerType {
     public static final TrunkPlacerType<?> TEST_TRUNK_PLACER =
             TrunkPlacerTypeInvoker.callRegister("test_apple_trunk_placer", TestAppleTrunkPlacer.CODEC);
 
-    public static final TrunkPlacerType<?> HUGE_APPLE_TRUNK_PLACER =
-            TrunkPlacerTypeInvoker.callRegister("huge_apple_trunk_placer", AncientAppleTrunkPlacer.CODEC);
+    public static final TrunkPlacerType<?> ANCIENT_APPLE_TRUNK_PLACER =
+            TrunkPlacerTypeInvoker.callRegister("ancient_apple_trunk_placer", AncientAppleTrunkPlacer.CODEC);
 
     public static void register() {
         MoreThanApples.LOGGER.info("Registering Trunk Placer for" + MoreThanApples.MOD_ID);

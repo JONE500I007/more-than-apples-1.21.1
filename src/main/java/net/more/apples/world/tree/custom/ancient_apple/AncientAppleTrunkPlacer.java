@@ -53,7 +53,7 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
 
     @Override
     protected TrunkPlacerType<?> type() {
-        return ModTrunkPlacerType.HUGE_APPLE_TRUNK_PLACER;
+        return ModTrunkPlacerType.ANCIENT_APPLE_TRUNK_PLACER;
     }
 
 
