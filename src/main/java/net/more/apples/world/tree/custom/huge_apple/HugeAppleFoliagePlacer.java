@@ -6,6 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.util.valueproviders.IntProviders;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
@@ -14,9 +15,11 @@ import net.more.apples.world.tree.ModFoliagePlacerType;
 
 public class HugeAppleFoliagePlacer extends FoliagePlacer {
     public static final MapCodec<HugeAppleFoliagePlacer> CODEC =
-            RecordCodecBuilder.mapCodec(i -> foliagePlacerParts(i)
-                    .and(Codec.intRange(0, 128).fieldOf("height").forGetter(p -> p.height)) // ขยาย limit
-                    .apply(i, HugeAppleFoliagePlacer::new));
+            RecordCodecBuilder.mapCodec(i -> i.group(
+                    IntProviders.codec(0, 256).fieldOf("radius").forGetter(p -> p.radius),
+                    IntProviders.codec(0, 256).fieldOf("offset").forGetter(p -> p.offset),
+                    Codec.intRange(0, 256).fieldOf("height").forGetter(p -> p.height)
+            ).apply(i, HugeAppleFoliagePlacer::new));
 
     private final int height;
 

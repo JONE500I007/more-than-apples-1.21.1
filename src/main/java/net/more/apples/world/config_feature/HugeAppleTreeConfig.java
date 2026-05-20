@@ -45,7 +45,7 @@ public class HugeAppleTreeConfig {
                 new HugeAppleTrunkPlacer(30, 8, 7),
                 twoLeavesProvider,
                 new HugeAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
-                new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(30)))
+                new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(20)))
                 .build());
     }
 
