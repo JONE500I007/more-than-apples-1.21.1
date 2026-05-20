@@ -1,4 +1,4 @@
-package net.more.apples.world.tree.custom.huge_apple;
+package net.more.apples.world.tree.custom.ancient_apple;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -13,17 +13,17 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.more.apples.world.tree.ModFoliagePlacerType;
 
-public class HugeAppleFoliagePlacer extends FoliagePlacer {
-    public static final MapCodec<HugeAppleFoliagePlacer> CODEC =
+public class AncientAppleFoliagePlacer extends FoliagePlacer {
+    public static final MapCodec<AncientAppleFoliagePlacer> CODEC =
             RecordCodecBuilder.mapCodec(i -> i.group(
                     IntProviders.codec(0, 256).fieldOf("radius").forGetter(p -> p.radius),
                     IntProviders.codec(0, 256).fieldOf("offset").forGetter(p -> p.offset),
                     Codec.intRange(0, 256).fieldOf("height").forGetter(p -> p.height)
-            ).apply(i, HugeAppleFoliagePlacer::new));
+            ).apply(i, AncientAppleFoliagePlacer::new));
 
     private final int height;
 
-    public HugeAppleFoliagePlacer(IntProvider radius, IntProvider offset, int height) {
+    public AncientAppleFoliagePlacer(IntProvider radius, IntProvider offset, int height) {
         super(radius, offset);
         this.height = height;
     }

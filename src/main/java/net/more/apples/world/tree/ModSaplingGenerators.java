@@ -4,7 +4,7 @@ import net.minecraft.world.level.block.grower.TreeGrower;
 import net.more.apples.MoreThanApples;
 import net.more.apples.world.config_feature.AppleTreeConfig;
 import net.more.apples.world.config_feature.FrostyTreeConfig;
-import net.more.apples.world.config_feature.HugeAppleTreeConfig;
+import net.more.apples.world.config_feature.AncientAppleTreeConfig;
 import net.more.apples.world.config_feature.TestAppleTreeConfig;
 
 import java.util.Optional;
@@ -41,6 +41,6 @@ public class ModSaplingGenerators {
     public static final TreeGrower HUGE_APPLE = new TreeGrower(
             MoreThanApples.MOD_ID + "huge_apple",
             Optional.empty(),
-            Optional.of(HugeAppleTreeConfig.HUGE_APPLE_KEY),
+            Optional.of(AncientAppleTreeConfig.ANCIENT_APPLE_KEY),
             Optional.empty());
 }

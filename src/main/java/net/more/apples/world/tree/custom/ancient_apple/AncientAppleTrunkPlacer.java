@@ -1,4 +1,4 @@
-package net.more.apples.world.tree.custom.huge_apple;
+package net.more.apples.world.tree.custom.ancient_apple;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -22,13 +22,13 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.BiConsumer;
 
-public class HugeAppleTrunkPlacer extends TrunkPlacer {
-    public static final MapCodec<HugeAppleTrunkPlacer> CODEC =
+public class AncientAppleTrunkPlacer extends TrunkPlacer {
+    public static final MapCodec<AncientAppleTrunkPlacer> CODEC =
             RecordCodecBuilder.mapCodec(i -> i.group(
                     Codec.intRange(0, 256).fieldOf("base_height").forGetter(p -> p.hugeHeight),
                     Codec.intRange(0, 256).fieldOf("height_rand_a").forGetter(p -> p.hugeHeightRandA),
                     Codec.intRange(0, 256).fieldOf("height_rand_b").forGetter(p -> p.hugeHeightRandB)
-            ).apply(i, HugeAppleTrunkPlacer::new));
+            ).apply(i, AncientAppleTrunkPlacer::new));
 
     private static final double TRUNK_HEIGHT_SCALE = 0.618;
     private static final double BRANCH_SLOPE = 0.381;
@@ -38,7 +38,7 @@ public class HugeAppleTrunkPlacer extends TrunkPlacer {
     private final int hugeHeightRandA;
     private final int hugeHeightRandB;
 
-    public HugeAppleTrunkPlacer(int hugeHeight, int hugeHeightRandA, int hugeHeightRandB) {
+    public AncientAppleTrunkPlacer(int hugeHeight, int hugeHeightRandA, int hugeHeightRandB) {
         super(1, 0, 0); // ส่งค่าน้อยๆ ให้ parent เพื่อผ่าน validation
         this.hugeHeight = hugeHeight;
         this.hugeHeightRandA = hugeHeightRandA;

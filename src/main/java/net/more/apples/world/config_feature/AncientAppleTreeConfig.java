@@ -12,24 +12,18 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
-import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
-import net.more.apples.world.tree.custom.huge_apple.HugeAppleFoliagePlacer;
-import net.more.apples.world.tree.custom.huge_apple.HugeAppleTrunkPlacer;
+import net.more.apples.world.tree.custom.ancient_apple.AncientAppleFoliagePlacer;
+import net.more.apples.world.tree.custom.ancient_apple.AncientAppleTrunkPlacer;
 
-import java.util.List;
 import java.util.OptionalInt;
 
-public class HugeAppleTreeConfig {
+public class AncientAppleTreeConfig {
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_APPLE_KEY = registryTreeKey("huge_apple_key");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_APPLE_KEY = registryTreeKey("ancient_apple_key");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -40,11 +34,11 @@ public class HugeAppleTreeConfig {
                         .build()
         );
 
-        registerTreeConfig(context, HUGE_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        registerTreeConfig(context, ANCIENT_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
-                new HugeAppleTrunkPlacer(30, 8, 7),
+                new AncientAppleTrunkPlacer(30, 8, 7),
                 twoLeavesProvider,
-                new HugeAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
+                new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
                 new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(20)))
                 .build());
     }

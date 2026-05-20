@@ -1,4 +1,4 @@
-package net.more.apples.world.biome.biomes_regions.apple_biome;
+package net.more.apples.world.biome.biomes_regions.ancient_apple;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -25,14 +25,16 @@ import java.util.List;
 import java.util.Optional;
 
 import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.*;
+import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.UNDERGROUND_DECORATION;
+import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.UNDERGROUND_ORES;
+import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.VEGETAL_DECORATION;
 
-public class AppleGroveBiome {
-    public static final ResourceKey<Biome> APPLE_GROVE = ResourceKey.create(Registries.BIOME,
-            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_grove"));
-
+public class AncientAppleBiome {
+    public static final ResourceKey<Biome> ANCIENT_APPLE_WILDS = ResourceKey.create(Registries.BIOME,
+            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "ancient_apple_wilds"));
 
     public static void boostrap(BootstrapContext<Biome> context) {
-        context.register(APPLE_GROVE, applegBiome(context));
+        context.register(ANCIENT_APPLE_WILDS, applegBiome(context));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
@@ -53,7 +55,7 @@ public class AppleGroveBiome {
 
         builder.addFeature(UNDERGROUND_DECORATION, CavePlacements.UNDERWATER_MAGMA);
         builder.addFeature(VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
-        builder.addFeature(VEGETAL_DECORATION, CavePlacements.CAVE_VINES);
+        //builder.addFeature(VEGETAL_DECORATION, CavePlacements.CAVE_VINES);
 
     }
 
@@ -125,7 +127,7 @@ public class AppleGroveBiome {
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_IRON_MIDDLE);
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_IRON_SMALL);
 
-        //biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_GOLD_EXTRA);
+
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_GOLD);
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_GOLD_LOWER);
 
@@ -144,7 +146,7 @@ public class AppleGroveBiome {
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_COPPER);
         biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_COPPER_LARGE);
 
-        //biomeBuilder.addFeature(UNDERGROUND_ORES, OrePlacements.ORE_EMERALD);
+
 
         biomeBuilder.addFeature(UNDERGROUND_DECORATION, OrePlacements.ORE_DIRT);
         biomeBuilder.addFeature(UNDERGROUND_DECORATION, OrePlacements.ORE_GRAVEL);
@@ -155,31 +157,20 @@ public class AppleGroveBiome {
         biomeBuilder.addFeature(UNDERGROUND_DECORATION, OrePlacements.ORE_ANDESITE_UPPER);
         biomeBuilder.addFeature(UNDERGROUND_DECORATION, OrePlacements.ORE_ANDESITE_LOWER);
         biomeBuilder.addFeature(UNDERGROUND_DECORATION, OrePlacements.ORE_TUFF);
-        //DefaultBiomeFeatures.addExtraGoldOre(biomeBuilder);
 
-        //biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
+
         biomeBuilder.addFeature(VEGETAL_DECORATION,
                 ApplePlacedFeature.APPLE_TREE_PLACED_KEY);
         biomeBuilder.addFeature(VEGETAL_DECORATION,
                 ApplePlacedFeature.LARGE_APPLE_TREE_PLACED_KEY);
-        /*
-        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                ModPlacedFeatures.EXTRA_FLOWERS_PLACED_KEY);
 
-         */
 
-        //DefaultBiomeFeatures.addPlainsTallGrass(biomeBuilder);
-        //DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
-        //DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
-        //DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-        //DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
         biomeBuilder.addFeature(
                 VEGETAL_DECORATION,
                 VegetationPlacements.PATCH_GRASS_PLAIN);
         biomeBuilder.addFeature(
                 VEGETAL_DECORATION,
                 VegetationPlacements.FLOWER_MEADOW);
-//        DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
 
 
         biomeBuilder.addFeature(
@@ -210,13 +201,11 @@ public class AppleGroveBiome {
                 AquaticPlacements.SEAGRASS_RIVER);
 
 
-//        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-//        DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
-                .downfall(0.4f)
-                .temperature(0.55f)
+                .downfall(0.35f)
+                .temperature(0.35f)
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
 
@@ -229,7 +218,7 @@ public class AppleGroveBiome {
                         Optional.of(AmbientMoodSettings.LEGACY_CAVE_SETTINGS),
                         List.of()))
                 .setAttribute(EnvironmentAttributes.BACKGROUND_MUSIC,
-                        new BackgroundMusic(SoundEvents.MUSIC_BIOME_MEADOW))
+                        new BackgroundMusic(SoundEvents.MUSIC_BIOME_CHERRY_GROVE))
                 .specialEffects((new BiomeSpecialEffects.Builder())
                         .waterColor(0x3F76E4)
                         .grassColorOverride(0x91BD59)
