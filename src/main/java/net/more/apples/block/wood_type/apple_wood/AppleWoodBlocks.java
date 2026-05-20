@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.custom.AppleLeavesBlock;
 import net.more.apples.world.tree.ModSaplingGenerators;
 
 import java.util.function.Function;
@@ -35,7 +36,7 @@ public class AppleWoodBlocks {
                     registerIdBlock("apple_planks", Blocks.OAK_PLANKS)));
 
     public static final Block APPLE_LEAVES  = registerBlock("apple_leaves",
-            properties -> new UntintedParticleLeavesBlock(
+            properties -> new AppleLeavesBlock(
                     0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F),
                     registerIdBlock("apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block FRUIT_APPLE_LEAVES = registerBlock("fruit_apple_leaves",
