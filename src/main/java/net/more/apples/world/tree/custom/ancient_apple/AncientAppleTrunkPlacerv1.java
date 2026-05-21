@@ -23,13 +23,13 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.BiConsumer;
 
-public class AncientAppleTrunkPlacer extends TrunkPlacer {
-    public static final MapCodec<AncientAppleTrunkPlacer> CODEC =
+public class AncientAppleTrunkPlacerv1 extends TrunkPlacer {
+    public static final MapCodec<AncientAppleTrunkPlacerv1> CODEC =
             RecordCodecBuilder.mapCodec(i -> i.group(
                     Codec.intRange(0, 256).fieldOf("base_height").forGetter(p -> p.hugeHeight),
                     Codec.intRange(0, 256).fieldOf("height_rand_a").forGetter(p -> p.hugeHeightRandA),
                     Codec.intRange(0, 256).fieldOf("height_rand_b").forGetter(p -> p.hugeHeightRandB)
-            ).apply(i, AncientAppleTrunkPlacer::new));
+            ).apply(i, AncientAppleTrunkPlacerv1::new));
 
     private static final double TRUNK_HEIGHT_SCALE = 0.618;
     private static final double BRANCH_SLOPE = 0.381;
@@ -39,7 +39,7 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
     private final int hugeHeightRandA;
     private final int hugeHeightRandB;
 
-    public AncientAppleTrunkPlacer(int hugeHeight, int hugeHeightRandA, int hugeHeightRandB) {
+    public AncientAppleTrunkPlacerv1(int hugeHeight, int hugeHeightRandA, int hugeHeightRandB) {
         super(1, 0, 0); // ส่งค่าน้อยๆ ให้ parent เพื่อผ่าน validation
         this.hugeHeight = hugeHeight;
         this.hugeHeightRandA = hugeHeightRandA;
@@ -213,9 +213,19 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
 
                     BlockPos checkBelow = new BlockPos(pos.getX(), origin.getY() - 1, pos.getZ());
                     if (level.getBlockState(checkBelow).isAir()) {
-                        dropAndSpreadRoots(level, trunkSetter, random,
-                                new BlockPos(pos.getX(), origin.getY(), pos.getZ()),
-                                origin, config, random.nextIntBetweenInclusive(10, 30));
+                        // หาพื้นจริงๆ แล้ววาง log ลงไปอย่างน้อย 3 block
+                        int dropDepth = 10;
+                        for (int d = 1; d <= dropDepth; d++) {
+                            BlockPos dropPos = new BlockPos(pos.getX(), origin.getY() - d, pos.getZ());
+                            if (level.getBlockState(dropPos).isAir()
+                                    || level.getBlockState(dropPos).is(BlockTags.REPLACEABLE)
+                                    || level.getBlockState(dropPos).is(BlockTags.FLOWERS)) {
+                                placeLog(level, trunkSetter, random, dropPos, config,
+                                        state -> state.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y));
+                            } else {
+                                break; // เจอ solid block หยุด
+                            }
+                        }
                     }
 
                     // เมื่อถึงระดับ 1 block แล้ว ต่อหางออกไปอีก
@@ -242,9 +252,18 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
 
                             BlockPos tailCheckBelow = new BlockPos(tailPos.getX(), origin.getY() - 1, tailPos.getZ());
                             if (level.getBlockState(tailCheckBelow).isAir()) {
-                                dropAndSpreadRoots(level, trunkSetter, random,
-                                        new BlockPos(tailPos.getX(), origin.getY(), tailPos.getZ()),
-                                        origin, config, random.nextIntBetweenInclusive(10, 30));
+                                int dropDepth = 10;
+                                for (int d = 1; d <= dropDepth; d++) {
+                                    BlockPos dropPos = new BlockPos(tailPos.getX(), origin.getY() - d, tailPos.getZ());
+                                    if (level.getBlockState(dropPos).isAir()
+                                            || level.getBlockState(dropPos).is(BlockTags.REPLACEABLE)
+                                            || level.getBlockState(dropPos).is(BlockTags.FLOWERS)){
+                                        placeLog(level, trunkSetter, random, dropPos, config,
+                                                state -> state.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y));
+                                    } else {
+                                        break;
+                                    }
+                                }
                             }
                         }
                     }
@@ -261,60 +280,19 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
 
                         BlockPos wideCheckBelow = new BlockPos(wide.getX(), origin.getY() - 1, wide.getZ());
                         if (level.getBlockState(wideCheckBelow).isAir()) {
-                            dropAndSpreadRoots(level, trunkSetter, random,
-                                    new BlockPos(wide.getX(), origin.getY(), wide.getZ()),
-                                    origin, config, random.nextIntBetweenInclusive(10, 30));
+                            int dropDepth = 10;
+                            for (int d = 1; d <= dropDepth; d++) {
+                                BlockPos dropPos = new BlockPos(wide.getX(), origin.getY() - d, wide.getZ());
+                                if (level.getBlockState(dropPos).isAir()
+                                        || level.getBlockState(dropPos).is(BlockTags.REPLACEABLE)) {
+                                    placeLog(level, trunkSetter, random, dropPos, config,
+                                            state -> state.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y));
+                                } else {
+                                    break;
+                                }
+                            }
                         }
                     }
-                }
-            }
-        }
-    }
-
-    private void dropAndSpreadRoots(WorldGenLevel level, BiConsumer<BlockPos, BlockState> trunkSetter,
-                                    RandomSource random, BlockPos startPos, BlockPos origin,
-                                    TreeConfiguration config, int dropDepth) {
-
-        BlockPos groundPos = null;
-
-        for (int d = 1; d <= dropDepth; d++) {
-            BlockPos dropPos = new BlockPos(startPos.getX(), startPos.getY() - d, startPos.getZ());
-            BlockState state = level.getBlockState(dropPos);
-
-            if (state.isAir() || state.is(BlockTags.REPLACEABLE) || state.is(BlockTags.FLOWERS)) {
-                placeLog(level, trunkSetter, random, dropPos, config,
-                        state2 -> state2.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y));
-                groundPos = dropPos; // อัพเดทตลอด แต่ยังไม่แผ่
-            } else {
-                // เจอ solid block = ถึงพื้นจริงๆ แล้ว
-                // groundPos คือ block สุดท้ายที่วางได้ (ก่อนเจอ solid)
-                break;
-            }
-        }
-
-        // แผ่รากเฉพาะตอนที่ถึงพื้นจริงๆ เท่านั้น
-        // คือ groundPos ต้องมี solid block อยู่ข้างล่าง
-        if (groundPos != null && !level.getBlockState(groundPos.below()).isAir()) {
-            int spreadLength = random.nextIntBetweenInclusive(3, 6);
-            Direction spreadDir = Direction.Plane.HORIZONTAL.getRandomDirection(random);
-            BlockPos.MutableBlockPos spreadPos = groundPos.mutable();
-
-            for (int s = 1; s <= spreadLength; s++) {
-                if (random.nextFloat() < 0.3f) {
-                    spreadDir = random.nextBoolean()
-                            ? spreadDir.getClockWise()
-                            : spreadDir.getCounterClockWise();
-                }
-
-                spreadPos.move(spreadDir);
-                final Direction.Axis spreadAxis = spreadDir.getAxis();
-                BlockPos immutableSpread = spreadPos.immutable();
-
-                if (level.getBlockState(immutableSpread).isAir()
-                        || level.getBlockState(immutableSpread).is(BlockTags.REPLACEABLE)
-                        || level.getBlockState(immutableSpread).is(BlockTags.FLOWERS)) {
-                    placeLog(level, trunkSetter, random, immutableSpread, config,
-                            state -> state.setValue(RotatedPillarBlock.AXIS, spreadAxis));
                 }
             }
         }
