@@ -5,6 +5,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.resources.Identifier;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
@@ -73,14 +74,19 @@ public final class AncientAppleModels {
                 AncientAppleWoodBlocks.ANCIENT_APPLE_SAPLING,
                 BlockModelGenerators.PlantType.NOT_TINTED
         );
-        // block model + blockstate
-//        generators.createTrivialBlock(
-//                AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES, TexturedModel.LEAVES);
 
-        // item model with tint
+
+        Identifier model = TexturedModel.LEAVES.create(
+                AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES, generators.modelOutput);
+
+        generators.blockStateOutput.accept(
+                BlockModelGenerators.createSimpleBlock(
+                        AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES,
+                        BlockModelGenerators.plainVariant(model)));
+
         generators.registerSimpleTintedItemModel(
                 AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES,
-                TexturedModel.LEAVES.create(AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES, generators.modelOutput),
+                model,
                 new GrassColorSource());
     }
 
