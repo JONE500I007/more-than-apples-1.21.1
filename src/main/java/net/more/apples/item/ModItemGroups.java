@@ -9,6 +9,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.general_block.ModGeneralBlock;
 import net.more.apples.block.ore_block.ModBlockOre;
+import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
+import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
@@ -16,6 +18,7 @@ import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
+import net.more.apples.item.apple_wood_item.AncientAppleWoodItem;
 import net.more.apples.item.apple_wood_item.AppleWoodItem;
 import net.more.apples.item.apple_wood_item.FrostyAppleWoodItem;
 import net.more.apples.item.apple_wood_item.TestAppleWoodItem;
@@ -118,6 +121,30 @@ public class ModItemGroups {
 
                         entries.accept(FrostyAppleWoodBlocks.FROSTY_APPLE_LEAVES);
                         entries.accept(FrostyAppleWoodBlocks.FROSTY_APPLE_SAPLING);
+
+
+                        entries.accept(AncientAppleWoodBlocks.ANCIENT_APPLE_LOG);
+                        entries.accept(AncientAppleWoodBlocks.ANCIENT_APPLE_WOOD);
+                        entries.accept(AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_LOG);
+                        entries.accept(AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_WOOD);
+                        entries.accept(AncientAppleWoodBlocks.ANCIENT_APPLE_PLANKS);
+
+                        entries.accept(AncientAppleWoodVariants.ANCIENT_APPLE_STAIRS);
+                        entries.accept(AncientAppleWoodVariants.ANCIENT_APPLE_SLAB);
+                        entries.accept(AncientAppleWoodVariants.ANCIENT_APPLE_FENCE);
+                        entries.accept(AncientAppleWoodVariants.ANCIENT_APPLE_FENCE_GATE);
+                        entries.accept(AncientAppleWoodVariants.ANCIENT_APPLE_DOOR);
+                        entries.accept(AncientAppleWoodVariants.ANCIENT_APPLE_TRAPDOOR);
+                        entries.accept(AncientAppleWoodVariants.ANCIENT_APPLE_PRESSURE_PLATE);
+                        entries.accept(AncientAppleWoodVariants.ANCIENT_APPLE_BUTTON);
+                        entries.accept(AncientAppleWoodVariants.ANCIENT_APPLE_SHELF);
+                        entries.accept(AncientAppleWoodItem.ANCIENT_APPLE_SIGN);
+                        entries.accept(AncientAppleWoodItem.ANCIENT_APPLE_HANGING_SIGN);
+                        entries.accept(AncientAppleWoodItem.ANCIENT_APPLE_BOAT);
+                        entries.accept(AncientAppleWoodItem.ANCIENT_APPLE_CHEST_BOAT);
+
+                        entries.accept(AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES);
+                        entries.accept(AncientAppleWoodBlocks.ANCIENT_APPLE_SAPLING);
 
                         entries.accept(ModGeneralBlock.APPLE_BARREL);
 

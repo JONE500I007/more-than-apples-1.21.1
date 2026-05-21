@@ -159,6 +159,10 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
     protected int getLightDampening(BlockState state) {
         return 1;
     }
+    @Override
+    protected boolean propagatesSkylightDown(BlockState state) {
+        return true; // แสงผ่านทะลุได้
+    }
 
     @Override
     protected FluidState getFluidState(BlockState state) {

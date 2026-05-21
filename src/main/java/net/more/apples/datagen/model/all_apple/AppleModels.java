@@ -7,6 +7,7 @@ import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.data.models.model.TexturedModel;
 import net.more.apples.block.general_block.ModGeneralBlock;
+import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.datagen.provider.ModModelProvider;
@@ -74,10 +75,6 @@ public final class AppleModels {
         );
         generators.createCrossBlock(
                 AppleWoodBlocks.GOLDEN_APPLE_SAPLING,
-                BlockModelGenerators.PlantType.NOT_TINTED
-        );
-        generators.createCrossBlock(
-                AppleWoodBlocks.ANCIENT_APPLE_SAPLING,
                 BlockModelGenerators.PlantType.NOT_TINTED
         );
 

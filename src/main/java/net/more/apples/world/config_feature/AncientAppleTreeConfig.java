@@ -16,9 +16,12 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 import net.more.apples.world.tree.custom.ancient_apple.AncientAppleFoliagePlacer;
 import net.more.apples.world.tree.custom.ancient_apple.AncientAppleTrunkPlacer;
 import net.more.apples.world.tree.custom.ancient_apple.AncientAppleTrunkPlacerv1;
+import net.more.apples.world.tree.custom.frosty_tree.FrostyAppleFoliagePlacer;
+import net.more.apples.world.tree.custom.frosty_tree.FrostyAppleTrunkPlacer;
 
 import java.util.OptionalInt;
 
@@ -28,20 +31,30 @@ public class AncientAppleTreeConfig {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
-        WeightedStateProvider twoLeavesProvider = new WeightedStateProvider(
-                WeightedList.<BlockState>builder()
-                        .add(AppleWoodBlocks.APPLE_LEAVES.defaultBlockState(), 5)
-                        .add(AppleWoodBlocks.FRUIT_APPLE_LEAVES.defaultBlockState(), 1)
-                        .build()
-        );
+//        WeightedStateProvider twoLeavesProvider = new WeightedStateProvider(
+//                WeightedList.<BlockState>builder()
+//                        .add(AppleWoodBlocks.APPLE_LEAVES.defaultBlockState(), 5)
+//                        .add(AppleWoodBlocks.FRUIT_APPLE_LEAVES.defaultBlockState(), 1)
+//                        .build()
+//        );
+//
+//        registerTreeConfig(context, ANCIENT_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+//                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
+//                new AncientAppleTrunkPlacer(30, 8, 7),
+//                twoLeavesProvider,
+//                new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
+//                new TwoLayersFeatureSize(7, 7, 7, OptionalInt.of(32)))
+//                .build());
 
         registerTreeConfig(context, ANCIENT_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
                 new AncientAppleTrunkPlacer(30, 8, 7),
-                twoLeavesProvider,
+
+                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LEAVES),
                 new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
                 new TwoLayersFeatureSize(7, 7, 7, OptionalInt.of(32)))
                 .build());
+
     }
 
 

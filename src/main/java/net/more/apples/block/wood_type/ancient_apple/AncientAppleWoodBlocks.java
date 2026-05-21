@@ -1,4 +1,4 @@
-package net.more.apples.block.wood_type.apple_wood;
+package net.more.apples.block.wood_type.ancient_apple;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ColorParticleOption;
@@ -12,56 +12,38 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.custom.AppleLeavesBlock;
+import net.more.apples.particle.ModParticle;
 import net.more.apples.world.tree.ModSaplingGenerators;
 
 import java.util.function.Function;
 
-public class AppleWoodBlocks {
-    public static final Block APPLE_LOG = registerBlock("apple_log",
+public class AncientAppleWoodBlocks {
+    public static final Block ANCIENT_APPLE_LOG = registerBlock("ancient_apple_log",
             properties -> new RotatedPillarBlock(
-                    registerIdBlock("apple_log", Blocks.OAK_LOG)));
-    public static final Block APPLE_WOOD = registerBlock("apple_wood",
+                    registerIdBlock("ancient_apple_log", Blocks.OAK_LOG)));
+    public static final Block ANCIENT_APPLE_WOOD = registerBlock("ancient_apple_wood",
             properties -> new RotatedPillarBlock(
-                    registerIdBlock("apple_wood", Blocks.OAK_WOOD)));
-    public static final Block STRIPPED_APPLE_LOG = registerBlock("stripped_apple_log",
+                    registerIdBlock("ancient_apple_wood", Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_ANCIENT_APPLE_LOG = registerBlock("stripped_ancient_apple_log",
             properties -> new RotatedPillarBlock(
-                    registerIdBlock("stripped_apple_log", Blocks.STRIPPED_OAK_LOG)));
-    public static final Block STRIPPED_APPLE_WOOD = registerBlock("stripped_apple_wood",
+                    registerIdBlock("stripped_ancient_apple_log", Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_ANCIENT_APPLE_WOOD = registerBlock("stripped_ancient_apple_wood",
             properties -> new RotatedPillarBlock(
-                    registerIdBlock("stripped_apple_wood", Blocks.STRIPPED_OAK_WOOD)));
+                    registerIdBlock("stripped_ancient_apple_wood", Blocks.STRIPPED_OAK_WOOD)));
 
-    public static final Block APPLE_PLANKS = registerBlock("apple_planks",
+    public static final Block ANCIENT_APPLE_PLANKS = registerBlock("ancient_apple_planks",
             properties -> new Block(
-                    registerIdBlock("apple_planks", Blocks.OAK_PLANKS)));
+                    registerIdBlock("ancient_apple_planks", Blocks.OAK_PLANKS)));
 
-    public static final Block APPLE_LEAVES  = registerBlock("apple_leaves",
-            properties -> new UntintedParticleLeavesBlock(
+    public static final Block ANCIENT_APPLE_LEAVES  = registerBlock("ancient_apple_leaves",
+            properties -> new AppleLeavesBlock(
                     0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F),
                     registerIdBlock("apple_leaves", Blocks.OAK_LEAVES)));
-    public static final Block FRUIT_APPLE_LEAVES = registerBlock("fruit_apple_leaves",
-            properties -> new UntintedParticleLeavesBlock(
-                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F),
-                    registerIdBlock("fruit_apple_leaves", Blocks.OAK_LEAVES)));
-    public static final Block APPLE_SAPLING = registerBlock("apple_sapling",
+    public static final Block ANCIENT_APPLE_SAPLING = registerBlock("ancient_apple_sapling",
             properties -> new SaplingBlock(
-                    ModSaplingGenerators.APPLE,
-                    registerIdBlock("apple_sapling", Blocks.OAK_SAPLING)));
-
-
-    public static final Block GOLDEN_APPLE_LEAVES  = registerBlock("golden_apple_leaves",
-            properties -> new UntintedParticleLeavesBlock(
-                    0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
-                    registerIdBlock("golden_apple_leaves", Blocks.OAK_LEAVES)));
-    public static final Block FRUIT_GOLDEN_APPLE_LEAVES = registerBlock("fruit_golden_apple_leaves",
-            properties -> new UntintedParticleLeavesBlock(
-                    0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
-                    registerIdBlock("fruit_golden_apple_leaves", Blocks.OAK_LEAVES)));
-    public static final Block GOLDEN_APPLE_SAPLING = registerBlock("golden_apple_sapling",
-            properties -> new SaplingBlock(
-                    ModSaplingGenerators.GOLDEN_APPLE,
-                    registerIdBlock("golden_apple_sapling", Blocks.OAK_SAPLING)));
-
-
+                    ModSaplingGenerators.ANCIENT_APPLE,
+                    registerIdBlock("ancient_apple_sapling", Blocks.OAK_SAPLING)));
 
     private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
         ResourceKey<Block> key = ResourceKey.create(
@@ -94,7 +76,7 @@ public class AppleWoodBlocks {
                         .setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name)))));
     }
 
-    public static void registerAppleWoodBlock() {
+    public static void registerTestAppleWoodBlock() {
         MoreThanApples.LOGGER.info("Registering Mod Blocks " + MoreThanApples.MOD_ID);
     }
 }
