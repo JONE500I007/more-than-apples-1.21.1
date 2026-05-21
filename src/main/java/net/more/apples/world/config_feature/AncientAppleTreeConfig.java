@@ -39,7 +39,7 @@ public class AncientAppleTreeConfig {
                 new AncientAppleTrunkPlacer(30, 8, 7),
                 twoLeavesProvider,
                 new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
-                new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(20)))
+                new TwoLayersFeatureSize(7, 7, 7, OptionalInt.of(32)))
                 .build());
     }
 

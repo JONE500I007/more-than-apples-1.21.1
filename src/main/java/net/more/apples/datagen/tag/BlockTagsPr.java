@@ -53,7 +53,6 @@ public final class BlockTagsPr {
 
         provider.addToTag(BlockTags.PREVENTS_NEARBY_LEAF_DECAY,
                 // Apple Leaves
-                AppleWoodBlocks.APPLE_LEAVES,
-                AppleWoodBlocks.FRUIT_APPLE_LEAVES);
+                AppleWoodBlocks.APPLE_LOG);
     }
 }

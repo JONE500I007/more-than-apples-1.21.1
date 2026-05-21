@@ -23,7 +23,7 @@
     },
     "decorators": [],
     "foliage_placer": {
-      "type": "minecraft:huge_apple_foliage_placer",
+      "type": "minecraft:ancient_apple_foliage_placer",
       "height": 6,
       "offset": 4,
       "radius": 4
@@ -58,13 +58,13 @@
     "ignore_vines": false,
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",
-      "limit": 2,
-      "lower_size": 0,
-      "min_clipped_height": 20,
-      "upper_size": 2
+      "limit": 7,
+      "lower_size": 7,
+      "min_clipped_height": 32,
+      "upper_size": 7
     },
     "trunk_placer": {
-      "type": "minecraft:huge_apple_trunk_placer",
+      "type": "minecraft:ancient_apple_trunk_placer",
       "base_height": 30,
       "height_rand_a": 8,
       "height_rand_b": 7

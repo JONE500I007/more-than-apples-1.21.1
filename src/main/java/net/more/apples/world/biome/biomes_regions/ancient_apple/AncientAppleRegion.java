@@ -29,7 +29,7 @@ public class AncientAppleRegion extends Region {
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.NEUTRAL))
                 .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.DRY, ParameterUtils.Humidity.NEUTRAL))
                 .continentalness(ParameterUtils.Continentalness.MID_INLAND, ParameterUtils.Continentalness.INLAND)
-                .erosion(Climate.Parameter.span(1.0F, 1.0F))
+                .erosion(Climate.Parameter.span(0.05F, 1.0F))
                 .depth(Climate.Parameter.span(-1.0F, 1.0F))
                 .weirdness(ParameterUtils.Weirdness.PEAK_VARIANT, ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_DESCENDING)
                 .build().forEach(point -> builder.add(point, ANCIENT_APPLE_WILDS));

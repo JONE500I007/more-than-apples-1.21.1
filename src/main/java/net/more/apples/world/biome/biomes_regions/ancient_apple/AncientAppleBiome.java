@@ -175,7 +175,7 @@ public class AncientAppleBiome {
 
         biomeBuilder.addFeature(
                 VEGETAL_DECORATION,
-                VegetationPlacements.PATCH_LEAF_LITTER);
+                VegetationPlacements.WILDFLOWERS_MEADOW);
 
         biomeBuilder.addFeature(
                 UNDERGROUND_DECORATION,

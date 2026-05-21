@@ -30,7 +30,7 @@ public class AncientAppleFoliagePlacer extends FoliagePlacer {
 
     @Override
     protected FoliagePlacerType<?> type() {
-        return ModFoliagePlacerType.HUGE_APPLE_FOLIAGE_PLACER;
+        return ModFoliagePlacerType.ANCIENT_APPLE_FOLIAGE_PLACER;
     }
 
     @Override

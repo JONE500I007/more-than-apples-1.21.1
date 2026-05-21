@@ -38,8 +38,8 @@ public class ModSaplingGenerators {
             Optional.of(FrostyTreeConfig.FROSTY_APPLE_TREE_KEY),
             Optional.empty());
 
-    public static final TreeGrower HUGE_APPLE = new TreeGrower(
-            MoreThanApples.MOD_ID + "huge_apple",
+    public static final TreeGrower ANCIENT_APPLE = new TreeGrower(
+            MoreThanApples.MOD_ID + "ancient_apple",
             Optional.empty(),
             Optional.of(AncientAppleTreeConfig.ANCIENT_APPLE_KEY),
             Optional.empty());

@@ -12,7 +12,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.more.apples.MoreThanApples;
-import net.more.apples.block.custom.AppleLeavesBlock;
 import net.more.apples.world.tree.ModSaplingGenerators;
 
 import java.util.function.Function;
@@ -62,10 +61,10 @@ public class AppleWoodBlocks {
                     ModSaplingGenerators.GOLDEN_APPLE,
                     registerIdBlock("golden_apple_sapling", Blocks.OAK_SAPLING)));
 
-    public static final Block HUGE_APPLE_SAPLING = registerBlock("huge_apple_sapling",
+    public static final Block ANCIENT_APPLE_SAPLING = registerBlock("ancient_apple_sapling",
             properties -> new SaplingBlock(
-                    ModSaplingGenerators.HUGE_APPLE,
-                    registerIdBlock("huge_apple_sapling", Blocks.OAK_SAPLING)));
+                    ModSaplingGenerators.ANCIENT_APPLE,
+                    registerIdBlock("ancient_apple_sapling", Blocks.OAK_SAPLING)));
 
 
 

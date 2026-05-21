@@ -77,7 +77,7 @@ public final class AppleModels {
                 BlockModelGenerators.PlantType.NOT_TINTED
         );
         generators.createCrossBlock(
-                AppleWoodBlocks.HUGE_APPLE_SAPLING,
+                AppleWoodBlocks.ANCIENT_APPLE_SAPLING,
                 BlockModelGenerators.PlantType.NOT_TINTED
         );
 
