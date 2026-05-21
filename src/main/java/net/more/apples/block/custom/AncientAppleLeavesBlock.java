@@ -29,7 +29,7 @@ import java.util.OptionalInt;
 public abstract class AncientAppleLeavesBlock extends Block implements SimpleWaterloggedBlock {
 
     public abstract MapCodec<? extends AncientAppleLeavesBlock> codec();
-    // เปลี่ยนจาก 7 เป็น 64
+
 
     public static final int DECAY_DISTANCE = 12;
     public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 12);
@@ -39,7 +39,7 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
 
     public AncientAppleLeavesBlock(float leafParticleChance, BlockBehaviour.Properties properties) {
         super(properties);
-        this.leafParticleChance = leafParticleChance; // เพิ่มบรรทัดนี้
+        this.leafParticleChance = leafParticleChance;
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(DISTANCE, 12)
                 .setValue(PERSISTENT, false)
