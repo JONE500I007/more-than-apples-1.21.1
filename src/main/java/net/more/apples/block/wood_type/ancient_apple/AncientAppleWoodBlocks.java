@@ -38,7 +38,7 @@ public class AncientAppleWoodBlocks {
     public static final Block ANCIENT_APPLE_LEAVES  = registerBlock("ancient_apple_leaves",
             properties -> new AppleLeavesBlock(
                     0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F),
-                    registerIdBlock("apple_leaves", Blocks.OAK_LEAVES)));
+                    registerIdBlock("ancient_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block ANCIENT_APPLE_SAPLING = registerBlock("ancient_apple_sapling",
             properties -> new SaplingBlock(
                     ModSaplingGenerators.ANCIENT_APPLE,

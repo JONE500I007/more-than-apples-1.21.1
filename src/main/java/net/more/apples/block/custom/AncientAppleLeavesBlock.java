@@ -31,8 +31,8 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
     public abstract MapCodec<? extends AncientAppleLeavesBlock> codec();
 
 
-    public static final int DECAY_DISTANCE = 12;
-    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 12);
+    public static final int DECAY_DISTANCE = 18;
+    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 18);
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected final float leafParticleChance;
@@ -41,7 +41,7 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
         super(properties);
         this.leafParticleChance = leafParticleChance;
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(DISTANCE, 12)
+                .setValue(DISTANCE, 18)
                 .setValue(PERSISTENT, false)
                 .setValue(WATERLOGGED, false));
     }
@@ -157,11 +157,12 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
 
     @Override
     protected int getLightDampening(BlockState state) {
-        return 1;
+        //return 1;
+        return 0;
     }
     @Override
     protected boolean propagatesSkylightDown(BlockState state) {
-        return true; // แสงผ่านทะลุได้
+        return true;
     }
 
     @Override
