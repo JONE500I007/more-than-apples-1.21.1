@@ -2,6 +2,7 @@ package net.more.apples.mod_initializer;
 
 import net.fabricmc.api.ModInitializer;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
+import net.more.apples.item.apple_wood_item.AncientAppleWoodItem;
 import net.more.apples.item.apple_wood_item.AppleWoodItem;
 import net.more.apples.item.apple_wood_item.FrostyAppleWoodItem;
 import net.more.apples.item.apple_wood_item.TestAppleWoodItem;
@@ -16,5 +17,6 @@ public class IniItems implements ModInitializer {
         AppleWoodItem.registerWoodItem();
         TestAppleWoodItem.registerWoodItem();
         FrostyAppleWoodItem.registerWoodItem();
+        AncientAppleWoodItem.registerWoodItem();
     }
 }

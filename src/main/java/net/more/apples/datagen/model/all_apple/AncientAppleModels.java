@@ -3,8 +3,10 @@ package net.more.apples.datagen.model.all_apple;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 import net.more.apples.datagen.provider.ModModelProvider;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 import net.more.apples.item.apple_wood_item.AncientAppleWoodItem;
@@ -70,6 +72,8 @@ public final class AncientAppleModels {
                 AncientAppleWoodBlocks.ANCIENT_APPLE_SAPLING,
                 BlockModelGenerators.PlantType.NOT_TINTED
         );
+        generators.createTrivialBlock(
+                AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES, TexturedModel.LEAVES);
     }
 
     public static void addItemModels(ItemModelGenerators generators) {

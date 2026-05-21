@@ -15,6 +15,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 import net.more.apples.world.tree.custom.ancient_apple.AncientAppleFoliagePlacer;
@@ -50,7 +51,7 @@ public class AncientAppleTreeConfig {
                 BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
                 new AncientAppleTrunkPlacer(30, 8, 7),
 
-                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LEAVES),
+                BlockStateProvider.simple(AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES),
                 new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
                 new TwoLayersFeatureSize(7, 7, 7, OptionalInt.of(32)))
                 .build());

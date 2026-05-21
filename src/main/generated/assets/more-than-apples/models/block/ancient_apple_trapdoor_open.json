@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_trapdoor_open",
+  "textures": {
+    "texture": "more-than-apples:block/ancient_apple_trapdoor"
+  }
+}

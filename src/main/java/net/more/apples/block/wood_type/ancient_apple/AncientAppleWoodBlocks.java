@@ -13,7 +13,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.custom.AppleLeavesBlock;
-import net.more.apples.particle.ModParticle;
 import net.more.apples.world.tree.ModSaplingGenerators;
 
 import java.util.function.Function;
@@ -76,7 +75,7 @@ public class AncientAppleWoodBlocks {
                         .setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name)))));
     }
 
-    public static void registerTestAppleWoodBlock() {
+    public static void registerAppleWoodBlock() {
         MoreThanApples.LOGGER.info("Registering Mod Blocks " + MoreThanApples.MOD_ID);
     }
 }

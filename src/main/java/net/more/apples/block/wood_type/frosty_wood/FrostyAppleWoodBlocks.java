@@ -80,7 +80,7 @@ public class FrostyAppleWoodBlocks {
                         .setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name)))));
     }
 
-    public static void registerFrostyAppleWoodBlock() {
+    public static void registerAppleWoodBlock() {
         MoreThanApples.LOGGER.info("Registering Mod Blocks " + MoreThanApples.MOD_ID);
     }
 }

@@ -10,6 +10,7 @@ import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.more.apples.datagen.model.all_apple.AncientAppleModels;
 import net.more.apples.datagen.model.all_apple.AppleModels;
 import net.more.apples.datagen.model.all_apple.FrostyModels;
 import net.more.apples.datagen.model.all_apple.TestAppleModels;
@@ -25,6 +26,7 @@ public class ModModelProvider extends FabricModelProvider {
         AppleModels.addBlockModels(blockModelGenerators);
         TestAppleModels.addBlockModels(blockModelGenerators);
         FrostyModels.addBlockModels(blockModelGenerators);
+        AncientAppleModels.addBlockModels(blockModelGenerators);
     }
 
     @Override
@@ -33,6 +35,7 @@ public class ModModelProvider extends FabricModelProvider {
         TestAppleModels.addItemModels(itemModelGenerators);
         FrostyModels.addItemModels(itemModelGenerators);
         AppleItemsModel.addItemModels(itemModelGenerators);
+        AncientAppleModels.addItemModels(itemModelGenerators);
     }
 
 //    public static void createBarrel(BlockModelGenerators generators, Block block) {
