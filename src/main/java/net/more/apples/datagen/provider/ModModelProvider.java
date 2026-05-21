@@ -2,6 +2,7 @@ package net.more.apples.datagen.provider;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.minecraft.client.color.item.ItemTintSource;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplate;
@@ -9,6 +10,7 @@ import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.Block;
 import net.more.apples.datagen.model.all_apple.AncientAppleModels;
 import net.more.apples.datagen.model.all_apple.AppleModels;
@@ -47,6 +49,10 @@ public class ModModelProvider extends FabricModelProvider {
 //                    map.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block, ""));
 //                }));
 //    }
+
+    public static void foliageLeavesItem(ItemModelGenerators generators, Item item, ModelTemplate template) {
+        generators.generateItemWithTintedOverlay(item, (ItemTintSource) new FoliageColor());
+    }
 
     public static void flatItem(ItemModelGenerators generators, Item item, ModelTemplate template) {
         generators.generateFlatItem(item, template);

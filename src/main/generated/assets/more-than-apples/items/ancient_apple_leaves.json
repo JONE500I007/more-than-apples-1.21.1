@@ -1,6 +1,13 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "more-than-apples:block/ancient_apple_leaves"
+    "model": "more-than-apples:block/ancient_apple_leaves",
+    "tints": [
+      {
+        "type": "minecraft:grass",
+        "downfall": 1.0,
+        "temperature": 0.5
+      }
+    ]
   }
 }
