@@ -18,6 +18,7 @@ import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.world.tree.custom.ancient_apple.AncientAppleFoliagePlacer;
 import net.more.apples.world.tree.custom.ancient_apple.AncientAppleTrunkPlacer;
+import net.more.apples.world.tree.custom.ancient_apple.AncientAppleTrunkPlacerv1;
 
 import java.util.OptionalInt;
 

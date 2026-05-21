@@ -215,7 +215,7 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                     if (level.getBlockState(checkBelow).isAir()) {
                         dropAndSpreadRoots(level, trunkSetter, random,
                                 new BlockPos(pos.getX(), origin.getY(), pos.getZ()),
-                                origin, config, random.nextIntBetweenInclusive(10, 30));
+                                origin, config, random.nextIntBetweenInclusive(5, 10));
                     }
 
                     // เมื่อถึงระดับ 1 block แล้ว ต่อหางออกไปอีก
@@ -244,7 +244,7 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                             if (level.getBlockState(tailCheckBelow).isAir()) {
                                 dropAndSpreadRoots(level, trunkSetter, random,
                                         new BlockPos(tailPos.getX(), origin.getY(), tailPos.getZ()),
-                                        origin, config, random.nextIntBetweenInclusive(10, 30));
+                                        origin, config, random.nextIntBetweenInclusive(5, 10));
                             }
                         }
                     }
@@ -263,7 +263,7 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                         if (level.getBlockState(wideCheckBelow).isAir()) {
                             dropAndSpreadRoots(level, trunkSetter, random,
                                     new BlockPos(wide.getX(), origin.getY(), wide.getZ()),
-                                    origin, config, random.nextIntBetweenInclusive(10, 30));
+                                    origin, config, random.nextIntBetweenInclusive(5, 10));
                         }
                     }
                 }

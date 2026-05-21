@@ -31,8 +31,8 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
     public abstract MapCodec<? extends AncientAppleLeavesBlock> codec();
     // เปลี่ยนจาก 7 เป็น 64
 
-    public static final int DECAY_DISTANCE = 64;
-    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 64);
+    public static final int DECAY_DISTANCE = 12;
+    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 12);
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected final float leafParticleChance;
@@ -41,7 +41,7 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
         super(properties);
         this.leafParticleChance = leafParticleChance; // เพิ่มบรรทัดนี้
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(DISTANCE, 64)
+                .setValue(DISTANCE, 12)
                 .setValue(PERSISTENT, false)
                 .setValue(WATERLOGGED, false));
     }
@@ -70,6 +70,21 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
         level.setBlock(pos, updateDistance(state, level, pos), 3);
     }
 
+//    @Override
+//    protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks,
+//                                     BlockPos pos, Direction dir, BlockPos neighborPos,
+//                                     BlockState neighborState, RandomSource random) {
+//        if (state.getValue(WATERLOGGED)) {
+//            ticks.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+//        }
+//        int dist = getDistanceAt(neighborState) + 1;
+//        if (dist != 1 || state.getValue(DISTANCE) != dist) {
+//            ticks.scheduleTick(pos, this, 1);
+//        }
+//        return state;
+//    }
+
+    private static final int TICK_DELAY = 1;
     @Override
     protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks,
                                      BlockPos pos, Direction dir, BlockPos neighborPos,
@@ -77,10 +92,12 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
         if (state.getValue(WATERLOGGED)) {
             ticks.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
-        int dist = getDistanceAt(neighborState) + 1;
-        if (dist != 1 || state.getValue(DISTANCE) != dist) {
-            ticks.scheduleTick(pos, this, 1);
+
+        int distanceFromNeighbor = getDistanceAt(neighborState) + 1;
+        if (distanceFromNeighbor != 1 || state.getValue(DISTANCE) != distanceFromNeighbor) {
+            ticks.scheduleTick(pos, this, TICK_DELAY);
         }
+
         return state;
     }
 

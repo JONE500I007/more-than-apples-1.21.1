@@ -1,5 +1,7 @@
 {
   "values": [
-    "more-than-apples:apple_log"
+    "more-than-apples:apple_log",
+    "more-than-apples:test_apple_log",
+    "more-than-apples:frosty_apple_log"
   ]
 }
