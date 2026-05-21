@@ -50,8 +50,8 @@ dependencies {
 	implementation 'com.github.glitchfiend:TerraBlender-fabric:26.1.2-26.1.2.0.1'
 	//include "com.github.glitchfiend:TerraBlender-fabric:26.1.2-26.1.2.0.1"
 
-	implementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:17.0.0-beta.1"
-	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:17.0.0-beta.1"
+	implementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:17.0.0-beta.5"
+	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:17.0.0-beta.5"
 
 }
 
