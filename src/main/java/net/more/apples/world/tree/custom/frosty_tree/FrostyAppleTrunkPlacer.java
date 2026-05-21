@@ -4,11 +4,13 @@ import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
@@ -59,14 +61,10 @@ public class FrostyAppleTrunkPlacer extends TrunkPlacer {
             clearSnow(level, trunkSetter, baseBranch);
             clearSnow(level, trunkSetter, baseBranch.below());
 
-            this.placeLog(
-                    level,
-                    trunkSetter,
-                    random,
-                    baseBranch,
-                    config,
-                    state -> state.setValue(RotatedPillarBlock.AXIS, dir.getAxis())
-            );
+            if (canReplace(level, baseBranch)) {
+                this.placeLog(level, trunkSetter, random, baseBranch, config,
+                        state -> state.setValue(RotatedPillarBlock.AXIS, dir.getAxis()));
+            }
         }
         //int branchY = trunkHeight - random.nextBetween(3, 4);
         //int branchY = trunkHeight - random.nextBetween(1, 2);
@@ -144,8 +142,20 @@ public class FrostyAppleTrunkPlacer extends TrunkPlacer {
             replacer.accept(pos, Blocks.AIR.defaultBlockState());
         }
     }
+//    private boolean hasSupport(WorldGenLevel level, BlockPos pos) {
+//        BlockState state = level.getBlockState(pos.below());
+//        return state.getBlock() != Blocks.AIR;
+//    }
     private boolean hasSupport(WorldGenLevel level, BlockPos pos) {
         BlockState state = level.getBlockState(pos.below());
-        return state.getBlock() != Blocks.AIR;
+        return !state.isAir()
+                && !state.is(BlockTags.REPLACEABLE)
+                && !state.is(BlockTags.FLOWERS);
+    }
+
+    private boolean canReplace(WorldGenLevel level, BlockPos pos) {
+        return TreeFeature.isAirOrLeaves(level, pos)
+                || level.getBlockState(pos).is(BlockTags.REPLACEABLE)
+                || level.getBlockState(pos).is(BlockTags.FLOWERS);
     }
 }

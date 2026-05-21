@@ -5,6 +5,7 @@ import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
@@ -202,9 +203,28 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                     // วาด block จากพื้นขึ้นไปแค่ rootThickness block
                     for (int h = 0; h < rootThickness; h++) {
                         BlockPos placePos = new BlockPos(pos.getX(), origin.getY() + h, pos.getZ());
-                        if (TreeFeature.isAirOrLeaves(level, placePos)) {
+                        if (TreeFeature.isAirOrLeaves(level, placePos)
+                                || level.getBlockState(placePos).is(BlockTags.REPLACEABLE)
+                                || level.getBlockState(placePos).is(BlockTags.FLOWERS)) {
                             placeLog(level, trunkSetter, random, placePos, config,
                                     state -> state.setValue(RotatedPillarBlock.AXIS, axis));
+                        }
+                    }
+
+                    BlockPos checkBelow = new BlockPos(pos.getX(), origin.getY() - 1, pos.getZ());
+                    if (level.getBlockState(checkBelow).isAir()) {
+                        // หาพื้นจริงๆ แล้ววาง log ลงไปอย่างน้อย 3 block
+                        int dropDepth = 10;
+                        for (int d = 1; d <= dropDepth; d++) {
+                            BlockPos dropPos = new BlockPos(pos.getX(), origin.getY() - d, pos.getZ());
+                            if (level.getBlockState(dropPos).isAir()
+                                    || level.getBlockState(dropPos).is(BlockTags.REPLACEABLE)
+                                    || level.getBlockState(dropPos).is(BlockTags.FLOWERS)) {
+                                placeLog(level, trunkSetter, random, dropPos, config,
+                                        state -> state.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y));
+                            } else {
+                                break; // เจอ solid block หยุด
+                            }
                         }
                     }
 
@@ -229,15 +249,48 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                                 placeLog(level, trunkSetter, random, tailPos, config,
                                         state -> state.setValue(RotatedPillarBlock.AXIS, tailAxis));
                             }
+
+                            BlockPos tailCheckBelow = new BlockPos(tailPos.getX(), origin.getY() - 1, tailPos.getZ());
+                            if (level.getBlockState(tailCheckBelow).isAir()) {
+                                int dropDepth = 10;
+                                for (int d = 1; d <= dropDepth; d++) {
+                                    BlockPos dropPos = new BlockPos(tailPos.getX(), origin.getY() - d, tailPos.getZ());
+                                    if (level.getBlockState(dropPos).isAir()
+                                            || level.getBlockState(dropPos).is(BlockTags.REPLACEABLE)
+                                            || level.getBlockState(dropPos).is(BlockTags.FLOWERS)){
+                                        placeLog(level, trunkSetter, random, dropPos, config,
+                                                state -> state.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y));
+                                    } else {
+                                        break;
+                                    }
+                                }
+                            }
                         }
                     }
 
 
                     if (i < rootLength / 2 && random.nextFloat() < 0.5f) {
                         BlockPos wide = pos.relative(currentDir.getClockWise()).immutable();
-                        if (TreeFeature.isAirOrLeaves(level, wide)) {
+                        if (TreeFeature.isAirOrLeaves(level, wide)
+                                || level.getBlockState(wide).is(BlockTags.REPLACEABLE)
+                                || level.getBlockState(wide).is(BlockTags.FLOWERS)) {
                             placeLog(level, trunkSetter, random, wide, config,
                                     state -> state.setValue(RotatedPillarBlock.AXIS, axis));
+                        }
+
+                        BlockPos wideCheckBelow = new BlockPos(wide.getX(), origin.getY() - 1, wide.getZ());
+                        if (level.getBlockState(wideCheckBelow).isAir()) {
+                            int dropDepth = 10;
+                            for (int d = 1; d <= dropDepth; d++) {
+                                BlockPos dropPos = new BlockPos(wide.getX(), origin.getY() - d, wide.getZ());
+                                if (level.getBlockState(dropPos).isAir()
+                                        || level.getBlockState(dropPos).is(BlockTags.REPLACEABLE)) {
+                                    placeLog(level, trunkSetter, random, dropPos, config,
+                                            state -> state.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y));
+                                } else {
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
