@@ -31,8 +31,8 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
     public abstract MapCodec<? extends AncientAppleLeavesBlock> codec();
 
 
-    public static final int DECAY_DISTANCE = 18;
-    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 18);
+    public static final int DECAY_DISTANCE = 25;
+    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 25);
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected final float leafParticleChance;
@@ -41,7 +41,7 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
         super(properties);
         this.leafParticleChance = leafParticleChance;
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(DISTANCE, 18)
+                .setValue(DISTANCE, 25)
                 .setValue(PERSISTENT, false)
                 .setValue(WATERLOGGED, false));
     }

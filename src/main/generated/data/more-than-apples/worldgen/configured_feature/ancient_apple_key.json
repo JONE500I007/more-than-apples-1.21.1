@@ -33,7 +33,7 @@
       "state": {
         "Name": "more-than-apples:ancient_apple_leaves",
         "Properties": {
-          "distance": "12",
+          "distance": "20",
           "persistent": "false",
           "waterlogged": "false"
         }

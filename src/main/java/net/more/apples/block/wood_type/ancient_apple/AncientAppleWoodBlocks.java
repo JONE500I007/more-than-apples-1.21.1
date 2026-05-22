@@ -7,14 +7,17 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.custom.AppleLeavesBlock;
 import net.more.apples.world.tree.ModSaplingGenerators;
 
+import java.util.List;
 import java.util.function.Function;
 
 public class AncientAppleWoodBlocks {
@@ -43,6 +46,23 @@ public class AncientAppleWoodBlocks {
             properties -> new SaplingBlock(
                     ModSaplingGenerators.ANCIENT_APPLE,
                     registerIdBlock("ancient_apple_sapling", Blocks.OAK_SAPLING)));
+
+    public static final Block APPLE_BLOSSOMV2 = registerBlock("apple_blossomv2",
+            properties -> new FlowerBlock(
+                    MobEffects.SLOW_FALLING,
+                    2,
+                    registerIdBlock("apple_blossomv2", Blocks.DANDELION)));
+
+    public static final Block APPLE_BLOSSOM = registerBlock("apple_blossom",
+            properties -> new FlowerBlock(
+                    new SuspiciousStewEffects(List.of()),
+                    registerIdBlock("apple_blossom", Blocks.DANDELION)
+                            .noOcclusion()
+                            .noCollision()));
+    public static final Block POTTED_APPLE_BLOSSOM = registerBlockWithoutBlockItem("potted_apple_blossom",
+            properties -> new FlowerPotBlock(APPLE_BLOSSOM,
+                    registerIdBlock("potted_apple_blossom", Blocks.POTTED_DANDELION)
+                            .noOcclusion()));
 
     private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
         ResourceKey<Block> key = ResourceKey.create(

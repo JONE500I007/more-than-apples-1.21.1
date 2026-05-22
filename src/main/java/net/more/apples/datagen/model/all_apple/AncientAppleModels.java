@@ -75,6 +75,14 @@ public final class AncientAppleModels {
                 BlockModelGenerators.PlantType.NOT_TINTED
         );
 
+//        generators.createCrossBlock(AncientAppleWoodBlocks.APPLE_BLOSSOM,
+//                BlockModelGenerators.PlantType.NOT_TINTED
+//        );
+        generators.createPlant(
+                AncientAppleWoodBlocks.APPLE_BLOSSOM,
+                AncientAppleWoodBlocks.POTTED_APPLE_BLOSSOM,
+                BlockModelGenerators.PlantType.NOT_TINTED);
+
 
         Identifier model = TexturedModel.LEAVES.create(
                 AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES, generators.modelOutput);
@@ -116,6 +124,12 @@ public final class AncientAppleModels {
         ModModelProvider.flatItem(
                 generators,
                 AncientAppleWoodItem.ANCIENT_APPLE_CHEST_BOAT,
+                ModelTemplates.FLAT_ITEM
+        );
+
+        ModModelProvider.flatItem(
+                generators,
+                AncientAppleWoodBlocks.APPLE_BLOSSOM.asItem(),
                 ModelTemplates.FLAT_ITEM
         );
     }
