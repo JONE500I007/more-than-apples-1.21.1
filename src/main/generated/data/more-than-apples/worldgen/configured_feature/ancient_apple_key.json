@@ -42,10 +42,10 @@
     "ignore_vines": false,
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",
-      "limit": 7,
-      "lower_size": 7,
-      "min_clipped_height": 32,
-      "upper_size": 7
+      "limit": 2,
+      "lower_size": 2,
+      "min_clipped_height": 0,
+      "upper_size": 2
     },
     "trunk_placer": {
       "type": "minecraft:ancient_apple_trunk_placer",

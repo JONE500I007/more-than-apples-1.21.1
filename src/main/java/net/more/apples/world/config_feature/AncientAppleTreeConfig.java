@@ -32,28 +32,13 @@ public class AncientAppleTreeConfig {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
-//        WeightedStateProvider twoLeavesProvider = new WeightedStateProvider(
-//                WeightedList.<BlockState>builder()
-//                        .add(AppleWoodBlocks.APPLE_LEAVES.defaultBlockState(), 5)
-//                        .add(AppleWoodBlocks.FRUIT_APPLE_LEAVES.defaultBlockState(), 1)
-//                        .build()
-//        );
-//
-//        registerTreeConfig(context, ANCIENT_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-//                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
-//                new AncientAppleTrunkPlacer(30, 8, 7),
-//                twoLeavesProvider,
-//                new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
-//                new TwoLayersFeatureSize(7, 7, 7, OptionalInt.of(32)))
-//                .build());
-
         registerTreeConfig(context, ANCIENT_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
                 new AncientAppleTrunkPlacer(30, 8, 7),
 
                 BlockStateProvider.simple(AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES),
                 new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
-                new TwoLayersFeatureSize(7, 7, 7, OptionalInt.of(32)))
+                new TwoLayersFeatureSize(2, 2, 2, OptionalInt.of(0)))
                 .build());
 
     }

@@ -79,8 +79,7 @@
     [],
     [
       "minecraft:glow_lichen",
-      "more-than-apples:apple_tree_placed",
-      "more-than-apples:large_apple_tree_placed",
+      "more-than-apples:ancient_apple_tree_placed",
       "minecraft:patch_grass_plain",
       "minecraft:flower_meadow",
       "minecraft:wildflowers_meadow",

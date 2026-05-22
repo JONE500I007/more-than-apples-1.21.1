@@ -8,7 +8,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -24,13 +23,13 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.BiConsumer;
 
-public class AncientAppleTrunkPlacer extends TrunkPlacer {
-    public static final MapCodec<AncientAppleTrunkPlacer> CODEC =
+public class AncientAppleTrunkPlacerv2 extends TrunkPlacer {
+    public static final MapCodec<AncientAppleTrunkPlacerv2> CODEC =
             RecordCodecBuilder.mapCodec(i -> i.group(
                     Codec.intRange(0, 256).fieldOf("base_height").forGetter(p -> p.hugeHeight),
                     Codec.intRange(0, 256).fieldOf("height_rand_a").forGetter(p -> p.hugeHeightRandA),
                     Codec.intRange(0, 256).fieldOf("height_rand_b").forGetter(p -> p.hugeHeightRandB)
-            ).apply(i, AncientAppleTrunkPlacer::new));
+            ).apply(i, AncientAppleTrunkPlacerv2::new));
 
     private static final double TRUNK_HEIGHT_SCALE = 0.618;
     private static final double BRANCH_SLOPE = 0.381;
@@ -40,7 +39,7 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
     private final int hugeHeightRandA;
     private final int hugeHeightRandB;
 
-    public AncientAppleTrunkPlacer(int hugeHeight, int hugeHeightRandA, int hugeHeightRandB) {
+    public AncientAppleTrunkPlacerv2(int hugeHeight, int hugeHeightRandA, int hugeHeightRandB) {
         super(1, 0, 0); // ส่งค่าน้อยๆ ให้ parent เพื่อผ่าน validation
         this.hugeHeight = hugeHeight;
         this.hugeHeightRandA = hugeHeightRandA;
@@ -57,6 +56,7 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
     protected TrunkPlacerType<?> type() {
         return ModTrunkPlacerType.ANCIENT_APPLE_TRUNK_PLACER;
     }
+
 
 
     @Override
@@ -150,7 +150,6 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                 // เอาแค่แนว + ออกไป ตัดมุมออก
                 if (Math.abs(ox) <= 1 || Math.abs(oz) <= 1) {
                     BlockPos pos = center.offset(ox, 0, oz);
-                    if (!isInGeneratingChunk(level, pos)) continue;
                     if (TreeFeature.isAirOrLeaves(level, pos))
                         placeLog(level, trunkSetter, random, pos, config);
                 }
@@ -205,7 +204,6 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                     // วาด block จากพื้นขึ้นไปแค่ rootThickness block
                     for (int h = 0; h < rootThickness; h++) {
                         BlockPos placePos = new BlockPos(pos.getX(), origin.getY() + h, pos.getZ());
-                        if (!isInGeneratingChunk(level, placePos)) continue;
                         if (TreeFeature.isAirOrLeaves(level, placePos)
                                 || level.getBlockState(placePos).is(BlockTags.REPLACEABLE)
                                 || level.getBlockState(placePos).is(BlockTags.FLOWERS)) {
@@ -215,7 +213,6 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                     }
 
                     BlockPos checkBelow = new BlockPos(pos.getX(), origin.getY() - 1, pos.getZ());
-                    if (!isInGeneratingChunk(level, checkBelow)) continue;
                     if (level.getBlockState(checkBelow).isAir()) {
                         dropAndSpreadRoots(level, trunkSetter, random,
                                 new BlockPos(pos.getX(), origin.getY(), pos.getZ()),
@@ -239,14 +236,12 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                             final Direction.Axis tailAxis = tailDir.getAxis();
                             BlockPos tailPos = new BlockPos(pos.getX(), origin.getY(), pos.getZ());
 
-                            if (!isInGeneratingChunk(level, tailPos)) continue;
                             if (TreeFeature.isAirOrLeaves(level, tailPos)) {
                                 placeLog(level, trunkSetter, random, tailPos, config,
                                         state -> state.setValue(RotatedPillarBlock.AXIS, tailAxis));
                             }
 
                             BlockPos tailCheckBelow = new BlockPos(tailPos.getX(), origin.getY() - 1, tailPos.getZ());
-                            if (!isInGeneratingChunk(level, tailCheckBelow)) continue;
                             if (level.getBlockState(tailCheckBelow).isAir()) {
                                 dropAndSpreadRoots(level, trunkSetter, random,
                                         new BlockPos(tailPos.getX(), origin.getY(), tailPos.getZ()),
@@ -258,7 +253,6 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
 
                     if (i < rootLength / 2 && random.nextFloat() < 0.5f) {
                         BlockPos wide = pos.relative(currentDir.getClockWise()).immutable();
-                        if (!isInGeneratingChunk(level, wide)) continue;
                         if (TreeFeature.isAirOrLeaves(level, wide)
                                 || level.getBlockState(wide).is(BlockTags.REPLACEABLE)
                                 || level.getBlockState(wide).is(BlockTags.FLOWERS)) {
@@ -267,7 +261,6 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                         }
 
                         BlockPos wideCheckBelow = new BlockPos(wide.getX(), origin.getY() - 1, wide.getZ());
-                        if (!isInGeneratingChunk(level, wideCheckBelow)) continue;
                         if (level.getBlockState(wideCheckBelow).isAir()) {
                             dropAndSpreadRoots(level, trunkSetter, random,
                                     new BlockPos(wide.getX(), origin.getY(), wide.getZ()),
@@ -289,7 +282,6 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
             BlockPos dropPos = new BlockPos(startPos.getX(), startPos.getY() - d, startPos.getZ());
             BlockState state = level.getBlockState(dropPos);
 
-            if (!isInGeneratingChunk(level, dropPos)) break;
             if (state.isAir() || state.is(BlockTags.REPLACEABLE) || state.is(BlockTags.FLOWERS)) {
                 placeLog(level, trunkSetter, random, dropPos, config,
                         state2 -> state2.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y));
@@ -319,7 +311,6 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                 final Direction.Axis spreadAxis = spreadDir.getAxis();
                 BlockPos immutableSpread = spreadPos.immutable();
 
-                if (!isInGeneratingChunk(level, immutableSpread)) continue;
                 if (level.getBlockState(immutableSpread).isAir()
                         || level.getBlockState(immutableSpread).is(BlockTags.REPLACEABLE)
                         || level.getBlockState(immutableSpread).is(BlockTags.FLOWERS)) {
@@ -349,7 +340,6 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
                     Mth.floor(0.5F + i * dz));
 
             if (doPlace) {
-                if (!isInGeneratingChunk(level, center)) continue;
                 Direction.Axis axis = getLogAxis(startPos, center);
                 placeLog(level, trunkSetter, random, center, config,
                         state -> state.trySetValue(RotatedPillarBlock.AXIS, axis));
@@ -421,9 +411,5 @@ public class AncientAppleTrunkPlacer extends TrunkPlacer {
         int getBranchBase() {
             return branchBase;
         }
-    }
-
-    private boolean isInGeneratingChunk(WorldGenLevel level, BlockPos pos) {
-        return level.ensureCanWrite(pos);
     }
 }
