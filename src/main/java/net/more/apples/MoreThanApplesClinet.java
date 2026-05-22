@@ -26,7 +26,8 @@ public class MoreThanApplesClinet implements ClientModInitializer {
                 AppleWoodBlocks.GOLDEN_APPLE_LEAVES,
                 AppleWoodBlocks.FRUIT_GOLDEN_APPLE_LEAVES,
 
-                AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES);
+                AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES,
+                AncientAppleWoodBlocks.APPLE_LEAF_LITTER);
 
         BlockEntityRenderers.register(AppleShelfEntityType.APPLE_SHELF_ENTITY_TYPE, AppleShelfRenderer::new);
 

@@ -17,6 +17,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePla
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.more.apples.MoreThanApples;
@@ -31,6 +32,8 @@ public class AppleTreeConfig {
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_APPLE_KEY = registryTreeKey("large_apple_key");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_GOLDEN_APPLE_KEY = registryTreeKey("large_golden_apple_key");
+
+    //public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE_LEAF_LITTER_KEY = registryTreeKey("apple_leaf_litter_key");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
