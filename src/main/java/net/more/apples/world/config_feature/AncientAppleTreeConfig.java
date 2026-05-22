@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -18,6 +19,7 @@ import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
+import net.more.apples.world.placed_feature.custom.ModFeatures;
 import net.more.apples.world.tree.custom.ancient_apple.AncientAppleFoliagePlacer;
 import net.more.apples.world.tree.custom.ancient_apple.AncientAppleTrunkPlacer;
 import net.more.apples.world.tree.custom.ancient_apple.AncientAppleTrunkPlacerv1;
@@ -32,16 +34,21 @@ public class AncientAppleTreeConfig {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
-        registerTreeConfig(context, ANCIENT_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
-                new AncientAppleTrunkPlacer(30, 8, 7),
+//        registerTreeConfig(context, ANCIENT_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+//                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
+//                new AncientAppleTrunkPlacer(30, 8, 7),
+//
+//                BlockStateProvider.simple(AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES),
+//                new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
+//                new TwoLayersFeatureSize(2, 2, 2, OptionalInt.of(0)))
+//                .build());
 
-                BlockStateProvider.simple(AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES),
-                new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
-                new TwoLayersFeatureSize(2, 2, 2, OptionalInt.of(0)))
-                .build());
+        context.register(ANCIENT_APPLE_KEY, new ConfiguredFeature<>(
+                ModFeatures.ANCIENT_APPLE_TREE,
+                NoneFeatureConfiguration.INSTANCE));
 
     }
+
 
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registryTreeKey(String name) {

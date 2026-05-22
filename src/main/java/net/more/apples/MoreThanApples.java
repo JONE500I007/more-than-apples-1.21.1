@@ -11,6 +11,7 @@ import net.more.apples.util.custom_loottable.ModLootTableModifiers_DiaApple;
 import net.more.apples.util.custom_trade.ModCustomAppleMTrades;
 import net.more.apples.util.custom_trade.ModCustomFarmerTrades;
 import net.more.apples.villager.ModAppleVillagers;
+import net.more.apples.world.placed_feature.custom.ModFeatures;
 import net.more.apples.world.tree.ModFoliagePlacerType;
 import net.more.apples.world.tree.ModTrunkPlacerType;
 import net.more.apples.world.tree.custom.ancient_apple.custom.ModBlockEntities;
@@ -46,6 +47,7 @@ public class MoreThanApples implements ModInitializer {
 		ModCustomFarmerTrades.registerCustomTrades();
 
 		ModBlockEntities.register();
+		ModFeatures.register();
 
 		LOGGER.info("Hello Fabric world!");
 	}

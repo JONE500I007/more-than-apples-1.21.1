@@ -36,6 +36,16 @@ public class AncientApplePlacedFeature {
                         RarityFilter.onAverageOnceEvery(12),
                         AncientAppleWoodBlocks.ANCIENT_APPLE_SAPLING));
 
+        register(context, ANCIENT_APPLE_TREE_PLACED_KEY,
+                configuredFeatures.getOrThrow(AncientAppleTreeConfig.ANCIENT_APPLE_KEY),
+                List.of(
+                        RarityFilter.onAverageOnceEvery(12),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome()
+                ));
+
+
     }
 
 
