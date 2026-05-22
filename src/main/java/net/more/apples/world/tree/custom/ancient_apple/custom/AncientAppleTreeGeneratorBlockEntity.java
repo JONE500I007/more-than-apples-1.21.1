@@ -19,7 +19,8 @@ public class AncientAppleTreeGeneratorBlockEntity extends BlockEntity {
 
     private List<BlockPlacement> queue = new ArrayList<>();
     private int currentIndex = 0;
-    private static final int BLOCKS_PER_TICK = 10;
+    private boolean initialized = false;
+    private static final int BLOCKS_PER_TICK = 300;
 
     public AncientAppleTreeGeneratorBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ANCIENT_APPLE_TREE_GENERATOR, pos, state);
@@ -33,6 +34,16 @@ public class AncientAppleTreeGeneratorBlockEntity extends BlockEntity {
     public static void tick(Level level, BlockPos pos, BlockState state,
                             AncientAppleTreeGeneratorBlockEntity entity) {
         if (level.isClientSide()) return;
+
+        if (!entity.initialized) {
+            MoreThanApples.LOGGER.info("Generator at pos: " + pos);
+            entity.queue = AncientAppleTreePlan.generate(
+                    (ServerLevel) level, pos, level.getRandom());
+            entity.currentIndex = 0;
+            entity.initialized = true;
+            MoreThanApples.LOGGER.info("Starting tree gen, total blocks: " + entity.queue.size());
+            return;
+        }
 
         if (entity.currentIndex == 0) {
             MoreThanApples.LOGGER.info("Starting tree gen, total blocks: " + entity.queue.size());

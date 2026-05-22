@@ -7,6 +7,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.more.apples.MoreThanApples;
 import net.more.apples.block.custom.AncientAppleLeavesBlock;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
@@ -27,6 +28,8 @@ public class AncientAppleTreePlan {
 
         int actualHeight = 30 + random.nextInt(9) + random.nextInt(8);
         int trunkHeight = Mth.floor(actualHeight * TRUNK_HEIGHT_SCALE);
+
+        MoreThanApples.LOGGER.info("Generating tree at: " + origin + " height: " + actualHeight);
 
         // ── ลำต้น ──────────────────────────────────────────────
         addTrunk(placements, origin, trunkHeight, level);

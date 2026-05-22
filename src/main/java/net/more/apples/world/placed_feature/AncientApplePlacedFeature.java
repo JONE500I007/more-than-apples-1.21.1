@@ -49,6 +49,7 @@ public class AncientApplePlacedFeature {
     }
 
 
+
     public static ResourceKey<PlacedFeature> registryKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
     }
