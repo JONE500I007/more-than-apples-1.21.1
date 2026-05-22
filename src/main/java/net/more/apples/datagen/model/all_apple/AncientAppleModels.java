@@ -98,6 +98,9 @@ public final class AncientAppleModels {
                 AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES,
                 model,
                 new GrassColorSource());
+
+        generators.createParticleOnlyBlock(AncientAppleWoodBlocks.ANCIENT_APPLE_TREE_GENERATOR,
+                AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES);
     }
 
     public static void addItemModels(ItemModelGenerators generators) {

@@ -16,6 +16,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.custom.AppleLeavesBlock;
 import net.more.apples.world.tree.ModSaplingGenerators;
+import net.more.apples.world.tree.custom.ancient_apple.custom.AncientAppleSaplingBlock;
+import net.more.apples.world.tree.custom.ancient_apple.custom.AncientAppleTreeGeneratorBlock;
 
 import java.util.List;
 import java.util.function.Function;
@@ -43,8 +45,7 @@ public class AncientAppleWoodBlocks {
                     0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F),
                     registerIdBlock("ancient_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block ANCIENT_APPLE_SAPLING = registerBlock("ancient_apple_sapling",
-            properties -> new SaplingBlock(
-                    ModSaplingGenerators.ANCIENT_APPLE,
+            properties -> new AncientAppleSaplingBlock(
                     registerIdBlock("ancient_apple_sapling", Blocks.OAK_SAPLING)));
 
     public static final Block APPLE_BLOSSOMV2 = registerBlock("apple_blossomv2",
@@ -67,6 +68,15 @@ public class AncientAppleWoodBlocks {
     public static final Block APPLE_LEAF_LITTER = registerBlock("apple_leaf_litter",
             properties -> new LeafLitterBlock(
                     registerIdBlock("apple_leaf_litter", Blocks.LEAF_LITTER)));
+
+
+    public static final Block ANCIENT_APPLE_TREE_GENERATOR = registerBlockWithoutBlockItem("ancient_apple_tree_generator",
+            properties -> new AncientAppleTreeGeneratorBlock(
+                    registerIdBlock("ancient_apple_tree_generator", Blocks.AIR)
+                            .noOcclusion()
+                            .noCollision()
+                            .isSuffocating((state, level, pos) -> false)
+                            .isViewBlocking((state, level, pos) -> false)));
 
     private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
         ResourceKey<Block> key = ResourceKey.create(
