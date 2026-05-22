@@ -83,6 +83,8 @@ public final class AncientAppleModels {
                 AncientAppleWoodBlocks.POTTED_APPLE_BLOSSOM,
                 BlockModelGenerators.PlantType.NOT_TINTED);
 
+        generators.createLeafLitter(AncientAppleWoodBlocks.APPLE_LEAF_LITTER);
+
 
         Identifier model = TexturedModel.LEAVES.create(
                 AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES, generators.modelOutput);

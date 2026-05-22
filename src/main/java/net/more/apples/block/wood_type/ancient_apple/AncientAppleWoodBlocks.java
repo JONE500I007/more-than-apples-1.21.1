@@ -64,6 +64,10 @@ public class AncientAppleWoodBlocks {
                     registerIdBlock("potted_apple_blossom", Blocks.POTTED_DANDELION)
                             .noOcclusion()));
 
+    public static final Block APPLE_LEAF_LITTER = registerBlock("apple_leaf_litter",
+            properties -> new LeafLitterBlock(
+                    registerIdBlock("apple_leaf_litter", Blocks.LEAF_LITTER)));
+
     private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
         ResourceKey<Block> key = ResourceKey.create(
                 Registries.BLOCK,

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_leaf_litter_2",
+  "textures": {
+    "texture": "more-than-apples:block/apple_leaf_litter"
+  }
+}
