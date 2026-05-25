@@ -3,6 +3,7 @@ package net.more.apples.world.tree.custom.ancient_apple.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -39,7 +40,7 @@ public class AncientAppleTreePlan {
         }
 
         // ── ราก ────────────────────────────────────────────────
-        addRoots(placements, origin, random);
+        addRoots(placements, origin, random, level);
 
         // ── กิ่งและใบไม้ ────────────────────────────────────────
         int height = actualHeight + 2;
@@ -61,7 +62,7 @@ public class AncientAppleTreePlan {
                 double z = radius * Math.cos(angle) + 0.5;
 
                 BlockPos checkStart = origin.offset(Mth.floor(x), relativeY - 1, Mth.floor(z));
-                BlockPos checkEnd = checkStart.above(5);
+                //BlockPos checkEnd = checkStart.above(5);
 
                 int dx = origin.getX() - checkStart.getX();
                 int dz = origin.getZ() - checkStart.getZ();
@@ -69,8 +70,10 @@ public class AncientAppleTreePlan {
                 int branchTop = branchHeight > trunkTop ? trunkTop : (int) branchHeight;
                 BlockPos checkBranchBase = new BlockPos(origin.getX(), branchTop, origin.getZ());
 
-                addLine(placements, checkBranchBase, checkStart);
-                foliagePositions.add(checkStart);
+                if (branchTop - origin.getY() >= actualHeight * 0.2) {
+                    addLine(placements, checkBranchBase, checkStart);
+                    foliagePositions.add(checkStart);
+                }
             }
         }
 
@@ -97,7 +100,7 @@ public class AncientAppleTreePlan {
     }
 
     private static void addRoots(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
-                                 BlockPos origin, RandomSource random) {
+                                 BlockPos origin, RandomSource random, ServerLevel level) {
         for (Direction dir : Direction.Plane.HORIZONTAL) {
             int rootCount = random.nextIntBetweenInclusive(2, 3);
             for (int r = 0; r < rootCount; r++) {
@@ -130,6 +133,11 @@ public class AncientAppleTreePlan {
                         addLog(placements, new BlockPos(pos.getX(), origin.getY() + h, pos.getZ()), axis);
                     }
 
+                    BlockPos checkBelow = new BlockPos(pos.getX(), origin.getY() - 1, pos.getZ());
+                    if (level.getBlockState(checkBelow).isAir()) {
+                        addDropRoots(placements, new BlockPos(pos.getX(), origin.getY(), pos.getZ()), origin, random, level);
+                    }
+
                     if (rootThickness == 1 && i == rootLength) {
                         int tailLength = random.nextIntBetweenInclusive(4, 8);
                         Direction tailDir = currentDir;
@@ -142,14 +150,51 @@ public class AncientAppleTreePlan {
                             pos.move(tailDir);
                             final Direction.Axis tailAxis = tailDir.getAxis();
                             addLog(placements, new BlockPos(pos.getX(), origin.getY(), pos.getZ()), tailAxis);
+                            addDropRoots(placements, new BlockPos(pos.getX(), origin.getY(), pos.getZ()), origin, random, level);
                         }
                     }
 
                     if (i < rootLength / 2 && random.nextFloat() < 0.5f) {
                         BlockPos wide = pos.relative(currentDir.getClockWise()).immutable();
                         addLog(placements, wide, axis);
+                        addDropRoots(placements, wide, origin, random, level);
                     }
                 }
+            }
+        }
+    }
+    private static void addDropRoots(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
+                                     BlockPos startPos, BlockPos origin, RandomSource random, ServerLevel level) {
+        int dropDepth = random.nextIntBetweenInclusive(5, 10);
+        BlockPos groundPos = null;
+
+        for (int d = 1; d <= dropDepth; d++) {
+            BlockPos dropPos = new BlockPos(startPos.getX(), origin.getY() - d, startPos.getZ());
+            BlockState state = level.getBlockState(dropPos);
+
+            if (state.isAir() || state.is(BlockTags.REPLACEABLE) || state.is(BlockTags.FLOWERS)) {
+                addLog(placements, dropPos, Direction.Axis.Y);
+                groundPos = dropPos;
+            } else {
+                break; // เจอ solid block หยุด
+            }
+        }
+
+        // spread รากที่พื้น
+        if (groundPos != null && !level.getBlockState(groundPos.below()).isAir()) {
+            int spreadLength = random.nextIntBetweenInclusive(3, 6);
+            Direction spreadDir = Direction.Plane.HORIZONTAL.getRandomDirection(random);
+            BlockPos.MutableBlockPos spreadPos = groundPos.mutable();
+
+            for (int s = 1; s <= spreadLength; s++) {
+                if (random.nextFloat() < 0.3f) {
+                    spreadDir = random.nextBoolean()
+                            ? spreadDir.getClockWise()
+                            : spreadDir.getCounterClockWise();
+                }
+                spreadPos.move(spreadDir);
+                final Direction.Axis spreadAxis = spreadDir.getAxis();
+                addLog(placements, spreadPos.immutable(), spreadAxis);
             }
         }
     }
@@ -164,7 +209,10 @@ public class AncientAppleTreePlan {
             int layer = offset - yo;
             float progress = (float) layer / Math.max(1, foliageHeight);
             int currentRadius = Math.round(
-                    leafRadius * (float) Math.sin(Math.PI * progress) + leafRadius * 0.5f);
+                    leafRadius * (float) Math.sin(Math.PI * progress)
+                            + leafRadius * 0.5f  // minimum radius
+                            + 0                  // radiusOffset = 0
+            );
 
             for (int dx = -currentRadius; dx <= currentRadius; dx++) {
                 for (int dz = -currentRadius; dz <= currentRadius; dz++) {
