@@ -7,7 +7,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.more.apples.MoreThanApples;
 
-public class ModFeatures {
+public class AncientFeatures {
     public static final Feature<NoneFeatureConfiguration> ANCIENT_APPLE_TREE =
             Registry.register(
                     BuiltInRegistries.FEATURE,

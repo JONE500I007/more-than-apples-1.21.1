@@ -1,8 +1,6 @@
 package net.more.apples.world.tree.custom.ancient_apple.custom;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.Level;
@@ -23,7 +21,7 @@ public class AncientAppleTreeGeneratorBlockEntity extends BlockEntity {
     private static final int BLOCKS_PER_TICK = 300;
 
     public AncientAppleTreeGeneratorBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.ANCIENT_APPLE_TREE_GENERATOR, pos, state);
+        super(AncientBlockEntities.ANCIENT_APPLE_TREE_GENERATOR, pos, state);
     }
 
     public void setQueue(List<BlockPlacement> queue) {
@@ -51,6 +49,8 @@ public class AncientAppleTreeGeneratorBlockEntity extends BlockEntity {
 
         ServerLevel serverLevel = (ServerLevel) level;
         int placed = 0;
+        //int blocksPerTick = entity.queue.size();
+        // all plan all block
 
         while (entity.currentIndex < entity.queue.size() && placed < BLOCKS_PER_TICK) {
             BlockPlacement placement = entity.queue.get(entity.currentIndex);

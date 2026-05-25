@@ -32,83 +32,16 @@ public class AncientAppleTreePlan {
         MoreThanApples.LOGGER.info("Generating tree at: " + origin + " height: " + actualHeight);
 
         // ── ลำต้น ──────────────────────────────────────────────
-        addTrunk(placements, origin, trunkHeight, level);
-
-        // ── ราก ────────────────────────────────────────────────
-        addRoots(placements, origin, trunkHeight, random, level);
-
-        // ── กิ่งและใบไม้ ────────────────────────────────────────
-        addBranchesAndFoliage(placements, origin, actualHeight, trunkHeight, random, level);
-
-        return placements;
-    }
-
-    private static void addTrunk(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
-                                 BlockPos origin, int trunkHeight, ServerLevel level) {
         for (int y = 0; y < trunkHeight; y++) {
             BlockPos base = origin.above(y);
             int size = y < trunkHeight / 3 ? 2 : y < trunkHeight * 2 / 3 ? 1 : 0;
-            addCross(placements, base, size, level);
+            addCross(placements, base, size);
         }
-    }
 
-    private static void addCross(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
-                                 BlockPos center, int size, ServerLevel level) {
-        for (int ox = -size; ox <= size; ox++) {
-            for (int oz = -size; oz <= size; oz++) {
-                if (Math.abs(ox) <= 1 || Math.abs(oz) <= 1) {
-                    BlockPos pos = center.offset(ox, 0, oz);
-                    addLog(placements, pos, Direction.Axis.Y, level);
-                }
-            }
-        }
-    }
+        // ── ราก ────────────────────────────────────────────────
+        addRoots(placements, origin, random);
 
-    private static void addRoots(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
-                                 BlockPos origin, int trunkHeight, RandomSource random, ServerLevel level) {
-        for (Direction dir : Direction.Plane.HORIZONTAL) {
-            int rootCount = random.nextIntBetweenInclusive(2, 3);
-            for (int r = 0; r < rootCount; r++) {
-                int rootLength = random.nextIntBetweenInclusive(8, 14);
-                int startHeight = 3;
-                int sideOffset = r - 1;
-
-                BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(
-                        origin.getX() + dir.getClockWise().getStepX() * sideOffset,
-                        origin.getY() + startHeight,
-                        origin.getZ() + dir.getClockWise().getStepZ() * sideOffset);
-
-                Direction currentDir = dir;
-
-                for (int i = 1; i <= rootLength; i++) {
-                    float chance = random.nextFloat();
-                    if (i > 1) {
-                        if (chance < 0.4f) currentDir = currentDir.getClockWise();
-                        else if (chance < 0.7f) currentDir = currentDir.getCounterClockWise();
-                    }
-
-                    pos.move(currentDir);
-
-                    float progress = (float) i / rootLength;
-                    pos.setY(origin.getY() + Math.round(startHeight * (1.0f - progress)));
-
-                    final Direction.Axis axis = currentDir.getAxis();
-                    int rootThickness = Math.max(1, Math.round(startHeight * (1.0f - progress)));
-
-                    for (int h = 0; h < rootThickness; h++) {
-                        BlockPos placePos = new BlockPos(pos.getX(), origin.getY() + h, pos.getZ());
-                        addLog(placements, placePos, axis, level);
-                    }
-                }
-            }
-        }
-    }
-
-    private static void addBranchesAndFoliage(
-            List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
-            BlockPos origin, int actualHeight, int trunkHeight,
-            RandomSource random, ServerLevel level) {
-
+        // ── กิ่งและใบไม้ ────────────────────────────────────────
         int height = actualHeight + 2;
         int clustersPerY = Math.min(3, Mth.floor(1.382 + Math.pow(1.0 * height / 13.0, 2.0)));
         int trunkTop = origin.getY() + trunkHeight;
@@ -127,38 +60,119 @@ public class AncientAppleTreePlan {
                 double x = radius * Math.sin(angle) + 0.5;
                 double z = radius * Math.cos(angle) + 0.5;
 
-                BlockPos branchEnd = origin.offset(Mth.floor(x), relativeY - 1, Mth.floor(z));
+                BlockPos checkStart = origin.offset(Mth.floor(x), relativeY - 1, Mth.floor(z));
+                BlockPos checkEnd = checkStart.above(5);
 
-                // เพิ่มกิ่ง
-                addLine(placements, origin.above(trunkHeight), branchEnd, level);
+                int dx = origin.getX() - checkStart.getX();
+                int dz = origin.getZ() - checkStart.getZ();
+                double branchHeight = checkStart.getY() - Math.sqrt(dx * dx + dz * dz) * BRANCH_SLOPE;
+                int branchTop = branchHeight > trunkTop ? trunkTop : (int) branchHeight;
+                BlockPos checkBranchBase = new BlockPos(origin.getX(), branchTop, origin.getZ());
 
-                foliagePositions.add(branchEnd);
+                addLine(placements, checkBranchBase, checkStart);
+                foliagePositions.add(checkStart);
             }
         }
 
-        // เพิ่มใบไม้
+        // ── ลำต้นหลัก ──────────────────────────────────────────
+        addLine(placements, origin, origin.above(trunkHeight));
+
+        // ── ใบไม้ ────────────────────────────────────────────────
         for (BlockPos foliagePos : foliagePositions) {
-            addFoliage(placements, foliagePos, random, level);
+            addFoliage(placements, foliagePos, random);
+        }
+
+        return placements;
+    }
+
+    private static void addCross(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
+                                 BlockPos center, int size) {
+        for (int ox = -size; ox <= size; ox++) {
+            for (int oz = -size; oz <= size; oz++) {
+                if (Math.abs(ox) <= 1 || Math.abs(oz) <= 1) {
+                    addLog(placements, center.offset(ox, 0, oz), Direction.Axis.Y);
+                }
+            }
+        }
+    }
+
+    private static void addRoots(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
+                                 BlockPos origin, RandomSource random) {
+        for (Direction dir : Direction.Plane.HORIZONTAL) {
+            int rootCount = random.nextIntBetweenInclusive(2, 3);
+            for (int r = 0; r < rootCount; r++) {
+                int rootLength = random.nextIntBetweenInclusive(25, 40);
+                int startHeight = 3;
+                int sideOffset = r - 1;
+
+                BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(
+                        origin.getX() + dir.getClockWise().getStepX() * sideOffset,
+                        origin.getY() + startHeight,
+                        origin.getZ() + dir.getClockWise().getStepZ() * sideOffset);
+
+                Direction currentDir = dir;
+
+                for (int i = 1; i <= rootLength; i++) {
+                    float chance = random.nextFloat();
+                    if (i > 1) {
+                        if (chance < 0.4f) currentDir = currentDir.getClockWise();
+                        else if (chance < 0.7f) currentDir = currentDir.getCounterClockWise();
+                    }
+
+                    pos.move(currentDir);
+                    float progress = (float) i / rootLength;
+                    pos.setY(origin.getY() + Math.round(startHeight * (1.0f - progress)));
+
+                    final Direction.Axis axis = currentDir.getAxis();
+                    int rootThickness = Math.max(1, Math.round(startHeight * (1.0f - progress)));
+
+                    for (int h = 0; h < rootThickness; h++) {
+                        addLog(placements, new BlockPos(pos.getX(), origin.getY() + h, pos.getZ()), axis);
+                    }
+
+                    if (rootThickness == 1 && i == rootLength) {
+                        int tailLength = random.nextIntBetweenInclusive(4, 8);
+                        Direction tailDir = currentDir;
+                        for (int t = 1; t <= tailLength; t++) {
+                            if (random.nextFloat() < 0.3f) {
+                                tailDir = random.nextBoolean()
+                                        ? tailDir.getClockWise()
+                                        : tailDir.getCounterClockWise();
+                            }
+                            pos.move(tailDir);
+                            final Direction.Axis tailAxis = tailDir.getAxis();
+                            addLog(placements, new BlockPos(pos.getX(), origin.getY(), pos.getZ()), tailAxis);
+                        }
+                    }
+
+                    if (i < rootLength / 2 && random.nextFloat() < 0.5f) {
+                        BlockPos wide = pos.relative(currentDir.getClockWise()).immutable();
+                        addLog(placements, wide, axis);
+                    }
+                }
+            }
         }
     }
 
     private static void addFoliage(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
-                                   BlockPos center, RandomSource random, ServerLevel level) {
-        int radius = 4;
-        for (int yo = 3; yo >= -3; yo--) {
-            int layer = 3 - yo;
-            float progress = (float) layer / 6;
-            int currentRadius = Math.round(radius * (float) Math.sin(Math.PI * progress) + radius * 0.4f);
+                                   BlockPos center, RandomSource random) {
+        int leafRadius = 4;
+        int foliageHeight = 6;
+        int offset = 4;
+
+        for (int yo = offset; yo >= offset - foliageHeight; yo--) {
+            int layer = offset - yo;
+            float progress = (float) layer / Math.max(1, foliageHeight);
+            int currentRadius = Math.round(
+                    leafRadius * (float) Math.sin(Math.PI * progress) + leafRadius * 0.5f);
 
             for (int dx = -currentRadius; dx <= currentRadius; dx++) {
                 for (int dz = -currentRadius; dz <= currentRadius; dz++) {
                     if (Mth.square(dx + 0.5F) + Mth.square(dz + 0.5F) <= currentRadius * currentRadius) {
                         BlockPos pos = center.offset(dx, yo, dz);
-                        BlockState leafState = random.nextFloat() < 0.15f
-                                ? AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES.defaultBlockState()
-                                  .setValue(AncientAppleLeavesBlock.PERSISTENT, false)
-                                : AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES.defaultBlockState()
-                                  .setValue(AncientAppleLeavesBlock.PERSISTENT, false);
+                        BlockState leafState = AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES
+                                .defaultBlockState()
+                                .setValue(AncientAppleLeavesBlock.PERSISTENT, false);
                         placements.add(new AncientAppleTreeGeneratorBlockEntity.BlockPlacement(pos, leafState));
                     }
                 }
@@ -167,7 +181,7 @@ public class AncientAppleTreePlan {
     }
 
     private static void addLine(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
-                                BlockPos start, BlockPos end, ServerLevel level) {
+                                BlockPos start, BlockPos end) {
         BlockPos delta = end.offset(-start.getX(), -start.getY(), -start.getZ());
         int steps = Math.max(Math.max(Mth.abs(delta.getX()), Mth.abs(delta.getY())), Mth.abs(delta.getZ()));
         if (steps == 0) return;
@@ -181,12 +195,21 @@ public class AncientAppleTreePlan {
                     Mth.floor(0.5F + i * dx),
                     Mth.floor(0.5F + i * dy),
                     Mth.floor(0.5F + i * dz));
-            addLog(placements, pos, getAxis(start, pos), level);
+            addLog(placements, pos, getAxis(start, pos));
+
+            // กิ่งหนา 2 block เหมือน AncientAppleTrunkPlacerv2
+            Direction.Axis axis = getAxis(start, pos);
+            BlockPos extra = axis == Direction.Axis.X
+                    ? pos.south()
+                    : axis == Direction.Axis.Z
+                      ? pos.east()
+                      : pos.east();
+            addLog(placements, extra, axis);
         }
     }
 
     private static void addLog(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
-                               BlockPos pos, Direction.Axis axis, ServerLevel level) {
+                               BlockPos pos, Direction.Axis axis) {
         BlockState state = AppleWoodBlocks.APPLE_LOG.defaultBlockState()
                 .setValue(RotatedPillarBlock.AXIS, axis);
         placements.add(new AncientAppleTreeGeneratorBlockEntity.BlockPlacement(pos, state));

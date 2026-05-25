@@ -31,7 +31,7 @@ public class AncientAppleTreeGeneratorBlock extends BaseEntityBlock {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
         return level.isClientSide() ? null :
-                createTickerHelper(type, ModBlockEntities.ANCIENT_APPLE_TREE_GENERATOR,
+                createTickerHelper(type, AncientBlockEntities.ANCIENT_APPLE_TREE_GENERATOR,
                         AncientAppleTreeGeneratorBlockEntity::tick);
     }
 

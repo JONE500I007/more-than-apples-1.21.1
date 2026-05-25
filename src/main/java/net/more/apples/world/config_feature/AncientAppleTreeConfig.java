@@ -4,9 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -14,17 +12,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
-import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
-import net.more.apples.world.placed_feature.custom.ModFeatures;
+import net.more.apples.world.placed_feature.custom.AncientFeatures;
 import net.more.apples.world.tree.custom.ancient_apple.AncientAppleFoliagePlacer;
 import net.more.apples.world.tree.custom.ancient_apple.AncientAppleTrunkPlacer;
-import net.more.apples.world.tree.custom.ancient_apple.AncientAppleTrunkPlacerv1;
-import net.more.apples.world.tree.custom.frosty_tree.FrostyAppleFoliagePlacer;
-import net.more.apples.world.tree.custom.frosty_tree.FrostyAppleTrunkPlacer;
 
 import java.util.OptionalInt;
 
@@ -40,11 +33,11 @@ public class AncientAppleTreeConfig {
 //
 //                BlockStateProvider.simple(AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES),
 //                new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
-//                new TwoLayersFeatureSize(2, 2, 2, OptionalInt.of(0)))
+//                new TwoLayersFeatureSize(7, 3, 7, OptionalInt.of(32)))
 //                .build());
 
         context.register(ANCIENT_APPLE_KEY, new ConfiguredFeature<>(
-                ModFeatures.ANCIENT_APPLE_TREE,
+                AncientFeatures.ANCIENT_APPLE_TREE,
                 NoneFeatureConfiguration.INSTANCE));
 
     }

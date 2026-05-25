@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 
-public class ModBlockEntities {
+public class AncientBlockEntities {
     public static BlockEntityType<AncientAppleTreeGeneratorBlockEntity> ANCIENT_APPLE_TREE_GENERATOR;
 
     public static void register() {
