@@ -20,16 +20,32 @@ public class AncientAppleTreeFeature extends Feature<NoneFeatureConfiguration> {
 
     @Override
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
-        WorldGenLevel level = context.level(); // ใช้ WorldGenLevel แทน
+        WorldGenLevel level = context.level();
         BlockPos origin = context.origin();
         RandomSource random = context.random();
 
+        // เช็คพื้นดินแข็ง
         if (!level.getBlockState(origin.below()).isSolid()) return false;
+
+        // เช็คความสูงว่างขั้นต่ำ 10 block
+        for (int y = 1; y <= 10; y++) {
+            if (!level.getBlockState(origin.above(y)).isAir()) {
+                return false;
+            }
+        }
+
+        // เช็คพื้นที่รอบๆ 2x2
+        for (int ox = -4; ox <= 4; ox++) {
+            for (int oz = -4; oz <= 4; oz++) {
+                if (!level.getBlockState(origin.offset(ox, 0, oz)).isSolid()) {
+                    return false;
+                }
+            }
+        }
 
         // วาง generator block
         level.setBlock(origin, AncientAppleWoodBlocks.ANCIENT_APPLE_TREE_GENERATOR.defaultBlockState(), 3);
 
-        // ดึง ServerLevel จาก WorldGenLevel
         if (level instanceof ServerLevel serverLevel) {
             BlockEntity be = serverLevel.getBlockEntity(origin);
             if (be instanceof AncientAppleTreeGeneratorBlockEntity generator) {

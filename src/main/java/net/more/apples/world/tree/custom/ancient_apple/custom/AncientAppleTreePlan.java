@@ -193,7 +193,7 @@ public class AncientAppleTreePlan {
                 groundPos = dropPos;
 
                 // แตกรากออกมาระหว่าง drop
-                if (random.nextFloat() < 0.0f) {
+                if (random.nextFloat() < 0.2f) {
                     if (random.nextFloat() < 0.4f) branchDir = branchDir.getClockWise();
                     else if (random.nextFloat() < 0.7f) branchDir = branchDir.getCounterClockWise();
 
