@@ -24,7 +24,6 @@ public class AncientAppleTreeFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos origin = context.origin();
         RandomSource random = context.random();
 
-        // เช็คพื้นดินแข็ง
         if (!level.getBlockState(origin.below()).isSolid()) return false;
 
         // เช็คความสูงว่างขั้นต่ำ 10 block
@@ -34,16 +33,8 @@ public class AncientAppleTreeFeature extends Feature<NoneFeatureConfiguration> {
             }
         }
 
-        // เช็คพื้นที่รอบๆ 2x2
-        for (int ox = -4; ox <= 4; ox++) {
-            for (int oz = -4; oz <= 4; oz++) {
-                if (!level.getBlockState(origin.offset(ox, 0, oz)).isSolid()) {
-                    return false;
-                }
-            }
-        }
+        // ลบส่วนเช็ครอบๆ ออกแล้วครับ
 
-        // วาง generator block
         level.setBlock(origin, AncientAppleWoodBlocks.ANCIENT_APPLE_TREE_GENERATOR.defaultBlockState(), 3);
 
         if (level instanceof ServerLevel serverLevel) {

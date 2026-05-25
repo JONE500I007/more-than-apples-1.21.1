@@ -52,11 +52,11 @@ public class AncientAppleTreeGeneratorBlockEntity extends BlockEntity {
         }
 
         ServerLevel serverLevel = (ServerLevel) level;
-        int blocksPerTick = entity.queue.size();
+        //int blocksPerTick = entity.queue.size();
         // all plan all block
         int placed = 0;
 
-        while (entity.currentIndex < entity.queue.size() && placed < blocksPerTick) {
+        while (entity.currentIndex < entity.queue.size() && placed < BLOCKS_PER_TICK) {
             BlockPlacement placement = entity.queue.get(entity.currentIndex);
             BlockPos placePos = placement.pos();
 

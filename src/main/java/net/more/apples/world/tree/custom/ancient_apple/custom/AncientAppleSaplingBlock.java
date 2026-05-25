@@ -42,14 +42,29 @@ public class AncientAppleSaplingBlock extends SaplingBlock {
         }
     }
 
-    private void growTree(ServerLevel level, BlockPos pos, RandomSource random) {
-        level.setBlock(pos, AncientAppleWoodBlocks.ANCIENT_APPLE_TREE_GENERATOR.defaultBlockState(), 3);
+    public void growTree(ServerLevel level, BlockPos pos, RandomSource random) {
+        // เช็คความสูงว่างขั้นต่ำ
+        for (int y = 1; y <= 10; y++) {
+            if (!level.getBlockState(pos.above(y)).isAir()) {
+                return;
+            }
+        }
 
+        // เช็คพื้นที่รอบๆ ว่าง
+        for (int ox = -4; ox <= 4; ox++) {
+            for (int oz = -4; oz <= 4; oz++) {
+                if (ox == 0 && oz == 0) continue; // ข้าม pos ของ sapling เอง
+                BlockState surrounding = level.getBlockState(pos.offset(ox, 0, oz));
+                if (surrounding.isSolid()) {
+                    return; // มี block แข็งขวาง ไม่โต
+                }
+            }
+        }
+
+        level.setBlock(pos, AncientAppleWoodBlocks.ANCIENT_APPLE_TREE_GENERATOR.defaultBlockState(), 3);
         BlockEntity be = level.getBlockEntity(pos);
         if (be instanceof AncientAppleTreeGeneratorBlockEntity generator) {
-            List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> plan =
-                    AncientAppleTreePlan.generate(level, pos, random);
-            generator.setQueue(plan);
+            generator.setQueue(AncientAppleTreePlan.generate(level, pos, random));
         }
     }
 }
