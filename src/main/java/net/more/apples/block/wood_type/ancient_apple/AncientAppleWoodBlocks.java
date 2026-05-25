@@ -48,6 +48,11 @@ public class AncientAppleWoodBlocks {
             properties -> new AncientAppleSaplingBlock(
                     registerIdBlock("ancient_apple_sapling", Blocks.OAK_SAPLING)));
 
+    public static final Block ANCIENT_APPLE_SAPLING2 = registerBlock("ancient_apple_sapling2",
+            properties -> new SaplingBlock(
+                    ModSaplingGenerators.ANCIENT_APPLE2,
+                    registerIdBlock("ancient_apple_sapling2", Blocks.OAK_SAPLING)));
+
     public static final Block APPLE_BLOSSOMV2 = registerBlock("apple_blossomv2",
             properties -> new FlowerBlock(
                     MobEffects.SLOW_FALLING,

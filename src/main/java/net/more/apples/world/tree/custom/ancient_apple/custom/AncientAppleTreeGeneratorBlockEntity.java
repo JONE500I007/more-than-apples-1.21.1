@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.custom.AncientAppleLeavesBlock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,9 @@ public class AncientAppleTreeGeneratorBlockEntity extends BlockEntity {
     private int currentIndex = 0;
     private boolean initialized = false;
     private static final int BLOCKS_PER_TICK = 300;
+
+    private int completionTimer = -1;
+    private static final int COMPLETION_DELAY = 60;
 
     public AncientAppleTreeGeneratorBlockEntity(BlockPos pos, BlockState state) {
         super(AncientBlockEntities.ANCIENT_APPLE_TREE_GENERATOR, pos, state);
@@ -48,11 +52,11 @@ public class AncientAppleTreeGeneratorBlockEntity extends BlockEntity {
         }
 
         ServerLevel serverLevel = (ServerLevel) level;
-        int placed = 0;
-        //int blocksPerTick = entity.queue.size();
+        int blocksPerTick = entity.queue.size();
         // all plan all block
+        int placed = 0;
 
-        while (entity.currentIndex < entity.queue.size() && placed < BLOCKS_PER_TICK) {
+        while (entity.currentIndex < entity.queue.size() && placed < blocksPerTick) {
             BlockPlacement placement = entity.queue.get(entity.currentIndex);
             BlockPos placePos = placement.pos();
 
@@ -72,8 +76,28 @@ public class AncientAppleTreeGeneratorBlockEntity extends BlockEntity {
 
         // เสร็จแล้วลบตัวเอง
         if (entity.currentIndex >= entity.queue.size()) {
-            MoreThanApples.LOGGER.info("Tree gen complete!");
-            level.removeBlock(pos, false);
+            if (entity.completionTimer < 0) {
+                // เริ่มนับ
+                entity.completionTimer = 0;
+                MoreThanApples.LOGGER.info("Tree gen complete! Waiting...");
+                return;
+            }
+
+            entity.completionTimer++;
+
+            if (entity.completionTimer >= COMPLETION_DELAY) {
+                // เปลี่ยนใบไม้เป็น persistent = false
+                for (BlockPlacement placement : entity.queue) {
+                    BlockState leafState = level.getBlockState(placement.pos());
+                    if (leafState.getBlock() instanceof AncientAppleLeavesBlock
+                            && leafState.getValue(AncientAppleLeavesBlock.PERSISTENT)) {
+                        level.setBlock(placement.pos(),
+                                leafState.setValue(AncientAppleLeavesBlock.PERSISTENT, false), 3);
+                    }
+                }
+                MoreThanApples.LOGGER.info("Tree finalized!");
+                level.removeBlock(pos, false);
+            }
         }
     }
 

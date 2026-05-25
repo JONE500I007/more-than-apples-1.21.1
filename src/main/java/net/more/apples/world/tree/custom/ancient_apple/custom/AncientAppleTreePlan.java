@@ -130,12 +130,17 @@ public class AncientAppleTreePlan {
                     int rootThickness = Math.max(1, Math.round(startHeight * (1.0f - progress)));
 
                     for (int h = 0; h < rootThickness; h++) {
-                        addLog(placements, new BlockPos(pos.getX(), origin.getY() + h, pos.getZ()), axis);
+                        BlockPos placePos = new BlockPos(pos.getX(), origin.getY() + h, pos.getZ());
+                        BlockState existing = level.getBlockState(placePos);
+                        if (existing.isAir() || existing.is(BlockTags.REPLACEABLE) || existing.is(BlockTags.FLOWERS)) {
+                            addLog(placements, placePos, axis);
+                        }
                     }
 
-                    BlockPos checkBelow = new BlockPos(pos.getX(), origin.getY() - 1, pos.getZ());
+                    BlockPos checkBelow = new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ());
                     if (level.getBlockState(checkBelow).isAir()) {
-                        addDropRoots(placements, new BlockPos(pos.getX(), origin.getY(), pos.getZ()), origin, random, level);
+                        // ส่ง pos ที่ Y จริงๆ ของราก ไม่ใช่ origin.getY()
+                        addDropRoots(placements, pos.immutable(), origin, random, level);
                     }
 
                     if (rootThickness == 1 && i == rootLength) {
@@ -149,14 +154,24 @@ public class AncientAppleTreePlan {
                             }
                             pos.move(tailDir);
                             final Direction.Axis tailAxis = tailDir.getAxis();
-                            addLog(placements, new BlockPos(pos.getX(), origin.getY(), pos.getZ()), tailAxis);
-                            addDropRoots(placements, new BlockPos(pos.getX(), origin.getY(), pos.getZ()), origin, random, level);
+
+                            BlockPos tailPos = new BlockPos(pos.getX(), origin.getY(), pos.getZ());
+                            BlockState tailState = level.getBlockState(tailPos);
+                            if (tailState.isAir() || tailState.is(BlockTags.REPLACEABLE) || tailState.is(BlockTags.FLOWERS)) {
+                                addLog(placements, tailPos, tailAxis);
+                            }
+
+                            BlockPos groundLevel = new BlockPos(pos.getX(), origin.getY(), pos.getZ());
+                            addDropRoots(placements, groundLevel, origin, random, level);
                         }
                     }
 
                     if (i < rootLength / 2 && random.nextFloat() < 0.5f) {
                         BlockPos wide = pos.relative(currentDir.getClockWise()).immutable();
-                        addLog(placements, wide, axis);
+                        BlockState wideState = level.getBlockState(wide);
+                        if (wideState.isAir() || wideState.is(BlockTags.REPLACEABLE) || wideState.is(BlockTags.FLOWERS)) {
+                            addLog(placements, wide, axis);
+                        }
                         addDropRoots(placements, wide, origin, random, level);
                     }
                 }
@@ -165,36 +180,60 @@ public class AncientAppleTreePlan {
     }
     private static void addDropRoots(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
                                      BlockPos startPos, BlockPos origin, RandomSource random, ServerLevel level) {
-        int dropDepth = random.nextIntBetweenInclusive(5, 10);
+        int dropDepth = random.nextIntBetweenInclusive(7, 15);
         BlockPos groundPos = null;
+        Direction branchDir = Direction.Plane.HORIZONTAL.getRandomDirection(random);
 
         for (int d = 1; d <= dropDepth; d++) {
-            BlockPos dropPos = new BlockPos(startPos.getX(), origin.getY() - d, startPos.getZ());
+            BlockPos dropPos = new BlockPos(startPos.getX(), startPos.getY() - d, startPos.getZ());
             BlockState state = level.getBlockState(dropPos);
 
             if (state.isAir() || state.is(BlockTags.REPLACEABLE) || state.is(BlockTags.FLOWERS)) {
                 addLog(placements, dropPos, Direction.Axis.Y);
                 groundPos = dropPos;
+
+                // แตกรากออกมาระหว่าง drop
+                if (random.nextFloat() < 0.0f) {
+                    if (random.nextFloat() < 0.4f) branchDir = branchDir.getClockWise();
+                    else if (random.nextFloat() < 0.7f) branchDir = branchDir.getCounterClockWise();
+
+                    int branchLen = random.nextIntBetweenInclusive(2, 5);
+                    BlockPos.MutableBlockPos branchPos = dropPos.mutable();
+
+                    for (int b = 0; b < branchLen; b++) {
+                        if (random.nextFloat() < 0.3f) {
+                            branchDir = random.nextBoolean()
+                                    ? branchDir.getClockWise()
+                                    : branchDir.getCounterClockWise();
+                        }
+                        branchPos.move(branchDir);
+                        final Direction.Axis branchAxis = branchDir.getAxis();
+                        addLog(placements, branchPos.immutable(), branchAxis);
+                    }
+                }
             } else {
-                break; // เจอ solid block หยุด
+                break;
             }
         }
 
-        // spread รากที่พื้น
+        // spread ที่พื้นเหมือนเดิม
         if (groundPos != null && !level.getBlockState(groundPos.below()).isAir()) {
-            int spreadLength = random.nextIntBetweenInclusive(3, 6);
+            int spreadLength = random.nextIntBetweenInclusive(4, 8);
             Direction spreadDir = Direction.Plane.HORIZONTAL.getRandomDirection(random);
             BlockPos.MutableBlockPos spreadPos = groundPos.mutable();
 
             for (int s = 1; s <= spreadLength; s++) {
-                if (random.nextFloat() < 0.3f) {
-                    spreadDir = random.nextBoolean()
-                            ? spreadDir.getClockWise()
-                            : spreadDir.getCounterClockWise();
-                }
+                float r = random.nextFloat();
+                if (r < 0.4f) spreadDir = spreadDir.getClockWise();
+                else if (r < 0.7f) spreadDir = spreadDir.getCounterClockWise();
+
                 spreadPos.move(spreadDir);
                 final Direction.Axis spreadAxis = spreadDir.getAxis();
                 addLog(placements, spreadPos.immutable(), spreadAxis);
+
+                if (random.nextFloat() < 0.3f) {
+                    addLog(placements, spreadPos.relative(spreadDir.getClockWise()).immutable(), spreadAxis);
+                }
             }
         }
     }
@@ -220,7 +259,7 @@ public class AncientAppleTreePlan {
                         BlockPos pos = center.offset(dx, yo, dz);
                         BlockState leafState = AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES
                                 .defaultBlockState()
-                                .setValue(AncientAppleLeavesBlock.PERSISTENT, false);
+                                .setValue(AncientAppleLeavesBlock.PERSISTENT, true);
                         placements.add(new AncientAppleTreeGeneratorBlockEntity.BlockPlacement(pos, leafState));
                     }
                 }

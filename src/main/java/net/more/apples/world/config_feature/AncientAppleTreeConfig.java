@@ -25,16 +25,18 @@ public class AncientAppleTreeConfig {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_APPLE_KEY = registryTreeKey("ancient_apple_key");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_APPLE_KEY2 = registryTreeKey("ancient_apple_key2");
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
-//        registerTreeConfig(context, ANCIENT_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-//                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
-//                new AncientAppleTrunkPlacer(30, 8, 7),
-//
-//                BlockStateProvider.simple(AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES),
-//                new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
-//                new TwoLayersFeatureSize(7, 3, 7, OptionalInt.of(32)))
-//                .build());
+        registerTreeConfig(context, ANCIENT_APPLE_KEY2, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
+                new AncientAppleTrunkPlacer(30, 8, 7),
+
+                BlockStateProvider.simple(AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES),
+                new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
+                new TwoLayersFeatureSize(7, 3, 7, OptionalInt.of(32)))
+                .build());
 
         context.register(ANCIENT_APPLE_KEY, new ConfiguredFeature<>(
                 AncientFeatures.ANCIENT_APPLE_TREE,

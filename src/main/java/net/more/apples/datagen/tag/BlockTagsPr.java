@@ -2,6 +2,7 @@ package net.more.apples.datagen.tag;
 
 import net.minecraft.tags.BlockTags;
 import net.more.apples.block.general_block.ModGeneralBlock;
+import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
@@ -54,6 +55,13 @@ public final class BlockTagsPr {
         provider.addToTag(BlockTags.PREVENTS_NEARBY_LEAF_DECAY,
                 AppleWoodBlocks.APPLE_LOG,
                 TestAppleWoodBlocks.TEST_APPLE_LOG,
-                FrostyAppleWoodBlocks.FROSTY_APPLE_LOG);
+                FrostyAppleWoodBlocks.FROSTY_APPLE_LOG,
+                AncientAppleWoodBlocks.ANCIENT_APPLE_LOG);
+
+        provider.addToTag(BlockTags.LOGS,
+                AppleWoodBlocks.APPLE_LOG,
+                TestAppleWoodBlocks.TEST_APPLE_LOG,
+                FrostyAppleWoodBlocks.FROSTY_APPLE_LOG,
+                AncientAppleWoodBlocks.ANCIENT_APPLE_LOG);
     }
 }

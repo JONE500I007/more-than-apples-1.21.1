@@ -32,7 +32,8 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
 
 
     public static final int DECAY_DISTANCE = 32;
-    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 1, 32);
+    public static final IntegerProperty DISTANCE = IntegerProperty.create(
+            "distance", 1, 32);
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected final float leafParticleChance;
@@ -116,6 +117,7 @@ public abstract class AncientAppleLeavesBlock extends Block implements SimpleWat
 
     private static int getDistanceAt(BlockState state) {
         if (state.is(BlockTags.PREVENTS_NEARBY_LEAF_DECAY)) return 0;
+        if (state.is(BlockTags.LOGS)) return 0;
         if (state.hasProperty(DISTANCE)) return state.getValue(DISTANCE);
         if (state.hasProperty(LeavesBlock.DISTANCE)) return state.getValue(LeavesBlock.DISTANCE);
         return DECAY_DISTANCE;
