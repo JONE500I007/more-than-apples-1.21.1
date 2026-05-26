@@ -4,8 +4,11 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
+import net.more.apples.MoreThanApples;
 import net.more.apples.world.biome.biomes_regions.apple_biome.AppleGroveBiome;
 import net.more.apples.world.biome.biomes_regions.frosty_apple_biome.FrostyAppleBiome;
 import net.more.apples.world.biome.biomes_regions.golden_apple_orchard_biome.GoldenAppleOrchardBiome;
@@ -33,5 +36,10 @@ public class ModBiomeTagProvider extends FabricTagsProvider<Biome> {
                 .add(FrostyAppleBiome.FROSTY_APPLE);
         builder(BiomeTags.IS_OVERWORLD)
                 .add(FrostyAppleBiome.FROSTY_APPLE);
+
+        builder(TagKey.create(Registries.BIOME,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                        "has_structure/just_test")))
+                .add(GoldenAppleOrchardBiome.GOLDEN_APPLE_ORCHARD);
     }
 }

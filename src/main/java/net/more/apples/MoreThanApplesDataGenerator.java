@@ -8,6 +8,8 @@ import net.more.apples.datagen.ModPoiTagProvider;
 import net.more.apples.datagen.ModRegistryDataGenerator;
 import net.more.apples.datagen.provider.*;
 import net.more.apples.datagen.tag.ModBiomeTagProvider;
+import net.more.apples.structure.ModStructureSets;
+import net.more.apples.structure.ModStructures;
 import net.more.apples.world.biome.biomes_regions.ancient_apple.AncientAppleBiome;
 import net.more.apples.world.biome.biomes_regions.apple_biome.AppleGroveBiome;
 import net.more.apples.world.biome.biomes_regions.frosty_apple_biome.FrostyAppleBiome;
@@ -33,6 +35,8 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(ModPoiTagProvider::new);
 
+		//pack.addProvider(ModStructurePoolProvider::new);
+
 		pack.addProvider((output, registriesFuture) -> new ModBiomeTagProvider(output, registriesFuture));
 	}
 
@@ -52,5 +56,10 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.BIOME, GoldenAppleOrchardBiome::boostrap);
 		registryBuilder.add(Registries.BIOME, FrostyAppleBiome::boostrap);
 		registryBuilder.add(Registries.BIOME, AncientAppleBiome::boostrap);
+
+
+		registryBuilder.add(Registries.TEMPLATE_POOL, ModStructurePoolProvider::bootstrap);
+		registryBuilder.add(Registries.STRUCTURE, ModStructures::bootstrap);
+		registryBuilder.add(Registries.STRUCTURE_SET, ModStructureSets::bootstrap);
 	}
 }

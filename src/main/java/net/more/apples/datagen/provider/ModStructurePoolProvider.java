@@ -1,0 +1,41 @@
+package net.more.apples.datagen.provider;
+
+import com.mojang.datafixers.util.Pair;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.Pools;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
+import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
+import net.more.apples.MoreThanApples;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
+public class ModStructurePoolProvider {
+    public static void bootstrap(BootstrapContext<StructureTemplatePool> context) {
+        HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
+
+        context.register(
+                ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                                "just_test/start_pool")),
+                new StructureTemplatePool(
+                        pools.getOrThrow(Pools.EMPTY),
+                        List.of(
+                                new com.mojang.datafixers.util.Pair<>(
+                                        StructurePoolElement.single(
+                                                MoreThanApples.MOD_ID + ":just_test"
+                                        ).apply(StructureTemplatePool.Projection.RIGID),
+                                        1
+                                )
+                        )
+                )
+        );
+    }
+}
