@@ -37,5 +37,65 @@ public class ModStructurePoolProvider {
                         )
                 )
         );
+
+
+        // start pool
+        context.register(
+                ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_dungeon/start")),
+                new StructureTemplatePool(
+                        pools.getOrThrow(Pools.EMPTY),
+                        List.of(new Pair<>(
+                                StructurePoolElement.single("more-than-apples:test_room1")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1))
+                )
+        );
+
+        // rooms pool
+        context.register(
+                ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_dungeon/rooms")),
+                new StructureTemplatePool(
+                        pools.getOrThrow(Pools.EMPTY),
+                        List.of(
+                                new Pair<>(StructurePoolElement.single("more-than-apples:test_room2")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1),
+                                new Pair<>(StructurePoolElement.single("more-than-apples:test_room3")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1)
+                        )
+                )
+        );
+
+
+        // start pool
+        context.register(
+                ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "dng_room/start_pool")),
+                new StructureTemplatePool(
+                        pools.getOrThrow(Pools.EMPTY),
+                        List.of(new Pair<>(
+                                StructurePoolElement.single(MoreThanApples.MOD_ID + ":dng_room_start")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1))
+                )
+        );
+
+        // rooms pool
+        context.register(
+                ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "dng_room/rooms")),
+                new StructureTemplatePool(
+                        pools.getOrThrow(Pools.EMPTY),
+                        List.of(
+                                new Pair<>(StructurePoolElement.single(MoreThanApples.MOD_ID + ":dng_room1")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1),
+                                new Pair<>(StructurePoolElement.single(MoreThanApples.MOD_ID + ":dng_room2")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1),
+                                new Pair<>(StructurePoolElement.single(MoreThanApples.MOD_ID + ":dng_room3")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1),
+                                new Pair<>(StructurePoolElement.single(MoreThanApples.MOD_ID + ":dng_room4")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1)
+                        )
+                )
+        );
     }
 }

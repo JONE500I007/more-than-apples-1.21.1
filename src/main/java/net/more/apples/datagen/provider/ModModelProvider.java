@@ -6,16 +6,13 @@ import net.minecraft.client.color.item.ItemTintSource;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplate;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.FoliageColor;
-import net.minecraft.world.level.block.Block;
 import net.more.apples.datagen.model.all_apple.AncientAppleModels;
 import net.more.apples.datagen.model.all_apple.AppleModels;
 import net.more.apples.datagen.model.all_apple.FrostyModels;
 import net.more.apples.datagen.model.all_apple.TestAppleModels;
+import net.more.apples.datagen.model.general_block.ConcreteModels;
 import net.more.apples.datagen.model.items.AppleItemsModel;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -29,6 +26,7 @@ public class ModModelProvider extends FabricModelProvider {
         TestAppleModels.addBlockModels(blockModelGenerators);
         FrostyModels.addBlockModels(blockModelGenerators);
         AncientAppleModels.addBlockModels(blockModelGenerators);
+        ConcreteModels.addBlockModels(blockModelGenerators);
     }
 
     @Override

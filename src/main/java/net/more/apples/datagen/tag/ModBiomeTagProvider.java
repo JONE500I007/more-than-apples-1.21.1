@@ -8,6 +8,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.more.apples.MoreThanApples;
 import net.more.apples.world.biome.biomes_regions.ancient_apple.AncientAppleBiome;
 import net.more.apples.world.biome.biomes_regions.apple_biome.AppleGroveBiome;
@@ -58,5 +59,19 @@ public class ModBiomeTagProvider extends FabricTagsProvider<Biome> {
                 Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                         "has_structure/just_test")))
                 .add(GoldenAppleOrchardBiome.GOLDEN_APPLE_ORCHARD);
+
+        builder(TagKey.create(Registries.BIOME,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                        "has_structure/test_dungeon")))
+                .add(GoldenAppleOrchardBiome.GOLDEN_APPLE_ORCHARD);
+
+        builder(TagKey.create(Registries.BIOME,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                        "has_structure/dng_room")))
+                .add(Biomes.PLAINS)
+                .add(Biomes.FOREST)
+                .add(Biomes.DESERT)
+                .add(Biomes.SAVANNA)
+                .add(Biomes.MEADOW);
     }
 }

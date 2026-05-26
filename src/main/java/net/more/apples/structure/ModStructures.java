@@ -26,6 +26,12 @@ public class ModStructures {
     public static final ResourceKey<Structure> JUST_TEST = ResourceKey.create(
             Registries.STRUCTURE,
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "just_test"));
+    public static final ResourceKey<Structure> TEST_DUNGEON = ResourceKey.create(
+            Registries.STRUCTURE,
+            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_dungeon"));
+    public static final ResourceKey<Structure> DNG_ROOM = ResourceKey.create(
+            Registries.STRUCTURE,
+            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "dng_room"));
 
     public static void bootstrap(BootstrapContext<Structure> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
@@ -44,6 +50,45 @@ public class ModStructures {
                         Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                                 "just_test/start_pool"))),
                 1,                                          // maxDepth
+                ConstantHeight.of(VerticalAnchor.absolute(1)), // startHeight
+                false,                                      // useExpansionHack
+                Heightmap.Types.WORLD_SURFACE_WG            // projectStartToHeightmap
+        ));
+
+
+
+        context.register(TEST_DUNGEON, new JigsawStructure(
+                new Structure.StructureSettings.Builder(
+                        biomes.getOrThrow(TagKey.create(Registries.BIOME,
+                                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                                        "has_structure/test_dungeon")))
+                )
+                        .generationStep(GenerationStep.Decoration.SURFACE_STRUCTURES)
+                        .terrainAdapation(TerrainAdjustment.BEARD_THIN)
+                        .build(),
+                pools.getOrThrow(ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                                "test_dungeon/start"))),
+                3,
+                ConstantHeight.of(VerticalAnchor.absolute(1)),
+                false,
+                Heightmap.Types.WORLD_SURFACE_WG
+        ));
+
+
+        context.register(DNG_ROOM, new JigsawStructure(
+                new Structure.StructureSettings.Builder(
+                        biomes.getOrThrow(TagKey.create(Registries.BIOME,
+                                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                                        "has_structure/dng_room")))
+                )
+                        .generationStep(GenerationStep.Decoration.SURFACE_STRUCTURES)
+                        .terrainAdapation(TerrainAdjustment.BEARD_THIN)
+                        .build(),
+                pools.getOrThrow(ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                                "dng_room/start_pool"))),
+                4,                                          // maxDepth
                 ConstantHeight.of(VerticalAnchor.absolute(1)), // startHeight
                 false,                                      // useExpansionHack
                 Heightmap.Types.WORLD_SURFACE_WG            // projectStartToHeightmap
