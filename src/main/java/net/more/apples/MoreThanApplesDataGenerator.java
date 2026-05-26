@@ -14,6 +14,7 @@ import net.more.apples.world.biome.biomes_regions.ancient_apple.AncientAppleBiom
 import net.more.apples.world.biome.biomes_regions.apple_biome.AppleGroveBiome;
 import net.more.apples.world.biome.biomes_regions.frosty_apple_biome.FrostyAppleBiome;
 import net.more.apples.world.biome.biomes_regions.golden_apple_orchard_biome.GoldenAppleOrchardBiome;
+import net.more.apples.world.biome.biomes_regions.scorched_apple.ScorchedAppleBiome;
 import net.more.apples.world.config_feature.*;
 import net.more.apples.world.placed_feature.AncientApplePlacedFeature;
 import net.more.apples.world.placed_feature.ApplePlacedFeature;
@@ -52,10 +53,12 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.PLACED_FEATURE, ApplePlacedFeature::boostrap);
 		registryBuilder.add(Registries.PLACED_FEATURE, AncientApplePlacedFeature::boostrap);
 
+
 		registryBuilder.add(Registries.BIOME, AppleGroveBiome::boostrap);
 		registryBuilder.add(Registries.BIOME, GoldenAppleOrchardBiome::boostrap);
 		registryBuilder.add(Registries.BIOME, FrostyAppleBiome::boostrap);
 		registryBuilder.add(Registries.BIOME, AncientAppleBiome::boostrap);
+		registryBuilder.add(Registries.BIOME, ScorchedAppleBiome::boostrap);
 
 
 		registryBuilder.add(Registries.TEMPLATE_POOL, ModStructurePoolProvider::bootstrap);

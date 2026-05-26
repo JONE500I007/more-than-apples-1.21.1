@@ -2,6 +2,7 @@ package net.more.apples.util.custom_loottable;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -14,10 +15,10 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 
 public class ModLootTableModifiers_DiaCarrot {
-    //    private static final Identifier JUNGLE_TEMPLE_ID =
-//            Identifier.of("minecraft", "chests/jungle_temple");
+//        private static final Identifier JUNGLE_TEMPLE_ID =
+//            Identifier.fromNamespaceAndPath("minecraft", "chests/jungle_temple");
 //    private static final Identifier CREEPER_ID =
-//            Identifier.of("minecraft", "entities/creeper");
+//            Identifier.fromNamespaceAndPath("minecraft", "entities/creeper");
     private static final ResourceKey<LootTable> ANCIENT_CITY_ICE_BOX_CHEST_KEY =
             BuiltInLootTables.ANCIENT_CITY_ICE_BOX;
 

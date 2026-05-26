@@ -6,6 +6,7 @@ import net.more.apples.world.biome.biomes_regions.ancient_apple.AncientAppleRegi
 import net.more.apples.world.biome.biomes_regions.apple_biome.AppleGroveRegion;
 import net.more.apples.world.biome.biomes_regions.frosty_apple_biome.FrostyAppleRegion;
 import net.more.apples.world.biome.biomes_regions.golden_apple_orchard_biome.GoldenAppleOrchardRegion;
+import net.more.apples.world.biome.biomes_regions.scorched_apple.ScorchedAppleRegion;
 import net.more.apples.world.biome.surface.ModAppleGroveMaterialRules;
 import net.more.apples.world.biome.surface.ModFrostyAppleMaterialRules;
 import net.more.apples.world.biome.surface.ModGoldenAppleOrchardMaterialRules;
@@ -20,6 +21,7 @@ public class ModTerraBlenderAPI implements TerraBlenderApi {
         Regions.register(new GoldenAppleOrchardRegion(Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "golden_apple_orchard_region"), 4));
         Regions.register(new FrostyAppleRegion(Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "frosty_apple_region"), 5));
         Regions.register(new AncientAppleRegion(Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "ancient_apple_wilds"), 6));
+        Regions.register(new ScorchedAppleRegion(Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "scorched_apple_badlands"), 6));
 
         //SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModAppleGroveMaterialRules.makeRule());
         //SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MoreThanApples.MOD_ID, ModGoldenAppleOrchardMaterialRules.makeRule());

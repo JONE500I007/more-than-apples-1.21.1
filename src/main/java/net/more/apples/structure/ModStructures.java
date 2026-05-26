@@ -44,7 +44,7 @@ public class ModStructures {
                         Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                                 "just_test/start_pool"))),
                 1,                                          // maxDepth
-                ConstantHeight.of(VerticalAnchor.absolute(0)), // startHeight
+                ConstantHeight.of(VerticalAnchor.absolute(1)), // startHeight
                 false,                                      // useExpansionHack
                 Heightmap.Types.WORLD_SURFACE_WG            // projectStartToHeightmap
         ));
