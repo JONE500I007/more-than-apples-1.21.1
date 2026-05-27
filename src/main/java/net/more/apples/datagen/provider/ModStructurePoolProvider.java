@@ -97,5 +97,35 @@ public class ModStructurePoolProvider {
                         )
                 )
         );
+
+
+        // start pool
+        context.register(
+                ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "tower_room/start_pool")),
+                new StructureTemplatePool(
+                        pools.getOrThrow(Pools.EMPTY),
+                        List.of(new Pair<>(
+                                StructurePoolElement.single(MoreThanApples.MOD_ID + ":tower_room_start")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1))
+                )
+        );
+
+        // rooms pool
+        context.register(
+                ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "tower_room/tower")),
+                new StructureTemplatePool(
+                        pools.getOrThrow(Pools.EMPTY),
+                        List.of(
+                                new Pair<>(StructurePoolElement.single(MoreThanApples.MOD_ID + ":tower_room1")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1),
+                                new Pair<>(StructurePoolElement.single(MoreThanApples.MOD_ID + ":tower_room2")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1),
+                                new Pair<>(StructurePoolElement.single(MoreThanApples.MOD_ID + ":tower_room_end")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 2)
+                        )
+                )
+        );
     }
 }

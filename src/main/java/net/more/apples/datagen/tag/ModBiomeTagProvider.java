@@ -73,5 +73,14 @@ public class ModBiomeTagProvider extends FabricTagsProvider<Biome> {
                 .add(Biomes.DESERT)
                 .add(Biomes.SAVANNA)
                 .add(Biomes.MEADOW);
+
+        builder(TagKey.create(Registries.BIOME,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                        "has_structure/tower_room")))
+                .add(Biomes.PLAINS)
+                .add(Biomes.FOREST)
+                .add(Biomes.DESERT)
+                .add(Biomes.SAVANNA)
+                .add(Biomes.MEADOW);
     }
 }

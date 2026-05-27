@@ -32,6 +32,9 @@ public class ModStructures {
     public static final ResourceKey<Structure> DNG_ROOM = ResourceKey.create(
             Registries.STRUCTURE,
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "dng_room"));
+    public static final ResourceKey<Structure> TOWER_ROOM = ResourceKey.create(
+            Registries.STRUCTURE,
+            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "tower_room"));
 
     public static void bootstrap(BootstrapContext<Structure> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
@@ -89,6 +92,25 @@ public class ModStructures {
                         Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                                 "dng_room/start_pool"))),
                 4,                                          // maxDepth
+                ConstantHeight.of(VerticalAnchor.absolute(1)), // startHeight
+                false,                                      // useExpansionHack
+                Heightmap.Types.WORLD_SURFACE_WG            // projectStartToHeightmap
+        ));
+
+
+        context.register(TOWER_ROOM, new JigsawStructure(
+                new Structure.StructureSettings.Builder(
+                        biomes.getOrThrow(TagKey.create(Registries.BIOME,
+                                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                                        "has_structure/tower_room")))
+                )
+                        .generationStep(GenerationStep.Decoration.SURFACE_STRUCTURES)
+                        .terrainAdapation(TerrainAdjustment.BEARD_THIN)
+                        .build(),
+                pools.getOrThrow(ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                                "tower_room/start_pool"))),
+                2,                                          // maxDepth
                 ConstantHeight.of(VerticalAnchor.absolute(1)), // startHeight
                 false,                                      // useExpansionHack
                 Heightmap.Types.WORLD_SURFACE_WG            // projectStartToHeightmap

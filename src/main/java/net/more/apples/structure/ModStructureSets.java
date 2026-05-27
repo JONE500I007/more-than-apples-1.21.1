@@ -21,6 +21,9 @@ public class ModStructureSets {
     public static ResourceKey<StructureSet> DNG_ROOM = ResourceKey.create(
             Registries.STRUCTURE_SET,
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "dng_room"));
+    public static ResourceKey<StructureSet> TOWER_ROOM = ResourceKey.create(
+            Registries.STRUCTURE_SET,
+            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "tower_room"));
 
     public static void bootstrap(BootstrapContext<StructureSet> context) {
         HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
@@ -38,6 +41,11 @@ public class ModStructureSets {
         context.register(DNG_ROOM, new StructureSet(
                 structures.getOrThrow(ModStructures.DNG_ROOM),
                 new RandomSpreadStructurePlacement(4, 2, RandomSpreadType.LINEAR, 12345)
+        ));
+
+        context.register(TOWER_ROOM, new StructureSet(
+                structures.getOrThrow(ModStructures.TOWER_ROOM),
+                new RandomSpreadStructurePlacement(4, 2, RandomSpreadType.LINEAR, 445566)
         ));
     }
 }
