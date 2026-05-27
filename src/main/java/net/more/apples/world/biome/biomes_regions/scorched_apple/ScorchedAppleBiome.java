@@ -74,6 +74,8 @@ public class ScorchedAppleBiome {
 
         spawnBuilder.addSpawn(MobCategory.MONSTER, 95,
                 new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE, 1, 4));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, 95,
+                new MobSpawnSettings.SpawnerData(EntityType.HUSK, 1, 4));
 
         spawnBuilder.addSpawn(MobCategory.MONSTER, 100,
                 new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 1, 4));
@@ -156,21 +158,21 @@ public class ScorchedAppleBiome {
         biomeBuilder.addFeature(UNDERGROUND_DECORATION, OrePlacements.ORE_TUFF);
 
 
-        biomeBuilder.addFeature(VEGETAL_DECORATION,
-                AncientApplePlacedFeature.ANCIENT_APPLE_TREE_PLACED_KEY);
+//        biomeBuilder.addFeature(VEGETAL_DECORATION,
+//                AncientApplePlacedFeature.ANCIENT_APPLE_TREE_PLACED_KEY);
 
 
-        biomeBuilder.addFeature(
-                VEGETAL_DECORATION,
-                VegetationPlacements.PATCH_GRASS_PLAIN);
-        biomeBuilder.addFeature(
-                VEGETAL_DECORATION,
-                VegetationPlacements.FLOWER_MEADOW);
-
-
-        biomeBuilder.addFeature(
-                VEGETAL_DECORATION,
-                VegetationPlacements.WILDFLOWERS_MEADOW);
+//        biomeBuilder.addFeature(
+//                VEGETAL_DECORATION,
+//                VegetationPlacements.PATCH_GRASS_PLAIN);
+//        biomeBuilder.addFeature(
+//                VEGETAL_DECORATION,
+//                VegetationPlacements.FLOWER_MEADOW);
+//
+//
+//        biomeBuilder.addFeature(
+//                VEGETAL_DECORATION,
+//                VegetationPlacements.WILDFLOWERS_MEADOW);
 
         biomeBuilder.addFeature(
                 UNDERGROUND_DECORATION,
@@ -188,39 +190,37 @@ public class ScorchedAppleBiome {
         biomeBuilder.addFeature(
                 UNDERGROUND_DECORATION,
                 MiscOverworldPlacements.DISK_GRAVEL);
-        biomeBuilder.addFeature(
-                VEGETAL_DECORATION,
-                AquaticPlacements.KELP_COLD);
-        biomeBuilder.addFeature(
-                VEGETAL_DECORATION,
-                AquaticPlacements.SEAGRASS_RIVER);
+//        biomeBuilder.addFeature(
+//                VEGETAL_DECORATION,
+//                AquaticPlacements.KELP_COLD);
+//        biomeBuilder.addFeature(
+//                VEGETAL_DECORATION,
+//                AquaticPlacements.SEAGRASS_RIVER);
 
 
 
         return new Biome.BiomeBuilder()
-                .hasPrecipitation(true)
-                .downfall(0.35f)
-                .temperature(0.35f)
+                .hasPrecipitation(false)
+                .downfall(0.0f)
+                .temperature(2.0f)
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
 
-                .setAttribute(EnvironmentAttributes.SKY_COLOR, 0xF5BC7A)
-                .setAttribute(EnvironmentAttributes.FOG_COLOR, 0xEDAB5F)
-                .setAttribute(EnvironmentAttributes.WATER_FOG_COLOR, 0xD49A57)
+                .setAttribute(EnvironmentAttributes.SKY_COLOR, 0x72A4FF)
+                .setAttribute(EnvironmentAttributes.FOG_COLOR, 0xE9B84D)
+                .setAttribute(EnvironmentAttributes.WATER_FOG_COLOR, 0x7B6044)
 
                 .setAttribute(EnvironmentAttributes.AMBIENT_SOUNDS, new AmbientSounds(
                         Optional.empty(),
                         Optional.of(AmbientMoodSettings.LEGACY_CAVE_SETTINGS),
                         List.of()))
                 .setAttribute(EnvironmentAttributes.BACKGROUND_MUSIC,
-                        new BackgroundMusic(SoundEvents.MUSIC_BIOME_CHERRY_GROVE))
+                        new BackgroundMusic(SoundEvents.MUSIC_BIOME_BADLANDS))
                 .specialEffects((new BiomeSpecialEffects.Builder())
-                        .waterColor(0xF5BC7A)
-                        .grassColorOverride(0xE89C45)
-                        .foliageColorOverride(0xD19C66)
+                        .waterColor(0x3F76E4)
+                        .grassColorOverride(0x90814D)
+                        .foliageColorOverride(0x9E8145)
                         .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.NONE)
-                        //.music(MusicType.createIngameMusic(RegistryEntry.of(ModSounds.APPLE_LAND)))
-
                         .build())
                 .build();
     }

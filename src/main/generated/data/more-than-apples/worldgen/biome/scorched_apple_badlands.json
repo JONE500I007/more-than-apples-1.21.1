@@ -12,23 +12,23 @@
       "default": {
         "max_delay": 24000,
         "min_delay": 12000,
-        "sound": "minecraft:music.overworld.cherry_grove"
+        "sound": "minecraft:music.overworld.badlands"
       }
     },
-    "minecraft:visual/fog_color": "#edab5f",
-    "minecraft:visual/sky_color": "#f5bc7a",
-    "minecraft:visual/water_fog_color": "#d49a57"
+    "minecraft:visual/fog_color": "#e9b84d",
+    "minecraft:visual/sky_color": "#72a4ff",
+    "minecraft:visual/water_fog_color": "#7b6044"
   },
   "carvers": [
     "minecraft:cave",
     "minecraft:cave_extra_underground",
     "minecraft:canyon"
   ],
-  "downfall": 0.35,
+  "downfall": 0.0,
   "effects": {
-    "foliage_color": "#d19c66",
-    "grass_color": "#e89c45",
-    "water_color": "#f5bc7a"
+    "foliage_color": "#9e8145",
+    "grass_color": "#90814d",
+    "water_color": "#3f76e4"
   },
   "features": [
     [],
@@ -78,16 +78,10 @@
     ],
     [],
     [
-      "minecraft:glow_lichen",
-      "more-than-apples:ancient_apple_tree_placed",
-      "minecraft:patch_grass_plain",
-      "minecraft:flower_meadow",
-      "minecraft:wildflowers_meadow",
-      "minecraft:kelp_cold",
-      "minecraft:seagrass_river"
+      "minecraft:glow_lichen"
     ]
   ],
-  "has_precipitation": true,
+  "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {
     "ambient": [
@@ -135,6 +129,12 @@
     "monster": [
       {
         "type": "minecraft:zombie",
+        "maxCount": 4,
+        "minCount": 1,
+        "weight": 95
+      },
+      {
+        "type": "minecraft:husk",
         "maxCount": 4,
         "minCount": 1,
         "weight": 95
@@ -225,5 +225,5 @@
       }
     ]
   },
-  "temperature": 0.35
+  "temperature": 2.0
 }

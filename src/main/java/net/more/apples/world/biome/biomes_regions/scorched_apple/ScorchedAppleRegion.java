@@ -14,6 +14,7 @@ import terrablender.api.VanillaParameterOverlayBuilder;
 import java.util.function.Consumer;
 
 import static net.more.apples.world.biome.biomes_regions.ancient_apple.AncientAppleBiome.ANCIENT_APPLE_WILDS;
+import static net.more.apples.world.biome.biomes_regions.scorched_apple.ScorchedAppleBiome.SCORCHED_APPLE_BADLANDS;
 
 public class ScorchedAppleRegion extends Region {
     public ScorchedAppleRegion(Identifier name, int weight) {
@@ -24,15 +25,15 @@ public class ScorchedAppleRegion extends Region {
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
-//MultiNoiseUtil
+
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.WARM, ParameterUtils.Temperature.HOT))
                 .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.ARID, ParameterUtils.Humidity.DRY))
                 .continentalness(ParameterUtils.Continentalness.MID_INLAND, ParameterUtils.Continentalness.INLAND)
-                .erosion(Climate.Parameter.span(-1.0F, 0.05F))
+                .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_6)
                 .depth(Climate.Parameter.span(-1.0F, 1.0F))
-                .weirdness(ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_ASCENDING, ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_DESCENDING)
-                .build().forEach(point -> builder.add(point, ANCIENT_APPLE_WILDS));
+                .weirdness(ParameterUtils.Weirdness.VALLEY, ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_DESCENDING)
+                .build().forEach(point -> builder.add(point, SCORCHED_APPLE_BADLANDS));
 
         builder.build().forEach(mapper);
     }
