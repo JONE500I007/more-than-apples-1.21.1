@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.more.apples.datagen.ModPoiTagProvider;
 import net.more.apples.datagen.ModRegistryDataGenerator;
 import net.more.apples.datagen.provider.*;
@@ -37,6 +38,9 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModPoiTagProvider::new);
 
 		//pack.addProvider(ModStructurePoolProvider::new);
+
+		pack.addProvider((output, registriesFuture) -> new ModLootTableChest(
+				output, registriesFuture, LootContextParamSets.CHEST));
 
 		pack.addProvider((output, registriesFuture) -> new ModBiomeTagProvider(output, registriesFuture));
 	}
