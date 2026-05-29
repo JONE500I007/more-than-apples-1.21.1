@@ -17,6 +17,7 @@ import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.structures.JigsawStructure;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorList;
 import net.more.apples.MoreThanApples;
+import net.more.apples.structure.custom.DngRoomStructure;
 
 import java.util.Map;
 import java.util.Optional;
@@ -79,7 +80,24 @@ public class ModStructures {
         ));
 
 
-        context.register(DNG_ROOM, new JigsawStructure(
+//        context.register(DNG_ROOM, new JigsawStructure(
+//                new Structure.StructureSettings.Builder(
+//                        biomes.getOrThrow(TagKey.create(Registries.BIOME,
+//                                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+//                                        "has_structure/dng_room")))
+//                )
+//                        .generationStep(GenerationStep.Decoration.SURFACE_STRUCTURES)
+//                        .terrainAdapation(TerrainAdjustment.BEARD_THIN)
+//                        .build(),
+//                pools.getOrThrow(ResourceKey.create(Registries.TEMPLATE_POOL,
+//                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+//                                "dng_room/start_pool"))),
+//                4,                                          // maxDepth
+//                ConstantHeight.of(VerticalAnchor.absolute(1)), // startHeight
+//                false,                                      // useExpansionHack
+//                Heightmap.Types.WORLD_SURFACE_WG            // projectStartToHeightmap
+//        ));
+        context.register(DNG_ROOM, new DngRoomStructure(
                 new Structure.StructureSettings.Builder(
                         biomes.getOrThrow(TagKey.create(Registries.BIOME,
                                 Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
@@ -87,14 +105,7 @@ public class ModStructures {
                 )
                         .generationStep(GenerationStep.Decoration.SURFACE_STRUCTURES)
                         .terrainAdapation(TerrainAdjustment.BEARD_THIN)
-                        .build(),
-                pools.getOrThrow(ResourceKey.create(Registries.TEMPLATE_POOL,
-                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
-                                "dng_room/start_pool"))),
-                4,                                          // maxDepth
-                ConstantHeight.of(VerticalAnchor.absolute(1)), // startHeight
-                false,                                      // useExpansionHack
-                Heightmap.Types.WORLD_SURFACE_WG            // projectStartToHeightmap
+                        .build()
         ));
 
 

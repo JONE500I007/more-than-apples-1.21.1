@@ -6,6 +6,7 @@ import net.more.apples.effect.ModEffectsRegister;
 import net.more.apples.event.ModEntityUseHandler2;
 import net.more.apples.particle.ModParticle;
 import net.more.apples.potion.ModPotions;
+import net.more.apples.structure.custom.ModStructureTypes;
 import net.more.apples.util.ModLootConditions;
 import net.more.apples.util.custom_trade.ModCustomAppleMTrades;
 import net.more.apples.util.custom_trade.ModCustomFarmerTrades;
@@ -47,6 +48,8 @@ public class MoreThanApples implements ModInitializer {
 
 		AncientBlockEntities.register();
 		AncientFeatures.register();
+
+		ModStructureTypes.register();
 
 		LOGGER.info("Hello Fabric world!");
 	}
