@@ -19,6 +19,8 @@ public class IniBlocks implements ModInitializer {
         ModGeneralBlock.registerModGenBlocks();
         ModBlockOre.registerModOreBlocks();
 
+        ConcreteVariants.registerConcreteBlock();
+
         // 🌳 wood set
         AppleWoodBlocks.registerAppleWoodBlock();
         AppleWoodVariants.registerAppleWoodVariant();
@@ -31,7 +33,5 @@ public class IniBlocks implements ModInitializer {
 
         AncientAppleWoodBlocks.registerAppleWoodBlock();
         AncientAppleWoodVariants.registerAppleWoodBlock();
-
-        ConcreteVariants.registerConcreteBlock();
     }
 }
