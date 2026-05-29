@@ -19,7 +19,7 @@ public class AncientAppleTreeGeneratorBlockEntity extends BlockEntity {
     private List<BlockPlacement> queue = new ArrayList<>();
     private int currentIndex = 0;
     private boolean initialized = false;
-    private static final int BLOCKS_PER_TICK = 300;
+    private static final int BLOCKS_PER_TICK = 500;
 
     private int completionTimer = -1;
     private static final int COMPLETION_DELAY = 60;

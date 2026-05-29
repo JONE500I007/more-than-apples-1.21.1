@@ -137,7 +137,7 @@ public class ModJigsawPlacement {
                 VoxelShape shape = Shapes.join(Shapes.create(aabb), Shapes.create(AABB.of(box)), BooleanOp.ONLY_FIRST);
                 addPiecesInternal(context.randomState(), maxDepth, doExpansionHack, chunkGenerator,
                         structureTemplateManager, heightAccessor, random, pools, centerPiece, pieces, shape,
-                        poolAliasLookup, liquidSettings);
+                        poolAliasLookup, liquidSettings, forcedRotation);
                 Objects.requireNonNull(builder);
                 pieces.forEach(builder::addPiece);
             }
@@ -185,8 +185,10 @@ public class ModJigsawPlacement {
             final List<PoolElementStructurePiece> pieces,
             final VoxelShape shape,
             final PoolAliasLookup poolAliasLookup,
-            final LiquidSettings liquidSettings) {
-        Placer placer = new Placer(pools, maxDepth, chunkGenerator, structureTemplateManager, pieces, random);
+            final LiquidSettings liquidSettings,
+            final Rotation forcedRotation) {
+        Placer placer = new Placer(pools, maxDepth, chunkGenerator,
+                structureTemplateManager, pieces, random, forcedRotation);
         placer.tryPlacingChildren(centerPiece, new MutableObject<>(shape), 0, doExpansionHack,
                 heightAccessor, randomState, poolAliasLookup, liquidSettings);
         while (placer.placing.hasNext()) {
@@ -205,6 +207,7 @@ public class ModJigsawPlacement {
         private final StructureTemplateManager structureTemplateManager;
         private final List<? super PoolElementStructurePiece> pieces;
         private final RandomSource random;
+        private final Rotation forcedRotation;
         private final SequencedPriorityIterator<PieceState> placing = new SequencedPriorityIterator<>();
 
         private Placer(
@@ -213,13 +216,15 @@ public class ModJigsawPlacement {
                 final ChunkGenerator chunkGenerator,
                 final StructureTemplateManager structureTemplateManager,
                 final List<? super PoolElementStructurePiece> pieces,
-                final RandomSource random) {
+                final RandomSource random,
+                final Rotation forcedRotation) {
             this.pools = pools;
             this.maxDepth = maxDepth;
             this.chunkGenerator = chunkGenerator;
             this.structureTemplateManager = structureTemplateManager;
             this.pieces = pieces;
             this.random = random;
+            this.forcedRotation = forcedRotation;
         }
 
         private void tryPlacingChildren(
@@ -293,7 +298,10 @@ public class ModJigsawPlacement {
                         break;
                     }
 
-                    for (Rotation targetRotation : Rotation.getShuffled(this.random)) {
+                    List<Rotation> rotations = new java.util.ArrayList<>(Rotation.getShuffled(this.random));
+                    rotations.remove(this.forcedRotation);
+                    rotations.add(0, this.forcedRotation);
+                    for (Rotation targetRotation : rotations) {
                         List<StructureTemplate.JigsawBlockInfo> targetJigsaws = targetElement.getShuffledJigsawBlocks(
                                 this.structureTemplateManager, BlockPos.ZERO, targetRotation, this.random);
                         BoundingBox hackBox = targetElement.getBoundingBox(

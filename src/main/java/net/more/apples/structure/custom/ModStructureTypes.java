@@ -7,13 +7,13 @@ import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.more.apples.MoreThanApples;
 
 public class ModStructureTypes {
-    public static StructureType<DngRoomStructure> DNG_ROOM;
+    public static StructureType<ModFixedStructure> FIXED_STRUCTURE;
 
     public static void register() {
-        DNG_ROOM = Registry.register(
+        FIXED_STRUCTURE = Registry.register(
                 BuiltInRegistries.STRUCTURE_TYPE,
-                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "dng_room"),
-                () -> DngRoomStructure.CODEC
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "fixed_structure"),
+                () -> ModFixedStructure.CODEC
         );
     }
 }
