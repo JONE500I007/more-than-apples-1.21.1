@@ -11,7 +11,7 @@ public final class TestAppleLootBlockDrop {
 
     public static void addLoot(ModLootBlockDrop provider) {
         // --- Test Apple Wood Blocks ---
-        provider.drop(TestAppleWoodBlocks.TEST_APPLE_WOOD);
+        provider.drop(TestAppleWoodBlocks.TEST_APPLE_LOG);
         provider.drop(TestAppleWoodBlocks.TEST_APPLE_WOOD);
         provider.drop(TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG);
         provider.drop(TestAppleWoodBlocks.STRIPPED_TEST_APPLE_WOOD);

@@ -6,7 +6,10 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Inventory;
@@ -22,22 +25,17 @@ import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.more.apples.entity.AppleBlockEntity;
-import net.more.apples.util.ModTags;
-import net.more.apples.block.custom.IShelfLike;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-
-import static net.minecraft.world.level.block.CaveVines.SHAPE;
+import java.util.OptionalInt;
 
 public class AppleShelfBlock extends BaseEntityBlock
         implements SelectableSlotContainer, SideChainPartBlock, SimpleWaterloggedBlock {
@@ -145,17 +143,38 @@ public class AppleShelfBlock extends BaseEntityBlock
     }
 
     @Override
+    protected boolean useShapeForLightOcclusion(BlockState state) {
+        return true;
+    }
+
+    @Override
+    protected boolean isPathfindable(BlockState state, PathComputationType type) {
+        return type == PathComputationType.WATER && state.getFluidState().is(FluidTags.WATER);
+    }
+
+    @Override
+    protected BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
+    }
+
+    @Override
+    protected BlockState mirror(BlockState state, Mirror mirror) {
+        return state.rotate(mirror.getRotation(state.getValue(FACING)));
+    }
+
+    @Override
     protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
-        if (!oldState.is(state.getBlock())) {
-            if (state.getValue(POWERED)) {
-                level.updateNeighborsAt(pos, this);
-            }
+        if (state.getValue(POWERED)) {
+            this.updateSelfAndNeighborsOnPoweringUp(level, pos, state, oldState);
+        } else {
+            this.updateNeighborsAfterPoweringDown(level, pos, state);
         }
     }
 
     @Override
     protected void affectNeighborsAfterRemoval(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
-        level.updateNeighborsAt(pos, this);
+        Containers.updateNeighboursAfterDestroy(state, level, pos);
+        this.updateNeighborsAfterPoweringDown(level, pos, state);
     }
 
     //redstone
@@ -182,7 +201,6 @@ public class AppleShelfBlock extends BaseEntityBlock
             }
 
             level.setBlock(pos, newState, 3);
-            level.updateNeighborsAt(pos, this);
 
             level.playSound(
                     null,
@@ -201,29 +219,6 @@ public class AppleShelfBlock extends BaseEntityBlock
         }
     }
 
-    //slot detection
-
-    private int getSlot(BlockHitResult hit, Direction facing, BlockPos pos) {
-        Vec3 hitPos = hit.getLocation().subtract(pos.getX(), pos.getY(), pos.getZ());
-
-        double x = hitPos.x;
-        double z = hitPos.z;
-
-        double localX;
-
-        switch (facing) {
-            case NORTH -> localX = 1 - x;
-            case SOUTH -> localX = x;
-            case WEST  -> localX = z;
-            case EAST  -> localX = 1 - z;
-            default -> localX = x;
-        }
-
-        if (localX < 0.33) return 0;
-        if (localX < 0.66) return 1;
-        return 2;
-    }
-
     //interaction
 
     @Override
@@ -236,248 +231,113 @@ public class AppleShelfBlock extends BaseEntityBlock
             InteractionHand hand,
             BlockHitResult hit
     ) {
-        if (!(level.getBlockEntity(pos) instanceof IShelfLike shelf)) {
+        if (!(level.getBlockEntity(pos) instanceof IShelfLike shelf) || hand == InteractionHand.OFF_HAND) {
             return InteractionResult.PASS;
         }
 
-        if (hand == InteractionHand.OFF_HAND) {
+        OptionalInt hitSlot = this.getHitSlot(hit, state.getValue(FACING));
+        if (hitSlot.isEmpty()) {
             return InteractionResult.PASS;
         }
 
-        Direction facing = state.getValue(FACING);
-
-        if (hit.getDirection() != facing) {
-            return InteractionResult.PASS;
-        }
-
-        if (state.getValue(POWERED)) {
-            if (!level.isClientSide()) {
-                List<BlockPos> shelves =
-                        getConnectedShelves(level, pos, state.getValue(FACING));
-
-                swapChain(player, shelves);
-            }
-            return InteractionResult.SUCCESS;
-        }
+        Inventory inventory = player.getInventory();
 
         if (level.isClientSide()) {
-            return InteractionResult.SUCCESS;
-        }
+            return inventory.getSelectedItem().isEmpty() ? InteractionResult.PASS : InteractionResult.SUCCESS;
+        } else if (!state.getValue(POWERED)) {
+            boolean itemRemoved = swapSingleItem(stack, player, shelf, hitSlot.getAsInt(), inventory);
 
-        int slot = getSlot(hit, facing, pos);
-        ItemStack current = shelf.getItem(slot);
-        int selected = player.getInventory().getSelectedSlot();
-
-//        if (!stack.isEmpty()) {
-//
-//            ItemStack old = shelf.swapItemNoUpdate(slot, stack.copy());
-//
-//            if (!player.getAbilities().instabuild) {
-//                player.getInventory().setItem(selected, old);
-//            }
-//
-//            shelf.setChanged();
-//            return InteractionResult.SUCCESS;
-//        }
-        if (!stack.isEmpty()) {
-
-            ItemStack old = shelf.swapItemNoUpdate(slot, stack.copy());
-
-            if (!player.getAbilities().instabuild) {
-                player.getInventory().setItem(selected, old);
-            }
-
-            shelf.setChanged();
-
-            level.playSound(
-                    null,
-                    pos,
-                    SoundEvents.SHELF_PLACE_ITEM,
-                    SoundSource.BLOCKS,
-                    1.0F,
-                    1.0F + level.getRandom().nextFloat() * 0.1F
-            );
-
-            return InteractionResult.SUCCESS;
-        }
-        /* ========== SoundEvents ======== */
-
-//        if (stack.isEmpty() && !current.isEmpty()) {
-//
-//            ItemStack inHand = player.getInventory().getItem(selected);
-//
-//            if (inHand.isEmpty()) {
-//                player.getInventory().setItem(selected, current.copy());
-//            } else {
-//                player.addItem(current.copy());
-//            }
-//
-//            shelf.setItem(slot, ItemStack.EMPTY);
-//            return InteractionResult.SUCCESS;
-//        }
-        if (stack.isEmpty() && !current.isEmpty()) {
-
-            ItemStack inHand = player.getInventory().getItem(selected);
-
-            if (inHand.isEmpty()) {
-                player.getInventory().setItem(selected, current.copy());
+            if (itemRemoved) {
+                level.playSound(
+                        null,
+                        pos,
+                        stack.isEmpty() ? SoundEvents.SHELF_TAKE_ITEM : SoundEvents.SHELF_SINGLE_SWAP,
+                        SoundSource.BLOCKS,
+                        1.0F,
+                        1.0F + level.getRandom().nextFloat() * 0.1F
+                );
             } else {
-                player.addItem(current.copy());
+                if (stack.isEmpty()) {
+                    return InteractionResult.PASS;
+                }
+
+                level.playSound(
+                        null,
+                        pos,
+                        SoundEvents.SHELF_PLACE_ITEM,
+                        SoundSource.BLOCKS,
+                        1.0F,
+                        1.0F + level.getRandom().nextFloat() * 0.1F
+                );
             }
 
-            shelf.setItem(slot, ItemStack.EMPTY);
+            return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
+        } else {
+            ItemStack previousItem = inventory.getSelectedItem();
+            boolean anySwapped = this.swapHotbar(level, pos, inventory);
+
+            if (!anySwapped) {
+                return InteractionResult.CONSUME;
+            }
 
             level.playSound(
                     null,
                     pos,
-                    SoundEvents.SHELF_TAKE_ITEM,
+                    SoundEvents.SHELF_MULTI_SWAP,
                     SoundSource.BLOCKS,
                     1.0F,
                     1.0F + level.getRandom().nextFloat() * 0.1F
             );
 
-            return InteractionResult.SUCCESS;
-        }
-
-        return InteractionResult.PASS;
-    }
-
-    private void swapHotbar(Player player, AppleBlockEntity shelf) {
-
-        Inventory inv = player.getInventory();
-
-        int base = inv.getSelectedSlot();
-
-        for (int i = 0; i < 3; i++) {
-
-            int invIndex = (base + i) % 9;
-
-            ItemStack invStack = inv.getItem(invIndex);
-            ItemStack shelfStack = shelf.getItem(i);
-
-            shelf.setItem(i, invStack);
-            inv.setItem(invIndex, shelfStack);
+            return previousItem == inventory.getSelectedItem()
+                    ? InteractionResult.SUCCESS
+                    : InteractionResult.SUCCESS.heldItemTransformedTo(inventory.getSelectedItem());
         }
     }
 
-    private List<BlockPos> getConnectedShelves(Level level, BlockPos pos, Direction facing) {
+    private static boolean swapSingleItem(
+            ItemStack itemStack, Player player, IShelfLike shelf, int hitSlot, Inventory inventory
+    ) {
+        ItemStack removedItem = shelf.swapItemNoUpdate(hitSlot, itemStack);
+        ItemStack newInventoryItem = player.hasInfiniteMaterials() && removedItem.isEmpty() ? itemStack.copy() : removedItem;
 
-        List<BlockPos> list = new ArrayList<>();
+        inventory.setItem(inventory.getSelectedSlot(), newInventoryItem);
+        inventory.setChanged();
+        shelf.setChanged();
 
-        Direction side = facing.getClockWise();
-
-        for (int i = 1; i <= 2; i++) {
-
-            BlockPos checkPos = pos.relative(side, -i);
-            BlockState checkState = level.getBlockState(checkPos);
-
-
-            BlockEntity be = level.getBlockEntity(checkPos);
-
-            if (!(be instanceof IShelfLike)) break;
-
-            Direction otherFacing = getFacingSafe(checkState);
-            if (otherFacing != facing) break;
-
-            if (!checkState.getValue(BlockStateProperties.POWERED)) break;
-
-            list.add(checkPos);
-
-
-        }
-
-        list.add(pos);
-
-        for (int i = 1; i <= 2; i++) {
-
-            BlockPos checkPos = pos.relative(side, i);
-            BlockState checkState = level.getBlockState(checkPos);
-
-            BlockEntity be = level.getBlockEntity(checkPos);
-
-
-            if (!(be instanceof IShelfLike)) break;
-
-            Direction otherFacing = getFacingSafe(checkState);
-            if (otherFacing != facing) break;
-
-            if (!checkState.getValue(BlockStateProperties.POWERED)) break;
-
-
-            list.add(checkPos);
-        }
-
-        // sort
-        list.sort(Comparator.comparingInt(p -> {
-            if (facing == Direction.NORTH) return -p.getX();
-            if (facing == Direction.SOUTH) return p.getX();
-            if (facing == Direction.WEST)  return p.getZ();
-            if (facing == Direction.EAST)  return -p.getZ();
-            return 0;
-        }));
-
-        return list;
-    }
-    private Direction getFacingSafe(BlockState state) {
-        if (state.hasProperty(AppleShelfBlock.FACING))
-            return state.getValue(AppleShelfBlock.FACING);
-
-        if (state.hasProperty(ShelfBlock.FACING))
-            return state.getValue(ShelfBlock.FACING);
-
-        return Direction.NORTH;
+        return !removedItem.isEmpty();
     }
 
-    private void swapChain(Player player, List<BlockPos> positions) {
+    private boolean swapHotbar(Level level, BlockPos pos, Inventory inventory) {
+        List<BlockPos> connectedBlocks = this.getAllBlocksConnectedTo(level, pos);
+        if (connectedBlocks.isEmpty()) {
+            return false;
+        }
 
-        Inventory inv = player.getInventory();
-        Level level = player.level();
+        boolean anySwapped = false;
 
-        boolean playedSound = false;
+        for (int shelfPartIndex = 0; shelfPartIndex < connectedBlocks.size(); shelfPartIndex++) {
+            if (!(level.getBlockEntity(connectedBlocks.get(shelfPartIndex)) instanceof IShelfLike shelfPart)) {
+                continue;
+            }
 
-        int totalShelves = positions.size();
-
-        for (int s = 0; s < totalShelves; s++) {
-
-            BlockPos pos = positions.get(s);
-
-            if (!(player.level().getBlockEntity(pos) instanceof IShelfLike shelf)) continue;
-
-            for (int i = 0; i < 3; i++) {
-
-                int invIndex = 9 - (totalShelves - s) * 3 + i;
-
-                if (invIndex < 0 || invIndex >= 9) continue;
-
-                ItemStack invStack = inv.getItem(invIndex);
-                ItemStack removed = shelf.swapItemNoUpdate(i, invStack);
-
-                if (!playedSound && (!invStack.isEmpty() || !removed.isEmpty())) {
-
-                    level.playSound(
-                            null,
-                            pos,
-                            SoundEvents.SHELF_MULTI_SWAP,
-//                            !invStack.isEmpty()
-//                                    ? SoundEvents.SHELF_SINGLE_SWAP
-//                                    : SoundEvents.SHELF_MULTI_SWAP,
-                            SoundSource.BLOCKS,
-                            1.0F,
-                            1.0F + level.getRandom().nextFloat() * 0.1F
-                    );
-
-                    playedSound = true;
-                }
-
-                if (!invStack.isEmpty() || !removed.isEmpty()) {
-                    inv.setItem(invIndex, removed);
+            for (int slot = 0; slot < this.getColumns(); slot++) {
+                int inventorySlot = 9 - (connectedBlocks.size() - shelfPartIndex) * this.getColumns() + slot;
+                if (inventorySlot >= 0 && inventorySlot <= inventory.getContainerSize()) {
+                    ItemStack placedInventoryItem = inventory.removeItemNoUpdate(inventorySlot);
+                    ItemStack removedShelfItem = shelfPart.swapItemNoUpdate(slot, placedInventoryItem);
+                    if (!placedInventoryItem.isEmpty() || !removedShelfItem.isEmpty()) {
+                        inventory.setItem(inventorySlot, removedShelfItem);
+                        anySwapped = true;
+                    }
                 }
             }
 
-            shelf.setChanged();
+            inventory.setChanged();
+            shelfPart.setChanged();
         }
 
-        inv.setChanged();
+        return anySwapped;
     }
 
 
@@ -540,7 +400,9 @@ public class AppleShelfBlock extends BaseEntityBlock
 
     @Override
     public boolean isConnectable(BlockState state) {
-        return state.getValue(POWERED);
+        // Neighbour states here can be ANY block (air included), so the property
+        // must be guarded before reading it, exactly like vanilla ShelfBlock does.
+        return state.is(BlockTags.WOODEN_SHELVES) && state.hasProperty(POWERED) && state.getValue(POWERED);
     }
 
     @Override

@@ -61,7 +61,7 @@ public class ModAppleVillagers {
                 Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
     }
 
-    private static ResourceKey<TradeSet> tradeSetKey(String name) {
+    public static ResourceKey<TradeSet> tradeSetKey(String name) {
         return ResourceKey.create(Registries.TRADE_SET,
                 Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
     }

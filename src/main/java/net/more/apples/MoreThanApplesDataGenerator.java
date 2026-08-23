@@ -9,6 +9,9 @@ import net.more.apples.datagen.ModPoiTagProvider;
 import net.more.apples.datagen.ModRegistryDataGenerator;
 import net.more.apples.datagen.provider.*;
 import net.more.apples.datagen.tag.ModBiomeTagProvider;
+import net.more.apples.datagen.villager.ModVillagerTradeSets;
+import net.more.apples.datagen.villager.ModVillagerTradeTagProvider;
+import net.more.apples.datagen.villager.ModVillagerTrades;
 import net.more.apples.structure.ModStructureSets;
 import net.more.apples.structure.ModStructures;
 import net.more.apples.world.biome.biomes_regions.ancient_apple.AncientAppleBiome;
@@ -43,6 +46,8 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 				output, registriesFuture, LootContextParamSets.CHEST));
 
 		pack.addProvider((output, registriesFuture) -> new ModBiomeTagProvider(output, registriesFuture));
+
+		pack.addProvider((output, registriesFuture) -> new ModVillagerTradeTagProvider(output, registriesFuture));
 	}
 
 	@Override
@@ -68,5 +73,8 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.TEMPLATE_POOL, ModStructurePoolProvider::bootstrap);
 		registryBuilder.add(Registries.STRUCTURE, ModStructures::bootstrap);
 		registryBuilder.add(Registries.STRUCTURE_SET, ModStructureSets::bootstrap);
+
+		registryBuilder.add(Registries.VILLAGER_TRADE, ModVillagerTrades::bootstrap);
+		registryBuilder.add(Registries.TRADE_SET, ModVillagerTradeSets::bootstrap);
 	}
 }

@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
@@ -29,7 +30,8 @@ public class AppleShelfEntityType {
                             .create(AppleBlockEntity::new,
                                     AppleWoodVariants.APPLE_SHELF,
                                     TestAppleWoodVariants.TEST_APPLE_SHELF,
-                                    FrostyAppleWoodVariants.FROSTY_APPLE_SHELF)
+                                    FrostyAppleWoodVariants.FROSTY_APPLE_SHELF,
+                                    AncientAppleWoodVariants.ANCIENT_APPLE_SHELF)
                             .build());
 
 

@@ -22,6 +22,9 @@ public class ModRegistryDataGenerator extends FabricDynamicRegistryProvider {
         entries.addAll(wrapperLookup.lookupOrThrow(Registries.STRUCTURE));
         entries.addAll(wrapperLookup.lookupOrThrow(Registries.STRUCTURE_SET));
         entries.addAll(wrapperLookup.lookupOrThrow(Registries.TEMPLATE_POOL));
+
+        entries.addAll(wrapperLookup.lookupOrThrow(Registries.VILLAGER_TRADE));
+        entries.addAll(wrapperLookup.lookupOrThrow(Registries.TRADE_SET));
     }
 
     @Override

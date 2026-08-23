@@ -1,0 +1,12 @@
+{
+  "gives": {
+    "id": "more-than-apples:diamond_apple"
+  },
+  "max_uses": 6.0,
+  "reputation_discount": 0.08,
+  "wants": {
+    "count": 7.0,
+    "id": "minecraft:emerald_block"
+  },
+  "xp": 15.0
+}
