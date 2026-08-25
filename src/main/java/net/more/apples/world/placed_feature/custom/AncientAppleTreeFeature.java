@@ -33,7 +33,7 @@ public class AncientAppleTreeFeature extends Feature<NoneFeatureConfiguration> {
             }
         }
 
-        // ลบส่วนเช็ครอบๆ ออกแล้วครับ
+        // ลบส่วนเช็ครอบๆ ออก
 
         level.setBlock(origin, AncientAppleWoodBlocks.ANCIENT_APPLE_TREE_GENERATOR.defaultBlockState(), 3);
 

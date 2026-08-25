@@ -297,7 +297,7 @@ public class AncientAppleTreePlan {
 
     private static void addLog(List<AncientAppleTreeGeneratorBlockEntity.BlockPlacement> placements,
                                BlockPos pos, Direction.Axis axis) {
-        BlockState state = AppleWoodBlocks.APPLE_LOG.defaultBlockState()
+        BlockState state = AncientAppleWoodBlocks.ANCIENT_APPLE_LOG.defaultBlockState()
                 .setValue(RotatedPillarBlock.AXIS, axis);
         placements.add(new AncientAppleTreeGeneratorBlockEntity.BlockPlacement(pos, state));
     }

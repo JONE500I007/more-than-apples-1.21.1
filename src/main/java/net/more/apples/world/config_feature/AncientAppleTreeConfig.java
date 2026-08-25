@@ -30,7 +30,7 @@ public class AncientAppleTreeConfig {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         registerTreeConfig(context, ANCIENT_APPLE_KEY2, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
+                BlockStateProvider.simple(AncientAppleWoodBlocks.ANCIENT_APPLE_LOG),
                 new AncientAppleTrunkPlacer(30, 8, 7),
 
                 BlockStateProvider.simple(AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES),
