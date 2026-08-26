@@ -57,7 +57,7 @@ public class FrostyAppleWoodVariants {
     public static final Block FROSTY_APPLE_TRAPDOOR = registerBlock("frosty_apple_trapdoor",
             properties -> new TrapDoorBlock(BlockSetType.OAK,
                     properties
-                            .noCollision()
+                            .noOcclusion()
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
 

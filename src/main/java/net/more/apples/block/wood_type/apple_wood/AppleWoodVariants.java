@@ -61,7 +61,7 @@ public class AppleWoodVariants {
     public static final Block APPLE_TRAPDOOR = registerBlock("apple_trapdoor",
             properties -> new TrapDoorBlock(BlockSetType.OAK,
                     properties
-                            .noCollision()
+                            .noOcclusion()
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
 
