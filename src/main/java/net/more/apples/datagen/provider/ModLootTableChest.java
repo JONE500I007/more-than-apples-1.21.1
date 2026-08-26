@@ -9,6 +9,9 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.context.ContextKeySet;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.more.apples.MoreThanApples;
+import net.more.apples.datagen.loot_table.loot_chest.BadBarrelHideoutLoot;
+import net.more.apples.datagen.loot_table.loot_chest.BadChestHideoutLoot;
+import net.more.apples.datagen.loot_table.loot_chest.BadPotHideoutLoot;
 import net.more.apples.datagen.loot_table.loot_chest.TowerLootTable;
 
 import java.util.concurrent.CompletableFuture;
@@ -22,6 +25,10 @@ public class ModLootTableChest extends SimpleFabricLootTableSubProvider {
     @Override
     public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> output) {
         TowerLootTable.addLoot(output);
+
+        BadBarrelHideoutLoot.addLoot(output);
+        BadPotHideoutLoot.addLoot(output);
+        BadChestHideoutLoot.addLoot(output);
     }
 
     public static ResourceKey<LootTable> key(String name) {

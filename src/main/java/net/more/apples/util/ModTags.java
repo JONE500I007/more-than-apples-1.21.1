@@ -15,6 +15,7 @@ public class ModTags {
         public static final TagKey<Block> ALL_APPLE_LOG = createTag("all_apple_log");
         public static final TagKey<Block> ALL_TEST_APPLE_LOG = createTag("all_test_apple_log");
         public static final TagKey<Block> ALL_FROSTY_APPLE_LOG = createTag("all_frosty_apple_log");
+        public static final TagKey<Block> ALL_ANCIENT_APPLE_LOG = createTag("all_ancient_apple_log");
 
         public static final TagKey<Block> ALL_THE_SHELF = createTag("all_the_shelf");
 
@@ -32,6 +33,7 @@ public class ModTags {
         public static final TagKey<Item> ALL_APPLE_LOG = createTag("all_apple_log");
         public static final TagKey<Item> ALL_TEST_APPLE_LOG = createTag("all_test_apple_log");
         public static final TagKey<Item> ALL_FROSTY_APPLE_LOG = createTag("all_frosty_apple_log");
+        public static final TagKey<Item> ALL_ANCIENT_APPLE_LOG = createTag("all_ancient_apple_log");
 
         public static TagKey<Item> createTag(String name) {
             return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
