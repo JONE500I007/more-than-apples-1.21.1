@@ -3,6 +3,7 @@ package net.more.apples.item;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
@@ -10,6 +11,7 @@ import net.more.apples.item.apple_item.ModAppleFoodItems;
 import net.more.apples.item.general_item.ModGeneralItems;
 
 import static net.more.apples.item.apple_item.ModAppleFoodItems.*;
+import static net.more.apples.item.apple_wood_item.AncientAppleWoodItem.*;
 import static net.more.apples.item.apple_wood_item.AppleWoodItem.*;
 import static net.more.apples.item.apple_wood_item.FrostyAppleWoodItem.*;
 import static net.more.apples.item.apple_wood_item.TestAppleWoodItem.*;
@@ -52,6 +54,10 @@ public class CreativeModeItemTabs {
                     entrise.accept(FrostyAppleWoodVariants.FROSTY_APPLE_SHELF);
                     entrise.accept(FROSTY_APPLE_SIGN);
                     entrise.accept(FROSTY_APPLE_HANGING_SIGN);
+
+                    entrise.accept(AncientAppleWoodVariants.ANCIENT_APPLE_SHELF);
+                    entrise.accept(ANCIENT_APPLE_SIGN);
+                    entrise.accept(ANCIENT_APPLE_HANGING_SIGN);
                 });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
@@ -64,6 +70,9 @@ public class CreativeModeItemTabs {
 
                     entrise.accept(FROSTY_APPLE_BOAT);
                     entrise.accept(FROSTY_APPLE_CHEST_BOAT);
+
+                    entrise.accept(ANCIENT_APPLE_BOAT);
+                    entrise.accept(ANCIENT_APPLE_CHEST_BOAT);
                 });
     }
 }

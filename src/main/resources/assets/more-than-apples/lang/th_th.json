@@ -93,6 +93,30 @@
   "entity.more-than-apples.frosty_apple_chest_boat": "เรือไม้ฟรอสตี้พร้อมหีบ",
 
 
+  "block.more-than-apples.ancient_apple_log": "ท่อนไม้ฟรอสตี้",
+  "block.more-than-apples.ancient_apple_wood": "ไม้ฟรอสตี้",
+  "block.more-than-apples.stripped_ancient_apple_log": "ท่อนไม้ฟรอสตี้ลอกเปลือก",
+  "block.more-than-apples.stripped_ancient_apple_wood": "ไม้ฟรอสตี้ลอกเปลือก",
+  "block.more-than-apples.ancient_apple_planks": "แผ่นกระดานฟรอสตี้",
+  "block.more-than-apples.ancient_apple_leaves": "ใบไม้ฟรอสตี้",
+  "block.more-than-apples.ancient_apple_sapling": "ต้นอ่อนไม้ฟรอสตี้",
+
+  "block.more-than-apples.ancient_apple_stairs": "บันไดไม้เก่าแก่",
+  "block.more-than-apples.ancient_apple_slab": "แผ่นไม้เก่าแก่",
+  "block.more-than-apples.ancient_apple_fence": "รั้วไม้เก่าแก่",
+  "block.more-than-apples.ancient_apple_fence_gate": "ประตูรั้วไม้เก่าแก่",
+  "block.more-than-apples.ancient_apple_door": "ประตูไม้เก่าแก่",
+  "block.more-than-apples.ancient_apple_trapdoor": "ประตูกับดักไม้เก่าแก่",
+  "block.more-than-apples.ancient_apple_pressure_plate": "แป้นเหยียบไม้เก่าแก่",
+  "block.more-than-apples.ancient_apple_button": "ปุ่มไม้เก่าแก่",
+  "block.more-than-apples.ancient_apple_shelf": "ชั้นวางไม้เก่าแก่",
+  "item.more-than-apples.ancient_apple_sign": "ป้ายไม้เก่าแก่",
+  "item.more-than-apples.ancient_apple_hanging_sign": "ป้ายแขวนไม้เก่าแก่",
+  "item.more-than-apples.ancient_apple_boat": "เรือไม้เก่าแก่",
+  "item.more-than-apples.ancient_apple_chest_boat": "เรือไม้เก่าแก่พร้อมหีบ",
+  "entity.more-than-apples.ancient_apple_chest_boat": "เรือไม้เก่าแก่พร้อมหีบ",
+
+
   "block.more-than-apples.apple_ore": "แร่แอปเปิ้ล",
   "block.more-than-apples.deepslate_apple_ore": "แร่แอปเปิ้ลในหินชนวนลึก",
 

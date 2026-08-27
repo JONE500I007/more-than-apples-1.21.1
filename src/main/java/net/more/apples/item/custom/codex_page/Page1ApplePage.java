@@ -28,7 +28,7 @@ public class Page1ApplePage implements CodexPage{
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        graphics.text(font, "All Apple Item", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+        graphics.text(font, "All Apple Items", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
         boolean apple       = DiscoveryHelperItems.hasDiscovered("discover_items/discover_apple");
         boolean green_apple = DiscoveryHelperItems.hasDiscovered("discover_items/discover_green_apple");
@@ -41,28 +41,50 @@ public class Page1ApplePage implements CodexPage{
         renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, apple,
                 new ItemStack(Items.APPLE),
                 Component.literal("Apple"),
-                new Component[]{Component.literal("A common fruit.")},
+                new Component[]{
+                        Component.literal("A common fruit"),
+                        Component.literal("found across"),
+                        Component.literal("many biomes, or"),
+                        Component.literal("on oak trees and"),
+                        Component.literal("apple trees, etc.")
+                },
                 "textures/gui/items/unknown_apple.png");
         y_leftpage += ROW_HEIGHT;
 
         renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, green_apple,
                 new ItemStack(ModAppleFoodItems.GREEN_APPLE),
                 Component.literal("Green Apple"),
-                new Component[]{Component.literal("Brings good luck :3")},
+                new Component[]{
+                        Component.literal("Grants a Luck"),
+                        Component.literal("effect. Obtainable"),
+                        Component.literal("by fishing, and"),
+                        Component.literal("can be brewed"),
+                        Component.literal("into potions. :3")
+                },
                 "textures/gui/items/unknown_apple.png");
         y_leftpage += ROW_HEIGHT;
 
         renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, test_apple,
                 new ItemStack(ModAppleFoodItems.TEST_APPLE),
-                Component.literal("Test_Apple"),
-                new Component[]{Component.literal("Just_some_test.")},
+                Component.literal("Test Apple"),
+                new Component[]{
+                        Component.literal("Grants the Call"),
+                        Component.literal("of Apple effect."),
+                        Component.literal("Obtainable by"),
+                        Component.literal("fishing, and can"),
+                        Component.literal("be brewed into"),
+                        Component.literal("potions.")
+                },
                 "textures/gui/items/unknown_apple.png");
         y_rightpage += ROW_HEIGHT;
 
         renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, frosty_apple,
                 new ItemStack(ModAppleFoodItems.FROSTY_APPLE),
                 Component.literal("Frosty Apple"),
-                new Component[]{Component.literal("Gives Freezing effect.")},
+                new Component[]{
+                        Component.literal("When eaten, gives"),
+                        Component.literal("a Freezing effect.")
+                },
                 "textures/gui/items/unknown_frosty_apple.png");
     }
 

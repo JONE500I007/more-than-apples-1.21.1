@@ -1,0 +1,26 @@
+{
+  "criteria": {
+    "in_apple_biome": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "more-than-apples:ancient_apple_wilds"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "in_apple_biome"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

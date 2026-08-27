@@ -11,6 +11,7 @@ import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.datagen.provider.ModRecipeProvider;
 import net.more.apples.item.apple_wood_item.AppleWoodItem;
+import net.more.apples.item.general_item.ModGeneralItems;
 import net.more.apples.util.ModTags;
 
 public final class AppleRecipes {
@@ -72,6 +73,13 @@ public final class AppleRecipes {
                 .pattern("BB")
                 .unlockedBy("has_apple", provider.hasItemTag(ModTags.Items.ALL_APPLE))
                 .unlockedBy("has_planks", provider.hasItemTag(ItemTags.PLANKS))
+                .save(exporter);
+
+        provider.shapelessRecipe(RecipeCategory.MISC, ModGeneralItems.APPLE_CODEX)
+                .requires(ModTags.Items.ALL_APPLE)
+                .requires(Items.BOOK)
+                .requires(Items.PAPER)
+                .unlockedBy("has_apple", provider.hasItemTag(ModTags.Items.ALL_APPLE))
                 .save(exporter);
     }
 }

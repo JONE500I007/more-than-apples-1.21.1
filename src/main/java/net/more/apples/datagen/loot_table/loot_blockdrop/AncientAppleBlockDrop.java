@@ -4,8 +4,8 @@ import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
 import net.more.apples.datagen.provider.ModLootBlockDrop;
 
-public final class AncientAppleLootBlockDrop {
-    private AncientAppleLootBlockDrop() {
+public final class AncientAppleBlockDrop {
+    private AncientAppleBlockDrop() {
     }
 
     public static void addLoot(ModLootBlockDrop provider) {

@@ -34,10 +34,15 @@ public class ModStructures {
             Registries.STRUCTURE,
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "tower_room"));
 
+    public static final ResourceKey<Structure> BADLANDS_HIDEOUT = ResourceKey.create(
+            Registries.STRUCTURE,
+            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "badlands_hideout"));
+
     public static void bootstrap(BootstrapContext<Structure> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
         HolderGetter<StructureTemplatePool> pools = context.lookup(Registries.TEMPLATE_POOL);
 
+        /*
         context.register(JUST_TEST, new JigsawStructure(
                 new Structure.StructureSettings.Builder(
                         biomes.getOrThrow(TagKey.create(Registries.BIOME,
@@ -75,6 +80,7 @@ public class ModStructures {
                 false,
                 Heightmap.Types.WORLD_SURFACE_WG
         ));
+         */
 
 
 //        context.register(DNG_ROOM, new JigsawStructure(
@@ -94,6 +100,7 @@ public class ModStructures {
 //                false,                                      // useExpansionHack
 //                Heightmap.Types.WORLD_SURFACE_WG            // projectStartToHeightmap
 //        ));
+        /*
         context.register(DNG_ROOM, new ModFixedStructure(
                 new Structure.StructureSettings.Builder(
                         biomes.getOrThrow(TagKey.create(Registries.BIOME,
@@ -108,6 +115,8 @@ public class ModStructures {
                 4,
                 Rotation.NONE
         ));
+
+         */
 
 
 //        context.register(TOWER_ROOM, new JigsawStructure(
@@ -128,7 +137,7 @@ public class ModStructures {
 //                Heightmap.Types.WORLD_SURFACE_WG            // projectStartToHeightmap
 //        ));
 
-
+/*
         context.register(TOWER_ROOM, new ModFixedStructure(
                 new Structure.StructureSettings.Builder(
                         biomes.getOrThrow(TagKey.create(Registries.BIOME,
@@ -142,6 +151,25 @@ public class ModStructures {
                         Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "tower_room/start_pool")),
                 2,
                 Rotation.NONE
+        ));
+ */
+
+                context.register(BADLANDS_HIDEOUT, new JigsawStructure(
+                new Structure.StructureSettings.Builder(
+                        biomes.getOrThrow(TagKey.create(Registries.BIOME,
+                                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                                        "has_structure/badlands_hideout")))
+                )
+                        .generationStep(GenerationStep.Decoration.SURFACE_STRUCTURES)
+                        .terrainAdapation(TerrainAdjustment.BEARD_THIN)
+                        .build(),
+                pools.getOrThrow(ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                                "badlands_hideout"))),
+                1,                                          // maxDepth (single piece, no jigsaw expansion)
+                ConstantHeight.of(VerticalAnchor.absolute(1)), // startHeight
+                false,                                      // useExpansionHack
+                Heightmap.Types.WORLD_SURFACE_WG            // projectStartToHeightmap
         ));
     }
 }

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden_button",
+  "ingredients": [
+    "more-than-apples:ancient_apple_planks"
+  ],
+  "result": {
+    "id": "more-than-apples:ancient_apple_button"
+  }
+}

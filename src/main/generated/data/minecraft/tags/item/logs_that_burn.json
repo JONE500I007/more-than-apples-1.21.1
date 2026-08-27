@@ -11,6 +11,10 @@
     "more-than-apples:frosty_apple_log",
     "more-than-apples:frosty_apple_wood",
     "more-than-apples:stripped_frosty_apple_log",
-    "more-than-apples:stripped_frosty_apple_wood"
+    "more-than-apples:stripped_frosty_apple_wood",
+    "more-than-apples:ancient_apple_log",
+    "more-than-apples:ancient_apple_wood",
+    "more-than-apples:stripped_ancient_apple_log",
+    "more-than-apples:stripped_ancient_apple_wood"
   ]
 }

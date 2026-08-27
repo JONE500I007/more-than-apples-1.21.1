@@ -6,6 +6,8 @@ import net.more.apples.MoreThanApples;
 
 import static net.more.apples.block.general_block.ModGeneralBlock.*;
 import static net.more.apples.block.ore_block.ModBlockOre.*;
+import static net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks.*;
+import static net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants.*;
 import static net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks.*;
 import static net.more.apples.block.wood_type.apple_wood.AppleWoodVariants.*;
 import static net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks.*;
@@ -69,6 +71,20 @@ public class CreativeModeBlockTabs {
                     entrise.accept(FROSTY_APPLE_TRAPDOOR);
                     entrise.accept(FROSTY_APPLE_PRESSURE_PLATE);
                     entrise.accept(FROSTY_APPLE_BUTTON);
+
+                    entrise.accept(ANCIENT_APPLE_LOG);
+                    entrise.accept(ANCIENT_APPLE_WOOD);
+                    entrise.accept(STRIPPED_ANCIENT_APPLE_LOG);
+                    entrise.accept(STRIPPED_ANCIENT_APPLE_WOOD);
+                    entrise.accept(ANCIENT_APPLE_PLANKS);
+                    entrise.accept(ANCIENT_APPLE_STAIRS);
+                    entrise.accept(ANCIENT_APPLE_SLAB);
+                    entrise.accept(ANCIENT_APPLE_FENCE);
+                    entrise.accept(ANCIENT_APPLE_FENCE_GATE);
+                    entrise.accept(ANCIENT_APPLE_DOOR);
+                    entrise.accept(ANCIENT_APPLE_TRAPDOOR);
+                    entrise.accept(ANCIENT_APPLE_PRESSURE_PLATE);
+                    entrise.accept(ANCIENT_APPLE_BUTTON);
                 });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS)
@@ -89,6 +105,10 @@ public class CreativeModeBlockTabs {
                     entrise.accept(FROSTY_APPLE_LOG);
                     entrise.accept(FROSTY_APPLE_LEAVES);
                     entrise.accept(FROSTY_APPLE_SAPLING);
+
+                    entrise.accept(ANCIENT_APPLE_LOG);
+                    entrise.accept(ANCIENT_APPLE_LEAVES);
+                    entrise.accept(ANCIENT_APPLE_SAPLING);
                 });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS)

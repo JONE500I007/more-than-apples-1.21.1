@@ -9,6 +9,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.more.apples.datagen.recipe.AncientAppleRecipes;
 import net.more.apples.datagen.recipe.AppleRecipes;
 import net.more.apples.datagen.recipe.FrostyRecipes;
 import net.more.apples.datagen.recipe.TestAppleRecipes;
@@ -43,6 +44,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             AppleRecipes.addRecipes(this, exporter);
             TestAppleRecipes.addRecipes(this, exporter);
             FrostyRecipes.addRecipes(this, exporter);
+            AncientAppleRecipes.addRecipes(this, exporter);
         }
 
         public void generateWoodFamily(net.minecraft.data.BlockFamily family) {

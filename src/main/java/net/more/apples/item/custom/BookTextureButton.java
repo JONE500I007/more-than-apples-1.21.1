@@ -10,7 +10,11 @@ import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Util;
+import net.more.apples.sounds.ModSounds;
 
 public class BookTextureButton extends AbstractWidget {
 
@@ -82,10 +86,28 @@ public class BookTextureButton extends AbstractWidget {
 
     }
 
+//    @Override
+//    public void onClick(MouseButtonEvent event, boolean doubleClick) {
+//        Minecraft.getInstance().getSoundManager().play(
+//                SimpleSoundInstance.forUI(SoundEvents.BOOK_PAGE_TURN, 1.0F)
+//        );
+//        onClick.run();
+//    }
+
+    private static final SoundEvent[] PAGE_TURN_SOUNDS = {
+            ModSounds.CODEX_PAGE_TURN_1,
+            ModSounds.CODEX_PAGE_TURN_2,
+            ModSounds.CODEX_PAGE_TURN_3,
+            ModSounds.CODEX_PAGE_TURN_4
+    };
+
+
     @Override
     public void onClick(MouseButtonEvent event, boolean doubleClick) {
+        SoundEvent chosen = Util.getRandom(PAGE_TURN_SOUNDS, RandomSource.create());
+
         Minecraft.getInstance().getSoundManager().play(
-                SimpleSoundInstance.forUI(SoundEvents.BOOK_PAGE_TURN, 1.0F)
+                SimpleSoundInstance.forUI(chosen, 1.0F)
         );
         onClick.run();
     }

@@ -26,7 +26,8 @@
 
 			"net.more.apples.mod_initializer.wood_apple.IniAppleFlamStr",
 			"net.more.apples.mod_initializer.wood_apple.IniTestAppleFlamStr",
-			"net.more.apples.mod_initializer.wood_apple.IniFrostyAppleFlamStr"
+			"net.more.apples.mod_initializer.wood_apple.IniFrostyAppleFlamStr",
+			"net.more.apples.mod_initializer.wood_apple.IniAncientAppleFlamStr"
 		],
 		"fabric-datagen": [
 			"net.more.apples.MoreThanApplesDataGenerator"

@@ -179,12 +179,15 @@ public class AppleGroveBiome {
         biomeBuilder.addFeature(
                 VEGETAL_DECORATION,
                 VegetationPlacements.FLOWER_MEADOW);
+
+//        biomeBuilder.addFeature(VEGETAL_DECORATION,
+//                VegetationPlacements.PATCH_LEAF_LITTER);
 //        DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
 
 
-        biomeBuilder.addFeature(
-                VEGETAL_DECORATION,
-                VegetationPlacements.PATCH_LEAF_LITTER);
+        // Leaf litter is now placed via a PlaceOnGroundDecorator on the apple tree
+        // configs themselves (see AppleTreeConfig), so it only appears under trees
+        // instead of scattered across the whole biome.
 
         biomeBuilder.addFeature(
                 UNDERGROUND_DECORATION,

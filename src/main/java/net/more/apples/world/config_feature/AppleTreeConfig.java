@@ -2,6 +2,7 @@ package net.more.apples.world.config_feature;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.WeightedList;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.PlaceOnGroundDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.more.apples.MoreThanApples;
@@ -36,6 +38,14 @@ public class AppleTreeConfig {
     //public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE_LEAF_LITTER_KEY = registryTreeKey("apple_leaf_litter_key");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+
+        // Places leaf litter only within a small radius of each tree's base, matching vanilla's oak/birch trees
+        // (see net.minecraft.data.worldgen.features.TreeFeatures#sparseLeafLitter/thickLeafLitter),
+        // instead of scattering it across the whole biome.
+        PlaceOnGroundDecorator sparseLeafLitter = new PlaceOnGroundDecorator(
+                96, 4, 2, new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 3)));
+        PlaceOnGroundDecorator thickLeafLitter = new PlaceOnGroundDecorator(
+                150, 2, 2, new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 4)));
 
         WeightedStateProvider twoLeavesProvider = new WeightedStateProvider(
                 WeightedList.<BlockState>builder()
@@ -60,7 +70,7 @@ public class AppleTreeConfig {
                 // lowerSize = thickness of the bottom layer, bottommost leaf
                 // upperSize = thickness of the top layer, top layer
                 new TwoLayersFeatureSize(1, 0, 1)
-        ).decorators(List.of(new BeehiveDecorator(0.1f))).build());
+        ).decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
 
         registerTreeConfig(context, LARGE_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
@@ -69,7 +79,7 @@ public class AppleTreeConfig {
 
                 new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
                 new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(4))
-        ).decorators(List.of(new BeehiveDecorator(0.1f))).build());
+        ).decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
 
 
 
@@ -86,7 +96,7 @@ public class AppleTreeConfig {
 
                 new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
                 new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(3))
-        ).build());
+        ).decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
     }
 
 

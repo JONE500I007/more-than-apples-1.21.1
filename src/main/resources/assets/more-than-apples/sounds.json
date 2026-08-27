@@ -1,0 +1,14 @@
+{
+  "codex_page_turn_1": {
+    "sounds": ["more-than-apples:codex_page_turn_1"]
+  },
+  "codex_page_turn_2": {
+    "sounds": ["more-than-apples:codex_page_turn_2"]
+  },
+  "codex_page_turn_3": {
+    "sounds": ["more-than-apples:codex_page_turn_3"]
+  },
+  "codex_page_turn_4": {
+    "sounds": ["more-than-apples:codex_page_turn_4"]
+  }
+}

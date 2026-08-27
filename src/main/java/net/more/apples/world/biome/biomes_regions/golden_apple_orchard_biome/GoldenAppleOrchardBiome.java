@@ -216,9 +216,9 @@ public class GoldenAppleOrchardBiome {
                 VegetationPlacements.PATCH_GRASS_PLAIN);
 
 
-        biomeBuilder.addFeature(
-                GenerationStep.Decoration.VEGETAL_DECORATION,
-                VegetationPlacements.PATCH_LEAF_LITTER);
+//        biomeBuilder.addFeature(
+//                GenerationStep.Decoration.VEGETAL_DECORATION,
+//                VegetationPlacements.PATCH_LEAF_LITTER);
 
         biomeBuilder.addFeature(
                 UNDERGROUND_DECORATION,

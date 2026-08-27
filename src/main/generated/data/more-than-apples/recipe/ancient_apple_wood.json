@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bark",
+  "key": {
+    "#": "more-than-apples:ancient_apple_log"
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "more-than-apples:ancient_apple_wood"
+  }
+}

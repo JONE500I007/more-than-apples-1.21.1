@@ -25,9 +25,14 @@ public class ModStructureSets {
             Registries.STRUCTURE_SET,
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "tower_room"));
 
+    public static ResourceKey<StructureSet> BADLANDS_HIDEOUT = ResourceKey.create(
+            Registries.STRUCTURE_SET,
+            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "badlands_hideout"));
+
     public static void bootstrap(BootstrapContext<StructureSet> context) {
         HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
 
+        /*
         context.register(JUST_TEST, new StructureSet(
                 structures.getOrThrow(ModStructures.JUST_TEST),
                 new RandomSpreadStructurePlacement(32, 8, RandomSpreadType.LINEAR, 12345)
@@ -46,6 +51,12 @@ public class ModStructureSets {
         context.register(TOWER_ROOM, new StructureSet(
                 structures.getOrThrow(ModStructures.TOWER_ROOM),
                 new RandomSpreadStructurePlacement(4, 2, RandomSpreadType.LINEAR, 445566)
+        ));
+         */
+
+        context.register(BADLANDS_HIDEOUT, new StructureSet(
+                structures.getOrThrow(ModStructures.BADLANDS_HIDEOUT),
+                new RandomSpreadStructurePlacement(32, 8, RandomSpreadType.LINEAR, 1122)
         ));
     }
 }

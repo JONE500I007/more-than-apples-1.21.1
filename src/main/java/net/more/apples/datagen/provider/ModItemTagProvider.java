@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.more.apples.datagen.tag.ItemTagsPr;
+import net.more.apples.datagen.tag.apples_tag.AncientAppleTags;
 import net.more.apples.datagen.tag.apples_tag.AppleTags;
 import net.more.apples.datagen.tag.apples_tag.FrostyTags;
 import net.more.apples.datagen.tag.apples_tag.TestAppleTags;
@@ -22,6 +23,7 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         AppleTags.addItemTags(this);
         TestAppleTags.addItemTags(this);
         FrostyTags.addItemTags(this);
+        AncientAppleTags.addItemTags(this);
         ItemTagsPr.addItemTags(this);
     }
 

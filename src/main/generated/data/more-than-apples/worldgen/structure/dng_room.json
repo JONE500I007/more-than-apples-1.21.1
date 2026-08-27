@@ -1,9 +1,0 @@
-{
-  "type": "more-than-apples:fixed_structure",
-  "biomes": "#more-than-apples:has_structure/dng_room",
-  "max_depth": 4,
-  "spawn_overrides": {},
-  "start_pool": "more-than-apples:dng_room/start_pool",
-  "step": "surface_structures",
-  "terrain_adaptation": "beard_thin"
-}

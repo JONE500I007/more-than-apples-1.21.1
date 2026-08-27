@@ -1,9 +1,0 @@
-{
-  "type": "more-than-apples:fixed_structure",
-  "biomes": "#more-than-apples:has_structure/tower_room",
-  "max_depth": 2,
-  "spawn_overrides": {},
-  "start_pool": "more-than-apples:tower_room/start_pool",
-  "step": "surface_structures",
-  "terrain_adaptation": "beard_thin"
-}

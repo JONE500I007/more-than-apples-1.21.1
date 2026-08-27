@@ -127,5 +127,16 @@ public class ModStructurePoolProvider {
                         )
                 )
         );
+
+        context.register(
+                ResourceKey.create(Registries.TEMPLATE_POOL,
+                        Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "badlands_hideout")),
+                new StructureTemplatePool(
+                        pools.getOrThrow(Pools.EMPTY),
+                        List.of(new Pair<>(
+                                StructurePoolElement.single(MoreThanApples.MOD_ID + ":badlands_hideout")
+                                        .apply(StructureTemplatePool.Projection.RIGID), 1))
+                )
+        );
     }
 }

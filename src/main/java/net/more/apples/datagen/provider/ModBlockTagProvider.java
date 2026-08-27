@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.more.apples.datagen.tag.BlockTagsPr;
+import net.more.apples.datagen.tag.apples_tag.AncientAppleTags;
 import net.more.apples.datagen.tag.apples_tag.AppleTags;
 import net.more.apples.datagen.tag.apples_tag.FrostyTags;
 import net.more.apples.datagen.tag.apples_tag.TestAppleTags;
@@ -22,6 +23,7 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
         AppleTags.addBlockTags(this);
         TestAppleTags.addBlockTags(this);
         FrostyTags.addBlockTags(this);
+        AncientAppleTags.addBlockTags(this);
         BlockTagsPr.addBlockTags(this);
     }
 

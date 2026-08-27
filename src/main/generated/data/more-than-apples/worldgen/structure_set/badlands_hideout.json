@@ -1,13 +1,13 @@
 {
   "placement": {
     "type": "minecraft:random_spread",
-    "salt": 12345,
+    "salt": 1122,
     "separation": 8,
     "spacing": 32
   },
   "structures": [
     {
-      "structure": "more-than-apples:just_test",
+      "structure": "more-than-apples:badlands_hideout",
       "weight": 1
     }
   ]

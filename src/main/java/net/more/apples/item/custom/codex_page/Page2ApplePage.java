@@ -41,8 +41,13 @@ public class Page2ApplePage implements CodexPage{
         renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, diamond_apple,
                 new ItemStack(ModAppleFoodItems.DIAMOND_APPLE),
                 Component.literal("Diamond Apple").withStyle(ChatFormatting.AQUA),
-                new Component[]{Component.literal("Just A OP Apple"),
-                Component.literal("if you eat you got :3")},
+                new Component[]{
+                        Component.literal("A Diamond Apple"),
+                        Component.literal("is stronger than"),
+                        Component.literal("a Golden Apple,"),
+                        Component.literal("and can be found"),
+                        Component.literal("in the world too.")
+                },
                 "textures/gui/items/unknown_apple.png");
         y_leftpage += ROW_HEIGHT;
 
@@ -50,21 +55,41 @@ public class Page2ApplePage implements CodexPage{
         renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, enchanted_diamond_apple,
                 new ItemStack(ModAppleFoodItems.ENCHANTED_DIAMOND_APPLE),
                 Component.literal("Enchanted Diamond Apple").withStyle(ChatFormatting.LIGHT_PURPLE),
-                new Component[]{Component.literal("Man....i just")},
+                new Component[]{
+                        Component.literal("Stronger than a"),
+                        Component.literal("Diamond Apple."),
+                        Component.literal("Found the same"),
+                        Component.literal("way an Enchanted"),
+                        Component.literal("Golden Apple is.")
+                },
                 "textures/gui/items/unknown_apple.png");
         y_leftpage += ROW_HEIGHT;
 
         renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, netherite_apple,
                 new ItemStack(ModAppleFoodItems.NETHERITE_APPLE),
                 Component.literal("Netherite Apple").withStyle(ChatFormatting.AQUA),
-                new Component[]{Component.literal("This too Op")},
+                new Component[]{
+                        Component.literal("Even stronger"),
+                        Component.literal("than an Enchanted"),
+                        Component.literal("Diamond Apple."),
+                        Component.literal("Grants Absorption,"),
+                        Component.literal("Regeneration,"),
+                        Component.literal("and more.")
+                },
                 "textures/gui/items/unknown_apple.png");
         y_rightpage += ROW_HEIGHT;
 
         renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, enchanted_netherite_apple,
                 new ItemStack(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE),
                 Component.literal("Enchanted Netherite Apple").withStyle(ChatFormatting.LIGHT_PURPLE),
-                new Component[]{Component.literal("This for test")},
+                new Component[]{
+                        Component.literal("The strongest"),
+                        Component.literal("apple of them all."),
+                        Component.literal("Grants powerful"),
+                        Component.literal("buffs and near-"),
+                        Component.literal("total immunity to"),
+                        Component.literal("negative effects.")
+                },
                 "textures/gui/items/unknown_apple.png");
     }
 

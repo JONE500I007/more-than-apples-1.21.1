@@ -6,6 +6,7 @@ import net.more.apples.effect.ModEffectsRegister;
 import net.more.apples.event.ModEntityUseHandler2;
 import net.more.apples.particle.ModParticle;
 import net.more.apples.potion.ModPotions;
+import net.more.apples.sounds.ModSounds;
 import net.more.apples.structure.custom.ModStructureTypes;
 import net.more.apples.util.ModLootConditions;
 import net.more.apples.util.custom_trade.ModCustomAppleMTrades;
@@ -30,6 +31,7 @@ public class MoreThanApples implements ModInitializer {
 	public void onInitialize() {
 		ModEffectsRegister.registerEffects();
 		ModPotions.registerPotionsForItem();
+		ModSounds.registerSounds();
 
 
 		ModEntityUseHandler2.register();

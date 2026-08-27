@@ -31,7 +31,7 @@ public class Page4ApplePage implements CodexPage{
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        graphics.text(font, "All Apple Biome", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+        graphics.text(font, "All Apple Biomes", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
         boolean apple_grove = DiscoveryHelperBiomes.hasDiscovered(
                 "discover_biomes/discover_apple_grove");
@@ -45,8 +45,11 @@ public class Page4ApplePage implements CodexPage{
             renderImage_left(graphics, font, bookX, y_leftpage,
                     APPLE_GROVE_IMG, IMG_WIDTH, IMG_HEIGHT,
                     new Component[]{
-                            Component.literal("Apple Orchard Biome."),
-                            Component.literal("Rich with apple trees.")
+                            Component.literal("Apple Grove Biome."),
+                            Component.literal("A biome filled with"),
+                            Component.literal("apple trees."),
+                            Component.literal("The trees drop extra"),
+                            Component.literal("apples and saplings.")
                     });
         } else {
             renderImage_left(graphics, font, bookX, y_leftpage,
@@ -63,8 +66,13 @@ public class Page4ApplePage implements CodexPage{
             renderImage_right(graphics, font, bookX, y_leftpage,
                     GOLDEN_APPLE_ORCHARD_IMG, IMG_WIDTH, IMG_HEIGHT,
                     new Component[]{
-                            Component.literal("Golden Apple Orchard Biome."),
-                            Component.literal("Rich with apple trees.")
+                            Component.literal("Golden Apple Orchard"),
+                            Component.literal("Biome. A biome filled"),
+                            Component.literal("with golden apple"),
+                            Component.literal("trees. The trees drop"),
+                            Component.literal("golden apples,"),
+                            Component.literal("and golden dandelions"),
+                            Component.literal("bloom here too.")
                     });
         } else {
             renderImage_right(graphics, font, bookX, y_leftpage,

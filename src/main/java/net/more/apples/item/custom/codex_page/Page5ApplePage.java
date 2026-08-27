@@ -19,7 +19,7 @@ public class Page5ApplePage implements CodexPage{
     private static final Identifier FROSTY_APPLE = Identifier.fromNamespaceAndPath(
             MoreThanApples.MOD_ID, "textures/gui/image_biome/frosty_apple.png");
     private static final Identifier GOLDEN_APPLE_ORCHARD_IMG = Identifier.fromNamespaceAndPath(
-            MoreThanApples.MOD_ID, "textures/gui/image_biome/golden_apple_orchard.png");
+            MoreThanApples.MOD_ID, "textures/gui/image_biome/ancient_apple_wilds.png");
 
 
     private static final int IMG_WIDTH  = 109;
@@ -31,12 +31,12 @@ public class Page5ApplePage implements CodexPage{
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        //graphics.text(font, "All Apple Biome", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+        //graphics.text(font, "All Apple Biomes", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
         boolean frosty_apple = DiscoveryHelperBiomes.hasDiscovered(
                 "discover_biomes/discover_frosty_apple");
         boolean golden_apple_orchard = DiscoveryHelperBiomes.hasDiscovered(
-                "discover_biomes/discover_golden_apple_orchard");
+                "discover_biomes/discover_ancient_apple_wilds");
 
         int y_leftpage = bookY + 40;
         int y_rightpage = bookY + 40;
@@ -46,7 +46,10 @@ public class Page5ApplePage implements CodexPage{
                     FROSTY_APPLE, IMG_WIDTH, IMG_HEIGHT,
                     new Component[]{
                             Component.literal("Frosty Apple Biome."),
-                            Component.literal("Rich with apple trees.")
+                            Component.literal("A snowy, freezing"),
+                            Component.literal("biome. Frosty apple"),
+                            Component.literal("trees drop chilled"),
+                            Component.literal("apples.")
                     });
         } else {
             renderImage_left(graphics, font, bookX, y_leftpage,
@@ -63,8 +66,11 @@ public class Page5ApplePage implements CodexPage{
             renderImage_right(graphics, font, bookX, y_leftpage,
                     GOLDEN_APPLE_ORCHARD_IMG, IMG_WIDTH, IMG_HEIGHT,
                     new Component[]{
-                            Component.literal("Golden Apple Orchard Biome."),
-                            Component.literal("Rich with apple trees.")
+                            Component.literal("Ancient Apple Wilds"),
+                            Component.literal("Biome. A wild,"),
+                            Component.literal("overgrown biome, home"),
+                            Component.literal(" to massive, ancient"),
+                            Component.literal("apple trees.")
                     });
         } else {
             renderImage_right(graphics, font, bookX, y_leftpage,

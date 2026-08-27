@@ -82,5 +82,12 @@ public class ModBiomeTagProvider extends FabricTagsProvider<Biome> {
                 .add(Biomes.DESERT)
                 .add(Biomes.SAVANNA)
                 .add(Biomes.MEADOW);
+
+        builder(TagKey.create(Registries.BIOME,
+                Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
+                        "has_structure/badlands_hideout")))
+                .add(Biomes.BADLANDS)
+                .add(Biomes.ERODED_BADLANDS)
+                .add(Biomes.WOODED_BADLANDS);
     }
 }
