@@ -60,6 +60,7 @@ public class ModBiomeTagProvider extends FabricTagsProvider<Biome> {
                         "has_structure/just_test")))
                 .add(GoldenAppleOrchardBiome.GOLDEN_APPLE_ORCHARD);
 
+        /*
         builder(TagKey.create(Registries.BIOME,
                 Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                         "has_structure/test_dungeon")))
@@ -82,6 +83,7 @@ public class ModBiomeTagProvider extends FabricTagsProvider<Biome> {
                 .add(Biomes.DESERT)
                 .add(Biomes.SAVANNA)
                 .add(Biomes.MEADOW);
+         */
 
         builder(TagKey.create(Registries.BIOME,
                 Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,

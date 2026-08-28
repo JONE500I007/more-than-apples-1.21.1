@@ -90,7 +90,7 @@ public final class AncientAppleTags {
         provider.addToTag(ItemTags.PLANKS,
                 AncientAppleWoodBlocks.ANCIENT_APPLE_PLANKS.asItem());
 
-        // --- Custom Test Apple Logs ---
+        // --- Custom Ancient Apple Logs ---
         provider.addToTag(ModTags.Items.ALL_ANCIENT_APPLE_LOG,
                 AncientAppleWoodBlocks.ANCIENT_APPLE_LOG.asItem(),
                 AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_LOG.asItem(),

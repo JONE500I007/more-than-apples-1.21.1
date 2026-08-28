@@ -3,6 +3,7 @@ package net.more.apples.datagen.tag;
 import net.minecraft.tags.BlockTags;
 import net.more.apples.block.general_block.ModGeneralBlock;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
+import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
@@ -35,7 +36,13 @@ public final class BlockTagsPr {
                 FrostyAppleWoodVariants.FROSTY_APPLE_STANDING_SIGN,
                 FrostyAppleWoodVariants.FROSTY_APPLE_WALL_SIGN,
                 FrostyAppleWoodVariants.FROSTY_APPLE_HANGING_SIGN_BLOCK,
-                FrostyAppleWoodVariants.FROSTY_APPLE_WALL_HANGING_SIGN);
+                FrostyAppleWoodVariants.FROSTY_APPLE_WALL_HANGING_SIGN,
+
+                // Ancient Apple
+                AncientAppleWoodVariants.ANCIENT_APPLE_STANDING_SIGN,
+                AncientAppleWoodVariants.ANCIENT_APPLE_WALL_SIGN,
+                AncientAppleWoodVariants.ANCIENT_APPLE_HANGING_SIGN_BLOCK,
+                AncientAppleWoodVariants.ANCIENT_APPLE_WALL_HANGING_SIGN);
 
         provider.addToTag(BlockTags.MINEABLE_WITH_HOE,
                 // Apple Leaves
@@ -50,7 +57,10 @@ public final class BlockTagsPr {
                 AppleWoodBlocks.FRUIT_GOLDEN_APPLE_LEAVES,
 
                 // Frosty Apple Leaves
-                FrostyAppleWoodBlocks.FROSTY_APPLE_LEAVES);
+                FrostyAppleWoodBlocks.FROSTY_APPLE_LEAVES,
+
+                // Ancient Apple Leaves
+                AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES);
 
         provider.addToTag(BlockTags.PREVENTS_NEARBY_LEAF_DECAY,
                 AppleWoodBlocks.APPLE_LOG,
