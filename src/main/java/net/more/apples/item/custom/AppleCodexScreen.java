@@ -15,7 +15,7 @@ import java.util.List;
 
 public class AppleCodexScreen extends Screen {
     private int currentPage = 0;
-    private final int MAX_PAGE = 10;
+    private final int MAX_PAGE = 7;
     private BookTextureButton btnLeft;
     private BookTextureButton btnRight;
 

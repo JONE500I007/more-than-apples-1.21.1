@@ -288,18 +288,18 @@
 
   "codex.more-than-apples.page6.title": "All Mod Effects",
   "codex.more-than-apples.page6.darkness_immune.name": "Darkness Immune",
-  "codex.more-than-apples.page6.darkness_immune.desc": "Removes and blocks\nthe Darkness effect.\nGranted by the\nEnchanted Netherite\nApple.",
+  "codex.more-than-apples.page6.darkness_immune.desc": "Removes and\nblocks the\nDarkness effect.",
   "codex.more-than-apples.page6.slowness_immune.name": "Slowness Immune",
-  "codex.more-than-apples.page6.slowness_immune.desc": "Removes and blocks\nthe Slowness effect.\nGranted by the\nEnchanted Netherite\nApple.",
+  "codex.more-than-apples.page6.slowness_immune.desc": "Removes and\nblocks the\nSlowness effect.",
   "codex.more-than-apples.page6.mining_fatigue_immune.name": "Mining Fatigue Immune",
-  "codex.more-than-apples.page6.mining_fatigue_immune.desc": "Removes and blocks\nMining Fatigue.\nGranted by the\nEnchanted Netherite\nApple.",
+  "codex.more-than-apples.page6.mining_fatigue_immune.desc": "Removes and\nblocks Mining-\nFatigue effect.",
   "codex.more-than-apples.page6.freezing_resistance.name": "Freezing Resistance",
-  "codex.more-than-apples.page6.freezing_resistance.desc": "Removes Freezing and\nstops you from\nfreezing again.\nGranted by the\nEnchanted Diamond\nApple or higher.",
+  "codex.more-than-apples.page6.freezing_resistance.desc": "Removes Freezing\nand stops you from\nfreezing again.",
 
   "codex.more-than-apples.page7.call_of_apple.name": "Call of Apple",
   "codex.more-than-apples.page7.call_of_apple.desc": "Lets you catch\napple loot while\nfishing, no matter\nwhat biome you're\nstanding in.",
   "codex.more-than-apples.page7.freezing.name": "Freezing",
-  "codex.more-than-apples.page7.freezing.desc": "Makes you freeze up\nlike standing in\npowder snow.\nGranted by the\nFrosty Apple.",
+  "codex.more-than-apples.page7.freezing.desc": "Makes you freeze-\nup like standing in\npowder snow.",
 
   "codex.more-than-apples.page8.title": "All Structures",
   "codex.more-than-apples.page8.badlands_hideout.caption": "Badlands Hideout\nStructure.\nA hidden shelter\nin the Badlands,\nguarding chests,\nbarrels, and pots\nfull of loot.",
