@@ -27,7 +27,8 @@ public class Page7ApplePage implements CodexPage{
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        graphics.text(font, "All Mod Effects", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+//        graphics.text(font, Component.translatable("codex.more-than-apples.page6.title"),
+//                bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
         boolean call_of_apple = DiscoveryHelperItems.hasDiscovered("discover_effects/discover_call_of_apple");
         boolean freezing = DiscoveryHelperItems.hasDiscovered("discover_effects/discover_freezing");
@@ -37,34 +38,26 @@ public class Page7ApplePage implements CodexPage{
 
         renderEffect_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, call_of_apple,
                 "textures/mob_effect/call_of_apple.png",
-                Component.literal("Call of Apple"),
-                new Component[]{
-                        Component.literal("Lets you catch"),
-                        Component.literal("apple loot while"),
-                        Component.literal("fishing, no matter"),
-                        Component.literal("what biome you're"),
-                        Component.literal("standing in.")
-                },
+                "codex.more-than-apples.page7.call_of_apple.name",
+                "codex.more-than-apples.page7.call_of_apple.desc",
                 "textures/gui/effects/unknown_call_of_apple.png");
 
         renderEffect_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, freezing,
                 "textures/mob_effect/freezing.png",
-                Component.literal("Freezing"),
-                new Component[]{
-                        Component.literal("Makes you freeze up"),
-                        Component.literal("like standing in"),
-                        Component.literal("powder snow."),
-                        Component.literal("Granted by the"),
-                        Component.literal("Frosty Apple.")
-                },
+                "codex.more-than-apples.page7.freezing.name",
+                "codex.more-than-apples.page7.freezing.desc",
                 "textures/gui/effects/unknown_freezing.png");
+    }
+
+    private static String[] lines(String key) {
+        return Component.translatable(key).getString().split("\n", -1);
     }
 
     // helper method
     private void renderEffect_left(GuiGraphicsExtractor graphics, Font font,
                                    int bookX, int y, int mouseX, int mouseY,
                                    boolean discovered, String effectTexture,
-                                   Component name, Component[] desc,
+                                   String nameKey, String descKey,
                                    String unknownTexture) {
         Identifier icon = Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                 discovered ? effectTexture : unknownTexture);
@@ -73,6 +66,7 @@ public class Page7ApplePage implements CodexPage{
                 bookX + ICON_X_left, y, 0, 0, ICON_SIZE, ICON_SIZE, ICON_SIZE, ICON_SIZE);
 
         if (discovered) {
+            String[] desc = lines(descKey);
             for (int i = 0; i < desc.length; i++) {
                 graphics.text(font, desc[i], bookX + TEXT_X_left, y + 4 + (i * 9), 0xFF888888, false);
             }
@@ -84,7 +78,7 @@ public class Page7ApplePage implements CodexPage{
                 && mouseY >= y && mouseY <= y + ICON_SIZE) {
             if (discovered) {
                 graphics.setTooltipForNextFrame(font,
-                        List.of(name),
+                        List.of(Component.translatable(nameKey)),
                         Optional.empty(), mouseX, mouseY);
             } else {
                 graphics.setTooltipForNextFrame(font,
@@ -97,7 +91,7 @@ public class Page7ApplePage implements CodexPage{
     private void renderEffect_right(GuiGraphicsExtractor graphics, Font font,
                                     int bookX, int y, int mouseX, int mouseY,
                                     boolean discovered, String effectTexture,
-                                    Component name, Component[] desc,
+                                    String nameKey, String descKey,
                                     String unknownTexture) {
         Identifier icon = Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                 discovered ? effectTexture : unknownTexture);
@@ -106,6 +100,7 @@ public class Page7ApplePage implements CodexPage{
                 bookX + ICON_X_right, y, 0, 0, ICON_SIZE, ICON_SIZE, ICON_SIZE, ICON_SIZE);
 
         if (discovered) {
+            String[] desc = lines(descKey);
             for (int i = 0; i < desc.length; i++) {
                 graphics.text(font, desc[i], bookX + TEXT_X_right, y + 4 + (i * 9), 0xFF888888, false);
             }
@@ -117,7 +112,7 @@ public class Page7ApplePage implements CodexPage{
                 && mouseY >= y && mouseY <= y + ICON_SIZE) {
             if (discovered) {
                 graphics.setTooltipForNextFrame(font,
-                        List.of(name),
+                        List.of(Component.translatable(nameKey)),
                         Optional.empty(), mouseX, mouseY);
             } else {
                 graphics.setTooltipForNextFrame(font,

@@ -27,7 +27,8 @@ public class Page6ApplePage implements CodexPage{
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        graphics.text(font, "All Mod Effects", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+        graphics.text(font, Component.translatable("codex.more-than-apples.page6.title"),
+                bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
         boolean darkness_immune = DiscoveryHelperItems.hasDiscovered("discover_effects/discover_darkness_immune");
         boolean slowness_immune = DiscoveryHelperItems.hasDiscovered("discover_effects/discover_slowness_immune");
@@ -39,62 +40,41 @@ public class Page6ApplePage implements CodexPage{
 
         renderEffect_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, darkness_immune,
                 "textures/mob_effect/darkness_immune.png",
-                Component.literal("Darkness Immune"),
-                new Component[]{
-                        Component.literal("Removes and blocks"),
-                        Component.literal("the Darkness effect."),
-                        Component.literal("Granted by the"),
-                        Component.literal("Enchanted Netherite"),
-                        Component.literal("Apple.")
-                },
+                "codex.more-than-apples.page6.darkness_immune.name",
+                "codex.more-than-apples.page6.darkness_immune.desc",
                 "textures/gui/effects/unknown_darkness_im.png");
         y_leftpage += ROW_HEIGHT;
 
         renderEffect_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, slowness_immune,
                 "textures/mob_effect/slowness_immune.png",
-                Component.literal("Slowness Immune"),
-                new Component[]{
-                        Component.literal("Removes and blocks"),
-                        Component.literal("the Slowness effect."),
-                        Component.literal("Granted by the"),
-                        Component.literal("Enchanted Netherite"),
-                        Component.literal("Apple.")
-                },
+                "codex.more-than-apples.page6.slowness_immune.name",
+                "codex.more-than-apples.page6.slowness_immune.desc",
                 "textures/gui/effects/unknown_slowness_im.png");
         y_leftpage += ROW_HEIGHT;
 
         renderEffect_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, mining_fatigue_immune,
                 "textures/mob_effect/mining_fatigue_immune.png",
-                Component.literal("Mining Fatigue Immune"),
-                new Component[]{
-                        Component.literal("Removes and blocks"),
-                        Component.literal("Mining Fatigue."),
-                        Component.literal("Granted by the"),
-                        Component.literal("Enchanted Netherite"),
-                        Component.literal("Apple.")
-                },
+                "codex.more-than-apples.page6.mining_fatigue_immune.name",
+                "codex.more-than-apples.page6.mining_fatigue_immune.desc",
                 "textures/gui/effects/unknown_mining_fatigue_im.png");
         y_rightpage += ROW_HEIGHT;
 
         renderEffect_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, freezing_resistance,
                 "textures/mob_effect/freezing_resistance.png",
-                Component.literal("Freezing Resistance"),
-                new Component[]{
-                        Component.literal("Removes Freezing and"),
-                        Component.literal("stops you from"),
-                        Component.literal("freezing again."),
-                        Component.literal("Granted by the"),
-                        Component.literal("Enchanted Diamond"),
-                        Component.literal("Apple or higher.")
-                },
+                "codex.more-than-apples.page6.freezing_resistance.name",
+                "codex.more-than-apples.page6.freezing_resistance.desc",
                 "textures/gui/effects/unknown_freezing_resistance.png");
+    }
+
+    private static String[] lines(String key) {
+        return Component.translatable(key).getString().split("\n", -1);
     }
 
     // helper method
     private void renderEffect_left(GuiGraphicsExtractor graphics, Font font,
                                    int bookX, int y, int mouseX, int mouseY,
                                    boolean discovered, String effectTexture,
-                                   Component name, Component[] desc,
+                                   String nameKey, String descKey,
                                    String unknownTexture) {
         Identifier icon = Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                 discovered ? effectTexture : unknownTexture);
@@ -103,6 +83,7 @@ public class Page6ApplePage implements CodexPage{
                 bookX + ICON_X_left, y, 0, 0, ICON_SIZE, ICON_SIZE, ICON_SIZE, ICON_SIZE);
 
         if (discovered) {
+            String[] desc = lines(descKey);
             for (int i = 0; i < desc.length; i++) {
                 graphics.text(font, desc[i], bookX + TEXT_X_left, y + 4 + (i * 9), 0xFF888888, false);
             }
@@ -114,7 +95,7 @@ public class Page6ApplePage implements CodexPage{
                 && mouseY >= y && mouseY <= y + ICON_SIZE) {
             if (discovered) {
                 graphics.setTooltipForNextFrame(font,
-                        List.of(name),
+                        List.of(Component.translatable(nameKey)),
                         Optional.empty(), mouseX, mouseY);
             } else {
                 graphics.setTooltipForNextFrame(font,
@@ -127,7 +108,7 @@ public class Page6ApplePage implements CodexPage{
     private void renderEffect_right(GuiGraphicsExtractor graphics, Font font,
                                     int bookX, int y, int mouseX, int mouseY,
                                     boolean discovered, String effectTexture,
-                                    Component name, Component[] desc,
+                                    String nameKey, String descKey,
                                     String unknownTexture) {
         Identifier icon = Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                 discovered ? effectTexture : unknownTexture);
@@ -136,6 +117,7 @@ public class Page6ApplePage implements CodexPage{
                 bookX + ICON_X_right, y, 0, 0, ICON_SIZE, ICON_SIZE, ICON_SIZE, ICON_SIZE);
 
         if (discovered) {
+            String[] desc = lines(descKey);
             for (int i = 0; i < desc.length; i++) {
                 graphics.text(font, desc[i], bookX + TEXT_X_right, y + 4 + (i * 9), 0xFF888888, false);
             }
@@ -147,7 +129,7 @@ public class Page6ApplePage implements CodexPage{
                 && mouseY >= y && mouseY <= y + ICON_SIZE) {
             if (discovered) {
                 graphics.setTooltipForNextFrame(font,
-                        List.of(name),
+                        List.of(Component.translatable(nameKey)),
                         Optional.empty(), mouseX, mouseY);
             } else {
                 graphics.setTooltipForNextFrame(font,

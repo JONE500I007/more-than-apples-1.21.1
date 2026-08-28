@@ -28,7 +28,8 @@ public class Page1ApplePage implements CodexPage{
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        graphics.text(font, "All Apple Items", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+        graphics.text(font, Component.translatable("codex.more-than-apples.page1.title"),
+                bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
         boolean apple       = DiscoveryHelperItems.hasDiscovered("discover_items/discover_apple");
         boolean green_apple = DiscoveryHelperItems.hasDiscovered("discover_items/discover_green_apple");
@@ -40,69 +41,52 @@ public class Page1ApplePage implements CodexPage{
 
         renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, apple,
                 new ItemStack(Items.APPLE),
-                Component.literal("Apple"),
-                new Component[]{
-                        Component.literal("A common fruit"),
-                        Component.literal("found across"),
-                        Component.literal("many biomes, or"),
-                        Component.literal("on oak trees and"),
-                        Component.literal("apple trees, etc.")
-                },
+                "codex.more-than-apples.page1.apple.name",
+                "codex.more-than-apples.page1.apple.desc",
                 "textures/gui/items/unknown_apple.png");
         y_leftpage += ROW_HEIGHT;
 
         renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, green_apple,
                 new ItemStack(ModAppleFoodItems.GREEN_APPLE),
-                Component.literal("Green Apple"),
-                new Component[]{
-                        Component.literal("Grants a Luck"),
-                        Component.literal("effect. Obtainable"),
-                        Component.literal("by fishing, and"),
-                        Component.literal("can be brewed"),
-                        Component.literal("into potions. :3")
-                },
+                "codex.more-than-apples.page1.green_apple.name",
+                "codex.more-than-apples.page1.green_apple.desc",
                 "textures/gui/items/unknown_apple.png");
         y_leftpage += ROW_HEIGHT;
 
         renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, test_apple,
                 new ItemStack(ModAppleFoodItems.TEST_APPLE),
-                Component.literal("Test Apple"),
-                new Component[]{
-                        Component.literal("Grants the Call"),
-                        Component.literal("of Apple effect."),
-                        Component.literal("Obtainable by"),
-                        Component.literal("fishing, and can"),
-                        Component.literal("be brewed into"),
-                        Component.literal("potions.")
-                },
+                "codex.more-than-apples.page1.test_apple.name",
+                "codex.more-than-apples.page1.test_apple.desc",
                 "textures/gui/items/unknown_apple.png");
         y_rightpage += ROW_HEIGHT;
 
         renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, frosty_apple,
                 new ItemStack(ModAppleFoodItems.FROSTY_APPLE),
-                Component.literal("Frosty Apple"),
-                new Component[]{
-                        Component.literal("When eaten, gives"),
-                        Component.literal("a Freezing effect.")
-                },
+                "codex.more-than-apples.page1.frosty_apple.name",
+                "codex.more-than-apples.page1.frosty_apple.desc",
                 "textures/gui/items/unknown_frosty_apple.png");
+    }
+
+    private static String[] lines(String key) {
+        return Component.translatable(key).getString().split("\n", -1);
     }
 
     // helper method
     private void renderItem_left(GuiGraphicsExtractor graphics, Font font,
                                  int bookX, int y, int mouseX, int mouseY,
                                  boolean discovered, ItemStack item,
-                                 Component name, Component[] desc,
+                                 String nameKey, String descKey,
                                  String unknownTexture) {
         if (discovered) {
             graphics.item(item, bookX + ICON_X_left, y);
+            String[] desc = lines(descKey);
             for (int i = 0; i < desc.length; i++) {
                 graphics.text(font, desc[i], bookX + TEXT_X_left, y + 4 + (i * 9), 0xFF888888, false);
             }
             if (mouseX >= bookX + ICON_X_left && mouseX <= bookX + ICON_X_left + 16
                     && mouseY >= y && mouseY <= y + 16) {
                 graphics.setTooltipForNextFrame(font,
-                        List.of(name),
+                        List.of(Component.translatable(nameKey)),
                         Optional.empty(), mouseX, mouseY);
             }
         } else {
@@ -123,17 +107,18 @@ public class Page1ApplePage implements CodexPage{
     private void renderItem_right(GuiGraphicsExtractor graphics, Font font,
                                   int bookX, int y, int mouseX, int mouseY,
                                   boolean discovered, ItemStack item,
-                                  Component name, Component[] desc,
+                                  String nameKey, String descKey,
                                   String unknownTexture) {
         if (discovered) {
             graphics.item(item, bookX + ICON_X_right, y);
+            String[] desc = lines(descKey);
             for (int i = 0; i < desc.length; i++) {
                 graphics.text(font, desc[i], bookX + TEXT_X_right, y + 4 + (i * 9), 0xFF888888, false);
             }
             if (mouseX >= bookX + ICON_X_right && mouseX <= bookX + ICON_X_right + 16
                     && mouseY >= y && mouseY <= y + 16) {
                 graphics.setTooltipForNextFrame(font,
-                        List.of(name),
+                        List.of(Component.translatable(nameKey)),
                         Optional.empty(), mouseX, mouseY);
             }
         } else {

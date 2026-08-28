@@ -31,7 +31,8 @@ public class Page4ApplePage implements CodexPage{
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        graphics.text(font, "All Apple Biomes", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+        graphics.text(font, Component.translatable("codex.more-than-apples.page4.title"),
+                bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
         boolean apple_grove = DiscoveryHelperBiomes.hasDiscovered(
                 "discover_biomes/discover_apple_grove");
@@ -44,53 +45,37 @@ public class Page4ApplePage implements CodexPage{
         if (apple_grove) {
             renderImage_left(graphics, font, bookX, y_leftpage,
                     APPLE_GROVE_IMG, IMG_WIDTH, IMG_HEIGHT,
-                    new Component[]{
-                            Component.literal("Apple Grove Biome."),
-                            Component.literal("A biome filled with"),
-                            Component.literal("apple trees."),
-                            Component.literal("The trees drop extra"),
-                            Component.literal("apples and saplings.")
-                    });
+                    "codex.more-than-apples.page4.apple_grove.caption");
         } else {
             renderImage_left(graphics, font, bookX, y_leftpage,
                     Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                             "textures/gui/image_biome/unknown_apple_biome.png"),
                     IMG_WIDTH, IMG_HEIGHT,
-                    new Component[]{
-                            Component.literal("???").withStyle(ChatFormatting.GRAY),
-                            Component.literal("Undiscovered Biome").withStyle(ChatFormatting.GRAY)
-                    });
+                    "codex.more-than-apples.biome.unknown_caption");
         }
 
         if (golden_apple_orchard) {
             renderImage_right(graphics, font, bookX, y_leftpage,
                     GOLDEN_APPLE_ORCHARD_IMG, IMG_WIDTH, IMG_HEIGHT,
-                    new Component[]{
-                            Component.literal("Golden Apple Orchard"),
-                            Component.literal("Biome. A biome filled"),
-                            Component.literal("with golden apple"),
-                            Component.literal("trees. The trees drop"),
-                            Component.literal("golden apples,"),
-                            Component.literal("and golden dandelions"),
-                            Component.literal("bloom here too.")
-                    });
+                    "codex.more-than-apples.page4.golden_apple_orchard.caption");
         } else {
             renderImage_right(graphics, font, bookX, y_leftpage,
                     Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID,
                             "textures/gui/image_biome/unknown_apple_biome.png"),
                     IMG_WIDTH, IMG_HEIGHT,
-                    new Component[]{
-                            Component.literal("???").withStyle(ChatFormatting.GRAY),
-                            Component.literal("Undiscovered Biome").withStyle(ChatFormatting.GRAY)
-                    });
+                    "codex.more-than-apples.biome.unknown_caption");
         }
+    }
+
+    private static String[] lines(String key) {
+        return Component.translatable(key).getString().split("\n", -1);
     }
 
     // helper method
     private void renderImage_left(GuiGraphicsExtractor graphics, Font font,
                                   int bookX, int y,
                                   Identifier image, int imgW, int imgH,
-                                  Component[] caption) {
+                                  String captionKey) {
         graphics.blit(RenderPipelines.GUI_TEXTURED,
                 image,
                 bookX + ICON_X_left, y,
@@ -98,6 +83,7 @@ public class Page4ApplePage implements CodexPage{
                 imgW, imgH,
                 imgW, imgH);
 
+        String[] caption = lines(captionKey);
         for (int i = 0; i < caption.length; i++) {
             graphics.text(font, caption[i],
                     bookX + ICON_X_left, y + imgH + 3 + (i * 9),
@@ -108,7 +94,7 @@ public class Page4ApplePage implements CodexPage{
     private void renderImage_right(GuiGraphicsExtractor graphics, Font font,
                                    int bookX, int y,
                                    Identifier image, int imgW, int imgH,
-                                   Component[] caption) {
+                                   String captionKey) {
         graphics.blit(RenderPipelines.GUI_TEXTURED,
                 image,
                 bookX + ICON_X_right, y,
@@ -116,6 +102,7 @@ public class Page4ApplePage implements CodexPage{
                 imgW, imgH,
                 imgW, imgH);
 
+        String[] caption = lines(captionKey);
         for (int i = 0; i < caption.length; i++) {
             graphics.text(font, caption[i],
                     bookX + ICON_X_right, y + imgH + 3 + (i * 9),

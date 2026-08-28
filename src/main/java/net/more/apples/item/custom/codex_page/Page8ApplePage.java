@@ -30,7 +30,8 @@ public class Page8ApplePage implements CodexPage{
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
 
-        graphics.text(font, "All Structures", bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
+        graphics.text(font, Component.translatable("codex.more-than-apples.page8.title"),
+                bookX + ICON_X_left, bookY + 20, 0xFF000000, false);
 
         boolean badlands_hideout = DiscoveryHelperBiomes.hasDiscovered(
                 "discover_structures/discover_badlands_hideout");
@@ -40,31 +41,24 @@ public class Page8ApplePage implements CodexPage{
         if (badlands_hideout) {
             renderImage_left(graphics, font, bookX, y_leftpage,
                     BADLANDS_HIDEOUT_IMG, IMG_WIDTH, IMG_HEIGHT,
-                    new Component[]{
-                            Component.literal("Badlands Hideout"),
-                            Component.literal("Structure."),
-                            Component.literal("A hidden shelter"),
-                            Component.literal("in the Badlands,"),
-                            Component.literal("guarding chests,"),
-                            Component.literal("barrels, and pots"),
-                            Component.literal("full of loot.")
-                    });
+                    "codex.more-than-apples.page8.badlands_hideout.caption");
         } else {
             renderImage_left(graphics, font, bookX, y_leftpage,
                     UNKNOWN_STRUCTURE_IMG,
                     IMG_WIDTH, IMG_HEIGHT,
-                    new Component[]{
-                            Component.literal("???").withStyle(ChatFormatting.GRAY),
-                            Component.literal("Undiscovered Structure").withStyle(ChatFormatting.GRAY)
-                    });
+                    "codex.more-than-apples.structure.unknown_caption");
         }
+    }
+
+    private static String[] lines(String key) {
+        return Component.translatable(key).getString().split("\n", -1);
     }
 
     // helper method
     private void renderImage_left(GuiGraphicsExtractor graphics, Font font,
                                   int bookX, int y,
                                   Identifier image, int imgW, int imgH,
-                                  Component[] caption) {
+                                  String captionKey) {
         graphics.blit(RenderPipelines.GUI_TEXTURED,
                 image,
                 bookX + ICON_X_left, y,
@@ -72,6 +66,7 @@ public class Page8ApplePage implements CodexPage{
                 imgW, imgH,
                 imgW, imgH);
 
+        String[] caption = lines(captionKey);
         for (int i = 0; i < caption.length; i++) {
             graphics.text(font, caption[i],
                     bookX + ICON_X_left, y + imgH + 3 + (i * 9),
@@ -82,7 +77,7 @@ public class Page8ApplePage implements CodexPage{
     private void renderImage_right(GuiGraphicsExtractor graphics, Font font,
                                    int bookX, int y,
                                    Identifier image, int imgW, int imgH,
-                                   Component[] caption) {
+                                   String captionKey) {
         graphics.blit(RenderPipelines.GUI_TEXTURED,
                 image,
                 bookX + ICON_X_right, y,
@@ -90,6 +85,7 @@ public class Page8ApplePage implements CodexPage{
                 imgW, imgH,
                 imgW, imgH);
 
+        String[] caption = lines(captionKey);
         for (int i = 0; i < caption.length; i++) {
             graphics.text(font, caption[i],
                     bookX + ICON_X_right, y + imgH + 3 + (i * 9),

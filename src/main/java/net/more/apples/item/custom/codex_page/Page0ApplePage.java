@@ -18,6 +18,10 @@ public class Page0ApplePage implements CodexPage{
 
     private static final int LINE_HEIGHT = 10;
 
+    private static String[] lines(String key) {
+        return Component.translatable(key).getString().split("\n", -1);
+    }
+
     @Override
     public void render(GuiGraphicsExtractor graphics, Font font,
                        int bookX, int bookY, int mouseX, int mouseY) {
@@ -25,34 +29,22 @@ public class Page0ApplePage implements CodexPage{
         // left page
         int y = bookY + 20;
 
-        graphics.text(font, "Welcome to the",
+        graphics.text(font,
+                Component.translatable("codex.more-than-apples.page0.welcome1"),
                 bookX + ICON_X_left, y, 0xFF3B2A1A, false);
         y += LINE_HEIGHT;
 
         graphics.text(font,
-                Component.literal("Apple Codex!").withStyle(ChatFormatting.BOLD),
+                Component.translatable("codex.more-than-apples.page0.welcome2").withStyle(ChatFormatting.BOLD),
                 bookX + ICON_X_left, y, 0xFF3B2A1A, false);
         y += LINE_HEIGHT + 4; // เว้นช่องว่างหลังชื่อ
 
-        String[] leftLines = {
-                "This tome holds",
-                "knowledge",
-                "of every apple",
-                "discovered",
-                "across your journey.",
-                "",
-                "Explore the world,",
-                "collect rare apples,",
-                "and uncover their",
-                "secrets",
-                "",
-                "\u2014 Happy Exploring! \u2014"  // — Happy Exploring! —
-        };
+        String[] leftLines = lines("codex.more-than-apples.page0.body_left");
 
         for (String line : leftLines) {
             if (line.isEmpty()) {
                 y += LINE_HEIGHT / 2; // เว้นบรรทัด
-            } else if (line.startsWith("\u2014")) {
+            } else if (line.startsWith("—")) {
                 // บรรทัดสุดท้าย italic
                 graphics.text(font,
                         Component.literal(line).withStyle(ChatFormatting.ITALIC),
@@ -69,31 +61,16 @@ public class Page0ApplePage implements CodexPage{
         int ry = bookY + 20;
 
         graphics.text(font,
-                Component.literal("How to Use").withStyle(ChatFormatting.BOLD),
+                Component.translatable("codex.more-than-apples.page0.how_to_use").withStyle(ChatFormatting.BOLD),
                 bookX + ICON_X_right, ry, 0xFF3B2A1A, false);
         ry += LINE_HEIGHT + 4;
 
-        String[] rightLines = {
-                "\u27A4 Tap an item icon",       // ➤
-                "  to reveal its name.",
-                "",
-                "\u27A4 Gray icons mean",
-                "  the item is yet",
-                "  to be discovered.",
-                "",
-                "\u27A4 Use the bookmarks",
-                "  on the right to jump",
-                "  between categories.",
-                "",
-                "\u27A4 New entries appear",
-                "  as you explore",
-                "  the world."
-        };
+        String[] rightLines = lines("codex.more-than-apples.page0.body_right");
 
         for (String line : rightLines) {
             if (line.isEmpty()) {
                 ry += LINE_HEIGHT / 2;
-            } else if (line.startsWith("\u27A4")) {
+            } else if (line.startsWith("➤")) {
                 // บรรทัด bullet สีน้ำตาลเข้ม
                 graphics.text(font, line,
                         bookX + ICON_X_right, ry, 0xFF3B2A1A, false);

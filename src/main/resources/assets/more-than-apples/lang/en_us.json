@@ -2,10 +2,11 @@
   "itemgroup.more-than-apples.diamond_apple_icon": "More Than Apples",
   "itemgroup.more-than-apples.zpotion_icon": "More Than Apples Potion",
 
+  "//": "Normal Item and Food",
   "item.more-than-apples.apple_codex": "Apple Codex",
   "item.more-than-apples.diamond_nugget": "Diamond Nugget",
   "item.more-than-apples.green_apple": "Green Apple",
-  "item.more-than-apples.test_apple": "Test_Apple",
+  "item.more-than-apples.test_apple": "Test Apple",
   "item.more-than-apples.frosty_apple": "Frosty Apple",
   "item.more-than-apples.diamond_apple": "Diamond Apple",
   "item.more-than-apples.enchanted_diamond_apple": "Enchanted Diamond Apple",
@@ -16,6 +17,7 @@
   "block.more-than-apples.diamond_apple_block": "Diamond Apple Block",
   "block.more-than-apples.apple_barrel": "Apple Barrel",
 
+  "//": "Apple Wood Set",
   "block.more-than-apples.apple_log": "Apple Log",
   "block.more-than-apples.apple_wood": "Apple Wood",
   "block.more-than-apples.stripped_apple_log": "Stripped Apple Log",
@@ -45,6 +47,7 @@
   "block.more-than-apples.golden_apple_sapling": "Golden Apple Sapling",
 
 
+  "//": "Test Apple Wood Set",
   "block.more-than-apples.test_apple_log": "Test_Apple_Log",
   "block.more-than-apples.test_apple_wood": "Test_Apple_Wood",
   "block.more-than-apples.stripped_test_apple_log": "Stripped_Test_Apple_Log",
@@ -69,6 +72,7 @@
   "entity.more-than-apples.test_apple_chest_boat": "Test_Apple_Boat_with_Chest",
 
 
+  "//": "Frosty Apple Wood Set",
   "block.more-than-apples.frosty_apple_log": "Frosty Apple Log",
   "block.more-than-apples.frosty_apple_wood": "Frosty Apple Wood",
   "block.more-than-apples.stripped_frosty_apple_log": "Stripped Frosty Apple Log",
@@ -93,6 +97,7 @@
   "entity.more-than-apples.frosty_apple_chest_boat": "Frosty Apple Boat with Chest",
 
 
+  "//": "Ancient Apple Wood Set",
   "block.more-than-apples.ancient_apple_log": "Ancient Apple Log",
   "block.more-than-apples.ancient_apple_wood": "Ancient Apple Wood",
   "block.more-than-apples.stripped_ancient_apple_log": "Stripped Ancient Apple Log",
@@ -122,6 +127,7 @@
 
   "entity.minecraft.villager.apple_master": "Apple Master",
 
+  "//": "Effect name",
   "effect.more-than-apples.darkness_immune": "Darkness Immune",
   "effect.more-than-apples.slowness_immune": "Slowness Immune",
   "effect.more-than-apples.mining_fatigue_immune": "Mining Fatigue Immune",
@@ -191,6 +197,7 @@
   "item.minecraft.tipped_arrow.effect.call_of_apple_potion_l": "Arrow of Call of Apple",
 
 
+  "//": "Advancements name",
   "advancements.more_than_apples.root.advancement_apple.title": "More apple",
   "advancements.more_than_apples.root.advancement_apple.description": "idk maybe just some description",
 
@@ -242,5 +249,59 @@
 
   "advancements.more-than-apples.story.eat_all_apples.title": "More Than Apples",
   "advancements.more-than-apples.story.eat_all_apples.description": "Eat every type of apple",
-  "//": "So many words, one meaning: apple"
+  "//": "So many words, one meaning: apple",
+
+
+  "//": "Apple Codex name",
+  "codex.more-than-apples.page0.welcome1": "Welcome to the",
+  "codex.more-than-apples.page0.welcome2": "Apple Codex!",
+  "codex.more-than-apples.page0.body_left": "This tome holds\nknowledge\nof every apple\ndiscovered\nacross your journey.\n\nExplore the world,\ncollect rare apples,\nand uncover their\nsecrets\n\n— Happy Exploring! —",
+  "codex.more-than-apples.page0.how_to_use": "How to Use",
+  "codex.more-than-apples.page0.body_right": "➤ Tap an item icon\n  to reveal its name.\n\n➤ Gray icons mean\n  the item is yet\n  to be discovered.\n\n➤ Use the bookmarks\n  on the right to jump\n  between categories.\n\n➤ New entries appear\n  as you explore\n  the world.",
+
+  "codex.more-than-apples.page1.title": "All Apple Items",
+  "codex.more-than-apples.page1.apple.name": "Apple",
+  "codex.more-than-apples.page1.apple.desc": "A common fruit\nfound across\nmany biomes, or\non oak trees and\napple trees, etc.",
+  "codex.more-than-apples.page1.green_apple.name": "Green Apple",
+  "codex.more-than-apples.page1.green_apple.desc": "Grants a Luck\neffect. Obtainable\nby fishing, and\ncan be brewed\ninto potions. :3",
+  "codex.more-than-apples.page1.test_apple.name": "Test Apple",
+  "codex.more-than-apples.page1.test_apple.desc": "Grants the Call\nof Apple effect.\nObtainable by\nfishing, and can\nbe brewed into\npotions.",
+  "codex.more-than-apples.page1.frosty_apple.name": "Frosty Apple",
+  "codex.more-than-apples.page1.frosty_apple.desc": "When eaten, gives\na Freezing effect.",
+
+  "codex.more-than-apples.page2.diamond_apple.name": "Diamond Apple",
+  "codex.more-than-apples.page2.diamond_apple.desc": "A Diamond Apple\nis stronger than\na Golden Apple,\nand can be found\nin the world too.",
+  "codex.more-than-apples.page2.enchanted_diamond_apple.name": "Enchanted Diamond Apple",
+  "codex.more-than-apples.page2.enchanted_diamond_apple.desc": "Stronger than a\nDiamond Apple.\nFound the same\nway an Enchanted\nGolden Apple is.",
+  "codex.more-than-apples.page2.netherite_apple.name": "Netherite Apple",
+  "codex.more-than-apples.page2.netherite_apple.desc": "Even stronger\nthan an Enchanted\nDiamond Apple.\nGrants Absorption,\nRegeneration,\nand more.",
+  "codex.more-than-apples.page2.enchanted_netherite_apple.name": "Enchanted Netherite Apple",
+  "codex.more-than-apples.page2.enchanted_netherite_apple.desc": "The strongest\napple of them all.\nGrants powerful\nbuffs and near-\ntotal immunity to\nnegative effects.",
+
+  "codex.more-than-apples.page4.title": "All Apple Biomes",
+  "codex.more-than-apples.page4.apple_grove.caption": "Apple Grove Biome.\nA biome filled with\napple trees.\nThe trees drop extra\napples and saplings.",
+  "codex.more-than-apples.page4.golden_apple_orchard.caption": "Golden Apple Orchard\nBiome. A biome filled\nwith golden apple\ntrees. The trees drop\ngolden apples,\nand golden dandelions\nbloom here too.",
+  "codex.more-than-apples.biome.unknown_caption": "???\nUndiscovered Biome",
+
+  "codex.more-than-apples.page5.frosty_apple.caption": "Frosty Apple Biome.\nA snowy, freezing\nbiome. Frosty apple\ntrees drop chilled\napples.",
+  "codex.more-than-apples.page5.ancient_apple_wilds.caption": "Ancient Apple Wilds\nBiome. A wild,\novergrown biome, home\nto massive, ancient\napple trees.",
+
+  "codex.more-than-apples.page6.title": "All Mod Effects",
+  "codex.more-than-apples.page6.darkness_immune.name": "Darkness Immune",
+  "codex.more-than-apples.page6.darkness_immune.desc": "Removes and blocks\nthe Darkness effect.\nGranted by the\nEnchanted Netherite\nApple.",
+  "codex.more-than-apples.page6.slowness_immune.name": "Slowness Immune",
+  "codex.more-than-apples.page6.slowness_immune.desc": "Removes and blocks\nthe Slowness effect.\nGranted by the\nEnchanted Netherite\nApple.",
+  "codex.more-than-apples.page6.mining_fatigue_immune.name": "Mining Fatigue Immune",
+  "codex.more-than-apples.page6.mining_fatigue_immune.desc": "Removes and blocks\nMining Fatigue.\nGranted by the\nEnchanted Netherite\nApple.",
+  "codex.more-than-apples.page6.freezing_resistance.name": "Freezing Resistance",
+  "codex.more-than-apples.page6.freezing_resistance.desc": "Removes Freezing and\nstops you from\nfreezing again.\nGranted by the\nEnchanted Diamond\nApple or higher.",
+
+  "codex.more-than-apples.page7.call_of_apple.name": "Call of Apple",
+  "codex.more-than-apples.page7.call_of_apple.desc": "Lets you catch\napple loot while\nfishing, no matter\nwhat biome you're\nstanding in.",
+  "codex.more-than-apples.page7.freezing.name": "Freezing",
+  "codex.more-than-apples.page7.freezing.desc": "Makes you freeze up\nlike standing in\npowder snow.\nGranted by the\nFrosty Apple.",
+
+  "codex.more-than-apples.page8.title": "All Structures",
+  "codex.more-than-apples.page8.badlands_hideout.caption": "Badlands Hideout\nStructure.\nA hidden shelter\nin the Badlands,\nguarding chests,\nbarrels, and pots\nfull of loot.",
+  "codex.more-than-apples.structure.unknown_caption": "???\nUndiscovered Structure"
 }

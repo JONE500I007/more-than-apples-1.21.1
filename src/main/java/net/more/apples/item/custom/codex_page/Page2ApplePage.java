@@ -40,74 +40,53 @@ public class Page2ApplePage implements CodexPage{
 
         renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, diamond_apple,
                 new ItemStack(ModAppleFoodItems.DIAMOND_APPLE),
-                Component.literal("Diamond Apple").withStyle(ChatFormatting.AQUA),
-                new Component[]{
-                        Component.literal("A Diamond Apple"),
-                        Component.literal("is stronger than"),
-                        Component.literal("a Golden Apple,"),
-                        Component.literal("and can be found"),
-                        Component.literal("in the world too.")
-                },
+                "codex.more-than-apples.page2.diamond_apple.name", ChatFormatting.AQUA,
+                "codex.more-than-apples.page2.diamond_apple.desc",
                 "textures/gui/items/unknown_apple.png");
         y_leftpage += ROW_HEIGHT;
 
 
         renderItem_left(graphics, font, bookX, y_leftpage, mouseX, mouseY, enchanted_diamond_apple,
                 new ItemStack(ModAppleFoodItems.ENCHANTED_DIAMOND_APPLE),
-                Component.literal("Enchanted Diamond Apple").withStyle(ChatFormatting.LIGHT_PURPLE),
-                new Component[]{
-                        Component.literal("Stronger than a"),
-                        Component.literal("Diamond Apple."),
-                        Component.literal("Found the same"),
-                        Component.literal("way an Enchanted"),
-                        Component.literal("Golden Apple is.")
-                },
+                "codex.more-than-apples.page2.enchanted_diamond_apple.name", ChatFormatting.LIGHT_PURPLE,
+                "codex.more-than-apples.page2.enchanted_diamond_apple.desc",
                 "textures/gui/items/unknown_apple.png");
         y_leftpage += ROW_HEIGHT;
 
         renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, netherite_apple,
                 new ItemStack(ModAppleFoodItems.NETHERITE_APPLE),
-                Component.literal("Netherite Apple").withStyle(ChatFormatting.AQUA),
-                new Component[]{
-                        Component.literal("Even stronger"),
-                        Component.literal("than an Enchanted"),
-                        Component.literal("Diamond Apple."),
-                        Component.literal("Grants Absorption,"),
-                        Component.literal("Regeneration,"),
-                        Component.literal("and more.")
-                },
+                "codex.more-than-apples.page2.netherite_apple.name", ChatFormatting.AQUA,
+                "codex.more-than-apples.page2.netherite_apple.desc",
                 "textures/gui/items/unknown_apple.png");
         y_rightpage += ROW_HEIGHT;
 
         renderItem_right(graphics, font, bookX, y_rightpage, mouseX, mouseY, enchanted_netherite_apple,
                 new ItemStack(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE),
-                Component.literal("Enchanted Netherite Apple").withStyle(ChatFormatting.LIGHT_PURPLE),
-                new Component[]{
-                        Component.literal("The strongest"),
-                        Component.literal("apple of them all."),
-                        Component.literal("Grants powerful"),
-                        Component.literal("buffs and near-"),
-                        Component.literal("total immunity to"),
-                        Component.literal("negative effects.")
-                },
+                "codex.more-than-apples.page2.enchanted_netherite_apple.name", ChatFormatting.LIGHT_PURPLE,
+                "codex.more-than-apples.page2.enchanted_netherite_apple.desc",
                 "textures/gui/items/unknown_apple.png");
+    }
+
+    private static String[] lines(String key) {
+        return Component.translatable(key).getString().split("\n", -1);
     }
 
     // helper method
     private void renderItem_left(GuiGraphicsExtractor graphics, Font font,
                                  int bookX, int y, int mouseX, int mouseY,
                                  boolean discovered, ItemStack item,
-                                 Component name, Component[] desc,
+                                 String nameKey, ChatFormatting nameColor, String descKey,
                                  String unknownTexture) {
         if (discovered) {
             graphics.item(item, bookX + ICON_X_left, y);
+            String[] desc = lines(descKey);
             for (int i = 0; i < desc.length; i++) {
                 graphics.text(font, desc[i], bookX + TEXT_X_left, y + 4 + (i * 9), 0xFF888888, false);
             }
             if (mouseX >= bookX + ICON_X_left && mouseX <= bookX + ICON_X_left + 16
                     && mouseY >= y && mouseY <= y + 16) {
                 graphics.setTooltipForNextFrame(font,
-                        List.of(name),
+                        List.of(Component.translatable(nameKey).withStyle(nameColor)),
                         Optional.empty(), mouseX, mouseY);
             }
         } else {
@@ -128,17 +107,18 @@ public class Page2ApplePage implements CodexPage{
     private void renderItem_right(GuiGraphicsExtractor graphics, Font font,
                                  int bookX, int y, int mouseX, int mouseY,
                                  boolean discovered, ItemStack item,
-                                  Component name, Component[] desc,
+                                 String nameKey, ChatFormatting nameColor, String descKey,
                                  String unknownTexture) {
         if (discovered) {
             graphics.item(item, bookX + ICON_X_right, y);
+            String[] desc = lines(descKey);
             for (int i = 0; i < desc.length; i++) {
                 graphics.text(font, desc[i], bookX + TEXT_X_right, y + 4 + (i * 9), 0xFF888888, false);
             }
             if (mouseX >= bookX + ICON_X_right && mouseX <= bookX + ICON_X_right + 16
                     && mouseY >= y && mouseY <= y + 16) {
                 graphics.setTooltipForNextFrame(font,
-                        List.of(name),
+                        List.of(Component.translatable(nameKey).withStyle(nameColor)),
                         Optional.empty(), mouseX, mouseY);
             }
         } else {

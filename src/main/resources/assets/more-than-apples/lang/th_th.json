@@ -2,10 +2,11 @@
   "itemgroup.more-than-apples.diamond_apple_icon": "มากกว่าแอปเปิ้ลนั้น (:",
   "itemgroup.more-than-apples.zpotion_icon": "น้ำยามากกว่าแอปเปิ้ลนั้น :)",
 
+  "//": "Normal Item and Food",
   "item.more-than-apples.apple_codex": "แอปเปิ้ลโคเด็กซ์",
   "item.more-than-apples.diamond_nugget": "เศษเพชร",
   "item.more-than-apples.green_apple": "แอปเปิ้ลเขียว",
-  "item.more-than-apples.test_apple": "แอปเปิ้ล_ทดสอบ",
+  "item.more-than-apples.test_apple": "แอปเปิ้ลทดสอบ",
   "item.more-than-apples.frosty_apple": "แอปเปิ้ลฟรอสตี้",
   "item.more-than-apples.diamond_apple": "แอปเปิ้ลเพชร",
   "item.more-than-apples.enchanted_diamond_apple": "แอปเปิ้ลเพชรร่ายมนตร์",
@@ -16,6 +17,7 @@
   "block.more-than-apples.diamond_apple_block": "บล็อกแอ๊ปเปิ้ลเพชร",
   "block.more-than-apples.apple_barrel": "ถังแอปเปิ้ล",
 
+  "//": "Apple Wood Set",
   "block.more-than-apples.apple_log": "ท่อนไม้แอปเปิ้ล",
   "block.more-than-apples.apple_wood": "ไม้แอปเปิ้ล",
   "block.more-than-apples.stripped_apple_log": "ท่อนไม้แอปเปิ้ลลอกเปลือก",
@@ -45,6 +47,7 @@
   "block.more-than-apples.golden_apple_sapling": "ต้นอ่อนไม้แอปเปิ้ลทองคำ",
 
 
+  "//": "Test Apple Wood Set",
   "block.more-than-apples.test_apple_log": "ท่อนไม้_แอปเปิ้ล_ทดสอบ",
   "block.more-than-apples.test_apple_wood": "ไม้_แอปเปิ้ล_ทดสอบ",
   "block.more-than-apples.stripped_test_apple_log": "ท่อนไม้_แอปเปิ้ล_ทดสอบ_ลอกเปลือก",
@@ -69,6 +72,7 @@
   "entity.more-than-apples.test_apple_chest_boat": "เรือ_ไม้แอปเปิ้ล_ทดสอบ_พร้อมหีบ",
 
 
+  "//": "Frosty Apple Wood Set",
   "block.more-than-apples.frosty_apple_log": "ท่อนไม้ฟรอสตี้",
   "block.more-than-apples.frosty_apple_wood": "ไม้ฟรอสตี้",
   "block.more-than-apples.stripped_frosty_apple_log": "ท่อนไม้ฟรอสตี้ลอกเปลือก",
@@ -92,14 +96,14 @@
   "item.more-than-apples.frosty_apple_chest_boat": "เรือไม้ฟรอสตี้พร้อมหีบ",
   "entity.more-than-apples.frosty_apple_chest_boat": "เรือไม้ฟรอสตี้พร้อมหีบ",
 
-
-  "block.more-than-apples.ancient_apple_log": "ท่อนไม้ฟรอสตี้",
-  "block.more-than-apples.ancient_apple_wood": "ไม้ฟรอสตี้",
-  "block.more-than-apples.stripped_ancient_apple_log": "ท่อนไม้ฟรอสตี้ลอกเปลือก",
-  "block.more-than-apples.stripped_ancient_apple_wood": "ไม้ฟรอสตี้ลอกเปลือก",
-  "block.more-than-apples.ancient_apple_planks": "แผ่นกระดานฟรอสตี้",
-  "block.more-than-apples.ancient_apple_leaves": "ใบไม้ฟรอสตี้",
-  "block.more-than-apples.ancient_apple_sapling": "ต้นอ่อนไม้ฟรอสตี้",
+  "//": "Ancient Apple Wood Set",
+  "block.more-than-apples.ancient_apple_log": "ท่อนไม้เก่าแก่",
+  "block.more-than-apples.ancient_apple_wood": "ไม้เก่าแก่",
+  "block.more-than-apples.stripped_ancient_apple_log": "ท่อนไม้เก่าแก่ลอกเปลือก",
+  "block.more-than-apples.stripped_ancient_apple_wood": "ไม้เก่าแก่ลอกเปลือก",
+  "block.more-than-apples.ancient_apple_planks": "แผ่นกระดานเก่าแก่",
+  "block.more-than-apples.ancient_apple_leaves": "ใบไม้เก่าแก่",
+  "block.more-than-apples.ancient_apple_sapling": "ต้นอ่อนไม้เก่าแก่",
 
   "block.more-than-apples.ancient_apple_stairs": "บันไดไม้เก่าแก่",
   "block.more-than-apples.ancient_apple_slab": "แผ่นไม้เก่าแก่",
@@ -122,6 +126,7 @@
 
   "entity.minecraft.villager.apple_master": "ปรมาจารย์แอปเปิ้ล",
 
+  "//": "Effect name",
   "effect.more-than-apples.darkness_immune": "ภูมิคุ้มกันมืดมิด",
   "effect.more-than-apples.slowness_immune": "ภูมิคุ้มกันวิ่งช้า",
   "effect.more-than-apples.mining_fatigue_immune": "ภูมิคุ้มกันขุดช้า",
@@ -188,6 +193,7 @@
   "item.minecraft.tipped_arrow.effect.night_vision_potion_v1": "ลูกธนูอาบยามองกลางคืน",
 
 
+  "//": "Advancements name",
   "advancements.more_than_apples.root.advancement_apple.title": "แอปเปิ้ลมากกว่านี้",
   "advancements.more_than_apples.root.advancement_apple.description": "ผมก็ไม่รู้เหมือนกัน บางทีอาจเป็นแค่คำอธิบายบางอย่าง",
 
@@ -239,5 +245,59 @@
 
   "advancements.more-than-apples.story.eat_all_apples.title": "มากกว่าแอปเปิ้ลนั้น",
   "advancements.more-than-apples.story.eat_all_apples.description": "กินแอปเปิ้ลทุกชนิดที่มีทั้งหมด",
-  "//": "คำพูดมากมาย ความหมายแอปเปิ้ล"
+  "//": "คำพูดมากมาย ความหมายแอปเปิ้ล",
+
+
+  "//": "Apple Codex name",
+  "codex.more-than-apples.page0.welcome1": "ยินดีต้อนรับสู่",
+  "codex.more-than-apples.page0.welcome2": "แอปเปิ้ลโคเด็กซ์!",
+  "codex.more-than-apples.page0.body_left": "หนังสือเล่มนี้บันทึก\nความรู้เกี่ยวกับ\nแอปเปิ้ลทุกชนิด\nที่คุณค้นพบ\nระหว่างการเดินทาง\n\nสำรวจโลก เก็บสะสม\nแอปเปิ้ลหายาก\nและไขความลับ\nของพวกมัน\n\n— ขอให้สนุกกับการสำรวจ! —",
+  "codex.more-than-apples.page0.how_to_use": "วิธีใช้งาน",
+  "codex.more-than-apples.page0.body_right": "➤ แตะไอคอนไอเทม\n  เพื่อดูชื่อของมัน\n\n➤ ไอคอนสีเทา\n  หมายถึงไอเทมนั้น\n  ยังไม่ถูกค้นพบ\n\n➤ ใช้ที่คั่นหนังสือ\n  ด้านขวาเพื่อข้าม\n  ไปยังหมวดต่างๆ\n\n➤ รายการใหม่จะปรากฏ\n  เมื่อคุณสำรวจ\n  โลกต่อไป",
+
+  "codex.more-than-apples.page1.title": "ไอเทมแอปเปิ้ลทั้งหมด",
+  "codex.more-than-apples.page1.apple.name": "แอปเปิ้ล",
+  "codex.more-than-apples.page1.apple.desc": "ผลไม้ทั่วไป\nพบได้ในหลาย\nไบโอม หรือบน\nต้นโอ๊กและ\nต้นแอปเปิ้ล ฯลฯ",
+  "codex.more-than-apples.page1.green_apple.name": "แอปเปิ้ลเขียว",
+  "codex.more-than-apples.page1.green_apple.desc": "ให้เอฟเฟกต์\nโชคดี หาได้จาก\nการตกปลา และ\nสามารถนำไป\nต้มยาได้ :3",
+  "codex.more-than-apples.page1.test_apple.name": "แอปเปิ้ลทดสอบ",
+  "codex.more-than-apples.page1.test_apple.desc": "ให้เอฟเฟกต์\nเสียงเรียกร้อง\nแห่งแอปเปิ้ล\nหาได้จากการ\nตกปลา และนำไป\nต้มยาได้เช่นกัน",
+  "codex.more-than-apples.page1.frosty_apple.name": "แอปเปิ้ลฟรอสตี้",
+  "codex.more-than-apples.page1.frosty_apple.desc": "เมื่อกินแล้วจะ\nให้เอฟเฟกต์แช่แข็ง",
+
+  "codex.more-than-apples.page2.diamond_apple.name": "แอปเปิ้ลเพชร",
+  "codex.more-than-apples.page2.diamond_apple.desc": "แอปเปิ้ลเพชร\nแข็งแกร่งกว่า\nแอปเปิ้ลทองคำ\nและหาได้ใน\nโลกเช่นเดียวกัน",
+  "codex.more-than-apples.page2.enchanted_diamond_apple.name": "แอปเปิ้ลเพชรร่ายมนตร์",
+  "codex.more-than-apples.page2.enchanted_diamond_apple.desc": "แข็งแกร่งกว่า\nแอปเปิ้ลเพชร\nหาได้ในลักษณะ\nเดียวกับแอปเปิ้ล\nทองคำร่ายมนตร์",
+  "codex.more-than-apples.page2.netherite_apple.name": "แอปเปิ้ลเนเธอไรต์",
+  "codex.more-than-apples.page2.netherite_apple.desc": "แข็งแกร่งยิ่งกว่า\nแอปเปิ้ลเพชร\nร่ายมนตร์ ให้เอฟเฟกต์\nดูดซับ ฟื้นฟู\nและอื่นๆ อีกมาก",
+  "codex.more-than-apples.page2.enchanted_netherite_apple.name": "แอปเปิ้ลเนเธอไรต์ร่ายมนตร์",
+  "codex.more-than-apples.page2.enchanted_netherite_apple.desc": "แอปเปิ้ลที่แข็งแกร่ง\nที่สุดในเกม ให้\nบัฟทรงพลังและ\nภูมิคุ้มกันเกือบ\nสมบูรณ์ต่อ\nเอฟเฟกต์ลบ",
+
+  "codex.more-than-apples.page4.title": "ไบโอมแอปเปิ้ลทั้งหมด",
+  "codex.more-than-apples.page4.apple_grove.caption": "ไบโอมสวนป่าแอปเปิ้ล\nเต็มไปด้วย\nต้นแอปเปิ้ล\nต้นไม้จะดรอป\nแอปเปิ้ลและเมล็ด\nเพิ่มขึ้น",
+  "codex.more-than-apples.page4.golden_apple_orchard.caption": "ไบโอมสวนแอปเปิ้ล\nทองคำ เต็มไปด้วย\nต้นแอปเปิ้ลทองคำ\nต้นไม้จะดรอป\nแอปเปิ้ลทองคำ\nและมีดอกแดนดิไลอัน\nทองคำบานอยู่ด้วย",
+  "codex.more-than-apples.biome.unknown_caption": "???\nไบโอมที่ยังไม่ค้นพบ",
+
+  "codex.more-than-apples.page5.frosty_apple.caption": "ไบโอมแอปเปิ้ล\nฟรอสตี้ เป็นไบโอม\nหิมะที่หนาวเย็น\nต้นแอปเปิ้ลฟรอสตี้\nดรอปแอปเปิ้ล\nแช่แข็ง",
+  "codex.more-than-apples.page5.ancient_apple_wilds.caption": "ไบโอมป่าแอปเปิ้ล\nโบราณ เป็นไบโอม\nรกร้าง มีต้น\nแอปเปิ้ลโบราณ\nขนาดมหึมา",
+
+  "codex.more-than-apples.page6.title": "เอฟเฟกต์ของม็อดทั้งหมด",
+  "codex.more-than-apples.page6.darkness_immune.name": "ภูมิคุ้มกันมืดมิด",
+  "codex.more-than-apples.page6.darkness_immune.desc": "ลบและป้องกัน\nเอฟเฟกต์มืดมิด\nได้จากแอปเปิ้ล\nเนเธอไรต์ร่ายมนตร์",
+  "codex.more-than-apples.page6.slowness_immune.name": "ภูมิคุ้มกันวิ่งช้า",
+  "codex.more-than-apples.page6.slowness_immune.desc": "ลบและป้องกัน\nเอฟเฟกต์วิ่งช้า\nได้จากแอปเปิ้ล\nเนเธอไรต์ร่ายมนตร์",
+  "codex.more-than-apples.page6.mining_fatigue_immune.name": "ภูมิคุ้มกันขุดช้า",
+  "codex.more-than-apples.page6.mining_fatigue_immune.desc": "ลบและป้องกัน\nเอฟเฟกต์ขุดช้า\nได้จากแอปเปิ้ล\nเนเธอไรต์ร่ายมนตร์",
+  "codex.more-than-apples.page6.freezing_resistance.name": "ต้านทานการแช่แข็ง",
+  "codex.more-than-apples.page6.freezing_resistance.desc": "ลบเอฟเฟกต์\nแช่แข็ง และ\nหยุดไม่ให้แข็งอีก\nได้จากแอปเปิ้ล\nเพชรร่ายมนตร์\nขึ้นไป",
+
+  "codex.more-than-apples.page7.call_of_apple.name": "เสียงเรียกร้องแห่งแอปเปิ้ล",
+  "codex.more-than-apples.page7.call_of_apple.desc": "ทำให้ตกปลา\nได้ของรางวัล\nแอปเปิ้ล ไม่ว่า\nจะอยู่ไบโอม\nไหนก็ตาม",
+  "codex.more-than-apples.page7.freezing.name": "ถูกแช่แข็ง",
+  "codex.more-than-apples.page7.freezing.desc": "ทำให้ตัวคุณ\nแช่แข็งเหมือน\nยืนอยู่ในหิมะผง\nได้จากแอปเปิ้ล\nฟรอสตี้",
+
+  "codex.more-than-apples.page8.title": "โครงสร้างทั้งหมด",
+  "codex.more-than-apples.page8.badlands_hideout.caption": "ที่ซ่อนตัวแบดแลนด์\nเป็นที่หลบภัยลับ\nในแบดแลนด์\nคุ้มกันหีบ ถัง\nและหม้อที่เต็มไป\nด้วยของรางวัล",
+  "codex.more-than-apples.structure.unknown_caption": "???\nโครงสร้างที่ยังไม่ค้นพบ"
 }
