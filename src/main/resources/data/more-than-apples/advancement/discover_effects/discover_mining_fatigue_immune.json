@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "has_mining_fatigue_immune_effect": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "more-than-apples:mining_fatigue_immune": {}
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mining_fatigue_immune_effect"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

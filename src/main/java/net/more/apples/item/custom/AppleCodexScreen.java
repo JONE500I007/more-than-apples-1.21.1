@@ -39,6 +39,16 @@ public class AppleCodexScreen extends Screen {
     private static final Identifier BM_BIOME_HOVER = Identifier.fromNamespaceAndPath(
             MoreThanApples.MOD_ID, "textures/gui/icon_book/bookmark_biome_hover.png");
 
+    private static final Identifier BM_EFFECT = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/icon_book/bookmark_effect.png");
+    private static final Identifier BM_EFFECT_HOVER = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/icon_book/bookmark_effect_hover.png");
+
+    private static final Identifier BM_STRUCTURE = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/icon_book/bookmark_structure.png");
+    private static final Identifier BM_STRUCTURE_HOVER = Identifier.fromNamespaceAndPath(
+            MoreThanApples.MOD_ID, "textures/gui/icon_book/bookmark_structure_hover.png");
+
 
     private static final Identifier BOOK_TEXTURE = Identifier.fromNamespaceAndPath(
             MoreThanApples.MOD_ID, "textures/gui/apple_codex_book.png");
@@ -56,7 +66,10 @@ public class AppleCodexScreen extends Screen {
             new Page1ApplePage(),
             new Page2ApplePage(),
             new Page4ApplePage(),
-            new Page5ApplePage());
+            new Page5ApplePage(),
+            new Page6ApplePage(),
+            new Page7ApplePage(),
+            new Page8ApplePage());
 
     protected AppleCodexScreen(Component title) {
         super(title);
@@ -127,6 +140,18 @@ public class AppleCodexScreen extends Screen {
                 bmX, bookY + 40,       // Biome bookmark ถัดลงมา
                 BM_BIOME, BM_BIOME_HOVER,
                 () -> currentPage = 3
+        ));
+
+        this.addRenderableWidget(new BookmarkButton(
+                bmX, bookY + 125,
+                BM_EFFECT, BM_EFFECT_HOVER,
+                () -> currentPage = 5
+        ));
+
+        this.addRenderableWidget(new BookmarkButton(
+                bmX, bookY + 145,
+                BM_STRUCTURE, BM_STRUCTURE_HOVER,
+                () -> currentPage = 7
         ));
     }
 

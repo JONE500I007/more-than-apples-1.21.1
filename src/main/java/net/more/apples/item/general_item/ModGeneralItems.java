@@ -17,7 +17,8 @@ public class ModGeneralItems {
             Item::new, new Item.Properties());
 
     public static final Item APPLE_CODEX = registerItem("apple_codex",
-            AppleCodexItem::new, new Item.Properties());
+            AppleCodexItem::new, new Item.Properties()
+                    .stacksTo(1));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {
         Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name))));
