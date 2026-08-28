@@ -24,8 +24,8 @@ public class ModLootTableModifiers_DiaApple {
     private static final ResourceKey<LootTable> DESERT_PYRAMID_CHEST_KEY =
             BuiltInLootTables.DESERT_PYRAMID;
 
-//    private static final ResourceKey<LootTable> IGLOO_CHEST_CHEST_KEY =
-//            LootTables.IGLOO_CHEST;
+    private static final ResourceKey<LootTable> IGLOO_CHEST_CHEST_KEY =
+            BuiltInLootTables.IGLOO_CHEST;
 
     private static final ResourceKey<LootTable> RUINED_PORTAL_CHEST_KEY =
             BuiltInLootTables.RUINED_PORTAL;
@@ -87,14 +87,14 @@ public class ModLootTableModifiers_DiaApple {
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());
             }
-            /*
+
             if (IGLOO_CHEST_CHEST_KEY.equals(key)) {
                 tableBuilder.modifyPools(poolBuilder -> poolBuilder
                         .setRolls(ConstantValue.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(1f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE)));
             }
-             */
+
 
             if (RUINED_PORTAL_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()

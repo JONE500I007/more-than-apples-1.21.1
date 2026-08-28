@@ -1,0 +1,10 @@
+// 26.1.2	-999999999-01-01T00:00:00	More Than Apples/Tags for minecraft:villager_trade
+a87e0a2c9d5e7a9f628c9eb5303fd79b47509a9d data/minecraft/tags/villager_trade/farmer/level_5.json
+da27db877c3fdfd2f0ef5ccaf1c8c6e37938475a data/minecraft/tags/villager_trade/wandering_trader/buying.json
+232ae1690d4ce176f66535be9e8e7347c6018ac1 data/minecraft/tags/villager_trade/wandering_trader/common.json
+b967a1fdbe59ecd535ee5bd8783809dd4cc7b97a data/minecraft/tags/villager_trade/wandering_trader/uncommon.json
+40c4bcdfbb22640b06b2b62eb98baf3741ef2326 data/more-than-apples/tags/villager_trade/apple_master/level_1.json
+364d8c5d4e661ec77bd83b3c1c4b2076ea41764b data/more-than-apples/tags/villager_trade/apple_master/level_2.json
+a95e556976a75c81600c5f0fc2e61870a6d448fc data/more-than-apples/tags/villager_trade/apple_master/level_3.json
+bae5decee5047c3fdb68a20abbd8d53d4aa003d3 data/more-than-apples/tags/villager_trade/apple_master/level_4.json
+2b745bca697bd89909a59212d9dcbc6dc147ca0a data/more-than-apples/tags/villager_trade/apple_master/level_5.json

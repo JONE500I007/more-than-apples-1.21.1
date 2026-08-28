@@ -1,0 +1,8 @@
+// 26.1.2	-999999999-01-01T00:00:00	More Than Apples/Tags for minecraft:worldgen/biome
+795382a91cfbd5e496692dadb2b54da6cee1ea4c data/minecraft/tags/worldgen/biome/is_overworld.json
+afe75bfc3fef48a5fff93787d83d3310669e4658 data/minecraft/tags/worldgen/biome/spawns_cold_variant_farm_animals.json
+3830a300c4af79a7d8bee066ea2a22a5439b7e93 data/minecraft/tags/worldgen/biome/spawns_snow_foxes.json
+afe75bfc3fef48a5fff93787d83d3310669e4658 data/minecraft/tags/worldgen/biome/spawns_warm_variant_farm_animals.json
+3830a300c4af79a7d8bee066ea2a22a5439b7e93 data/minecraft/tags/worldgen/biome/spawns_white_rabbits.json
+a053eff4bd26b67c251ccf59a66ab8a98bbe5f6b data/more-than-apples/tags/worldgen/biome/has_structure/badlands_hideout.json
+00ed1c9bc3feb60242946c44bd59f08e2be980d4 data/more-than-apples/tags/worldgen/biome/has_structure/just_test.json

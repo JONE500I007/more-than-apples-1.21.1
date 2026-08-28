@@ -1,0 +1,20 @@
+// 26.1.2	-999999999-01-01T00:00:00	More Than Apples/Tags for minecraft:block
+8365f578bf628242bb23c30377a57a501ec59ddb data/minecraft/tags/block/fence_gates.json
+d021bc4a8c5efd985d8cad93ac6c9db7e07e9881 data/minecraft/tags/block/logs.json
+e82f46881b11769708abf995af1ee4a7f4671e3c data/minecraft/tags/block/logs_that_burn.json
+d9e41119029ad7725d251d58f0b01c8cf0ac1a67 data/minecraft/tags/block/mineable/axe.json
+a8de7eca2a83d85fd157c99c8f3f655b777c5424 data/minecraft/tags/block/mineable/hoe.json
+af42bea77b683ee25abf3854419984638f40a367 data/minecraft/tags/block/planks.json
+d021bc4a8c5efd985d8cad93ac6c9db7e07e9881 data/minecraft/tags/block/prevents_nearby_leaf_decay.json
+88927667999db0c12b8dbc138056da7b671c698f data/minecraft/tags/block/wooden_buttons.json
+c252e931e89b91f67cfa42b99bb68165f76853af data/minecraft/tags/block/wooden_doors.json
+7ec72aaf99a3f64bfaa741af24c887e91a3a9e7a data/minecraft/tags/block/wooden_fences.json
+2af95e5992559a4616dc5e1f6de01b9041750312 data/minecraft/tags/block/wooden_pressure_plates.json
+16f39d6df25cb281fcc1ff0a857408e353f133b5 data/minecraft/tags/block/wooden_shelves.json
+31995e949f4a13c7877c365a5df3395a6168c002 data/minecraft/tags/block/wooden_slabs.json
+0ffcd2ca3b0c3f13c50ebc698a9f521a78838a4f data/minecraft/tags/block/wooden_stairs.json
+1c2894149ed47355938883717594bed67685d6e5 data/minecraft/tags/block/wooden_trapdoors.json
+57315baf961a41cc9c6d4049c3d161fd6e2b6a35 data/more-than-apples/tags/block/all_ancient_apple_log.json
+b8ba81965e1064e3e962d68d7c8aa533f1e920a1 data/more-than-apples/tags/block/all_apple_log.json
+f3380a1df8ce3e9a32109741d30f64bcaeec25d4 data/more-than-apples/tags/block/all_frosty_apple_log.json
+c211765be30b66d0272a7dea2afed592d40d5259 data/more-than-apples/tags/block/all_test_apple_log.json
