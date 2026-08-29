@@ -6,7 +6,10 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TexturedModel;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
+import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.datagen.provider.ModModelProvider;
+import net.more.apples.datagen.recipe.FrostyAppleRecipes;
+import net.more.apples.datagen.recipe.TestAppleRecipes;
 import net.more.apples.item.apple_wood_item.FrostyAppleWoodItem;
 
 public final class FrostyModels {
@@ -16,38 +19,46 @@ public final class FrostyModels {
     public static void addBlockModels(BlockModelGenerators generators) {
 
         // --- Frosty Apple Wood Family ---
-        BlockModelGenerators.BlockFamilyProvider family =
-                generators.family(FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS);
+//        BlockModelGenerators.BlockFamilyProvider family =
+//                generators.family(FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS);
 
-        family.stairs(FrostyAppleWoodVariants.FROSTY_APPLE_STAIRS);
-        family.slab(FrostyAppleWoodVariants.FROSTY_APPLE_SLAB);
+        generators.family(FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS)
+                .generateFor(FrostyAppleRecipes.FROSTY_APPLE_WOOD_FAMILY);
 
-        family.button(FrostyAppleWoodVariants.FROSTY_APPLE_BUTTON);
-        family.pressurePlate(FrostyAppleWoodVariants.FROSTY_APPLE_PRESSURE_PLATE);
-
-        family.fence(FrostyAppleWoodVariants.FROSTY_APPLE_FENCE);
-        family.fenceGate(FrostyAppleWoodVariants.FROSTY_APPLE_FENCE_GATE);
+//        family.stairs(FrostyAppleWoodVariants.FROSTY_APPLE_STAIRS);
+//        family.slab(FrostyAppleWoodVariants.FROSTY_APPLE_SLAB);
+//
+//        family.button(FrostyAppleWoodVariants.FROSTY_APPLE_BUTTON);
+//        family.pressurePlate(FrostyAppleWoodVariants.FROSTY_APPLE_PRESSURE_PLATE);
+//
+//        family.fence(FrostyAppleWoodVariants.FROSTY_APPLE_FENCE);
+//        family.fenceGate(FrostyAppleWoodVariants.FROSTY_APPLE_FENCE_GATE);
 
         // --- Frosty Apple Door & Trapdoor ---
-        generators.createDoor(FrostyAppleWoodVariants.FROSTY_APPLE_DOOR);
-        generators.createTrapdoor(FrostyAppleWoodVariants.FROSTY_APPLE_TRAPDOOR);
+//        generators.createDoor(FrostyAppleWoodVariants.FROSTY_APPLE_DOOR);
+//        generators.createTrapdoor(FrostyAppleWoodVariants.FROSTY_APPLE_TRAPDOOR);
 
         // --- Frosty Apple Signs ---
-        generators.createParticleOnlyBlock(
-                FrostyAppleWoodVariants.FROSTY_APPLE_STANDING_SIGN,
-                FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS
-        );
+//        generators.createParticleOnlyBlock(
+//                FrostyAppleWoodVariants.FROSTY_APPLE_STANDING_SIGN,
+//                FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS
+//        );
+//
+//        generators.createParticleOnlyBlock(
+//                FrostyAppleWoodVariants.FROSTY_APPLE_WALL_SIGN,
+//                FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS
+//        );
 
-        generators.createParticleOnlyBlock(
-                FrostyAppleWoodVariants.FROSTY_APPLE_WALL_SIGN,
-                FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS
-        );
+        // --- Frosty Apple Hanging Signs ---
+//        generators.createHangingSign(
+//                FrostyAppleWoodBlocks.STRIPPED_FROSTY_APPLE_LOG,
+//                FrostyAppleWoodVariants.FROSTY_APPLE_HANGING_SIGN_BLOCK,
+//                FrostyAppleWoodVariants.FROSTY_APPLE_WALL_HANGING_SIGN
+//        );
 
-        generators.createHangingSign(
-                FrostyAppleWoodBlocks.STRIPPED_FROSTY_APPLE_LOG,
-                FrostyAppleWoodVariants.FROSTY_APPLE_HANGING_SIGN_BLOCK,
-                FrostyAppleWoodVariants.FROSTY_APPLE_WALL_HANGING_SIGN
-        );
+
+//        generators.family(FrostyAppleWoodBlocks.FROSTY_APPLE_PLANKS)
+//                .generateFor(FrostyAppleRecipes.FROSTY_APPLE_WOOD_FAMILY);
 
         // --- Frosty Apple Logs ---
         generators.woodProvider(FrostyAppleWoodBlocks.FROSTY_APPLE_LOG)
@@ -82,11 +93,11 @@ public final class FrostyModels {
         );
 
         // --- Frosty Apple Sign ---
-        ModModelProvider.flatItem(
-                generators,
-                FrostyAppleWoodItem.FROSTY_APPLE_SIGN,
-                ModelTemplates.FLAT_ITEM
-        );
+//        ModModelProvider.flatItem(
+//                generators,
+//                FrostyAppleWoodItem.FROSTY_APPLE_SIGN,
+//                ModelTemplates.FLAT_ITEM
+//        );
 
         // --- Frosty Apple Boats ---
         ModModelProvider.flatItem(

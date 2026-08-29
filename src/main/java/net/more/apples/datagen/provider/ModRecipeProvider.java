@@ -2,7 +2,7 @@ package net.more.apples.datagen.provider;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.advancements.Criterion;
+import net.minecraft.advancements.triggers.Criterion;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.TagKey;
@@ -11,7 +11,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.more.apples.datagen.recipe.AncientAppleRecipes;
 import net.more.apples.datagen.recipe.AppleRecipes;
-import net.more.apples.datagen.recipe.FrostyRecipes;
+import net.more.apples.datagen.recipe.FrostyAppleRecipes;
 import net.more.apples.datagen.recipe.TestAppleRecipes;
 
 import java.util.concurrent.CompletableFuture;
@@ -43,7 +43,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         public void buildRecipes() {
             AppleRecipes.addRecipes(this, exporter);
             TestAppleRecipes.addRecipes(this, exporter);
-            FrostyRecipes.addRecipes(this, exporter);
+            FrostyAppleRecipes.addRecipes(this, exporter);
             AncientAppleRecipes.addRecipes(this, exporter);
         }
 

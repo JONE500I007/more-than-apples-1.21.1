@@ -1,5 +1,7 @@
 package net.more.apples.world.biome.surface;
 
+import net.minecraft.core.HolderGetter;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -9,10 +11,10 @@ public class ModGoldenAppleOrchardMaterialRules {
     private static final SurfaceRules.RuleSource GOLD =
             SurfaceRules.state(Blocks.GOLD_BLOCK.defaultBlockState());
 
-    public static SurfaceRules.RuleSource makeRule() {
+    public static SurfaceRules.RuleSource makeRule(HolderGetter<Biome> biomeLookup) {
 
         SurfaceRules.ConditionSource isAppleGrove =
-                SurfaceRules.isBiome(GoldenAppleOrchardBiome.GOLDEN_APPLE_ORCHARD);
+                SurfaceRules.isBiome(biomeLookup, GoldenAppleOrchardBiome.GOLDEN_APPLE_ORCHARD);
 
         return SurfaceRules.ifTrue(
                 isAppleGrove,

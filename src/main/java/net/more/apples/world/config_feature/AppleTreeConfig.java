@@ -27,17 +27,31 @@ import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 
 import java.util.List;
 import java.util.OptionalInt;
+import java.util.function.Supplier;
 
 public class AppleTreeConfig {
 
+    // --- ใช้กับ sapling (ไม่มี leaf litter) ---
     public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE_TREE_KEY = registryTreeKey("apple_tree_key");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_APPLE_KEY = registryTreeKey("large_apple_key");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_GOLDEN_APPLE_KEY = registryTreeKey("large_golden_apple_key");
 
+    // --- ใช้กับ worldgen (มี leaf litter) ---
+    // vanilla แยก ConfiguredFeature เป็น 2 ชุดแบบนี้เหมือนกัน เช่น TreeFeatures.OAK (sapling)
+    // กับ TreeFeatures.OAK_LEAF_LITTER (worldgen) -- ตัว TreeGrower ของ sapling ชี้ไปตัวที่ไม่มี leaf litter
+    public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE_TREE_LEAF_LITTER_KEY = registryTreeKey("apple_tree_leaf_litter_key");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_APPLE_LEAF_LITTER_KEY = registryTreeKey("large_apple_leaf_litter_key");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_GOLDEN_APPLE_LEAF_LITTER_KEY = registryTreeKey("large_golden_apple_leaf_litter_key");
+
     //public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE_LEAF_LITTER_KEY = registryTreeKey("apple_leaf_litter_key");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+
+        // 26.2 TreeConfigurationBuilder get belowTrunkProvider
+        BlockStateProvider belowTrunk =
+                TreeConfiguration.defaultPlaceBelowTreeTrunkProvider(context.lookup(Registries.BIOME));
 
         // Places leaf litter only within a small radius of each tree's base, matching vanilla's oak/birch trees
         // (see net.minecraft.data.worldgen.features.TreeFeatures#sparseLeafLitter/thickLeafLitter),
@@ -53,33 +67,47 @@ public class AppleTreeConfig {
                         .add(AppleWoodBlocks.FRUIT_APPLE_LEAVES.defaultBlockState(), 1)
                         .build()
         );
-        registerTreeConfig(context, APPLE_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
-                // 3 baseHeight 11 firstRandomHeight 0 secondRandomHeight
-                new StraightTrunkPlacer(4, 2, 0),
-                twoLeavesProvider,
-                // radius = 2, offset = 0, bush height = 3
-                //radius = 2 leaves radius -> around the trunk, the leaves are spread out 2 blocks wide
-                //offset = 4 Height offset of leaf bush from trunk top ->
-                // leaves will start to emerge 4 blocks below trunk top
-                // foliage height = leaves layer height, leaves bush will be ~4 blocks high
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
-                // layer size maybe idk for now
-                // 0 limit 0 lowerSize 0 upperSize, and 4 minClippedHeight
-                // limit= maybe starting point for the change from lower size -> upper size
-                // lowerSize = thickness of the bottom layer, bottommost leaf
-                // upperSize = thickness of the top layer, top layer
-                new TwoLayersFeatureSize(1, 0, 1)
-        ).decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
+        // decorators() แก้ไข builder ตัวเดิมแล้วคืน this -- ใช้ instance ซ้ำ 2 รอบไม่ได้
+        // จึงห่อเป็น Supplier เพื่อสร้าง builder ใหม่ทุกครั้งที่เรียก .get()
+        Supplier<TreeConfiguration.TreeConfigurationBuilder> appleTree = () ->
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
+                        // 3 baseHeight 11 firstRandomHeight 0 secondRandomHeight
+                        new StraightTrunkPlacer(4, 2, 0),
+                        twoLeavesProvider,
+                        // radius = 2, offset = 0, bush height = 3
+                        //radius = 2 leaves radius -> around the trunk, the leaves are spread out 2 blocks wide
+                        //offset = 4 Height offset of leaf bush from trunk top ->
+                        // leaves will start to emerge 4 blocks below trunk top
+                        // foliage height = leaves layer height, leaves bush will be ~4 blocks high
+                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+                        // layer size maybe idk for now
+                        // 0 limit 0 lowerSize 0 upperSize, and 4 minClippedHeight
+                        // limit= maybe starting point for the change from lower size -> upper size
+                        // lowerSize = thickness of the bottom layer, bottommost leaf
+                        // upperSize = thickness of the top layer, top layer
+                        new TwoLayersFeatureSize(1, 0, 1),
+                        belowTrunk);
 
-        registerTreeConfig(context, LARGE_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
-                new FancyTrunkPlacer(4, 14, 2),
-                twoLeavesProvider,
+        registerTreeConfig(context, APPLE_TREE_KEY, Feature.TREE,
+                appleTree.get().decorators(List.of(new BeehiveDecorator(0.1f))).build());
+        registerTreeConfig(context, APPLE_TREE_LEAF_LITTER_KEY, Feature.TREE,
+                appleTree.get().decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
 
-                new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
-                new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(4))
-        ).decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
+        Supplier<TreeConfiguration.TreeConfigurationBuilder> largeAppleTree = () ->
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
+                        new FancyTrunkPlacer(4, 14, 2),
+                        twoLeavesProvider,
+
+                        new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
+                        new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(4)),
+                        belowTrunk);
+
+        registerTreeConfig(context, LARGE_APPLE_KEY, Feature.TREE,
+                largeAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f))).build());
+        registerTreeConfig(context, LARGE_APPLE_LEAF_LITTER_KEY, Feature.TREE,
+                largeAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
 
 
 
@@ -89,14 +117,21 @@ public class AppleTreeConfig {
                         .add(AppleWoodBlocks.FRUIT_GOLDEN_APPLE_LEAVES.defaultBlockState(), 1)
                         .build()
         );
-        registerTreeConfig(context, LARGE_GOLDEN_APPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
-                new FancyTrunkPlacer(6, 10, 14),
-                twoLeavesProvider2,
 
-                new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
-                new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(3))
-        ).decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
+        Supplier<TreeConfiguration.TreeConfigurationBuilder> largeGoldenAppleTree = () ->
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
+                        new FancyTrunkPlacer(6, 10, 14),
+                        twoLeavesProvider2,
+
+                        new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
+                        new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(3)),
+                        belowTrunk);
+
+        registerTreeConfig(context, LARGE_GOLDEN_APPLE_KEY, Feature.TREE,
+                largeGoldenAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f))).build());
+        registerTreeConfig(context, LARGE_GOLDEN_APPLE_LEAF_LITTER_KEY, Feature.TREE,
+                largeGoldenAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
     }
 
 

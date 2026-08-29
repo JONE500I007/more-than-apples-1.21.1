@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "more-than-apples:block/frosty_apple_wall_sign",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "more-than-apples:block/frosty_apple_wall_sign",
+      "y": 180
+    },
+    "facing=south": {
       "model": "more-than-apples:block/frosty_apple_wall_sign"
+    },
+    "facing=west": {
+      "model": "more-than-apples:block/frosty_apple_wall_sign",
+      "y": 90
     }
   }
 }

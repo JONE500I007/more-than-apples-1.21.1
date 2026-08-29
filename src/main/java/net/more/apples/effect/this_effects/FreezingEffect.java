@@ -42,7 +42,7 @@ public class FreezingEffect extends MobEffect {
     }
 
     @Override
-    public boolean isInstantenous() {
+    public boolean isInstantaneous() {
         return false;
     }
 }

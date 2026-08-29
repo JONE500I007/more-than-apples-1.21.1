@@ -23,7 +23,7 @@ public final class FrostyTags {
                 FrostyAppleWoodVariants.FROSTY_APPLE_FENCE_GATE);
 
         // --- Logs That Burn ---
-        provider.addToTag(BlockTags.LOGS_THAT_BURN,
+        provider.addToTag(BlockTags.OVERWORLD_NATURAL_LOGS,
                 FrostyAppleWoodBlocks.FROSTY_APPLE_LOG,
                 FrostyAppleWoodBlocks.FROSTY_APPLE_WOOD,
                 FrostyAppleWoodBlocks.STRIPPED_FROSTY_APPLE_LOG,

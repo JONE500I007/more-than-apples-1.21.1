@@ -23,7 +23,7 @@ public final class TestAppleTags {
                 TestAppleWoodVariants.TEST_APPLE_FENCE_GATE);
 
         // --- Logs That Burn ---
-        provider.addToTag(BlockTags.LOGS_THAT_BURN,
+        provider.addToTag(BlockTags.OVERWORLD_NATURAL_LOGS,
                 TestAppleWoodBlocks.TEST_APPLE_LOG,
                 TestAppleWoodBlocks.TEST_APPLE_WOOD,
                 TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG,

@@ -57,21 +57,24 @@ public class ApplePlacedFeature {
                 VegetationPlacements.treePlacement(
                         CountPlacement.of(2, 0.1f, 2), ModBlocks2.APPLE_SAPLING));
          */
-        register(context, APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(AppleTreeConfig.APPLE_TREE_KEY),
+        // worldgen ใช้ตัว *_LEAF_LITTER (มีใบไม้ร่วงรอบโคน)
+        // ส่วน sapling ใน ModSaplingGenerators ใช้ตัวธรรมดาที่ไม่มี leaf litter
+        // -- เป็นแพทเทิร์นเดียวกับ vanilla (TreeFeatures.OAK vs TreeFeatures.OAK_LEAF_LITTER)
+        register(context, APPLE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(AppleTreeConfig.APPLE_TREE_LEAF_LITTER_KEY),
                 VegetationPlacements.treePlacement(
                         PlacementUtils.countExtra(2, 0.1f, 2),
                         AppleWoodBlocks.APPLE_SAPLING));
         // 1 in 6 chunk for your num
         // 1 in 4 chunk
         register(context, LARGE_APPLE_TREE_PLACED_KEY,
-                configuredFeatures.getOrThrow(AppleTreeConfig.LARGE_APPLE_KEY),
+                configuredFeatures.getOrThrow(AppleTreeConfig.LARGE_APPLE_LEAF_LITTER_KEY),
                 VegetationPlacements.treePlacement(
                         //CountPlacement.of(4),
                         RarityFilter.onAverageOnceEvery(4),
                         AppleWoodBlocks.APPLE_SAPLING));
 //RarityFilterPlacementModifier
         register(context, LARGE_GOLDEN_APPLE_TREE_PLACED_KEY,
-                configuredFeatures.getOrThrow(AppleTreeConfig.LARGE_GOLDEN_APPLE_KEY),
+                configuredFeatures.getOrThrow(AppleTreeConfig.LARGE_GOLDEN_APPLE_LEAF_LITTER_KEY),
                 VegetationPlacements.treePlacement(
                         //CountPlacement.of(7),
                         RarityFilter.onAverageOnceEvery(7),

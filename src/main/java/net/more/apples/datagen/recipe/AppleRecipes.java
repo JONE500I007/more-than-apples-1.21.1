@@ -28,6 +28,8 @@ public final class AppleRecipes {
             .pressurePlate(AppleWoodVariants.APPLE_PRESSURE_PLATE)
             .button(AppleWoodVariants.APPLE_BUTTON)
             .sign(AppleWoodVariants.APPLE_STANDING_SIGN, AppleWoodVariants.APPLE_WALL_SIGN)
+            .strippedLog(AppleWoodBlocks.STRIPPED_APPLE_LOG)
+            .hangingSign(AppleWoodVariants.APPLE_HANGING_SIGN_BLOCK, AppleWoodVariants.APPLE_WALL_HANGING_SIGN)
             .recipeGroupPrefix("wooden")
             .recipeUnlockedBy("has_apple_planks")
             .getFamily();
@@ -39,16 +41,16 @@ public final class AppleRecipes {
         provider.addPlanksFromLogs(AppleWoodBlocks.APPLE_PLANKS, ModTags.Items.ALL_APPLE_LOG, 4);
         provider.addShelfRecipe(AppleWoodVariants.APPLE_SHELF, AppleWoodBlocks.STRIPPED_APPLE_LOG);
 
-        provider.shapedRecipe(RecipeCategory.DECORATIONS, AppleWoodItem.APPLE_HANGING_SIGN, 6)
-                .define('C', Items.IRON_CHAIN)
-                .define('L', AppleWoodBlocks.STRIPPED_APPLE_LOG)
-                .pattern("C C")
-                .pattern("LLL")
-                .pattern("LLL")
-                .unlockedBy("has_chain", provider.hasItem(Items.IRON_CHAIN))
-                .unlockedBy("has_stripped_apple_log", provider.hasItem(AppleWoodBlocks.STRIPPED_APPLE_LOG))
-                .group("hanging_sign")
-                .save(exporter);
+//        provider.shapedRecipe(RecipeCategory.DECORATIONS, AppleWoodItem.APPLE_HANGING_SIGN, 6)
+//                .define('C', Items.IRON_CHAIN)
+//                .define('L', AppleWoodBlocks.STRIPPED_APPLE_LOG)
+//                .pattern("C C")
+//                .pattern("LLL")
+//                .pattern("LLL")
+//                .unlockedBy("has_chain", provider.hasItem(Items.IRON_CHAIN))
+//                .unlockedBy("has_stripped_apple_log", provider.hasItem(AppleWoodBlocks.STRIPPED_APPLE_LOG))
+//                .group("hanging_sign")
+//                .save(exporter);
 
         provider.shapedRecipe(RecipeCategory.DECORATIONS, AppleWoodItem.APPLE_BOAT)
                 .define('B', AppleWoodBlocks.APPLE_PLANKS)

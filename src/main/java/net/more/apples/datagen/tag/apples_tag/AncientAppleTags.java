@@ -23,7 +23,7 @@ public final class AncientAppleTags {
                 AncientAppleWoodVariants.ANCIENT_APPLE_FENCE_GATE);
 
         // --- Logs That Burn ---
-        provider.addToTag(BlockTags.LOGS_THAT_BURN,
+        provider.addToTag(BlockTags.OVERWORLD_NATURAL_LOGS,
                 AncientAppleWoodBlocks.ANCIENT_APPLE_LOG,
                 AncientAppleWoodBlocks.ANCIENT_APPLE_WOOD,
                 AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_LOG,

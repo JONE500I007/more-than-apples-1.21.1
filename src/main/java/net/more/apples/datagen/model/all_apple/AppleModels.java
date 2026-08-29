@@ -11,6 +11,7 @@ import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.datagen.provider.ModModelProvider;
+import net.more.apples.datagen.recipe.AppleRecipes;
 import net.more.apples.item.apple_wood_item.AppleWoodItem;
 
 public final class AppleModels {
@@ -20,38 +21,45 @@ public final class AppleModels {
     public static void addBlockModels(BlockModelGenerators generators) {
 
         // --- Apple Wood Family ---
-        BlockModelGenerators.BlockFamilyProvider family =
-                generators.family(AppleWoodBlocks.APPLE_PLANKS);
+//        BlockModelGenerators.BlockFamilyProvider family =
+//                generators.family(AppleWoodBlocks.APPLE_PLANKS);
+        generators.family(AppleWoodBlocks.APPLE_PLANKS)
+                .generateFor(AppleRecipes.APPLE_WOOD_FAMILY);
 
-        family.stairs(AppleWoodVariants.APPLE_STAIRS);
-        family.slab(AppleWoodVariants.APPLE_SLAB);
-
-        family.button(AppleWoodVariants.APPLE_BUTTON);
-        family.pressurePlate(AppleWoodVariants.APPLE_PRESSURE_PLATE);
-
-        family.fence(AppleWoodVariants.APPLE_FENCE);
-        family.fenceGate(AppleWoodVariants.APPLE_FENCE_GATE);
+//        family.stairs(AppleWoodVariants.APPLE_STAIRS);
+//        family.slab(AppleWoodVariants.APPLE_SLAB);
+//
+//        family.button(AppleWoodVariants.APPLE_BUTTON);
+//        family.pressurePlate(AppleWoodVariants.APPLE_PRESSURE_PLATE);
+//
+//        family.fence(AppleWoodVariants.APPLE_FENCE);
+//        family.fenceGate(AppleWoodVariants.APPLE_FENCE_GATE);
 
         // --- Apple Door & Trapdoor ---
-        generators.createDoor(AppleWoodVariants.APPLE_DOOR);
-        generators.createTrapdoor(AppleWoodVariants.APPLE_TRAPDOOR);
+//        generators.createDoor(AppleWoodVariants.APPLE_DOOR);
+//        generators.createTrapdoor(AppleWoodVariants.APPLE_TRAPDOOR);
 
         // --- Apple Signs ---
-        generators.createParticleOnlyBlock(
-                AppleWoodVariants.APPLE_STANDING_SIGN,
-                AppleWoodBlocks.APPLE_PLANKS
-        );
+//        generators.createParticleOnlyBlock(
+//                AppleWoodVariants.APPLE_STANDING_SIGN,
+//                AppleWoodBlocks.APPLE_PLANKS
+//        );
+//
+//        generators.createParticleOnlyBlock(
+//                AppleWoodVariants.APPLE_WALL_SIGN,
+//                AppleWoodBlocks.APPLE_PLANKS
+//        );
 
-        generators.createParticleOnlyBlock(
-                AppleWoodVariants.APPLE_WALL_SIGN,
-                AppleWoodBlocks.APPLE_PLANKS
-        );
+        // --- Apple Hanging Signs ---
+//        generators.createHangingSign(
+//                AppleWoodBlocks.STRIPPED_APPLE_LOG,
+//                AppleWoodVariants.APPLE_HANGING_SIGN_BLOCK,
+//                AppleWoodVariants.APPLE_WALL_HANGING_SIGN
+//        );
 
-        generators.createHangingSign(
-                AppleWoodBlocks.STRIPPED_APPLE_LOG,
-                AppleWoodVariants.APPLE_HANGING_SIGN_BLOCK,
-                AppleWoodVariants.APPLE_WALL_HANGING_SIGN
-        );
+
+//        generators.family(AppleWoodBlocks.APPLE_PLANKS)
+//                .generateFor(AppleRecipes.APPLE_WOOD_FAMILY);
 
         // --- Apple Logs ---
         generators.woodProvider(AppleWoodBlocks.APPLE_LOG)
@@ -101,11 +109,11 @@ public final class AppleModels {
         );
 
         // --- Apple Sign ---
-        ModModelProvider.flatItem(
-                generators,
-                AppleWoodItem.APPLE_SIGN,
-                ModelTemplates.FLAT_ITEM
-        );
+//        ModModelProvider.flatItem(
+//                generators,
+//                AppleWoodItem.APPLE_SIGN,
+//                ModelTemplates.FLAT_ITEM
+//        );
 
         // --- Apple Boats ---
         ModModelProvider.flatItem(

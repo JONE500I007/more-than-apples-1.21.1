@@ -29,13 +29,18 @@ public class AncientAppleTreeConfig {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
+        // 26.2 TreeConfigurationBuilder get belowTrunkProvider
+        BlockStateProvider belowTrunk =
+                TreeConfiguration.defaultPlaceBelowTreeTrunkProvider(context.lookup(Registries.BIOME));
+
         registerTreeConfig(context, ANCIENT_APPLE_KEY2, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(AncientAppleWoodBlocks.ANCIENT_APPLE_LOG),
                 new AncientAppleTrunkPlacer(30, 8, 7),
 
                 BlockStateProvider.simple(AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES),
                 new AncientAppleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 6),
-                new TwoLayersFeatureSize(7, 3, 7, OptionalInt.of(32)))
+                new TwoLayersFeatureSize(7, 3, 7, OptionalInt.of(32)),
+                belowTrunk)
                 .build());
 
         context.register(ANCIENT_APPLE_KEY, new ConfiguredFeature<>(

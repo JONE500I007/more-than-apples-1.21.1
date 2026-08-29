@@ -3,6 +3,7 @@ package net.more.apples.datagen.provider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.data.tags.TagAppender;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.more.apples.datagen.tag.BlockTagsPr;
@@ -27,7 +28,14 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
         BlockTagsPr.addBlockTags(this);
     }
 
+//    public void addToTag(TagKey<Block> tag, Block... blocks) {
+//        valueLookupBuilder(tag).add(blocks);
+//    }
+
     public void addToTag(TagKey<Block> tag, Block... blocks) {
-        valueLookupBuilder(tag).add(blocks);
+        TagAppender<Block> appender = tag(tag);
+        for (Block block : blocks) {
+            appender.add(block.builtInRegistryHolder().key());
+        }
     }
 }

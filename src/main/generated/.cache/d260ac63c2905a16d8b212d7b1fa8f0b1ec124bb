@@ -1,4 +1,4 @@
-// 26.1.2	-999999999-01-01T00:00:00	More Than Apples/Tags for minecraft:villager_trade
+// 26.2	-999999999-01-01T00:00:00	More Than Apples/Tags for minecraft:villager_trade
 a87e0a2c9d5e7a9f628c9eb5303fd79b47509a9d data/minecraft/tags/villager_trade/farmer/level_5.json
 da27db877c3fdfd2f0ef5ccaf1c8c6e37938475a data/minecraft/tags/villager_trade/wandering_trader/buying.json
 232ae1690d4ce176f66535be9e8e7347c6018ac1 data/minecraft/tags/villager_trade/wandering_trader/common.json

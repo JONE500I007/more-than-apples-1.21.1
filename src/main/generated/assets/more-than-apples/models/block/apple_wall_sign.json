@@ -1,5 +1,7 @@
 {
+  "parent": "minecraft:block/template_wall_sign",
   "textures": {
+    "all": "more-than-apples:block/apple_standing_sign",
     "particle": "more-than-apples:block/apple_planks"
   }
 }

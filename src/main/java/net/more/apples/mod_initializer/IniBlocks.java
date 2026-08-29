@@ -2,7 +2,6 @@ package net.more.apples.mod_initializer;
 
 import net.fabricmc.api.ModInitializer;
 import net.more.apples.block.general_block.ModGeneralBlock;
-import net.more.apples.block.general_block.concrete.ConcreteVariants;
 import net.more.apples.block.ore_block.ModBlockOre;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
@@ -18,8 +17,6 @@ public class IniBlocks implements ModInitializer {
     public void onInitialize() {
         ModGeneralBlock.registerModGenBlocks();
         ModBlockOre.registerModOreBlocks();
-
-        ConcreteVariants.registerConcreteBlock();
 
         // 🌳 wood set
         AppleWoodBlocks.registerAppleWoodBlock();

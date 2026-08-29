@@ -1,15 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "group": "hanging_sign",
+  "group": "wooden_hanging_sign",
   "key": {
-    "C": "minecraft:iron_chain",
-    "L": "more-than-apples:stripped_apple_log"
+    "#": "more-than-apples:stripped_apple_log",
+    "X": "minecraft:iron_chain"
   },
   "pattern": [
-    "C C",
-    "LLL",
-    "LLL"
+    "X X",
+    "###",
+    "###"
   ],
   "result": {
     "count": 6,

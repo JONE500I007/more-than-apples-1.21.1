@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_sign_rot_1",
+  "textures": {
+    "all": "more-than-apples:block/frosty_apple_standing_sign",
+    "particle": "more-than-apples:block/frosty_apple_planks"
+  }
+}

@@ -1,17 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chain": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:iron_chain"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_stripped_apple_log": {
+    "has_stripped_log": {
       "conditions": {
         "items": [
           {
@@ -31,8 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_chain",
-      "has_stripped_apple_log"
+      "has_stripped_log"
     ]
   ],
   "rewards": {

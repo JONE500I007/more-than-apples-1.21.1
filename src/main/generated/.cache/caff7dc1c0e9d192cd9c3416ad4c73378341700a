@@ -1,9 +1,9 @@
-// 26.1.2	-999999999-01-01T00:00:00	More Than Apples/Tags for minecraft:block
+// 26.2	-999999999-01-01T00:00:00	More Than Apples/Tags for minecraft:block
 8365f578bf628242bb23c30377a57a501ec59ddb data/minecraft/tags/block/fence_gates.json
 d021bc4a8c5efd985d8cad93ac6c9db7e07e9881 data/minecraft/tags/block/logs.json
-e82f46881b11769708abf995af1ee4a7f4671e3c data/minecraft/tags/block/logs_that_burn.json
 d9e41119029ad7725d251d58f0b01c8cf0ac1a67 data/minecraft/tags/block/mineable/axe.json
 a8de7eca2a83d85fd157c99c8f3f655b777c5424 data/minecraft/tags/block/mineable/hoe.json
+e82f46881b11769708abf995af1ee4a7f4671e3c data/minecraft/tags/block/overworld_natural_logs.json
 af42bea77b683ee25abf3854419984638f40a367 data/minecraft/tags/block/planks.json
 d021bc4a8c5efd985d8cad93ac6c9db7e07e9881 data/minecraft/tags/block/prevents_nearby_leaf_decay.json
 88927667999db0c12b8dbc138056da7b671c698f data/minecraft/tags/block/wooden_buttons.json

@@ -12,6 +12,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.more.apples.MoreThanApples;
+import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
+import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 import net.more.apples.world.tree.custom.frosty_tree.FrostyAppleFoliagePlacer;
 import net.more.apples.world.tree.custom.frosty_tree.FrostyAppleTrunkPlacer;
@@ -21,13 +23,18 @@ public class FrostyTreeConfig {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
+        // 26.2 TreeConfigurationBuilder get belowTrunkProvider
+        BlockStateProvider belowTrunk =
+                TreeConfiguration.defaultPlaceBelowTreeTrunkProvider(context.lookup(Registries.BIOME));
+
         registerTreeConfig(context, FROSTY_APPLE_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(FrostyAppleWoodBlocks.FROSTY_APPLE_LOG),
                 new FrostyAppleTrunkPlacer(4, 2, 0),
 
                 BlockStateProvider.simple(FrostyAppleWoodBlocks.FROSTY_APPLE_LEAVES),
                 new FrostyAppleFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 0),
-                new TwoLayersFeatureSize(1, 0, 1))
+                new TwoLayersFeatureSize(1, 0, 1),
+                belowTrunk)
                 .build());
     }
 

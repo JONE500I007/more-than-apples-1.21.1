@@ -12,7 +12,6 @@ import net.more.apples.datagen.model.all_apple.AncientAppleModels;
 import net.more.apples.datagen.model.all_apple.AppleModels;
 import net.more.apples.datagen.model.all_apple.FrostyModels;
 import net.more.apples.datagen.model.all_apple.TestAppleModels;
-import net.more.apples.datagen.model.general_block.ConcreteModels;
 import net.more.apples.datagen.model.items.AppleItemsModel;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -26,7 +25,6 @@ public class ModModelProvider extends FabricModelProvider {
         TestAppleModels.addBlockModels(blockModelGenerators);
         FrostyModels.addBlockModels(blockModelGenerators);
         AncientAppleModels.addBlockModels(blockModelGenerators);
-        ConcreteModels.addBlockModels(blockModelGenerators);
     }
 
     @Override

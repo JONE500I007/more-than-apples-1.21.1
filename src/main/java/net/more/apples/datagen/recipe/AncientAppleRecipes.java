@@ -7,6 +7,8 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.world.item.Items;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
+import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 import net.more.apples.datagen.provider.ModRecipeProvider;
 import net.more.apples.item.apple_wood_item.AncientAppleWoodItem;
 import net.more.apples.util.ModTags;
@@ -25,6 +27,8 @@ public final class AncientAppleRecipes {
             .pressurePlate(AncientAppleWoodVariants.ANCIENT_APPLE_PRESSURE_PLATE)
             .button(AncientAppleWoodVariants.ANCIENT_APPLE_BUTTON)
             .sign(AncientAppleWoodVariants.ANCIENT_APPLE_STANDING_SIGN, AncientAppleWoodVariants.ANCIENT_APPLE_WALL_SIGN)
+            .strippedLog(AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_LOG)
+            .hangingSign(AncientAppleWoodVariants.ANCIENT_APPLE_HANGING_SIGN_BLOCK, AncientAppleWoodVariants.ANCIENT_APPLE_WALL_HANGING_SIGN)
             .recipeGroupPrefix("wooden")
             .recipeUnlockedBy("has_apple_planks")
             .getFamily();
@@ -36,16 +40,16 @@ public final class AncientAppleRecipes {
         provider.addPlanksFromLogs(AncientAppleWoodBlocks.ANCIENT_APPLE_PLANKS, ModTags.Items.ALL_ANCIENT_APPLE_LOG, 4);
         provider.addShelfRecipe(AncientAppleWoodVariants.ANCIENT_APPLE_SHELF, AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_LOG);
 
-        provider.shapedRecipe(RecipeCategory.DECORATIONS, AncientAppleWoodItem.ANCIENT_APPLE_HANGING_SIGN, 6)
-                .define('C', Items.IRON_CHAIN)
-                .define('L', AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_LOG)
-                .pattern("C C")
-                .pattern("LLL")
-                .pattern("LLL")
-                .unlockedBy("has_chain", provider.hasItem(Items.IRON_CHAIN))
-                .unlockedBy("has_stripped_apple_log", provider.hasItem(AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_LOG))
-                .group("hanging_sign")
-                .save(exporter);
+//        provider.shapedRecipe(RecipeCategory.DECORATIONS, AncientAppleWoodItem.ANCIENT_APPLE_HANGING_SIGN, 6)
+//                .define('C', Items.IRON_CHAIN)
+//                .define('L', AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_LOG)
+//                .pattern("C C")
+//                .pattern("LLL")
+//                .pattern("LLL")
+//                .unlockedBy("has_chain", provider.hasItem(Items.IRON_CHAIN))
+//                .unlockedBy("has_stripped_apple_log", provider.hasItem(AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_LOG))
+//                .group("hanging_sign")
+//                .save(exporter);
 
         provider.shapedRecipe(RecipeCategory.DECORATIONS, AncientAppleWoodItem.ANCIENT_APPLE_BOAT)
                 .define('B', AncientAppleWoodBlocks.ANCIENT_APPLE_PLANKS)

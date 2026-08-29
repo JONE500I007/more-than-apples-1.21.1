@@ -3,9 +3,14 @@ package net.more.apples.datagen.model.all_apple;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 import net.more.apples.datagen.provider.ModModelProvider;
+import net.more.apples.datagen.recipe.AncientAppleRecipes;
+import net.more.apples.datagen.recipe.FrostyAppleRecipes;
+import net.more.apples.datagen.recipe.TestAppleRecipes;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 import net.more.apples.item.apple_wood_item.TestAppleWoodItem;
 
@@ -16,38 +21,46 @@ public final class TestAppleModels {
     public static void addBlockModels(BlockModelGenerators generators) {
 
         // --- Test Apple Wood Family ---
-        BlockModelGenerators.BlockFamilyProvider family =
-                generators.family(TestAppleWoodBlocks.TEST_APPLE_PLANKS);
+//        BlockModelGenerators.BlockFamilyProvider family =
+//                generators.family(TestAppleWoodBlocks.TEST_APPLE_PLANKS);
 
-        family.stairs(TestAppleWoodVariants.TEST_APPLE_STAIRS);
-        family.slab(TestAppleWoodVariants.TEST_APPLE_SLAB);
+        generators.family(TestAppleWoodBlocks.TEST_APPLE_PLANKS)
+                .generateFor(TestAppleRecipes.TEST_APPLE_WOOD_FAMILY);
 
-        family.button(TestAppleWoodVariants.TEST_APPLE_BUTTON);
-        family.pressurePlate(TestAppleWoodVariants.TEST_APPLE_PRESSURE_PLATE);
-
-        family.fence(TestAppleWoodVariants.TEST_APPLE_FENCE);
-        family.fenceGate(TestAppleWoodVariants.TEST_APPLE_FENCE_GATE);
+//        family.stairs(TestAppleWoodVariants.TEST_APPLE_STAIRS);
+//        family.slab(TestAppleWoodVariants.TEST_APPLE_SLAB);
+//
+//        family.button(TestAppleWoodVariants.TEST_APPLE_BUTTON);
+//        family.pressurePlate(TestAppleWoodVariants.TEST_APPLE_PRESSURE_PLATE);
+//
+//        family.fence(TestAppleWoodVariants.TEST_APPLE_FENCE);
+//        family.fenceGate(TestAppleWoodVariants.TEST_APPLE_FENCE_GATE);
 
         // --- Test Apple Door & Trapdoor ---
-        generators.createDoor(TestAppleWoodVariants.TEST_APPLE_DOOR);
-        generators.createTrapdoor(TestAppleWoodVariants.TEST_APPLE_TRAPDOOR);
+//        generators.createDoor(TestAppleWoodVariants.TEST_APPLE_DOOR);
+//        generators.createTrapdoor(TestAppleWoodVariants.TEST_APPLE_TRAPDOOR);
 
         // --- Test Apple Signs ---
-        generators.createParticleOnlyBlock(
-                TestAppleWoodVariants.TEST_APPLE_STANDING_SIGN,
-                TestAppleWoodBlocks.TEST_APPLE_PLANKS
-        );
+//        generators.createParticleOnlyBlock(
+//                TestAppleWoodVariants.TEST_APPLE_STANDING_SIGN,
+//                TestAppleWoodBlocks.TEST_APPLE_PLANKS
+//        );
+//
+//        generators.createParticleOnlyBlock(
+//                TestAppleWoodVariants.TEST_APPLE_WALL_SIGN,
+//                TestAppleWoodBlocks.TEST_APPLE_PLANKS
+//        );
 
-        generators.createParticleOnlyBlock(
-                TestAppleWoodVariants.TEST_APPLE_WALL_SIGN,
-                TestAppleWoodBlocks.TEST_APPLE_PLANKS
-        );
+        // --- Test Apple Hanging Signs ---
+//        generators.createHangingSign(
+//                TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG,
+//                TestAppleWoodVariants.TEST_APPLE_HANGING_SIGN_BLOCK,
+//                TestAppleWoodVariants.TEST_APPLE_WALL_HANGING_SIGN
+//        );
 
-        generators.createHangingSign(
-                TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG,
-                TestAppleWoodVariants.TEST_APPLE_HANGING_SIGN_BLOCK,
-                TestAppleWoodVariants.TEST_APPLE_WALL_HANGING_SIGN
-        );
+
+//        generators.family(TestAppleWoodBlocks.TEST_APPLE_PLANKS)
+//                .generateFor(TestAppleRecipes.TEST_APPLE_WOOD_FAMILY);
 
         // --- Test Apple Logs ---
         generators.woodProvider(TestAppleWoodBlocks.TEST_APPLE_LOG)
@@ -88,11 +101,11 @@ public final class TestAppleModels {
         );
 
         // --- Test Apple Sign ---
-        ModModelProvider.flatItem(
-                generators,
-                TestAppleWoodItem.TEST_APPLE_SIGN,
-                ModelTemplates.FLAT_ITEM
-        );
+//        ModModelProvider.flatItem(
+//                generators,
+//                TestAppleWoodItem.TEST_APPLE_SIGN,
+//                ModelTemplates.FLAT_ITEM
+//        );
 
         // --- Test Apple Boats ---
         ModModelProvider.flatItem(

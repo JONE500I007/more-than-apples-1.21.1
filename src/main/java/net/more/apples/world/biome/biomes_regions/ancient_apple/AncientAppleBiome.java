@@ -12,6 +12,7 @@ import net.minecraft.world.attribute.AmbientSounds;
 import net.minecraft.world.attribute.BackgroundMusic;
 import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
@@ -65,54 +66,54 @@ public class AncientAppleBiome {
         //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 5, 4, 4));
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityType.CHICKEN, 2, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.CHICKEN, 2, 4));
         spawnBuilder.addSpawn(MobCategory.CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityType.COW, 2, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.COW, 2, 4));
         spawnBuilder.addSpawn(MobCategory.CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.SHEEP, 2, 4));
         spawnBuilder.addSpawn(MobCategory.CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityType.PIG, 2, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.PIG, 2, 4));
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, 8,
-                new MobSpawnSettings.SpawnerData(EntityType.FOX, 2, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.FOX, 2, 4));
 
         spawnBuilder.addSpawn(MobCategory.MONSTER, 95,
-                new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE, 1, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.ZOMBIE, 1, 4));
 
         spawnBuilder.addSpawn(MobCategory.MONSTER, 100,
-                new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 1, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.SKELETON, 1, 4));
         spawnBuilder.addSpawn(MobCategory.MONSTER, 100,
-                new MobSpawnSettings.SpawnerData(EntityType.CREEPER, 1, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.CREEPER, 1, 4));
         spawnBuilder.addSpawn(MobCategory.MONSTER, 100,
-                new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 1, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.SPIDER, 1, 4));
         spawnBuilder.addSpawn(MobCategory.MONSTER, 10,
-                new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 1, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.ENDERMAN, 1, 4));
         spawnBuilder.addSpawn(MobCategory.MONSTER, 5,
-                new MobSpawnSettings.SpawnerData(EntityType.WITCH, 1, 1));
+                new MobSpawnSettings.SpawnerData(EntityTypes.WITCH, 1, 1));
         spawnBuilder.addSpawn(MobCategory.MONSTER, 100,
-                new MobSpawnSettings.SpawnerData(EntityType.SLIME, 1, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.SLIME, 1, 4));
 
         spawnBuilder.addSpawn(MobCategory.MONSTER, 5,
-                new MobSpawnSettings.SpawnerData(EntityType.DROWNED, 1, 3));
+                new MobSpawnSettings.SpawnerData(EntityTypes.DROWNED, 1, 3));
 
 
         spawnBuilder.addSpawn(MobCategory.AMBIENT, 10,
-                new MobSpawnSettings.SpawnerData(EntityType.BAT, 1, 2));
+                new MobSpawnSettings.SpawnerData(EntityTypes.BAT, 1, 2));
         spawnBuilder.addSpawn(MobCategory.UNDERGROUND_WATER_CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityType.GLOW_SQUID, 1, 2));
+                new MobSpawnSettings.SpawnerData(EntityTypes.GLOW_SQUID, 1, 2));
 
 
         spawnBuilder.addSpawn(MobCategory.WATER_AMBIENT, 10,
-                new MobSpawnSettings.SpawnerData(EntityType.COD, 4, 10));
+                new MobSpawnSettings.SpawnerData(EntityTypes.COD, 4, 10));
         spawnBuilder.addSpawn(MobCategory.WATER_AMBIENT, 10,
-                new MobSpawnSettings.SpawnerData(EntityType.SALMON, 4, 10));
+                new MobSpawnSettings.SpawnerData(EntityTypes.SALMON, 4, 10));
         spawnBuilder.addSpawn(MobCategory.WATER_AMBIENT, 5,
-                new MobSpawnSettings.SpawnerData(EntityType.PUFFERFISH, 1, 3));
+                new MobSpawnSettings.SpawnerData(EntityTypes.PUFFERFISH, 1, 3));
         spawnBuilder.addSpawn(MobCategory.WATER_CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityType.SQUID, 1, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.SQUID, 1, 4));
 
         spawnBuilder.addSpawn(MobCategory.WATER_CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityType.SQUID, 1, 4));
+                new MobSpawnSettings.SpawnerData(EntityTypes.SQUID, 1, 4));
 
         // world gen maybe biome
         BiomeGenerationSettings.Builder biomeBuilder =

@@ -17,7 +17,7 @@ public class AppleCodexItem extends Item {
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
 
         if(level.isClientSide()) {
-            Minecraft.getInstance().setScreen(new AppleCodexScreen(Component.literal("Apple Codex")));
+            Minecraft.getInstance().setScreenAndShow(new AppleCodexScreen(Component.literal("Apple Codex")));
         }
 
         return InteractionResult.SUCCESS;

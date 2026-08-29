@@ -1,6 +1,7 @@
 package net.more.apples.block.wood_type.test_wood;
 
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
+import net.more.apples.block.wood_type.ModSignBlockHelper;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -69,25 +70,25 @@ public class TestAppleWoodVariants {
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "textures/gui/hanging_signs/test_apple_sign_gui");
 
 
-    public static final WoodType TEST_APPLE_SIGN_WOOD_TYPE = TerraformSignBlockHelper.registerDefaultWoodType(
+    public static final WoodType TEST_APPLE_SIGN_WOOD_TYPE = ModSignBlockHelper.registerDefaultWoodType(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_sign"));
-    public static final WoodType TEST_APPLE_HANGING_SIGN_WOOD_TYPE = TerraformSignBlockHelper.registerDefaultWoodType(
+    public static final WoodType TEST_APPLE_HANGING_SIGN_WOOD_TYPE = ModSignBlockHelper.registerDefaultWoodType(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_hanging_sign"));
 
-    public static final Block TEST_APPLE_STANDING_SIGN = TerraformSignBlockHelper.registerSignBlock(
+    public static final Block TEST_APPLE_STANDING_SIGN = ModSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_standing_sign"),
             (settings) -> new StandingSignBlock(TEST_APPLE_SIGN_WOOD_TYPE, settings),
             registerIdBlock("test_apple_standing_sign", Blocks.OAK_SIGN));
-    public static final Block TEST_APPLE_WALL_SIGN = TerraformSignBlockHelper.registerSignBlock(
+    public static final Block TEST_APPLE_WALL_SIGN = ModSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_wall_sign"),
             (settings) -> new WallSignBlock(TEST_APPLE_SIGN_WOOD_TYPE, settings),
             registerIdBlock("test_apple_wall_sign", Blocks.OAK_WALL_SIGN));
 
-    public static final Block TEST_APPLE_HANGING_SIGN_BLOCK = TerraformSignBlockHelper.registerSignBlock(
+    public static final Block TEST_APPLE_HANGING_SIGN_BLOCK = ModSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_hanging_sign"),
             (settings) -> new CeilingHangingSignBlock(TEST_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
             registerIdBlock("test_apple_hanging_sign", Blocks.OAK_HANGING_SIGN));
-    public static final Block TEST_APPLE_WALL_HANGING_SIGN = TerraformSignBlockHelper.registerSignBlock(
+    public static final Block TEST_APPLE_WALL_HANGING_SIGN = ModSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "test_apple_wall_hanging_sign"),
             (settings) -> new WallHangingSignBlock(TEST_APPLE_HANGING_SIGN_WOOD_TYPE, settings),
             registerIdBlock("test_apple_wall_hanging_sign", Blocks.OAK_WALL_HANGING_SIGN));

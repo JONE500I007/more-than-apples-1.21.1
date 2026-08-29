@@ -5,6 +5,7 @@ import net.minecraft.data.BlockFamily;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.world.item.Items;
+import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 import net.more.apples.datagen.provider.ModRecipeProvider;
@@ -25,6 +26,8 @@ public final class TestAppleRecipes {
             .pressurePlate(TestAppleWoodVariants.TEST_APPLE_PRESSURE_PLATE)
             .button(TestAppleWoodVariants.TEST_APPLE_BUTTON)
             .sign(TestAppleWoodVariants.TEST_APPLE_STANDING_SIGN, TestAppleWoodVariants.TEST_APPLE_WALL_SIGN)
+            .strippedLog(TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG)
+            .hangingSign(TestAppleWoodVariants.TEST_APPLE_HANGING_SIGN_BLOCK, TestAppleWoodVariants.TEST_APPLE_WALL_HANGING_SIGN)
             .recipeGroupPrefix("wooden")
             .recipeUnlockedBy("has_apple_planks")
             .getFamily();
@@ -36,16 +39,16 @@ public final class TestAppleRecipes {
         provider.addPlanksFromLogs(TestAppleWoodBlocks.TEST_APPLE_PLANKS, ModTags.Items.ALL_TEST_APPLE_LOG, 4);
         provider.addShelfRecipe(TestAppleWoodVariants.TEST_APPLE_SHELF, TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG);
 
-        provider.shapedRecipe(RecipeCategory.DECORATIONS, TestAppleWoodItem.TEST_APPLE_HANGING_SIGN, 6)
-                .define('C', Items.IRON_CHAIN)
-                .define('L', TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG)
-                .pattern("C C")
-                .pattern("LLL")
-                .pattern("LLL")
-                .unlockedBy("has_chain", provider.hasItem(Items.IRON_CHAIN))
-                .unlockedBy("has_stripped_apple_log", provider.hasItem(TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG))
-                .group("hanging_sign")
-                .save(exporter);
+//        provider.shapedRecipe(RecipeCategory.DECORATIONS, TestAppleWoodItem.TEST_APPLE_HANGING_SIGN, 6)
+//                .define('C', Items.IRON_CHAIN)
+//                .define('L', TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG)
+//                .pattern("C C")
+//                .pattern("LLL")
+//                .pattern("LLL")
+//                .unlockedBy("has_chain", provider.hasItem(Items.IRON_CHAIN))
+//                .unlockedBy("has_stripped_apple_log", provider.hasItem(TestAppleWoodBlocks.STRIPPED_TEST_APPLE_LOG))
+//                .group("hanging_sign")
+//                .save(exporter);
 
         provider.shapedRecipe(RecipeCategory.DECORATIONS, TestAppleWoodItem.TEST_APPLE_BOAT)
                 .define('B', TestAppleWoodBlocks.TEST_APPLE_PLANKS)

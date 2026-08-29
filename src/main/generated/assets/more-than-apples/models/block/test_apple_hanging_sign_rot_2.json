@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_hanging_sign_rot_2",
+  "textures": {
+    "all": "more-than-apples:block/test_apple_hanging_sign",
+    "particle": "more-than-apples:block/stripped_test_apple_log"
+  }
+}
