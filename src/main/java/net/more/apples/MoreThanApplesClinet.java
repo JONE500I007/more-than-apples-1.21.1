@@ -4,8 +4,14 @@ import com.terraformersmc.terraform.boat.api.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
+import net.fabricmc.fabric.api.event.player.ItemEvents;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionResult;
 import net.more.apples.block.custom.FoliageTintSource;
+import net.more.apples.item.custom.AppleCodexScreen;
+import net.more.apples.item.general_item.ModGeneralItems;
 import net.more.apples.block.wood_type.AppleShelfEntityType;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
@@ -38,5 +44,15 @@ public class MoreThanApplesClinet implements ClientModInitializer {
 
         ParticleProviderRegistry.getInstance().register(ModParticle.TEST_LEAVES_PARTICLE, LeavesTestParticle.Factory::new);
 
+
+        ItemEvents.USE.register((level, player, hand) -> {
+            if (level.isClientSide()
+                    && player.getItemInHand(hand).getItem() == ModGeneralItems.APPLE_CODEX) {
+                Minecraft.getInstance().setScreenAndShow(
+                        new AppleCodexScreen(Component.literal("Apple Codex")));
+                return InteractionResult.SUCCESS;
+            }
+            return null;
+        });
     }
 }
