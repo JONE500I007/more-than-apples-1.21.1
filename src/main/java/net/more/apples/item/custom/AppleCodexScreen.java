@@ -71,7 +71,7 @@ public class AppleCodexScreen extends Screen {
             new Page7ApplePage(),
             new Page8ApplePage());
 
-    protected AppleCodexScreen(Component title) {
+    public AppleCodexScreen(Component title) {
         super(title);
     }
 
