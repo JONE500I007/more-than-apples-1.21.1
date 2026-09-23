@@ -22,6 +22,11 @@ public class ModLootTableChest extends SimpleFabricLootTableSubProvider {
         super(output, registryLookupFuture, contextParamSet);
     }
 
+
+    @Override
+    public void run() {
+    }
+
     @Override
     public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> output) {
         TowerLootTable.addLoot(output);

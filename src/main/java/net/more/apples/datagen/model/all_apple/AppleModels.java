@@ -87,7 +87,7 @@ public final class AppleModels {
         );
 
         generators.createTrivialBlock(ModGeneralBlock.APPLE_BARREL,
-                TexturedModel.CUBE_TOP_BOTTOM.updateTexture((map) -> {
+                TexturedModel.CUBE_BOTTOM_TOP.updateTexture((map) -> {
                     map.put(TextureSlot.TOP, TextureMapping.getBlockTexture(ModGeneralBlock.APPLE_BARREL, "_top"));
                     map.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModGeneralBlock.APPLE_BARREL, "_bottom"));
                     map.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModGeneralBlock.APPLE_BARREL, ""));

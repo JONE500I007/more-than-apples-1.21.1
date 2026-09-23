@@ -9,7 +9,6 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
@@ -40,7 +39,7 @@ public class TestAppleTrunkPlacer extends TrunkPlacer {
             WorldGenLevel level,
             BiConsumer<BlockPos, BlockState> trunkSetter,
             RandomSource random, int treeHeight, BlockPos origin,
-            TreeConfiguration config) {
+            TreeFeature config) {
 
         placeBelowTrunkBlock(level, trunkSetter, random, origin.below(), config);
         List<FoliagePlacer.FoliageAttachment> list = new ArrayList<>();
@@ -109,7 +108,7 @@ public class TestAppleTrunkPlacer extends TrunkPlacer {
             BiConsumer<BlockPos, BlockState> replacer,
             RandomSource random,
             BlockPos pos,
-            TreeConfiguration config) {
+            TreeFeature config) {
 
         BlockState state = level.getBlockState(pos);
 

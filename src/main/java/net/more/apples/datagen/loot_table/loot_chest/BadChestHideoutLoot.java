@@ -1,12 +1,12 @@
 package net.more.apples.datagen.loot_table.loot_chest;
 
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.more.apples.datagen.provider.ModLootTableChest;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 import net.more.apples.item.general_item.ModGeneralItems;
@@ -21,26 +21,26 @@ public class BadChestHideoutLoot {
         ModLootTableChest.addChestLoot(output, BAD_HIDEOUT_CHEST,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(UniformGenerator.between(4, 8))
+                                .setRolls(ContextIntProviders.between(4, 8))
                                 .add(LootItem.lootTableItem(Items.GOLD_BLOCK)
                                         .setWeight(2)
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3))))
 
                                 .add(LootItem.lootTableItem(Items.GOLD_INGOT)
                                         .setWeight(3)
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))))
+                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4))))
 
                                 .add(LootItem.lootTableItem(Items.DIAMOND)
                                         .setWeight(2)
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3))))
+                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3))))
 
                                 .add(LootItem.lootTableItem(ModGeneralItems.DIAMOND_NUGGET)
                                         .setWeight(5)
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 15))))
+                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 15))))
 
                                 .add(LootItem.lootTableItem(Items.GOLDEN_APPLE)
                                         .setWeight(2)
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2))))
                         )
         );
     }

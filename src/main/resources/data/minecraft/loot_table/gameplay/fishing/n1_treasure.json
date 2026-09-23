@@ -9,17 +9,15 @@
           "value": "more-than-apples:gameplay/fishing/apple_biome_treasure"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:location_check",
-          "predicate": {
-            "biomes": [
-              "more-than-apples:apple_grove",
-              "more-than-apples:golden_apple_orchard"
-            ]
-          }
+      "condition": {
+        "type": "minecraft:location_check",
+        "predicate": {
+          "biomes": [
+            "more-than-apples:apple_grove",
+            "more-than-apples:golden_apple_orchard"
+          ]
         }
-      ]
+      }
     },
     {
       "rolls": 1,
@@ -29,20 +27,18 @@
           "value": "more-than-apples:gameplay/fishing/normal_treasure"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:inverted",
-          "term": {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "biomes": [
-                "more-than-apples:apple_grove",
-                "more-than-apples:golden_apple_orchard"
-              ]
-            }
+      "condition": {
+        "type": "minecraft:inverted",
+        "term": {
+          "type": "minecraft:location_check",
+          "predicate": {
+            "biomes": [
+              "more-than-apples:apple_grove",
+              "more-than-apples:golden_apple_orchard"
+            ]
           }
         }
-      ]
+      }
     }
   ],
   "random_sequence": "minecraft:gameplay/fishing/treasure"

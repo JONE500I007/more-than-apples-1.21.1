@@ -11,7 +11,6 @@ import net.more.apples.world.biome.surface.ModAppleGroveMaterialRules;
 import net.more.apples.world.biome.surface.ModFrostyAppleMaterialRules;
 import net.more.apples.world.biome.surface.ModGoldenAppleOrchardMaterialRules;
 import terrablender.api.Regions;
-import terrablender.api.SurfaceRuleManager;
 import terrablender.api.TerraBlenderApi;
 
 public class ModTerraBlenderAPI implements TerraBlenderApi {

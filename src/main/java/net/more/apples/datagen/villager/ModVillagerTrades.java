@@ -13,11 +13,10 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.trading.TradeCost;
 import net.minecraft.world.item.trading.VillagerTrade;
 import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
-import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
 import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
@@ -25,7 +24,6 @@ import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 import net.more.apples.potion.ModPotions;
 
-import java.util.List;
 import java.util.Optional;
 
 
@@ -79,104 +77,110 @@ public class ModVillagerTrades {
 
         // apple_master / level 1
         register(context, APPLE_MASTER_1_APPLE_TO_EMERALD,
-                new VillagerTrade(new TradeCost(Items.APPLE, 9), new ItemStackTemplate(Items.EMERALD),
-                        16, 2, 0.05F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.APPLE, 9), new ItemStackTemplate(Items.EMERALD),
+                        16, 2, 0.05F).build());
         register(context, APPLE_MASTER_1_APPLE_SAPLING_TO_EMERALD,
-                new VillagerTrade(new TradeCost(AppleWoodBlocks.APPLE_SAPLING, 16), new ItemStackTemplate(Items.EMERALD),
-                        18, 2, 0.05F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(AppleWoodBlocks.APPLE_SAPLING, 16), new ItemStackTemplate(Items.EMERALD),
+                        18, 2, 0.05F).build());
         register(context, APPLE_MASTER_1_STICK_TO_EMERALD,
-                new VillagerTrade(new TradeCost(Items.STICK, 30), new ItemStackTemplate(Items.EMERALD),
-                        16, 2, 0.05F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.STICK, 30), new ItemStackTemplate(Items.EMERALD),
+                        16, 2, 0.05F).build());
 
         // apple_master / level 2
         register(context, APPLE_MASTER_2_EMERALD_TO_APPLE_LOG,
-                new VillagerTrade(new TradeCost(Items.EMERALD, 4), new ItemStackTemplate(AppleWoodBlocks.APPLE_LOG.asItem()),
-                        14, 5, 0.08F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD, 4), new ItemStackTemplate(AppleWoodBlocks.APPLE_LOG.asItem()),
+                        14, 5, 0.08F).build());
         register(context, APPLE_MASTER_2_EMERALD_TO_BIRCH_LOG,
-                new VillagerTrade(new TradeCost(Items.EMERALD, 4), new ItemStackTemplate(Items.BIRCH_LOG),
-                        14, 5, 0.08F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD, 4), new ItemStackTemplate(Items.BIRCH_LOG),
+                        14, 5, 0.08F).build());
         register(context, APPLE_MASTER_2_EMERALD_TO_DARK_OAK_LOG,
-                new VillagerTrade(new TradeCost(Items.EMERALD, 4), new ItemStackTemplate(Items.DARK_OAK_LOG),
-                        14, 5, 0.08F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD, 4), new ItemStackTemplate(Items.DARK_OAK_LOG),
+                        14, 5, 0.08F).build());
         register(context, APPLE_MASTER_2_EMERALD_TO_FROSTY_APPLE_LOG,
-                new VillagerTrade(new TradeCost(Items.EMERALD, 4), new ItemStackTemplate(FrostyAppleWoodBlocks.FROSTY_APPLE_LOG.asItem()),
-                        14, 5, 0.08F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD, 4), new ItemStackTemplate(FrostyAppleWoodBlocks.FROSTY_APPLE_LOG.asItem()),
+                        14, 5, 0.08F).build());
         register(context, APPLE_MASTER_2_EMERALD_TO_OAK_LOG,
-                new VillagerTrade(new TradeCost(Items.EMERALD, 4), new ItemStackTemplate(Items.OAK_LOG),
-                        14, 5, 0.08F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD, 4), new ItemStackTemplate(Items.OAK_LOG),
+                        14, 5, 0.08F).build());
         register(context, APPLE_MASTER_2_GOLDEN_APPLE_SAPLING_TO_EMERALD,
-                new VillagerTrade(new TradeCost(AppleWoodBlocks.GOLDEN_APPLE_SAPLING, 8), new ItemStackTemplate(Items.EMERALD, 3),
-                        18, 5, 0.08F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(AppleWoodBlocks.GOLDEN_APPLE_SAPLING, 8), new ItemStackTemplate(Items.EMERALD, 3),
+                        18, 5, 0.08F).build());
 
         // apple_master / level 3
         register(context, APPLE_MASTER_3_EMERALD_TO_GOLD_INGOT,
-                new VillagerTrade(new TradeCost(Items.EMERALD, 9), new ItemStackTemplate(Items.GOLD_INGOT),
-                        16, 10, 0.1F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD, 9), new ItemStackTemplate(Items.GOLD_INGOT),
+                        16, 10, 0.1F).build());
         register(context, APPLE_MASTER_3_EMERALD_BLOCK_TO_GOLDEN_APPLE,
-                new VillagerTrade(new TradeCost(Items.EMERALD_BLOCK, 3), new ItemStackTemplate(Items.GOLDEN_APPLE),
-                        6, 10, 0.2F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD_BLOCK, 3), new ItemStackTemplate(Items.GOLDEN_APPLE),
+                        6, 10, 0.2F).build());
         register(context, APPLE_MASTER_3_EMERALD_TO_ENCHANTED_GOLDEN_PICKAXE,
-                new VillagerTrade(new TradeCost(Items.EMERALD, 8), new ItemStackTemplate(Items.GOLDEN_PICKAXE),
-                        2, 10, 0.1F, Optional.empty(),
-                        List.of(new EnchantWithLevelsFunction.Builder(ConstantValue.exactly(25.0F))
+                VillagerTrade.builder(new TradeCost(Items.EMERALD, 8), new ItemStackTemplate(Items.GOLDEN_PICKAXE),
+                        2, 10, 0.1F)
+                        .addModifier(new EnchantWithLevelsFunction.Builder(ContextIntProviders.exactly(25))
                                 .withOptions(enchantmentsForTradedEquipment)
-                                .includeAdditionalCostComponent()
-                                .build())));
+                                .includeAdditionalCostComponent())
+                        .build());
 
         // apple_master / level 4
         register(context, APPLE_MASTER_4_TEST_APPLE_LOG_TO_EMERALD_BLOCK,
-                new VillagerTrade(new TradeCost(TestAppleWoodBlocks.TEST_APPLE_LOG, 1), new ItemStackTemplate(Items.EMERALD_BLOCK),
-                        18, 15, 0.08F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(TestAppleWoodBlocks.TEST_APPLE_LOG, 1), new ItemStackTemplate(Items.EMERALD_BLOCK),
+                        18, 15, 0.08F).build());
         register(context, APPLE_MASTER_4_EMERALD_BLOCK_TO_DIAMOND_APPLE,
-                new VillagerTrade(new TradeCost(Items.EMERALD_BLOCK, 7), new ItemStackTemplate(ModAppleFoodItems.DIAMOND_APPLE),
-                        6, 15, 0.08F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD_BLOCK, 7), new ItemStackTemplate(ModAppleFoodItems.DIAMOND_APPLE),
+                        6, 15, 0.08F).build());
         register(context, APPLE_MASTER_4_EMERALD_TO_FREEZING_RESISTANCE_POTION,
-                new VillagerTrade(new TradeCost(Items.EMERALD, 16), new ItemStackTemplate(Items.POTION),
-                        4, 15, 0.08F, Optional.empty(),
-                        List.of(SetPotionFunction.setPotion(ModPotions.FREEZING_RESISTANCE_POTION).build())));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD, 16), new ItemStackTemplate(Items.POTION),
+                        4, 15, 0.08F)
+                        .addModifier(SetPotionFunction.setPotion(ModPotions.FREEZING_RESISTANCE_POTION))
+                        .build());
         register(context, APPLE_MASTER_4_EMERALD_TO_DARKNESS_IMMUNE_POTION,
-                new VillagerTrade(new TradeCost(Items.EMERALD, 23), new ItemStackTemplate(Items.POTION),
-                        4, 15, 0.08F, Optional.empty(),
-                        List.of(SetPotionFunction.setPotion(ModPotions.DARKNESS_IMMUNE_POTION).build())));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD, 23), new ItemStackTemplate(Items.POTION),
+                        4, 15, 0.08F)
+                        .addModifier(SetPotionFunction.setPotion(ModPotions.DARKNESS_IMMUNE_POTION))
+                        .build());
 
         // apple_master / level 5
         register(context, APPLE_MASTER_5_DIRT_TO_DIAMOND,
-                new VillagerTrade(new TradeCost(Items.DIRT, 1), new ItemStackTemplate(Items.DIAMOND),
-                        1, 35, 0.2F, Optional.of(randomChance(0.3F)), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.DIRT, 1), new ItemStackTemplate(Items.DIAMOND),
+                        1, 35, 0.2F)
+                        .merchantPredicate(Holder.direct(randomChance(0.3F)))
+                        .build());
         register(context, APPLE_MASTER_5_EMERALD_BLOCK_TO_ENCHANTED_GOLDEN_APPLE,
-                new VillagerTrade(new TradeCost(Items.EMERALD_BLOCK, 15), new ItemStackTemplate(Items.ENCHANTED_GOLDEN_APPLE),
-                        3, 35, 0.2F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD_BLOCK, 15), new ItemStackTemplate(Items.ENCHANTED_GOLDEN_APPLE),
+                        3, 35, 0.2F).build());
         register(context, APPLE_MASTER_5_EMERALD_BLOCK_TO_NETHERITE_APPLE,
-                new VillagerTrade(new TradeCost(Items.EMERALD_BLOCK, 13), new ItemStackTemplate(ModAppleFoodItems.NETHERITE_APPLE),
-                        2, 35, 0.2F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD_BLOCK, 13), new ItemStackTemplate(ModAppleFoodItems.NETHERITE_APPLE),
+                        2, 35, 0.2F).build());
 
         // farmer / level 5 addition
         register(context, FARMER_5_EMERALD_TO_DIAMOND_CARROT,
-                new VillagerTrade(new TradeCost(Items.EMERALD, 20), new ItemStackTemplate(ModAppleFoodItems.DIAMOND_CARROT, 2),
-                        6, 40, 0.2F, Optional.of(randomChance(0.5F)), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD, 20), new ItemStackTemplate(ModAppleFoodItems.DIAMOND_CARROT, 2),
+                        6, 40, 0.2F)
+                        .merchantPredicate(Holder.direct(randomChance(0.5F)))
+                        .build());
 
         // wandering_trader additions
         register(context, WANDERING_TRADER_EMERALD_BLOCK_TO_DIAMOND_APPLE,
-                new VillagerTrade(new TradeCost(Items.EMERALD_BLOCK, 7), new ItemStackTemplate(ModAppleFoodItems.DIAMOND_APPLE),
-                        10, 200, 0.2F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD_BLOCK, 7), new ItemStackTemplate(ModAppleFoodItems.DIAMOND_APPLE),
+                        10, 200, 0.2F).build());
         register(context, WANDERING_TRADER_EMERALD_BLOCK_TO_DIAMOND_CARROT,
-                new VillagerTrade(new TradeCost(Items.EMERALD_BLOCK, 4), new ItemStackTemplate(ModAppleFoodItems.DIAMOND_CARROT, 24),
-                        5, 40, 0.2F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD_BLOCK, 4), new ItemStackTemplate(ModAppleFoodItems.DIAMOND_CARROT, 24),
+                        5, 40, 0.2F).build());
         register(context, WANDERING_TRADER_EMERALD_BLOCK_TO_ENCHANTED_DIAMOND_APPLE,
-                new VillagerTrade(new TradeCost(Items.EMERALD_BLOCK, 20), new ItemStackTemplate(ModAppleFoodItems.ENCHANTED_DIAMOND_APPLE),
-                        2, 400, 0.2F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD_BLOCK, 20), new ItemStackTemplate(ModAppleFoodItems.ENCHANTED_DIAMOND_APPLE),
+                        2, 400, 0.2F).build());
         register(context, WANDERING_TRADER_EMERALD_BLOCK_TO_ENCHANTED_GOLDEN_APPLE,
-                new VillagerTrade(new TradeCost(Items.EMERALD_BLOCK, 17), new ItemStackTemplate(Items.ENCHANTED_GOLDEN_APPLE),
-                        2, 350, 0.2F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD_BLOCK, 17), new ItemStackTemplate(Items.ENCHANTED_GOLDEN_APPLE),
+                        2, 350, 0.2F).build());
         register(context, WANDERING_TRADER_EMERALD_BLOCK_TO_ENCHANTED_NETHERITE_APPLE,
-                new VillagerTrade(new TradeCost(Items.EMERALD_BLOCK, 20), new ItemStackTemplate(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE),
-                        1, 500, 0.2F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD_BLOCK, 20), new ItemStackTemplate(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE),
+                        1, 500, 0.2F).build());
         register(context, WANDERING_TRADER_EMERALD_BLOCK_TO_GOLDEN_APPLE,
-                new VillagerTrade(new TradeCost(Items.EMERALD_BLOCK, 3), new ItemStackTemplate(Items.GOLDEN_APPLE),
-                        13, 100, 0.2F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD_BLOCK, 3), new ItemStackTemplate(Items.GOLDEN_APPLE),
+                        13, 100, 0.2F).build());
         return register(context, WANDERING_TRADER_EMERALD_BLOCK_TO_NETHERITE_APPLE,
-                new VillagerTrade(new TradeCost(Items.EMERALD_BLOCK, 14), new ItemStackTemplate(ModAppleFoodItems.NETHERITE_APPLE),
-                        2, 200, 0.2F, Optional.empty(), List.of()));
+                VillagerTrade.builder(new TradeCost(Items.EMERALD_BLOCK, 14), new ItemStackTemplate(ModAppleFoodItems.NETHERITE_APPLE),
+                        2, 200, 0.2F).build());
     }
 
     private static LootItemCondition randomChance(float probability) {

@@ -2,11 +2,11 @@
   "gives": {
     "id": "minecraft:emerald"
   },
-  "max_uses": 18.0,
+  "max_uses": 18,
   "reputation_discount": 0.05,
   "wants": {
-    "count": 16.0,
+    "count": 16,
     "id": "more-than-apples:apple_sapling"
   },
-  "xp": 2.0
+  "xp": 2
 }

@@ -68,7 +68,7 @@ public class ModJigsawPlacement {
         WorldgenRandom random = context.random();
         Registry<StructureTemplatePool> pools = registryAccess.lookupOrThrow(Registries.TEMPLATE_POOL);
 
-        // ← บรรทัดนี้แหละที่เปลี่ยน จาก getRandom เป็น forcedRotation
+
         Rotation centerRotation = forcedRotation;
 
         StructureTemplatePool centerPool = startPool.unwrapKey()
@@ -166,7 +166,7 @@ public class ModJigsawPlacement {
         for (StructureTemplate.JigsawBlockInfo jigsaw : element.getShuffledJigsawBlocks(
                 structureTemplateManager, position, rotation, random)) {
             if (targetJigsawId.equals(jigsaw.name())) {
-                return Optional.of(jigsaw.info().pos());
+                return Optional.of(jigsaw.pos());
             }
         }
         return Optional.empty();
@@ -248,7 +248,7 @@ public class ModJigsawPlacement {
             label129:
             for (StructureTemplate.JigsawBlockInfo sourceJigsaw : sourceElement.getShuffledJigsawBlocks(
                     this.structureTemplateManager, sourceBoxPosition, sourceRotation, this.random)) {
-                StructureTemplate.StructureBlockInfo sourceJigsawInfo = sourceJigsaw.info();
+                StructureTemplate.JigsawBlockInfo sourceJigsawInfo = sourceJigsaw;
                 Direction sourceDirection = JigsawBlock.getFrontFacing(sourceJigsawInfo.state());
                 BlockPos sourceJigsawPos = sourceJigsawInfo.pos();
                 BlockPos targetJigsawPos = sourceJigsawPos.relative(sourceDirection);
@@ -309,7 +309,7 @@ public class ModJigsawPlacement {
                         int expandTo;
                         if (doExpansionHack && hackBox.getYSpan() <= 16) {
                             expandTo = targetJigsaws.stream().mapToInt(targetJigsawx -> {
-                                StructureTemplate.StructureBlockInfo targetJigsawInfo = targetJigsawx.info();
+                                StructureTemplate.JigsawBlockInfo targetJigsawInfo = targetJigsawx;
                                 if (!hackBox.isInside(targetJigsawInfo.pos().relative(
                                         JigsawBlock.getFrontFacing(targetJigsawInfo.state())))) {
                                     return 0;
@@ -332,7 +332,7 @@ public class ModJigsawPlacement {
 
                         for (StructureTemplate.JigsawBlockInfo targetJigsaw : targetJigsaws) {
                             if (JigsawBlock.canAttach(sourceJigsaw, targetJigsaw)) {
-                                BlockPos targetJigsawLocalPos = targetJigsaw.info().pos();
+                                BlockPos targetJigsawLocalPos = targetJigsaw.pos();
                                 BlockPos rawTargetBoxPos = targetJigsawPos.subtract(targetJigsawLocalPos);
                                 BoundingBox rawTargetBB = targetElement.getBoundingBox(
                                         this.structureTemplateManager, rawTargetBoxPos, targetRotation);

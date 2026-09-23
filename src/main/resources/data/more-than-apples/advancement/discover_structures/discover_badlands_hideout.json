@@ -3,17 +3,15 @@
     "in_badlands_hideout": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "structures": "more-than-apples:badlands_hideout"
-              }
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "structures": "more-than-apples:badlands_hideout"
             }
           }
-        ]
+        }
       }
     }
   },

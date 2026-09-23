@@ -1,6 +1,5 @@
 package net.more.apples;
 
-import com.terraformersmc.terraform.boat.api.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
@@ -20,6 +19,7 @@ import net.more.apples.entity.ModBoats;
 import net.more.apples.particle.LeavesTestParticle;
 import net.more.apples.particle.ModParticle;
 import net.more.apples.render.AppleShelfRenderer;
+import net.more.apples.render.ModBoatRenderers;
 
 import java.util.List;
 
@@ -37,10 +37,10 @@ public class MoreThanApplesClinet implements ClientModInitializer {
 
         BlockEntityRenderers.register(AppleShelfEntityType.APPLE_SHELF_ENTITY_TYPE, AppleShelfRenderer::new);
 
-        TerraformBoatClientHelper.registerModelLayers(ModBoats.APPLE_BOAT_ID);
-        TerraformBoatClientHelper.registerModelLayers(ModBoats.TEST_APPLE_BOAT_ID);
-        TerraformBoatClientHelper.registerModelLayers(ModBoats.FROSTY_APPLE_BOAT_ID);
-        TerraformBoatClientHelper.registerModelLayers(ModBoats.ANCIENT_APPLE_BOAT_ID);
+        ModBoatRenderers.register(ModBoats.APPLE_BOAT_ID);
+        ModBoatRenderers.register(ModBoats.TEST_APPLE_BOAT_ID);
+        ModBoatRenderers.register(ModBoats.FROSTY_APPLE_BOAT_ID);
+        ModBoatRenderers.register(ModBoats.ANCIENT_APPLE_BOAT_ID);
 
         ParticleProviderRegistry.getInstance().register(ModParticle.TEST_LEAVES_PARTICLE, LeavesTestParticle.Factory::new);
 

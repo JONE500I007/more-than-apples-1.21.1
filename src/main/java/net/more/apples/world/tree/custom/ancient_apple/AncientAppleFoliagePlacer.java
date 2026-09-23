@@ -8,7 +8,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.IntProviders;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.more.apples.world.tree.ModFoliagePlacerType;
@@ -35,7 +35,7 @@ public class AncientAppleFoliagePlacer extends FoliagePlacer {
 
     @Override
     protected void createFoliage(WorldGenLevel level, FoliageSetter foliageSetter,
-                                 RandomSource random, TreeConfiguration config,
+                                 RandomSource random, TreeFeature config,
                                  int treeHeight, FoliageAttachment attachment,
                                  int foliageHeight, int leafRadius, int offset) {
 
@@ -49,7 +49,7 @@ public class AncientAppleFoliagePlacer extends FoliagePlacer {
             int currentRadius = Math.round(
                     leafRadius * (float) Math.sin(Math.PI * progress)
                             + leafRadius * 0.5f  // minimum radius
-                            + attachment.radiusOffset()
+                            + attachment.radiusOffsetXZ()
             );
 
             placeLeavesRow(level, foliageSetter, random, config,
@@ -58,7 +58,7 @@ public class AncientAppleFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    public int foliageHeight(RandomSource random, int treeHeight, TreeConfiguration config) {
+    public int foliageHeight(RandomSource random, int treeHeight, TreeFeature config) {
         return this.height;
     }
 

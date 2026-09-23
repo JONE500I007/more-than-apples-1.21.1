@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "more-than-apples:apple_wood"
+        "recipes": "more-than-apples:apple_wood"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

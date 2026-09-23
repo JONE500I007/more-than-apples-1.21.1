@@ -1,5 +1,6 @@
 package net.more.apples.block.wood_type.apple_wood;
 
+import net.minecraft.world.level.block.sounds.AmbientLeavesBlockSoundPlayer;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -36,11 +37,11 @@ public class AppleWoodBlocks {
 
     public static final Block APPLE_LEAVES  = registerBlock("apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
-                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F),
+                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F), AmbientLeavesBlockSoundPlayer.noAmbientSound(),
                     registerIdBlock("apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block FRUIT_APPLE_LEAVES = registerBlock("fruit_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
-                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F),
+                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x77AB2F), AmbientLeavesBlockSoundPlayer.noAmbientSound(),
                     registerIdBlock("fruit_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block APPLE_SAPLING = registerBlock("apple_sapling",
             properties -> new SaplingBlock(
@@ -50,11 +51,11 @@ public class AppleWoodBlocks {
 
     public static final Block GOLDEN_APPLE_LEAVES  = registerBlock("golden_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
-                    0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
+                    0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B), AmbientLeavesBlockSoundPlayer.noAmbientSound(),
                     registerIdBlock("golden_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block FRUIT_GOLDEN_APPLE_LEAVES = registerBlock("fruit_golden_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
-                    0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B),
+                    0.02f , ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0xE6A96B), AmbientLeavesBlockSoundPlayer.noAmbientSound(),
                     registerIdBlock("fruit_golden_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block GOLDEN_APPLE_SAPLING = registerBlock("golden_apple_sapling",
             properties -> new SaplingBlock(

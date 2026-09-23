@@ -1,5 +1,5 @@
-// 26.2	-999999999-01-01T00:00:00	More Than Apples/minecraft:chest Loot Table
-dfa9e44b19f8c39c1ed085c16c41915d89031032 data/more-than-apples/loot_table/chests/bad_hideout_barrel.json
-e668e710999f948f054ab9f5b00e8b00c9945aa1 data/more-than-apples/loot_table/chests/bad_hideout_chest.json
-b0653b2fbc7f9bf54cab9ea266bbae6f7189f93f data/more-than-apples/loot_table/chests/bad_hideout_pot.json
-08b6ee315a299b504e5db43137178b53436525a0 data/more-than-apples/loot_table/chests/tower_chest.json
+// 26.3	-999999999-01-01T00:00:00	More Than Apples/minecraft:chest Loot Table
+9b79290c6e74dd52618780af5c1936171aab899e data/more-than-apples/loot_table/chests/bad_hideout_barrel.json
+c037321fc88f6a2d5a4a2d2c47926e8073f7df6d data/more-than-apples/loot_table/chests/bad_hideout_chest.json
+022a0db545a2fbe8f2497425b0771fd4ef78b8e7 data/more-than-apples/loot_table/chests/bad_hideout_pot.json
+6762a3c5b000278d5ce673abde2ff082d98c7470 data/more-than-apples/loot_table/chests/tower_chest.json

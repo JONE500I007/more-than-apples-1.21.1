@@ -35,12 +35,4 @@ public class ModLootBlockDrop extends FabricBlockLootSubProvider {
     public void addDoorLoot(Block door) {
         add(door, createDoorTable(door));
     }
-
-    public void addWallSignLoot(Block wallSign, Block standingSign) {
-        add(wallSign, createSingleItemTable(standingSign));
-    }
-
-    public void addWallHangingSignLoot(Block wallHangingSign, Block hangingSign) {
-        add(wallHangingSign, createSingleItemTable(hangingSign));
-    }
 }

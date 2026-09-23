@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "more-than-apples:stripped_frosty_apple_wood"
+        "recipes": "more-than-apples:stripped_frosty_apple_wood"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

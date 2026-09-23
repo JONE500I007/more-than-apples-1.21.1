@@ -36,16 +36,6 @@ public final class AncientAppleBlockDrop {
         // --- Test Apple Signs ---
         provider.drop(AncientAppleWoodVariants.ANCIENT_APPLE_STANDING_SIGN);
 
-        provider.addWallSignLoot(
-                AncientAppleWoodVariants.ANCIENT_APPLE_WALL_SIGN,
-                AncientAppleWoodVariants.ANCIENT_APPLE_STANDING_SIGN
-        );
-
         provider.drop(AncientAppleWoodVariants.ANCIENT_APPLE_HANGING_SIGN_BLOCK);
-
-        provider.addWallHangingSignLoot(
-                AncientAppleWoodVariants.ANCIENT_APPLE_WALL_HANGING_SIGN,
-                AncientAppleWoodVariants.ANCIENT_APPLE_HANGING_SIGN_BLOCK
-        );
     }
 }

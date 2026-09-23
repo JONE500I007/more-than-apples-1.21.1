@@ -37,16 +37,6 @@ public final class TestAppleLootBlockDrop {
         // --- Test Apple Signs ---
         provider.drop(TestAppleWoodVariants.TEST_APPLE_STANDING_SIGN);
 
-        provider.addWallSignLoot(
-                TestAppleWoodVariants.TEST_APPLE_WALL_SIGN,
-                TestAppleWoodVariants.TEST_APPLE_STANDING_SIGN
-        );
-
         provider.drop(TestAppleWoodVariants.TEST_APPLE_HANGING_SIGN_BLOCK);
-
-        provider.addWallHangingSignLoot(
-                TestAppleWoodVariants.TEST_APPLE_WALL_HANGING_SIGN,
-                TestAppleWoodVariants.TEST_APPLE_HANGING_SIGN_BLOCK
-        );
     }
 }

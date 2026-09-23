@@ -1,6 +1,5 @@
 package net.more.apples.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -68,7 +67,6 @@ public class AppleShelfBlock extends BaseEntityBlock
             Block.box(13, 4, 0, 16, 12, 16)
     );
 
-    public static final MapCodec<AppleShelfBlock> CODEC = simpleCodec(AppleShelfBlock::new);
 
     public AppleShelfBlock(Properties properties) {
         super(properties);
@@ -83,10 +81,6 @@ public class AppleShelfBlock extends BaseEntityBlock
     }
 
 
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
-    }
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {

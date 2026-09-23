@@ -52,12 +52,12 @@ public class MoreThanApplesDataGenerator implements DataGeneratorEntrypoint {
 
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, AppleOreConfig::bootstrap);
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, AppleTreeConfig::bootstrap);
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, TestAppleTreeConfig::bootstrap);
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, FrostyTreeConfig::bootstrap);
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, GoldenDandeltioConfig::bootstrap);
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, AncientAppleTreeConfig::bootstrap);
+		registryBuilder.add(Registries.FEATURE, AppleOreConfig::bootstrap);
+		registryBuilder.add(Registries.FEATURE, AppleTreeConfig::bootstrap);
+		registryBuilder.add(Registries.FEATURE, TestAppleTreeConfig::bootstrap);
+		registryBuilder.add(Registries.FEATURE, FrostyTreeConfig::bootstrap);
+		registryBuilder.add(Registries.FEATURE, GoldenDandeltioConfig::bootstrap);
+		registryBuilder.add(Registries.FEATURE, AncientAppleTreeConfig::bootstrap);
 
 		registryBuilder.add(Registries.PLACED_FEATURE, ApplePlacedFeature::boostrap);
 		registryBuilder.add(Registries.PLACED_FEATURE, AncientApplePlacedFeature::boostrap);

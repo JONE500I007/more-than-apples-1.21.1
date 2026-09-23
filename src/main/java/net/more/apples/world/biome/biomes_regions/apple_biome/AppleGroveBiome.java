@@ -11,9 +11,9 @@ import net.minecraft.world.attribute.AmbientMoodSettings;
 import net.minecraft.world.attribute.AmbientSounds;
 import net.minecraft.world.attribute.BackgroundMusic;
 import net.minecraft.world.attribute.EnvironmentAttributes;
+import net.minecraft.util.ARGB;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityTypes;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
@@ -62,60 +62,40 @@ public class AppleGroveBiome {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         //spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 5, 4, 4));
 
-        spawnBuilder.addSpawn(MobCategory.CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityTypes.CHICKEN, 2, 4));
-        spawnBuilder.addSpawn(MobCategory.CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityTypes.COW, 2, 4));
-        spawnBuilder.addSpawn(MobCategory.CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityTypes.SHEEP, 2, 4));
-        spawnBuilder.addSpawn(MobCategory.CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityTypes.PIG, 2, 4));
+        spawnBuilder.addSpawn(EntityTypes.CHICKEN, 10, 2, 4);
+        spawnBuilder.addSpawn(EntityTypes.COW, 10, 2, 4);
+        spawnBuilder.addSpawn(EntityTypes.SHEEP, 10, 2, 4);
+        spawnBuilder.addSpawn(EntityTypes.PIG, 10, 2, 4);
 
-        spawnBuilder.addSpawn(MobCategory.CREATURE, 8,
-                new MobSpawnSettings.SpawnerData(EntityTypes.FOX, 2, 4));
+        spawnBuilder.addSpawn(EntityTypes.FOX, 8, 2, 4);
 
-        spawnBuilder.addSpawn(MobCategory.MONSTER, 95,
-                new MobSpawnSettings.SpawnerData(EntityTypes.ZOMBIE, 1, 4));
+        spawnBuilder.addSpawn(EntityTypes.ZOMBIE, 95, 1, 4);
 
-        spawnBuilder.addSpawn(MobCategory.MONSTER, 100,
-                new MobSpawnSettings.SpawnerData(EntityTypes.SKELETON, 1, 4));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, 100,
-                new MobSpawnSettings.SpawnerData(EntityTypes.CREEPER, 1, 4));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, 100,
-                new MobSpawnSettings.SpawnerData(EntityTypes.SPIDER, 1, 4));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, 10,
-                new MobSpawnSettings.SpawnerData(EntityTypes.ENDERMAN, 1, 4));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, 5,
-                new MobSpawnSettings.SpawnerData(EntityTypes.WITCH, 1, 1));
-        spawnBuilder.addSpawn(MobCategory.MONSTER, 100,
-                new MobSpawnSettings.SpawnerData(EntityTypes.SLIME, 1, 4));
+        spawnBuilder.addSpawn(EntityTypes.SKELETON, 100, 1, 4);
+        spawnBuilder.addSpawn(EntityTypes.CREEPER, 100, 1, 4);
+        spawnBuilder.addSpawn(EntityTypes.SPIDER, 100, 1, 4);
+        spawnBuilder.addSpawn(EntityTypes.ENDERMAN, 10, 1, 4);
+        spawnBuilder.addSpawn(EntityTypes.WITCH, 5, 1, 1);
+        spawnBuilder.addSpawn(EntityTypes.SLIME, 100, 1, 4);
 
-        spawnBuilder.addSpawn(MobCategory.MONSTER, 5,
-                new MobSpawnSettings.SpawnerData(EntityTypes.DROWNED, 1, 3));
+        spawnBuilder.addSpawn(EntityTypes.DROWNED, 5, 1, 3);
 
 
-        spawnBuilder.addSpawn(MobCategory.AMBIENT, 10,
-                new MobSpawnSettings.SpawnerData(EntityTypes.BAT, 1, 2));
-        spawnBuilder.addSpawn(MobCategory.UNDERGROUND_WATER_CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityTypes.GLOW_SQUID, 1, 2));
+        spawnBuilder.addSpawn(EntityTypes.BAT, 10, 1, 2);
+        spawnBuilder.addSpawn(EntityTypes.GLOW_SQUID, 10, 1, 2);
 
 
-        spawnBuilder.addSpawn(MobCategory.WATER_AMBIENT, 10,
-                new MobSpawnSettings.SpawnerData(EntityTypes.COD, 4, 10));
-        spawnBuilder.addSpawn(MobCategory.WATER_AMBIENT, 10,
-                new MobSpawnSettings.SpawnerData(EntityTypes.SALMON, 4, 10));
-        spawnBuilder.addSpawn(MobCategory.WATER_AMBIENT, 5,
-                new MobSpawnSettings.SpawnerData(EntityTypes.PUFFERFISH, 1, 3));
-        spawnBuilder.addSpawn(MobCategory.WATER_CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityTypes.SQUID, 1, 4));
+        spawnBuilder.addSpawn(EntityTypes.COD, 10, 4, 10);
+        spawnBuilder.addSpawn(EntityTypes.SALMON, 10, 4, 10);
+        spawnBuilder.addSpawn(EntityTypes.PUFFERFISH, 5, 1, 3);
+        spawnBuilder.addSpawn(EntityTypes.SQUID, 10, 1, 4);
 
-        spawnBuilder.addSpawn(MobCategory.WATER_CREATURE, 10,
-                new MobSpawnSettings.SpawnerData(EntityTypes.SQUID, 1, 4));
+        spawnBuilder.addSpawn(EntityTypes.SQUID, 10, 1, 4);
 
         // world gen maybe biome
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE),
-                        context.lookup(Registries.CONFIGURED_CARVER));
+                        context.lookup(Registries.CARVER));
 
         globalOverworldGeneration(biomeBuilder);
 
@@ -186,9 +166,7 @@ public class AppleGroveBiome {
 //        DefaultBiomeFeatures.addMeadowFlowers(biomeBuilder);
 
 
-        // Leaf litter is now placed via a PlaceOnGroundDecorator on the apple tree
-        // configs themselves (see AppleTreeConfig), so it only appears under trees
-        // instead of scattered across the whole biome.
+
 
         biomeBuilder.addFeature(
                 UNDERGROUND_DECORATION,
@@ -224,9 +202,9 @@ public class AppleGroveBiome {
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
 
-                .setAttribute(EnvironmentAttributes.SKY_COLOR, 0x78A7FF)
-                .setAttribute(EnvironmentAttributes.FOG_COLOR, 0xC0D8FF)
-                .setAttribute(EnvironmentAttributes.WATER_FOG_COLOR, 0x050533)
+                .setAttribute(EnvironmentAttributes.SKY_COLOR, ARGB.vector3fFromRGB24(0x78A7FF))
+                .setAttribute(EnvironmentAttributes.FOG_COLOR, ARGB.vector3fFromRGB24(0xC0D8FF))
+                .setAttribute(EnvironmentAttributes.WATER_FOG_COLOR, ARGB.vector3fFromRGB24(0x050533))
 
                 .setAttribute(EnvironmentAttributes.AMBIENT_SOUNDS, new AmbientSounds(
                         Optional.empty(),

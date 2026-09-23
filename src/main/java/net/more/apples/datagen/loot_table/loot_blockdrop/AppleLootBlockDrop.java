@@ -38,17 +38,7 @@ public final class AppleLootBlockDrop {
         // --- Apple Signs ---
         provider.drop(AppleWoodVariants.APPLE_STANDING_SIGN);
 
-        provider.addWallSignLoot(
-                AppleWoodVariants.APPLE_WALL_SIGN,
-                AppleWoodVariants.APPLE_STANDING_SIGN
-        );
-
         provider.drop(AppleWoodVariants.APPLE_HANGING_SIGN_BLOCK);
-
-        provider.addWallHangingSignLoot(
-                AppleWoodVariants.APPLE_WALL_HANGING_SIGN,
-                AppleWoodVariants.APPLE_HANGING_SIGN_BLOCK
-        );
 
         // --- Apple Storage ---
         provider.drop(ModGeneralBlock.APPLE_BARREL);

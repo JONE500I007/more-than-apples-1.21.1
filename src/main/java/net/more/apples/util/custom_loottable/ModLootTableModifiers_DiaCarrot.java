@@ -10,8 +10,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 
 public class ModLootTableModifiers_DiaCarrot {
@@ -41,70 +40,70 @@ public class ModLootTableModifiers_DiaCarrot {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ANCIENT_CITY_ICE_BOX_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.549f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_CARROT))
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 10.0f)))
+                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 10)))
                         .build());
             }
 
             if (BASTION_HOGLIN_STABLE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.10f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_CARROT))
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0f, 17.0f)))
+                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(8, 17)))
                         .build());
             }
             if (BASTION_OTHER_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.135f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_CARROT))
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(6.0f, 17.0f)))
+                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(6, 17)))
                         .build());
             }
 
             if (RUINED_PORTAL_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.073f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_CARROT))
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0f, 12.0f)))
+                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 12)))
                         .build());
             }
 
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.14f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_CARROT))
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
+                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)))
                         .build());
             }
             if (TRIAL_CHAMBERS_REWARD_RARE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.07f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_CARROT))
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
+                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)))
                         .build());
             }
 
             /*
             if (CREEPER_LOOT_TABLE_KEY.equals(key)) {
                 tableBuilder.modifyPools(poolBuilder -> poolBuilder
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(1.0f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 3.0f)).build()));
+                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)).build()));
             }
             if (LootTables.ANCIENT_CITY_CHEST.equals(key.getValue())) {
                 tableBuilder.modifyPools(poolBuilder -> poolBuilder
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(7.0f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 3.0f)).build()));
+                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)).build()));
             }
              */
         });

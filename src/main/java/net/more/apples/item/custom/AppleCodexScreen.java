@@ -1,5 +1,6 @@
 package net.more.apples.item.custom;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
@@ -9,7 +10,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.more.apples.MoreThanApples;
 import net.more.apples.item.custom.codex_page.*;
-import org.lwjgl.glfw.GLFW;
 
 import java.util.List;
 
@@ -240,7 +240,7 @@ public class AppleCodexScreen extends Screen {
 
     @Override
     public boolean keyPressed(KeyEvent event) {
-        if (event.key() == GLFW.GLFW_KEY_E) {
+        if (event.key() == InputConstants.KEY_E) {
             this.onClose();
             return true;
         }

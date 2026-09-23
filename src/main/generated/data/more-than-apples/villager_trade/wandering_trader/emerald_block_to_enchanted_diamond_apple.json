@@ -2,11 +2,11 @@
   "gives": {
     "id": "more-than-apples:enchanted_diamond_apple"
   },
-  "max_uses": 2.0,
+  "max_uses": 2,
   "reputation_discount": 0.2,
   "wants": {
-    "count": 20.0,
+    "count": 20,
     "id": "minecraft:emerald_block"
   },
-  "xp": 400.0
+  "xp": 400
 }

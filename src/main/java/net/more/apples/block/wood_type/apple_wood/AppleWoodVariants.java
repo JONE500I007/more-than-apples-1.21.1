@@ -1,6 +1,5 @@
 package net.more.apples.block.wood_type.apple_wood;
 
-import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
 import net.more.apples.block.wood_type.ModSignBlockHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.core.Registry;
@@ -86,7 +85,7 @@ public class AppleWoodVariants {
     public static final Block APPLE_WALL_SIGN = ModSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_sign"),
             (settings) -> new WallSignBlock(APPLE_SIGN_WOOD_TYPE, settings),
-            registerIdBlock("apple_wall_sign", Blocks.OAK_WALL_SIGN));
+            wallVariant(registerIdBlock("apple_wall_sign", Blocks.OAK_WALL_SIGN), APPLE_STANDING_SIGN));
 
     public static final Block APPLE_HANGING_SIGN_BLOCK = ModSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_hanging_sign"),
@@ -95,12 +94,19 @@ public class AppleWoodVariants {
     public static final Block APPLE_WALL_HANGING_SIGN = ModSignBlockHelper.registerSignBlock(
             Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_hanging_sign"),
             (settings) -> new WallHangingSignBlock(APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            registerIdBlock("apple_wall_hanging_sign", Blocks.OAK_WALL_HANGING_SIGN));
+            wallVariant(registerIdBlock("apple_wall_hanging_sign", Blocks.OAK_WALL_HANGING_SIGN), APPLE_HANGING_SIGN_BLOCK));
 
     public static final Block APPLE_SHELF = registerBlock("apple_shelf",
             properties -> new AppleShelfBlock(
                     registerIdBlock("apple_shelf", Blocks.OAK_SHELF)));
 
+
+    // like vanilla Blocks.wallVariant: a wall sign uses its standing sign's loot table and name
+    // (otherwise ofFullCopy(OAK_WALL_SIGN) keeps pointing at minecraft:blocks/oak_sign)
+    private static BlockBehaviour.Properties wallVariant(BlockBehaviour.Properties properties, Block standingBlock) {
+        return properties.overrideLootTable(standingBlock.getLootTable())
+                .overrideDescription(standingBlock.getDescriptionId());
+    }
 
     private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
         ResourceKey<Block> key = ResourceKey.create(

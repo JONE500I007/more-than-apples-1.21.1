@@ -112,7 +112,7 @@ public class AppleShelfRenderer implements BlockEntityRenderer<AppleBlockEntity,
         poseStack.translate(0.5F, 0.5F, 0.5F);
 
         //rotateblock
-        poseStack.mulPose(Axis.YP.rotationDegrees(yRot));
+        poseStack.rotate(Axis.YP.rotationDegrees(yRot));
 
         //slot
         poseStack.translate(offset);

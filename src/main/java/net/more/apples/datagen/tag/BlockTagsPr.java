@@ -1,7 +1,9 @@
 package net.more.apples.datagen.tag;
 
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.tags.BlockTags;
 import net.more.apples.block.general_block.ModGeneralBlock;
+import net.more.apples.block.ore_block.ModBlockOre;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
@@ -73,5 +75,55 @@ public final class BlockTagsPr {
                 TestAppleWoodBlocks.TEST_APPLE_LOG,
                 FrostyAppleWoodBlocks.FROSTY_APPLE_LOG,
                 AncientAppleWoodBlocks.ANCIENT_APPLE_LOG);
+
+        // --- Apple Blossom ---
+        provider.addToTag(BlockTags.SMALL_FLOWERS,
+                AncientAppleWoodBlocks.APPLE_BLOSSOM,
+                AncientAppleWoodBlocks.APPLE_BLOSSOMV2);
+        provider.addToTag(ConventionalBlockTags.SMALL_FLOWERS,
+                AncientAppleWoodBlocks.APPLE_BLOSSOM,
+                AncientAppleWoodBlocks.APPLE_BLOSSOMV2);
+        provider.addToTag(BlockTags.BEE_ATTRACTIVE,
+                AncientAppleWoodBlocks.APPLE_BLOSSOM,
+                AncientAppleWoodBlocks.APPLE_BLOSSOMV2);
+        provider.addToTag(BlockTags.FLOWER_POTS,
+                AncientAppleWoodBlocks.POTTED_APPLE_BLOSSOM);
+
+        // --- Apple Leaf Litter ---
+        provider.addToTag(BlockTags.INSIDE_STEP_SOUND_BLOCKS,
+                AncientAppleWoodBlocks.APPLE_LEAF_LITTER);
+        provider.addToTag(BlockTags.REPLACEABLE,
+                AncientAppleWoodBlocks.APPLE_LEAF_LITTER);
+        provider.addToTag(BlockTags.REPLACEABLE_BY_MUSHROOMS,
+                AncientAppleWoodBlocks.APPLE_LEAF_LITTER);
+        provider.addToTag(BlockTags.REPLACEABLE_BY_TREES,
+                AncientAppleWoodBlocks.APPLE_LEAF_LITTER);
+
+        provider.addToTag(BlockTags.WASHED_AWAY_BY_FLUIDS,
+                AncientAppleWoodBlocks.APPLE_BLOSSOM,
+                AncientAppleWoodBlocks.APPLE_BLOSSOMV2,
+                AncientAppleWoodBlocks.APPLE_LEAF_LITTER);
+
+        provider.addToTag(BlockTags.BLOCKS_MOTION_NO_LEAVES,
+                ModGeneralBlock.APPLE_BARREL);
+
+        // --- Apple Ores ---
+        provider.addToTag(BlockTags.ORES,
+                ModBlockOre.APPLE_ORE,
+                ModBlockOre.DEEPSLATE_APPLE_ORE);
+        provider.addToTag(ConventionalBlockTags.ORES,
+                ModBlockOre.APPLE_ORE,
+                ModBlockOre.DEEPSLATE_APPLE_ORE);
+        provider.addToTag(ConventionalBlockTags.ORES_IN_GROUND_STONE,
+                ModBlockOre.APPLE_ORE);
+        provider.addToTag(ConventionalBlockTags.ORES_IN_GROUND_DEEPSLATE,
+                ModBlockOre.DEEPSLATE_APPLE_ORE);
+
+
+        provider.addToTag(ConventionalBlockTags.ORE_RATES_DENSE,
+                ModBlockOre.APPLE_ORE,
+                ModBlockOre.DEEPSLATE_APPLE_ORE);
+        provider.addToTag(BlockTags.SNAPS_GOAT_HORN,
+                ModBlockOre.APPLE_ORE);
     }
 }

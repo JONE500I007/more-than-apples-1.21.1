@@ -3,17 +3,15 @@
     "in_apple_biome": {
       "trigger": "minecraft:location",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biomes": "more-than-apples:apple_grove"
-              }
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "biomes": "more-than-apples:apple_grove"
             }
           }
-        ]
+        }
       }
     }
   },

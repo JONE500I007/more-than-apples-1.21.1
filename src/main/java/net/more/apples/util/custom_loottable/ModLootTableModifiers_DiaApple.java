@@ -7,7 +7,7 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 
 public class ModLootTableModifiers_DiaApple {
@@ -51,7 +51,7 @@ public class ModLootTableModifiers_DiaApple {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SIMPLE_DUNGEON_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.19f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());
@@ -59,7 +59,7 @@ public class ModLootTableModifiers_DiaApple {
 
             if (ABANDONED_MINESHAFT_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.282f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());
@@ -67,14 +67,14 @@ public class ModLootTableModifiers_DiaApple {
 
             if (BASTION_OTHER_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.101f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());
             }
             if (BASTION_HOGLIN_STABLE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.10f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());
@@ -82,7 +82,7 @@ public class ModLootTableModifiers_DiaApple {
 
             if (DESERT_PYRAMID_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.222f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());
@@ -90,7 +90,7 @@ public class ModLootTableModifiers_DiaApple {
 
             if (IGLOO_CHEST_CHEST_KEY.equals(key)) {
                 tableBuilder.modifyPools(poolBuilder -> poolBuilder
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(1f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE)));
             }
@@ -98,7 +98,7 @@ public class ModLootTableModifiers_DiaApple {
 
             if (RUINED_PORTAL_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.205f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());
@@ -106,7 +106,7 @@ public class ModLootTableModifiers_DiaApple {
 
             if (STRONGHOLD_CORRIDOR_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.025f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());
@@ -114,14 +114,14 @@ public class ModLootTableModifiers_DiaApple {
 
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.083f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());
             }
             if (TRIAL_CHAMBERS_REWARD_UNIQUE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.083f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());
@@ -129,7 +129,7 @@ public class ModLootTableModifiers_DiaApple {
 
             if (UNDERWATER_RUIN_BIG_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.043f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());
@@ -137,7 +137,7 @@ public class ModLootTableModifiers_DiaApple {
 
             if (WOODLAND_MANSION_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.218f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.DIAMOND_APPLE))
                         .build());

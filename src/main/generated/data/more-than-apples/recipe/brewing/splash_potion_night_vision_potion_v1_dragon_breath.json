@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:splash_potion",
+    "potion_contents": {
+      "potions": "more-than-apples:night_vision_potion_v1"
+    }
+  },
+  "output": {
+    "components": {
+      "minecraft:potion_contents": {
+        "potion": "more-than-apples:night_vision_potion_v1"
+      }
+    },
+    "id": "minecraft:lingering_potion"
+  },
+  "reagent": {
+    "item": "minecraft:dragon_breath"
+  }
+}

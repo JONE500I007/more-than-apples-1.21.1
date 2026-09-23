@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "more-than-apples:ancient_apple_button"
+        "recipes": "more-than-apples:ancient_apple_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

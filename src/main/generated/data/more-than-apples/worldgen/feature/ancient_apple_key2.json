@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:tree",
+  "below_trunk_provider": "minecraft:soil_beneath_tree",
+  "decorators": [],
+  "foliage_placer": {
+    "type": "minecraft:ancient_apple_foliage_placer",
+    "height": 6,
+    "offset": 4,
+    "radius": 4
+  },
+  "foliage_provider": {
+    "id": "more-than-apples:ancient_apple_leaves",
+    "properties": {
+      "distance": "24",
+      "persistent": "false",
+      "waterlogged": "false"
+    }
+  },
+  "ignore_vines": false,
+  "minimum_size": {
+    "type": "minecraft:two_layers_feature_size",
+    "limit": 7,
+    "lower_size": 3,
+    "min_clipped_height": 32,
+    "upper_size": 7
+  },
+  "trunk_placer": {
+    "type": "minecraft:ancient_apple_trunk_placer",
+    "base_height": 30,
+    "height_rand_a": 8,
+    "height_rand_b": 7
+  },
+  "trunk_provider": {
+    "id": "more-than-apples:ancient_apple_log",
+    "properties": {
+      "axis": "y"
+    }
+  }
+}

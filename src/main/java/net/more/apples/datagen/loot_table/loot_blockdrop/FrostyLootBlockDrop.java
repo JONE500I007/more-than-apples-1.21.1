@@ -37,16 +37,6 @@ public final class FrostyLootBlockDrop {
         // --- Frosty Apple Signs ---
         provider.drop(FrostyAppleWoodVariants.FROSTY_APPLE_STANDING_SIGN);
 
-        provider.addWallSignLoot(
-                FrostyAppleWoodVariants.FROSTY_APPLE_WALL_SIGN,
-                FrostyAppleWoodVariants.FROSTY_APPLE_STANDING_SIGN
-        );
-
         provider.drop(FrostyAppleWoodVariants.FROSTY_APPLE_HANGING_SIGN_BLOCK);
-
-        provider.addWallHangingSignLoot(
-                FrostyAppleWoodVariants.FROSTY_APPLE_WALL_HANGING_SIGN,
-                FrostyAppleWoodVariants.FROSTY_APPLE_HANGING_SIGN_BLOCK
-        );
     }
 }

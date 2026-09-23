@@ -2,7 +2,10 @@ package net.more.apples.world.biome.surface;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.material.MaterialRules;
+import net.minecraft.world.level.levelgen.material.condition.MaterialCondition;
+import net.minecraft.world.level.levelgen.material.rule.MaterialRule;
+import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 
 public class ModAppleGroveMaterialRules {
@@ -14,17 +17,17 @@ public class ModAppleGroveMaterialRules {
     private static final NoiseChunk.BlockStateFiller APPLE_BLOCK1 = makeStateRule(ModBlocks2.APPLE_PLANKS);
     private static final NoiseChunk.BlockStateFiller APPLE_BLOCK2 = makeStateRule(ModBlocks.DIAMOND_APPLE_BLOCK);
      */
-    private static final SurfaceRules.RuleSource DIRT = SurfaceRules.state(Blocks.DIRT.defaultBlockState());
-    private static final SurfaceRules.RuleSource GRASS_BLOCK = SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState());
-    private static final SurfaceRules.RuleSource STONE = SurfaceRules.state(Blocks.STONE.defaultBlockState());
-    private static final SurfaceRules.RuleSource DEEPSLATE = SurfaceRules.state(Blocks.DEEPSLATE.defaultBlockState());
+    private static final MaterialRule DIRT = MaterialRules.state(Blocks.DIRT.defaultBlockState());
+    private static final MaterialRule GRASS_BLOCK = MaterialRules.state(Blocks.GRASS_BLOCK.defaultBlockState());
+    private static final MaterialRule STONE = MaterialRules.state(Blocks.STONE.defaultBlockState());
+    private static final MaterialRule DEEPSLATE = MaterialRules.state(Blocks.DEEPSLATE.defaultBlockState());
 
-    //private static final SurfaceRules.RuleSource APPLE_BLOCK1 = SurfaceRules.state(AppleWoodBlocks.APPLE_PLANKS.defaultBlockState());
-    //private static final SurfaceRules.RuleSource APPLE_BLOCK2 = SurfaceRules.state(AppleWoodBlocks.APPLE_WOOD.defaultBlockState());
+    //private static final MaterialRule APPLE_BLOCK1 = MaterialRules.state(AppleWoodBlocks.APPLE_PLANKS.defaultBlockState());
+    //private static final MaterialRule APPLE_BLOCK2 = MaterialRules.state(AppleWoodBlocks.APPLE_WOOD.defaultBlockState());
 
 
     //public static NoiseChunk.BlockStateFiller makeRule() {
-    public static SurfaceRules.RuleSource makeRule() {
+    public static MaterialRule makeRule() {
         /*
         MaterialRules.MaterialCondition isAtOrAboveWaterLevel = MaterialRules.water(-1, 0);
 
@@ -53,32 +56,32 @@ public class ModAppleGroveMaterialRules {
                 MaterialRules.condition(isAppleGrove, appleSurface)
         );
          */
-        return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(
-                        SurfaceRules.ON_FLOOR,
-                        SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState())
+        return MaterialRules.sequence(
+                MaterialRules.ifTrue(
+                        MaterialRules.stoneDepthCheck(0, false, CaveSurface.FLOOR),
+                        MaterialRules.state(Blocks.GRASS_BLOCK.defaultBlockState())
                 ),
 
-                SurfaceRules.ifTrue(
-                        SurfaceRules.UNDER_FLOOR,
-                        SurfaceRules.state(Blocks.DIRT.defaultBlockState())
+                MaterialRules.ifTrue(
+                        MaterialRules.stoneDepthCheck(0, true, CaveSurface.FLOOR),
+                        MaterialRules.state(Blocks.DIRT.defaultBlockState())
                 ),
 
-                SurfaceRules.ifTrue(
-                        SurfaceRules.verticalGradient("deepslate",
+                MaterialRules.ifTrue(
+                        MaterialRules.verticalGradient("deepslate",
                                 VerticalAnchor.bottom(),
                                 VerticalAnchor.absolute(0)),
-                        SurfaceRules.state(Blocks.DEEPSLATE.defaultBlockState())
+                        MaterialRules.state(Blocks.DEEPSLATE.defaultBlockState())
                 ),
 
-                SurfaceRules.state(Blocks.STONE.defaultBlockState())
+                MaterialRules.state(Blocks.STONE.defaultBlockState())
         );
     }
 
     //    private static NoiseChunk.BlockStateFiller makeStateRule(Block block) {
 //        return (context) -> block.defaultBlockState();
 //    }
-    private static SurfaceRules.RuleSource makeStateRule(Block block) {
-        return SurfaceRules.state(block.defaultBlockState());
+    private static MaterialRule makeStateRule(Block block) {
+        return MaterialRules.state(block.defaultBlockState());
     }
 }

@@ -1,5 +1,6 @@
 package net.more.apples.item.custom;
 
+import net.minecraft.world.item.component.SwingAnimation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -53,7 +54,7 @@ public class HorseFeedingAppleItem extends Item {
                         horse.getX(), horse.getY(0.5), horse.getZ(), 5, 0.3, 0.3, 0.3, 0.01);
             }
 
-            player.swing(type, true);
+            player.swing(type, SwingAnimation.DEFAULT, true);
             return InteractionResult.SUCCESS;
         }
 

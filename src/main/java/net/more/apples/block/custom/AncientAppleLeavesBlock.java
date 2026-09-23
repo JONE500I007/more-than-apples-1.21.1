@@ -1,6 +1,5 @@
 package net.more.apples.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -28,7 +27,6 @@ import java.util.OptionalInt;
 
 public abstract class AncientAppleLeavesBlock extends Block implements SimpleWaterloggedBlock {
 
-    public abstract MapCodec<? extends AncientAppleLeavesBlock> codec();
 
 
     public static final int DECAY_DISTANCE = 24;

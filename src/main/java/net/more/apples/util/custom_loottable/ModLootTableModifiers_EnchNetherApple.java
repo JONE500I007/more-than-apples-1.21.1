@@ -8,8 +8,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 
 public class ModLootTableModifiers_EnchNetherApple {
@@ -43,7 +42,7 @@ public class ModLootTableModifiers_EnchNetherApple {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SIMPLE_DUNGEON_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.028f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE))
                         .build());
@@ -51,7 +50,7 @@ public class ModLootTableModifiers_EnchNetherApple {
 
             if (ABANDONED_MINESHAFT_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.014f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE))
                         .build());
@@ -59,16 +58,16 @@ public class ModLootTableModifiers_EnchNetherApple {
 
             if (ANCIENT_CITY_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.084f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE))
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
+                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)))
                         .build());
             }
 
             if (BASTION_TREASURE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.059f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE))
                         .build());
@@ -76,7 +75,7 @@ public class ModLootTableModifiers_EnchNetherApple {
 
             if (DESERT_PYRAMID_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.024f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE))
                         .build());
@@ -84,7 +83,7 @@ public class ModLootTableModifiers_EnchNetherApple {
 
             if (RUINED_PORTAL_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.015f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE))
                         .build());
@@ -92,7 +91,7 @@ public class ModLootTableModifiers_EnchNetherApple {
 
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.225f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE))
                         .build());
@@ -100,7 +99,7 @@ public class ModLootTableModifiers_EnchNetherApple {
 
             if (WOODLAND_MANSION_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.031f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.ENCHANTED_NETHERITE_APPLE))
                         .build());

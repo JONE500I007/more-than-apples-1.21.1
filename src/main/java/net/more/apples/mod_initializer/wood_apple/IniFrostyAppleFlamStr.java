@@ -2,19 +2,21 @@ package net.more.apples.mod_initializer.wood_apple;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.fabricmc.fabric.api.registry.FuelValueEvents;
-import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.fabricmc.fabric.api.item.v1.BlockTransformerHelper;
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
+import net.more.apples.util.ModFuels;
 
 public class IniFrostyAppleFlamStr implements ModInitializer {
     @Override
     public void onInitialize() {
-        StrippableBlockRegistry.register(FrostyAppleWoodBlocks.FROSTY_APPLE_LOG, FrostyAppleWoodBlocks.STRIPPED_FROSTY_APPLE_LOG);
-        StrippableBlockRegistry.register(FrostyAppleWoodBlocks.FROSTY_APPLE_WOOD, FrostyAppleWoodBlocks.STRIPPED_FROSTY_APPLE_WOOD);
+        BlockTransformerHelper.registerStripping(FrostyAppleWoodBlocks.FROSTY_APPLE_LOG, FrostyAppleWoodBlocks.STRIPPED_FROSTY_APPLE_LOG);
+        BlockTransformerHelper.registerStripping(FrostyAppleWoodBlocks.FROSTY_APPLE_WOOD, FrostyAppleWoodBlocks.STRIPPED_FROSTY_APPLE_WOOD);
 
         FlammableBlockRegistry.getDefaultInstance().add(FrostyAppleWoodBlocks.FROSTY_APPLE_LOG, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(FrostyAppleWoodBlocks.FROSTY_APPLE_WOOD, 5, 20);
@@ -28,15 +30,15 @@ public class IniFrostyAppleFlamStr implements ModInitializer {
         FlammableBlockRegistry.getDefaultInstance().add(FrostyAppleWoodVariants.FROSTY_APPLE_FENCE, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(FrostyAppleWoodVariants.FROSTY_APPLE_FENCE_GATE, 5, 20);
 
-        FuelValueEvents.BUILD.register(((builder, context) -> {
-            builder.add(FrostyAppleWoodVariants.FROSTY_APPLE_STAIRS, 300);
-            builder.add(FrostyAppleWoodVariants.FROSTY_APPLE_SLAB, 150);
-            builder.add(FrostyAppleWoodVariants.FROSTY_APPLE_BUTTON, 100);
-            builder.add(FrostyAppleWoodVariants.FROSTY_APPLE_PRESSURE_PLATE, 300);
-            builder.add(FrostyAppleWoodVariants.FROSTY_APPLE_FENCE, 300);
-            builder.add(FrostyAppleWoodVariants.FROSTY_APPLE_FENCE_GATE, 300);
-            builder.add(FrostyAppleWoodVariants.FROSTY_APPLE_DOOR, 200);
-            builder.add(FrostyAppleWoodVariants.FROSTY_APPLE_TRAPDOOR, 200);
-        }));
+        DefaultItemComponentEvents.MODIFY.register(context -> {
+            ModFuels.add(context, FrostyAppleWoodVariants.FROSTY_APPLE_STAIRS, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, FrostyAppleWoodVariants.FROSTY_APPLE_SLAB, ContextIntProviders.COOKING_TIME_WOOD_SLABS);
+            ModFuels.add(context, FrostyAppleWoodVariants.FROSTY_APPLE_BUTTON, ContextIntProviders.COOKING_TIME_WOOD_ITEMS_EXTRA_SMALL);
+            ModFuels.add(context, FrostyAppleWoodVariants.FROSTY_APPLE_PRESSURE_PLATE, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, FrostyAppleWoodVariants.FROSTY_APPLE_FENCE, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, FrostyAppleWoodVariants.FROSTY_APPLE_FENCE_GATE, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, FrostyAppleWoodVariants.FROSTY_APPLE_DOOR, ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE);
+            ModFuels.add(context, FrostyAppleWoodVariants.FROSTY_APPLE_TRAPDOOR, ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE);
+        });
     }
 }

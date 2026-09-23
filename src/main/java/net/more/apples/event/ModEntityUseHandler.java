@@ -1,5 +1,6 @@
 package net.more.apples.event;
 
+import net.minecraft.world.item.component.SwingAnimation;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -111,7 +112,7 @@ public class ModEntityUseHandler {
                     );
                 }
 
-                player.swing(hand, true);
+                player.swing(hand, SwingAnimation.DEFAULT, true);
                 return InteractionResult.SUCCESS;
             }
 

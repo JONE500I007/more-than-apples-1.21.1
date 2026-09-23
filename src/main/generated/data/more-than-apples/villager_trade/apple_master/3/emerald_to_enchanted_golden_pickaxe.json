@@ -1,20 +1,18 @@
 {
-  "given_item_modifiers": [
-    {
-      "function": "minecraft:enchant_with_levels",
-      "include_additional_cost_component": true,
-      "levels": 25.0,
-      "options": "#minecraft:on_traded_equipment"
-    }
-  ],
+  "given_item_modifier": {
+    "type": "minecraft:enchant_with_levels",
+    "include_additional_cost_component": true,
+    "levels": 25,
+    "options": "#minecraft:on_traded_equipment"
+  },
   "gives": {
     "id": "minecraft:golden_pickaxe"
   },
-  "max_uses": 2.0,
+  "max_uses": 2,
   "reputation_discount": 0.1,
   "wants": {
-    "count": 8.0,
+    "count": 8,
     "id": "minecraft:emerald"
   },
-  "xp": 10.0
+  "xp": 10
 }

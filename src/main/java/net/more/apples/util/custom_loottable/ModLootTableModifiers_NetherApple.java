@@ -7,7 +7,7 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.more.apples.item.apple_item.ModAppleFoodItems;
 
 public class ModLootTableModifiers_NetherApple {
@@ -53,14 +53,14 @@ public class ModLootTableModifiers_NetherApple {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SIMPLE_DUNGEON_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.19f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE))
                         .build());
             }
             if (ABANDONED_MINESHAFT_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.282f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE))
                         .build());
@@ -68,14 +68,14 @@ public class ModLootTableModifiers_NetherApple {
 
             if (BASTION_OTHER_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.101f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE))
                         .build());
             }
             if (BASTION_HOGLIN_STABLE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.10f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE))
                         .build());
@@ -83,7 +83,7 @@ public class ModLootTableModifiers_NetherApple {
 
             if (DESERT_PYRAMID_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.222f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE))
                         .build());
@@ -91,14 +91,14 @@ public class ModLootTableModifiers_NetherApple {
 
             if (IGLOO_CHEST_CHEST_KEY.equals(key)) {
                 tableBuilder.modifyPools(poolBuilder -> poolBuilder
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(1f))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE)));
             }
 
             if (RUINED_PORTAL_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.205f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE))
                         .build());
@@ -106,7 +106,7 @@ public class ModLootTableModifiers_NetherApple {
 
             if (STRONGHOLD_CORRIDOR_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.025f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE))
                         .build());
@@ -114,14 +114,14 @@ public class ModLootTableModifiers_NetherApple {
 
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.083f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE))
                         .build());
             }
             if (TRIAL_CHAMBERS_REWARD_UNIQUE_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.083f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE))
                         .build());
@@ -129,7 +129,7 @@ public class ModLootTableModifiers_NetherApple {
 
             if (UNDERWATER_RUIN_BIG_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.043f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE))
                         .build());
@@ -137,7 +137,7 @@ public class ModLootTableModifiers_NetherApple {
 
             if (WOODLAND_MANSION_CHEST_KEY.equals(key)) {
                 tableBuilder.pool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .when(LootItemRandomChanceCondition.randomChance(0.218f * JUST_DROP_RATE))
                         .add(LootItem.lootTableItem(ModAppleFoodItems.NETHERITE_APPLE))
                         .build());

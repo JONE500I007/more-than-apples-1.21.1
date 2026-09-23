@@ -1,5 +1,6 @@
 package net.more.apples.block.wood_type.test_wood;
 
+import net.minecraft.world.level.block.sounds.AmbientLeavesBlockSoundPlayer;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -34,7 +35,7 @@ public class TestAppleWoodBlocks {
                     registerIdBlock("test_apple_planks", Blocks.OAK_PLANKS)));
 
     public static final Block TEST_APPLE_LEAVES  = registerBlock("test_apple_leaves",
-            properties -> new UntintedParticleLeavesBlock(0.05f, ModParticle.TEST_LEAVES_PARTICLE,
+            properties -> new UntintedParticleLeavesBlock(0.05f, ModParticle.TEST_LEAVES_PARTICLE, AmbientLeavesBlockSoundPlayer.noAmbientSound(),
                     registerIdBlock("test_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block TEST_APPLE_SAPLING = registerBlock("test_apple_sapling",
             properties -> new SaplingBlock(

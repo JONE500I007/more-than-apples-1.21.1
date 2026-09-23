@@ -2,16 +2,18 @@ package net.more.apples.mod_initializer.wood_apple;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.fabricmc.fabric.api.registry.FuelValueEvents;
-import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.fabricmc.fabric.api.item.v1.BlockTransformerHelper;
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
+import net.more.apples.util.ModFuels;
 
 public class IniAncientAppleFlamStr implements ModInitializer {
     @Override
     public void onInitialize() {
-        StrippableBlockRegistry.register(AncientAppleWoodBlocks.ANCIENT_APPLE_LOG, AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_LOG);
-        StrippableBlockRegistry.register(AncientAppleWoodBlocks.ANCIENT_APPLE_WOOD, AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_WOOD);
+        BlockTransformerHelper.registerStripping(AncientAppleWoodBlocks.ANCIENT_APPLE_LOG, AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_LOG);
+        BlockTransformerHelper.registerStripping(AncientAppleWoodBlocks.ANCIENT_APPLE_WOOD, AncientAppleWoodBlocks.STRIPPED_ANCIENT_APPLE_WOOD);
 
 
         FlammableBlockRegistry.getDefaultInstance().add(AncientAppleWoodBlocks.ANCIENT_APPLE_LOG, 5, 20);
@@ -26,15 +28,15 @@ public class IniAncientAppleFlamStr implements ModInitializer {
         FlammableBlockRegistry.getDefaultInstance().add(AncientAppleWoodVariants.ANCIENT_APPLE_FENCE, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(AncientAppleWoodVariants.ANCIENT_APPLE_FENCE_GATE, 5, 20);
 
-        FuelValueEvents.BUILD.register(((builder, context) -> {
-            builder.add(AncientAppleWoodVariants.ANCIENT_APPLE_STAIRS, 300);
-            builder.add(AncientAppleWoodVariants.ANCIENT_APPLE_SLAB, 150);
-            builder.add(AncientAppleWoodVariants.ANCIENT_APPLE_BUTTON, 100);
-            builder.add(AncientAppleWoodVariants.ANCIENT_APPLE_PRESSURE_PLATE, 300);
-            builder.add(AncientAppleWoodVariants.ANCIENT_APPLE_FENCE, 300);
-            builder.add(AncientAppleWoodVariants.ANCIENT_APPLE_FENCE_GATE, 300);
-            builder.add(AncientAppleWoodVariants.ANCIENT_APPLE_DOOR, 200);
-            builder.add(AncientAppleWoodVariants.ANCIENT_APPLE_TRAPDOOR, 200);
-        }));
+        DefaultItemComponentEvents.MODIFY.register(context -> {
+            ModFuels.add(context, AncientAppleWoodVariants.ANCIENT_APPLE_STAIRS, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, AncientAppleWoodVariants.ANCIENT_APPLE_SLAB, ContextIntProviders.COOKING_TIME_WOOD_SLABS);
+            ModFuels.add(context, AncientAppleWoodVariants.ANCIENT_APPLE_BUTTON, ContextIntProviders.COOKING_TIME_WOOD_ITEMS_EXTRA_SMALL);
+            ModFuels.add(context, AncientAppleWoodVariants.ANCIENT_APPLE_PRESSURE_PLATE, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, AncientAppleWoodVariants.ANCIENT_APPLE_FENCE, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, AncientAppleWoodVariants.ANCIENT_APPLE_FENCE_GATE, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, AncientAppleWoodVariants.ANCIENT_APPLE_DOOR, ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE);
+            ModFuels.add(context, AncientAppleWoodVariants.ANCIENT_APPLE_TRAPDOOR, ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE);
+        });
     }
 }

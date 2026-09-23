@@ -12,7 +12,6 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
@@ -65,7 +64,7 @@ public class AncientAppleTrunkPlacerv1 extends TrunkPlacer {
             RandomSource random,
             int treeHeight,
             BlockPos origin,
-            TreeConfiguration config) {
+            TreeFeature config) {
 
         int actualHeight = getHugeTreeHeight(random);
         int trunkHeight = Mth.floor(actualHeight * TRUNK_HEIGHT_SCALE);
@@ -142,7 +141,7 @@ public class AncientAppleTrunkPlacerv1 extends TrunkPlacer {
 
     private void placeCross(WorldGenLevel level, BiConsumer<BlockPos, BlockState> trunkSetter,
                             RandomSource random, BlockPos center,
-                            TreeConfiguration config, int size) {
+                            TreeFeature config, int size) {
         // วาง core กลาง
         for (int ox = -size; ox <= size; ox++) {
             for (int oz = -size; oz <= size; oz++) {
@@ -161,7 +160,7 @@ public class AncientAppleTrunkPlacerv1 extends TrunkPlacer {
                             BiConsumer<BlockPos, BlockState> trunkSetter,
                             RandomSource random,
                             BlockPos origin,
-                            TreeConfiguration config) {
+                            TreeFeature config) {
 
         for (Direction dir : Direction.Plane.HORIZONTAL) {
             // สร้างราก 2-3 เส้นต่อทิศ
@@ -301,7 +300,7 @@ public class AncientAppleTrunkPlacerv1 extends TrunkPlacer {
     // ── Helper methods (เหมือน FancyTrunkPlacer) ─────────────────
     private boolean makeLimb(WorldGenLevel level, BiConsumer<BlockPos, BlockState> trunkSetter,
                              RandomSource random, BlockPos startPos, BlockPos endPos,
-                             boolean doPlace, TreeConfiguration config) {
+                             boolean doPlace, TreeFeature config) {
         if (!doPlace && Objects.equals(startPos, endPos)) return true;
 
         BlockPos delta = endPos.offset(-startPos.getX(), -startPos.getY(), -startPos.getZ());
@@ -355,7 +354,7 @@ public class AncientAppleTrunkPlacerv1 extends TrunkPlacer {
 
     private void makeBranches(WorldGenLevel level, BiConsumer<BlockPos, BlockState> trunkSetter,
                               RandomSource random, int height, BlockPos origin,
-                              List<FoliageCoords> foliageCoords, TreeConfiguration config) {
+                              List<FoliageCoords> foliageCoords, TreeFeature config) {
         for (FoliageCoords coord : foliageCoords) {
             int branchBase = coord.getBranchBase();
             BlockPos baseCoord = new BlockPos(origin.getX(), branchBase, origin.getZ());

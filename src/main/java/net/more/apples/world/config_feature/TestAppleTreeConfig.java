@@ -1,14 +1,14 @@
 package net.more.apples.world.config_feature;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BlockStateProviders;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -18,19 +18,18 @@ import net.more.apples.block.wood_type.test_wood.TestAppleWoodBlocks;
 import net.more.apples.world.tree.custom.test_tree.TestAppleTrunkPlacer;
 
 public class TestAppleTreeConfig {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> TEST_APPLE_TREE_KEY = registryTreeKey("test_apple_tree_key");
+    public static final ResourceKey<Feature> TEST_APPLE_TREE_KEY = registryTreeKey("test_apple_tree_key");
 
-    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+    public static void bootstrap(BootstrapContext<Feature> context) {
 
-        // 26.2 TreeConfigurationBuilder get belowTrunkProvider
-        BlockStateProvider belowTrunk =
-                TreeConfiguration.defaultPlaceBelowTreeTrunkProvider(context.lookup(Registries.BIOME));
 
-        registerTreeConfig(context, TEST_APPLE_TREE_KEY, Feature.TREE,
-                new TreeConfiguration.TreeConfigurationBuilder(
-                        BlockStateProvider.simple(TestAppleWoodBlocks.TEST_APPLE_LOG),
+        Holder<BlockStateProvider> belowTrunk =
+                context.lookup(Registries.BLOCK_STATE_PROVIDER).getOrThrow(BlockStateProviders.SOIL_BENEATH_TREE);
+
+        context.register(TEST_APPLE_TREE_KEY, new TreeFeature.Builder(
+                        BlockStateProvider.of(TestAppleWoodBlocks.TEST_APPLE_LOG),
                         new TestAppleTrunkPlacer(3, 1, 1),
-                        BlockStateProvider.simple(TestAppleWoodBlocks.TEST_APPLE_LEAVES),
+                        BlockStateProvider.of(TestAppleWoodBlocks.TEST_APPLE_LEAVES),
                         new AcaciaFoliagePlacer(
                                 ConstantInt.of(0),
                                 ConstantInt.of(1)),
@@ -40,12 +39,7 @@ public class TestAppleTreeConfig {
     }
 
 
-    public static ResourceKey<ConfiguredFeature<?, ?>> registryTreeKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
-    }
-
-    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void registerTreeConfig(BootstrapContext<ConfiguredFeature<?, ?>> context,
-                                                                                                    ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
-        context.register(key, new ConfiguredFeature<>(feature, configuration));
+    public static ResourceKey<Feature> registryTreeKey(String name) {
+        return ResourceKey.create(Registries.FEATURE, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
     }
 }

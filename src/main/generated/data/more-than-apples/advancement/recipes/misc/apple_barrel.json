@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "more-than-apples:apple_barrel"
+        "recipes": "more-than-apples:apple_barrel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

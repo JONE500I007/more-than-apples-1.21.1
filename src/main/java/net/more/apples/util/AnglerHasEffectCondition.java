@@ -34,7 +34,7 @@ public class AnglerHasEffectCondition implements LootItemCondition {
 
     @Override
     public boolean test(LootContext ctx) {
-        Entity e = ctx.getParameter(LootContextParams.THIS_ENTITY);
+        Entity e = ctx.getOptional(LootContextParams.THIS_ENTITY);
         if (e instanceof FishingHook bobber) {
             Entity owner = bobber.getOwner();
             if (owner instanceof LivingEntity living) {

@@ -8,7 +8,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodBlocks;
@@ -38,7 +38,7 @@ public class FrostyAppleFoliagePlacer extends FoliagePlacer {
     protected void createFoliage(WorldGenLevel level,
                                  FoliageSetter foliageSetter,
                                  RandomSource random,
-                                 TreeConfiguration config,
+                                 TreeFeature config,
                                  int treeHeight,
                                  FoliageAttachment attachment,
                                  int foliageHeight,
@@ -56,11 +56,11 @@ public class FrostyAppleFoliagePlacer extends FoliagePlacer {
         boolean giant = attachment.doubleTrunk();
         BlockPos center = attachment.pos().above(offset);
 
-        this.placeLeavesRow(level, foliageSetter, random, config, center, leafRadius + attachment.radiusOffset(), -1 - foliageHeight, giant);
+        this.placeLeavesRow(level, foliageSetter, random, config, center, leafRadius + attachment.radiusOffsetXZ(), -1 - foliageHeight, giant);
         this.placeLeavesRow(level, foliageSetter, random, config, center, leafRadius - 1, -foliageHeight, giant);
-        this.placeLeavesRow(level, foliageSetter, random, config, center, leafRadius + attachment.radiusOffset() - 1, 0, giant);
+        this.placeLeavesRow(level, foliageSetter, random, config, center, leafRadius + attachment.radiusOffsetXZ() - 1, 0, giant);
 
-        int hangingRadius = leafRadius + attachment.radiusOffset();
+        int hangingRadius = leafRadius + attachment.radiusOffsetXZ();
         BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
         //chance leave hang 1 block to 3 block and 20%
         float hangChance = 0.2f;
@@ -83,7 +83,7 @@ public class FrostyAppleFoliagePlacer extends FoliagePlacer {
                             if ((level.getBlockState(currentPos).getBlock() == Blocks.AIR
                                     || level.getBlockState(currentPos).getBlock() == Blocks.WATER)
                                     && level.getBlockState(currentPos).getBlock() != FrostyAppleWoodBlocks.FROSTY_APPLE_LOG) {
-                                foliageSetter.set(currentPos, config.foliageProvider.getState(level, random, currentPos));
+                                foliageSetter.set(currentPos, config.foliageProvider().value().getState(level, random, currentPos));
                             } else {
                                 {
                                     break;
@@ -97,7 +97,7 @@ public class FrostyAppleFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    public int foliageHeight(RandomSource random, int treeHeight, TreeConfiguration config) {
+    public int foliageHeight(RandomSource random, int treeHeight, TreeFeature config) {
         return this.height;
     }
 

@@ -1,17 +1,15 @@
 {
-  "given_item_modifiers": [
-    {
-      "function": "minecraft:set_potion",
-      "id": "more-than-apples:freezing_resistance_potion"
-    }
-  ],
+  "given_item_modifier": {
+    "type": "minecraft:set_potion",
+    "id": "more-than-apples:freezing_resistance_potion"
+  },
   "gives": {
     "id": "minecraft:potion"
   },
   "reputation_discount": 0.08,
   "wants": {
-    "count": 16.0,
+    "count": 16,
     "id": "minecraft:emerald"
   },
-  "xp": 15.0
+  "xp": 15
 }

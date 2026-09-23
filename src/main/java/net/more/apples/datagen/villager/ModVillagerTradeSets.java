@@ -7,7 +7,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.trading.TradeSet;
 import net.minecraft.world.item.trading.VillagerTrade;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.more.apples.MoreThanApples;
 import net.more.apples.villager.ModAppleVillagers;
 
@@ -29,7 +29,7 @@ public class ModVillagerTradeSets {
                 resourceKey,
                 new TradeSet(
                         context.lookup(Registries.VILLAGER_TRADE).getOrThrow(tradeTag),
-                        ConstantValue.exactly(2.0F),
+                        ContextIntProviders.exactly(2),
                         false,
                         Optional.of(resourceKey.identifier().withPrefix("trade_set/"))));
     }

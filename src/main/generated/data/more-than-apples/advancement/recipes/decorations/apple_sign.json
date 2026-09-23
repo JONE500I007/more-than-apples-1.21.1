@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "more-than-apples:apple_sign"
+        "recipes": "more-than-apples:apple_sign"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

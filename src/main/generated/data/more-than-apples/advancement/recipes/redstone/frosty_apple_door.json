@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "more-than-apples:frosty_apple_door"
+        "recipes": "more-than-apples:frosty_apple_door"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

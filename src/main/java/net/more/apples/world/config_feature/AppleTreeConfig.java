@@ -1,6 +1,8 @@
 package net.more.apples.world.config_feature;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BlockStateProviders;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.resources.Identifier;
@@ -8,10 +10,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
@@ -31,35 +31,33 @@ import java.util.function.Supplier;
 
 public class AppleTreeConfig {
 
-    // --- ใช้กับ sapling (ไม่มี leaf litter) ---
-    public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE_TREE_KEY = registryTreeKey("apple_tree_key");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_APPLE_KEY = registryTreeKey("large_apple_key");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_GOLDEN_APPLE_KEY = registryTreeKey("large_golden_apple_key");
+    public static final ResourceKey<Feature> APPLE_TREE_KEY = registryTreeKey("apple_tree_key");
+    public static final ResourceKey<Feature> LARGE_APPLE_KEY = registryTreeKey("large_apple_key");
 
-    // --- ใช้กับ worldgen (มี leaf litter) ---
-    // vanilla แยก ConfiguredFeature เป็น 2 ชุดแบบนี้เหมือนกัน เช่น TreeFeatures.OAK (sapling)
-    // กับ TreeFeatures.OAK_LEAF_LITTER (worldgen) -- ตัว TreeGrower ของ sapling ชี้ไปตัวที่ไม่มี leaf litter
-    public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE_TREE_LEAF_LITTER_KEY = registryTreeKey("apple_tree_leaf_litter_key");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_APPLE_LEAF_LITTER_KEY = registryTreeKey("large_apple_leaf_litter_key");
+    public static final ResourceKey<Feature> LARGE_GOLDEN_APPLE_KEY = registryTreeKey("large_golden_apple_key");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_GOLDEN_APPLE_LEAF_LITTER_KEY = registryTreeKey("large_golden_apple_leaf_litter_key");
 
-    //public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE_LEAF_LITTER_KEY = registryTreeKey("apple_leaf_litter_key");
+    public static final ResourceKey<Feature> APPLE_TREE_LEAF_LITTER_KEY = registryTreeKey("apple_tree_leaf_litter_key");
+    public static final ResourceKey<Feature> LARGE_APPLE_LEAF_LITTER_KEY = registryTreeKey("large_apple_leaf_litter_key");
 
-    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+    public static final ResourceKey<Feature> LARGE_GOLDEN_APPLE_LEAF_LITTER_KEY = registryTreeKey("large_golden_apple_leaf_litter_key");
 
-        // 26.2 TreeConfigurationBuilder get belowTrunkProvider
-        BlockStateProvider belowTrunk =
-                TreeConfiguration.defaultPlaceBelowTreeTrunkProvider(context.lookup(Registries.BIOME));
+    //public static final ResourceKey<Feature> APPLE_LEAF_LITTER_KEY = registryTreeKey("apple_leaf_litter_key");
 
-        // Places leaf litter only within a small radius of each tree's base, matching vanilla's oak/birch trees
-        // (see net.minecraft.data.worldgen.features.TreeFeatures#sparseLeafLitter/thickLeafLitter),
-        // instead of scattering it across the whole biome.
+    public static void bootstrap(BootstrapContext<Feature> context) {
+
+
+        Holder<BlockStateProvider> belowTrunk =
+                context.lookup(Registries.BLOCK_STATE_PROVIDER).getOrThrow(BlockStateProviders.SOIL_BENEATH_TREE);
+
+
+
         PlaceOnGroundDecorator sparseLeafLitter = new PlaceOnGroundDecorator(
-                96, 4, 2, new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 3)));
+                96, 4, 2, Holder.direct(new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 3))));
         PlaceOnGroundDecorator thickLeafLitter = new PlaceOnGroundDecorator(
-                150, 2, 2, new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 4)));
+                150, 2, 2, Holder.direct(new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 4))));
+
 
         WeightedStateProvider twoLeavesProvider = new WeightedStateProvider(
                 WeightedList.<BlockState>builder()
@@ -67,11 +65,11 @@ public class AppleTreeConfig {
                         .add(AppleWoodBlocks.FRUIT_APPLE_LEAVES.defaultBlockState(), 1)
                         .build()
         );
-        // decorators() แก้ไข builder ตัวเดิมแล้วคืน this -- ใช้ instance ซ้ำ 2 รอบไม่ได้
-        // จึงห่อเป็น Supplier เพื่อสร้าง builder ใหม่ทุกครั้งที่เรียก .get()
-        Supplier<TreeConfiguration.TreeConfigurationBuilder> appleTree = () ->
-                new TreeConfiguration.TreeConfigurationBuilder(
-                        BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
+
+
+        Supplier<TreeFeature.Builder> appleTree = () ->
+                new TreeFeature.Builder(
+                        BlockStateProvider.of(AppleWoodBlocks.APPLE_LOG),
                         // 3 baseHeight 11 firstRandomHeight 0 secondRandomHeight
                         new StraightTrunkPlacer(4, 2, 0),
                         twoLeavesProvider,
@@ -89,14 +87,12 @@ public class AppleTreeConfig {
                         new TwoLayersFeatureSize(1, 0, 1),
                         belowTrunk);
 
-        registerTreeConfig(context, APPLE_TREE_KEY, Feature.TREE,
-                appleTree.get().decorators(List.of(new BeehiveDecorator(0.1f))).build());
-        registerTreeConfig(context, APPLE_TREE_LEAF_LITTER_KEY, Feature.TREE,
-                appleTree.get().decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
+        context.register(APPLE_TREE_KEY, appleTree.get().decorators(List.of(new BeehiveDecorator(0.1f))).build());
+        context.register(APPLE_TREE_LEAF_LITTER_KEY, appleTree.get().decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
 
-        Supplier<TreeConfiguration.TreeConfigurationBuilder> largeAppleTree = () ->
-                new TreeConfiguration.TreeConfigurationBuilder(
-                        BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
+        Supplier<TreeFeature.Builder> largeAppleTree = () ->
+                new TreeFeature.Builder(
+                        BlockStateProvider.of(AppleWoodBlocks.APPLE_LOG),
                         new FancyTrunkPlacer(4, 14, 2),
                         twoLeavesProvider,
 
@@ -104,10 +100,8 @@ public class AppleTreeConfig {
                         new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(4)),
                         belowTrunk);
 
-        registerTreeConfig(context, LARGE_APPLE_KEY, Feature.TREE,
-                largeAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f))).build());
-        registerTreeConfig(context, LARGE_APPLE_LEAF_LITTER_KEY, Feature.TREE,
-                largeAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
+        context.register(LARGE_APPLE_KEY, largeAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f))).build());
+        context.register(LARGE_APPLE_LEAF_LITTER_KEY, largeAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
 
 
 
@@ -118,9 +112,9 @@ public class AppleTreeConfig {
                         .build()
         );
 
-        Supplier<TreeConfiguration.TreeConfigurationBuilder> largeGoldenAppleTree = () ->
-                new TreeConfiguration.TreeConfigurationBuilder(
-                        BlockStateProvider.simple(AppleWoodBlocks.APPLE_LOG),
+        Supplier<TreeFeature.Builder> largeGoldenAppleTree = () ->
+                new TreeFeature.Builder(
+                        BlockStateProvider.of(AppleWoodBlocks.APPLE_LOG),
                         new FancyTrunkPlacer(6, 10, 14),
                         twoLeavesProvider2,
 
@@ -128,20 +122,13 @@ public class AppleTreeConfig {
                         new TwoLayersFeatureSize(2, 0, 2, OptionalInt.of(3)),
                         belowTrunk);
 
-        registerTreeConfig(context, LARGE_GOLDEN_APPLE_KEY, Feature.TREE,
-                largeGoldenAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f))).build());
-        registerTreeConfig(context, LARGE_GOLDEN_APPLE_LEAF_LITTER_KEY, Feature.TREE,
-                largeGoldenAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
+        context.register(LARGE_GOLDEN_APPLE_KEY, largeGoldenAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f))).build());
+        context.register(LARGE_GOLDEN_APPLE_LEAF_LITTER_KEY, largeGoldenAppleTree.get().decorators(List.of(new BeehiveDecorator(0.1f), sparseLeafLitter, thickLeafLitter)).build());
     }
 
 
-    public static ResourceKey<ConfiguredFeature<?, ?>> registryTreeKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
-    }
-
-    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void registerTreeConfig(BootstrapContext<ConfiguredFeature<?, ?>> context,
-                                                                                                   ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
-        context.register(key, new ConfiguredFeature<>(feature, configuration));
+    public static ResourceKey<Feature> registryTreeKey(String name) {
+        return ResourceKey.create(Registries.FEATURE, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
     }
 
 }

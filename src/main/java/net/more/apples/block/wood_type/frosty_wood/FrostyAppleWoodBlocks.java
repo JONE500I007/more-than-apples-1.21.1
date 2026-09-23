@@ -1,5 +1,6 @@
 package net.more.apples.block.wood_type.frosty_wood;
 
+import net.minecraft.world.level.block.sounds.AmbientLeavesBlockSoundPlayer;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -36,11 +37,11 @@ public class FrostyAppleWoodBlocks {
 
     public static final Block FROSTY_APPLE_LEAVES  = registerBlock("frosty_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
-                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x85c0c8),
+                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x85c0c8), AmbientLeavesBlockSoundPlayer.noAmbientSound(),
                     registerIdBlock("frosty_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block FRUIT_FROSTY_APPLE_LEAVES = registerBlock("fruit_frosty_apple_leaves",
             properties -> new UntintedParticleLeavesBlock(
-                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x85c0c8),
+                    0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x85c0c8), AmbientLeavesBlockSoundPlayer.noAmbientSound(),
                     registerIdBlock("fruit_frosty_apple_leaves", Blocks.OAK_LEAVES)));
     public static final Block FROSTY_APPLE_SAPLING = registerBlock("frosty_apple_sapling",
             properties -> new SaplingBlock(

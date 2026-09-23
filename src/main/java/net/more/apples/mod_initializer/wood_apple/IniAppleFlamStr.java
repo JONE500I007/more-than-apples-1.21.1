@@ -2,16 +2,18 @@ package net.more.apples.mod_initializer.wood_apple;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.fabricmc.fabric.api.registry.FuelValueEvents;
-import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.fabricmc.fabric.api.item.v1.BlockTransformerHelper;
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
+import net.more.apples.util.ModFuels;
 
 public class IniAppleFlamStr implements ModInitializer {
     @Override
     public void onInitialize() {
-        StrippableBlockRegistry.register(AppleWoodBlocks.APPLE_LOG, AppleWoodBlocks.STRIPPED_APPLE_LOG);
-        StrippableBlockRegistry.register(AppleWoodBlocks.APPLE_WOOD, AppleWoodBlocks.STRIPPED_APPLE_WOOD);
+        BlockTransformerHelper.registerStripping(AppleWoodBlocks.APPLE_LOG, AppleWoodBlocks.STRIPPED_APPLE_LOG);
+        BlockTransformerHelper.registerStripping(AppleWoodBlocks.APPLE_WOOD, AppleWoodBlocks.STRIPPED_APPLE_WOOD);
         
 
         FlammableBlockRegistry.getDefaultInstance().add(AppleWoodBlocks.APPLE_LOG, 5, 20);
@@ -34,15 +36,15 @@ public class IniAppleFlamStr implements ModInitializer {
         FlammableBlockRegistry.getDefaultInstance().add(AppleWoodBlocks.GOLDEN_APPLE_LEAVES, 30, 60);
         FlammableBlockRegistry.getDefaultInstance().add(AppleWoodBlocks.FRUIT_GOLDEN_APPLE_LEAVES, 30, 60);
 
-        FuelValueEvents.BUILD.register(((builder, context) -> {
-            builder.add(AppleWoodVariants.APPLE_STAIRS, 300);
-            builder.add(AppleWoodVariants.APPLE_SLAB, 150);
-            builder.add(AppleWoodVariants.APPLE_BUTTON, 100);
-            builder.add(AppleWoodVariants.APPLE_PRESSURE_PLATE, 300);
-            builder.add(AppleWoodVariants.APPLE_FENCE, 300);
-            builder.add(AppleWoodVariants.APPLE_FENCE_GATE, 300);
-            builder.add(AppleWoodVariants.APPLE_DOOR, 200);
-            builder.add(AppleWoodVariants.APPLE_TRAPDOOR, 200);
-        }));
+        DefaultItemComponentEvents.MODIFY.register(context -> {
+            ModFuels.add(context, AppleWoodVariants.APPLE_STAIRS, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, AppleWoodVariants.APPLE_SLAB, ContextIntProviders.COOKING_TIME_WOOD_SLABS);
+            ModFuels.add(context, AppleWoodVariants.APPLE_BUTTON, ContextIntProviders.COOKING_TIME_WOOD_ITEMS_EXTRA_SMALL);
+            ModFuels.add(context, AppleWoodVariants.APPLE_PRESSURE_PLATE, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, AppleWoodVariants.APPLE_FENCE, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, AppleWoodVariants.APPLE_FENCE_GATE, ContextIntProviders.COOKING_TIME_WOOD_BLOCKS);
+            ModFuels.add(context, AppleWoodVariants.APPLE_DOOR, ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE);
+            ModFuels.add(context, AppleWoodVariants.APPLE_TRAPDOOR, ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE);
+        });
     }
 }

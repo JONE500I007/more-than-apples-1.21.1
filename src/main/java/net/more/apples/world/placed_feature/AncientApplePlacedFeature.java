@@ -8,9 +8,7 @@ import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.more.apples.MoreThanApples;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
@@ -26,7 +24,7 @@ public class AncientApplePlacedFeature {
     public static final ResourceKey<PlacedFeature> ANCIENT_APPLE_TREE_PLACED_KEY = registryKey("ancient_apple_tree_placed");
 
     public static void boostrap(BootstrapContext<PlacedFeature> context) {
-        var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+        var configuredFeatures = context.lookup(Registries.FEATURE);
 
 
         register(context, ANCIENT_APPLE_TREE_PLACED_KEY,
@@ -54,13 +52,13 @@ public class AncientApplePlacedFeature {
         return ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, name));
     }
 
-    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<Feature> configuration,
                                  List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
 
-    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key,
-                                                                                          Holder<ConfiguredFeature<?, ?>> configuration,
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key,
+                                 Holder<Feature> configuration,
                                                                                           PlacementModifier... modifiers) {
         register(context, key, configuration, List.of(modifiers));
     }

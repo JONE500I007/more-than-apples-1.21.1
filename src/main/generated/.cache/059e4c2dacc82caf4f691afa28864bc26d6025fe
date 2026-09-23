@@ -1,7 +1,28 @@
-// 26.2	-999999999-01-01T00:00:00	More Than Apples/Tags for minecraft:item
+// 26.3	-999999999-01-01T00:00:00	More Than Apples/Tags for minecraft:item
+8365f578bf628242bb23c30377a57a501ec59ddb data/c/tags/item/fence_gates/wooden.json
+7ec72aaf99a3f64bfaa741af24c887e91a3a9e7a data/c/tags/item/fences/wooden.json
+51b79cf79db1e51773a7f09b7b090fbd5eae0287 data/c/tags/item/flowers/small.json
+d021bc4a8c5efd985d8cad93ac6c9db7e07e9881 data/c/tags/item/natural_logs/overworld.json
+58ce4b530fff0ada3d97322868425c5864575ac5 data/c/tags/item/natural_woods.json
+2181f86da02cb6f3eda8e4b8a5058240be807ce8 data/c/tags/item/ore_rates/dense.json
+2181f86da02cb6f3eda8e4b8a5058240be807ce8 data/c/tags/item/ores.json
+d588081ed83bfa9aa3e757a5c01b528ed25e747b data/c/tags/item/ores_in_ground/deepslate.json
+db2f30948d497d4534a5f398320c82b0907a09c2 data/c/tags/item/ores_in_ground/stone.json
+7ff7845002927b0dc1317760ff593a569b46ea99 data/c/tags/item/stripped_logs.json
+bbe007c3f381c963cee02fba35cbdb97ead75994 data/c/tags/item/stripped_woods.json
+51b79cf79db1e51773a7f09b7b090fbd5eae0287 data/minecraft/tags/item/bee_food.json
+8006de2d45aa1e96df8182fa86c706fbb0c603f5 data/minecraft/tags/item/boats.json
+728e4379a5597a3e4bb6e008778c81cd732b6eb8 data/minecraft/tags/item/chest_boats.json
 8365f578bf628242bb23c30377a57a501ec59ddb data/minecraft/tags/item/fence_gates.json
+6bb47fcaf89ec80f09d7a6255749c6f475064ce6 data/minecraft/tags/item/hanging_signs.json
+6a10e62a98e954b33d76f1e6c756a1058a0c2388 data/minecraft/tags/item/leaves.json
 e82f46881b11769708abf995af1ee4a7f4671e3c data/minecraft/tags/item/logs_that_burn.json
+2181f86da02cb6f3eda8e4b8a5058240be807ce8 data/minecraft/tags/item/ores.json
 af42bea77b683ee25abf3854419984638f40a367 data/minecraft/tags/item/planks.json
+016f602be997de7e9a249a0d3076bc44e51717fc data/minecraft/tags/item/saplings.json
+51b79cf79db1e51773a7f09b7b090fbd5eae0287 data/minecraft/tags/item/shearable_from_copper_golem.json
+7bf640d6f732bb03f3ddd4829c913f1eb898cc88 data/minecraft/tags/item/signs.json
+51b79cf79db1e51773a7f09b7b090fbd5eae0287 data/minecraft/tags/item/small_flowers.json
 88927667999db0c12b8dbc138056da7b671c698f data/minecraft/tags/item/wooden_buttons.json
 c252e931e89b91f67cfa42b99bb68165f76853af data/minecraft/tags/item/wooden_doors.json
 7ec72aaf99a3f64bfaa741af24c887e91a3a9e7a data/minecraft/tags/item/wooden_fences.json

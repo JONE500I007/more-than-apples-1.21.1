@@ -1,7 +1,5 @@
 package net.more.apples.world.tree.custom.ancient_apple.custom;
 
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -20,15 +18,6 @@ public class AncientAppleSaplingBlock extends SaplingBlock {
 
     public AncientAppleSaplingBlock(Properties properties) {
         super(TreeGrower.OAK, properties); // ส่ง dummy ให้ parent
-    }
-
-    public static final MapCodec<AncientAppleSaplingBlock> CODEC = RecordCodecBuilder.mapCodec(
-            i -> i.group(propertiesCodec()).apply(i, AncientAppleSaplingBlock::new)
-    );
-
-    @Override
-    public MapCodec<? extends SaplingBlock> codec() {
-        return CODEC;
     }
 
     @Override

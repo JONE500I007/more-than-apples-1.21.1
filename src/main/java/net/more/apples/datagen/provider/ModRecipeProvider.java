@@ -2,11 +2,14 @@ package net.more.apples.datagen.provider;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.triggers.Criterion;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.more.apples.datagen.recipe.AncientAppleRecipes;
@@ -22,8 +25,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, RecipeOutput exporter) {
-        return new ModRecipeBuilder(registryLookup, exporter);
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup,
+                                                  BootstrapContext<Recipe<?>> recipes, BootstrapContext<Advancement> advancements) {
+        return new ModRecipeBuilder(recipes, advancements);
     }
 
     @Override
@@ -34,9 +38,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     public static class ModRecipeBuilder extends RecipeProvider {
         private final RecipeOutput exporter;
 
-        public ModRecipeBuilder(HolderLookup.Provider registryLookup, RecipeOutput exporter) {
-            super(registryLookup, exporter);
-            this.exporter = exporter;
+        public ModRecipeBuilder(BootstrapContext<Recipe<?>> recipes, BootstrapContext<Advancement> advancements) {
+            super(recipes, advancements);
+            this.exporter = this.output;
         }
 
         @Override
@@ -45,6 +49,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             TestAppleRecipes.addRecipes(this, exporter);
             FrostyAppleRecipes.addRecipes(this, exporter);
             AncientAppleRecipes.addRecipes(this, exporter);
+
+            new ModBrewingProvider(exporter).buildRecipes();
         }
 
         public void generateWoodFamily(net.minecraft.data.BlockFamily family) {

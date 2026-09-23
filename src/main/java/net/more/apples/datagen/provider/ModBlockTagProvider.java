@@ -38,4 +38,9 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
             appender.add(block.builtInRegistryHolder().key());
         }
     }
+
+    // like vanilla "#minecraft:oak_logs" inside "#minecraft:logs_that_burn"
+    public void addTagToTag(TagKey<Block> tag, TagKey<Block> childTag) {
+        tag(tag).addTag(childTag);
+    }
 }

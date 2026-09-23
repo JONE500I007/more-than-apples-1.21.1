@@ -81,7 +81,7 @@ public class AncientAppleWoodBlocks {
                             .noOcclusion()
                             .noCollision()
                             .isSuffocating((state, level, pos) -> false)
-                            .isViewBlocking((state, level, pos) -> false)));
+                            .isViewBlocking((state, level, pos, aabb) -> false)));
 
     private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
         ResourceKey<Block> key = ResourceKey.create(
