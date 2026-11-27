@@ -10,32 +10,17 @@ import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.more.apples.MoreThanApples;
-import net.more.apples.entity.ModBoats;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodVariants;
 
 import java.util.function.Function;
 
-import static net.more.apples.entity.ModBoats.ANCIENT_APPLE_BOAT_ID;
-import static net.more.apples.entity.ModBoats.TEST_APPLE_BOAT_ID;
 
 public class AncientAppleWoodItem {
-    public static final Item ANCIENT_APPLE_SIGN = registerItem("ancient_apple_sign",
-            properties -> new StandingAndWallBlockItem(
-                    AncientAppleWoodVariants.ANCIENT_APPLE_STANDING_SIGN,
-                    AncientAppleWoodVariants.ANCIENT_APPLE_WALL_SIGN,
-                    Direction.DOWN,
-                    properties.stacksTo(16).signText()),
-            new Item.Properties());
-    public static final Item ANCIENT_APPLE_HANGING_SIGN = registerItem("ancient_apple_hanging_sign",
-            properties -> new HangingSignItem(
-                    AncientAppleWoodVariants.ANCIENT_APPLE_HANGING_SIGN_BLOCK,
-                    AncientAppleWoodVariants.ANCIENT_APPLE_WALL_HANGING_SIGN,
-                    properties.stacksTo(16).signText()),
-            new Item.Properties());
-    public static final Item ANCIENT_APPLE_BOAT =
-            ModBoats.registerBoatItem(ANCIENT_APPLE_BOAT_ID, false);
-    public static final Item ANCIENT_APPLE_CHEST_BOAT =
-            ModBoats.registerBoatItem(ANCIENT_APPLE_BOAT_ID, true);
+    // Made by JONE500 Wooden API (see AncientAppleWoodVariants.ANCIENT_APPLE_WOOD_SET); same item ids as before.
+    public static final Item ANCIENT_APPLE_SIGN = AncientAppleWoodVariants.ANCIENT_APPLE_WOOD_SET.getSignItem();
+    public static final Item ANCIENT_APPLE_HANGING_SIGN = AncientAppleWoodVariants.ANCIENT_APPLE_WOOD_SET.getHangingSignItem();
+    public static final Item ANCIENT_APPLE_BOAT = AncientAppleWoodVariants.ANCIENT_APPLE_WOOD_SET.getBoatItem();
+    public static final Item ANCIENT_APPLE_CHEST_BOAT = AncientAppleWoodVariants.ANCIENT_APPLE_WOOD_SET.getChestBoatItem();
 
 
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {

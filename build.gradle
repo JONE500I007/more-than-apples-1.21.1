@@ -25,6 +25,19 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven { url = 'https://maven.minecraftforge.net/' }
+
+	// CurseMaven: JONE500 Biome API and JONE500 Wooden API from CurseForge
+	exclusiveContent {
+		forRepository {
+			maven {
+				name = "CurseMaven"
+				url = "https://cursemaven.com"
+			}
+		}
+		filter {
+			includeGroup "curse.maven"
+		}
+	}
 }
 
 fabricApi {
@@ -42,8 +55,13 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	implementation 'com.github.glitchfiend:TerraBlender-fabric:26.3-26.3.0.0.6'
-	//include 'com.github.glitchfiend:TerraBlender-fabric:26.2-26.2.0.0.2'
+	// JONE500 Biome API (biome regions) and JONE500 Wooden API (signs, hanging signs, boats, shelves).
+	// "include" puts them inside this mod's jar, so players don't have to download them.
+	// The last number is the CurseForge File ID of the file for this Minecraft version.
+	implementation "curse.maven:jone500-biome-api-1827672:${project.biome_api_file}"
+	include "curse.maven:jone500-biome-api-1827672:${project.biome_api_file}"
+	implementation "curse.maven:jone500-wooden-api-1815936:${project.wooden_api_file}"
+	include "curse.maven:jone500-wooden-api-1815936:${project.wooden_api_file}"
 }
 
 processResources {

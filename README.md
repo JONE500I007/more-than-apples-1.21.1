@@ -1,17 +1,24 @@
 ## Credits and Licenses
 
-This mod uses **Terraform API** developed by **TerraformersMC**
-<br>and **TerraBlender** API developed by **Glitchfiend**
+This mod uses two libraries, both made by **JONE500** (the author of this mod):
 
-### Terraform API
-* **Original API Source:** [https://github.com/TerraformersMC/Terraform](https://github.com/TerraformersMC/Terraform)
-* **Developer:** [TerraformersMC](https://github.com/TerraformersMC)
-* **License:** This API is licensed under the **GNU Lesser General Public License v3.0 (LGPLv3)**.
-### TerraBlender
-* **Original API Source:** [https://github.com/Glitchfiend/TerraBlender](https://github.com/Glitchfiend/TerraBlender)
-* **Developer:** [Glitchfiend](https://github.com/Glitchfiend)
-* **License:** This API is licensed under the **GNU Lesser General Public License v3.0 (LGPLv3)**.
+### JONE500 Biome API
+Places the More Than Apples biomes (Apple Grove, Golden Apple Orchard, Frosty Apple, Ancient Apple Wilds) in
+the Overworld, in regions.
+* **Source:** [https://github.com/JONE500I007/JONE500-Biome-API](https://github.com/JONE500I007/JONE500-Biome-API)
+* **License:** MIT
 
-According to the LGPLv3 terms:
-- A copy of the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) and [GNU LGPLv3](https://www.gnu.org/licenses/lgpl-3.0.html) is included in this project's documentation.
-- This mod uses the above APIs as libraries and does not modify the libraries themselves.
+### JONE500 Wooden API
+Adds the signs, hanging signs, boats, chest boats and shelves of the apple woods.
+* **Source:** [https://github.com/JONE500I007/JONE500-Wooden-API](https://github.com/JONE500I007/JONE500-Wooden-API)
+* **License:** MIT
+
+Both are included inside the More Than Apples jar, so players don't need to download them.
+You only need **Fabric API**.
+
+### Earlier versions
+
+Older versions of More Than Apples used **Terraform API** by
+[TerraformersMC](https://github.com/TerraformersMC/Terraform) (signs and boats) and **TerraBlender** by
+[Glitchfiend](https://github.com/Glitchfiend/TerraBlender) (biomes), both licensed under the GNU Lesser General
+Public License v3.0 (LGPLv3). This version no longer uses or includes them.

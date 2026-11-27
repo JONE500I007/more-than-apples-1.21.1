@@ -6,10 +6,10 @@
 		"ExampleMixin",
 		"TrunkPlacerTypeInvoker",
 		"FoliagePlacerTypeInvoker",
-		"AppleShelfBlockEntityMixin",
-		"ShelfGetBlock2Mixin",
 		"ZombieVillagerCureMixin",
-
+		"OldAppleShelfDataMixin"
+	],
+	"client": [
 		"ClientAdvancementsMixinImpl"
 	],
 	"injectors": {

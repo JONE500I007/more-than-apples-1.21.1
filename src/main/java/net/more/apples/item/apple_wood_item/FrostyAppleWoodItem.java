@@ -10,31 +10,17 @@ import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.more.apples.MoreThanApples;
-import net.more.apples.entity.ModBoats;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 
 import java.util.function.Function;
 
-import static net.more.apples.entity.ModBoats.FROSTY_APPLE_BOAT_ID;
 
 public class FrostyAppleWoodItem {
-    public static final Item FROSTY_APPLE_SIGN = registerItem("frosty_apple_sign",
-            properties -> new StandingAndWallBlockItem(
-                    FrostyAppleWoodVariants.FROSTY_APPLE_STANDING_SIGN,
-                    FrostyAppleWoodVariants.FROSTY_APPLE_WALL_SIGN,
-                    Direction.DOWN,
-                    properties.stacksTo(16).signText()),
-            new Item.Properties());
-    public static final Item FROSTY_APPLE_HANGING_SIGN = registerItem("frosty_apple_hanging_sign",
-            properties -> new HangingSignItem(
-                    FrostyAppleWoodVariants.FROSTY_APPLE_HANGING_SIGN_BLOCK,
-                    FrostyAppleWoodVariants.FROSTY_APPLE_WALL_HANGING_SIGN,
-                    properties.stacksTo(16).signText()),
-            new Item.Properties());
-    public static final Item FROSTY_APPLE_BOAT =
-            ModBoats.registerBoatItem(FROSTY_APPLE_BOAT_ID, false);
-    public static final Item FROSTY_APPLE_CHEST_BOAT =
-            ModBoats.registerBoatItem(FROSTY_APPLE_BOAT_ID, true);
+    // Made by JONE500 Wooden API (see FrostyAppleWoodVariants.FROSTY_APPLE_WOOD_SET); same item ids as before.
+    public static final Item FROSTY_APPLE_SIGN = FrostyAppleWoodVariants.FROSTY_APPLE_WOOD_SET.getSignItem();
+    public static final Item FROSTY_APPLE_HANGING_SIGN = FrostyAppleWoodVariants.FROSTY_APPLE_WOOD_SET.getHangingSignItem();
+    public static final Item FROSTY_APPLE_BOAT = FrostyAppleWoodVariants.FROSTY_APPLE_WOOD_SET.getBoatItem();
+    public static final Item FROSTY_APPLE_CHEST_BOAT = FrostyAppleWoodVariants.FROSTY_APPLE_WOOD_SET.getChestBoatItem();
 
 
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {

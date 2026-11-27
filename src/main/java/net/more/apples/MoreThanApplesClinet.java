@@ -5,21 +5,16 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.fabricmc.fabric.api.event.player.ItemEvents;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.more.apples.block.custom.FoliageTintSource;
 import net.more.apples.item.custom.AppleCodexScreen;
 import net.more.apples.item.general_item.ModGeneralItems;
-import net.more.apples.block.wood_type.AppleShelfEntityType;
 import net.more.apples.block.wood_type.ancient_apple.AncientAppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodBlocks;
 import net.more.apples.block.wood_type.apple_wood.AppleWoodVariants;
-import net.more.apples.entity.ModBoats;
 import net.more.apples.particle.LeavesTestParticle;
 import net.more.apples.particle.ModParticle;
-import net.more.apples.render.AppleShelfRenderer;
-import net.more.apples.render.ModBoatRenderers;
 
 import java.util.List;
 
@@ -34,13 +29,7 @@ public class MoreThanApplesClinet implements ClientModInitializer {
 
                 AncientAppleWoodBlocks.ANCIENT_APPLE_LEAVES,
                 AncientAppleWoodBlocks.APPLE_LEAF_LITTER);
-
-        BlockEntityRenderers.register(AppleShelfEntityType.APPLE_SHELF_ENTITY_TYPE, AppleShelfRenderer::new);
-
-        ModBoatRenderers.register(ModBoats.APPLE_BOAT_ID);
-        ModBoatRenderers.register(ModBoats.TEST_APPLE_BOAT_ID);
-        ModBoatRenderers.register(ModBoats.FROSTY_APPLE_BOAT_ID);
-        ModBoatRenderers.register(ModBoats.ANCIENT_APPLE_BOAT_ID);
+        // Signs, boats and shelves of the 4 woods are drawn by JONE500 Wooden API.
 
         ParticleProviderRegistry.getInstance().register(ModParticle.TEST_LEAVES_PARTICLE, LeavesTestParticle.Factory::new);
 

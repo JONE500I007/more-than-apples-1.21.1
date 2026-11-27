@@ -10,31 +10,17 @@ import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.more.apples.MoreThanApples;
-import net.more.apples.entity.ModBoats;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
 
 import java.util.function.Function;
 
-import static net.more.apples.entity.ModBoats.TEST_APPLE_BOAT_ID;
 
 public class TestAppleWoodItem {
-    public static final Item TEST_APPLE_SIGN = registerItem("test_apple_sign",
-            properties -> new StandingAndWallBlockItem(
-                    TestAppleWoodVariants.TEST_APPLE_STANDING_SIGN,
-                    TestAppleWoodVariants.TEST_APPLE_WALL_SIGN,
-                    Direction.DOWN,
-                    properties.stacksTo(16).signText()),
-            new Item.Properties());
-    public static final Item TEST_APPLE_HANGING_SIGN = registerItem("test_apple_hanging_sign",
-            properties -> new HangingSignItem(
-                    TestAppleWoodVariants.TEST_APPLE_HANGING_SIGN_BLOCK,
-                    TestAppleWoodVariants.TEST_APPLE_WALL_HANGING_SIGN,
-                    properties.stacksTo(16).signText()),
-            new Item.Properties());
-    public static final Item TEST_APPLE_BOAT =
-            ModBoats.registerBoatItem(TEST_APPLE_BOAT_ID, false);
-    public static final Item TEST_APPLE_CHEST_BOAT =
-            ModBoats.registerBoatItem(TEST_APPLE_BOAT_ID, true);
+    // Made by JONE500 Wooden API (see TestAppleWoodVariants.TEST_APPLE_WOOD_SET); same item ids as before.
+    public static final Item TEST_APPLE_SIGN = TestAppleWoodVariants.TEST_APPLE_WOOD_SET.getSignItem();
+    public static final Item TEST_APPLE_HANGING_SIGN = TestAppleWoodVariants.TEST_APPLE_WOOD_SET.getHangingSignItem();
+    public static final Item TEST_APPLE_BOAT = TestAppleWoodVariants.TEST_APPLE_WOOD_SET.getBoatItem();
+    public static final Item TEST_APPLE_CHEST_BOAT = TestAppleWoodVariants.TEST_APPLE_WOOD_SET.getChestBoatItem();
 
 
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {

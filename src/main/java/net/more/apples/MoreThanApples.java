@@ -2,6 +2,7 @@ package net.more.apples;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.more.apples.world.biome.ModBiomeRegions;
 import net.more.apples.effect.ModEffectsRegister;
 import net.more.apples.event.ModEntityUseHandler2;
 import net.more.apples.particle.ModParticle;
@@ -52,6 +53,9 @@ public class MoreThanApples implements ModInitializer {
 		AncientFeatures.register();
 
 		ModStructureTypes.register();
+
+		// Biome regions (JONE500 Biome API)
+		ModBiomeRegions.register();
 
 		LOGGER.info("Hello Fabric world!");
 	}

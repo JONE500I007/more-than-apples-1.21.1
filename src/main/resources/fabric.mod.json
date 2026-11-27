@@ -33,20 +33,18 @@
 		],
 		"client": [
 			"net.more.apples.MoreThanApplesClinet"
-		],
-		"terrablender": [
-			"net.more.apples.world.biome.ModTerraBlenderAPI"
 		]
 	},
 	"mixins": [
 		"more-than-apples.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.19.3",
+		"fabricloader": ">=0.20.1",
 		"minecraft": "~26.3",
 		"java": ">=25",
-		"fabric-api": ">=0.161.0",
-		"terrablender": ">=26.3.0.0.6"
+		"fabric-api": ">=0.166.2",
+		"jone500-biome-api": ">=1.1.0",
+		"jone500_wooden_api": ">=1.1.0"
 	},
 	"suggests": {
 		"another-mod": "*"

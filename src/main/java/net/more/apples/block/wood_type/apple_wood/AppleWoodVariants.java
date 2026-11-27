@@ -1,6 +1,6 @@
 package net.more.apples.block.wood_type.apple_wood;
 
-import net.more.apples.block.wood_type.ModSignBlockHelper;
+import net.wooden.api.wood.WoodSet;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -15,10 +15,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.more.apples.MoreThanApples;
-import net.more.apples.block.custom.AppleShelfBlock;
 import net.more.apples.block.wood_type.frosty_wood.FrostyAppleWoodVariants;
 import net.more.apples.block.wood_type.test_wood.TestAppleWoodVariants;
-import net.more.apples.entity.AppleBlockEntity;
 
 import java.util.function.Function;
 
@@ -65,48 +63,27 @@ public class AppleWoodVariants {
                             .strength(2.0f, 3.0f)
                             .sound(SoundType.WOOD)));
 
-    public static final Identifier APPLE_SIGN_TEXTURE =
-            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "entity/signs/apple_sign");
-    public static final Identifier APPLE_HANGING_SIGN_TEXTURE =
-            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "entity/signs/hanging/apple_hanging_sign");
-    public static final Identifier APPLE_HANGING_GUI_SIGN_TEXTURE =
-            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "textures/gui/hanging_signs/apple_sign_gui");
+    // Sign, hanging sign, boat, chest boat and shelf: made by JONE500 Wooden API.
+    // signIds(...) keeps the old block ids, so signs placed in older worlds don't disappear.
+    // noCreativeTabs(): More Than Apples adds these items to the creative tabs itself (CreativeModeItemTabs).
+    public static final WoodSet APPLE_WOOD_SET = WoodSet.builder(Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple"))
+            .planks(AppleWoodBlocks.APPLE_PLANKS)
+            .strippedLog(AppleWoodBlocks.STRIPPED_APPLE_LOG)
+            .signIds(Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_standing_sign"),
+                    Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_sign"))
+            .hangingSigns()
+            .boats()
+            .shelf()
+            .noCreativeTabs()
+            .register();
+
+    public static final Block APPLE_STANDING_SIGN = APPLE_WOOD_SET.getSign();
+    public static final Block APPLE_WALL_SIGN = APPLE_WOOD_SET.getWallSign();
+    public static final Block APPLE_HANGING_SIGN_BLOCK = APPLE_WOOD_SET.getHangingSign();
+    public static final Block APPLE_WALL_HANGING_SIGN = APPLE_WOOD_SET.getWallHangingSign();
+    public static final Block APPLE_SHELF = APPLE_WOOD_SET.getShelf();
 
 
-    public static final WoodType APPLE_SIGN_WOOD_TYPE = ModSignBlockHelper.registerDefaultWoodType(
-            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_sign"));
-    public static final WoodType APPLE_HANGING_SIGN_WOOD_TYPE = ModSignBlockHelper.registerDefaultWoodType(
-            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_hanging_sign"));
-
-    public static final Block APPLE_STANDING_SIGN = ModSignBlockHelper.registerSignBlock(
-            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_standing_sign"),
-            (settings) -> new StandingSignBlock(APPLE_SIGN_WOOD_TYPE, settings),
-            registerIdBlock("apple_standing_sign", Blocks.OAK_SIGN));
-    public static final Block APPLE_WALL_SIGN = ModSignBlockHelper.registerSignBlock(
-            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_sign"),
-            (settings) -> new WallSignBlock(APPLE_SIGN_WOOD_TYPE, settings),
-            wallVariant(registerIdBlock("apple_wall_sign", Blocks.OAK_WALL_SIGN), APPLE_STANDING_SIGN));
-
-    public static final Block APPLE_HANGING_SIGN_BLOCK = ModSignBlockHelper.registerSignBlock(
-            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_hanging_sign"),
-            (settings) -> new CeilingHangingSignBlock(APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            registerIdBlock("apple_hanging_sign", Blocks.OAK_HANGING_SIGN));
-    public static final Block APPLE_WALL_HANGING_SIGN = ModSignBlockHelper.registerSignBlock(
-            Identifier.fromNamespaceAndPath(MoreThanApples.MOD_ID, "apple_wall_hanging_sign"),
-            (settings) -> new WallHangingSignBlock(APPLE_HANGING_SIGN_WOOD_TYPE, settings),
-            wallVariant(registerIdBlock("apple_wall_hanging_sign", Blocks.OAK_WALL_HANGING_SIGN), APPLE_HANGING_SIGN_BLOCK));
-
-    public static final Block APPLE_SHELF = registerBlock("apple_shelf",
-            properties -> new AppleShelfBlock(
-                    registerIdBlock("apple_shelf", Blocks.OAK_SHELF)));
-
-
-    // like vanilla Blocks.wallVariant: a wall sign uses its standing sign's loot table and name
-    // (otherwise ofFullCopy(OAK_WALL_SIGN) keeps pointing at minecraft:blocks/oak_sign)
-    private static BlockBehaviour.Properties wallVariant(BlockBehaviour.Properties properties, Block standingBlock) {
-        return properties.overrideLootTable(standingBlock.getLootTable())
-                .overrideDescription(standingBlock.getDescriptionId());
-    }
 
     private static BlockBehaviour.Properties registerIdBlock(String name, Block base) {
         ResourceKey<Block> key = ResourceKey.create(
